@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f4">
+  <title>Daylist — a little more done</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23284637'/%3E%3Cpath d='m11 20 6 6 12-13' fill='none' stroke='%23d7edab' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <div class="workspace">
+    <nav class="sidebar" aria-label="Workspace">
+      <a class="brand" href="./" aria-label="Daylist home"><span class="brand-mark">✓</span> daylist<span class="brand-dot">.</span></a>
+      <div class="workspace-name"><span class="avatar">P</span><div>Personal workspace<small>A little more done.</small></div></div>
+      <div class="nav-label">YOUR SPACE</div>
+      <button class="nav-item selected" data-view="all"><span aria-hidden="true">▤</span> My tasks <span id="nav-count" class="nav-count">0</span></button>
+      <button class="nav-item" data-view="open"><span aria-hidden="true">◷</span> Still to do</button>
+      <button class="nav-item" data-view="completed"><span aria-hidden="true">☑</span> Completed</button>
+      <div class="sidebar-note"><div class="mini-spark" aria-hidden="true">✦</div><strong>Your list. Your device.</strong><p>Tasks stay in this browser.<br>AI runs locally in Chrome.</p></div>
+      <div class="sidebar-footer"><span class="local-dot"></span> Made for a calmer day</div>
+    </nav>
+
+    <main>
+      <header class="topbar"><div><span class="breadcrumb">Workspace</span><span class="slash">/</span>My tasks</div><button id="toggle-assistant" class="text-button" aria-expanded="true" aria-controls="assistant-panel">✦ Assistant</button></header>
+      <div class="main-content">
+        <div class="page-heading"><div><div id="today" class="eyebrow"></div><h1>Make room for progress<span>.</span></h1><p>A clear head starts with a simple list.</p></div><button id="new-item" class="button primary"><span aria-hidden="true">＋</span> New task</button></div>
+        <div class="stats" aria-label="Task summary"><div><span class="stat-icon" aria-hidden="true">▤</span><span><strong id="total-count">0</strong><small>Total tasks</small></span></div><div><span class="stat-icon amber" aria-hidden="true">◷</span><span><strong id="open-count">0</strong><small>Still to do</small></span></div><div><span class="stat-icon green" aria-hidden="true">✓</span><span><strong id="done-count">0</strong><small>Completed</small></span></div></div>
+        <section class="task-section" aria-labelledby="list-heading">
+          <div class="section-heading"><h2 id="list-heading">My tasks <span id="list-count">0</span></h2><span class="saved"><span class="local-dot"></span> Saved on this device</span></div>
+          <div class="list-toolbar"><div class="filters" role="group" aria-label="Filter tasks"><button class="active" data-filter="all" aria-pressed="true">All tasks</button><button data-filter="open" aria-pressed="false">To do</button><button data-filter="completed" aria-pressed="false">Completed</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search tasks…" aria-label="Search tasks" maxlength="200"></label></div>
+          <div id="task-list" class="task-list" aria-live="polite"></div>
+          <div id="pagination" class="pagination" hidden><button id="previous-page" class="text-button">← Previous</button><span id="page-summary"></span><button id="next-page" class="text-button">Next →</button></div>
+          <button id="quick-add" class="quick-add"><span aria-hidden="true">＋</span> Add something to your list</button>
+        </section>
+        <div class="bottom-note"><span aria-hidden="true">↳</span> One thing at a time is still progress.</div>
+      </div>
+    </main>
+
+    <aside id="assistant-panel" class="assistant" aria-label="To-do assistant">
+      <header class="assistant-header"><div class="assistant-symbol" aria-hidden="true">✦</div><div><h2>Your list, a little lighter.</h2><p>Daylist assistant</p></div><button id="new-chat" class="icon-button" title="Start a new chat" aria-label="Start a new chat">↺</button></header>
+      <div class="connection-status"><span id="ai-dot" class="status-dot"></span><span id="ai-status" role="status">Checking local AI…</span><span class="device-tag">ON DEVICE</span></div>
+      <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="polite">
+        <div class="assistant-intro"><div class="intro-spark" aria-hidden="true">✦</div><h3>Less organizing.<br>More doing.</h3><p>Ask me to add a task, tidy up the details, or find what’s next. I’ll work directly with your list.</p></div>
+        <div class="suggestions"><button data-suggestion="Add a task to plan my week">＋ <span>Add a task to plan my week</span> ↗</button><button data-suggestion="What tasks are still open?">◷ <span>What’s still on my list?</span> ↗</button><button data-suggestion="Find tasks about groceries">⌕ <span>Find a task for me</span> ↗</button></div>
+      </div>
+      <div id="activity-status" class="activity-status" role="status"></div>
+      <div class="assistant-bottom">
+        <button id="enable-ai" class="button enable-button" disabled>Enable local AI</button>
+        <form id="chat-form"><label for="chat-input" class="sr-only">Message the assistant</label><div class="composer"><textarea id="chat-input" rows="2" placeholder="Ask anything about your list…" maxlength="4000"></textarea><div class="composer-footer"><span>✦ Chrome built-in AI</span><button id="stop-agent" type="button" class="stop-button" hidden>Stop</button><button id="send-message" type="submit" class="send-button" aria-label="Send message" disabled>↑</button></div></div></form>
+        <details class="browser-details"><summary>Browser connection & setup</summary><p id="model-help">Checking browser support…</p><p id="webmcp-status">Connecting page tools…</p><p>Requires a compatible desktop Chrome, a secure context (localhost works), and a downloaded local model. <a href="https://developer.chrome.com/docs/ai/prompt-api" target="_blank" rel="noopener">Prompt API setup ↗</a> · <a href="https://developer.chrome.com/docs/ai/webmcp" target="_blank" rel="noopener">WebMCP setup ↗</a></p></details>
+        <p class="privacy-note">Local model. Local storage. A little peace of mind.</p>
+      </div>
+    </aside>
+  </div>
+  <dialog id="item-dialog"><form id="item-form"><div class="dialog-heading"><div><span class="eyebrow">A LITTLE PROGRESS</span><h2 id="dialog-title">New task</h2></div><button type="button" id="close-dialog" class="icon-button" aria-label="Close task editor">×</button></div><label>Task title<input id="item-title" name="title" required maxlength="200" placeholder="What would you like to get done?"></label><label>Notes <span class="optional">optional</span><textarea id="item-notes" name="notes" rows="3" maxlength="2000" placeholder="A few details, if you need them…"></textarea></label><div class="form-row"><label>Priority<select id="item-priority" name="priority"><option value="low">Low</option><option value="normal" selected>Normal</option><option value="high">High</option></select></label><label>Due date<input id="item-date" name="dueDate" type="date"></label></div><p id="form-error" class="form-error" role="alert"></p><div class="dialog-actions"><button id="cancel-dialog" type="button" class="button secondary">Cancel</button><button type="submit" id="save-item" class="button primary">Add task</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

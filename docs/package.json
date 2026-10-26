@@ -1,0 +1,17 @@
+{
+  "name": "chrome-todo-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An in-page Prompt API agent with WebMCP tools and IndexedDB persistence",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "playwright test"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "fake-indexeddb": "^6.2.4"
+  }
+}

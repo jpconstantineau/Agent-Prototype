@@ -1,0 +1,108 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { AgentLoop, modelAvailability, createModelSession, MODEL_OPTIONS } from '../src/agent.js';
+import { harness, scriptedSession, call, final } from './helpers.js';
+
+test('model → add → search → edit → complete → final using the IndexedDB store', async t => {
+  const { registry } = await harness(t);
+  const inputs = [], events = [];
+  let id;
+  const session = scriptedSession([
+    call('add_item', { title: 'Buy milk' }),
+    input => { id = JSON.parse(input).result.item.id; return call('search_items', { query: 'milk' }); },
+    input => { assert.equal(JSON.parse(input).result.items[0].id, id); return call('edit_item', { id, title: 'Buy oat milk' }); },
+    () => call('complete_item', { id }),
+    final('Added, updated, and completed Buy oat milk.'),
+  ], inputs);
+  const agent = new AgentLoop({ registry, session, onEvent: event => events.push(event) });
+  const result = await agent.run('Add milk, rename it to oat milk, then complete it.');
+  assert.equal(result.status, 'completed');
+  assert.equal(result.iterations, 5);
+  assert.equal(result.trace.filter(e => e.type === 'tool_result').length, 4);
+  assert.equal(events.length, result.trace.length);
+  assert.equal((await registry.execute('list_items', {})).items[0].completed, true);
+  assert.equal((await registry.execute('list_items', {})).items[0].title, 'Buy oat milk');
+  assert.ok(inputs.every(({ options }) => options.responseConstraint.anyOf));
+  assert.equal(JSON.parse(inputs[0].input).kind, 'user_request');
+});
+
+test('failed tools return observations to the model so it can recover', async t => {
+  const { registry } = await harness(t);
+  const session = scriptedSession([
+    call('edit_item', { id: 'not-real', title: 'Updated' }),
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.result.success, false);
+      assert.match(observation.result.error, /not found/);
+      return final('I could not find that task. Which one should I edit?');
+    },
+  ]);
+  const result = await new AgentLoop({ registry, session }).run('Edit that task');
+  assert.equal(result.status, 'completed');
+  assert.equal(result.trace.find(e => e.type === 'tool_result').result.success, false);
+});
+
+test('invalid JSON, unknown tools and malformed arguments never reach execution', async t => {
+  const { registry } = await harness(t);
+  const session = scriptedSession(['not json', call('delete_everything', {}), call('add_item', { title: '' }), final('Please provide a title.')]);
+  const result = await new AgentLoop({ registry, session }).run('Do something');
+  assert.equal(result.status, 'completed');
+  assert.equal(result.trace.filter(e => e.type === 'invalid_response').length, 3);
+  assert.equal((await registry.execute('list_items', {})).total, 0);
+});
+
+test('iteration limit terminates without another model call', async t => {
+  const { registry } = await harness(t);
+  const inputs = [];
+  const session = scriptedSession([call('list_items'), call('list_items')], inputs);
+  const result = await new AgentLoop({ registry, session, maxIterations: 2 }).run('Loop forever');
+  assert.equal(result.status, 'max_iterations');
+  assert.equal(result.iterations, 2);
+  assert.equal(inputs.length, 2);
+});
+
+test('cancellation after a model reply prevents the requested write', async t => {
+  const { registry } = await harness(t);
+  const controller = new AbortController();
+  const session = scriptedSession([() => { controller.abort(); return call('add_item', { title: 'Must not write' }); }]);
+  const result = await new AgentLoop({ registry, session }).run('Add a task', { signal: controller.signal });
+  assert.equal(result.status, 'cancelled');
+  assert.equal((await registry.execute('list_items', {})).total, 0);
+});
+
+test('concurrent runs are rejected; generation abort releases the busy flag', async t => {
+  const { registry } = await harness(t);
+  const controller = new AbortController();
+  const session = { prompt: (_, { signal }) => new Promise((resolve, reject) => signal.addEventListener('abort', () => reject(signal.reason), { once: true })) };
+  const agent = new AgentLoop({ registry, session });
+  const first = agent.run('List tasks', { signal: controller.signal });
+  await assert.rejects(agent.run('Second request'), /already in progress/);
+  controller.abort();
+  assert.equal((await first).status, 'cancelled');
+  assert.equal(agent.busy, false);
+});
+
+test('model errors terminate with explicit status and preserve earlier committed changes', async t => {
+  const { registry } = await harness(t);
+  const session = scriptedSession([call('add_item', { title: 'Saved before error' }), () => { throw new Error('GPU unavailable'); }]);
+  const result = await new AgentLoop({ registry, session }).run('Add a task');
+  assert.equal(result.status, 'model_error');
+  assert.match(result.text, /GPU unavailable/);
+  assert.equal((await registry.execute('list_items', {})).total, 1);
+});
+
+test('availability and creation share options; creation passes the system prompt and progress monitor', async t => {
+  const { registry } = await harness(t);
+  let availableOptions, createOptions, progress;
+  const api = {
+    availability: async options => { availableOptions = options; return 'downloadable'; },
+    create: async options => { createOptions = options; options.monitor({ addEventListener: (_, cb) => cb({ loaded: 0.5 }) }); return { prompt() {} }; },
+  };
+  assert.equal(await modelAvailability(api), 'downloadable');
+  await createModelSession(registry, { api, onProgress: value => { progress = value; } });
+  assert.deepEqual(availableOptions, MODEL_OPTIONS);
+  assert.deepEqual(createOptions.expectedInputs, availableOptions.expectedInputs);
+  assert.deepEqual(createOptions.expectedOutputs, availableOptions.expectedOutputs);
+  assert.match(createOptions.initialPrompts[0].content, /untrusted data/);
+  assert.equal(progress, 0.5);
+});
