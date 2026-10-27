@@ -6,7 +6,7 @@ const fields = {
   priority: { type: 'string', enum: ['low', 'normal', 'high'] },
   dueDate: { type: 'string', format: 'date', description: 'YYYY-MM-DD in the user’s local calendar, or empty to clear.' },
 };
-const id = { type: 'string', minLength: 1, maxLength: 100, description: 'Exact item ID obtained from a list/search result. Never invent IDs.' };
+const id = { type: 'integer', minimum: 1, maximum: Number.MAX_SAFE_INTEGER, description: 'Short numeric task ID returned by add_item, list_items, or search_items (for example, 3). Copy the id as a JSON number, not a quoted string or list position. Never invent IDs.' };
 const pagination = {
   status: { type: 'string', enum: ['all', 'open', 'completed'], description: 'Defaults to all.' },
   limit: { type: 'integer', minimum: 1, maximum: 50, description: 'Page size. Defaults to 25.' },
@@ -16,12 +16,12 @@ const pagination = {
 export class ToolRegistry {
   constructor(store) {
     this.tools = [
-      { name: 'add_item', description: 'Add one new to-do item. Returns the saved item and its ID.', inputSchema: object(fields, ['title']), execute: (args, signal) => store.add(args, signal) },
+      { name: 'add_item', description: 'Add one new to-do item. Returns the saved item with a short numeric id, which can be passed directly to edit_item or complete_item.', inputSchema: object(fields, ['title']), execute: (args, signal) => store.add(args, signal) },
       { name: 'edit_item', description: 'Edit a known item. Supply its exact ID and only the fields to change. Search first if its ID is unknown. Omitted fields are preserved.', inputSchema: object({ id, ...fields }, ['id']), execute: ({ id, ...patch }, signal) => {
         if (!Object.keys(patch).length) throw new Error('Supply at least one field to edit.');
         return store.update(id, patch, signal);
       } },
-      { name: 'complete_item', description: 'Complete a known item, or reopen it with completed=false. Search first to get its ID. Defaults to completed=true.', inputSchema: object({ id, completed: { type: 'boolean' } }, ['id']), execute: ({ id, completed = true }, signal) => store.update(id, { completed }, signal) },
+      { name: 'complete_item', description: 'Complete a known item, or reopen it with completed=false. Use the numeric id returned by add, list, or search. Search first only if its ID is unknown. Defaults to completed=true.', inputSchema: object({ id, completed: { type: 'boolean' } }, ['id']), execute: ({ id, completed = true }, signal) => store.update(id, { completed }, signal) },
       { name: 'list_items', description: 'List items with optional status and pagination. Results are capped to a 12000-character budget; follow nextOffset until null to see all items. Returns exact IDs and complete item fields.', inputSchema: object(pagination), readOnly: true, execute: async (args, signal) => capPage(await store.list(args, signal)) },
       { name: 'search_items', description: 'Case-insensitive literal substring search across titles and notes. Optional status and pagination. Results are capped to a 12000-character budget; follow nextOffset until null for all matches.', inputSchema: object({ query: { type: 'string', minLength: 1, maxLength: 200 }, ...pagination }, ['query']), readOnly: true, execute: async (args, signal) => capPage(await store.list(args, signal)) },
     ];

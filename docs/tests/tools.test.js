@@ -9,6 +9,7 @@ test('add, edit, complete, reopen and persist after closing the database', async
   assert.equal(added.success, true);
   assert.equal(added.item.title, 'Buy coffee');
   const id = added.item.id;
+  assert.equal(id, 1);
   let result = await registry.execute('edit_item', { id, title: 'Buy decaf', dueDate: '' });
   assert.equal(result.item.notes, 'Whole beans');
   assert.equal(result.item.priority, 'high');
@@ -54,13 +55,13 @@ test('the execution boundary rejects malformed inputs and unknown tools without 
     ['add_item', { title: 'x', notes: 'y'.repeat(2001) }], ['add_item', null],
     ['list_items', { limit: 0 }], ['list_items', { limit: 51 }], ['list_items', { offset: -1 }],
     ['list_items', { limit: 1.5 }], ['list_items', { status: 'anything' }],
-    ['complete_item', { id: 'missing', completed: 'yes' }], ['edit_item', { id: 'missing' }],
+    ['complete_item', { id: 1, completed: 'yes' }], ['edit_item', { id: 1 }],
     ['search_items', { query: '' }], ['delete_item', {}],
     ['toString', {}], ['add_item', JSON.parse('{"title":"x","__proto__":{}}')],
   ];
   for (const [name, args] of bad) assert.equal((await registry.execute(name, args)).success, false, `${name} ${JSON.stringify(args)}`);
   assert.equal((await registry.execute('list_items', {})).total, 0);
-  assert.equal((await registry.execute('edit_item', { id: 'missing', title: 'New' })).success, false);
+  assert.equal((await registry.execute('edit_item', { id: 999, title: 'New' })).success, false);
 });
 
 test('atomic concurrent edits preserve independent fields', async t => {
@@ -75,6 +76,21 @@ test('atomic concurrent edits preserve independent fields', async t => {
   assert.equal(items[0].notes, 'Bring passport');
   assert.equal(items[0].completed, true);
   assert.equal(items[0].priority, 'high');
+});
+
+test('edit and complete require an exact positive numeric ID, never a UUID, string, or guessed alias', async t => {
+  const { registry } = await harness(t);
+  await registry.execute('add_item', { title: 'Keep unchanged' });
+  for (const id of [0, -1, 1.5, '1', '01', crypto.randomUUID(), null, true, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1]) {
+    assert.equal((await registry.execute('complete_item', { id })).success, false);
+    assert.equal((await registry.execute('edit_item', { id, title: 'Wrong task' })).success, false);
+  }
+  const missing = await registry.execute('complete_item', { id: 999 });
+  assert.equal(missing.success, false);
+  assert.match(missing.error, /not found/);
+  const { items } = await registry.execute('list_items', {});
+  assert.equal(items[0].title, 'Keep unchanged');
+  assert.equal(items[0].completed, false);
 });
 
 test('pre-aborted tools never write', async t => {

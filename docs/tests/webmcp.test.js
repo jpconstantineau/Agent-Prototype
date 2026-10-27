@@ -21,6 +21,13 @@ test('registers five validated tools and dispatches native discovery/execution',
   const result = await connection.executor.execute('add_item', { title: 'Native tool call' });
   assert.equal(result.success, true);
   assert.equal(nativeCalls, 1);
+  assert.equal(result.item.id, 1);
+  assert.equal(tools.get('complete_item').inputSchema.properties.id.type, 'integer');
+  const listed = await connection.executor.execute('list_items', {});
+  const completed = await connection.executor.execute('complete_item', { id: listed.items[0].id });
+  assert.equal(completed.item.id, 1);
+  assert.equal(completed.item.completed, true);
+  assert.equal(nativeCalls, 3);
   assert.equal(JSON.parse(await tools.get('add_item').execute({ title: '' })).success, false);
   assert.equal((await registry.execute('list_items', {})).total, 1);
   connection.dispose();

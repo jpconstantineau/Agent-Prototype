@@ -14,11 +14,24 @@ export class TodoStore extends EventTarget {
 
   static open(name = 'chrome-todo-agent', options) {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open(name, 1);
+      const request = indexedDB.open(name, 2);
       let blocked = false;
-      request.onupgradeneeded = () => {
-        const store = request.result.createObjectStore('items', { keyPath: 'id' });
-        store.createIndex('createdAt', 'createdAt');
+      request.onupgradeneeded = event => {
+        const createItems = () => {
+          const store = request.result.createObjectStore('items', { keyPath: 'id', autoIncrement: true });
+          store.createIndex('createdAt', 'createdAt');
+          return store;
+        };
+        if (event.oldVersion === 0) { createItems(); return; }
+        // Re-key v1 UUID records inside the upgrade transaction. If any read or
+        // write fails, IndexedDB rolls back both the records and schema to v1.
+        const read = request.transaction.objectStore('items').getAll();
+        read.onsuccess = () => {
+          const items = read.result.sort((a, b) => a.createdAt.localeCompare(b.createdAt) || a.id.localeCompare(b.id));
+          request.result.deleteObjectStore('items');
+          const store = createItems();
+          for (const { id: legacyId, ...item } of items) store.add(item);
+        };
       };
       request.onsuccess = () => { if (blocked) request.result.close(); else resolve(new TodoStore(request.result, options)); };
       request.onerror = () => reject(request.error);
@@ -63,15 +76,23 @@ export class TodoStore extends EventTarget {
     const needle = query.trim().toLocaleLowerCase();
     const filtered = all.filter(item => (status === 'all' || item.completed === (status === 'completed')) &&
       (!needle || `${item.title}\n${item.notes}`.toLocaleLowerCase().includes(needle)))
-      .sort((a, b) => b.createdAt.localeCompare(a.createdAt) || a.id.localeCompare(b.id));
+      .sort((a, b) => b.createdAt.localeCompare(a.createdAt) || a.id - b.id);
     const items = filtered.slice(offset, offset + limit);
     return { items, total: filtered.length, offset, nextOffset: offset + items.length < filtered.length ? offset + items.length : null };
   }
 
   add({ title, notes = '', priority = 'normal', dueDate = '' }, signal) {
     const now = new Date().toISOString();
-    const item = { id: crypto.randomUUID(), title: title.trim(), notes: notes.trim(), priority, dueDate, completed: false, createdAt: now, updatedAt: now, completedAt: null };
-    return this.transaction('readwrite', (store, done) => { store.add(item); done({ item }); }, signal);
+    const item = { title: title.trim(), notes: notes.trim(), priority, dueDate, completed: false, createdAt: now, updatedAt: now, completedAt: null };
+    // IndexedDB owns the counter, so concurrent tabs cannot allocate the same
+    // ID. Only return its generated key after the transaction has committed.
+    return this.transaction('readwrite', (store, done, fail) => {
+      const request = store.add(item);
+      request.onsuccess = () => {
+        if (!Number.isSafeInteger(request.result)) { fail(new Error('Task ID limit reached.')); return; }
+        done({ item: { id: request.result, ...item } });
+      };
+    }, signal);
   }
 
   update(id, patch, signal) {

@@ -63,7 +63,11 @@ test('chat performs multiple tool steps through WebMCP and updates the visible l
             const tool = (name, args) => JSON.stringify({ type: 'tool_call', name, arguments: args });
             step++;
             if (step === 1) return tool('add_item', { title: 'Review the browser prototype', notes: 'Check the agent loop and tools.', priority: 'high' });
-            if (step === 2) { id = observation.result.item.id; return tool('search_items', { query: 'prototype' }); }
+            if (step === 2) {
+              id = observation.result.item.id;
+              if (id !== 1) throw new Error('Expected a short numeric task ID');
+              return tool('search_items', { query: 'prototype' });
+            }
             if (step === 3) {
               if (observation.result.items[0].id !== id) throw new Error('Wrong search result');
               return tool('edit_item', { id, title: 'Review the Chrome prototype' });
@@ -255,4 +259,65 @@ test('native WebMCP registers tools on the installed Chrome when enabled', async
     expect(JSON.parse(outcome).success).toBe(true);
     await expect(page.locator('.task-title')).toHaveText('Created through native WebMCP');
   }
+});
+
+test('existing UUID tasks migrate in Chrome and the assistant completes a listed numeric ID', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'LanguageModel', { configurable: true, value: {
+    availability: async () => 'available',
+    create: async () => {
+      let step = 0;
+      return {
+        destroy() {},
+        async prompt(input) {
+          step++;
+          if (step === 1) return JSON.stringify({ type: 'tool_call', name: 'list_items', arguments: {} });
+          if (step === 2) {
+            const item = JSON.parse(input).result.items.find(item => item.title === 'Legacy open task');
+            if (item.id !== 2) throw new Error('The migrated ID must be the number 2');
+            return JSON.stringify({ type: 'tool_call', name: 'complete_item', arguments: { id: item.id } });
+          }
+          if (!JSON.parse(input).result.item.completed) throw new Error('Completion was not saved');
+          return JSON.stringify({ type: 'final', message: 'Completed the legacy open task.' });
+        },
+      };
+    },
+  } }));
+  // Seed the previous schema before allowing the application module to open it.
+  await page.route('**/src/app.js', route => route.fulfill({ contentType: 'text/javascript', body: '' }));
+  await page.goto('./');
+  const stamp = '2026-10-26T12:00:00.000Z';
+  const legacy = [
+    { id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', title: 'Legacy completed task', notes: 'Preserve notes and dates', priority: 'high', dueDate: '2027-01-15', completed: true, createdAt: stamp, updatedAt: stamp, completedAt: stamp },
+    { id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', title: 'Legacy open task', notes: '', priority: 'normal', dueDate: '', completed: false, createdAt: stamp, updatedAt: stamp, completedAt: null },
+  ];
+  await page.evaluate(items => new Promise((resolve, reject) => {
+    const request = indexedDB.open('chrome-todo-agent', 1);
+    request.onupgradeneeded = () => {
+      const store = request.result.createObjectStore('items', { keyPath: 'id' });
+      store.createIndex('createdAt', 'createdAt');
+      items.forEach(item => store.add(item));
+    };
+    request.onsuccess = () => { request.result.close(); resolve(); };
+    request.onerror = () => reject(request.error);
+  }), legacy);
+  await page.unroute('**/src/app.js');
+  await page.reload();
+  await expect(page.locator('.task-row')).toHaveCount(2);
+  const migrated = await page.evaluate(async () => {
+    const { TodoStore } = await import('./src/store.js');
+    const store = await TodoStore.open();
+    try { return { version: store.db.version, items: (await store.list()).items }; }
+    finally { store.close(); }
+  });
+  expect(migrated).toEqual({ version: 2, items: legacy.map((item, i) => ({ ...item, id: i + 1 })) });
+  await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Message the assistant' }).fill('Complete the legacy open task.');
+  await page.getByRole('button', { name: 'Send message', exact: true }).click();
+  await expect(page.locator('.assistant-message')).toContainText('Completed the legacy open task.');
+  await expect(page.getByRole('checkbox', { name: 'Reopen Legacy open task', exact: true })).toBeChecked();
+  await addTask(page, 'First task after migration');
+  await expect(page.locator('.task-row[data-id="3"] .task-title')).toHaveText('First task after migration');
+  await page.reload();
+  await expect(page.locator('.task-row[data-id="2"] .task-check')).toBeChecked();
+  await expect(page.locator('.task-row[data-id="3"] .task-title')).toHaveText('First task after migration');
 });

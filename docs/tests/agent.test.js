@@ -9,7 +9,7 @@ test('model → add → search → edit → complete → final using the Indexed
   let id;
   const session = scriptedSession([
     call('add_item', { title: 'Buy milk' }),
-    input => { id = JSON.parse(input).result.item.id; return call('search_items', { query: 'milk' }); },
+    input => { id = JSON.parse(input).result.item.id; assert.equal(id, 1); return call('search_items', { query: 'milk' }); },
     input => { assert.equal(JSON.parse(input).result.items[0].id, id); return call('edit_item', { id, title: 'Buy oat milk' }); },
     () => call('complete_item', { id }),
     final('Added, updated, and completed Buy oat milk.'),
@@ -29,7 +29,7 @@ test('model → add → search → edit → complete → final using the Indexed
 test('failed tools return observations to the model so it can recover', async t => {
   const { registry } = await harness(t);
   const session = scriptedSession([
-    call('edit_item', { id: 'not-real', title: 'Updated' }),
+    call('edit_item', { id: 999, title: 'Updated' }),
     input => {
       const observation = JSON.parse(input);
       assert.equal(observation.result.success, false);
@@ -40,6 +40,31 @@ test('failed tools return observations to the model so it can recover', async t 
   const result = await new AgentLoop({ registry, session }).run('Edit that task');
   assert.equal(result.status, 'completed');
   assert.equal(result.trace.find(e => e.type === 'tool_result').result.success, false);
+});
+
+test('add result can feed complete directly, and list result can feed edit in the next call', async t => {
+  const { registry } = await harness(t);
+  const session = scriptedSession([
+    call('add_item', { title: 'Review numeric IDs' }),
+    input => {
+      const { item } = JSON.parse(input).result;
+      assert.equal(item.id, 1);
+      return call('complete_item', { id: item.id });
+    },
+    input => { assert.equal(JSON.parse(input).result.item.completed, true); return call('list_items'); },
+    input => {
+      const { items } = JSON.parse(input).result;
+      assert.equal(items[0].id, 1);
+      return call('edit_item', { id: items[0].id, notes: 'Passed between tool calls' });
+    },
+    final('Completed the task and added the note.'),
+  ]);
+  const result = await new AgentLoop({ registry, session }).run('Add Review numeric IDs, complete it, then add a note.');
+  assert.equal(result.status, 'completed');
+  assert.deepEqual(result.trace.filter(e => e.type === 'tool_start').map(e => e.name), ['add_item', 'complete_item', 'list_items', 'edit_item']);
+  const { items } = await registry.execute('list_items', {});
+  assert.equal(items[0].completed, true);
+  assert.equal(items[0].notes, 'Passed between tool calls');
 });
 
 test('invalid JSON, unknown tools and malformed arguments never reach execution', async t => {
