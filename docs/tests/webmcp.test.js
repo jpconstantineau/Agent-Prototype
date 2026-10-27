@@ -16,6 +16,10 @@ test('registers five validated tools and dispatches native discovery/execution',
   const connection = await registerWebMCP(registry, { context });
   assert.equal(connection.mode, 'webmcp');
   assert.equal(tools.size, 5);
+  for (const definition of registry.definitions()) {
+    assert.equal(tools.get(definition.name).description, definition.description);
+    assert.deepEqual(tools.get(definition.name).inputSchema, definition.inputSchema);
+  }
   assert.equal(tools.get('list_items').annotations.readOnlyHint, true);
   assert.equal(tools.get('add_item').annotations.untrustedContentHint, true);
   const result = await connection.executor.execute('add_item', { title: 'Native tool call' });

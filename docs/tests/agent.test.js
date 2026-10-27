@@ -129,5 +129,60 @@ test('availability and creation share options; creation passes the system prompt
   assert.deepEqual(createOptions.expectedInputs, availableOptions.expectedInputs);
   assert.deepEqual(createOptions.expectedOutputs, availableOptions.expectedOutputs);
   assert.match(createOptions.initialPrompts[0].content, /untrusted data/);
+  assert.ok(createOptions.initialPrompts[0].content.includes(JSON.stringify(registry.definitions())));
   assert.equal(progress, 0.5);
+});
+
+test('tool choice descriptions reach constrained responses and original intent survives a lookup', async t => {
+  const { registry } = await harness(t);
+  const { item } = await registry.execute('add_item', { title: 'Buy milk' });
+  const request = 'I finished buying milk. Mark it done.';
+  const session = scriptedSession([
+    (_, options) => {
+      for (const tool of registry.definitions()) {
+        const choice = options.responseConstraint.anyOf.find(branch => branch.properties.name?.const === tool.name);
+        assert.equal(choice.description, tool.description);
+      }
+      return call('search_items', { query: 'milk', status: 'open' });
+    },
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.request, request);
+      assert.match(observation.instruction, /complete_item/);
+      assert.match(observation.instruction, /untrusted data/);
+      return call('complete_item', { id: observation.result.items[0].id, completed: true });
+    },
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.request, request);
+      assert.equal(observation.result.item.id, item.id);
+      assert.equal(observation.result.item.completed, true);
+      assert.match(observation.instruction, /completion status was saved/);
+      return final('Marked Buy milk done.');
+    },
+  ]);
+  const result = await new AgentLoop({ registry, session }).run(request);
+  assert.equal(result.status, 'completed');
+  assert.deepEqual(result.trace.filter(e => e.type === 'tool_start').map(e => e.name), ['search_items', 'complete_item']);
+});
+
+test('a completed-list question carries read-only guidance and does not change tasks', async t => {
+  const { registry } = await harness(t);
+  const { item } = await registry.execute('add_item', { title: 'Already done' });
+  await registry.execute('complete_item', { id: item.id });
+  await registry.execute('add_item', { title: 'Still open' });
+  const before = await registry.execute('list_items', {});
+  const session = scriptedSession([
+    call('list_items', { status: 'completed' }),
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.request, 'What have I completed?');
+      assert.match(observation.instruction, /do not change tasks/);
+      assert.deepEqual(observation.result.items.map(item => item.title), ['Already done']);
+      return final('Already done is completed.');
+    },
+  ]);
+  const result = await new AgentLoop({ registry, session }).run('What have I completed?');
+  assert.equal(result.status, 'completed');
+  assert.deepEqual(await registry.execute('list_items', {}), before);
 });

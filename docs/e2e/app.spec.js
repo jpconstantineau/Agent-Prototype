@@ -321,3 +321,62 @@ test('existing UUID tasks migrate in Chrome and the assistant completes a listed
   await expect(page.locator('.task-row[data-id="2"] .task-check')).toBeChecked();
   await expect(page.locator('.task-row[data-id="3"] .task-title')).toHaveText('First task after migration');
 });
+
+test('bare task text, list questions, and completion commands work across chat turns', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'LanguageModel', { configurable: true, value: {
+    availability: async () => 'available',
+    create: async options => {
+      window.testSystemPrompt = options.initialPrompts[0].content;
+      let step = 0;
+      return {
+        destroy() {},
+        async prompt(input, options) {
+          const observation = JSON.parse(input);
+          const tool = (name, args) => JSON.stringify({ type: 'tool_call', name, arguments: args });
+          const final = message => JSON.stringify({ type: 'final', message });
+          step++;
+          if (step === 1) {
+            if (observation.request !== 'Review the quarterly report') throw new Error('Wrong bare prompt');
+            return tool('add_item', { title: observation.request });
+          }
+          if (step === 2) return final('Added Review the quarterly report.');
+          if (step === 3) {
+            const choice = options.responseConstraint.anyOf.find(branch => branch.properties.name?.const === 'list_items');
+            if (!choice.description.includes('what is left?')) throw new Error('Missing list selection guidance');
+            return tool('list_items', { status: 'open' });
+          }
+          if (step === 4) {
+            if (observation.request !== 'What is left?') throw new Error('Lost list intent');
+            return final(`Still to do: ${observation.result.items[0].title}.`);
+          }
+          if (step === 5) return tool('search_items', { query: 'quarterly report', status: 'open' });
+          if (step === 6) {
+            if (observation.request !== 'I finished the quarterly report. Mark it done.') throw new Error('Lost completion intent');
+            if (!observation.instruction.includes('complete_item')) throw new Error('Missing lookup continuation hint');
+            return tool('complete_item', { id: observation.result.items[0].id, completed: true });
+          }
+          if (step === 7 && observation.result.item.completed) return final('Marked Review the quarterly report done.');
+          throw new Error('Unexpected tool flow');
+        },
+      };
+    },
+  } }));
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
+  expect(await page.evaluate(() => window.testSystemPrompt)).toContain('Treat a user\'s bare prompt as a request to add a task');
+  const input = page.getByRole('textbox', { name: 'Message the assistant' });
+  await input.fill('Review the quarterly report');
+  await page.getByRole('button', { name: 'Send message', exact: true }).click();
+  await expect(page.locator('.task-title')).toHaveText('Review the quarterly report');
+  await expect(page.locator('.assistant-message').last()).toHaveText('DAYLISTAdded Review the quarterly report.');
+  await input.fill('What is left?');
+  await page.getByRole('button', { name: 'Send message', exact: true }).click();
+  await expect(page.locator('.assistant-message').last()).toContainText('Still to do: Review the quarterly report.');
+  await expect(page.locator('.task-check')).not.toBeChecked();
+  await input.fill('I finished the quarterly report. Mark it done.');
+  await page.getByRole('button', { name: 'Send message', exact: true }).click();
+  await expect(page.locator('.assistant-message').last()).toContainText('Marked Review the quarterly report done.');
+  await expect(page.locator('.task-check')).toBeChecked();
+  await expect(page.locator('.task-row')).toHaveCount(1);
+  await expect(page.locator('.tool-trace')).toHaveCount(4);
+});

@@ -21,11 +21,16 @@ The task list has one set of filters with collection counts and a search field. 
 
 Try:
 
+- “Buy milk tomorrow.” — bare task text is added as a task, preserving its wording.
 - “Add a high-priority task to review the prototype.”
 - “Find tasks about groceries.”
 - “Rename the prototype task to Review the Chrome prototype.”
 - “Complete the prototype review.”
 - “List all open tasks.”
+
+Bare prompts default to creating a task, without an extra confirmation. Explicit list, search, edit, complete, reopen, and help requests take precedence; ambiguous references to existing tasks still require clarification. Bare text longer than the 200-character title limit requires a shorter title rather than silent truncation.
+
+Tool descriptions in `src/tool-guidance.js` explain when to choose each tool, give concrete argument examples, and distinguish read requests (“What have I completed?” → `list_items`) from mutations (“Mark it done” → `complete_item`). The same descriptions reach the system prompt, constrained response schema, and WebMCP registration. Tool-result prompts retain the original user request and a per-tool continuation hint, so a lookup for a completion request leads to the status change rather than ending at the search result. These are model instructions, not a hard-coded natural-language router; scripted tests verify plumbing and task effects, not real-model intent accuracy.
 
 ## Browser setup
 
