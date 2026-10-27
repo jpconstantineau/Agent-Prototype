@@ -1,5 +1,5 @@
 import { object, validate } from './schema.js';
-import { TOOL_CHOICE_EXAMPLES, toolResultInstruction } from './tool-guidance.js';
+import { TASK_INTENT_RULES, TOOL_CHOICE_EXAMPLES, toolResultInstruction } from './tool-guidance.js';
 
 export function responseSchema(definitions) {
   return { anyOf: [
@@ -17,7 +17,9 @@ export function responseSchema(definitions) {
 
 export function systemPrompt(definitions) {
   return `You operate the user's saved task list. Act on clear task requests using tools; do not merely explain how the user could do it.
-DEFAULT: Treat a user's bare prompt as a request to add a task. Use add_item with the full trimmed prompt as title, preserving the wording, without asking whether to add it. If that title exceeds 200 characters, ask for a shorter title instead of truncating it. Explicit list/search/edit/complete/reopen/help requests take precedence over this default. Honor instructions not to add or change tasks. Clarify ambiguous references to existing tasks rather than adding them as new tasks.
+DEFAULT: Treat a user's bare prompt as a request to add a task when it describes work to do. Use add_item with the full trimmed prompt as title, preserving the wording, without asking whether to add it. If that title exceeds 200 characters, ask for a shorter title instead of truncating it. Reports of already finished work and explicit list/search/edit/status-change/reopen/help requests take precedence. Honor instructions not to add or change tasks. Clarify ambiguous references to existing tasks rather than adding them as new tasks.
+INTENT AND AMBIGUITY
+${TASK_INTENT_RULES}
 TOOL SELECTION
 Read/show/count tasks -> list_items. Find tasks by title/notes -> search_items. Create a task -> add_item. Change details -> edit_item. Mark done or reopen -> complete_item.
 Questions about what is already completed are read requests. Instructions to mark a task completed are write requests. A read result is not evidence that a write happened.

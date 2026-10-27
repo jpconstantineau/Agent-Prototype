@@ -186,3 +186,62 @@ test('a completed-list question carries read-only guidance and does not change t
   assert.equal(result.status, 'completed');
   assert.deepEqual(await registry.execute('list_items', {}), before);
 });
+
+test('ambiguous completion inspects every result page and waits for a choice before writing', async t => {
+  const { registry } = await harness(t);
+  const read = (await registry.execute('add_item', { title: 'Read book' })).item;
+  const write = (await registry.execute('add_item', { title: 'Write book' })).item;
+  const before = await registry.execute('list_items', {});
+  let candidates = [];
+  const session = scriptedSession([
+    call('search_items', { query: 'book', status: 'open', limit: 1 }),
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.request, 'book is done');
+      assert.match(observation.instruction, /1 of 2 matches/);
+      assert.match(observation.instruction, /More matches remain/);
+      candidates.push(...observation.result.items);
+      return call('search_items', { query: 'book', status: 'open', limit: 1, offset: observation.result.nextOffset });
+    },
+    input => {
+      const observation = JSON.parse(input);
+      candidates.push(...observation.result.items);
+      assert.equal(observation.result.nextOffset, null);
+      assert.match(observation.instruction, /ask which one and wait/);
+      return final(`Which task is done: ${candidates.map(item => `${item.title} (${item.id})`).join(' or ')}?`);
+    },
+    () => call('complete_item', { id: candidates.find(item => item.title === 'Write book').id, completed: true }),
+    final('Marked Write book done.'),
+  ]);
+  const agent = new AgentLoop({ registry, session });
+  const question = await agent.run('book is done');
+  assert.equal(question.status, 'completed');
+  assert.match(question.text, /Read book/);
+  assert.match(question.text, /Write book/);
+  assert.deepEqual(question.trace.filter(event => event.type === 'tool_start').map(event => event.name), ['search_items', 'search_items']);
+  assert.deepEqual(await registry.execute('list_items', {}), before);
+  const selected = await agent.run('Write book');
+  assert.equal(selected.status, 'completed');
+  assert.deepEqual(selected.trace.filter(event => event.type === 'tool_start').map(event => event.name), ['complete_item']);
+  const after = await registry.execute('list_items', {});
+  assert.equal(after.total, 2);
+  assert.equal(after.items.find(item => item.id === read.id).completed, false);
+  assert.equal(after.items.find(item => item.id === write.id).completed, true);
+});
+
+test('a completion report with no matching task can clarify without creating a replacement', async t => {
+  const { registry } = await harness(t);
+  const session = scriptedSession([
+    call('search_items', { query: 'book', status: 'open' }),
+    input => {
+      const observation = JSON.parse(input);
+      assert.equal(observation.result.total, 0);
+      assert.match(observation.instruction, /Never invent an id or create a replacement task/);
+      return final('I could not find a matching book task. Which task did you mean?');
+    },
+  ]);
+  const result = await new AgentLoop({ registry, session }).run('completed book');
+  assert.equal(result.status, 'completed');
+  assert.equal((await registry.execute('list_items', {})).total, 0);
+  assert.deepEqual(result.trace.filter(event => event.type === 'tool_start').map(event => event.name), ['search_items']);
+});

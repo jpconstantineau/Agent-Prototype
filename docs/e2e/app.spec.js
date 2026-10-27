@@ -380,3 +380,54 @@ test('bare task text, list questions, and completion commands work across chat t
   await expect(page.locator('.task-row')).toHaveCount(1);
   await expect(page.locator('.tool-trace')).toHaveCount(4);
 });
+
+test('finish book adds a task and an ambiguous done report waits for a selection', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'LanguageModel', { configurable: true, value: {
+    availability: async () => 'available',
+    create: async options => {
+      window.testIntentPrompt = options.initialPrompts[0].content;
+      let step = 0, selectedId;
+      return {
+        destroy() {},
+        async prompt(input) {
+          const observation = JSON.parse(input);
+          const tool = (name, args) => JSON.stringify({ type: 'tool_call', name, arguments: args });
+          const final = message => JSON.stringify({ type: 'final', message });
+          step++;
+          if (step === 1) return tool('add_item', { title: observation.request });
+          if (step === 2) return final('Added finish book.');
+          if (step === 3) return tool('search_items', { query: 'book', status: 'open' });
+          if (step === 4) {
+            if (observation.result.total !== 2 || !observation.instruction.includes('ask which one and wait')) throw new Error('Missing ambiguity guidance');
+            selectedId = observation.result.items.find(item => item.title === 'finish book').id;
+            return final('Which task is done: finish book or Read book?');
+          }
+          if (step === 5) return tool('complete_item', { id: selectedId, completed: true });
+          if (step === 6 && observation.result.item.completed) return final('Marked finish book done.');
+          throw new Error('Unexpected completion flow');
+        },
+      };
+    },
+  } }));
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
+  expect(await page.evaluate(() => window.testIntentPrompt)).toContain('Tense is a clue, not a keyword-only rule');
+  const input = page.getByRole('textbox', { name: 'Message the assistant' });
+  const send = page.getByRole('button', { name: 'Send message', exact: true });
+  await input.fill('finish book');
+  await send.click();
+  await expect(page.locator('.assistant-message').last()).toContainText('Added finish book.');
+  await expect(page.locator('.task-title')).toHaveText('finish book');
+  await expect(page.locator('.task-check')).not.toBeChecked();
+  await addTask(page, 'Read book');
+  await input.fill('book is done');
+  await send.click();
+  await expect(page.locator('.assistant-message').last()).toContainText('Which task is done: finish book or Read book?');
+  await expect(page.locator('.task-check:checked')).toHaveCount(0);
+  await input.fill('finish book');
+  await send.click();
+  await expect(page.locator('.assistant-message').last()).toContainText('Marked finish book done.');
+  await expect(page.getByRole('checkbox', { name: 'Reopen finish book', exact: true })).toBeChecked();
+  await expect(page.getByRole('checkbox', { name: 'Complete Read book', exact: true })).not.toBeChecked();
+  await expect(page.locator('.task-row')).toHaveCount(2);
+});
