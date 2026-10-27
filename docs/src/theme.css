@@ -1,9 +1,11 @@
 :root {
   color-scheme: light;
-  --canvas: #f7f8f4;
-  --ink: #3c4935;
-  --forest: #344f3b;
-  --lime: #d7edab;
-  --muted: #88937d;
-  --line: #e3e7db;
+  --canvas: #f5f5f0;
+  --surface: #ffffff;
+  --ink: #243c30;
+  --forest: #284637;
+  --muted: #657168;
+  --line: #dde2d9;
+  --tint: #eaf0e5;
+  --danger: #9b442d;
 }

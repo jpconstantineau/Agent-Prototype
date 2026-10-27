@@ -17,6 +17,8 @@ In repository **Settings → Pages**, select **Deploy from a branch**, **main**,
 
 Use **New task** to start immediately, or **Enable local AI** to start the model. The first model download can take several minutes; progress appears in the panel. Enter sends a chat request; Shift+Enter inserts a newline. **Stop** cancels the current run. Expand each tool activity card to inspect its arguments and actual result.
 
+The task list has one set of filters with collection counts and a search field. Creating a task returns to All tasks and clears search so the new item is visible. The optional **Assistant** panel starts closed on mobile; unsupported browsers show a compact setup explanation. See [the interface rationale](DESIGN.md) for the review and purpose of each page element.
+
 Try:
 
 - “Add a high-priority task to review the prototype.”

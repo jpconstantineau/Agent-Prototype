@@ -13,7 +13,7 @@ test('manual add, edit, complete, reopen, search, reload and safe text rendering
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('./');
-  await expect(page.locator('.empty h3')).toContainText('fresh start');
+  await expect(page.locator('.empty h3')).toHaveText('Start with one task');
   await addTask(page, 'Plan the week', 'Make room for the important things.');
   await page.getByRole('button', { name: 'Edit Plan the week', exact: true }).click();
   await page.locator('#item-title').fill('Plan a calmer week');
@@ -98,6 +98,8 @@ test('missing browser APIs show an honest unavailable state and retain manual ta
   await page.goto('./');
   await expect(page.locator('#enable-ai')).toBeDisabled();
   await expect(page.locator('#ai-status')).toHaveText('Local AI unavailable');
+  await expect(page.locator('#chat-form')).not.toBeVisible();
+  await expect(page.locator('#messages')).not.toBeVisible();
   await page.getByText('Browser connection & setup', { exact: true }).click();
   await expect(page.locator('#webmcp-status')).toContainText('WebMCP unavailable');
   await addTask(page, 'Works without AI');
@@ -116,7 +118,96 @@ test('stop cancels pending generation and allows a clean new session', async ({ 
   await expect(page.locator('.assistant-message')).toContainText('Stopped.');
   await expect(page.locator('#enable-ai')).toBeVisible();
   await expect(page.locator('#enable-ai')).toBeEnabled();
+  await expect(page.locator('#chat-input')).toBeDisabled();
   await expect(page.locator('.task-row')).toHaveCount(0);
+});
+
+test('filters, search recovery, and new tasks keep the current list understandable', async ({ page }) => {
+  await page.goto('./');
+  await addTask(page, 'Prepare the project brief', 'Outline the scope and key decisions.');
+  await addTask(page, 'Send the meeting notes');
+  await page.getByRole('checkbox', { name: 'Complete Send the meeting notes', exact: true }).click();
+  await expect(page.getByRole('checkbox', { name: 'Reopen Send the meeting notes', exact: true })).toBeChecked();
+  await page.getByRole('button', { name: 'To do 1', exact: true }).click();
+  await expect(page.locator('.task-title')).toHaveText('Prepare the project brief');
+  await expect(page.locator('[data-filter="open"]')).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('searchbox').fill('missing');
+  await expect(page.locator('#search-summary')).toHaveText('0 matches for “missing” in to do');
+  await page.getByRole('button', { name: 'Clear search', exact: true }).click();
+  await expect(page.getByRole('searchbox')).toBeFocused();
+  await expect(page.locator('.task-title')).toHaveText('Prepare the project brief');
+  await expect(page.locator('#search-summary')).not.toBeVisible();
+  await page.getByRole('button', { name: 'Completed 1', exact: true }).click();
+  await page.getByRole('searchbox').fill('missing');
+  await addTask(page, 'A task created from a filtered view');
+  await expect(page.locator('[data-filter="all"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await expect(page.locator('#total-count')).toHaveText('3');
+  await expect(page.locator('.priority.normal')).toHaveCount(0);
+  await page.getByRole('checkbox', { name: 'Complete Prepare the project brief', exact: true }).click();
+  await expect(page.getByRole('checkbox', { name: 'Reopen Prepare the project brief', exact: true })).toBeChecked();
+  await page.getByRole('checkbox', { name: 'Complete A task created from a filtered view', exact: true }).click();
+  await expect(page.getByRole('checkbox', { name: 'Reopen A task created from a filtered view', exact: true })).toBeChecked();
+  await page.getByRole('button', { name: 'To do 0', exact: true }).click();
+  await expect(page.locator('.empty h3')).toHaveText('You’re all caught up');
+  await page.getByRole('button', { name: 'View all tasks', exact: true }).click();
+  await expect(page.locator('.task-row')).toHaveCount(3);
+});
+
+test('assistant examples, editor, and layout work across screen sizes', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'LanguageModel', { configurable: true, value: {
+    availability: async () => 'available',
+    create: async () => ({ destroy() {}, prompt: async () => JSON.stringify({ type: 'final', message: 'Your list is ready.' }) }),
+  } }));
+  await page.goto('./');
+  await expect(page.locator('#chat-input')).toBeDisabled();
+  await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
+  await expect(page.locator('#chat-input')).toBeFocused();
+  await page.getByRole('button', { name: 'Show my unfinished tasks', exact: true }).click();
+  await expect(page.locator('#chat-input')).toHaveValue('What tasks are still open?');
+  await page.locator('#chat-input').fill('');
+  await expect(page.getByRole('button', { name: 'Send message' })).toBeDisabled();
+  for (const [title, notes] of [
+    ['Send the project update', 'Share decisions and next steps with the team.'],
+    ['Review the first design draft', 'Check the task flow on desktop and mobile.'],
+    ['Plan the week', 'Make time for the important things.'],
+  ]) await addTask(page, title, notes);
+  await page.getByRole('checkbox', { name: 'Complete Send the project update', exact: true }).click();
+  await expect(page.getByRole('checkbox', { name: 'Reopen Send the project update', exact: true })).toBeChecked();
+  await page.getByRole('button', { name: 'Edit Review the first design draft' }).click();
+  await page.locator('#item-priority').selectOption('high');
+  await page.locator('#item-date').fill('2027-01-15');
+  await page.getByRole('button', { name: 'Save changes' }).click();
+  await expect(page.locator('.priority.high')).toHaveText('High priority');
+  await page.getByRole('button', { name: 'New task', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'New task' })).toBeVisible();
+  await page.screenshot({ path: '.tmp/daylist-editor.png', fullPage: true });
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('button', { name: 'New task', exact: true })).toBeFocused();
+  await page.reload();
+  await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
+  for (const width of [1440, 1024, 768, 390, 320]) {
+    await page.setViewportSize({ width, height: 960 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await expect(page.locator('#assistant-panel')).toBeVisible();
+    await page.screenshot({ path: `.tmp/daylist-${width}.png`, fullPage: true });
+  }
+  await page.getByText('Browser connection & setup', { exact: true }).click();
+  await expect(page.locator('#webmcp-status')).toBeVisible();
+  await page.getByRole('button', { name: 'Close assistant' }).click();
+  await expect(page.locator('#toggle-assistant')).toHaveAttribute('aria-expanded', 'false');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('storage failures never claim that tasks are saved', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'indexedDB', { configurable: true, value: {
+    open() { throw new Error('Storage disabled for this test'); },
+  } }));
+  await page.goto('./');
+  await expect(page.locator('#storage-status')).toHaveText('Task storage unavailable');
+  await expect(page.locator('.empty h3')).toHaveText('Task storage is unavailable');
+  await expect(page.getByRole('button', { name: 'New task', exact: true })).toBeDisabled();
+  await expect(page.locator('#task-list')).toHaveAttribute('aria-busy', 'false');
 });
 
 test('another tab sees committed writes through BroadcastChannel', async ({ page, context }) => {
@@ -134,10 +225,14 @@ test('mobile layout keeps the task editor and assistant usable without horizonta
   await page.goto('./');
   await addTask(page, 'A task on a small screen');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.getByRole('button', { name: '✦ Assistant', exact: true }).click();
   await expect(page.locator('#assistant-panel')).not.toBeVisible();
-  await page.getByRole('button', { name: '✦ Assistant', exact: true }).click();
+  await page.getByRole('button', { name: 'Assistant', exact: true }).click();
   await expect(page.locator('#assistant-panel')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Close assistant' })).toBeFocused();
+  await page.getByRole('button', { name: 'Close assistant' }).click();
+  await expect(page.locator('#assistant-panel')).not.toBeVisible();
+  await expect(page.getByRole('button', { name: 'Assistant', exact: true })).toBeFocused();
+  await page.screenshot({ path: '.tmp/daylist-mobile.png', fullPage: true });
 });
 
 test('native WebMCP registers tools on the installed Chrome when enabled', async ({ page }) => {
