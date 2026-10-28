@@ -6,7 +6,7 @@ Status: proposed. This document supplies common requirements to the adjacent fea
 
 At the inspected baseline, `docs/src/agent.js` derives tool branches from `definitions()`, parses one complete JSON response per model call, and invokes `execute(name, arguments, { signal })`. It retains a maximum of 12 inference calls per run. `app.js` owns one model session, composer state, event rendering, and Stop. `tools.js` owns five task tools and the WebMCP adapter. `store.js` persists tasks in IndexedDB. Chat/history currently disappear on reload.
 
-Preserve that architecture while introducing small ES modules for the selected capability. Proposed modules are implementation destinations, not files already present. Tool descriptions and their input schemas must have one source reused by the model prompt, constrained response schema, and execution validator. UI-only operations must never be falsely advertised as model tools.
+Preserve that architecture while introducing small ES modules for the selected capability. Proposed modules are implementation destinations, not files already present. Tool descriptions and their input schemas must have one source reused by the model prompt, constrained response schema, and execution validator. UI-only operations must never be falsely advertised as model tools. [Discovery](tool-discovery.md) distinguishes eligible definitions from the smaller admitted catalog actually supplied to each model step; do not always serialize the entire eligible registry.
 
 Compose a chat executor around `connection.executor || registry`, as defined in [the question spec](request-user-input.md). New chat-runtime tools execute locally. They do not get registered through the existing WebMCP task registry by default. Gate the existing five WebMCP registrations and all local dispatch through the same effective user policy; do not expose disabled task tools through another transport. Manual user task controls are separate from agent permissions.
 
@@ -72,7 +72,7 @@ Persist an outbox operation ID with a local mutation to permit retry without dup
 
 ## 4. Policy, lifecycle, and context
 
-Policy is checked before generation, immediately before dispatch, and at commit for sensitive mutations. Effective permissions are the intersection of user settings, thread restrictions, inherited parent restrictions, schedule grants, and runtime capabilities. A skill or loaded transcript cannot grant tools. Rebuilding a session may be necessary to remove stale instructions; hiding a tool in the UI alone is insufficient.
+Policy is checked before generation, immediately before dispatch, and at commit for sensitive mutations. Effective permissions intersect user settings, main/subagent role profiles, thread restrictions, parent restrictions, task/schedule grants, and runtime capabilities. Disabled removes eligibility; Include admits eligible definitions/skill bodies up front; Discover permits bounded on-demand admission/loading. Exposure is not authorization. A skill or transcript cannot grant tools. Rebuilding may be necessary to remove stale instructions; hiding a tool alone is insufficient.
 
 Only one model call may run per session at a time. Use `AbortController`, a session generation counter, and stable operation IDs so late callbacks cannot append to the wrong run. Check cancellation after every await and before any write or continuation. Stop releases pending questions, proposals, child work, and listeners; already committed operations stay saved. A recoverable read/validation failure becomes a tool result, while cancellation follows the run's distinct cancelled outcome.
 
@@ -88,6 +88,6 @@ Bound catalog descriptions, retrieval results, and tool observations before invo
 
 ## 5. UI, audit, and tests
 
-Use native labeled controls, keyboard focus, visible busy/error states, and plain-text rendering except inside isolated HTML artifacts. A tool result is shown after its actual commit/settlement. Human controls are never represented by fabricated model tool calls. Log state transitions and accepted actions, not every keystroke. Cap in-memory traces and paginate persistent history.
+Use native labeled controls, keyboard focus, and visible busy/error states. Render source as plain text unless a surface explicitly opts into the safe [Markdown renderer](markdown-rendering.md) or isolated HTML artifacts. These are different presentation boundaries; Markdown never executes scripts. A tool result is shown after its actual commit/settlement. Human controls are never represented by fabricated model calls. Log transitions and accepted actions, not every keystroke. Cap in-memory traces and paginate persistent history.
 
 All features need unit coverage at their lowest behavioral boundary and browser coverage for meaningful interactions. Tests use scripted sessions to prove plumbing; real local-model evaluations are separately labeled. New specifications do not imply running the unimplemented features now. From `docs/`, the current verification commands are `npm test` and `npm run test:browser` after installing existing dev dependencies. No production dependency or build framework is required.

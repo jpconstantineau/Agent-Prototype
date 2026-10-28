@@ -21,7 +21,7 @@ All inputs require `version: 1`, forbid unknown fields, and are scoped to the cu
 | Tool | Other input fields | Successful result |
 | --- | --- | --- |
 | `thread_list` | `cursor?`, `limit?` integer 1–20 default 10, `includeArchived?` boolean default false | `{success:true,version:1,items,nextCursor}`; items have `threadId`, title (1–120), updatedAt, archived, relation (`main`, `branch`, `subagent`). |
-| `thread_search` | Required `query` 1–200; optional cursor/limit 1–10 default 5 | Same page envelope; items have threadId, title, messageId, position, and snippet at most 400 characters. Literal case-insensitive substring search; no regex or vector service required. |
+| `thread_search` | Required query 1–200; optional cursor/limit 1–10 default 5, threadId, role (`user`, `assistant`, `any` default), since/until Instant, includeArchived boolean default false | Same page envelope; items have threadId, title, messageId, revision, position, textOffset, nextTextOffset, and snippet at most 400 characters. Literal case-insensitive substring search; no regex or vector service required. |
 | `thread_read` | Required `threadId`; optional `view` (`messages` default or `activity`), cursor, limit 1–20 default 10, `maxChars` 500–6000 default 3000 | `{success:true,version:1,threadId,items,nextCursor,truncated}`. Each item has recordId, position, kind, text, and optional runId. |
 
 ```json
@@ -31,6 +31,16 @@ All inputs require `version: 1`, forbid unknown fields, and are scoped to the cu
 History views exclude internal reasoning and sensitive browser/runtime state. Messages view contains accepted user/assistant text and proposal/summary references; activity adds bounded public tool arguments/results and lifecycle records. Search excludes deleted records and subagent internals unless explicitly selected by the user and permitted. Archived-thread search may require a user filter; it is not implicitly included by agent reads.
 
 `thread_read` budgets count serialized visible text. When one record exceeds the remaining page budget, return a bounded text slice with `textOffset` and `nextTextOffset` and an opaque cursor capable of continuing that slice. Never mark an incomplete page complete. `truncated` describes the current result, not deletion from storage. Return an empty page/null cursor only at the actual end. All reads check ownership again, not just when a thread was listed.
+
+## Targeted search of past history
+
+This extends history retrieval in response to the OpenCode grep review; it does not add arbitrary filesystem or attachment-content search. Apply optional thread, author-role, archive, and time filters before finding passages. since/until select message creation instants with inclusive lower and exclusive upper bounds; reject until <= since. Search accepted user/assistant text, not hidden reasoning, policy secrets, rendered DOM, or executable artifacts. Include archived threads only with the explicit permitted filter.
+
+Return source offsets/revisions, enough surrounding text to interpret a match, and a cursor for remaining matches rather than the entire transcript. Match offsets are UTF-16 positions in the exact stored revision; use an application mapping if case folding changes string length. Default ordering is newest thread update, then committed message position, then match offset, with stable ID tie-breakers. Bind cursors to query/filters and a stable snapshot boundary so new messages do not duplicate/skip old results; expired snapshots return conflict and require a fresh search. Cap one search page at 4000 total snippet characters and ten matches, with explicit nextCursor/null.
+
+Extend thread_read with optional messageId, expectedMessageRevision, textOffset (integer >=0), and maxChars under its existing bound for loading one hit's nearby passage. This mode forbids the general history cursor/limit and verifies the message belongs to the selected thread. Return source offsets and nextTextOffset; stale/deleted hits fail rather than reading another message. Human search UI maps filters to native controls and highlights text spans through safe DOM nodes. Clicking a hit opens the exact stored message; it does not replay its old task request.
+
+The model should search first, load a small relevant passage if needed, and cite the title/message reference. Search evidence cannot establish current task state or authorize writes; read actual tasks before acting. Indexes may be local implementation details, but must track edits/deletion and never mix owners. No external search backend, embeddings, or remote web search is implied. Test repeated matches, Unicode offsets, long messages, filters, stable pagination, deleted/stale hits, and poisoned historical instructions.
 
 ## UI mapping and model presentation
 
