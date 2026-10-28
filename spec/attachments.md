@@ -2,6 +2,18 @@
 
 Status: conditionally approved and scoped to actual browser/model support. Uses [shared contracts](runtime-contracts.md), [history](threads-and-history.md), and [context compaction](context-compaction.md).
 
+## Purpose
+
+Let the assistant use material the user supplies beyond typed chat while respecting actual model modality support. Separate file storage, selective text reads, and media delivery so an attachment is never mistaken for content the model has already understood.
+
+## User intent
+
+Attach supported files, inspect their readiness, remove unwanted selections, and ask questions grounded in the supplied material.
+
+## Agent intent
+
+List accessible attachments, read relevant text ranges, or stage supported media for a compatible inference. The agent cannot browse the user's computer, open a picker itself, or claim to understand an undelivered attachment.
+
 ## Native inputs versus application files
 
 The Prompt API documents text, image, and audio inputs. A binary file is not generically understood just because it is a Blob. Version 1 allows UTF-8 `.txt`, `.md`, `.csv`, and `.json` decoded as plain text; supported raster images PNG/JPEG/WebP; and audio only when the installed model accepts the selected modality/encoding. PDF, DOCX, archives, executable HTML, and arbitrary binary inputs are unsupported. No implicit document parser, OCR pipeline, or server upload is included. CSV/JSON are treated as data, never executable instructions.

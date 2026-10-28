@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). A schedule reminds the agent to perform a bounded task later; it is distinct from a task due date.
 
+## Purpose
+
+Turn an explicit request for future agent work into a persisted, bounded schedule with visible timing and grants. State the open-page execution promise so reminders are not confused with task due dates or guaranteed background processing.
+
+## User intent
+
+Ask for later or recurring work, inspect its concrete schedule and permissions, and pause, edit, delete, or run it now.
+
+## Agent intent
+
+Create, update, list, or delete schedules when authorized by the human's request. The agent must resolve relative time correctly, respect saved grants, and never infer a schedule merely from a task mentioning a date.
+
 ## Actors and execution promise
 
 The agent can create/update, list, and delete schedules when the human asks for future work. The user has a schedule manager with the same operations plus Pause/Resume and Run now. No schedule is inferred merely because a task mentions a date. A standalone page cannot guarantee waking Chrome or running a model while closed, suspended, or without a ready model session. Display the supported promise: “Runs while Daylist is open and local AI is enabled.” No hidden service worker inference, background API key, or notification permission is assumed.

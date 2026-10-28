@@ -2,6 +2,18 @@
 
 Status: reference for a later implementation decision. The user did not approve building or activating online catalog access. Existing [human skill import](skills.md), [learning](skill-learning-extension.md), and [curation](skill-curation.md) do not depend on this proposal. This does not reopen declined agent web-fetch/search tools.
 
+## Purpose
+
+Record a possible skill distribution and update lifecycle without making an online registry a prerequisite for local skills. Provenance and local-edit protection clarify what would be required before choosing to implement catalog access.
+
+## User intent
+
+Evaluate a future way to inspect, import, and review upstream skill updates while preserving local edits. This reference does not enable network catalogs or automatic installation.
+
+## Agent intent
+
+The agent does not act through this reference-only spec. No catalog installation or update tool is approved here; even a future suggestion would leave download, review, and enablement under the proposed human controls.
+
 ## Possible user-facing experience
 
 A future catalog could offer a curated bundled index or approved browser-accessible sources, with Browse, Search, Inspect package, Import as disabled, Check upstream, Compare, and Apply reviewed update. It is a human distribution/maintenance feature, not an agent tool that installs its own instructions. Any agent suggestion would link to a review surface without downloading/enabling code automatically.

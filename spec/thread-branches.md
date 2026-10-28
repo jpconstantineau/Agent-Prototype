@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared contracts](runtime-contracts.md), [history](threads-and-history.md), and [compaction](context-compaction.md).
 
+## Purpose
+
+Explore an alternative conversation path or transfer findings without rewriting the original discussion. Durable branches and reviewed summaries preserve provenance and avoid confusing context transfer with task-data changes.
+
+## User intent
+
+Branch from a chosen message, explore the new discussion, and deliberately bring useful findings back to a related conversation.
+
+## Agent intent
+
+Request a branch or concise transfer with thread_transfer when the human's task calls for it. The agent cannot silently merge transcripts, apply task changes, or turn historical discussion into new authorization.
+
 ## User-facing versus agent-facing
 
 The user-facing **Branch from here** control creates a durable conversation branch at a committed message boundary. Users can name/open a branch and choose **Bring findings back**. An agent-facing `thread_transfer` tool can prepare and request a branch or transfer when the user's request calls for it. It cannot silently rewrite either transcript or apply task edits by merging discussions.

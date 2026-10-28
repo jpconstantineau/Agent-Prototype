@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared contracts](runtime-contracts.md), [projects](project-context.md), [agent configurations](agent-library.md), [permissions](execution-permissions.md), [skills](skills.md), and [observability](observability.md). Memory is factual context, not an instruction or permission store.
 
+## Purpose
+
+Carry compact, sourced factual knowledge across conversations without repeatedly loading full history. Scope, revisions, capture policy, and forgetting keep durable notes relevant and distinguish them from preferences, procedures, and transaction records.
+
+## User intent
+
+Ask the assistant to remember useful facts, choose permitted learning scopes, and inspect, correct, pin, expire, or forget saved notes.
+
+## Agent intent
+
+Search and read authorized memory, then save or revise facts only under the configured capture and execution policies. The agent cannot infer persistent personal traits, broaden memory scope, or treat a saved note as new authorization.
+
 ## Purpose, scope, and authority
 
 Retain compact project facts, conventions, and operational lessons across conversations. Preferences retain their explicit typed settings; skills retain procedures; documents retain substantial source material; history retains what was said. A memory entry points to evidence instead of duplicating a transcript. Do not use memory as a task queue, transaction journal, secret vault, or proof that an external fact is still current.

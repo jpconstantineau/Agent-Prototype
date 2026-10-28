@@ -2,6 +2,18 @@
 
 Status: approved specification. Adds an agent-facing read tool, get_current_datetime. Uses [preferences](preferences.md), [scheduling](scheduled-work.md), [runtime contracts](runtime-contracts.md), and [observability](observability.md). There is no dedicated clock settings panel beyond the existing timezone preference and ordinary tool controls.
 
+## Purpose
+
+Ground relative dates and times in an actual clock reading and the accepted instruction's timestamp. This prevents stale context or processing delays from silently shifting task dates and reminders.
+
+## User intent
+
+The user does not invoke a dedicated clock control through this spec. They express times naturally, such as tomorrow or in 30 minutes, and expect the app to resolve the intended date, time, and timezone correctly.
+
+## Agent intent
+
+Call get_current_datetime when interpreting relative time, refresh stale samples, and preserve the correct instruction or answer anchor. The agent must ask for clarification when the intended time remains ambiguous or has passed.
+
 ## Purpose and source of truth
 
 Give the agent a fresh clock observation when the human says “tomorrow,” “in 30 minutes,” “next Friday,” or another relative time. The current app supplies only localDate at request start. Keep that field for compatibility, but also timestamp accepted human messages/answers in application state. A model must not infer the current clock from training data, a previous conversation, or a stale session prompt.

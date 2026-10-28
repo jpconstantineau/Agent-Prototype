@@ -2,6 +2,18 @@
 
 Status: approved specification. A user-facing task launcher reusing [agent configurations](agent-library.md), [skills](skills.md), [structured forms](structured-input-extension.md), [context references](context-references.md), and [scheduling](scheduled-work.md). It is not an executable script/plugin format.
 
+## Purpose
+
+Package a recurring request, agent configuration, selected skills, source references, and typed parameters for consistent reuse. Frozen instances make one-off and scheduled runs reproducible without turning templates into scripts or permission grants.
+
+## User intent
+
+Create and choose a template, fill its parameters, review the resolved configuration and resources, and explicitly start it once or schedule it.
+
+## Agent intent
+
+The agent may list eligible templates through the optional read-only workflow_list tool and execute the bounded request after the human starts it. It cannot press Start, create schedule authority, or choose a more permissive configuration through a template.
+
 ## Template and instance contracts
 
 A workflow is a repeatable request, distinct from an agent's general identity. Store templateId, owner, revision, title 1–120, description 0–400, instruction 1–2000, agentId/configurationRevision, projectId:ID|null, skillRefs 0–3 of `{skillId,revision}`, contextRefs 0–5 using the context-reference contract, and parameters 0–8. All references use exact revisions; missing/disabled resources fail preparation instead of being silently skipped. No template grants permissions or installs capabilities.

@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [runtime contracts](runtime-contracts.md), [capability controls](capability-controls.md), [skills](skills.md), and [subagents](subagents.md). Adapted from OpenCode's partial catalog/search approach; this version uses plain JSON actions, not TypeScript signatures or a JavaScript interpreter.
 
+## Purpose
+
+Keep tool catalogs small enough for limited model windows while retaining access to eligible capabilities on demand. Separate discovery, admission, and execution so partial catalogs do not become a permission bypass.
+
+## User intent
+
+Choose Include or Discover exposure through Settings and inspect which tools are currently admitted or available on demand. The user does not perform model-side admission through a separate chat control.
+
+## Agent intent
+
+Search permitted tool metadata, describe an exact definition, and call it only after successful admission. The agent cannot discover disabled tools, install capabilities, or assume a found tool has already executed.
+
 ## Intent and actors
 
 Keep the main agent's and each child's initial prompt small. A user chooses Disabled, Include, or Discover for each tool in its applicable profile. Include always places that tool's description/schema in that session's generation catalog; Discover makes an eligible tool available through discovery but initially omits its full schema. Neither mode bypasses dispatch permissions. Disabled tools are absent from both discovery and execution.

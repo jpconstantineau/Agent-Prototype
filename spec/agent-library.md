@@ -4,6 +4,18 @@ Status: approved specification. The library is the user-facing container for the
 
 The Hermes-review extensions below add settings and a device-local inference route; the earlier Chrome-only restriction applies to the original baseline, not the explicitly approved [local endpoint/fallback](local-model-endpoint.md) extension. The original structured-question wire protocol remains unchanged.
 
+## Purpose
+
+Give maintainers one versioned home for an agent's instructions, tools, skills, permissions, and runtime settings. Reusable configurations make behavior reproducible across conversations and make the configuration behind a run inspectable.
+
+## User intent
+
+Create and maintain named agents for different kinds of work, select one for a conversation, and deliberately apply configuration changes when ready.
+
+## Agent intent
+
+The agent does not act through this spec to create, select, or edit configurations. It operates under the configuration resolved by the harness; its tools and behavior remain constrained by that snapshot and current policy.
+
 ## Purpose and actors
 
 Save named configurations such as Planner or Document reviewer and start conversations with a selected configuration. A configuration is data for the harness: instructions, capability choices, permission behavior, and supported runtime limits. It is not a live model, a conversation, a skill, an application identity, or a remote-model API credential. Multiple threads can use one revision without sharing model context.

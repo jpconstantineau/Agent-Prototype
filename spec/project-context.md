@@ -2,6 +2,18 @@
 
 Status: approved specification. A user-facing project container plus agent-facing bounded context reads. Uses [agent library](agent-library.md), [documents](documents.md), [memory](persistent-memory.md), [history](threads-and-history.md), and [permissions](execution-permissions.md). This adapts project context files to browser-owned records, not filesystem traversal.
 
+## Purpose
+
+Keep project instructions, resources, and knowledge scoped to the work they describe. Project bindings let the same agent serve different projects without accidentally mixing their documents, memories, or conversation context.
+
+## User intent
+
+Create and select projects, maintain instructions and resource associations, and explicitly review context changes when switching a conversation's project.
+
+## Agent intent
+
+Read the bound project's permitted context and use resources only within the controller's grants. The agent cannot create or switch projects, rewrite their instructions, or expand membership through tool arguments.
+
 ## Identity and resource boundaries
 
 A Project groups work context, not agent identity. The same named agent can serve several projects with different instructions, documents, factual memories, and conversations. Store projectId:ID, owner, revision, name 1–120, description 0–600, instructions 0–4000, createdAt/updatedAt, archived/tombstone state, and explicit resource associations. Project instructions are human-authored configuration below application rules and current human intent; reference documents remain data unless the human explicitly copies selected text into those instructions.

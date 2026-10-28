@@ -2,6 +2,18 @@
 
 Status: approved specification added during the Hermes review. Extends the previous Prompt-API-only inference design while retaining its tool contracts, vanilla JavaScript modules, and policy boundary. Uses [runtime contracts](runtime-contracts.md), [agent library](agent-library.md), [compaction](context-compaction.md), and [observability](observability.md). Voice remains [Chrome/browser-only](voice-interaction.md).
 
+## Purpose
+
+Allow a stronger locally served text model while retaining Chrome's Prompt API as a usable fallback. One inference adapter preserves the same browser-owned tool loop, permissions, budgets, and recovery rules across providers.
+
+## User intent
+
+Configure and test a local endpoint, choose model routes and fallback behavior, and see which provider actually handled a run.
+
+## Agent intent
+
+The agent does not act through this spec to configure endpoints, select a more permissive provider, or trigger fallback itself. It returns the same structured actions through the selected adapter; the harness owns routing and safe continuation.
+
 ## Outcome and provider boundary
 
 Use a user-configured stronger local model server for text inference, with Chrome's LanguageModel as fallback. The model endpoint proposes the same single tool_call or final JSON action; the browser alone validates/executes tools. Do not send native function tools for server-side execution, install a server, download its models, or give it database handles. No Python/Node daemon, SDK, React, or production dependency is required in the web app: use fetch, AbortController, JSON, and the existing registry.

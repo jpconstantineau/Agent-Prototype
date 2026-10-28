@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared contracts](runtime-contracts.md), [capability controls](capability-controls.md), and [compaction](context-compaction.md). Skills are instruction records, not required filesystem files or executable plugins.
 
+## Purpose
+
+Make reusable procedural guidance available without filling every model context with every skill. Versioned IndexedDB records and selective loading let agents retrieve only the approved instructions and resources needed for a task.
+
+## User intent
+
+Create or import skills, inspect and edit them, choose eligibility and exposure, and see which revisions and sections are active.
+
+## Agent intent
+
+Discover eligible skills, load relevant approved sections, and read bounded supporting resources. This base spec does not let the agent author, install, or enable skills; learned drafts use the separately governed extension.
+
 ## Purpose and actors
 
 A skill packages reusable instructions such as weekly planning or task triage. The user creates/imports, edits, versions, enables/disables, and removes skills in a manager. The agent sees a bounded catalog through `list_skills`, reads relevant instruction sections with `load_skill`, and optionally loads bounded supporting resources with `read_skill_resource`. Agents cannot author/install/enable skills or broaden tool permissions in version 1. A loaded skill can guide already authorized work; it does not itself request new task mutations.

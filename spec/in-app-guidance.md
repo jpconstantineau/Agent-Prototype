@@ -2,6 +2,18 @@
 
 Status: approved specification. Agent-facing page guidance tools plus dismissible human controls, linked to the app's registered WebMCP actions. Uses [capability controls](capability-controls.md), [execution policy](execution-permissions.md), [observability](observability.md), and [structured input](structured-input-extension.md). This is app navigation, not arbitrary browser/DOM automation.
 
+## Purpose
+
+Help users find and understand app features using registered page actions rather than fragile selectors or automated clicks. Shared dispatch with WebMCP keeps local guidance and approved external exposure under the same rules.
+
+## User intent
+
+Ask to see a relevant view or control, follow a short explanation or tour, and dismiss or disable guidance whenever desired.
+
+## Agent intent
+
+Discover registered targets, open an authorized view when requested, and show a bounded tip or tour. The agent cannot create page actions, click arbitrary controls, change permissions, or move focus from background work.
+
 ## Registered targets and action ownership
 
 Define one application-owned page-action registry. Each entry has actionId:LocalID, targetId:LocalID, label 1–120, description 0–240, action kind navigate/highlight, supported view state, domain effect, and an internal handler/DOM resolver. Code registers these entries; models supply only known IDs. DOM nodes, selectors, URLs, callback code, storage handles, and credentials never enter model arguments. Stable target IDs such as memory_manager or agent_permissions replace generated CSS selectors.

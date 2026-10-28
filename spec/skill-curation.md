@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [skill learning](skill-learning-extension.md), [agent library](agent-library.md), [skills](skills.md), [permissions](execution-permissions.md), and [learning overview](learning-overview.md). Primarily a human library-maintenance feature, with bounded optional harness review.
 
+## Purpose
+
+Keep a growing skill library useful by identifying stale or overlapping procedures per agent. Usage evidence, shared-consumer checks, pins, and recoverable transitions prevent maintenance for one agent from breaking another agent's work.
+
+## User intent
+
+Review recommendations, protect important skills, accept specific changes, and inspect or restore archived material with its affected consumers visible.
+
+## Agent intent
+
+An optional bounded maintenance agent reviews permitted candidates and proposes revisions or consolidations. It cannot apply curation decisions, enable merged skills, or alter protected consumers without the specified human actions.
+
 ## Scope and settings
 
 Track actual skill loading/use/revision activity per agent and project, then recommend stale-skill review, targeted edits, consolidation, or recoverable archive. A loaded skill was viewed, not necessarily useful; record explicit application use separately where available. Never infer success merely from a model saying the skill helped. Disabled content remains inaccessible to agents/maintenance even if humans can inspect it.

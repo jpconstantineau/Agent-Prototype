@@ -2,6 +2,18 @@
 
 Status: approved specification. A human-facing @ picker and application-owned reference resolver. Uses [documents](documents.md), [attachments](attachments.md), [history](threads-and-history.md), [skills](skills.md), [projects](project-context.md), and [runtime contracts](runtime-contracts.md).
 
+## Purpose
+
+Identify precisely which saved material a request concerns without copying entire sources into chat. Versioned reference chips and bounded excerpts make source selection explicit, economical, and reproducible.
+
+## User intent
+
+Pick documents, tasks, messages, attachments, or skills with @ references, preview the selected revision or range, and decide what to send.
+
+## Agent intent
+
+The agent does not act through this spec to create picker selections or grant itself source access. It receives the human-selected references and uses separately permitted read or skill-loading tools when more content is needed.
+
 ## Reference contract and scope
 
 Let the user point to known saved material without pasting an entire document. References are stable data, not magic strings parsed from model output. The picker supports document, task, message, attachment, and skill. Version 1 never resolves OS paths, URLs, Git diffs, remote MCP resources, or arbitrary HTML selectors. Typed @ text becomes a reference only after an explicit picker selection; otherwise it remains ordinary user text.

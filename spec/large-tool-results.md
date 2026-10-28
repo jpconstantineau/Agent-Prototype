@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [runtime contracts](runtime-contracts.md), [documents](documents.md), [composition](app-composition.md), [compaction](context-compaction.md), and [observability](observability.md). This is automatic harness processing plus agent-facing read tools and a human result viewer.
 
+## Purpose
+
+Preserve oversized tool output without exhausting the model's working context or losing exact receipts. Immutable stored results and selective retrieval let the agent inspect only useful passages while the user can inspect the full evidence.
+
+## User intent
+
+Open or search a complete saved result, export selected material, or copy it into a separately editable document.
+
+## Agent intent
+
+Read, search, or select bounded fields from stored results instead of rerunning the original tool. The agent must preserve control facts and source coverage, and cannot mistake a preview for the complete result.
+
 ## Purpose and storage boundary
 
 Keep a large result available without putting its entire body into the model's small context window. After a tool returns, validate its domain result, persist its full supported content, and supply a short reference observation. This does not rerun the tool, change its outcome, or summarize away its operation receipts. Prefer bounded tool arguments and pagination first; offloading is a backstop, not a replacement for well-designed reads.

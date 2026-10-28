@@ -2,6 +2,18 @@
 
 Status: approved for interaction with the app. Uses [runtime contracts](runtime-contracts.md), [discovery](tool-discovery.md), [capability policy](capability-controls.md), and [subagents](subagents.md). Inspired by OpenCode CodeMode; version 1 deliberately accepts a small declarative program rather than arbitrary JavaScript source.
 
+## Purpose
+
+Compute reliable filters, projections, and grouped counts without sending every intermediate record to the model. A bounded declarative program keeps app computation small, inspectable, and subject to the existing read permissions.
+
+## User intent
+
+The user does not author or invoke composition programs through a dedicated UI in this spec. They request an analysis, inspect the resulting calls and coverage, and can stop the run.
+
+## Agent intent
+
+Use app_execute to combine permitted reads and deterministic transformations, then return only the useful result. The agent must preserve pagination limits and cannot use composition for writes or arbitrary JavaScript.
+
 ## Purpose and authority
 
 Expose agent-facing `app_execute` to read app data, filter/group it, and return a compact answer without copying every intermediate record into model context. The user sees its actual tool calls and final data summary and can cancel through Stop. This is not DOM automation, browser-console access, a plugin loader, or permission to use arbitrary scripts. It works through the same validated app-tool services as normal calls.

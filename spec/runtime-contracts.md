@@ -2,6 +2,18 @@
 
 Status: proposed. This document supplies common requirements to the adjacent feature specs. MUST is normative; SHOULD is the recommended default.
 
+## Purpose
+
+Define shared protocol, identity, policy, lifecycle, persistence, and context rules before individual features are implemented. Common contracts prevent separately built tools from disagreeing about authority, cancellation, receipts, or recovery.
+
+## User intent
+
+The user does not act through a standalone control in this infrastructure spec. They rely on consistent behavior across features, while the maintainer uses these requirements to implement and integrate them.
+
+## Agent intent
+
+The agent does not invoke this spec as a tool. Its structured actions and interactions across feature tools must follow the shared envelopes, permissions, and budgets enforced by the harness.
+
 ## 1. Integration with the actual application
 
 At the inspected baseline, `docs/src/agent.js` derives tool branches from `definitions()`, parses one complete JSON response per model call, and invokes `execute(name, arguments, { signal })`. It retains a maximum of 12 inference calls per run. `app.js` owns one model session, composer state, event rendering, and Stop. `tools.js` owns five task tools and the WebMCP adapter. `store.js` persists tasks in IndexedDB. Chat/history currently disappear on reload.

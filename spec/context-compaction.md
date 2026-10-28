@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared contracts](runtime-contracts.md), [history](threads-and-history.md), [skills](skills.md), and [capability policy](capability-controls.md).
 
+## Purpose
+
+Keep long tasks usable within a small model context window while retaining full history and exact operational facts. Controlled summaries and session rebuilding reduce context without losing permissions, pending work, or mutation receipts.
+
+## User intent
+
+Understand context usage, request Compact now when appropriate, and inspect the resulting summary while keeping access to the original conversation.
+
+## Agent intent
+
+Request compaction when old context crowds out remaining work and continue from the harness's validated replacement context. The agent does not rewrite policy, replace receipts with its own summary, or repeat earlier successful actions.
+
 ## Intent and surfaces
 
 Reduce the context supplied to a live model without deleting stored history or losing the exact facts needed to continue. The runtime can compact automatically at safe boundaries. The user has **Compact now** and a context meter. An optional agent tool `request_compaction` asks the controller to compact; it does not let the model rewrite system rules or replace transaction records with prose.

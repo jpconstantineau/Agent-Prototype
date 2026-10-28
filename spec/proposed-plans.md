@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared contracts](runtime-contracts.md) and [checkpoints](checkpoints-and-undo.md). This is a browser adaptation of T3's proposed-plan review, not its progress checklist.
 
+## Purpose
+
+Make a requested review concrete by freezing the exact task changes before they run. A proposal and explicit Apply decision prevent the model from reinterpreting approval or repeating already-applied mutations.
+
+## User intent
+
+Inspect the actual before/after changes and choose Apply, Request revision, or Reject when a review is wanted.
+
+## Agent intent
+
+Use propose_plan to present a bounded change set and wait for its decision. The agent cannot approve itself and must report applied receipts without executing the same changes again.
+
 ## Intent and authority
 
 The agent may present a concrete task-change proposal when the human asks to review an approach before execution or a complex ambiguous request benefits from review. The user sees exact changes and chooses Apply, Request revision, or Reject. Do not introduce redundant approvals for clear additions/edits already authorized in chat. `update_plan` reports progress; `propose_plan` freezes a reviewable batch. Neither confers general permission.

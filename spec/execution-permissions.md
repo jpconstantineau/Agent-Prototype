@@ -2,6 +2,18 @@
 
 Status: approved specification. This is user-facing agent configuration enforced by the harness, not a model tool for granting itself authority. Uses [capability controls](capability-controls.md), [agent library](agent-library.md), [proposals](proposed-plans.md), and [observability](observability.md).
 
+## Purpose
+
+Decide when an eligible tool operation may run automatically, must wait for exact-call approval, or is prohibited. This gives different agents appropriate autonomy while keeping approvals tied to concrete arguments and current policy.
+
+## User intent
+
+Choose permission levels and overrides, inspect a proposed tool call, and allow it once or deny it with optional feedback.
+
+## Agent intent
+
+The agent does not act through this spec to configure permissions or approve calls. It submits ordinary tool requests, waits when the harness requires a human decision, and respects the actual denial or execution outcome.
+
 ## Separate eligibility, exposure, and execution
 
 Disabled/Include/Discover answers whether a tool is eligible and how its schema enters context. Permission levels answer whether an eligible admitted operation is prohibited, requires human approval, or may run automatically within the current human request. Approval never enables a disabled tool, admits an undiscovered schema, broadens record scope, or overrides the read-only subagent limit. Manual user controls remain independent of agent permissions.

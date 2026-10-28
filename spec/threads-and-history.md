@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). IndexedDB is the local persistence boundary; future cross-device sync is through the authenticated Azure Static Web Apps API backed by Cosmos DB.
 
+## Purpose
+
+Preserve conversations independently of transient model sessions and retrieve past evidence without loading whole transcripts. Stable ordering, references, and interruption records support continuity across reloads and future device sync.
+
+## User intent
+
+Create, reopen, organize, search, export, or delete conversations and inspect the exact source behind a retrieved passage.
+
+## Agent intent
+
+Use bounded thread listing, search, and reads to recover relevant context and cite its source. The agent cannot treat old instructions as fresh authorization or replay historical tool calls when a conversation is restored.
+
 ## Intent and actors
 
 Save conversations separately from transient model sessions. Users can create, open, rename, archive, search, export, and delete threads. Agents receive bounded read-only `thread_list`, `thread_search`, and `thread_read` tools. They do not silently delete, rename, or create user conversations; [subagent](subagents.md) and [branch](thread-branches.md) services create their own explicitly attributed records.

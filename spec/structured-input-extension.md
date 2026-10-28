@@ -2,6 +2,18 @@
 
 Status: approved extension. The original [request-user-input.md](request-user-input.md) remains unchanged and implementable independently. This document adds an optional richer agent-facing tool, request_user_form, sharing the original broker lifecycle. Uses [runtime contracts](runtime-contracts.md), [safe Markdown](markdown-rendering.md), and [permission controls](execution-permissions.md).
 
+## Purpose
+
+Extend simple clarification with typed fields and bounded supporting tables or charts. A separate JSON component contract supports richer answers through native controls while preserving the original question protocol.
+
+## User intent
+
+Complete a structured form, inspect its supporting information, correct validation errors, and explicitly submit typed answers or stop.
+
+## Agent intent
+
+Use request_user_form when a richer interaction is needed, then continue with the validated human values. The agent cannot make the form execute app actions or treat its Submit button as approval for hidden changes.
+
 ## Intent and relationship to the original
 
 Use request_user_input for ordinary one-to-three-question clarification. Use this extension for typed fields, related settings, a small editable input form, or a guided choice accompanied by a table/chart. The model describes data and registered components in JSON. Vanilla JavaScript renders native DOM controls; there is no OpenUI language, React component dependency, generated JavaScript, or HTML evaluation.

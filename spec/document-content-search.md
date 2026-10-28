@@ -2,6 +2,18 @@
 
 Status: approved extension to [documents](documents.md). Reuses document storage/revisions, [project access](project-context.md), [attachments](attachments.md), [history search](threads-and-history.md), and [context references](context-references.md). This adds discovery of passages, not another document store/editor or web search service.
 
+## Purpose
+
+Find relevant passages when the document or exact location is unknown, without loading the whole corpus into context. Extend the existing document infrastructure with a derived index and bounded, revision-aware search results.
+
+## User intent
+
+Search inside permitted saved documents and text attachments, inspect matching passages, and open or attach the exact source location.
+
+## Agent intent
+
+Search permitted content, inspect index coverage, and read the necessary surrounding source through existing tools. The agent must cite actual source versions and cannot treat a partial index or excerpt as complete evidence.
+
 ## Indexed source and boundaries
 
 Index current committed source for accessible text/plain and text/markdown documents, plus ready text attachments explicitly associated with the current project or active thread. Do not index unsaved drafts, arbitrary local files, binary PDF/DOCX, rendered DOM, private diagnostic payloads, or another thread's ungranted attachments. Skill bodies and memory retain their own search and instruction boundaries. Existing title listing, document_read/edit, Markdown editing/rendering, and conversation search remain unchanged.

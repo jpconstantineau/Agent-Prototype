@@ -2,6 +2,18 @@
 
 Status: approved specification, separate from agent document tools and rendering. Uses [documents](documents.md) and [Markdown rendering](markdown-rendering.md). This is primarily a user-facing feature, not a new agent tool.
 
+## Purpose
+
+Give users a dependable way to maintain Markdown documents in the app, with recoverable drafts and explicit revision-aware saves. Keep canonical source, preview, and saved content distinct so editing cannot silently destroy newer work.
+
+## User intent
+
+Write and format Markdown, preview it, save or revert a draft, inspect version history, and export the source.
+
+## Agent intent
+
+The agent does not act through this editor spec. Agent document changes use the separate document tools; the agent cannot type into a human draft or press the editor's Save control.
+
 ## Intent and interface
 
 Give users a reliable editor for `.md` documents stored by the app. Version 1 is a source editor built from a native labeled `<textarea>`, optional formatting buttons, and a preview pane. There is no contenteditable/WYSIWYG serialization requirement, framework, or runtime editor dependency. Source remains the canonical document; preview HTML is a derived view.

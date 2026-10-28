@@ -2,6 +2,18 @@
 
 Status: approved specification. A human-facing view of persisted knowledge, distinct from the [run inspector](observability.md). Uses [memory](persistent-memory.md), [skill learning](skill-learning-extension.md), [curation](skill-curation.md), and [project scope](project-context.md). No new agent tool or autonomous inference is required.
 
+## Purpose
+
+Make persisted learning visible separately from execution logs. A source-linked timeline lets the user understand what facts and procedures survived a conversation and identify knowledge that needs correction or review.
+
+## User intent
+
+Inspect learning by agent and project, follow its provenance, and open the appropriate manager to correct, forget, publish, archive, or restore an entry.
+
+## Agent intent
+
+The agent does not act through this spec. It has no learning-overview tool and cannot use this diagnostic view to change knowledge; any edits or reads occur through the separately governed domain features.
+
 ## Meaning of the view
 
 Show what survived individual conversations: saved/updated/forgotten facts, drafted/published/revised skills, and accepted curation transitions. A successful run does not automatically count as learning. Drafts, suggestions, published knowledge, loaded skills, and actual use have separate labels. Publication and usage are application receipts, not assertions that the content is true or useful.

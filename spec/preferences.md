@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md) and [capability controls](capability-controls.md). IndexedDB persists explicit preferences; future sync carries versioned records through the Azure API.
 
+## Purpose
+
+Persist explicit settings such as timezone, response style, and custom instructions so users need not repeat them. Typed keys and reviewed updates prevent casual observations from silently changing future behavior.
+
+## User intent
+
+Set or reset preferences directly, ask for a supported preference to be remembered, and accept, edit, or reject the exact proposed change.
+
+## Agent intent
+
+Read relevant preferences and propose an update when explicitly requested. The agent cannot silently save inferred preferences, accept its own proposal, or use a preference as permission to enable tools.
+
 ## Intent and authority
 
 Users manage persistent preferences in Settings. Agent tools can read relevant settings and propose changes when the human explicitly asks to remember something. Do not silently infer persistent traits or turn a task note into instructions. Preferences are not tool permissions, schedule grants, skills, authentication, or arbitrary executable configuration.

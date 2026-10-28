@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses only Chrome/browser APIs for recording, recognition, transcription, and playback. No endpoint/cloud speech provider, external speech library, or server audio service. Uses [attachments](attachments.md), [questions](request-user-input.md), [structured input](structured-input-extension.md), and [observability](observability.md).
 
+## Purpose
+
+Offer spoken input and readable replies through Chrome/browser speech APIs while keeping the normal text workflow usable. Mandatory transcript review and capability checks prevent recording from becoming an unreviewed instruction or a hidden cloud route.
+
+## User intent
+
+Choose supported local speech options, explicitly record or dictate, review and send the transcript, and control optional read-aloud playback.
+
+## Agent intent
+
+The agent does not act through this spec to open the microphone, choose a speech provider, or start playback. It receives a reviewed message through the ordinary chat contract; browser-controlled transcription and synthesis remain separate from agent tools.
+
 ## Actors and capability choices
 
 Voice is a human-controlled input/output surface, not an agent tool that opens the microphone. The human chooses a language, presses Record/Dictate, reviews text, and explicitly sends it. Replies retain normal text and optionally have Read aloud. Browser availability, microphone permission, installed language packs, Prompt API audio support, and local synthesis voices are separate capabilities. A configured [local text LLM](local-model-endpoint.md) does not receive microphone bytes or replace this Chrome-only speech path.

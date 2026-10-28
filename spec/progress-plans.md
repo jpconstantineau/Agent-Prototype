@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). Inspired by provider `update_plan`/todo events surfaced in T3 Code, not a direct import of provider code.
 
+## Purpose
+
+Make the agent's current approach and progress visible during a multi-step request. A working checklist helps the human follow the run and the agent track remaining work without creating saved Daylist tasks.
+
+## User intent
+
+See what the agent plans to do, which step is active, and what finished or changed. The user may collapse the view but does not manually edit agent step statuses through this spec.
+
+## Agent intent
+
+Use update_plan to maintain an honest, compact checklist as the run proceeds. The agent must distinguish reported progress from actual task mutations and base completion claims on real results.
+
 ## Intent and actors
 
 Expose a compact working checklist for multi-step requests. This is an agent-facing `update_plan` tool and a user-facing progress view. Steps describe the agent's work, not saved Daylist tasks. Updating a step never invokes `add_item` or `complete_item`. The human can collapse the view; manual editing of agent statuses is out of scope.

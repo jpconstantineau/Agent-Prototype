@@ -2,6 +2,18 @@
 
 Status: approved extension to [skills](skills.md). The base read/loading design remains independently usable. Adds agent-facing draft/publish tools and a user-facing Learn/review flow, using [projects](project-context.md), [permissions](execution-permissions.md), [memory](persistent-memory.md), and [observability](observability.md).
 
+## Purpose
+
+Capture repeatable methods learned during authorized work so future requests can reuse the procedure instead of rediscovering it. Separate drafts, publication, and enablement to keep learned instructions reviewable and versioned.
+
+## User intent
+
+Request a skill from selected evidence, inspect or edit the draft and its sources, and publish or reject the exact revision under the configured review policy.
+
+## Agent intent
+
+Create and inspect drafts, propose exact revisions, and request publication through the configured permission or human-review path. The agent cannot enable a new skill or convert unread source material into authoritative instructions.
+
 ## Intent and publication authority
 
 Turn an approved demonstrated workflow, conversation, document, or supported text attachment into a reusable procedure. Capture repeatable steps, trigger conditions, pitfalls, and verification. Factual memory is for compact stable facts; a skill explains how to perform a class of work. Do not silently promote conversation logs, errors, or temporary task state into instructions. Sources are bounded existing app resources, not an authorization to fetch websites, read arbitrary files, execute scripts, or install packages.

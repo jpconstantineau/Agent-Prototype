@@ -4,6 +4,18 @@ Status: implementation specification; no runtime changes are included.
 
 Baseline: `jpconstantineau/Agent-Prototype` commit `013490507869ab5a0bce63f8cf219ef3e1e7c0d1`, inspected on 2026-10-28.
 
+## Purpose
+
+Resolve missing information through a structured interaction that the browser can validate and the model can reliably consume. A shared request, form, and answer contract lets the same agent run pause for clarification and continue without guessing.
+
+## User intent
+
+Answer the agent's specific questions using choices or text, explicitly skip an optional answer, or stop the pending interaction.
+
+## Agent intent
+
+Call request_user_input when necessary information is missing, wait for the real human submission, and continue the original task using the validated answers. Asking or answering a question does not itself modify a saved task.
+
 ## 1. Outcome and scope
 
 Add a `request_user_input` tool to the in-page assistant. When the assistant needs information, it returns a structured tool call. Daylist displays an inline form, waits for an explicit human submission, and supplies a structured tool result to the same agent run. The assistant can then continue the original task.

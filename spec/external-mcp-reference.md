@@ -2,6 +2,18 @@
 
 Status: reference for a later implementation decision. This is not approved for implementation or activation. It records the additional OpenCode resource tools considered during review and must not add live connections, permissions, backend routes, or production dependencies.
 
+## Purpose
+
+Preserve a possible architecture for accessing external services without committing the project to implement it. Explain the distinction between exposing page actions through WebMCP and becoming a client of remote MCP servers.
+
+## User intent
+
+Evaluate whether external connections are worth adding later, including their data access, authentication, and permission implications. This reference does not authorize a live connection or installation.
+
+## Agent intent
+
+No agent acts through this reference-only spec today. If separately approved later, an agent could discover and use only explicitly connected, scoped resources or tools under the proposed policy.
+
 ## Distinguish the two directions
 
 The app already exposes its own task operations through WebMCP where Chrome supports it. That does not automatically make the app a client of arbitrary remote MCP servers. An external connection would let this agent discover/read another service's resources or, under a separate grant, invoke that service's tools. The original five page tools and local agent features continue working without it.

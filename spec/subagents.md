@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md), [history](threads-and-history.md), and [capability policy](capability-controls.md). The primary purpose is context isolation, not guaranteed parallel speed or a different model.
 
+## Purpose
+
+Isolate focused analysis in a small independent context and return a concise result to the parent. Explicit grants and budgets let delegation help with context pressure without multiplying unrestricted agents.
+
+## User intent
+
+See delegated work and its outcome, inspect details when needed, and stop a child or the parent run.
+
+## Agent intent
+
+The main agent delegates a bounded read-only task and consumes or cancels its result; the child analyzes only the supplied context and grants. Children cannot write, directly ask the human, or spawn further agents in v1.
+
 ## Actors and scope
 
 The main agent can delegate a focused task through `delegate_task`, inspect it with `task_status`, and cancel it with `task_cancel`. Users see each child in an expandable card and can stop it or its parent. Children are independent Prompt API sessions with an explicit task packet, a restricted executor, their own bounded history, and a concise result. They do not inherit the parent's transcript automatically.

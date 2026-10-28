@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). Adapts T3's queue management without assuming native model steering.
 
+## Purpose
+
+Capture follow-up instructions while a run is busy without pretending an in-flight model call can be edited. A durable queue preserves human intent and starts later work only at an appropriate boundary.
+
+## User intent
+
+Queue messages, inspect and edit unstarted requests, reorder them, or cancel them before execution.
+
+## Agent intent
+
+Read the current thread's queued requests through queue_read when useful. The agent cannot author, edit, reorder, cancel, or prematurely execute human-authored queued instructions.
+
 ## User controls versus agent tools
 
 The queue is primarily user-facing. While an agent works, the composer accepts a follow-up with a **Queue message** action. The user can list, inspect, edit, reorder, and cancel their unstarted entries. An agent may inspect its thread's queue using a read-only `queue_read` tool. Version 1 does not let an agent edit, cancel, reorder, or invent human-authored queued instructions. The app's UI commands call the queue service directly, not by asking the model to manage the queue.

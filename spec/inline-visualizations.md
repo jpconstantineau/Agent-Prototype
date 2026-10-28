@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). Adapts T3's `html_render` idea to a standalone page; server-based `html_preview` screenshots are not included.
 
+## Purpose
+
+Explain data or ideas more clearly with a self-contained chart, diagram, or local interactive illustration. Isolate generated presentation code so a richer explanation does not acquire the application's privileges.
+
+## User intent
+
+View and interact with an illustration, expand it, inspect or download its source, and remove it from view.
+
+## Agent intent
+
+Use html_render to present information already obtained for the request with accessible alternatives. The agent cannot use artifact scripts to read app data, call tools, or perform hidden mutations.
+
 ## Intent and actors
 
 An agent-facing `html_render` tool displays a self-contained chart, diagram, or interactive explanation in chat. The user can expand, inspect source, download, or remove the artifact from view. Artifact scripts are isolated presentation code; they have no task mutation, model-session, attachment, authentication, or policy APIs.

@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [agent library](agent-library.md), [projects](project-context.md), [workflow templates](workflow-templates.md), [permissions](execution-permissions.md), [subagents](subagents.md), and [observability](observability.md). A durable queue/state machine, distinct from Daylist tasks, a run's progress plan, and temporary read-only subagents.
 
+## Purpose
+
+Support work that must survive a conversation, pause for human review, or pass between named agents. Durable assignments, dependencies, attempts, and receipts make interrupted work recoverable without replaying completed operations.
+
+## User intent
+
+Assign bounded work to agents, see its status and deliverables, resolve blockers, and accept or request changes to a specific reviewed attempt.
+
+## Agent intent
+
+Read assigned work, append progress or evidence, report a blocker or deliverable, and create follow-ups only within an approved route and grant. The agent cannot widen its assignment or approve its own required human review.
+
 ## Records, assignment, and states
 
 Each project may have one board in v1, with an Unassigned board for existing users. A work item has workId:ID, board/project identity, owner, revision, title 1–120, instruction 1–2000, assignee agentId/configurationRevision, state queued/running/blocked/review/done/cancelled, reviewRequired boolean default true, dependsOn 0–10 unique work IDs, resourceRefs 0–10, grantedTools 0–20 unique names, grantedSkills 0–3 IDs, createdAt/updatedAt, and current attemptId:ID|null. Resource references use the [context-reference](context-references.md) shapes. IDs are not Daylist numeric task IDs.

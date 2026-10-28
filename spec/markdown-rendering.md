@@ -2,6 +2,18 @@
 
 Status: approved specification, separate from [Markdown editing](markdown-editor.md) and [HTML visualizations](inline-visualizations.md). Uses [documents](documents.md) and [runtime contracts](runtime-contracts.md).
 
+## Purpose
+
+Present Markdown as readable formatted content through one bounded, predictable renderer. A defined dialect and safe DOM mapping preserve source text while preventing formatting from becoming executable app behavior.
+
+## User intent
+
+Read formatted documents or enabled message previews and return to the unchanged source when needed.
+
+## Agent intent
+
+The agent does not act through this spec or invoke a rendering tool. Its permitted text output may be rendered by the app, but Markdown syntax cannot call tools, grant access, or supply application authority.
+
 ## Intent, actors, and dialect
 
 Render user documents and, optionally behind a presentation setting, assistant messages as readable Markdown. Rendering is a pure presentation service, not an agent execution tool. The source is always available and unchanged. File content, task titles, tool errors, and diagnostic JSON remain plain text unless a surface explicitly opts in. Markdown cannot call app tools or supply system instructions.

@@ -2,6 +2,18 @@
 
 Status: approved intent specification. Uses [shared contracts](runtime-contracts.md). This deliberately states storage capabilities and behavioral requirements rather than prescribing a detailed database schema.
 
+## Purpose
+
+Make agent changes understandable and conditionally reversible without erasing unrelated manual or later changes. A durable mutation journal lets recovery depend on saved receipts and revisions rather than conversational claims.
+
+## User intent
+
+Review exactly what a run changed and undo eligible changes while retaining conversation evidence and respecting subsequent edits.
+
+## Agent intent
+
+Inspect the read-only run_changes report to explain actual committed work. The agent cannot execute or approve restoration, erase its audit history, or declare a change undone without the human service's result.
+
 ## Purpose and surfaces
 
 Provide a user-facing **Review changes** and **Undo changes from this run** action. The user must be able to understand and reverse a run's local Daylist mutations without rewinding unrelated manual work. Chat rewind and task undo are separate: a user may keep the conversation as evidence while reversing its saved changes, or branch a discussion without changing task data.

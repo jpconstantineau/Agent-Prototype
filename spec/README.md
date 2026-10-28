@@ -4,6 +4,18 @@ Status: proposed design, not implemented. Approved in the repository review conv
 
 Start with [shared runtime contracts](runtime-contracts.md), then read the feature being implemented. Each feature describes user controls, agent tools, structured inputs/results, UI mapping, lifecycle, integration, and acceptance criteria. All designs use vanilla JavaScript ES modules and browser APIs. Inference supports Chrome's Prompt API and the explicitly approved local HTTP endpoint adapter with Chrome fallback; voice remains Chrome/browser-only. There is no React/TypeScript requirement, production SDK, or native Prompt API tool-calling dependency.
 
+## Purpose
+
+Give the repository maintainer a clear map of the specification set, its approved scope, reference-only proposals, and implementation dependencies. The index explains how the individual features fit into one browser agent architecture.
+
+## User intent
+
+The maintainer uses this index to find relevant designs, understand their intended actors, and choose an implementation sequence. This document is not an end-user runtime control.
+
+## Agent intent
+
+The agent does not act through this index. It defines no tool, model instruction, or permission grant; implementations must use the contracts in the linked feature specifications.
+
 ## Approved specifications
 
 | Capability | Specification | Primary surface |

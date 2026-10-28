@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [runtime contracts](runtime-contracts.md), [capability controls](capability-controls.md), [Markdown editing](markdown-editor.md), and [Markdown rendering](markdown-rendering.md). Adapted from OpenCode's read/write/exact-edit concepts for application-owned documents, not computer filesystem access.
 
+## Purpose
+
+Provide durable, versioned text artifacts for plans, notes, reports, and other deliverables that outlive a chat. Shared storage and exact-edit contracts let humans and agents work on the same content without overwriting newer changes.
+
+## User intent
+
+Create, import, organize, edit, export, inspect history, and conditionally restore personal or project documents.
+
+## Agent intent
+
+List and read permitted documents, then create or make bounded revision-checked edits when authorized. The agent cannot select arbitrary filesystem paths, delete documents, or convert source text into active instructions.
+
 ## Intent, actors, and document model
 
 Support plans, meeting summaries, notes, and other user text documents independently of tasks, chats, skills, and HTML artifacts. Users browse, create/import, edit, rename, export, restore versions, and delete documents. Agents can list, read, create, replace short documents, or apply bounded exact edits when the current request and tool policy permit it. Agents cannot choose an OS path, change storage providers, delete documents, or turn a document into active skill instructions.

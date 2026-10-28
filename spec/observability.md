@@ -2,6 +2,18 @@
 
 Status: approved specification. A harness service and user-facing diagnostic UI, not an agent-controlled tool. Extends [threads/history](threads-and-history.md) with a separate IndexedDB event store. Uses [agent configurations](agent-library.md), [large results](large-tool-results.md), [permissions](execution-permissions.md), and [runtime contracts](runtime-contracts.md).
 
+## Purpose
+
+Retain enough evidence to troubleshoot agent behavior and improve prompts: what the app submitted, what the model returned, what was validated, and what actually executed. Separate diagnostic events from chat history so failures and recovery remain inspectable.
+
+## User intent
+
+Inspect runs, prompts, tool calls, decisions, timing, and results; compare configurations; and control diagnostic retention, export, and deletion.
+
+## Agent intent
+
+The agent does not act through this spec to write, edit, disable, or inspect unrestricted diagnostic logs. The harness records its interactions automatically, and the human uses the inspector; no logging tool is exposed to the model.
+
 ## Outcome and logging scope
 
 Log every application-visible agent interaction and its outcome so the user can troubleshoot failures and improve instructions/prompts. Cover accepted human messages and structured answers; session preparation; the exact app-authored initial prompts, submitted prompt packets, and response constraints; model responses and validation failures; requested and executed tools; full supported results or body references; approval/form/proposal decisions; subagent lifecycle; discovery/skill loads; compaction/offloading; cancellation, interruption, errors, and final output.

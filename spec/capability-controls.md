@@ -2,6 +2,18 @@
 
 Status: approved specification. Uses [shared runtime contracts](runtime-contracts.md). This is an application policy feature, not an agent tool that changes its own permissions.
 
+## Purpose
+
+Give the human explicit control over which tools and skills an agent may access and which definitions or instructions occupy context. Separate eligibility from Include/Discover exposure so a small context window does not require unrestricted access.
+
+## User intent
+
+Enable, disable, or change exposure for tools and skills globally and for main/subagent profiles, with a clear preview of the effective restrictions.
+
+## Agent intent
+
+Read effective capabilities through capabilities_read and use only eligible, admitted tools and allowed skills. The agent cannot change these settings, enable itself, or treat discovery as permission.
+
 ## Purpose and authority
 
 Give the human a clear Settings panel for tool/skill eligibility and context exposure, separately for the main agent and subagents. Each entry has Disabled, Include, or Discover mode. Include forces an eligible tool definition or skill body into its session; Discover loads it only on demand. Neither mode authorizes an otherwise forbidden action. Disabling `complete_item` for agents does not stop the human checking off a task manually. Skill content never grants tool permission.
