@@ -16,6 +16,8 @@ Use update_plan to maintain an honest, compact checklist as the run proceeds. Th
 
 ## Intent and actors
 
+[Durable goals](conversation-goals.md) preserve the overall objective across runs and later conversations. This plan remains run-scoped and cannot start goal continuation, mark a goal achieved, or change its budget. Plans can link a goal binding as controller metadata while retaining their original wire contract.
+
 Expose a compact working checklist for multi-step requests. This is an agent-facing `update_plan` tool and a user-facing progress view. Steps describe the agent's work, not saved Daylist tasks. Updating a step never invokes `add_item` or `complete_item`. The human can collapse the view; manual editing of agent statuses is out of scope.
 
 ## Contract

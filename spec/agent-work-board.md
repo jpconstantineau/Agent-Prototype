@@ -26,6 +26,8 @@ State transitions are controller-owned: queued -> running by atomic claim; runni
 
 ## Human controls and authority
 
+[Follow-up suggestions](follow-up-suggestions.md) provide a pending review inbox before work enters this board. Accept as board item creates one unstarted item through the ordinary human Create/grant review path; Start remains separate. A suggestion does not count as a completed assignment or acquire the current attempt's grants. [Goals](conversation-goals.md) can link a board deliverable as evidence, but each domain retains its own reviewed completion and budgets.
+
 The board offers columns plus a list/table alternative, Create, Assign, Start ready work, Pause dispatcher, Stop attempt, Comment, Review, Request changes, Unblock, Cancel, and attempt history. Creating/assigning a work item is a concrete human authorization of its instruction, selected resources, and grant ceiling. Before starting, show the exact agent revision, project, capabilities, permissions, and deliverables/review requirements. An agent assignment cannot be more permissive than the creating human's explicit grant; an agent-created follow-up also intersects the creator's current grants.
 
 Changing assignee, instruction, resources, dependencies, or grants requires an idle item and expectedRevision. Widening grants is human-only. An agent may propose a follow-up for an already human-approved routing target, but cannot select an arbitrary stronger agent from the library. Only the explicitly configured handoff route/target is eligible. Subagents v1 cannot create board work as a way to escape their read-only restriction.

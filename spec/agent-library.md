@@ -38,7 +38,7 @@ A role contains `{tools,skills,permissions}`. tools and skills are arrays of at 
 
 The approved [persona extension](agent-personas.md) additionally requires role field persona:null or `{personaId,revision}`; missing legacy values migrate to null. Main and subagent select independently. It adds a reusable communication style below role/project instructions and explicit preferences, with optional thread overrides. Persona selection is a human configuration operation and grants no tools or permissions.
 
-Version-1 extension fields in new/migrated configuration bodies are memory, learning, and curation, using the exact contracts/defaults in [persistent memory](persistent-memory.md), [skill learning](skill-learning-extension.md), and [per-agent curation](skill-curation.md). Each role additionally has modelRouteId:ID|null, default null meaning inherit the device route. These are the only newly admitted keys; they do not make the body open-ended. Migrate missing fields to disabled feature defaults before validation; explicit malformed imports still fail. Roles cannot widen memory/project/resource grants. Curation/learning cannot activate disabled skills or rewrite this configuration.
+Version-1 extension fields in new/migrated configuration bodies are memory, learning, and curation, using the exact contracts/defaults in [persistent memory](persistent-memory.md), [skill learning](skill-learning-extension.md), and [per-agent curation](skill-curation.md), plus the closed extensions object below. Each role additionally has modelRouteId:ID|null, default null meaning inherit the device route, and persona as specified above. These named keys do not make the body open-ended. Migrate missing fields to disabled feature defaults before validation; explicit malformed imports still fail. Roles cannot widen memory/project/resource grants. Curation/learning cannot activate disabled skills or rewrite this configuration.
 
 Resolve global and existing main/subagent policy first. A library configuration can deny or change exposure of an already eligible capability, but cannot enable a global/role-disabled capability. Include/Discover only applies inside that eligible set. Then apply thread restrictions, parent scope, and assignment/schedule grants. An explicit disabled entry at any applicable hard ceiling wins. The role preview explains why a saved entry is ineffective; never silently discard it and imply it is active. Main and subagent contexts/admissions are computed independently.
 
@@ -49,6 +49,24 @@ runtime is a closed object requiring:
 - subagentsEnabled: boolean default false; cannot enable a globally disabled delegate_task or relax read-only v1 children.
 - offloading: `{enabled:boolean,inlineMaxChars:integer 1000–6000}`, defaults false/4000 until the human enables retrieval and this feature; [large-result](large-tool-results.md) limits and retrieval dependency remain authoritative.
 - compaction: `{enabled:boolean,triggerRatio:number,targetRatio:number}`; defaults true/0.70/0.45, require 0.50 <= triggerRatio <=0.75 and 0.25 <= targetRatio <=0.50 and targetRatio < triggerRatio. Reserve at least 20% for reply/next exchange. Existing two-attempt/maintenance ceilings remain.
+- loopDetection: `{enabled:boolean,warnAfter:integer,stopAfter:integer}`, migrated defaults false/2/3; require 2 <= warnAfter < stopAfter <=6. [Loop detection](tool-loop-detection.md) keeps its narrow three-identical-error guard even when optional pattern detection is off.
+- pruning: `{enabled:boolean,keepRecentExchanges:integer 2–6}`, default false/3; [result pruning](tool-result-pruning.md) requires an eligible retrieval path and performs no summarization inference.
+
+The OpenClaw extensions object is closed and requires exactly these settings after migration:
+
+| Key | Closed value and default |
+| --- | --- |
+| eventReminders | `{enabled:boolean,maxActive:integer 1–50}`, false/30; [event reminders](event-reminders.md) |
+| goals | `{enabled:boolean,maxRuns:integer 1–5,maxInferenceCalls:integer 1–60}`, false/3/24; [goals](conversation-goals.md) |
+| steering | `{enabled:boolean}`, false; [steering](run-steering.md) |
+| processing | `{enabled:boolean,modelRouteId:ID|null}`, false/null; [structured steps](structured-processing.md) |
+| memoryReview | `{enabled:boolean,modelRouteId:ID|null,maxInputChars:integer 4000–64000}`, false/null/24000; [consolidation](memory-consolidation.md) |
+| recall | `{enabled:boolean,modelRouteId:ID|null,mode:'on_request'|'assisted',crossThread:boolean}`, false/null/on_request/false; [recall](context-aware-recall.md) |
+| pipelines | `{enabled:boolean}`, false; [pipelines](workflow-pipelines.md) |
+| diagnostics | `{enabled:boolean,modelRouteId:ID|null}`, false/null; [observability agent](observability-agent.md) |
+| suggestions | `{enabled:boolean,mode:'explicit'|'observed_findings',maxPending:integer 1–50}`, false/explicit/20; [suggestions](follow-up-suggestions.md) |
+
+Feature settings supplement per-tool Disabled/Include/Discover and existing permissions; enabling a fixed helper does not grant unrelated tools or sources. A helper route is a human-managed local route reference, not an agent-selected endpoint or credential. Null inherits the feature's documented applicable role route. Imported unresolved device routes remain unavailable until explicitly mapped. Persist exact extension settings in thread/configuration snapshots, and preview fixed helper catalogs, source scope, budgets, and immediate hard revocations. Side chat has no implemented/enabled setting because it remains reference-only.
 
 Enforce defaults during explicit creation/migration, not silently on malformed imports. Turning off compaction/offloading means the run stops when context cannot fit; it never disables browser/model limits. Tool eligibility controls richer forms, visualizations, questions, schedules, and discovery; do not add redundant switches that disagree with those settings. Logging is a harness service with its own retention controls, not a tool an agent can disable.
 

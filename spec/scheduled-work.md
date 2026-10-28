@@ -16,6 +16,8 @@ Create, update, list, or delete schedules when authorized by the human's request
 
 ## Actors and execution promise
 
+[Event reminders](event-reminders.md) add topic-triggered conversational reminders with keyword matching, expiry, cooldown, and match budgets. They use separate records/tools and do not authorize execution when a topic appears. [Goals](conversation-goals.md) preserve an objective across visits with explicitly bounded continuation, while this specification remains the clock-based scheduling service. No feature promises inference while the page is closed.
+
 The agent can create/update, list, and delete schedules when the human asks for future work. The user has a schedule manager with the same operations plus Pause/Resume and Run now. No schedule is inferred merely because a task mentions a date. A standalone page cannot guarantee waking Chrome or running a model while closed, suspended, or without a ready model session. Display the supported promise: “Runs while Daylist is open and local AI is enabled.” No hidden service worker inference, background API key, or notification permission is assumed.
 
 ## Contracts

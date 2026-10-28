@@ -59,6 +59,17 @@ The agent does not act through this index. It defines no tool, model instruction
 | Persistent work and handoffs | [Agent work board](agent-work-board.md) | Human assigns/reviews; bounded named agents report work |
 | Persisted learning inspection | [Learning overview](learning-overview.md) | Human traces facts/skills to sources and revisions |
 | Stronger local text inference | [Local endpoint and fallback](local-model-endpoint.md) | Human configures; harness safely falls back to Chrome |
+| Repetitive-call recovery | [Tool-loop detection](tool-loop-detection.md) | Harness detects; agent adapts; human reviews stops |
+| Topic-triggered future reminders | [Event reminders](event-reminders.md) | Agent saves when asked; harness matches; human manages |
+| Objectives across visits | [Conversation goals](conversation-goals.md) | Human starts/resumes; agent reads/reports; harness bounds continuation |
+| Redirecting active work | [Run steering](run-steering.md) | Human submits; harness admits at a safe boundary |
+| Typed isolated transformations | [Structured processing](structured-processing.md) | Agent/workflow requests approved processor; helper returns validated data |
+| Compact maintained factual notes | [Memory consolidation](memory-consolidation.md) | Maintenance model proposes; human reviews exact changes |
+| Deeper past-context retrieval | [Context-aware recall](context-aware-recall.md) | Scoped read-only worker returns sourced findings |
+| Checkpointed tool sequences | [Workflow pipelines](workflow-pipelines.md) | Human approves definition/grants; interpreter pauses at human gates |
+| Removing obsolete read payloads | [Tool-result pruning](tool-result-pruning.md) | Harness projects context; original evidence remains retrievable |
+| Focused runtime diagnosis | [Observability agent](observability-agent.md) | Scoped read-only diagnostic worker explains selected evidence |
+| Proposed future work | [Follow-up suggestions](follow-up-suggestions.md) | Agent records evidence-backed proposals; human accepts or dismisses |
 
 ## Reference only: future decision
 
@@ -67,6 +78,8 @@ The agent does not act through this index. It defines no tool, model instruction
 [Skill catalogs and update management](skill-catalog-reference.md) is also reference-only for a later decision. Approved manual imports, learned-skill drafts, and curation work without an online registry. Neither reference document authorizes external network services or automatic installation.
 
 The private credential tool was declined. OS shells, Git/worktrees/PR management, simulator control, remote-machine linking, unrestricted browser automation, and server screenshot previews are not part of this browser-only design. HTML rendering does not imply that a standalone web page can capture arbitrary tabs. Existing task operations remain the five tools in `docs/src/tools.js`.
+
+[Side questions](side-questions-reference.md) is reference-only following the OpenClaw review. It is not approved for implementation, default activation, or the implementation sequence below. Appearance themes were explicitly excluded as separate UI work; no agent appearance spec or tool is added.
 
 ## Project baseline and sources
 
@@ -82,6 +95,8 @@ The Hermes Agent review used [commit 8acb7f6](https://github.com/NousResearch/he
 
 Browser interface references, checked 2026-10-28: [Prompt API](https://developer.chrome.com/docs/ai/prompt-api), [structured output](https://developer.chrome.com/docs/ai/structured-output-for-prompt-api), and [session management](https://developer.chrome.com/docs/ai/session-management). The application owns the protocols, persistence, policy, and UI described here.
 
+The OpenClaw review used [commit a74f408](https://github.com/openclaw/openclaw/tree/a74f408db7fbabcdca1089cec8d50f16d6a4f418), including its tools/concepts documentation, loop detector, goal tools, standing-intent tool, theme tool, suggestion tools, and structured health contracts. The eleven rows above record accepted additions; side questions are reference-only and themes are excluded. The new specs cover the full adapted contracts, UI, model presentation, storage/lifecycle, and tests without importing OpenClaw/TypeScript packages. A stronger maintenance model can distill bounded evidence into compact memory; a goal can support explicit clarification over multiple visits/conversations. Existing questions, plans, history, skills, permissions, documents, media support, discovery, voice, logging, and model routes already cover the overlapping features. Shell/native browser/device control, external messaging/media generation, credential tools, cloud-provider setup, arbitrary plugins, and previously declined web search/fetch are not ports. PDF parsing remains outside the approved Chrome-compatible attachment baseline.
+
 ## Suggested implementation order
 
 1. Shared validation, capability policy, thread/run storage, observability append service, inference-provider interface, and the existing question broker.
@@ -90,5 +105,6 @@ Browser interface references, checked 2026-10-28: [Prompt API](https://developer
 4. Proposed task batches/reversible journal, document revisions/storage, Markdown editing/rendering, large-result retrieval, content indexing/search, and explicit context references.
 5. Rich input, inline artifacts, clock grounding, scheduled work, workflow templates, and the diagnostic inspector.
 6. Opt-in skill learning/curation, learning overview, the durable work board, registered in-app guidance/WebMCP exposure, and Chrome-only voice. External MCP and online skill catalogs remain future decisions outside this implementation order.
+7. Loop detection and selective result pruning, followed by safe-boundary steering, scoped event reminders, durable goals, structured processing, evidence-based recall/consolidation, checkpointed pipelines, the observability agent, and follow-up suggestions as their dependencies become available. Side questions remain a later decision; appearance themes are separate UI work.
 
 Build each feature behind its own switch and keep manual Daylist task management available when AI is unavailable. Do not implement all capabilities merely to ship one. Specs are independently reviewable while sharing the common contracts.

@@ -18,7 +18,7 @@ Read the current thread's queued requests through queue_read when useful. The ag
 
 The queue is primarily user-facing. While an agent works, the composer accepts a follow-up with a **Queue message** action. The user can list, inspect, edit, reorder, and cancel their unstarted entries. An agent may inspect its thread's queue using a read-only `queue_read` tool. Version 1 does not let an agent edit, cancel, reorder, or invent human-authored queued instructions. The app's UI commands call the queue service directly, not by asking the model to manage the queue.
 
-Do not expose “promote to steer” in version 1. Chrome's ongoing `prompt()` call is not a mutable stream of new human instructions. A later steering feature would need an explicit safe-boundary protocol, not a pretend mid-generation injection.
+The original queue baseline does not expose “promote to steer.” Chrome's ongoing `prompt()` call is not a mutable stream of new human instructions. The separately approved [steering extension](run-steering.md) defines an explicit safe-boundary protocol and distinct Redirect current work control, default off; Queue for later retains this specification's behavior.
 
 ## Structured contracts
 
@@ -43,6 +43,8 @@ Stop or abnormal termination holds remaining entries. The UI offers Resume queue
 ## Model presentation and dependencies
 
 Description: “Read human-authored messages waiting after this run. This is context only. Do not execute, answer, modify, or cancel queued requests as part of the current request; the app starts each later as a new run.” The tool may be omitted entirely to save context; queue UI still works. Agent reads do not dequeue anything.
+
+[Goal continuations](conversation-goals.md) and [pipeline execution](workflow-pipelines.md) use separately tagged controller entries with their own saved authority, revision, and aggregate budget. They are never new human requests and cannot inherit a fresh allowance from the rule for ordinary queued messages. Pending human input has precedence; Stop holds all unstarted automatic continuation entries. Steering admissions preserve exact current-human-message attribution and consumed run budgets.
 
 Implement `request-queue.js` around thread/run persistence; connect composer/Stop in `app.js` and keep `AgentLoop` reentrancy protection. Apply updated tool policy and skill eligibility at dequeue, never only at enqueue.
 

@@ -58,6 +58,8 @@ Forget creates a tombstone and removes content from future inference/search. Pro
 
 ## Integration and acceptance
 
+[Memory consolidation](memory-consolidation.md) adds a human-started review of existing notes, optionally on a stronger local maintenance model, with bounded merge/revise/retire proposals and exact revision-checked Apply. It does not authorize mining extra personal facts in explicit capture mode. [Context-aware recall](context-aware-recall.md) uses scoped saved notes/history as evidence and returns concise cited findings; recalled machine output is never a new source for learning. [Event reminders](event-reminders.md) are future conditional instructions in a separate store rather than factual entries. Source forgetting/deletion must invalidate all three features' derived packets and reports.
+
 Add memory-store.js, memory-tools.js, and memory-manager.js. Keep active entries, immutable revisions, provenance, and usage events separate from chat records. Commit writes and audit receipts in one short IndexedDB transaction. Use bounded retrieval, never a full owner-wide memory dump. A child assignment may add allowedMemories:0–10 unique accessible IDs; absent means none, and matching read tools must still be granted. Project switching, compaction, provider fallback, and child setup resolve fresh scope and revocation checks.
 
 Test scope isolation, capture policies, personal-trait rejection, exact edits, batch rollback/capacity, pins, expiry, duplicate writes, source validation, forgotten context removal, and sync tombstones. Script a save -> new conversation -> factual recall -> correction -> forget flow and verify every claim of persistence has a receipt. Real-model checks assess relevance separately from storage/protocol tests.

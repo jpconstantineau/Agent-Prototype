@@ -38,6 +38,8 @@ Display missing/deleted/pruned source evidence honestly, including whether a ver
 
 ## Storage and acceptance
 
+Accepted [memory-consolidation](memory-consolidation.md) edits appear through the existing saved/updated/forgotten memory events and link their review receipt and original sources. A generated consolidation report alone is a suggestion, not persisted learning. [Recall](context-aware-recall.md) usage does not create a new memory fact or independent evidence of truth; trace back to its original source revisions. No extra graph or duplicate memory store is required.
+
 Add learning-index.js and learning-view.js. Store only derived metadata and pointers in IndexedDB; source domains remain authoritative. A rebuild cannot resurrect forgotten memory, restore an archived skill, or change policy. Future sync uses domain receipts and stable IDs to deduplicate learning events; do not sum duplicate usage events from two devices. User export is explicitly scoped and may contain personal source text only if selected through the normal export review.
 
 Test save-versus-draft labels, real provenance edges, source deletion, forgotten-text removal, agent/project filters, stable pagination, unknown totals, index recovery, and delegated domain actions. Verify opening the overview uses no model inference and cannot mutate knowledge until the human invokes an existing explicit action.

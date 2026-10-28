@@ -22,6 +22,8 @@ Save conversations separately from transient model sessions. Users can create, o
 
 ## Minimum records and invariants
 
+[Goals](conversation-goals.md) add controller-owned goal bindings, with one execution-owner thread and explicitly attached read-only reference conversations. A later conversation can resume clarification through the goal's human Attach/Resume controls; opening history alone starts no inference. [Recall](context-aware-recall.md) coordinates scoped history/memory reads through a bounded worker, with explicit cross-thread consent and exact source citations; it does not widen these search tools' ownership/project boundaries.
+
 Persist a stable thread ID, owner, title, archive/deletion state, revision, creation/update times, and optional parent/branch relationship. Messages/events have stable IDs, thread/run attribution, author/type, accepted text, attachment/artifact references, and a committed ordering position. Runs record input, terminal outcome, policy reference, completed tool operations, and any compaction checkpoint. Conversation persistence must not depend on a live `LanguageModel` object.
 
 Store full text and events in bounded records, not a growing array rewritten on every token. Commit human messages before starting a run and accepted tool results before continuing it. Record incomplete/interrupted runs on reload rather than presenting them as completed. Restoration never dispatches historical tool calls or automatically repeats a mutation whose outcome is uncertain.
