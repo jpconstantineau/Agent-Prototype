@@ -24,6 +24,8 @@ Under the [local endpoint extension](local-model-endpoint.md), use the inference
 
 ## Budget and trigger rules
 
+The [context-window reference](local-model-endpoint.md#context-window-reference-checked-2026-10-28) explains runtime capacity, the reported 9,216-token planning example, measurement units, and endpoint-versus-Chrome limits. Use each session's actual capacity rather than treating that example as a fixed API guarantee.
+
 Read `contextUsage`/`contextWindow` when supported and measure the exact next input with `measureContextUsage(input, {responseConstraint})` when available. The controller must account for tool schema and incoming text/media, not compare character counts to token limits. Start an automatic compaction check at 70% usage and aim for at most 45% after rebuilding, reserving at least 20% for a reply/next tool cycle. These are configurable initial defaults, not guarantees about a particular device's model window.
 
 [Agent configurations](agent-library.md) may lower/adjust those ratios only within their specified bounds. [Large-result processing](large-tool-results.md) reduces incoming observation size before the next inference; it does not remove earlier retained model context. Preserve immutable result references and exact control/operation facts in the context manifest. Log before/after measured usage, checkpoint/source references, and the actual replacement prompt through [observability](observability.md).
