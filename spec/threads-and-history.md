@@ -6,6 +6,8 @@ Status: approved specification. Uses [shared runtime contracts](runtime-contract
 
 Save conversations separately from transient model sessions. Users can create, open, rename, archive, search, export, and delete threads. Agents receive bounded read-only `thread_list`, `thread_search`, and `thread_read` tools. They do not silently delete, rename, or create user conversations; [subagent](subagents.md) and [branch](thread-branches.md) services create their own explicitly attributed records.
 
+[Observability](observability.md) adds a separate diagnostic event/payload store and run inspector alongside this curated history. Agent history tools do not gain unrestricted prompt/log access. Threads bind [agent configuration revisions](agent-library.md); diagnostic views show the actual configuration and context submitted without replaying operations. Large payloads remain referenced and paged rather than copied into every message.
+
 ## Minimum records and invariants
 
 Persist a stable thread ID, owner, title, archive/deletion state, revision, creation/update times, and optional parent/branch relationship. Messages/events have stable IDs, thread/run attribution, author/type, accepted text, attachment/artifact references, and a committed ordering position. Runs record input, terminal outcome, policy reference, completed tool operations, and any compaction checkpoint. Conversation persistence must not depend on a live `LanguageModel` object.

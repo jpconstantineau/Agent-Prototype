@@ -8,6 +8,8 @@ Give the human a clear Settings panel for tool/skill eligibility and context exp
 
 Agents may read their effective capability names through `capabilities_read`; there is no agent-facing policy-write, enable, disable, or approve tool. They can explain a missing capability and link to Settings without applying the change. Future automation/API clients must obey the same policy boundary.
 
+The [agent library](agent-library.md) holds named configuration revisions containing narrower role-specific exposure settings. They cannot enable a capability forbidden here. [Execution permission levels](execution-permissions.md) separately decide Automatic/Ask/Denied for an otherwise eligible admitted call; Include never means approval. Library edits affect new bindings; global/role revocation here remains immediate across existing snapshots.
+
 ## Policy model and defaults
 
 Persist a revisioned user policy with global tool/skill modes and two separate role profiles, `main` and `subagent`. Profile entries are `inherit`, `disabled`, `include`, or `discover`; global modes omit inherit. Global Disabled is a hard prohibition. For globally eligible entries, an explicit role mode replaces its global exposure default; Inherit uses that default. A thread may further deny tools/skills but cannot enable a global/role-disabled entry. A child also intersects its parent's eligible set and its explicit task grants. Missing entries use versioned defaults, not “all future tools enabled”.

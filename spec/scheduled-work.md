@@ -28,6 +28,10 @@ Show human-readable recurrence, time zone, next due time, last outcome, and the 
 
 Interpret daily/weekly times in their saved zone, not the device's changed zone. Define DST deterministically: nonexistent wall time runs at the first later valid instant that day; repeated wall time runs once at its first occurrence. Implement a tested local-calendar conversion routine or a supported native Temporal API behind detection; do not assume Date can parse IANA wall times directly. No new runtime dependency is required, but unsupported zones/conversion must fail clearly.
 
+For relative requests use [current date/time grounding](current-date-time.md): read a fresh device clock sample and preserve the accepted source message's timestamp/zone. “In 30 minutes” anchors to when the instruction was accepted, not when model processing finishes. Link the application-owned resolution receipt to the concrete saved schedule. If delay makes the target past, ask for the intended time rather than shifting it silently. A scheduled occurrence uses its saved [agent configuration](agent-library.md) reference plus current hard eligibility/permission restrictions; a required execution approval holds unattended work as needs_attention.
+
+The schedule service captures the creating thread's agentId/configurationRevision as application-owned metadata; the model cannot choose a more permissive library agent through schedule arguments. The human schedule editor may explicitly change that binding while idle with a revision check. If its referenced configuration is unavailable, hold needs_attention instead of substituting the latest/default agent.
+
 On opening/resuming, detect missed occurrences and mark them missed. Version 1 never catches up by silently running old writes. Offer one human-initiated Run now, then compute the next occurrence. While open, recheck against wall-clock time after visibility changes; timers are hints, not exact guarantees. Prevent overlapping executions; coalesce an occurrence already claimed/running. One-off definitions become finished after their accepted occurrence.
 
 ## Runtime, storage, and model guidance
