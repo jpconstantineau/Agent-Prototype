@@ -86,6 +86,8 @@ Additional closed details shapes for the extensions (IDs/revisions are nullable 
 
 Human project/configuration edits use the existing versioned domain receipts plus bounded tool/UI audit payloads; no domain mutation must be represented as a fabricated model action. Skill review decisions link their actual review/draft revisions. Recognition interim text and unsubmitted audio are not diagnostic payloads.
 
+The [persona extension](agent-personas.md) stores personaSnapshot in the immutable configurationSnapshot payload referenced by session.prepared and in compaction manifests. Capture the actual submitted base/overlay in initial prompt payloads and link the exact source revision in the inspector. Persona edits are human configuration receipts, never fabricated model tool calls; existing event headers/details need no new persona fields.
+
 Payload records require payloadId, owner, mediaType (`application/json`/`text/plain`), charLength, byteLength, content hash, immutable body pointer, completeness (`full`, `redacted`, `omitted`), and reason string 0–240. Reuse supported body storage limits, including 200000 characters/1 MiB per body. Larger submitted packets must be bounded before inference; oversized unexpected responses retain bounded safe text marked omitted with original observed size when known. Never label a prefix full. Chunking transport output is not license to inject it into context. Binary attachment data remains in attachment storage with modality/identity references, not repeated bytes in each log.
 
 ```json

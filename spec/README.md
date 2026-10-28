@@ -44,6 +44,7 @@ The agent does not act through this index. It defines no tool, model instruction
 | Rich typed questions | [Structured input extension](structured-input-extension.md) | Agent describes native controls; human submits typed answers |
 | Execution permission levels | [Execution permissions](execution-permissions.md) | Human configures; harness gates exact calls |
 | Reusable agent configurations | [Agent library](agent-library.md) | Human manages/selects; runtime binds versioned settings |
+| Reusable communication styles | [Agent personas](agent-personas.md) | Human selects/edits; agent follows pinned style guidance |
 | Relative date/time grounding | [Current date/time](current-date-time.md) | Agent reads device clock; harness preserves request anchors |
 | Harness diagnostics | [Observability](observability.md) | Harness logs; human inspects and exports |
 | Scoped factual notes | [Persistent memory](persistent-memory.md) | Agent reads/writes under capture policy; human corrects/forgets |
@@ -84,7 +85,7 @@ Browser interface references, checked 2026-10-28: [Prompt API](https://developer
 ## Suggested implementation order
 
 1. Shared validation, capability policy, thread/run storage, observability append service, inference-provider interface, and the existing question broker.
-2. Agent library/configuration snapshots, execution permission levels, Chrome/local endpoint adapters, projects, discovery, skills/preferences, memory, and context accounting/compaction.
+2. Agent library/configuration snapshots, optional personas, execution permission levels, Chrome/local endpoint adapters, projects, discovery, skills/preferences, memory, and context accounting/compaction.
 3. Progress plans, queue, attachments, history retrieval, subagents, branching, and constrained read composition.
 4. Proposed task batches/reversible journal, document revisions/storage, Markdown editing/rendering, large-result retrieval, content indexing/search, and explicit context references.
 5. Rich input, inline artifacts, clock grounding, scheduled work, workflow templates, and the diagnostic inspector.

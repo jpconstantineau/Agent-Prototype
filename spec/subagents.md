@@ -62,6 +62,8 @@ Tool description: “Delegate a small read-only analysis with only the context n
 
 ## Implementation and acceptance
 
+The [persona extension](agent-personas.md) resolves the child template's subagent-role persona, or the parent's subagent-role persona when no template is configured. Pin the exact revision at assignment creation and show it on the child card. Parent main-role persona and thread overrides are not implicitly inherited. This adds controller-owned context only; delegate_task arguments and child grants remain unchanged.
+
 Add `subagents.js` and a shared inference scheduler. Do not recursively instantiate an unrestricted AgentLoop using the parent executor. Fresh LanguageModel.create() sessions receive current child policy, independently admitted definitions/skill sections, and the bounded packet. Session creation/download failures become child failures; where user activation is required show an enable action. Do not clone a full parent context to achieve isolation. A minimal base may be cloned only with matching role policy, Include content, and no parent history. Use [tool discovery](tool-discovery.md) for per-child schema updates.
 
 Persist child identity/state/results in IndexedDB. On reload mark unfinished children interrupted; do not repeat analysis or writes automatically. Test context isolation, permissions, result limits, parent/child Stop races, disabled tools/skills, no grandchildren, bounded waits, session cleanup, and no child mutation. A scripted parent must consume one short packet, not the whole child transcript. Evaluate actual hardware resource behavior separately from protocol correctness.

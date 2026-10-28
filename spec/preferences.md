@@ -22,6 +22,8 @@ Users manage persistent preferences in Settings. Agent tools can read relevant s
 
 Supported version-1 keys: `weekStartsOn` (integer 1–7, Monday=1); `preferredTimeZone` (valid IANA zone string 1–80); `responseStyle` (`concise`, `balanced`, `detailed`); `customInstructions` (plain text 0–4000). Native controls provide enum/number/zone validation. Empty customInstructions clears it. A time-zone preference is a planning preference, not an override of already saved schedules' time zones.
 
+[Personas](agent-personas.md) add optional reusable voice/style below explicit preferences. responseStyle and customInstructions remain in this service; do not move or duplicate them into personas during migration. A current task can request a different response style for that answer without saving a setting. Neutral persona suppresses only persona guidance, preserving these preferences.
+
 ## Agent contracts
 
 `preferences_read` requires `version: 1`; optional `keys` is 1–4 unique supported key strings. Default returns typed preferences and metadata, with customInstructions omitted unless requested. Result: `{success:true,version:1,revision,values}`; `values` contains only requested, present keys. Missing values mean use application defaults, not fabricated settings.

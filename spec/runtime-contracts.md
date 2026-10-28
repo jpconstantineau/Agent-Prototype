@@ -24,6 +24,8 @@ Compose a chat executor around `connection.executor || registry`, as defined in 
 
 The approved [local-model adapter](local-model-endpoint.md) generalizes inference while retaining this executor. Direct LanguageModel/session.prompt examples elsewhere describe the Chrome adapter; endpoint inference uses its separate tested HTTP contract. Only the browser executes tool actions. New [in-app guidance](in-app-guidance.md) actions may be explicitly exposed through WebMCP as a reviewed exception to the local-only default, with the same policy/foreground checks.
 
+[Agent personas](agent-personas.md) are human-managed communication configuration, not model tools. Resolve and pin their exact revisions in controller-owned context/configuration snapshots. Rebuild, compaction, and provider fallback retain those sources and count their guidance in the active context budget; style cannot change policy or tool receipts.
+
 Extend systemPrompt/tool-guidance intent routing before adding these features: explicit factual memory, skill learning, project/document questions, workflow starts, and board assignments take precedence over the original bare-task-add fallback when that is the actual human intent. Do not classify by a word alone: “remember that the report uses Monday weeks” is factual capture, while “remind me in 30 minutes” is scheduling. Application-authored workflow/assignment kinds have explicit routing; source text and reference contents never become new action requests. Preserve the established Daylist default for ordinary task requests, and test that reading/learning a document does not inadvertently add it as a task.
 
 ## 2. Protocol and schema conventions
