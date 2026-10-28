@@ -70,6 +70,10 @@ The agent does not act through this index. It defines no tool, model instruction
 | Removing obsolete read payloads | [Tool-result pruning](tool-result-pruning.md) | Harness projects context; original evidence remains retrievable |
 | Focused runtime diagnosis | [Observability agent](observability-agent.md) | Scoped read-only diagnostic worker explains selected evidence |
 | Proposed future work | [Follow-up suggestions](follow-up-suggestions.md) | Agent records evidence-backed proposals; human accepts or dismisses |
+| Research and execution phases | [Plan/Act modes](plan-act-modes.md) | Human switches; harness narrows effects and selects approved phase route |
+| Selectively loaded guidance | [Conditional instruction rules](conditional-instruction-rules.md) | Human defines/binds; harness evaluates work metadata; agent follows |
+| Coordination over board assignments | [Agent-team coordination](agent-team-coordination.md) | Approved members exchange information; coordinator assembles; human reviews |
+| Evidence-linked ordinary run outcomes | [Completion reports](completion-reports.md) | Agent reports completed/partial/blocked; harness validates actual support |
 
 ## Reference only: future decision
 
@@ -80,6 +84,8 @@ The agent does not act through this index. It defines no tool, model instruction
 The private credential tool was declined. OS shells, Git/worktrees/PR management, simulator control, remote-machine linking, unrestricted browser automation, and server screenshot previews are not part of this browser-only design. HTML rendering does not imply that a standalone web page can capture arbitrary tabs. Existing task operations remain the five tools in `docs/src/tools.js`.
 
 [Side questions](side-questions-reference.md) is reference-only following the OpenClaw review. It is not approved for implementation, default activation, or the implementation sequence below. Appearance themes were explicitly excluded as separate UI work; no agent appearance spec or tool is added.
+
+The Cline review explicitly excluded conversation import, configurable lifecycle checks/hooks, and multi-document change sets. Existing single-document editing and task-batch proposals retain their prior scope. These declined capabilities are not introduced through another accepted extension.
 
 ## Project baseline and sources
 
@@ -97,6 +103,8 @@ Browser interface references, checked 2026-10-28: [Prompt API](https://developer
 
 The OpenClaw review used [commit a74f408](https://github.com/openclaw/openclaw/tree/a74f408db7fbabcdca1089cec8d50f16d6a4f418), including its tools/concepts documentation, loop detector, goal tools, standing-intent tool, theme tool, suggestion tools, and structured health contracts. The eleven rows above record accepted additions; side questions are reference-only and themes are excluded. The new specs cover the full adapted contracts, UI, model presentation, storage/lifecycle, and tests without importing OpenClaw/TypeScript packages. A stronger maintenance model can distill bounded evidence into compact memory; a goal can support explicit clarification over multiple visits/conversations. Existing questions, plans, history, skills, permissions, documents, media support, discovery, voice, logging, and model routes already cover the overlapping features. Shell/native browser/device control, external messaging/media generation, credential tools, cloud-provider setup, arbitrary plugins, and previously declined web search/fetch are not ports. PDF parsing remains outside the approved Chrome-compatible attachment baseline.
 
+The Cline review used [commit f817e59](https://github.com/cline/cline/tree/f817e59f698f01487920c00ede2dbecad5c0fa50), inspecting CLI docs/source, the VS Code extension's phase toggle and conditional-rule evaluator, desktop usage/import/customization docs and source, shared core presets/tools, and team/completion contracts. Plan/Act is represented across clients; the inspected SDK/CLI Plan preset includes guarded shell access, which is not part of this browser adaptation. Conditional rules add strict app-metadata selection over the existing configuration layers, with an explicit distinction table. Team tools are documented for SDK/CLI/Kanban rather than the VS Code extension; the accepted adaptation extends this app's existing board and preserves generic-child restrictions. Terminal completion draws on the core submit tool while replacing a bare verified flag with actual evidence references. Imports, hooks, and multi-document batches were declined. Existing memory/project documents, compaction, skills, questions, context selection, checkpoints, scheduling, diagnostics, and local routes cover the other relevant overlap. No Cline/Bun/Node/Tauri/React/TypeScript dependency, shell, remote machine, marketplace, external speech service, or cloud-provider integration is required.
+
 ## Suggested implementation order
 
 1. Shared validation, capability policy, thread/run storage, observability append service, inference-provider interface, and the existing question broker.
@@ -106,5 +114,6 @@ The OpenClaw review used [commit a74f408](https://github.com/openclaw/openclaw/t
 5. Rich input, inline artifacts, clock grounding, scheduled work, workflow templates, and the diagnostic inspector.
 6. Opt-in skill learning/curation, learning overview, the durable work board, registered in-app guidance/WebMCP exposure, and Chrome-only voice. External MCP and online skill catalogs remain future decisions outside this implementation order.
 7. Loop detection and selective result pruning, followed by safe-boundary steering, scoped event reminders, durable goals, structured processing, evidence-based recall/consolidation, checkpointed pipelines, the observability agent, and follow-up suggestions as their dependencies become available. Side questions remain a later decision; appearance themes are separate UI work.
+8. Plan/Act phase policy and phase-specific routing, conditional instruction bindings/context refresh, structured completion reporting, and team coordination over existing approved board assignments. Implement team messaging/outcomes after the board, source grants, and aggregate budget accounting are available.
 
 Build each feature behind its own switch and keep manual Daylist task management available when AI is unavailable. Do not implement all capabilities merely to ship one. Specs are independently reviewable while sharing the common contracts.

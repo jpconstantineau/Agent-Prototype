@@ -104,12 +104,13 @@ The app serializes named blocks into the application-authored initial prompt for
 1. Application protocol, truthful reporting, effective permissions, tool contracts, and actual runtime capabilities.
 2. Explicit current human task constraints, inside those application boundaries.
 3. Approved agent role and selected project instructions; a role constraint wins if the two conflict. Surface material unresolved conflicts rather than executing an ambiguous consequential action.
-4. Explicit saved preferences, including responseStyle and customInstructions.
-5. Persona overlay, then persona base. Overlay wins only between these two style fields.
+4. Resolved [conditional instruction rules](conditional-instruction-rules.md), when enabled, within their bound work scope and priority.
+5. Explicit saved preferences, including responseStyle and customInstructions.
+6. Persona overlay, then persona base. Overlay wins only between these two style fields.
 
 Persona guidance therefore yields to “answer in one sentence,” a concise responseStyle, a task requiring detailed evidence, or an agent's required report format. It cannot authorize a write, suppress an approval, invent results, imitate actual credentials, change provider identity, or override Stop. Reject structurally invalid inputs; retain human text faithfully and explain conflicting guidance in preview rather than claiming arbitrary prose can be perfectly classified as safe style. Runtime enforcement remains independent of prompt compliance.
 
-Assembly order is application rules/protocol; effective policy/runtime facts; active role instructions; project instructions if any; explicit preferences; resolved persona base then overlay; factual memory; eligible Include skills; needed discovered content; bounded conversation/task context. Label memory/reference/results as data and skills as bounded procedures with their existing scope. The current task appears in the bounded message ledger, retaining the higher-priority task rule stated above. This updates the common assembly sequence in agent-library; it does not change the action JSON envelope or response schema.
+Assembly order is application rules/protocol; effective policy/phase/runtime facts; active role instructions; project instructions if any; resolved conditional-rule guidance; explicit preferences; resolved persona base then overlay; factual memory; eligible Include skills; needed discovered content; bounded conversation/task context. Label memory/reference/results as data and skills as bounded procedures with their existing scope. The current task appears in the bounded message ledger, retaining the higher-priority task rule stated above. This updates the common assembly sequence in agent-library; it does not change the action JSON envelope or response schema.
 
 Example app-authored persona block (text, not an executable instruction template):
 

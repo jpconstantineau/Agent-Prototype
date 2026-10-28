@@ -16,6 +16,8 @@ The agent does not act through this spec to configure permissions or approve cal
 
 ## Separate eligibility, exposure, and execution
 
+The [Plan/Act extension](plan-act-modes.md) adds a conversation phase ceiling before this optional approval layer. Plan denies domain mutations even with enabled:false or automatic, and switching to Act restores only otherwise eligible operations. Team coordination's narrow local bookkeeping exception is explicit in [its spec](agent-team-coordination.md); these write tools still obey this layer's read_only/ask/deny rules. A rule, phase prompt, model route, or teammate message cannot grant authority or approve an operation.
+
 Disabled/Include/Discover answers whether a tool is eligible and how its schema enters context. Permission levels answer whether an eligible admitted operation is prohibited, requires human approval, or may run automatically within the current human request. Approval never enables a disabled tool, admits an undiscovered schema, broadens record scope, or overrides the read-only subagent limit. Manual user controls remain independent of agent permissions.
 
 Store permissions inside each saved agent configuration, with separate main and subagent settings. A thread binds a configuration revision; a child also intersects its parent's restrictions and explicit assignment grants. The model sees a compact effective-policy explanation but cannot edit settings. Agent/skill instructions are lower-priority configuration content, not executable policy.

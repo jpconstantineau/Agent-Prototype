@@ -38,6 +38,8 @@ This read reveals metadata/current instructions only. Bodies still require docum
 
 ## UI and prompt mapping
 
+[Conditional instruction rules](conditional-instruction-rules.md) can select a bounded subset of additional approved guidance by exact project/resource/phase/workflow metadata. They do not replace these general project instructions, link new resources, infer tags, or create another project context store. Project instructions retain higher precedence than the rule layer; active source revisions and match reasons are recorded separately.
+
 Add a project selector next to agent selection, with Project overview, Instructions, Documents/tasks, Memory, Conversations, Work board, and Settings links as available. Lists and chips show project labels where ambiguity matters. The instruction editor shows stored and active-context size, revision, and Apply-to-conversation behavior. Resource linking uses native pickers with exact identity and access summaries. Duplicate project names are allowed; always display enough metadata to distinguish them.
 
 Session setup includes a compact project header/instruction snapshot before factual memory, eligible skill content, and bounded conversation context. It cannot replace application protocol or override global/role denials. Agent instructions and project instructions are separately attributed; current human requests settle conflicting lower-priority guidance, while hard policy wins. Changing project instructions/membership invalidates affected context at a safe boundary; access removals block another stale dispatch immediately. Do not restore removed content through summaries or provider fallback.

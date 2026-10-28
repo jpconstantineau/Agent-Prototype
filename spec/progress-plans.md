@@ -38,6 +38,8 @@ Show the same card revision rather than appending a duplicate card per update. E
 
 ## Model presentation and continuation
 
+[Plan/Act](plan-act-modes.md) controls the conversation's permitted effects, while this progress checklist only describes work. Neither a completed plan step nor a [completion report](completion-reports.md) invents a domain receipt. An informational Plan request can finish with an ordinary reply; structured action reports remain optional unless the human configured their documented requirement.
+
 Description: “Track the work you are doing on the current request. Supply the entire current plan with stable step IDs and no more than one in-progress step. This changes progress display only, not saved tasks. Use for multi-step work; avoid planning a trivial one-step action. Mark a step completed only after its actual work succeeds.”
 
 Include the definition in enabled chat-tool descriptions and `responseSchema()`. After a successful result, the observation says to continue the original request; changing the plan does not satisfy it. A plan step cannot authorize a mutation or substitute for a human-approved proposal. Model calls spent updating the plan count toward the existing run limit, so use few, meaningful updates.

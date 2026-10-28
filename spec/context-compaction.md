@@ -50,6 +50,8 @@ The contextManifest is application-owned: current policy revision; applicable pr
 
 ## Summarize, validate, rebuild
 
+With the Cline extensions, preserve exact [phase](plan-act-modes.md) revisions, active [rule](conditional-instruction-rules.md) bindings/match sources, and [team](agent-team-coordination.md) membership/window/message/fragment references in the authoritative manifest. Recompute permitted active guidance on rebuild; never rely on a model paraphrase to decide phase, counters, or tool grants. [Completion reports](completion-reports.md) link real operation evidence after compaction and cannot infer a missing receipt from a summary.
+
 1. Persist completed history/events first and take a stable source boundary. Read only a bounded source packet: prior accepted summary plus recent complete exchanges and relevant records. Very long transcripts are processed in bounded chunks with stable cursors; do not attempt to stuff the entire history into a summarizer.
 2. Use a fresh restricted text session to generate the structured summary. Its executor has no task tools and cannot load arbitrary history or skills. At most two summarization calls and one replacement-session creation per compaction attempt; expose maintenance usage separately from the main 12-step counter. Cap automatic compactions at two per main run to prevent loops.
 3. Validate shape, lengths, references, and source revision. Merge authoritative operation/task/policy facts from the manifest, not the model's paraphrase. If summary changes an exact human constraint or contradicts known receipts, reject it. Preserve exact critical text outside the lossy summary.
