@@ -32,6 +32,8 @@ For relative requests use [current date/time grounding](current-date-time.md): r
 
 The schedule service captures the creating thread's agentId/configurationRevision as application-owned metadata; the model cannot choose a more permissive library agent through schedule arguments. The human schedule editor may explicitly change that binding while idle with a revision check. If its referenced configuration is unavailable, hold needs_attention instead of substituting the latest/default agent.
 
+The [project](project-context.md) binding and exact [workflow instance](workflow-templates.md), when created through its human launcher, are also application-owned metadata. Resolve trusted workflowInstanceId bindings, never an ID parsed from a model's prompt string. Current hard policy and the chosen [text-provider route](local-model-endpoint.md) apply at execution; Chrome fallback does not repeat schedule creation or an occurrence's committed operations. [Skill curation](skill-curation.md) treats referenced skills as protected even while a schedule is paused.
+
 On opening/resuming, detect missed occurrences and mark them missed. Version 1 never catches up by silently running old writes. Offer one human-initiated Run now, then compute the next occurrence. While open, recheck against wall-clock time after visibility changes; timers are hints, not exact guarantees. Prevent overlapping executions; coalesce an occurrence already claimed/running. One-off definitions become finished after their accepted occurrence.
 
 ## Runtime, storage, and model guidance

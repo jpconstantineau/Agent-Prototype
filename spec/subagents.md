@@ -14,6 +14,8 @@ Version 1 children are read-only analysts. They may read current task data, sele
 
 The large-result extension adds optional allowedResults: 0–5 unique accessible result IDs, default empty. The host validates the parent's access before delegating these references and records the exact grant in child state. A result ID merely mentioned in task/context prose is not a grant. Reading one still requires an eligible/admitted result retrieval tool in allowedTools. Child offloading settings require the same retrieval dependency; children can read their own newly produced results within their scope without gaining access to sibling outputs.
 
+The [memory extension](persistent-memory.md) similarly adds allowedMemories:0–10 accessible IDs, default empty, validated against parent scope. Project/document/attachment/board reads require explicit controller-maintained resource grants from the assignment, never IDs mentioned only in prose. The selected [text-provider route](local-model-endpoint.md) can differ under human configuration but cannot change grant limits, read-only status, or budgets. Children cannot draft/publish skills, create board work, start voice input, or manipulate foreground guidance.
+
 ```json
 {"type":"tool_call","name":"delegate_task","arguments":{"version":1,"title":"Overdue task analysis","task":"Identify recurring themes in overdue tasks; do not change anything.","context":"Return a short factual summary and task references from current reads.","allowedTools":["list_items","search_items"],"allowedSkills":[],"maxResultChars":1200}}
 ```

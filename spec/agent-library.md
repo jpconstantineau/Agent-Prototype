@@ -2,6 +2,8 @@
 
 Status: approved specification. The library is the user-facing container for the existing [tool/skill settings](capability-controls.md), [skills](skills.md), [permissions](execution-permissions.md), and context/runtime settings. It introduces no agent-facing configuration-write tool. Uses [history](threads-and-history.md), [subagents](subagents.md), and [observability](observability.md).
 
+The Hermes-review extensions below add settings and a device-local inference route; the earlier Chrome-only restriction applies to the original baseline, not the explicitly approved [local endpoint/fallback](local-model-endpoint.md) extension. The original structured-question wire protocol remains unchanged.
+
 ## Purpose and actors
 
 Save named configurations such as Planner or Document reviewer and start conversations with a selected configuration. A configuration is data for the harness: instructions, capability choices, permission behavior, and supported runtime limits. It is not a live model, a conversation, a skill, an application identity, or a remote-model API credential. Multiple threads can use one revision without sharing model context.
@@ -22,6 +24,8 @@ Store agentId:ID, owner/workspace, current revision, createdAt/updatedAt, archiv
 
 A role contains `{tools,skills,permissions}`. tools and skills are arrays of at most 100 unique `{id,mode}` records; tool IDs are exact registry names and skill IDs are stored skill identities. mode is inherit/disabled/include/discover. Missing entries inherit the existing global/role policy. permissions uses the exact [execution-permissions](execution-permissions.md) contract; main and subagent are independent settings. This contains references to skill bodies, not duplicated SKILL.md text.
 
+Version-1 extension fields in new/migrated configuration bodies are memory, learning, and curation, using the exact contracts/defaults in [persistent memory](persistent-memory.md), [skill learning](skill-learning-extension.md), and [per-agent curation](skill-curation.md). Each role additionally has modelRouteId:ID|null, default null meaning inherit the device route. These are the only newly admitted keys; they do not make the body open-ended. Migrate missing fields to disabled feature defaults before validation; explicit malformed imports still fail. Roles cannot widen memory/project/resource grants. Curation/learning cannot activate disabled skills or rewrite this configuration.
+
 Resolve global and existing main/subagent policy first. A library configuration can deny or change exposure of an already eligible capability, but cannot enable a global/role-disabled capability. Include/Discover only applies inside that eligible set. Then apply thread restrictions, parent scope, and assignment/schedule grants. An explicit disabled entry at any applicable hard ceiling wins. The role preview explains why a saved entry is ineffective; never silently discard it and imply it is active. Main and subagent contexts/admissions are computed independently.
 
 runtime is a closed object requiring:
@@ -34,7 +38,7 @@ runtime is a closed object requiring:
 
 Enforce defaults during explicit creation/migration, not silently on malformed imports. Turning off compaction/offloading means the run stops when context cannot fit; it never disables browser/model limits. Tool eligibility controls richer forms, visualizations, questions, schedules, and discovery; do not add redundant switches that disagree with those settings. Logging is a harness service with its own retention controls, not a tool an agent can disable.
 
-Version 1 uses the app's existing text-first Chrome LanguageModel options and capability detection. It does not allow arbitrary cloud model names, temperature/topK, provider secrets, responseSchema overrides, or API endpoint configuration. Add supported Chrome options only through a versioned browser adapter and current definitions; website and extension options may differ. Native model identity/version is recorded as available or Unknown, not invented from an agent name. Attachments keep their own detected modality/session requirements.
+The baseline uses the app's text-first Chrome LanguageModel options and capability detection. The local-endpoint extension selects an approved device-local route/profile through modelRouteId; URL/model/token configuration lives in its separate human Settings service. Agent bodies still cannot contain arbitrary cloud endpoints, provider secrets, responseSchema overrides, or raw sampling options. Add supported Chrome options only through a versioned browser adapter and current definitions; website and extension options may differ. Model identity/version is recorded as available or Unknown, not invented from an agent name. Attachments keep their own detected modality/session requirements.
 
 ## User service contracts and UI mapping
 
@@ -63,6 +67,8 @@ Editing a library entry affects new threads. Existing threads visibly retain the
 On Apply, validate current eligibility/permissions, persist the new binding, and build a replacement model session at a safe boundary with its current configuration. Preserve conversation history and exact operation receipts. Do not reuse an old privileged system prompt or assume clone() removes old instructions. If the replacement cannot fit or be created, leave the previous binding active and show failure; do not claim the new agent applied. Hold pending forms/approvals until answered/cancelled before switching. Deleting a library entry prevents new selection but retains historical snapshots for existing threads; a user can archive or separately revoke capabilities if work must stop.
 
 Prompt assembly order is application rules/protocol, current effective policy and runtime facts, active agent role instructions, explicit user preferences, eligible Include skills, necessary discovered content, then bounded conversation context. All lower-priority configuration must obey application policy. Inference stores only the bounded active material; full drafts/snapshots remain in IndexedDB. Fail clearly when required Include content or instructions cannot fit; do not truncate and claim the configuration is active.
+
+With extensions enabled, insert the selected [project](project-context.md) instruction snapshot and permitted [factual memory](persistent-memory.md) block after explicit preferences and before skill content. Record each source/revision and distinguish facts from instructions. A [workflow](workflow-templates.md) is a versioned task request, not a replacement agent identity. [Board assignments](agent-work-board.md) use the selected main role under narrower item grants; they never turn v1 subagents into writers.
 
 ## Subagent configurations
 

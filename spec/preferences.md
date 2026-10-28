@@ -6,6 +6,8 @@ Status: approved specification. Uses [shared runtime contracts](runtime-contract
 
 Users manage persistent preferences in Settings. Agent tools can read relevant settings and propose changes when the human explicitly asks to remember something. Do not silently infer persistent traits or turn a task note into instructions. Preferences are not tool permissions, schedule grants, skills, authentication, or arbitrary executable configuration.
 
+[Persistent factual memory](persistent-memory.md) adds scoped notes for facts not represented by these typed keys. It does not duplicate or bypass preference proposals; known settings continue through this service. Operational learning opt-in never permits inferring personal traits or quietly changing these values.
+
 Supported version-1 keys: `weekStartsOn` (integer 1–7, Monday=1); `preferredTimeZone` (valid IANA zone string 1–80); `responseStyle` (`concise`, `balanced`, `detailed`); `customInstructions` (plain text 0–4000). Native controls provide enum/number/zone validation. Empty customInstructions clears it. A time-zone preference is a planning preference, not an override of already saved schedules' time zones.
 
 ## Agent contracts

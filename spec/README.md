@@ -2,7 +2,7 @@
 
 Status: proposed design, not implemented. Approved in the repository review conversation on 2026-10-28. Runtime code remains unchanged.
 
-Start with [shared runtime contracts](runtime-contracts.md), then read the feature being implemented. Each feature describes user controls, agent tools, structured inputs/results, UI mapping, lifecycle, integration, and acceptance criteria. All designs use vanilla JavaScript ES modules, browser APIs, and Chrome's Prompt API; there is no React/TypeScript requirement or native Prompt API tool-calling dependency.
+Start with [shared runtime contracts](runtime-contracts.md), then read the feature being implemented. Each feature describes user controls, agent tools, structured inputs/results, UI mapping, lifecycle, integration, and acceptance criteria. All designs use vanilla JavaScript ES modules and browser APIs. Inference supports Chrome's Prompt API and the explicitly approved local HTTP endpoint adapter with Chrome fallback; voice remains Chrome/browser-only. There is no React/TypeScript requirement, production SDK, or native Prompt API tool-calling dependency.
 
 ## Approved specifications
 
@@ -34,10 +34,24 @@ Start with [shared runtime contracts](runtime-contracts.md), then read the featu
 | Reusable agent configurations | [Agent library](agent-library.md) | Human manages/selects; runtime binds versioned settings |
 | Relative date/time grounding | [Current date/time](current-date-time.md) | Agent reads device clock; harness preserves request anchors |
 | Harness diagnostics | [Observability](observability.md) | Harness logs; human inspects and exports |
+| Scoped factual notes | [Persistent memory](persistent-memory.md) | Agent reads/writes under capture policy; human corrects/forgets |
+| Reusable learned procedures | [Skill-learning extension](skill-learning-extension.md) | Agent drafts/revises; publication and enablement stay distinct |
+| Per-agent library maintenance | [Skill curation](skill-curation.md) | Harness proposes; human reviews shared effects |
+| Project knowledge boundaries | [Project context](project-context.md) | Human selects/organizes; runtime scopes resources |
+| Parameterized recurring requests | [Workflow templates](workflow-templates.md) | Human prepares, starts, or schedules a frozen instance |
+| Selected source material | [Context references](context-references.md) | Human picks versioned @ references and text ranges |
+| Page navigation and help | [In-app guidance](in-app-guidance.md) | Agent uses registered actions; optional explicit WebMCP exposure |
+| Search within saved text | [Document-content search](document-content-search.md) | Agent/user finds passages in the existing document store |
+| Chrome-only voice surface | [Voice interaction](voice-interaction.md) | Human dictates/reviews/sends; local browser voices read replies |
+| Persistent work and handoffs | [Agent work board](agent-work-board.md) | Human assigns/reviews; bounded named agents report work |
+| Persisted learning inspection | [Learning overview](learning-overview.md) | Human traces facts/skills to sources and revisions |
+| Stronger local text inference | [Local endpoint and fallback](local-model-endpoint.md) | Human configures; harness safely falls back to Chrome |
 
 ## Reference only: future decision
 
 [External MCP connections](external-mcp-reference.md) records a possible future client architecture. It is not approved for implementation or activation. Existing WebMCP exposure and connecting to remote MCP servers are different directions. Web page fetching and web search were declined and are not included.
+
+[Skill catalogs and update management](skill-catalog-reference.md) is also reference-only for a later decision. Approved manual imports, learned-skill drafts, and curation work without an online registry. Neither reference document authorizes external network services or automatic installation.
 
 The private credential tool was declined. OS shells, Git/worktrees/PR management, simulator control, remote-machine linking, unrestricted browser automation, and server screenshot previews are not part of this browser-only design. HTML rendering does not imply that a standalone web page can capture arbitrary tabs. Existing task operations remain the five tools in `docs/src/tools.js`.
 
@@ -51,14 +65,17 @@ The follow-up OpenCode review used [commit d6867f2](https://github.com/anomalyco
 
 The TrueForge review used [commit e6a2e9e](https://github.com/truefoundry/trueforge/tree/e6a2e9ed0cb2f1e13837a4b845c5b2d2bf3a81a8). Approved additions adapt its large-result processing, OpenUI, exact-call approvals, saved agent library, current-date/time tool, and session diagnostics. The richer-input design is a separate extension; the original request-user-input.md is unchanged. Observability uses a separate IndexedDB object store and captures application-visible prompts/actions/results. Browser storage replaces sandbox files; JSON/native DOM replaces OpenUI/React. All behavior needed for implementation is specified here without importing TrueForge code or packages. Existing skills/discovery/subagents/schedules/compaction already cover the relevant overlapping features. Server sandboxes, cloud-provider setup, connector OAuth, and enterprise benchmarking are outside this browser-only addition; external MCP remains reference-only.
 
+The Hermes Agent review used [commit 8acb7f6](https://github.com/NousResearch/hermes-agent/tree/8acb7f65801fa7548b223244dee57465adfda8ec). Relevant areas were tools/memory_tool*, skill_manager*, skill usage/curator, project/context references, automation blueprints/bundles, file content search, desktop focus/tip/tour actions, voice, Kanban, and agent/learning_graph*. Memory uses scoped IndexedDB records instead of files; skills retain the existing text-only loading boundary. Agent-specific curation protects shared consumers. Document search is an extension of the existing store, not duplicate document infrastructure. WebMCP-linked guidance uses app-owned registered actions; voice uses only Chrome/browser APIs. Shell/browser control, external speech providers, online memory services, cloud messaging, and package installation are not ports. The user additionally approved stronger local text inference with Chrome fallback. Original question contracts remain unchanged; all specifications are standalone designs without Hermes/Python dependencies.
+
 Browser interface references, checked 2026-10-28: [Prompt API](https://developer.chrome.com/docs/ai/prompt-api), [structured output](https://developer.chrome.com/docs/ai/structured-output-for-prompt-api), and [session management](https://developer.chrome.com/docs/ai/session-management). The application owns the protocols, persistence, policy, and UI described here.
 
 ## Suggested implementation order
 
-1. Shared validation, capability policy, thread/run storage, observability append service, and the existing question broker.
-2. Agent library/configuration snapshots, execution permission levels, discovery, skills/preferences, bounded history retrieval, and context accounting/compaction.
-3. Progress plans, queue, attachments, subagents, branching, and constrained read composition.
-4. Proposed task batches/reversible journal, document revisions/storage, Markdown editing/rendering, and large-result storage/retrieval.
-5. Rich input extension, inline HTML artifacts, clock grounding, and scheduled work. Add the diagnostic inspector as events become available. External MCP remains a future decision outside this implementation order.
+1. Shared validation, capability policy, thread/run storage, observability append service, inference-provider interface, and the existing question broker.
+2. Agent library/configuration snapshots, execution permission levels, Chrome/local endpoint adapters, projects, discovery, skills/preferences, memory, and context accounting/compaction.
+3. Progress plans, queue, attachments, history retrieval, subagents, branching, and constrained read composition.
+4. Proposed task batches/reversible journal, document revisions/storage, Markdown editing/rendering, large-result retrieval, content indexing/search, and explicit context references.
+5. Rich input, inline artifacts, clock grounding, scheduled work, workflow templates, and the diagnostic inspector.
+6. Opt-in skill learning/curation, learning overview, the durable work board, registered in-app guidance/WebMCP exposure, and Chrome-only voice. External MCP and online skill catalogs remain future decisions outside this implementation order.
 
 Build each feature behind its own switch and keep manual Daylist task management available when AI is unavailable. Do not implement all capabilities merely to ship one. Specs are independently reviewable while sharing the common contracts.

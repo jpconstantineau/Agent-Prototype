@@ -35,9 +35,13 @@ Each event is a closed versioned record with these required fields:
 
 Canonical event kinds: user.accepted, session.prepared, session.disposed, run.started, run.finished, model.requested, model.responded, model.invalid, tool.requested, tool.started, tool.finished, interaction.opened, interaction.decided, capability.changed, skill.loaded, child.changed, context.changed, result.stored, runtime.error, and runtime.interrupted. Unknown versions/kinds are preserved as unsupported records for human export, not executed or blindly rendered as HTML. Define exact metadata validators per kind in event-contract.js; no arbitrary error object or browser object goes into details.
 
+The Hermes extensions add typed kinds model.route_changed, knowledge.changed, workflow.changed, work.changed, ui.changed, and speech.changed with details contracts below. Add projectId:ID|null to event headers, defaulting null when reading older v1 records. runType additionally allows board; interactionType additionally allows skill_review. user.accepted source additionally allows voice_transcript, workflow, and board_start. Existing historical event records remain readable without rewriting them. Knowledge provenance remains domain metadata; diagnostic retention alone cannot resurrect forgotten content.
+
 Key metadata contracts:
 
 - model.requested/responded/invalid: inferenceId:ID, iteration integer 1–12 (child/maintenance limits validated by run type), sessionGeneration integer >=1, maintenance boolean, inputContextUsage/outputContextUsage/contextWindow each nonnegative finite number or null, usageUnit `context_tokens` or `unknown`. Unknown metrics are null, never zero. Raw payload references carry submitted input/options/schema and returned text respectively; invalid records reference the raw response plus bounded validation error.
+
+With the provider extension, these model metadata records also contain provider:`chrome`/`local_http`, profileId:ID|null, modelIdentity:string up to 200 or null, and usageProvenance:`measured`/`estimated`/`unknown`; usageUnit additionally permits provider_tokens. Migrate older rows to chrome/null/unknown as appropriate without inventing an old model identity. Capture exact raw assistant action content and sanitized HTTP metadata, never reasoning_content, native hidden reasoning, auth headers, or whole HTTP/browser objects. Record session.prepared around the selected adapter's prepare operation, not exclusively LanguageModel.create().
 - tool.requested/started/finished: toolName 1–80, definitionRevision, operationId:ID, parentCallId:ID|null, approvalId:ID|null, outcome `not_started`/`pending`/`succeeded`/`failed`/`cancelled`/`uncertain`, receiptIds 0–20 IDs. Tool inputs/results live in payloads. A requested call need not have started.
 - interaction.opened/decided: interactionType `question`/`form`/`approval`/`task_proposal`/`preference_proposal`/`branch_review`, requestRevision, decision `pending`/`answered`/`allowed`/`denied`/`applied`/`rejected`/`revise`/`cancelled`/`expired`. Link exact request and submitted decision payloads.
 - run.started/finished: runType main/subagent/scheduled/maintenance, inputMessageId:ID|null, outcome `pending`/`completed`/`max_iterations`/`awaiting_user`/`needs_attention`/`failed`/`cancelled`/`interrupted`, activeDurationMs and humanWaitDurationMs numbers >=0 or null. Total elapsed time is separately derived, not confused with model execution.
@@ -56,6 +60,19 @@ The remaining closed details shapes are below. Every listed field is required; n
 | result.stored | resultId:ID, sourceCallId:ID, charLength:integer >=0, byteLength:integer >=0 |
 | runtime.error | code:string 1–80, message:string 1–500, recoverable:boolean |
 | runtime.interrupted | reason:string, lastCommittedSequence:integer >=0, gapKnown:boolean |
+
+Additional closed details shapes for the extensions (IDs/revisions are nullable only where shown):
+
+| Kind | details fields |
+| --- | --- |
+| model.route_changed | previousProvider:`chrome`/`local_http`/null, nextProvider:`chrome`/`local_http`, profileId:ID|null, reason:string, automatic:boolean |
+| knowledge.changed | resourceKind:`memory`/`skill`/`skill_draft`/`curation`, resourceId:ID, revision:Revision, action:`saved`/`updated`/`forgotten`/`drafted`/`published`/`suggested`/`archived`/`restored`/`pinned`, receiptId:ID|null |
+| workflow.changed | templateId:ID, templateRevision:Revision, instanceId:ID|null, action:`prepared`/`started`/`scheduled`/`cancelled`, relatedRunId:ID|null |
+| work.changed | workId:ID, revision:Revision, attemptId:ID|null, state:`queued`/`running`/`blocked`/`review`/`done`/`cancelled`, receiptId:ID|null |
+| ui.changed | guidanceId:ID|null, actionId:LocalID|null, targetId:LocalID|null, action:`opened`/`tip_shown`/`tour_started`/`step_changed`/`dismissed`, stepIndex:integer 0–5 or null |
+| speech.changed | recordingId:ID|null, path:`on_device_speech`/`prompt_audio`/`local_synthesis`, state:`started`/`stopped`/`processed`/`submitted`/`cancelled`/`failed`, durationMs:nonnegative number|null, errorCode:string 0–80 |
+
+Human project/configuration edits use the existing versioned domain receipts plus bounded tool/UI audit payloads; no domain mutation must be represented as a fabricated model action. Skill review decisions link their actual review/draft revisions. Recognition interim text and unsubmitted audio are not diagnostic payloads.
 
 Payload records require payloadId, owner, mediaType (`application/json`/`text/plain`), charLength, byteLength, content hash, immutable body pointer, completeness (`full`, `redacted`, `omitted`), and reason string 0–240. Reuse supported body storage limits, including 200000 characters/1 MiB per body. Larger submitted packets must be bounded before inference; oversized unexpected responses retain bounded safe text marked omitted with original observed size when known. Never label a prefix full. Chunking transport output is not license to inject it into context. Binary attachment data remains in attachment storage with modality/identity references, not repeated bytes in each log.
 

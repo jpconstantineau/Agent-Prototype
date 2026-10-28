@@ -6,6 +6,8 @@ Status: approved specification. Uses [shared contracts](runtime-contracts.md), [
 
 A skill packages reusable instructions such as weekly planning or task triage. The user creates/imports, edits, versions, enables/disables, and removes skills in a manager. The agent sees a bounded catalog through `list_skills`, reads relevant instruction sections with `load_skill`, and optionally loads bounded supporting resources with `read_skill_resource`. Agents cannot author/install/enable skills or broaden tool permissions in version 1. A loaded skill can guide already authorized work; it does not itself request new task mutations.
 
+That restriction describes the base loader. The separately approved [skill-learning extension](skill-learning-extension.md) adds opt-in draft/publish tools without changing this read contract; enablement remains human-only. [Curation](skill-curation.md) reviews per-agent associations and shared consumers. An [online catalog](skill-catalog-reference.md) is reference-only for a later decision, not a dependency of loading or learning.
+
 ## Persistence and skill structure
 
 Store stable skill ID, owner, display name 1–80, short description 1–240, positive revision, schema version, body 1–16000 characters, eligibility/exposure mode references, optional resource metadata, and update/delete provenance in IndexedDB. Global/main/subagent modes come from the policy service, not inconsistent duplicate booleans in a skill record. Resource records are UTF-8 text up to 16000 characters each, at most five per skill. Allowed resource names are LocalID plus an optional `.txt`, `.md`, `.json`, or `.csv` suffix. Names are keys, never paths or URLs.

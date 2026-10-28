@@ -8,6 +8,8 @@ Reduce the context supplied to a live model without deleting stored history or l
 
 Chrome exposes context usage/window information and may evict older exchanges on overflow. This is not an application-managed semantic summary. There is no assumption of a native `compact()` method. Session `clone()` copies context and is not compaction. Implement compaction as bounded summarization plus creation of a replacement session.
 
+Under the [local endpoint extension](local-model-endpoint.md), use the inference adapter's measured/estimated/unknown budget contract and app-owned message ledger. HTTP servers do not inherit Chrome's context methods or clone semantics. Provider fallback may need a much smaller Chrome packet: preserve current project/memory/skill revisions and exact receipts, and stop if required content cannot fit. Tool-free summary sessions use the selected supported text route; Chrome-only speech transcription is separate.
+
 ## Budget and trigger rules
 
 Read `contextUsage`/`contextWindow` when supported and measure the exact next input with `measureContextUsage(input, {responseConstraint})` when available. The controller must account for tool schema and incoming text/media, not compare character counts to token limits. Start an automatic compaction check at 70% usage and aim for at most 45% after rebuilding, reserving at least 20% for a reply/next tool cycle. These are configurable initial defaults, not guarantees about a particular device's model window.

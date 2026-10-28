@@ -10,6 +10,10 @@ Preserve that architecture while introducing small ES modules for the selected c
 
 Compose a chat executor around `connection.executor || registry`, as defined in [the question spec](request-user-input.md). New chat-runtime tools execute locally. They do not get registered through the existing WebMCP task registry by default. Gate the existing five WebMCP registrations and all local dispatch through the same effective user policy; do not expose disabled task tools through another transport. Manual user task controls are separate from agent permissions.
 
+The approved [local-model adapter](local-model-endpoint.md) generalizes inference while retaining this executor. Direct LanguageModel/session.prompt examples elsewhere describe the Chrome adapter; endpoint inference uses its separate tested HTTP contract. Only the browser executes tool actions. New [in-app guidance](in-app-guidance.md) actions may be explicitly exposed through WebMCP as a reviewed exception to the local-only default, with the same policy/foreground checks.
+
+Extend systemPrompt/tool-guidance intent routing before adding these features: explicit factual memory, skill learning, project/document questions, workflow starts, and board assignments take precedence over the original bare-task-add fallback when that is the actual human intent. Do not classify by a word alone: “remember that the report uses Monday weeks” is factual capture, while “remind me in 30 minutes” is scheduling. Application-authored workflow/assignment kinds have explicit routing; source text and reference contents never become new action requests. Preserve the established Daylist default for ordinary task requests, and test that reading/learning a document does not inadvertently add it as a task.
+
 ## 2. Protocol and schema conventions
 
 Models continue to emit exactly one of these existing action shapes:
@@ -60,6 +64,8 @@ Extend `schema.js` before using arrays (`items`, `minItems`, `maxItems`, string 
 
 Use a browser-owned execution context `{ threadId, runId, ownerId, deviceId, actor, policyRevision }`. `actor` distinguishes human, main agent, delegated agent, scheduler, and system maintenance. Tools never accept a model-supplied owner as authority. Session objects are transient; durable threads and tool-operation records are plain data. Restoring history creates a new session and does not replay recorded tool calls.
 
+The [project extension](project-context.md) adds controller-owned projectId/null, projectRevision/null, agentId/configurationRevision, and exact resource grants. Context references, project metadata, and workflow/board packets cannot alter owner or grant ceilings. [Factual memory](persistent-memory.md) and [learned skills](skill-learning-extension.md) are separate domains with their own capture/publication rules; neither is a transaction log or a new human authorization.
+
 New entities need stable origin-independent IDs, schema versions, ownership, logical relationships, revisions, and deletion/tombstone semantics suitable for future sync. Preserve numeric task IDs for compatibility with existing tools; they are local handles. Before cross-device task sync, add a stable task identity and map each device's numeric handle to it. Two devices' task `id: 3` must not be treated as the same task. Do not change current task keys casually or expose unstable local handles in cross-device references.
 
 Write durable task mutation attribution and the mutation itself atomically. UI notifications follow transaction commit. No IndexedDB transaction stays open while waiting for a model, human, network call, or child agent. Treat `versionchange`, quota failure, and blocked upgrades as recoverable application states with visible failure; do not silently discard history.
@@ -84,9 +90,13 @@ Add an explicit `awaiting_user` run outcome for the nonblocking review requests 
 
 All interactive brokers share a controller-owned interaction slot per active thread, including the original question tool, [rich input extension](structured-input-extension.md), proposals, and exact-call approvals. Reject or defer a second blocking interaction rather than replacing another interaction and orphaning its resolver. Persistent nonblocking review cards are separately identified and revision checked; only the active run's interaction may resume that run. Define teardown in the session manager so stopping one child or one view cannot settle another interaction.
 
+Skill publication reviews use the same nonblocking awaiting_user lifecycle. Curation, board review, and workflow Start are direct human services bound to frozen records/revisions; a generated form answer is not their approval. Chrome-only [voice](voice-interaction.md) produces a reviewed composer/field draft, never a tool call or approval click. A [context picker](context-references.md) grants exact selected source access under existing policy, not owner-wide access.
+
 Non-inference waiting does not consume model iterations. Retain the 12-call main-run bound; feature specs state any child/maintenance budgets explicitly. If a blocking tool is emitted on the last permitted inference step, do not open a form or start work requiring an impossible continuation. Finish deterministically with the limit outcome.
 
 Use a session manager rather than scattering raw `session` references in new modules. It serializes generation, compaction, rebuilding, policy invalidation, and disposal. The main thread still owns Prompt API interaction. Background timers may determine due work but cannot guarantee inference when the document is closed or suspended.
+
+All text providers, board attempts, maintenance reviews, and child sessions share this scheduler and existing hard budgets. HTTP generation attempts count even if they fail before Chrome fallback. Fallback reconstructs bounded current context and exact receipts at a safe boundary; it does not replay mutations, reset counters, or widen permissions. A stronger model/context window does not automatically raise app-level limits. Board execution remains open-page and requires explicit device arbitration before claiming cross-device exclusivity.
 
 Bound catalog descriptions, retrieval results, and tool observations before invoking the model. Keep authoritative pending state, grants, applied-operation IDs, and task revisions outside prose summaries. Summaries are context aids, not transaction logs or permissions. Do not infer that `clone()` makes a context smaller; [branching](thread-branches.md) and [compaction](context-compaction.md) define different operations.
 
