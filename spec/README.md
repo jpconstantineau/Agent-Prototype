@@ -1,89 +1,64 @@
 # Browser agent capability specifications
 
-Status: proposed design, not implemented. Approved in the repository review conversation on 2026-10-28. Runtime code remains unchanged.
-
-Start with [shared runtime contracts](runtime-contracts.md), then read the feature being implemented. Each feature describes user controls, agent tools, structured inputs/results, UI mapping, lifecycle, integration, and acceptance criteria. All designs use vanilla JavaScript ES modules and browser APIs. Inference supports Chrome's Prompt API and the explicitly approved local HTTP endpoint adapter with Chrome fallback; voice remains Chrome/browser-only. There is no React/TypeScript requirement, production SDK, or native Prompt API tool-calling dependency.
+Status: proposed designs, not implemented. Approved scope and reference-only decisions from the repository review remain unchanged. This consolidation on 2026-10-28 reduces 59 specification files to 18: 14 epics, three standalone foundations, and this index. Runtime code is unchanged.
 
 ## Purpose
 
-Give the repository maintainer a clear map of the specification set, its approved scope, reference-only proposals, and implementation dependencies. The index explains how the individual features fit into one browser agent architecture.
+Give maintainers a coherent implementation map organized by shared purpose and ownership rather than by the source repository where an idea was discovered. Feature chapters preserve their full contracts, UI mapping, model presentation, persistence, lifecycle, and acceptance criteria.
 
 ## User intent
 
-The maintainer uses this index to find relevant designs, understand their intended actors, and choose an implementation sequence. This document is not an end-user runtime control.
+Find the design for a use case, understand its human-facing controls and dependencies, and choose an implementation sequence. The index is maintainer guidance and is not a runtime control.
 
 ## Agent intent
 
-The agent does not act through this index. It defines no tool, model instruction, or permission grant; implementations must use the contracts in the linked feature specifications.
+The agent does not act through this index. Only tools explicitly defined in feature chapters are model-facing; reading an epic or enabling one feature does not grant the others.
 
-## Approved specifications
+## Foundations
 
-| Capability | Specification | Primary surface |
-| --- | --- | --- |
-| Structured questions | [Request user input](request-user-input.md) | Agent asks; human answers |
-| Working progress plan | [Progress plans](progress-plans.md) | Agent updates; human inspects |
-| Inline HTML artifacts | [Inline visualizations](inline-visualizations.md) | Agent renders; human interacts |
-| Queued follow-ups | [Request queue](request-queue.md) | Human manages; agent reads |
-| Reminders for the agent | [Scheduled work](scheduled-work.md) | Human authorizes; agent schedules |
-| Saved conversations | [Threads and history](threads-and-history.md) | Human browses; agent retrieves |
-| Focused subagents | [Subagents](subagents.md) | Agent delegates; human controls |
-| Branches and context transfer | [Thread branches](thread-branches.md) | Human branches; agent transfers findings |
-| Saved preferences/instructions | [Preferences](preferences.md) | Human manages; agent reads/proposes |
-| Supported attachments | [Attachments](attachments.md) | Human attaches; agent selectively reads |
-| Proposed changes for review | [Proposed plans](proposed-plans.md) | Agent proposes; human applies |
-| Reversible run changes | [Checkpoints and undo](checkpoints-and-undo.md) | Human restores |
-| IndexedDB-backed skills | [Skills](skills.md) | Human manages; agent discovers/loads |
-| Tool and skill switches | [Capability controls](capability-controls.md) | Human configures; runtime enforces |
-| Small-window continuity | [Context compaction](context-compaction.md) | Runtime compacts; human inspects/requests |
-| Partial tool catalogs | [Tool discovery](tool-discovery.md) | Agent discovers; human sets exposure |
-| Bounded app computation | [App composition](app-composition.md) | Agent composes permitted reads |
-| Persistent user documents | [Documents](documents.md) | Human edits; agent reads/writes by grant |
-| Markdown source editing | [Markdown editor](markdown-editor.md) | Human edits and reviews drafts |
-| Safe formatted previews | [Markdown rendering](markdown-rendering.md) | Pure app presentation service |
-| Large result storage/retrieval | [Large tool results](large-tool-results.md) | Harness offloads; agent selectively reads; human inspects/copies to documents |
-| Rich typed questions | [Structured input extension](structured-input-extension.md) | Agent describes native controls; human submits typed answers |
-| Execution permission levels | [Execution permissions](execution-permissions.md) | Human configures; harness gates exact calls |
-| Reusable agent configurations | [Agent library](agent-library.md) | Human manages/selects; runtime binds versioned settings |
-| Reusable communication styles | [Agent personas](agent-personas.md) | Human selects/edits; agent follows pinned style guidance |
-| Relative date/time grounding | [Current date/time](current-date-time.md) | Agent reads device clock; harness preserves request anchors |
-| Harness diagnostics | [Observability](observability.md) | Harness logs; human inspects and exports |
-| Scoped factual notes | [Persistent memory](persistent-memory.md) | Agent reads/writes under capture policy; human corrects/forgets |
-| Reusable learned procedures | [Skill-learning extension](skill-learning-extension.md) | Agent drafts/revises; publication and enablement stay distinct |
-| Per-agent library maintenance | [Skill curation](skill-curation.md) | Harness proposes; human reviews shared effects |
-| Project knowledge boundaries | [Project context](project-context.md) | Human selects/organizes; runtime scopes resources |
-| Parameterized recurring requests | [Workflow templates](workflow-templates.md) | Human prepares, starts, or schedules a frozen instance |
-| Selected source material | [Context references](context-references.md) | Human picks versioned @ references and text ranges |
-| Page navigation and help | [In-app guidance](in-app-guidance.md) | Agent uses registered actions; optional explicit WebMCP exposure |
-| Search within saved text | [Document-content search](document-content-search.md) | Agent/user finds passages in the existing document store |
-| Chrome-only voice surface | [Voice interaction](voice-interaction.md) | Human dictates/reviews/sends; local browser voices read replies |
-| Persistent work and handoffs | [Agent work board](agent-work-board.md) | Human assigns/reviews; bounded named agents report work |
-| Persisted learning inspection | [Learning overview](learning-overview.md) | Human traces facts/skills to sources and revisions |
-| Stronger local text inference | [Local endpoint and fallback](local-model-endpoint.md) | Human configures; harness safely falls back to Chrome |
-| Repetitive-call recovery | [Tool-loop detection](tool-loop-detection.md) | Harness detects; agent adapts; human reviews stops |
-| Topic-triggered future reminders | [Event reminders](event-reminders.md) | Agent saves when asked; harness matches; human manages |
-| Objectives across visits | [Conversation goals](conversation-goals.md) | Human starts/resumes; agent reads/reports; harness bounds continuation |
-| Redirecting active work | [Run steering](run-steering.md) | Human submits; harness admits at a safe boundary |
-| Typed isolated transformations | [Structured processing](structured-processing.md) | Agent/workflow requests approved processor; helper returns validated data |
-| Compact maintained factual notes | [Memory consolidation](memory-consolidation.md) | Maintenance model proposes; human reviews exact changes |
-| Deeper past-context retrieval | [Context-aware recall](context-aware-recall.md) | Scoped read-only worker returns sourced findings |
-| Checkpointed tool sequences | [Workflow pipelines](workflow-pipelines.md) | Human approves definition/grants; interpreter pauses at human gates |
-| Removing obsolete read payloads | [Tool-result pruning](tool-result-pruning.md) | Harness projects context; original evidence remains retrievable |
-| Focused runtime diagnosis | [Observability agent](observability-agent.md) | Scoped read-only diagnostic worker explains selected evidence |
-| Proposed future work | [Follow-up suggestions](follow-up-suggestions.md) | Agent records evidence-backed proposals; human accepts or dismisses |
-| Research and execution phases | [Plan/Act modes](plan-act-modes.md) | Human switches; harness narrows effects and selects approved phase route |
-| Selectively loaded guidance | [Conditional instruction rules](conditional-instruction-rules.md) | Human defines/binds; harness evaluates work metadata; agent follows |
-| Coordination over board assignments | [Agent-team coordination](agent-team-coordination.md) | Approved members exchange information; coordinator assembles; human reviews |
-| Evidence-linked ordinary run outcomes | [Completion reports](completion-reports.md) | Agent reports completed/partial/blocked; harness validates actual support |
+Start with [shared runtime contracts](runtime-contracts.md). They own protocol envelopes, common validation, identity, persistence, cancellation, evidence, scheduling, and aggregate budgets; feature chapters specialize those contracts without creating alternate versions.
+
+The original [structured user questions](request-user-input.md) remain a standalone, unchanged baseline protocol and broker. The [richer input chapter](interactive-experiences.md#feature-structured-input-extension) is still an optional separate contract, preserving the original review decision.
+
+The standalone [local endpoint and Chrome fallback](local-model-endpoint.md) owns inference adapters and the [Prompt API context-window reference](local-model-endpoint.md#context-window-reference-checked-2026-10-28). Retaining it separately gives every epic one provider/capacity contract to reference.
+
+All designs use vanilla JavaScript ES modules and browser/Chrome APIs. No React/TypeScript runtime, production SDK, arbitrary code execution, or native Prompt API tool-calling dependency is required. The app owns action validation and execution; voice remains Chrome/browser-only.
+
+## Approved epics
+
+| Epic | Feature chapters |
+| --- | --- |
+| [Agent configuration, guidance, and project scope](agent-configuration.md) | [Agent library](agent-configuration.md#feature-agent-library); [Project context](agent-configuration.md#feature-project-context); [Preferences](agent-configuration.md#feature-preferences); [Agent personas](agent-configuration.md#feature-agent-personas); [Conditional instruction rules](agent-configuration.md#feature-conditional-instruction-rules) |
+| [Capability exposure, discovery, permissions, and phases](capability-policy.md) | [Capability controls](capability-policy.md#feature-capability-controls); [Tool discovery](capability-policy.md#feature-tool-discovery); [Execution permissions](capability-policy.md#feature-execution-permissions); [Plan and Act modes](capability-policy.md#feature-plan-act-modes) |
+| [Conversation history, context selection, and request lifecycle](conversation-lifecycle.md) | [Threads and history](conversation-lifecycle.md#feature-threads-and-history); [Thread branches](conversation-lifecycle.md#feature-thread-branches); [Attachments](conversation-lifecycle.md#feature-attachments); [Context references](conversation-lifecycle.md#feature-context-references); [Request queue](conversation-lifecycle.md#feature-request-queue); [Run steering](conversation-lifecycle.md#feature-run-steering) |
+| [Work planning, reviewed changes, and evidence-based outcomes](work-lifecycle.md) | [Progress plans](work-lifecycle.md#feature-progress-plans); [Conversation goals](work-lifecycle.md#feature-conversation-goals); [Proposed task changes](work-lifecycle.md#feature-proposed-plans); [Checkpoints and undo](work-lifecycle.md#feature-checkpoints-and-undo); [Completion reports](work-lifecycle.md#feature-completion-reports); [Follow-up suggestions](work-lifecycle.md#feature-follow-up-suggestions) |
+| [Bounded context, selective evidence, and loop recovery](context-management.md) | [Large tool results](context-management.md#feature-large-tool-results); [Tool-result pruning](context-management.md#feature-tool-result-pruning); [Context compaction](context-management.md#feature-context-compaction); [Tool-loop detection](context-management.md#feature-tool-loop-detection) |
+| [Versioned documents, Markdown editing, rendering, and search](document-workspace.md) | [Documents](document-workspace.md#feature-documents); [Markdown editor](document-workspace.md#feature-markdown-editor); [Markdown rendering](document-workspace.md#feature-markdown-rendering); [Document-content search](document-workspace.md#feature-document-content-search) |
+| [Reusable skills, learned drafts, and per-agent curation](skill-library.md) | [Skill discovery and loading](skill-library.md#feature-skills); [Skill learning](skill-library.md#feature-skill-learning-extension); [Skill curation](skill-library.md#feature-skill-curation) |
+| [Factual memory, recall, consolidation, and learning inspection](memory-and-learning.md) | [Persistent factual memory](memory-and-learning.md#feature-persistent-memory); [Context-aware recall](memory-and-learning.md#feature-context-aware-recall); [Memory consolidation](memory-and-learning.md#feature-memory-consolidation); [Learning overview](memory-and-learning.md#feature-learning-overview) |
+| [Clock grounding, scheduled work, and topic reminders](time-and-reminders.md) | [Current date and time](time-and-reminders.md#feature-current-date-time); [Scheduled work](time-and-reminders.md#feature-scheduled-work); [Event reminders](time-and-reminders.md#feature-event-reminders) |
+| [Reusable workflows and bounded structured processing](workflows-and-processing.md) | [Workflow templates](workflows-and-processing.md#feature-workflow-templates); [Workflow pipelines](workflows-and-processing.md#feature-workflow-pipelines); [Structured processing](workflows-and-processing.md#feature-structured-processing); [App read composition](workflows-and-processing.md#feature-app-composition) |
+| [Focused delegation, durable assignments, and agent teams](agent-coordination.md) | [Focused subagents](agent-coordination.md#feature-subagents); [Agent work board](agent-coordination.md#feature-agent-work-board); [Agent teams](agent-coordination.md#feature-agent-team-coordination) |
+| [Harness observability and scoped diagnostic analysis](diagnostics.md) | [Harness logging and run inspector](diagnostics.md#feature-observability); [Observability agent](diagnostics.md#feature-observability-agent) |
+| [Structured interaction, visual artifacts, guidance, and voice](interactive-experiences.md) | [Structured input extension](interactive-experiences.md#feature-structured-input-extension); [Inline visualizations](interactive-experiences.md#feature-inline-visualizations); [In-app guidance](interactive-experiences.md#feature-in-app-guidance); [Voice interaction](interactive-experiences.md#feature-voice-interaction) |
+
+## Why these boundaries
+
+Each epic has one common user purpose, an ownership table, and integration/delivery guidance before the complete feature contracts. Related features share identities and services instead of duplicating infrastructure: one configuration resolver, thread history, document revision store, skill library, factual-memory store, work board, and diagnostic stream.
+
+Consolidation does not collapse distinctions that affect authority or correctness. Exposure is separate from execution permission and phase; a progress plan is separate from a task-change proposal; run completion does not accept a board/team/goal outcome; history is separate from diagnostic logs; factual memory is separate from procedural skills; and a schedule is separate from a topic reminder. Read-only children remain distinct from explicitly assigned main-role workers. Native form answers, Markdown, sandboxed HTML, and registered app actions retain their own trust boundaries.
+
+Optional capabilities retain separate switches and can be implemented independently; mandatory validation, core logging, and error guards remain mandatory. An epic is a delivery grouping, not an instruction to ship every chapter at once or a new database schema that merges all its records. Chapter contracts and shared runtime rules are normative; the epic guide explains how to connect them.
 
 ## Reference only: future decision
 
-[External MCP connections](external-mcp-reference.md) records a possible future client architecture. It is not approved for implementation or activation. Existing WebMCP exposure and connecting to remote MCP servers are different directions. Web page fetching and web search were declined and are not included.
+[External MCP connections](future-reference.md#feature-external-mcp-reference) records a possible future client architecture. It is not approved for implementation or activation. Existing WebMCP exposure and connecting to remote MCP servers are different directions. Web page fetching and web search were declined and are not included.
 
-[Skill catalogs and update management](skill-catalog-reference.md) is also reference-only for a later decision. Approved manual imports, learned-skill drafts, and curation work without an online registry. Neither reference document authorizes external network services or automatic installation.
+[Skill catalogs and update management](future-reference.md#feature-skill-catalog-reference) is also reference-only for a later decision. Approved manual imports, learned-skill drafts, and curation work without an online registry. Neither reference chapter authorizes external network services or automatic installation.
 
 The private credential tool was declined. OS shells, Git/worktrees/PR management, simulator control, remote-machine linking, unrestricted browser automation, and server screenshot previews are not part of this browser-only design. HTML rendering does not imply that a standalone web page can capture arbitrary tabs. Existing task operations remain the five tools in `docs/src/tools.js`.
 
-[Side questions](side-questions-reference.md) is reference-only following the OpenClaw review. It is not approved for implementation, default activation, or the implementation sequence below. Appearance themes were explicitly excluded as separate UI work; no agent appearance spec or tool is added.
+[Side questions](future-reference.md#feature-side-questions-reference) is reference-only following the OpenClaw review. It is not approved for implementation, default activation, or the implementation sequence below. Appearance themes were explicitly excluded as separate UI work; no agent appearance spec or tool is added.
 
 The Cline review explicitly excluded conversation import, configurable lifecycle checks/hooks, and multi-document change sets. Existing single-document editing and task-batch proposals retain their prior scope. These declined capabilities are not introduced through another accepted extension.
 
@@ -101,19 +76,40 @@ The Hermes Agent review used [commit 8acb7f6](https://github.com/NousResearch/he
 
 Browser interface references, checked 2026-10-28: [Prompt API](https://developer.chrome.com/docs/ai/prompt-api), [structured output](https://developer.chrome.com/docs/ai/structured-output-for-prompt-api), and [session management](https://developer.chrome.com/docs/ai/session-management). The application owns the protocols, persistence, policy, and UI described here.
 
-The OpenClaw review used [commit a74f408](https://github.com/openclaw/openclaw/tree/a74f408db7fbabcdca1089cec8d50f16d6a4f418), including its tools/concepts documentation, loop detector, goal tools, standing-intent tool, theme tool, suggestion tools, and structured health contracts. The eleven rows above record accepted additions; side questions are reference-only and themes are excluded. The new specs cover the full adapted contracts, UI, model presentation, storage/lifecycle, and tests without importing OpenClaw/TypeScript packages. A stronger maintenance model can distill bounded evidence into compact memory; a goal can support explicit clarification over multiple visits/conversations. Existing questions, plans, history, skills, permissions, documents, media support, discovery, voice, logging, and model routes already cover the overlapping features. Shell/native browser/device control, external messaging/media generation, credential tools, cloud-provider setup, arbitrary plugins, and previously declined web search/fetch are not ports. PDF parsing remains outside the approved Chrome-compatible attachment baseline.
+The OpenClaw review used [commit a74f408](https://github.com/openclaw/openclaw/tree/a74f408db7fbabcdca1089cec8d50f16d6a4f418), including its tools/concepts documentation, loop detector, goal tools, standing-intent tool, theme tool, suggestion tools, and structured health contracts. Its eleven accepted additions are retained in the feature chapters above; side questions are reference-only and themes are excluded. The new specs cover the full adapted contracts, UI, model presentation, storage/lifecycle, and tests without importing OpenClaw/TypeScript packages. A stronger maintenance model can distill bounded evidence into compact memory; a goal can support explicit clarification over multiple visits/conversations. Existing questions, plans, history, skills, permissions, documents, media support, discovery, voice, logging, and model routes already cover the overlapping features. Shell/native browser/device control, external messaging/media generation, credential tools, cloud-provider setup, arbitrary plugins, and previously declined web search/fetch are not ports. PDF parsing remains outside the approved Chrome-compatible attachment baseline.
 
 The Cline review used [commit f817e59](https://github.com/cline/cline/tree/f817e59f698f01487920c00ede2dbecad5c0fa50), inspecting CLI docs/source, the VS Code extension's phase toggle and conditional-rule evaluator, desktop usage/import/customization docs and source, shared core presets/tools, and team/completion contracts. Plan/Act is represented across clients; the inspected SDK/CLI Plan preset includes guarded shell access, which is not part of this browser adaptation. Conditional rules add strict app-metadata selection over the existing configuration layers, with an explicit distinction table. Team tools are documented for SDK/CLI/Kanban rather than the VS Code extension; the accepted adaptation extends this app's existing board and preserves generic-child restrictions. Terminal completion draws on the core submit tool while replacing a bare verified flag with actual evidence references. Imports, hooks, and multi-document batches were declined. Existing memory/project documents, compaction, skills, questions, context selection, checkpoints, scheduling, diagnostics, and local routes cover the other relevant overlap. No Cline/Bun/Node/Tauri/React/TypeScript dependency, shell, remote machine, marketplace, external speech service, or cloud-provider integration is required.
 
 ## Suggested implementation order
 
-1. Shared validation, capability policy, thread/run storage, observability append service, inference-provider interface, and the existing question broker.
-2. Agent library/configuration snapshots, optional personas, execution permission levels, Chrome/local endpoint adapters, projects, discovery, skills/preferences, memory, and context accounting/compaction.
-3. Progress plans, queue, attachments, history retrieval, subagents, branching, and constrained read composition.
-4. Proposed task batches/reversible journal, document revisions/storage, Markdown editing/rendering, large-result retrieval, content indexing/search, and explicit context references.
-5. Rich input, inline artifacts, clock grounding, scheduled work, workflow templates, and the diagnostic inspector.
-6. Opt-in skill learning/curation, learning overview, the durable work board, registered in-app guidance/WebMCP exposure, and Chrome-only voice. External MCP and online skill catalogs remain future decisions outside this implementation order.
-7. Loop detection and selective result pruning, followed by safe-boundary steering, scoped event reminders, durable goals, structured processing, evidence-based recall/consolidation, checkpointed pipelines, the observability agent, and follow-up suggestions as their dependencies become available. Side questions remain a later decision; appearance themes are separate UI work.
-8. Plan/Act phase policy and phase-specific routing, conditional instruction bindings/context refresh, structured completion reporting, and team coordination over existing approved board assignments. Implement team messaging/outcomes after the board, source grants, and aggregate budget accounting are available.
+1. Shared runtime validation, policy, thread/run identity and storage, diagnostic append service, inference-provider interface, and the original question broker.
+2. Agent configuration and project scope; capability exposure/discovery, exact-call permissions and Plan/Act; Chrome/local adapters and measured context accounting. Add persona/rule/preference layers through the same resolver.
+3. Durable conversation history, source selection, queue/steering, and supported attachments; document revisions, safe rendering, and editor drafts.
+4. Skills and factual-memory foundations; immutable tool results, pruning/compaction, and loop recovery; document passage search and bounded history/recall services.
+5. Run progress, reviewed task batches, mutation receipts/undo, completion reports, and durable goals. Add follow-up proposals without automatic execution.
+6. Clock grounding, open-page schedules and topic reminders; frozen workflow templates, isolated processing/read composition, then resumable pipelines after durable gates and queue support.
+7. Bounded analytical children, durable board workers, then approved teams after source grants and aggregate accounting. Implement learned-skill publication, curation, reviewed memory consolidation, and the human learning overview as their stores become available.
+8. Optional rich forms, isolated artifacts, registered guidance/WebMCP exposure, Chrome voice, and scoped diagnostic analysis after their broker/rendering/logging dependencies.
 
-Build each feature behind its own switch and keep manual Daylist task management available when AI is unavailable. Do not implement all capabilities merely to ship one. Specs are independently reviewable while sharing the common contracts.
+Keep optional features behind their own switches and keep manual Daylist task management available when inference is unavailable. The reference-only epic is outside this implementation order. Future Azure Static Web Apps/Cosmos DB sync remains a design boundary, not an existing backend or an implicit execution grant across devices.
+
+## Consolidation map
+
+Former files are now feature chapters in the linked canonical epic. They were removed to avoid maintaining duplicate specifications; Git history retains the prior versions. Anchors and internal cross-links target the corresponding chapters and sections. The original question specification is unchanged; the two other foundations retain their content with migrated cross-links.
+
+| Canonical epic | Former specification files |
+| --- | --- |
+| [Agent configuration, guidance, and project scope](agent-configuration.md) | `agent-library.md`, `project-context.md`, `preferences.md`, `agent-personas.md`, `conditional-instruction-rules.md` |
+| [Capability exposure, discovery, permissions, and phases](capability-policy.md) | `capability-controls.md`, `tool-discovery.md`, `execution-permissions.md`, `plan-act-modes.md` |
+| [Conversation history, context selection, and request lifecycle](conversation-lifecycle.md) | `threads-and-history.md`, `thread-branches.md`, `attachments.md`, `context-references.md`, `request-queue.md`, `run-steering.md` |
+| [Work planning, reviewed changes, and evidence-based outcomes](work-lifecycle.md) | `progress-plans.md`, `conversation-goals.md`, `proposed-plans.md`, `checkpoints-and-undo.md`, `completion-reports.md`, `follow-up-suggestions.md` |
+| [Bounded context, selective evidence, and loop recovery](context-management.md) | `large-tool-results.md`, `tool-result-pruning.md`, `context-compaction.md`, `tool-loop-detection.md` |
+| [Versioned documents, Markdown editing, rendering, and search](document-workspace.md) | `documents.md`, `markdown-editor.md`, `markdown-rendering.md`, `document-content-search.md` |
+| [Reusable skills, learned drafts, and per-agent curation](skill-library.md) | `skills.md`, `skill-learning-extension.md`, `skill-curation.md` |
+| [Factual memory, recall, consolidation, and learning inspection](memory-and-learning.md) | `persistent-memory.md`, `context-aware-recall.md`, `memory-consolidation.md`, `learning-overview.md` |
+| [Clock grounding, scheduled work, and topic reminders](time-and-reminders.md) | `current-date-time.md`, `scheduled-work.md`, `event-reminders.md` |
+| [Reusable workflows and bounded structured processing](workflows-and-processing.md) | `workflow-templates.md`, `workflow-pipelines.md`, `structured-processing.md`, `app-composition.md` |
+| [Focused delegation, durable assignments, and agent teams](agent-coordination.md) | `subagents.md`, `agent-work-board.md`, `agent-team-coordination.md` |
+| [Harness observability and scoped diagnostic analysis](diagnostics.md) | `observability.md`, `observability-agent.md` |
+| [Structured interaction, visual artifacts, guidance, and voice](interactive-experiences.md) | `structured-input-extension.md`, `inline-visualizations.md`, `in-app-guidance.md`, `voice-interaction.md` |
+| [Reference-only integration and interaction options](future-reference.md) | `external-mcp-reference.md`, `skill-catalog-reference.md`, `side-questions-reference.md` |
