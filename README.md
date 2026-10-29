@@ -1,6 +1,6 @@
 # Agent Prototype
 
-Daylist is a browser-only to-do manager with a chatbot side panel. It uses Chrome's Prompt API for local inference, WebMCP for page tools, and IndexedDB for task storage.
+Daylist is a browser-only to-do manager with a chatbot side panel. It uses Chrome’s Prompt API or an explicitly configured local text endpoint, WebMCP for page tools, and IndexedDB for tasks and runtime diagnostics. The assistant can ask structured questions and continue the same request after an answer.
 
 The complete prototype lives in [`docs/`](docs/README.md). Its tools can add, edit, complete/reopen, list, and search tasks.
 
@@ -24,3 +24,5 @@ The source directory is lowercase `docs`, matching GitHub Pages' branch publishi
 All asset and module URLs are relative, so the app works under the repository's `/Agent-Prototype/` URL. See [`docs/README.md`](docs/README.md) for Chrome model/WebMCP setup, tool contracts, framework details, and tests. Hosted WebMCP or Prompt API availability may depend on your Chrome version and applicable origin trials; the app reports actual browser capabilities and supports manual tasks when AI is unavailable.
 
 The browser framework adapts the model → tool → observation loop from [early-signal-tech/duckdb-agent-loop-poc](https://github.com/early-signal-tech/duckdb-agent-loop-poc). No Python code or cloud inference service is needed.
+
+The [foundation implementation guide](docs/README.md#foundation-implementation) covers structured questions, local-model Settings and Chrome fallback, shared runtime behavior, and test limitations. The remaining [epic specifications](spec/README.md) describe later capabilities.

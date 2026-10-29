@@ -114,6 +114,26 @@ input::placeholder, textarea::placeholder { color: #6d786f; opacity: 1; }
 .tool-trace summary { cursor: pointer; overflow-wrap: anywhere; }
 .tool-trace pre { font-size: 11px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 240px; overflow: auto; }
 .tool-trace.failed { color: var(--danger); border-color: #e1caba; background: #fff6ef; }
+.provider-status { font-size: 12px; color: #596653; margin-top: 8px; overflow-wrap: anywhere; }
+.provider-status:empty { display: none; }
+.question-card, .fallback-card { margin-bottom: 18px; padding: 16px; border: 1px solid #9bad8b; border-radius: 8px; background: #fff; overflow-wrap: anywhere; font-size: 14px; }
+.question-card h3 { font-size: 18px; margin-bottom: 8px; }
+.question-card p { margin: 8px 0; }
+.question-card fieldset { min-width: 0; border: 0; border-top: 1px solid var(--line); padding: 14px 0; margin-top: 12px; }
+.question-card legend { font-weight: 600; padding-right: 4px; }
+.question-caption { color: var(--muted); font-size: 12px; }
+.question-option { display: flex; align-items: flex-start; gap: 10px; min-height: 44px; padding: 10px 4px; cursor: pointer; }
+.question-option input { flex: none; margin-top: 4px; width: 18px; height: 18px; accent-color: var(--forest); }
+.question-option small { display: block; color: var(--muted); }
+.question-recommended { display: inline-block; margin-left: 6px; font-size: 11px; padding: 2px 4px; border-radius: 3px; background: var(--tint); }
+.question-card textarea { display: block; width: 100%; min-height: 88px; font-size: 16px; padding: 10px; border: 1px solid #9bad8b; border-radius: 6px; resize: vertical; }
+.question-card textarea[hidden] { display: none; }
+.question-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.question-actions button, .question-card .text-button, .fallback-card button { min-height: 44px; }
+.question-summary { white-space: pre-wrap; }
+.question-card.settled { border-color: var(--line); background: #f8faf4; }
+.answer-needed::after { content: 'Answer needed'; font-size: 11px; color: var(--forest); }
+.fallback-card .button { margin: 8px 4px 0 0; }
 dialog { border: 1px solid var(--line); border-radius: 12px; width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); padding: 28px; box-shadow: 0 24px 100px #1d301d30; background: var(--surface); color: var(--ink); }
 dialog::backdrop { background: #1e2c2560; backdrop-filter: blur(3px); }
 .dialog-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
@@ -121,6 +141,12 @@ dialog::backdrop { background: #1e2c2560; backdrop-filter: blur(3px); }
 #item-form label { display: flex; flex-direction: column; font-size: 14px; gap: 7px; margin-bottom: 18px; position: relative; }
 #item-form input, #item-form textarea, #item-form select { border: 1px solid #b9c5b1; border-radius: 6px; background: white; padding: 11px; min-height: 44px; font-size: 16px; color: var(--ink); width: 100%; }
 #item-form textarea { resize: vertical; }
+#model-dialog label { display: flex; flex-direction: column; font-size: 14px; gap: 6px; margin: 14px 0; min-width: 0; }
+#model-dialog input, #model-dialog select { width: 100%; min-width: 0; min-height: 44px; font-size: 16px; border: 1px solid #b9c5b1; border-radius: 6px; padding: 8px; }
+#model-dialog .check-label { flex-direction: row; align-items: flex-start; }
+#model-dialog .check-label input { width: 20px; min-height: 20px; flex: none; }
+#model-dialog p { font-size: 13px; margin: 10px 0; }
+#model-dialog .dialog-actions { flex-wrap: wrap; }
 .optional { position: absolute; right: 0; top: 2px; color: var(--muted); font-size: 12px; }
 .form-row { display: flex; gap: 16px; }
 .form-row label { flex: 1; min-width: 0; }

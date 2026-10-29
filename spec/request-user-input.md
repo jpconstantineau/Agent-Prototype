@@ -1,6 +1,6 @@
 # Structured user questions for Daylist
 
-Status: implementation specification; no runtime changes are included.
+Status: implemented in the app on 2026-10-28. The version-1 question and answer wire contracts below are unchanged. See [implementation and validation scope](../docs/README.md#foundation-implementation).
 
 Baseline: `jpconstantineau/Agent-Prototype` commit `013490507869ab5a0bce63f8cf219ef3e1e7c0d1`, inspected on 2026-10-28.
 

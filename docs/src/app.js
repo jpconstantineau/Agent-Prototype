@@ -1,12 +1,23 @@
 import { TodoStore } from './store.js';
 import { ToolRegistry, registerWebMCP } from './tools.js';
-import { AgentLoop, modelAvailability, createModelSession } from './agent.js';
+import { AgentLoop, modelAvailability, responseSchema, systemPrompt } from './agent.js';
+import { SessionManager } from './session-manager.js';
+import { RuntimeStore } from './runtime-store.js';
+import { ProviderProfileStore } from './provider-profile-store.js';
+import { ModelSettingsView } from './model-settings-view.js';
+import { UserInputBroker } from './user-input-broker.js';
+import { UserInputView } from './user-input-view.js';
+import { createChatExecutor } from './chat-executor.js';
+import { ToolPolicy, abortError } from './runtime.js';
 
 const $ = selector => document.querySelector(selector);
 let store, registry, connection, session, agent, controller;
 let filter = 'all', offset = 0, nextOffset = null, editingId = null;
 let refreshId = 0, toastTimer, running = false, initializing = false;
 let aiSupported = false;
+let runtime, identity, modelSettings, broker, questionView, chatExecutor, lastRunId, activeRunId;
+const policy = new ToolPolicy();
+let threadId = crypto.randomUUID();
 const pageSize = 25;
 const taskList = $('#task-list');
 const chatInput = $('#chat-input');
@@ -49,9 +60,11 @@ function renderItem(item) {
   check.setAttribute('aria-label', `${item.completed ? 'Reopen' : 'Complete'} ${item.title}`);
   check.addEventListener('change', async () => {
     check.disabled = true;
-    const result = await registry.execute('complete_item', { id: item.id, completed: check.checked });
-    if (!result.success) { toast(result.error); check.checked = item.completed; }
-    check.disabled = false;
+    try {
+      const result = await registry.execute('complete_item', { id: item.id, completed: check.checked }, { actor: 'human' });
+      if (!result.success) { toast(result.error); check.checked = item.completed; }
+    } catch { toast('Could not confirm this change. Review saved tasks before retrying.'); check.checked = item.completed; }
+    finally { check.disabled = false; }
   });
   const body = element('div', 'task-body');
   body.append(element('div', 'task-title', item.title));
@@ -147,12 +160,13 @@ $('#item-form').addEventListener('submit', async event => {
   if (editingId) args.id = editingId;
   $('#save-item').disabled = true;
   try {
-    const result = await registry.execute(editingId ? 'edit_item' : 'add_item', args);
+    const result = await registry.execute(editingId ? 'edit_item' : 'add_item', args, { actor: 'human' });
     if (!result.success) { $('#form-error').textContent = result.error; return; }
     dialog.close();
     if (!editingId) { $('#search').value = ''; setFilter('all'); }
     toast(editingId ? 'Changes saved.' : 'Task added.');
-  } finally { $('#save-item').disabled = false; }
+  } catch { $('#form-error').textContent = 'Could not confirm the save. Review saved tasks before retrying.'; }
+  finally { $('#save-item').disabled = false; }
 });
 for (const button of document.querySelectorAll('[data-filter]')) button.addEventListener('click', () => setFilter(button.dataset.filter));
 $('#search').addEventListener('input', () => { offset = 0; if (store) refresh(); });
@@ -164,7 +178,7 @@ function setAssistantVisible(visible, focus = false) {
   $('#toggle-assistant').setAttribute('aria-expanded', String(visible));
   if (focus) {
     if (visible) {
-      $('#close-assistant').focus({ preventScroll: true });
+      if (questionView?.active) questionView.focus(); else $('#close-assistant').focus({ preventScroll: true });
       if (innerWidth <= 760) $('#assistant-panel').scrollIntoView({ behavior: 'instant', block: 'start' });
     } else $('#toggle-assistant').focus();
   }
@@ -177,7 +191,15 @@ function syncChatControls() {
   $('#send-message').disabled = !agent || running || !chatInput.value.trim();
   $('#stop-agent').hidden = !running;
   $('#send-message').hidden = running;
-  $('#enable-ai').hidden = Boolean(session) || !aiSupported;
+  const local = modelSettings?.saved.route.primary === 'local_http';
+  const available = local || aiSupported;
+  $('#enable-ai').hidden = Boolean(session) || !available;
+  $('#enable-ai').disabled = initializing || (local && !modelSettings.tested) || !available;
+  $('#model-settings').disabled = !modelSettings || running || initializing;
+  $('#export-run').disabled = !lastRunId || running;
+  messages.hidden = !available;
+  $('#chat-form').hidden = !available;
+  $('#assistant-panel').classList.toggle('unavailable', !available);
   $('#new-chat').disabled = running || initializing;
   $('#new-chat').hidden = !messages.querySelector('.message');
   chatInput.disabled = !agent;
@@ -194,12 +216,29 @@ function addMessage(role, text, error = false) {
 }
 
 function onAgentEvent(event) {
+  activeRunId = event.runId;
+  questionView?.event(event);
+  if (event.type.startsWith('user_input_')) {
+    const waiting = event.type === 'user_input_requested';
+    $('#activity-status').textContent = waiting ? 'Waiting for your answer' : event.type === 'user_input_submitted' ? 'Answer sent. Continuing.' : 'Question cancelled.';
+    $('#toggle-assistant').setAttribute('aria-label', waiting ? 'Assistant — Answer needed' : 'Assistant');
+    $('#toggle-assistant').classList.toggle('answer-needed', waiting);
+  }
+  if (event.type === 'provider_fallback') {
+    $('#provider-status').textContent = 'Fallback to Chrome · continuing with saved operation evidence';
+    $('#ai-status').textContent = 'Chrome AI ready · fallback';
+  }
+  if (event.type === 'context_measurement') {
+    const m = event.measurement;
+    $('#context-status').textContent = m.provenance === 'measured' ? `Context ${m.retained} + next ${m.next} / ${m.capacity} Chrome units · 20% reply reserve` : m.provenance === 'estimated' ? `Configured window ${m.capacity} tokens · input ${m.inputChars} characters · preflight tokens unknown` : `Chrome context ${m.retained ?? 'Unknown'} / ${m.capacity ?? 'Unknown'} units · next input Unknown`;
+  }
   if (event.type === 'model') $('#activity-status').textContent = `Thinking · step ${event.iteration} of 12`;
   if (event.type === 'invalid_response') $('#activity-status').textContent = 'The model returned an invalid action. Asking it to correct the response…';
   if (event.type === 'tool_start') $('#activity-status').textContent = `Using ${event.name}…`;
   if (event.type === 'tool_result') {
     const details = element('details', `tool-trace${event.result.success ? '' : ' failed'}`);
-    details.append(element('summary', '', `${event.result.success ? '✓' : '!'} ${event.name} · ${event.result.success ? 'done' : 'failed'} · ${event.durationMs} ms`),
+    const summary = event.name === 'request_user_input' && event.result.success ? '✓ Question answered' : `${event.result.success ? '✓' : '!'} ${event.name} · ${event.result.success ? 'done' : 'failed'} · ${event.durationMs} ms`;
+    details.append(element('summary', '', summary),
       element('pre', '', JSON.stringify({ arguments: event.arguments, result: event.result }, null, 2)));
     messages.append(details);
     messages.scrollTop = messages.scrollHeight;
@@ -207,6 +246,7 @@ function onAgentEvent(event) {
 }
 
 function releaseSession() {
+  broker?.dispose(); questionView?.clear();
   session?.destroy(); session = null; agent = null;
   $('#ai-dot').classList.remove('ready');
   $('#ai-status').textContent = 'Local AI disconnected';
@@ -215,24 +255,54 @@ function releaseSession() {
   syncChatControls();
 }
 
+function setupChatRuntime() {
+  broker = new UserInputBroker();
+  questionView = new UserInputView({ host: messages, broker, cancel: cancelRun, visible: () => !$('#assistant-panel').hidden, status: $('#activity-status') });
+  chatExecutor = createChatExecutor(connection.executor || registry, broker, policy);
+}
+function cancelRun() { controller?.abort(); broker?.dispose(); session?.destroy(); }
+function requestFallback({ reason, create, signal }) {
+  return new Promise((resolve, reject) => {
+    const card = element('section', 'fallback-card');
+    const text = element('p', '', `${reason} Continue this run with Chrome, preserving saved changes and the remaining step limit?`);
+    const yes = element('button', 'button primary', 'Enable Chrome and Continue'); yes.type = 'button';
+    const no = element('button', 'button secondary', 'Stop this run'); no.type = 'button';
+    const clean = () => { signal.removeEventListener('abort', abort); yes.disabled = no.disabled = true; };
+    const abort = () => { clean(); text.textContent = 'Fallback cancelled.'; reject(signal.reason || abortError()); };
+    no.addEventListener('click', cancelRun);
+    yes.addEventListener('click', () => {
+      yes.disabled = true;
+      // Preserve user activation for model creation/download.
+      let pending; try { pending = create(); } catch (e) { text.textContent = e.message; yes.disabled = false; return; }
+      pending.then(provider => { if (signal.aborted) { provider.dispose(); return; } clean(); text.textContent = 'Continuing with Chrome. Saved tools are not replayed.'; resolve(provider); }, e => { if (!signal.aborted) { text.textContent = `Could not enable Chrome: ${e.message}`; yes.disabled = false; } });
+    });
+    card.append(text, yes, no); messages.append(card); signal.addEventListener('abort', abort, { once: true });
+    if (signal.aborted) abort();
+    $('#activity-status').textContent = 'Provider choice needed';
+  });
+}
+
 $('#enable-ai').addEventListener('click', async () => {
-  if (!registry || initializing) return;
+  if (!registry || initializing || running) return;
   initializing = true;
   $('#enable-ai').disabled = true;
   $('#enable-ai').textContent = 'Preparing local model…';
   $('#ai-status').textContent = 'Preparing local model…';
   syncChatControls();
   try {
+    setupChatRuntime();
     // Invoke create immediately in this click handler, before any other await.
-    session = await createModelSession(registry, { onProgress: fraction => {
+    session = new SessionManager({ ...modelSettings.connection(), requestFallback, onProgress: fraction => {
       $('#enable-ai').textContent = `Downloading model · ${Math.round(fraction * 100)}%`;
       $('#ai-status').textContent = `Downloading local model · ${Math.round(fraction * 100)}%`;
     } });
-    agent = new AgentLoop({ registry: connection.executor || registry, session, onEvent: onAgentEvent });
-    $('#ai-status').textContent = 'Local AI ready';
+    await session.prepare([{ role: 'system', content: systemPrompt(chatExecutor.definitions()) }], { responseSchema: responseSchema(chatExecutor.definitions()) });
+    agent = new AgentLoop({ registry: chatExecutor, session, onEvent: onAgentEvent, interactionBroker: broker, runtime, identity, threadId, policy });
+    $('#ai-status').textContent = session.identity.provider === 'chrome' ? 'Local AI ready' : 'Local endpoint ready';
+    $('#provider-status').textContent = session.identity.provider === 'chrome' ? 'Chrome Prompt API · model identity not exposed' : `Local HTTP · ${session.identity.model}`;
+    $('#context-status').textContent = 'Context capacity / usage: Unknown until measured';
     $('#ai-dot').classList.add('ready');
-    $('#model-help').textContent = 'The local model is ready. Chat requests and task data are processed on this device.';
-    session.addEventListener?.('contextoverflow', () => toast('Older conversation context was dropped. Restate any details the assistant needs.'));
+    $('#model-help').textContent = session.identity.provider === 'chrome' ? 'Chrome’s local model is ready. Chat and task data are processed on this device.' : 'Requests go only to the configured endpoint. Verify its server uses a locally served model.';
     if ($('.assistant-intro p')) $('.assistant-intro p').textContent = 'Ask about your tasks, or choose an example below to start a request.';
   } catch (error) {
     releaseSession();
@@ -271,6 +341,7 @@ $('#chat-form').addEventListener('submit', async event => {
   syncChatControls();
   try {
     const result = await agent.run(prompt, { signal: controller.signal });
+    lastRunId = result.runId;
     addMessage('assistant', result.text, result.status !== 'completed');
     if (result.status !== 'completed') {
       releaseSession();
@@ -280,19 +351,16 @@ $('#chat-form').addEventListener('submit', async event => {
     addMessage('assistant', error.message, true);
     releaseSession();
   } finally {
-    running = false; controller = null;
+    running = false; controller = null; activeRunId = null;
     $('#activity-status').textContent = '';
     syncChatControls();
+    if (agent && !$('#assistant-panel').hidden) chatInput.focus({ preventScroll: true });
   }
 });
-$('#stop-agent').addEventListener('click', () => {
-  controller?.abort();
-  // Aborting destroys the session too, ensuring no pending generation leaks into
-  // the next request. Committed IndexedDB transactions are intentionally retained.
-  session?.destroy();
-});
+$('#stop-agent').addEventListener('click', cancelRun);
 $('#new-chat').addEventListener('click', () => {
   releaseSession();
+  threadId = crypto.randomUUID();
   messages.replaceChildren();
   addMessage('assistant', 'A fresh conversation. Your tasks are right where you left them. Enable local AI to continue.');
 });
@@ -300,7 +368,10 @@ $('#new-chat').addEventListener('click', () => {
 async function initialize() {
   try {
     store = await TodoStore.open();
-    registry = new ToolRegistry(store);
+    runtime = new RuntimeStore(store.db);
+    const storedIdentity = await runtime.get('settings', 'local-identity');
+    identity = { ownerId: storedIdentity.ownerId, deviceId: storedIdentity.deviceId };
+    registry = new ToolRegistry(store, { policy, identity });
     $('#new-item').disabled = false;
     store.addEventListener('change', refresh);
     store.addEventListener('versionchange', () => {
@@ -309,6 +380,9 @@ async function initialize() {
       toast('The database changed in another tab. Reload this page to continue.');
     });
     connection = await registerWebMCP(registry);
+    modelSettings = new ModelSettingsView({ dialog: $('#model-dialog'), profiles: new ProviderProfileStore(runtime), status: $('#endpoint-status'), schema: () => responseSchema(createChatExecutor(connection.executor || registry, null, policy).definitions()), changed: () => { releaseSession(); syncChatControls(); } });
+    await modelSettings.load();
+    $('#model-settings').disabled = false;
     $('#webmcp-status').textContent = connection.message;
     await refresh();
     const availability = await modelAvailability();
@@ -341,11 +415,20 @@ async function initialize() {
 }
 
 window.addEventListener('pagehide', () => {
-  controller?.abort();
-  session?.destroy();
+  cancelRun(); modelSettings?.testing?.abort();
+  if (modelSettings) { modelSettings.token = ''; modelSettings.field('token').value = ''; }
+  if (activeRunId) runtime?.interruptRun(activeRunId).catch(() => {});
   connection?.dispose();
   store?.close();
 });
 // pagehide closes resources even for bfcache entries; reopen them on restoration.
 window.addEventListener('pageshow', event => { if (event.persisted) location.reload(); });
 initialize();
+$('#model-settings').addEventListener('click', () => modelSettings?.open());
+$('#export-run').addEventListener('click', async () => {
+  try {
+    const events = await runtime.events(lastRunId);
+    const blob = new Blob([JSON.stringify({ version: 1, runId: lastRunId, events }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob), link = document.createElement('a'); link.href = url; link.download = `daylist-run-${lastRunId}.json`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch { toast('Could not export the run log.'); }
+});

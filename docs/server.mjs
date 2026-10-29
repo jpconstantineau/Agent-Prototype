@@ -2,11 +2,13 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep, extname } from 'node:path';
+import { contentSecurityPolicy } from './server-policy.mjs';
 
 const root = fileURLToPath(new URL('./', import.meta.url));
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
 const port = Number(process.env.PORT || 5173);
 const basePath = `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}/`.replace('//', '/');
+const csp = contentSecurityPolicy(process.env.LOCAL_MODEL_ORIGINS);
 createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -28,7 +30,7 @@ createServer(async (req, res) => {
       'Content-Type': `${types[extname(path)]}; charset=utf-8`,
       'Cache-Control': 'no-store',
       'X-Content-Type-Options': 'nosniff',
-      'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+      'Content-Security-Policy': csp,
     }).end(data);
   } catch {
     res.writeHead(404).end('Not found');

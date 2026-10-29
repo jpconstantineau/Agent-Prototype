@@ -25,12 +25,12 @@ async function seedLegacy(items = legacyItems) {
   return name;
 }
 
-test('v1 UUID records migrate to stable numeric keys without changing any other fields', async t => {
+test('v1 records preserve task fields while gaining stable identity and revision metadata', async t => {
   const name = await seedLegacy();
   const store = await TodoStore.open(name, { broadcast: false });
   t.after(() => store.close());
-  assert.equal(store.db.version, 2);
-  assert.deepEqual((await store.list()).items, legacyItems.map((item, i) => ({ ...item, id: i + 1 })));
+  assert.equal(store.db.version, 3);
+  assert.deepEqual((await store.list()).items.map(({stableId,revision,schemaVersion,tombstone,...item})=>item), legacyItems.map((item, i) => ({ ...item, id: i + 1 })));
   const schema = store.db.transaction('items').objectStore('items');
   assert.equal(schema.autoIncrement, true);
   assert.equal(schema.keyPath, 'id');
@@ -82,7 +82,7 @@ test('an interrupted migration rolls back the schema and all legacy records, the
   } finally { legacy.close(); }
   const migrated = await TodoStore.open(name, { broadcast: false });
   t.after(() => migrated.close());
-  assert.deepEqual((await migrated.list()).items, legacyItems.map((item, i) => ({ ...item, id: i + 1 })));
+  assert.deepEqual((await migrated.list()).items.map(({stableId,revision,schemaVersion,tombstone,...item})=>item), legacyItems.map((item, i) => ({ ...item, id: i + 1 })));
 });
 
 test('concurrent connections allocate unique numeric IDs and retain the counter after reopening', async t => {

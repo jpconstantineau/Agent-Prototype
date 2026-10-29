@@ -6,7 +6,7 @@ For unclear wording, distinguish work to do from a report that work is already d
 - Affirmative past/completed-state statements such as "completed book", "finished book", "I finished the book", or "book is done" mean COMPLETE an existing task. "Is done" describes completed work even though "is" is present tense. Do not add these statements as new tasks.
 - Explicit operations take precedence: "mark the book task done" changes saved status, "add a task called completed book" creates that title, and "what books have I completed?" only reads. Quoted task titles are data, not commands. A future intention to finish work is not evidence that it is done.
 - Negation and hypotheticals override completion words: "I have not finished the book", "the book is not done", and "if I finished the book" are not completion reports. Do not mark them done or add them as task titles. Reopen only when requested; otherwise explain or clarify the intended change.
-- For inferred completion, search by the shared subject ("book"), not the whole sentence ("completed book"). Inspect relevant open tasks and all result pages. Exactly one plausible target permits complete_item. If more than one task could reasonably fit, return a final question listing the candidate titles/IDs and wait for the user's choice before changing any task. Never choose the first, newest, lowest ID, or highest-priority match as a tie-breaker. Do not narrow an ambiguous subject by inventing reading/writing intent.
+- For inferred completion, search by the shared subject ("book"), not the whole sentence ("completed book"). Inspect relevant open tasks and all result pages. Exactly one plausible target permits complete_item. If more than one task could reasonably fit, ask a question listing the candidate titles/IDs and wait for the user's choice before changing any task. Never choose the first, newest, lowest ID, or highest-priority match as a tie-breaker. Do not narrow an ambiguous subject by inventing reading/writing intent.
 - An explicit numeric ID or a clearly established task reference can identify the target directly. A clarification reply chooses among the previously offered candidates; do not add that reply as a new task. If no task fits, explain that and ask which task the user meant. Never create a task just to complete it. If the task is already completed, report that without creating a duplicate.`;
 
 export const TOOL_GUIDANCE = {
@@ -35,50 +35,15 @@ export const TOOL_GUIDANCE = {
 // These are illustrative conversations, not IDs or tasks the model may assume
 // exist. Keep the decision rules in the descriptions available to every caller.
 export const TOOL_CHOICE_EXAMPLES = `
-User: "finish book"
-Next: {"type":"tool_call","name":"add_item","arguments":{"title":"finish book"}}
-This describes work to do. Do not infer whether it means reading or writing.
-
-User: "completed book" OR "book is done"
-Next: {"type":"tool_call","name":"search_items","arguments":{"query":"book","status":"open"}}
-If all relevant results contain only one plausible task, id 3 "Finish book": {"type":"tool_call","name":"complete_item","arguments":{"id":3,"completed":true}}
-If results include id 3 "Read book" and id 4 "Write book": {"type":"final","message":"Which task is done: Read book (3) or Write book (4)?"}
-Wait for the user's reply. If the reply selects "Write book", complete only id 4; do not add another task. If no matching task exists, ask which task they meant.
-
-User: "Buy milk tomorrow"
-Next: {"type":"tool_call","name":"add_item","arguments":{"title":"Buy milk tomorrow"}}
-Bare task text defaults to adding it; preserve the wording and do not ask for confirmation.
-
-User: "Review the quarterly report"
-Next: {"type":"tool_call","name":"add_item","arguments":{"title":"Review the quarterly report"}}
-This is a new task, not a request to edit a saved task or perform the review yourself.
-
-User: "Show my tasks."
-Next: {"type":"tool_call","name":"list_items","arguments":{"status":"all"}}
-After success: summarize the returned tasks; do not complete them.
-
-User: "What do I still need to do?"
-Next: {"type":"tool_call","name":"list_items","arguments":{"status":"open"}}
-
-User: "What have I completed?"
-Next: {"type":"tool_call","name":"list_items","arguments":{"status":"completed"}}
-This is a question about saved status, not an instruction to complete anything.
-
-User: "I finished buying milk. Mark it done."
-If the id is unknown: {"type":"tool_call","name":"search_items","arguments":{"query":"milk","status":"open"}}
-If the only matching result has id 3: {"type":"tool_call","name":"complete_item","arguments":{"id":3,"completed":true}}
-After successful completion: return a final confirmation. Do not stop after searching.
-
-User: "Actually, mark that task not done."
-If the previously identified task has id 3: {"type":"tool_call","name":"complete_item","arguments":{"id":3,"completed":false}}
-If the target is unknown, search completed tasks first. If ambiguous, ask which task.
-
-User: "Add Review design, then complete it."
-First: {"type":"tool_call","name":"add_item","arguments":{"title":"Review design"}}
-If the add result has item.id 4: {"type":"tool_call","name":"complete_item","arguments":{"id":4,"completed":true}}
-Use the actual returned id; example ids 3 and 4 are not real task references.`;
+Bare work: "finish book" -> {"type":"tool_call","name":"add_item","arguments":{"title":"finish book"}}. Preserve wording; do not guess reading/writing. Likewise "Review the quarterly report" and "Buy milk tomorrow" create those full titles.
+Finished-work report: "book is done" -> {"type":"tool_call","name":"search_items","arguments":{"query":"book","status":"open"}}. Only after results identify one intended task may you complete its real numeric ID. More pages mean uniqueness is not established.
+If actual results contain Read book (3) and Write book (4), use {"type":"tool_call","name":"request_user_input","arguments":{"version":1,"title":"Choose the completed task","questions":[{"id":"task","header":"Task","question":"Which book task is done?","mode":"single","required":true,"allowCustomAnswer":true,"options":[{"id":"read","label":"Read book","description":"Task #3"},{"id":"write","label":"Write book","description":"Task #4"}]}]}}. Wait for the human; map option IDs using those definitions, recheck state, then complete only the chosen real ID. Never add the answer as a task. Example IDs are not actual records.
+Read-only: "What is left?" -> list_items {"status":"open"}; "What have I completed?" -> list_items {"status":"completed"}. Summarize results without writes.
+"I finished buying milk. Mark it done." -> search_items {"query":"milk","status":"open"}, then complete_item for the resolved real ID, then final confirmation. Do not stop after searching. "Mark that task not done" uses completed:false for the established ID, or a completed-task lookup if unknown.
+"Add Review design, then complete it" -> add_item {"title":"Review design"}, then complete_item using result.item.id. Never repeat a successful add or completion.`;
 
 export function toolResultInstruction(name, result) {
+  if (name === 'request_user_input' && result.success) return 'The human answered this question request. Interpret answers using the included question and option definitions. Continue only the original authorized request; do not add an answer as a new task. Recheck saved task state if it may have changed. A skipped question supplies no value.';
   const next = result.success
     ? TOOL_GUIDANCE[name]?.afterResult || 'Continue any remaining requested actions or report the result.'
     : 'The tool failed. Do not claim success. Correct the arguments or explain the failure; do not invent task IDs.';

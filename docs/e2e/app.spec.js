@@ -309,7 +309,9 @@ test('existing UUID tasks migrate in Chrome and the assistant completes a listed
     try { return { version: store.db.version, items: (await store.list()).items }; }
     finally { store.close(); }
   });
-  expect(migrated).toEqual({ version: 2, items: legacy.map((item, i) => ({ ...item, id: i + 1 })) });
+  expect(migrated.version).toBe(3);
+  expect(migrated.items.map(({stableId,revision,schemaVersion,tombstone,...item})=>item)).toEqual(legacy.map((item,i)=>({...item,id:i+1})));
+  expect(migrated.items.every(item=>typeof item.stableId === 'string' && item.revision === 1)).toBe(true);
   await page.getByRole('button', { name: 'Enable local AI', exact: true }).click();
   await page.getByRole('textbox', { name: 'Message the assistant' }).fill('Complete the legacy open task.');
   await page.getByRole('button', { name: 'Send message', exact: true }).click();
@@ -400,10 +402,14 @@ test('finish book adds a task and an ambiguous done report waits for a selection
           if (step === 4) {
             if (observation.result.total !== 2 || !observation.instruction.includes('ask which one and wait')) throw new Error('Missing ambiguity guidance');
             selectedId = observation.result.items.find(item => item.title === 'finish book').id;
-            return final('Which task is done: finish book or Read book?');
+            return tool('request_user_input', {version:1,title:'Choose the completed task',questions:[{id:'task',header:'Task',question:'Which task is done?',mode:'single',required:true,allowCustomAnswer:true,options:observation.result.items.map(item=>({id:'task_'+item.id,label:item.title,description:'Task #'+item.id}))}]});
           }
-          if (step === 5) return tool('complete_item', { id: selectedId, completed: true });
-          if (step === 6 && observation.result.item.completed) return final('Marked finish book done.');
+          if (step === 5) {
+            if (observation.name !== 'request_user_input' || observation.request !== 'book is done' || observation.result.answers[0].optionIds[0] !== 'task_' + selectedId) throw new Error('Lost structured clarification');
+            return tool('search_items', { query: 'book', status: 'open' });
+          }
+          if (step === 6) return tool('complete_item', { id: selectedId, completed: true });
+          if (step === 7 && observation.result.item.completed) return final('Marked finish book done.');
           throw new Error('Unexpected completion flow');
         },
       };
@@ -422,10 +428,11 @@ test('finish book adds a task and an ambiguous done report waits for a selection
   await addTask(page, 'Read book');
   await input.fill('book is done');
   await send.click();
-  await expect(page.locator('.assistant-message').last()).toContainText('Which task is done: finish book or Read book?');
+  await expect(page.getByRole('heading', { name: 'Choose the completed task' })).toBeVisible();
   await expect(page.locator('.task-check:checked')).toHaveCount(0);
-  await input.fill('finish book');
-  await send.click();
+  await expect(input).toHaveAttribute('readonly', '');
+  await page.getByRole('radio', { name: /^finish book/ }).check();
+  await page.getByRole('button', { name: 'Answer and continue', exact: true }).click();
   await expect(page.locator('.assistant-message').last()).toContainText('Marked finish book done.');
   await expect(page.getByRole('checkbox', { name: 'Reopen finish book', exact: true })).toBeChecked();
   await expect(page.getByRole('checkbox', { name: 'Complete Read book', exact: true })).not.toBeChecked();

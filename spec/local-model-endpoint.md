@@ -1,6 +1,6 @@
 # Local LLM endpoint with Chrome Prompt API fallback
 
-Status: approved specification added during the Hermes review. Extends the previous Prompt-API-only inference design while retaining its tool contracts, vanilla JavaScript modules, and policy boundary. Uses [runtime contracts](runtime-contracts.md), [agent library](agent-configuration.md#feature-agent-library), [compaction](context-management.md#feature-context-compaction), and [observability](diagnostics.md#feature-observability). Voice remains [Chrome/browser-only](interactive-experiences.md#feature-voice-interaction).
+Status: device-local text inference, Settings/Test, and Chrome fallback implemented on 2026-10-28. References to optional epic features remain future integration requirements. See [implementation and validation scope](../docs/README.md#foundation-implementation). Extends the previous Prompt-API-only inference design while retaining its tool contracts, vanilla JavaScript modules, and policy boundary. Uses [runtime contracts](runtime-contracts.md), [agent library](agent-configuration.md#feature-agent-library), [compaction](context-management.md#feature-context-compaction), and [observability](diagnostics.md#feature-observability). Voice remains [Chrome/browser-only](interactive-experiences.md#feature-voice-interaction).
 
 ## Purpose
 

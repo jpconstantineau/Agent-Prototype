@@ -1,6 +1,6 @@
 # Shared browser agent runtime contracts
 
-Status: proposed. This document supplies common requirements to the adjacent feature specs. MUST is normative; SHOULD is the recommended default.
+Status: shared baseline implemented in the app on 2026-10-28. Requirements referencing optional epic features remain integration contracts for their future implementations, not a claim that those features exist. See [implementation scope](../docs/README.md#foundation-implementation). MUST is normative; SHOULD is the recommended default.
 
 ## Purpose
 

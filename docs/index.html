@@ -43,6 +43,9 @@
         <div class="connection-status"><span id="ai-dot" class="status-dot" aria-hidden="true"></span><span id="ai-status" role="status">Checking local AI…</span></div>
         <p id="model-help">Checking whether this browser can run the assistant.</p>
         <button id="enable-ai" class="button primary enable-button" disabled>Enable local AI</button>
+        <button id="model-settings" class="text-button" disabled>Model settings</button>
+        <p id="provider-status" class="provider-status" role="status"></p>
+        <p id="context-status" class="provider-status"></p>
       </div>
       <div id="messages" class="messages" role="log" aria-label="Conversation" aria-live="polite">
         <div class="assistant-intro"><h3>Ask about your tasks</h3><p>Enable local AI, then describe what to add, find, or update.</p></div>
@@ -51,13 +54,35 @@
           <button data-suggestion="What tasks are still open?" disabled><span>Show my unfinished tasks</span><span aria-hidden="true">↗</span></button>
         </div>
       </div>
-      <div id="activity-status" class="activity-status" role="status"></div>
+      <div id="activity-status" class="activity-status" role="status" tabindex="-1"></div>
       <div class="assistant-bottom">
         <form id="chat-form"><label for="chat-input" class="sr-only">Message the assistant</label><div class="composer"><textarea id="chat-input" rows="2" placeholder="Enable local AI to start chatting" maxlength="4000" aria-describedby="ai-status" disabled></textarea><div class="composer-footer"><span>Enter to send · Shift + Enter for a new line</span><button id="stop-agent" type="button" class="stop-button" hidden>Stop</button><button id="send-message" type="submit" class="send-button" aria-label="Send message" disabled>↑</button></div></div></form>
-        <details class="browser-details"><summary>Browser connection &amp; setup</summary><p id="webmcp-status">Connecting page tools…</p><p>Local AI requires a compatible desktop Chrome and a downloaded model. <a href="https://developer.chrome.com/docs/ai/prompt-api" target="_blank" rel="noopener">AI setup ↗</a> · <a href="https://developer.chrome.com/docs/ai/webmcp" target="_blank" rel="noopener">Page tools setup ↗</a></p><p>Tasks persist in this browser. Conversations clear when you reload.</p></details>
+        <details class="browser-details"><summary>Browser connection &amp; setup</summary><p id="webmcp-status">Connecting page tools…</p><p>Chrome AI requires a compatible desktop browser and downloaded model. A configured local text endpoint is optional. <a href="https://developer.chrome.com/docs/ai/prompt-api" target="_blank" rel="noopener">AI setup ↗</a> · <a href="https://developer.chrome.com/docs/ai/webmcp" target="_blank" rel="noopener">Page tools setup ↗</a></p><p>Tasks and diagnostic events persist in this browser. Visible conversations and pending answers clear on reload. Logs include submitted prompts and results; no endpoint credentials are stored in them.</p><button id="export-run" class="text-button" disabled>Download last run log</button></details>
       </div>
     </aside>
   </div>
+  <dialog id="model-dialog" aria-labelledby="model-dialog-title">
+    <form novalidate>
+      <div class="dialog-heading"><h2 id="model-dialog-title">Model settings</h2><button type="button" class="icon-button" data-close-settings aria-label="Close model settings">×</button></div>
+      <p>These settings stay on this device. The browser executes tools; the endpoint only generates text. A local address does not prove the server uses a local model.</p>
+      <label>Text model<select name="primary"><option value="chrome">Chrome Prompt API</option><option value="local_http">Local OpenAI-compatible endpoint</option></select></label>
+      <label>Connection label<input name="label" maxlength="80"></label>
+      <label>Base URL<input name="baseUrl" type="url" maxlength="500" spellcheck="false"></label>
+      <label>Exact model name<input name="model" maxlength="200" spellcheck="false"></label>
+      <label class="check-label"><input name="localModel" type="checkbox">I configured this endpoint to use a locally served, inference-only model</label>
+      <label class="check-label"><input name="allowLan" type="checkbox">Allow the explicitly entered private LAN HTTPS endpoint</label>
+      <label>Session bearer token (optional)<input name="token" type="password" autocomplete="off" maxlength="4000"></label>
+      <button type="button" class="text-button" data-forget-token>Forget session token</button>
+      <p>The token stays in page memory and is lost on reload. It is never saved, synced, exported, or included in prompts.</p>
+      <div class="form-row"><label>Configured context window<input name="contextWindowTokens" type="number" min="1024" max="131072"></label><label>Output token cap<input name="maxOutputTokens" type="number" min="256" max="8192"></label></div>
+      <div class="form-row"><label>Input character limit<input name="inputCharLimit" type="number" min="2000" max="200000"></label><label>Timeout (ms)<input name="timeoutMs" type="number" min="5000" max="180000"></label></div>
+      <label>Chrome fallback<select name="fallback"><option value="automatic">Automatic when available</option><option value="ask">Ask before switching</option><option value="off">Off</option></select></label>
+      <p>Only loopback HTTP(S), or explicitly approved private LAN HTTPS, is supported. Configure an inference-only local model server with strict JSON Schema support and CORS for this page’s origin. Browser local-network permission, TLS, or CSP may block access. No proxy is provided. Configured token limits are not measured Chrome capacity.</p>
+      <p id="endpoint-status" role="status">Disconnected</p>
+      <p class="form-error" data-settings-error role="alert"></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" data-test-endpoint>Connect / Test</button><button type="submit" class="button primary">Save settings</button></div>
+    </form>
+  </dialog>
   <dialog id="item-dialog" aria-labelledby="dialog-title">
     <form id="item-form">
       <div class="dialog-heading"><h2 id="dialog-title">New task</h2><button type="button" id="close-dialog" class="icon-button" aria-label="Close task editor">×</button></div>

@@ -39,7 +39,7 @@ The primary job is to capture a task, find it later, and mark it done. The assis
 
 ## Layout and interaction decisions
 
-The task list is the primary white surface on a warm neutral canvas. A muted green assistant panel distinguishes the optional interaction from saved task data. Dark green denotes the main action and selected controls. Text is generally 13–16px, with a larger task heading; supporting labels have readable contrast. No external fonts, images, runtime dependencies, or network services are added.
+The task list is the primary white surface on a warm neutral canvas. A muted green assistant panel distinguishes the optional interaction from saved task data. Dark green denotes the main action and selected controls. Text is generally 13–16px, with a larger task heading; supporting labels have readable contrast. No external fonts, images or runtime dependencies are added. A human-configured local inference endpoint is optional.
 
 The sidebar, metric cards, duplicate add row, and decorative copy are removed. On narrow screens the search field moves below the filters. Task titles wrap, the editor stacks its fields, and the assistant opens below the task workspace. Hidden panels leave the accessibility tree. Opening an editor focuses its title; closing the assistant returns focus to its toggle. Reduced-motion preferences are respected.
 
@@ -48,3 +48,11 @@ A newly created task clears search and returns to All tasks so the saved item is
 ## Verification
 
 The browser suite exercises task CRUD, safe text rendering, persistence, cross-tab updates, filters and recovery, creation from a filtered view, assistant connection and cancellation, storage failure, keyboard focus, native WebMCP, and layouts at 320, 390, 768, 1024, and 1440px. Screenshots are written to ignored `docs/.tmp/` for review. Scripted model responses verify interaction behavior, not real local-model accuracy.
+
+## Foundation interaction surfaces
+
+The native question card is part of the conversation and outside the composer form. Its fieldsets use actual radio, checkbox and text controls. Recommendations annotate choices without selecting them. The card owns only a local draft until explicit submission; Skip is explicit, custom mode excludes inactive choices, and Cancel shares Stop. A read-only summary records what was actually sent. Waiting does not block manual task editing. Focus moves on arrival and settlement, not on every edit; the hidden-panel toggle announces Answer needed.
+
+Model settings is a human-owned modal that saves a device-local route and tests compatibility separately. Saving and editing never start a chat run. Bearer tokens are direct user inputs held only in page memory, with an explicit Forget action. Visible provider/context status distinguishes Chrome measurements, configured server values and Unknown. Fallback has its own visible marker or explicit Continue choice, preserving the original run budget and committed operations.
+
+The setup disclosure explains diagnostic persistence and offers the last run’s JSON log for troubleshooting. It does not suggest that logs are resumable chat history. The full diagnostics inspector remains a separate epic.

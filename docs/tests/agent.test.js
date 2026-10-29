@@ -71,7 +71,7 @@ test('invalid JSON, unknown tools and malformed arguments never reach execution'
   const { registry } = await harness(t);
   const session = scriptedSession(['not json', call('delete_everything', {}), call('add_item', { title: '' }), final('Please provide a title.')]);
   const result = await new AgentLoop({ registry, session }).run('Do something');
-  assert.equal(result.status, 'completed');
+  assert.equal(result.status, 'model_error');
   assert.equal(result.trace.filter(e => e.type === 'invalid_response').length, 3);
   assert.equal((await registry.execute('list_items', {})).total, 0);
 });
@@ -129,7 +129,7 @@ test('availability and creation share options; creation passes the system prompt
   assert.deepEqual(createOptions.expectedInputs, availableOptions.expectedInputs);
   assert.deepEqual(createOptions.expectedOutputs, availableOptions.expectedOutputs);
   assert.match(createOptions.initialPrompts[0].content, /untrusted data/);
-  assert.ok(createOptions.initialPrompts[0].content.includes(JSON.stringify(registry.definitions())));
+  assert.ok(createOptions.initialPrompts[0].content.includes(JSON.stringify(registry.definitions().map(({ name, description }) => ({ name, description })))));
   assert.equal(progress, 0.5);
 });
 
