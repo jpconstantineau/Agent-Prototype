@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Daylist UI guidelines: inspect native forms, Bootstrap layouts and the purpose of each CSS declaration.">
   <title>Daylist · UI reference</title>
+  <script src="./appearance.js"></script>
   <link rel="stylesheet" href="./design-system.css">
   <script type="module" src="./reference.js"></script>
 </head>
@@ -18,6 +19,15 @@
         <a href="#foundations">Foundations</a><a href="#forms">Forms</a><a href="#tables">Tables</a><a href="#audit">CSS decisions</a>
       </nav>
     </div>
+    <fieldset class="container ui-appearance">
+      <legend>Appearance</legend>
+      <div class="ui-cluster">
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="theme-dark" aria-describedby="appearance-help" disabled>Dark mode</label>
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="vision-distinct" aria-describedby="appearance-help" disabled>Distinct status colors</label>
+        <span id="appearance-status" role="status">Light · Standard palette</span>
+      </div>
+      <p id="appearance-help" class="ui-help">Choose light or dark and an optional blue/amber status palette. Every combination also uses words and shape cues.</p>
+    </fieldset>
   </header>
   <main id="main" class="container" tabindex="-1">
     <div class="row">
@@ -41,15 +51,15 @@
       <h2 id="foundation-title">Foundations you can inspect</h2>
       <p class="ui-measure">Color roles carry a stable meaning. State labels, persistent field names and visible focus remain understandable without color. The system font starts at the browser’s normal reading size.</p>
       <div class="ui-swatch-grid">
-        <div><div class="ui-swatch ui-swatch-primary" aria-hidden="true"></div><strong>Primary</strong><p><code>#284637</code> · deliberate action</p></div>
-        <div><div class="ui-swatch ui-swatch-ink" aria-hidden="true"></div><strong>Ink</strong><p><code>#20352a</code> · sustained reading</p></div>
-        <div><div class="ui-swatch ui-swatch-muted" aria-hidden="true"></div><strong>Muted</strong><p><code>#526258</code> · secondary information</p></div>
-        <div><div class="ui-swatch ui-swatch-canvas" aria-hidden="true"></div><strong>Canvas</strong><p><code>#f5f5f0</code> · page background</p></div>
-        <div><div class="ui-swatch ui-swatch-surface" aria-hidden="true"></div><strong>Surface</strong><p><code>#ffffff</code> · reading and editing</p></div>
-        <div><div class="ui-swatch ui-swatch-focus" aria-hidden="true"></div><strong>Focus</strong><p><code>#005fcc</code> · keyboard destination</p></div>
-        <div><div class="ui-swatch ui-swatch-danger" aria-hidden="true"></div><strong>Error</strong><p><code>#9b2c24</code> · correction needed</p></div>
-        <div><div class="ui-swatch ui-swatch-success" aria-hidden="true"></div><strong>Success</strong><p><code>#235b3b</code> · confirmed result</p></div>
-        <div><div class="ui-swatch ui-swatch-warning" aria-hidden="true"></div><strong>Pending</strong><p><code>#725000</code> · decision still needed</p></div>
+        <div><div class="ui-swatch ui-swatch-primary" aria-hidden="true"></div><strong>Primary</strong><p><code data-color-value="primary">#284637</code> · deliberate action</p></div>
+        <div><div class="ui-swatch ui-swatch-ink" aria-hidden="true"></div><strong>Ink</strong><p><code data-color-value="ink">#20352a</code> · sustained reading</p></div>
+        <div><div class="ui-swatch ui-swatch-muted" aria-hidden="true"></div><strong>Muted</strong><p><code data-color-value="muted">#526258</code> · secondary information</p></div>
+        <div><div class="ui-swatch ui-swatch-canvas" aria-hidden="true"></div><strong>Canvas</strong><p><code data-color-value="canvas">#f5f5f0</code> · page background</p></div>
+        <div><div class="ui-swatch ui-swatch-surface" aria-hidden="true"></div><strong>Surface</strong><p><code data-color-value="surface">#ffffff</code> · reading and editing</p></div>
+        <div><div class="ui-swatch ui-swatch-focus" aria-hidden="true"></div><strong>Focus</strong><p><code data-color-value="focus">#005fcc</code> · keyboard destination</p></div>
+        <div><div class="ui-swatch ui-swatch-danger" aria-hidden="true"></div><strong>Error</strong><p><code data-color-value="danger">#9b2c24</code> · correction needed</p></div>
+        <div><div class="ui-swatch ui-swatch-success" aria-hidden="true"></div><strong>Success</strong><p><code data-color-value="success">#235b3b</code> · confirmed result</p></div>
+        <div><div class="ui-swatch ui-swatch-warning" aria-hidden="true"></div><strong>Pending</strong><p><code data-color-value="warning">#725000</code> · decision still needed</p></div>
       </div>
       <div class="row">
         <div class="col-md-6"><div class="card"><h3>Reading hierarchy</h3><p>A 2rem page title, 1.5rem section heading and 1rem body help distinguish a destination from its content.</p><p class="ui-help">Help is 0.875rem. Long names and URLs wrap instead of forcing the page wider.</p></div></div>
@@ -59,48 +69,25 @@
 
     <section id="forms" class="ui-section" aria-labelledby="forms-title">
       <h2 id="forms-title">Review first. Click to edit.</h2>
-      <p id="form-instructions" class="ui-measure">Open a value’s Edit disclosure with a click, Enter or Space. Change the native field, then Save or Cancel. Leaving a field never saves it. Escape cancels an open editor; Enter in notes inserts a new line.</p>
-      <noscript><p class="ui-notice">Native disclosures and fields work without JavaScript. Saving these page-memory examples and the CSS decision search require JavaScript; their action buttons stay disabled.</p></noscript>
+      <p id="form-instructions" class="ui-measure">Values are already in real inputs. Click, tap or Tab into a value: its box appears on focus. Use Save changes or Cancel changes; moving away never saves. Enter in notes inserts a new line. Escape cancels this record’s draft.</p>
+      <noscript><p class="ui-notice">Prefilled fields still reveal their borders with native CSS focus without JavaScript. Saving examples, changing appearance and searching the ledger require JavaScript; their action controls stay disabled.</p></noscript>
       <div class="row">
         <div class="col-lg-8">
-          <div class="card">
+          <form class="card ui-stack" data-inline-record aria-label="Edit example task" aria-describedby="form-instructions">
             <h3>Example task</h3>
-            <details class="ui-editor" data-editor="title">
-              <summary><span class="ui-field-name">Task title</span> · <span data-read-value>Review the interface guidelines</span><span class="ui-edit-cue">Edit</span></summary>
-              <form class="ui-stack" aria-label="Edit task title" aria-describedby="form-instructions">
-                <div><label for="example-title">Task title (required)</label><input class="form-control" id="example-title" name="title" value="Review the interface guidelines" required maxlength="80" autocomplete="off" aria-describedby="title-help title-error"><p id="title-help" class="ui-help">Name the work in 80 characters or fewer.</p><p id="title-error" class="ui-error" data-error role="alert" hidden></p></div>
-                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save title</button><button class="btn" type="button" data-cancel disabled>Cancel title</button></div>
-              </form>
-            </details>
-            <details class="ui-editor" data-editor="notes">
-              <summary><span class="ui-field-name">Notes</span> · <span data-read-value>Check narrow screens and keyboard access.</span><span class="ui-edit-cue">Edit</span></summary>
-              <form class="ui-stack" aria-label="Edit notes">
-                <div><label for="example-notes">Notes (optional)</label><textarea class="form-control" id="example-notes" name="notes" rows="4" maxlength="500" aria-describedby="notes-help notes-error">Check narrow screens and keyboard access.</textarea><p id="notes-help" class="ui-help">Up to 500 characters. Enter adds a line; use Save notes to commit.</p><p id="notes-error" class="ui-error" data-error role="alert" hidden></p></div>
-                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save notes</button><button class="btn" type="button" data-cancel disabled>Cancel notes</button></div>
-              </form>
-            </details>
-            <details class="ui-editor" data-editor="priority">
-              <summary><span class="ui-field-name">Priority</span> · <span data-read-value>Normal</span><span class="ui-edit-cue">Edit</span></summary>
-              <form class="ui-stack" aria-label="Edit priority">
-                <div><label for="example-priority">Priority</label><select class="form-select" id="example-priority" name="priority" aria-describedby="priority-error"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select><p id="priority-error" class="ui-error" data-error role="alert" hidden></p></div>
-                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save priority</button><button class="btn" type="button" data-cancel disabled>Cancel priority</button></div>
-              </form>
-            </details>
-            <details class="ui-editor" data-editor="date">
-              <summary><span class="ui-field-name">Due date</span> · <span data-read-value>Not set</span><span class="ui-edit-cue">Edit</span></summary>
-              <form class="ui-stack" aria-label="Edit due date">
-                <div><label for="example-date">Due date (optional)</label><input class="form-control" type="date" id="example-date" name="dueDate" aria-describedby="date-help date-error"><p id="date-help" class="ui-help">Uses your browser’s date picker. Leave blank for no date.</p><p id="date-error" class="ui-error" data-error role="alert" hidden></p></div>
-                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save due date</button><button class="btn" type="button" data-cancel disabled>Cancel due date</button></div>
-              </form>
-            </details>
+            <div class="ui-field"><label for="example-title">Task title (required)</label><input class="form-control ui-inline-control" id="example-title" name="title" value="Review the interface guidelines" required maxlength="80" autocomplete="off" data-error="title-error" aria-describedby="title-help title-error"><p id="title-help" class="ui-help">Name the work in 80 characters or fewer.</p><p id="title-error" class="ui-error" role="alert" hidden></p></div>
+            <div class="ui-field"><label for="example-notes">Notes (optional)</label><textarea class="form-control ui-inline-control" id="example-notes" name="notes" rows="3" maxlength="500" data-error="notes-error" aria-describedby="notes-help notes-error">Check narrow screens and keyboard access.</textarea><p id="notes-help" class="ui-help">Up to 500 characters. Enter adds a line.</p><p id="notes-error" class="ui-error" role="alert" hidden></p></div>
+            <div class="ui-field"><label for="example-priority">Priority</label><select class="form-select ui-inline-control" id="example-priority" name="priority" data-error="priority-error" aria-describedby="priority-error"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select><p id="priority-error" class="ui-error" role="alert" hidden></p></div>
+            <div class="ui-field"><label for="example-date">Due date (optional)</label><input class="form-control ui-inline-control" type="date" id="example-date" name="dueDate" data-error="date-error" aria-describedby="date-help date-error"><p id="date-help" class="ui-help">Uses your browser’s date picker. Leave blank for no date.</p><p id="date-error" class="ui-error" role="alert" hidden></p></div>
+            <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save changes</button><button class="btn" type="button" data-cancel disabled>Cancel changes</button></div>
             <p id="edit-status" role="status" aria-live="polite">No example changes saved.</p>
-          </div>
+          </form>
         </div>
         <aside class="col-lg-4" aria-labelledby="form-rationale"><div class="card ui-stack">
           <h3 id="form-rationale">Why this interaction?</h3>
-          <p>Saved values stay easy to scan. A persistent Edit cue and the browser’s disclosure marker make editing discoverable before hover.</p>
-          <p>The editor keeps the real label, browser constraints, select arrow and date picker. A draft only replaces the displayed value after successful Save.</p>
-          <p class="ui-notice">Unsaved changes keep an editor open until Save or Cancel. Closing the page clears these demonstration edits.</p>
+          <p>The value is the input. Unfocused fields blend into their panel; focusing reveals the existing control’s border and background without opening a section or swapping elements.</p>
+          <p>Labels and native select arrows/date pickers stay available. Input padding and border width are reserved in both states so text does not jump on focus.</p>
+          <p class="ui-notice">Draft values remain visible after blur. Save commits this example record; Cancel restores its last saved values. Errors remain marked even after focus leaves.</p>
         </div></aside>
       </div>
     </section>

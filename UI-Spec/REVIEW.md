@@ -30,7 +30,7 @@ No human acceptance is recorded yet. The ledger deliberately labels every decisi
 For an objection, record a review comment/issue using this template:
 
 ```text
-Declaration ID(s): summary.1, summary.2
+Declaration ID(s): inline-control.1, inline-control.2
 Review gate: value / need / intent / scope / evidence / tradeoff
 Observed user task and context:
 Disputed purpose or intent:
@@ -45,7 +45,7 @@ Stable IDs identify a rule and tuple slot, not a cryptographic version. Do not i
 
 ## Automated verification families
 
-Every declaration references a named family; each family is explicitly tested in `docs/e2e/ui-spec.spec.js` or `docs/tests/ui-spec.test.js`. One family tests outcomes of several declarations, rather than asserting hundreds of implementation values in meaningless mirror tests.
+All four appearance combinations are checked independently for contrast, effective CSS values, keyboard focus and non-color cues. Every declaration references a named family; each family is explicitly tested in `docs/e2e/ui-spec.spec.js` or `docs/tests/ui-spec.test.js`. One family tests outcomes of several declarations, rather than asserting hundreds of implementation values in meaningless mirror tests.
 
 | Family | Observable checks / evidence |
 | --- | --- |
@@ -53,9 +53,9 @@ Every declaration references a named family; each family is explicitly tested in
 | colors / contrast | Permitted semantic color pairs meet contrast thresholds; sample colors and browser-supported declarations agree with the registry. |
 | type | Body/default size, readable help, heading order, browser-root enlargement, long content and user text spacing remain usable. |
 | grid / reflow | Below/at 768 and 992px, paired/work-support widths and source order; 320/390/768/992/1440px page bounds; enlarged text wraps without page overflow. |
-| navigation / focus | Skip-to-main, natural summary activation, visible focus outline and return focus after editing/dialog. |
+| navigation / focus | Skip-to-main, native input focus and keyboard slider activation, visible focus outline and visible editing focus and return focus after dialog. |
 | targets | Primary buttons, summaries, navigation and choice labels meet the 44px project minimum at normal root size. |
-| editing | Read/draft separation; opening; valid Save; Cancel/Escape; dirty-collapse handling; no blur-save; textarea newline and IME; select/date values; safe text output; no-JavaScript baseline. |
+| editing | Accepted-record/draft separation; focus-only chrome; valid Save; Cancel/Escape; no element replacement; no blur-save; textarea newline and IME; select/date values; safe text output; no-JavaScript baseline. |
 | validation | Required/blank rejection, linked textual error, invalid field focus, correction and unchanged accepted value. |
 | controls | Native radio/checkbox/select/date behavior and genuine disabled attributes. |
 | table | Captions/row/column headers, focusable named overflow regions, keyboard panning, numeric alignment and no page-level overflow. |
@@ -70,9 +70,9 @@ These checks provide **traceability and bounded behavioral evidence**, not proof
 
 ## Required manual review before product adoption
 
-- Use a keyboard from the address bar: skip link, navigation, all disclosures, Save/Cancel, invalid Save, table panning and dialog Escape. Confirm the visible focus follows the logical reading order.
+- Use a keyboard from the address bar: skip link, navigation, all inline inputs and appearance sliders, Save/Cancel, invalid Save, table panning and dialog Escape. Confirm the visible focus follows the logical reading order.
 - Test at actual browser zoom of 200% and 400%, with enlarged OS text, long translated labels, very long saved values and the mobile software keyboard. Automated root-size/viewport tests approximate these pressures; they do not replace actual browser zoom or a physical mobile device.
-- Test with NVDA/Chrome on Windows and VoiceOver/Safari on an Apple device if Safari is a deployment target. Confirm summary names, linked help/errors, status timing, table headers and modal focus. Browser accessibility snapshots cannot certify these experiences.
+- Test with NVDA/Chrome on Windows and VoiceOver/Safari on an Apple device if Safari is a deployment target. Confirm field and slider labels, linked help/errors, status timing, table headers and modal focus. Browser accessibility snapshots cannot certify these experiences.
 - Use Windows high contrast / forced colors, reduced motion and default platform controls. There is no authored motion; confirm nothing newly introduced starts animating under a later extension.
 - Observe a person unfamiliar with the pattern find Edit, change a value, abandon a draft and correct an invalid value. Specifically challenge whether click-to-edit adds unnecessary steps for a creation-heavy workflow; normal always-open forms may be more suitable there.
 - Verify chosen fonts on the supported OSes, copy/paste and input method composition, date localization, touch target comfort, and real persistence/error behavior when integrating with the app store.

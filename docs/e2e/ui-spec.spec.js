@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {rules} from '../../UI-Spec/system.mjs';
+import {rules,palettes} from '../../UI-Spec/system.mjs';
 
 // Family labels are checked against every declaration's verification mapping.
 const families = {
@@ -8,7 +8,6 @@ const families = {
   keyboard: ['focus','editing','validation'],
   comparison: ['table'], modal: ['dialog'], adaptive: ['forced-colors'],
 };
-const editor=page=>page.locator('[data-editor="title"]');
 const titleInput=page=>page.getByLabel('Task title (required)',{exact:true});
 async function reference(page) {
   await page.goto('./ui-spec/');
@@ -58,26 +57,33 @@ test(`layout, source order and targets: ${families.layout.join(', ')}`,async({pa
     if(width<768)expect(paired[1]).toBeGreaterThan(paired[0]);else expect(Math.abs(paired[0]-paired[1])).toBeLessThan(1);
   }
   await page.setViewportSize({width:390,height:844});
-  for(const control of await page.locator('summary,.ui-nav a,.ui-choice,.btn:visible').all())expect((await control.boundingBox()).height).toBeGreaterThanOrEqual(44);
+  for(const control of await page.locator('.ui-nav a,.ui-choice,.btn:visible,.ui-inline-control').all())expect((await control.boundingBox()).height).toBeGreaterThanOrEqual(44);
   await page.screenshot({path:'.tmp/ui-reference-mobile.png',fullPage:false});
   await page.setViewportSize({width:1440,height:960});await page.screenshot({path:'.tmp/ui-reference-desktop.png',fullPage:false});
 });
 
-test(`click-to-edit validates, preserves drafts and cancels explicitly: ${families.keyboard.join(', ')}`,async({page})=>{
-  await reference(page);await page.keyboard.press('Tab');await expect(page.locator('.ui-skip')).toBeFocused();await page.keyboard.press('Enter');await expect(page.locator('main')).toBeFocused();
-  const summary=editor(page).locator('summary');await summary.focus();await page.keyboard.press('Enter');await expect(titleInput(page)).toBeFocused();
-  await titleInput(page).fill('Unsaved draft');await page.getByLabel('Find a CSS decision',{exact:true}).focus();await expect(editor(page).locator('[data-read-value]')).toHaveText('Review the interface guidelines');
-  await summary.click();await expect(editor(page)).toHaveAttribute('open','');await expect(page.locator('#edit-status')).toContainText('Choose Save or Cancel');await expect(titleInput(page)).toHaveValue('Unsaved draft');
-  await titleInput(page).fill('   ');await page.getByRole('button',{name:'Save title',exact:true}).click();await expect(page.locator('#title-error')).toBeVisible();await expect(titleInput(page)).toHaveAttribute('aria-invalid','true');await expect(titleInput(page)).toBeFocused();await expect(editor(page).locator('[data-read-value]')).toHaveText('Review the interface guidelines');
+test(`prefilled values reveal native input chrome only on focus: ${families.keyboard.join(', ')}`,async({page})=>{
+  await reference(page);await expect(page.locator('details, summary')).toHaveCount(0);
+  const input=titleInput(page),save=page.getByRole('button',{name:'Save changes',exact:true}),cancel=page.getByRole('button',{name:'Cancel changes',exact:true});
+  await expect(input).toHaveValue('Review the interface guidelines');await expect(input).toBeVisible();
+  const before=await input.evaluate(n=>{window.originalInput=n;const r=n.getBoundingClientRect(),s=getComputedStyle(n);return {w:r.width,h:r.height,border:s.borderTopColor,bg:s.backgroundColor};});
+  expect(before.border).toBe('rgba(0, 0, 0, 0)');expect(before.bg).toBe('rgba(0, 0, 0, 0)');
+  await input.hover();expect(await input.evaluate(n=>getComputedStyle(n).borderTopColor)).toBe(before.border);
+  await input.click();await expect(input).toBeFocused();
+  const focused=await input.evaluate(n=>{const r=n.getBoundingClientRect(),s=getComputedStyle(n);return {same:n===window.originalInput,w:r.width,h:r.height,border:s.borderTopColor,bg:s.backgroundColor,outline:s.outlineWidth};});
+  expect(focused.same).toBe(true);expect(focused.w).toBe(before.w);expect(focused.h).toBe(before.h);expect(focused.border).not.toBe(before.border);expect(focused.bg).not.toBe(before.bg);expect(focused.outline).toBe('3px');
+  await input.fill('Unsaved draft');await page.getByLabel('Find a CSS decision',{exact:true}).focus();await expect(input).toHaveValue('Unsaved draft');await expect(page.locator('#edit-status')).toContainText('Unsaved');expect(await input.evaluate(n=>getComputedStyle(n).borderTopColor)).toBe(before.border);
+  await cancel.click();await expect(input).toHaveValue('Review the interface guidelines');
+  await input.fill('   ');await save.click();await expect(page.locator('#title-error')).toContainText('Error:');await expect(input).toHaveAttribute('aria-invalid','true');await expect(input).toBeFocused();
+  await page.getByLabel('Find a CSS decision',{exact:true}).focus();expect(await input.evaluate(n=>getComputedStyle(n).borderTopColor)).not.toBe(before.border);
   await page.locator('#forms').screenshot({path:'.tmp/ui-reference-form-error.png'});
-  const dangerous='<img src=x onerror=alert(1)>';await titleInput(page).fill(dangerous);await page.getByRole('button',{name:'Save title',exact:true}).click();await expect(editor(page)).not.toHaveAttribute('open','');await expect(summary).toBeFocused();await expect(editor(page).locator('[data-read-value]')).toHaveText(dangerous);await expect(editor(page).locator('img')).toHaveCount(0);
-  await summary.press('Space');await titleInput(page).fill('Cancelled value');await titleInput(page).press('Escape');await expect(summary).toBeFocused();await summary.click();await expect(titleInput(page)).toHaveValue(dangerous);await page.getByRole('button',{name:'Cancel title',exact:true}).click();
-  const notes=page.locator('[data-editor="notes"]');await notes.locator('summary').click();const textarea=page.getByLabel('Notes (optional)',{exact:true});await textarea.fill('First');await textarea.press('End');await textarea.press('Enter');await textarea.pressSequentially('Second');await expect(textarea).toHaveValue('First\nSecond');
-  await textarea.dispatchEvent('keydown',{key:'Escape',isComposing:true});await expect(notes).toHaveAttribute('open','');await page.getByRole('button',{name:'Save notes',exact:true}).click();await expect(notes.locator('[data-read-value]')).toHaveText('First\nSecond');
-  const priority=page.locator('[data-editor="priority"]');await priority.locator('summary').click();await page.getByLabel('Priority',{exact:true}).selectOption('high');await page.getByRole('button',{name:'Save priority',exact:true}).click();await expect(priority.locator('[data-read-value]')).toHaveText('High');
-  const date=page.locator('[data-editor="date"]');await date.locator('summary').click();await page.getByLabel('Due date (optional)',{exact:true}).fill('2026-11-02');await page.getByRole('button',{name:'Save due date',exact:true}).click();await expect(date.locator('[data-read-value]')).toHaveText('2026-11-02');
-  expect(await summary.evaluate(n=>getComputedStyle(n).outlineStyle)).toBeDefined();
-  await summary.focus();expect(await summary.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
+  const dangerous='<img src=x onerror=alert(1)>';await input.fill(dangerous);
+  const notes=page.getByLabel('Notes (optional)',{exact:true});await notes.fill('First');await notes.press('End');await notes.press('Enter');await notes.pressSequentially('Second');await expect(notes).toHaveValue('First\nSecond');
+  await notes.dispatchEvent('keydown',{key:'Escape',isComposing:true});await expect(notes).toHaveValue('First\nSecond');
+  await page.getByLabel('Priority',{exact:true}).selectOption('high');await page.getByLabel('Due date (optional)',{exact:true}).fill('2026-11-02');await save.click();await expect(page.locator('#edit-status')).toContainText('saved in this page only');await expect(page.locator('#forms img')).toHaveCount(0);
+  await input.fill('Cancel me');await notes.fill('Cancel notes');await input.press('Escape');await expect(input).toHaveValue(dangerous);await expect(notes).toHaveValue('First\nSecond');await expect(page.getByLabel('Priority',{exact:true})).toHaveValue('high');await expect(page.getByLabel('Due date (optional)',{exact:true})).toHaveValue('2026-11-02');
+  await input.fill('Native Enter save');await input.press('Enter');await expect(page.locator('#edit-status')).toContainText('saved in this page only');
+  await page.keyboard.press('Tab');await input.focus();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
 });
 
 test(`comparison semantics and keyboard overflow: ${families.comparison.join(', ')}`,async({page})=>{
@@ -101,16 +107,63 @@ test(`native modal confirmation, cancellation and focus return: ${families.modal
 test(`text enlargement, spacing, reduced motion and high contrast: ${families.adaptive.join(', ')}`,async({page})=>{
   await reference(page);await page.setViewportSize({width:390,height:844});
   // Test user overrides are intentionally outside the shipped stylesheet audit.
-  await page.route('**/ui-spec/user-spacing.css',route=>route.fulfill({contentType:'text/css',body:'html { font-size: 200%; } p, label, summary { line-height: 1.5; letter-spacing: .12em; word-spacing: .16em; } p { margin-bottom: 2em; }'}));
+  await page.route('**/ui-spec/user-spacing.css',route=>route.fulfill({contentType:'text/css',body:'html { font-size: 200%; } p, label, input, textarea { line-height: 1.5; letter-spacing: .12em; word-spacing: .16em; } p { margin-bottom: 2em; }'}));
   await page.addStyleTag({url:new URL('user-spacing.css',page.url()).href});
-  await noPageOverflow(page);await editor(page).locator('summary').click();await titleInput(page).fill('A very long name '+ 'word '.repeat(12));await page.getByRole('button',{name:'Save title',exact:true}).click();await noPageOverflow(page);
-  await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await page.keyboard.press('Tab');await editor(page).locator('summary').focus();
-  expect(await editor(page).locator('summary').evaluate(n=>getComputedStyle(n).outlineStyle)).toBe('solid');
+  await noPageOverflow(page);await titleInput(page).click();await titleInput(page).fill('A very long name '+ 'word '.repeat(12));await page.getByRole('button',{name:'Save changes',exact:true}).click();await noPageOverflow(page);
+  await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await page.keyboard.press('Tab');await titleInput(page).focus();
+  expect(await titleInput(page).evaluate(n=>getComputedStyle(n).outlineStyle)).toBe('solid');
   expect(await page.locator('.btn-primary').first().evaluate(n=>({animation:getComputedStyle(n).animationName,transition:getComputedStyle(n).transitionDuration})) ).toEqual({animation:'none',transition:'0s'});
-  await expect(page.getByRole('checkbox')).toBeVisible();
+  await expect(page.getByRole('checkbox')).toBeVisible();expect(await page.getByRole('switch',{name:'Dark mode',exact:true}).evaluate(n=>getComputedStyle(n).appearance)).toBe('auto');
 });
 
 test('native HTML reference remains inspectable without JavaScript',async({browser,baseURL})=>{
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}}),page=await context.newPage();
-  await page.goto(`${baseURL}ui-spec/`);await expect(page.locator('noscript p')).toBeVisible();expect(await page.locator('noscript p').evaluate(n=>n.textContent)).toContain('Native disclosures');await editor(page).locator('summary').click();await expect(titleInput(page)).toBeVisible();await expect(page.getByRole('button',{name:'Save title',exact:true})).toBeDisabled();await noPageOverflow(page);await context.close();
+  await page.goto(`${baseURL}ui-spec/`);await expect(page.locator('noscript p')).toBeVisible();expect(await page.locator('noscript p').evaluate(n=>n.textContent)).toContain('Prefilled fields');await expect(titleInput(page)).toBeVisible();await titleInput(page).click();expect(await titleInput(page).evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');await expect(page.getByRole('button',{name:'Save changes',exact:true})).toBeDisabled();await expect(page.getByRole('switch',{name:'Dark mode',exact:true})).toBeDisabled();await noPageOverflow(page);await context.close();
+});
+
+for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: effective colors, direct editing and non-color cues`,async({page,context})=>{
+  await reference(page);
+  const dark=page.getByRole('switch',{name:'Dark mode',exact:true}),distinct=page.getByRole('switch',{name:'Distinct status colors',exact:true});
+  await dark.setChecked(palette.theme==='dark');await distinct.setChecked(palette.vision==='distinct');
+  await expect(page.locator('html')).toHaveAttribute('data-bs-theme',palette.theme);await expect(page.locator('html')).toHaveAttribute('data-vision',palette.vision);
+  const actual=await page.evaluate(roles=>{const s=getComputedStyle(document.documentElement);return Object.fromEntries(roles.map(role=>[role,s.getPropertyValue(`--ui-${role}`).trim()]));},Object.keys(palette.colors));
+  expect(actual).toEqual(palette.colors);
+  const rgb=hex=>`rgb(${hex.slice(1).match(/../g).map(v=>parseInt(v,16)).join(', ')})`;
+  const styles=await page.evaluate(()=>{
+    const pair=selector=>{const s=getComputedStyle(document.querySelector(selector));return {fg:s.color,bg:s.backgroundColor};};
+    return {body:pair('body'),panel:pair('.card'),primary:pair('[data-inline-record] .btn-primary'),disabled:pair('button[aria-describedby="publish-help"]'),saved:pair('.ui-status:not(.ui-status-pending)'),pending:pair('.ui-status-pending'),error:pair('.ui-error')};
+  });
+  for(const [name,fg,bg] of [['body','ink','canvas'],['panel','ink','surface'],['primary','on-primary','primary'],['disabled','disabled','disabled-bg'],['saved','success','success-bg'],['pending','warning','warning-bg']])expect(styles[name],`${key} effective ${name} colors`).toEqual({fg:rgb(palette.colors[fg]),bg:rgb(palette.colors[bg])});
+  expect(styles.error.fg).toBe(rgb(palette.colors.danger));
+  expect(await page.locator('html').evaluate(n=>getComputedStyle(n).colorScheme)).toBe(palette.theme);
+  await expect(page.locator('[data-color-value="primary"]')).toHaveText(palette.colors.primary);
+  const input=titleInput(page);await input.fill('Draft survives a palette change');await page.getByLabel('Find a CSS decision',{exact:true}).focus();expect(await input.evaluate(n=>getComputedStyle(n).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
+  await input.click();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
+  expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor,border:s.borderTopColor,focus:s.outlineColor};})).toEqual({fg:rgb(palette.colors.ink),bg:rgb(palette.colors.surface),border:rgb(palette.colors.border),focus:rgb(palette.colors.focus)});
+  await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(input).toHaveValue('Draft survives a palette change');
+  await page.getByRole('button',{name:'Save changes',exact:true}).hover();expect(await page.getByRole('button',{name:'Save changes',exact:true}).evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor};})).toEqual({fg:rgb(palette.colors['on-primary']),bg:rgb(palette.colors['primary-hover'])});
+  const pending=page.locator('.ui-status-pending').first();await expect(pending).toContainText(/Proposed|Pending/);
+  if(palette.vision==='distinct') {expect(await pending.evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('dashed');expect(await page.locator('.ui-status:not(.ui-status-pending)').first().evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('solid');}
+  await page.setViewportSize({width:390,height:844});await noPageOverflow(page);await page.locator('#forms').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-mobile.png`});
+  await page.setViewportSize({width:1440,height:960});await page.locator('#forms').screenshot({path:`.tmp/ui-${key}-form.png`});
+  const cdp=await context.newCDPSession(page);
+  for(const type of ['protanopia','deuteranopia','tritanopia','achromatopsia']) {
+    await cdp.send('Emulation.setEmulatedVisionDeficiency',{type});await expect(page.locator('.ui-error').last()).toContainText('error:');await expect(page.locator('.ui-status').filter({hasText:'Saved'}).first()).toBeVisible();
+  }
+  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-achromatopsia.png`});await cdp.send('Emulation.setEmulatedVisionDeficiency',{type:'none'});await cdp.detach();
+  await page.emulateMedia({forcedColors:'active'});await input.focus();expect(await input.evaluate(n=>getComputedStyle(n).outlineStyle)).toBe('solid');expect(await dark.evaluate(n=>getComputedStyle(n).appearance)).toBe('auto');
+});
+
+test('appearance uses system brightness initially, persists explicit choices and preserves drafts',async({page})=>{
+  await page.emulateMedia({colorScheme:'dark'});await reference(page);await expect(page.getByRole('switch',{name:'Dark mode',exact:true})).toBeChecked();
+  await titleInput(page).fill('Keep this draft');const dark=page.getByRole('switch',{name:'Dark mode',exact:true}),distinct=page.getByRole('switch',{name:'Distinct status colors',exact:true});
+  await dark.focus();await dark.press('Space');await expect(dark).not.toBeChecked();await distinct.check();await expect(titleInput(page)).toHaveValue('Keep this draft');await expect(page.locator('#edit-status')).toContainText('Unsaved');
+  await page.reload();await expect(dark).not.toBeChecked();await expect(distinct).toBeChecked();await expect(titleInput(page)).toHaveValue('Review the interface guidelines');
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('daylist-ui-reference-appearance-v1')))).toEqual({theme:'light',vision:'distinct'});
+});
+
+test('denied preference storage keeps appearance and editing usable',async({page})=>{
+  await page.emulateMedia({colorScheme:'light'});
+  await page.addInitScript(()=>{Object.defineProperty(Storage.prototype,'getItem',{value(){throw new DOMException('Denied','SecurityError');}});Object.defineProperty(Storage.prototype,'setItem',{value(){throw new DOMException('Denied','SecurityError');}});});
+  await reference(page);await page.getByRole('switch',{name:'Dark mode',exact:true}).check();await expect(page.locator('html')).toHaveAttribute('data-bs-theme','dark');await expect(page.locator('#appearance-status')).toContainText('cannot remember');await titleInput(page).fill('Still editable');await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.locator('#edit-status')).toContainText('saved');
 });

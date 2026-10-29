@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "bootstrapVersion": "5.3.8",
   "rules": [
     {
@@ -16,7 +16,7 @@
           "id": "tokens.1",
           "property": "color-scheme",
           "value": "light",
-          "purpose": "Publish semantic values for consistent reuse. Keep native controls aligned with the supplied light palette; forced colors remain user controlled.",
+          "purpose": "Publish semantic values for consistent reuse. Provide the default light native-control scheme before a selected palette overrides it; forced colors remain user controlled.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -25,7 +25,7 @@
           "id": "tokens.2",
           "property": "--ui-primary",
           "value": "#284637",
-          "purpose": "Publish semantic values for consistent reuse. Identify the main available action with the existing green identity.",
+          "purpose": "Publish semantic values for consistent reuse. Identify the main available action with the active palette’s action role.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -34,7 +34,7 @@
           "id": "tokens.3",
           "property": "--ui-primary-hover",
           "value": "#1d3529",
-          "purpose": "Publish semantic values for consistent reuse. Confirm pointer targeting by deepening the main-action fill.",
+          "purpose": "Publish semantic values for consistent reuse. Confirm pointer targeting with a distinct action fill.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -43,7 +43,7 @@
           "id": "tokens.4",
           "property": "--ui-ink",
           "value": "#20352a",
-          "purpose": "Publish semantic values for consistent reuse. Keep task names and body copy readable on light surfaces.",
+          "purpose": "Publish semantic values for consistent reuse. Keep task names and body copy readable on the active surfaces.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -61,7 +61,7 @@
           "id": "tokens.6",
           "property": "--ui-canvas",
           "value": "#f5f5f0",
-          "purpose": "Publish semantic values for consistent reuse. Separate the page background from editable white panels.",
+          "purpose": "Publish semantic values for consistent reuse. Separate the page background from editable panels.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -106,7 +106,7 @@
           "id": "tokens.11",
           "property": "--ui-focus",
           "value": "#005fcc",
-          "purpose": "Publish semantic values for consistent reuse. Identify the keyboard destination independently of brand green.",
+          "purpose": "Publish semantic values for consistent reuse. Identify the keyboard destination independently of the primary action color.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -169,7 +169,7 @@
           "id": "tokens.18",
           "property": "--ui-disabled-bg",
           "value": "#e8ece6",
-          "purpose": "Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled white controls.",
+          "purpose": "Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled controls.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -263,6 +263,564 @@
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
+        },
+        {
+          "id": "tokens.29",
+          "property": "--ui-on-primary",
+          "value": "#ffffff",
+          "purpose": "Publish semantic values for consistent reuse. Keep the principal-action label and selected slider thumb legible against the active action fill.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "palette-dark-standard",
+      "selector": ":root[data-bs-theme=\"dark\"]:not([data-vision=\"distinct\"])",
+      "purpose": "Apply the complete Dark · standard palette.",
+      "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "palette-dark-standard.1",
+          "property": "color-scheme",
+          "value": "dark",
+          "purpose": "Apply the complete Dark · standard palette. Align native controls and scrollbars with this appearance.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.2",
+          "property": "--ui-primary",
+          "value": "#9bd2ae",
+          "purpose": "Apply the complete Dark · standard palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.3",
+          "property": "--ui-primary-hover",
+          "value": "#b5e3c4",
+          "purpose": "Apply the complete Dark · standard palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.4",
+          "property": "--ui-ink",
+          "value": "#edf5ef",
+          "purpose": "Apply the complete Dark · standard palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.5",
+          "property": "--ui-muted",
+          "value": "#bac9bf",
+          "purpose": "Apply the complete Dark · standard palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.6",
+          "property": "--ui-canvas",
+          "value": "#101712",
+          "purpose": "Apply the complete Dark · standard palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.7",
+          "property": "--ui-surface",
+          "value": "#18231c",
+          "purpose": "Apply the complete Dark · standard palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.8",
+          "property": "--ui-subtle",
+          "value": "#24352a",
+          "purpose": "Apply the complete Dark · standard palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.9",
+          "property": "--ui-border",
+          "value": "#8b9e90",
+          "purpose": "Apply the complete Dark · standard palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.10",
+          "property": "--ui-divider",
+          "value": "#465c4d",
+          "purpose": "Apply the complete Dark · standard palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.11",
+          "property": "--ui-focus",
+          "value": "#80b6ff",
+          "purpose": "Apply the complete Dark · standard palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.12",
+          "property": "--ui-danger",
+          "value": "#ffb4ac",
+          "purpose": "Apply the complete Dark · standard palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.13",
+          "property": "--ui-success",
+          "value": "#a4ddb4",
+          "purpose": "Apply the complete Dark · standard palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.14",
+          "property": "--ui-success-bg",
+          "value": "#1b3826",
+          "purpose": "Apply the complete Dark · standard palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.15",
+          "property": "--ui-warning",
+          "value": "#f5d483",
+          "purpose": "Apply the complete Dark · standard palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.16",
+          "property": "--ui-warning-bg",
+          "value": "#3b3018",
+          "purpose": "Apply the complete Dark · standard palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.17",
+          "property": "--ui-disabled",
+          "value": "#b1c2b5",
+          "purpose": "Apply the complete Dark · standard palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.18",
+          "property": "--ui-disabled-bg",
+          "value": "#2b3b30",
+          "purpose": "Apply the complete Dark · standard palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.19",
+          "property": "--ui-on-primary",
+          "value": "#102318",
+          "purpose": "Apply the complete Dark · standard palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "palette-light-distinct",
+      "selector": ":root[data-vision=\"distinct\"]:not([data-bs-theme=\"dark\"])",
+      "purpose": "Apply the complete Light · distinct status colors palette.",
+      "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "palette-light-distinct.1",
+          "property": "color-scheme",
+          "value": "light",
+          "purpose": "Apply the complete Light · distinct status colors palette. Align native controls and scrollbars with this appearance.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.2",
+          "property": "--ui-primary",
+          "value": "#174b7a",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.3",
+          "property": "--ui-primary-hover",
+          "value": "#10395f",
+          "purpose": "Apply the complete Light · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.4",
+          "property": "--ui-ink",
+          "value": "#20352a",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.5",
+          "property": "--ui-muted",
+          "value": "#526258",
+          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.6",
+          "property": "--ui-canvas",
+          "value": "#f5f5f0",
+          "purpose": "Apply the complete Light · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.7",
+          "property": "--ui-surface",
+          "value": "#ffffff",
+          "purpose": "Apply the complete Light · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.8",
+          "property": "--ui-subtle",
+          "value": "#eaf0e5",
+          "purpose": "Apply the complete Light · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.9",
+          "property": "--ui-border",
+          "value": "#6c7c70",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.10",
+          "property": "--ui-divider",
+          "value": "#d6ded5",
+          "purpose": "Apply the complete Light · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.11",
+          "property": "--ui-focus",
+          "value": "#7025b4",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.12",
+          "property": "--ui-danger",
+          "value": "#6d2498",
+          "purpose": "Apply the complete Light · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.13",
+          "property": "--ui-success",
+          "value": "#174b7a",
+          "purpose": "Apply the complete Light · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.14",
+          "property": "--ui-success-bg",
+          "value": "#e8f1fa",
+          "purpose": "Apply the complete Light · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.15",
+          "property": "--ui-warning",
+          "value": "#725000",
+          "purpose": "Apply the complete Light · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.16",
+          "property": "--ui-warning-bg",
+          "value": "#fff4d6",
+          "purpose": "Apply the complete Light · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.17",
+          "property": "--ui-disabled",
+          "value": "#526258",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.18",
+          "property": "--ui-disabled-bg",
+          "value": "#e8ece6",
+          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.19",
+          "property": "--ui-on-primary",
+          "value": "#ffffff",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "palette-dark-distinct",
+      "selector": ":root[data-bs-theme=\"dark\"][data-vision=\"distinct\"]",
+      "purpose": "Apply the complete Dark · distinct status colors palette.",
+      "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "palette-dark-distinct.1",
+          "property": "color-scheme",
+          "value": "dark",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Align native controls and scrollbars with this appearance.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.2",
+          "property": "--ui-primary",
+          "value": "#9fcaff",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.3",
+          "property": "--ui-primary-hover",
+          "value": "#c3deff",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.4",
+          "property": "--ui-ink",
+          "value": "#edf5ef",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.5",
+          "property": "--ui-muted",
+          "value": "#bac9bf",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.6",
+          "property": "--ui-canvas",
+          "value": "#101712",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.7",
+          "property": "--ui-surface",
+          "value": "#18231c",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.8",
+          "property": "--ui-subtle",
+          "value": "#24352a",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.9",
+          "property": "--ui-border",
+          "value": "#8b9e90",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.10",
+          "property": "--ui-divider",
+          "value": "#465c4d",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.11",
+          "property": "--ui-focus",
+          "value": "#f1c75b",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.12",
+          "property": "--ui-danger",
+          "value": "#e2b4ff",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.13",
+          "property": "--ui-success",
+          "value": "#b3d5ff",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.14",
+          "property": "--ui-success-bg",
+          "value": "#1b304a",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.15",
+          "property": "--ui-warning",
+          "value": "#f5d483",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.16",
+          "property": "--ui-warning-bg",
+          "value": "#3b3018",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.17",
+          "property": "--ui-disabled",
+          "value": "#b1c2b5",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.18",
+          "property": "--ui-disabled-bg",
+          "value": "#2b3b30",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.19",
+          "property": "--ui-on-primary",
+          "value": "#101f30",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
         }
       ]
     },
@@ -337,7 +895,7 @@
           "id": "page.5",
           "property": "color",
           "value": "var(--ui-ink)",
-          "purpose": "Establish a readable document baseline. Use the main text role on the light canvas.",
+          "purpose": "Establish a readable document baseline. Use the main text role on the active canvas.",
           "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
           "check": "type",
           "status": "proposed"
@@ -346,7 +904,7 @@
           "id": "page.6",
           "property": "background-color",
           "value": "var(--ui-canvas)",
-          "purpose": "Establish a readable document baseline. Make white work panels distinguishable from the page.",
+          "purpose": "Establish a readable document baseline. Make work panels distinguishable from the page in every palette.",
           "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
           "check": "type",
           "status": "proposed"
@@ -517,7 +1075,7 @@
           "id": "small.2",
           "property": "color",
           "value": "var(--ui-muted)",
-          "purpose": "Distinguish secondary explanations. Reduce emphasis while retaining AA text contrast on supported surfaces.",
+          "purpose": "Distinguish secondary explanations. Reduce emphasis while retaining AA text contrast on every supported palette surface.",
           "intent": "Read help without mistaking it for an editable value.",
           "check": "type",
           "status": "proposed"
@@ -565,7 +1123,7 @@
     },
     {
       "id": "focus",
-      "selector": ":where(a, button, input, select, textarea, summary, [tabindex]):focus-visible",
+      "selector": ":where(a, button, input, select, textarea, [tabindex]):focus-visible",
       "purpose": "Expose keyboard focus on every interactive surface.",
       "intent": "Know exactly where keyboard input will act.",
       "check": "focus",
@@ -586,7 +1144,7 @@
           "id": "focus.2",
           "property": "outline-offset",
           "value": "3px",
-          "purpose": "Expose keyboard focus on every interactive surface. Separate the focus perimeter from the control border and dark button fill.",
+          "purpose": "Expose keyboard focus on every interactive surface. Separate the focus perimeter from the control border and active button fill.",
           "intent": "Know exactly where keyboard input will act.",
           "check": "focus",
           "status": "proposed"
@@ -1375,7 +1933,7 @@
           "id": "panel.2",
           "property": "border",
           "value": "1px solid var(--ui-divider)",
-          "purpose": "Contain a related task or reference example. Keep panel edges recognizable on adjacent light surfaces.",
+          "purpose": "Contain a related task or reference example. Keep panel edges recognizable on adjacent palette surfaces.",
           "intent": "Recognize which information and actions belong together.",
           "check": "panels",
           "status": "proposed"
@@ -1525,7 +2083,7 @@
           "id": "button.10",
           "property": "color",
           "value": "var(--ui-primary)",
-          "purpose": "Present an explicit action as a native button. Identify the action text with a high-contrast green.",
+          "purpose": "Present an explicit action as a native button. Identify the action text with the contrast-checked action color.",
           "intent": "Recognize an available action and activate it precisely.",
           "check": "targets",
           "status": "proposed"
@@ -1590,8 +2148,8 @@
         {
           "id": "primary.3",
           "property": "color",
-          "value": "var(--ui-surface)",
-          "purpose": "Identify the principal action within a local group. Maintain a contrasting light label on the dark fill.",
+          "value": "var(--ui-on-primary)",
+          "purpose": "Identify the principal action within a local group. Keep the label readable on the active theme’s principal-action fill.",
           "intent": "Choose the intended next step without scanning equal-weight buttons.",
           "check": "contrast",
           "status": "proposed"
@@ -1633,7 +2191,7 @@
           "id": "primary-hover.1",
           "property": "background-color",
           "value": "var(--ui-primary-hover)",
-          "purpose": "Give pointer feedback for the principal action. Deepen the fill while preserving white-label contrast.",
+          "purpose": "Give pointer feedback for the principal action. Change the fill while preserving contrast with the active on-primary label.",
           "intent": "Keep the primary action recognizable while pointing at it.",
           "check": "contrast",
           "status": "proposed"
@@ -1672,7 +2230,7 @@
           "id": "disabled.2",
           "property": "background-color",
           "value": "var(--ui-disabled-bg)",
-          "purpose": "Show that an action or value is unavailable. Distinguish unavailable values from editable white controls.",
+          "purpose": "Show that an action or value is unavailable. Distinguish unavailable values from editable controls.",
           "intent": "Read an unavailable control and look for its adjacent explanation.",
           "check": "controls",
           "status": "proposed"
@@ -2014,186 +2572,6 @@
           "purpose": "Explain errors next to the affected field. Make correction guidance distinguishable from optional help.",
           "intent": "Understand what to fix without interpreting color alone.",
           "check": "validation",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "editor",
-      "selector": ".ui-editor",
-      "purpose": "Group a reviewable value and its native edit disclosure.",
-      "intent": "Review current values before choosing to change them.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "editor.1",
-          "property": "border-block-end",
-          "value": "1px solid var(--ui-divider)",
-          "purpose": "Group a reviewable value and its native edit disclosure. Separate adjacent editable values without presenting a wall of input boxes.",
-          "intent": "Review current values before choosing to change them.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "editor.2",
-          "property": "padding-block",
-          "value": "var(--ui-space-md)",
-          "purpose": "Group a reviewable value and its native edit disclosure. Give each value its own 12px vertical breathing room.",
-          "intent": "Review current values before choosing to change them.",
-          "check": "editing",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "summary",
-      "selector": ".ui-editor > summary",
-      "purpose": "Expose a label-like click-to-edit affordance.",
-      "intent": "Activate the current value with mouse, touch, Enter or Space.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "summary.1",
-          "property": "min-block-size",
-          "value": "2.75rem",
-          "purpose": "Expose a label-like click-to-edit affordance. Keep the native disclosure target at least 44px high.",
-          "intent": "Activate the current value with mouse, touch, Enter or Space.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "summary.2",
-          "property": "padding",
-          "value": "var(--ui-space-sm)",
-          "purpose": "Expose a label-like click-to-edit affordance. Separate summary text from its marker and neighboring row.",
-          "intent": "Activate the current value with mouse, touch, Enter or Space.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "summary.3",
-          "property": "cursor",
-          "value": "pointer",
-          "purpose": "Expose a label-like click-to-edit affordance. Confirm the summary is interactive without removing its native disclosure marker.",
-          "intent": "Activate the current value with mouse, touch, Enter or Space.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "summary.4",
-          "property": "border-radius",
-          "value": "var(--ui-radius-small)",
-          "purpose": "Expose a label-like click-to-edit affordance. Give hover feedback the same corner role as other controls.",
-          "intent": "Activate the current value with mouse, touch, Enter or Space.",
-          "check": "editing",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "summary-hover",
-      "selector": ".ui-editor > summary:hover",
-      "purpose": "Make click-to-edit discoverable with pointer feedback.",
-      "intent": "Confirm that selecting the value reveals its editor.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "summary-hover.1",
-          "property": "background-color",
-          "value": "var(--ui-subtle)",
-          "purpose": "Make click-to-edit discoverable with pointer feedback. Highlight the existing target without an unexpected layout shift.",
-          "intent": "Confirm that selecting the value reveals its editor.",
-          "check": "editing",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "summary-label",
-      "selector": ".ui-field-name",
-      "purpose": "Keep field identity distinct from its saved value.",
-      "intent": "Recognize which value the Edit action will change.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "summary-label.1",
-          "property": "font-weight",
-          "value": "600",
-          "purpose": "Keep field identity distinct from its saved value. Emphasize the persistent name in the disclosure summary.",
-          "intent": "Recognize which value the Edit action will change.",
-          "check": "editing",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "edit-cue",
-      "selector": ".ui-edit-cue",
-      "purpose": "Make editability visible before hover.",
-      "intent": "Discover editing when using touch or keyboard.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "edit-cue.1",
-          "property": "color",
-          "value": "var(--ui-primary)",
-          "purpose": "Make editability visible before hover. Use the action role for the always-visible Edit cue.",
-          "intent": "Discover editing when using touch or keyboard.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "edit-cue.2",
-          "property": "text-decoration",
-          "value": "underline",
-          "purpose": "Make editability visible before hover. Make the cue recognizable without relying on color.",
-          "intent": "Discover editing when using touch or keyboard.",
-          "check": "editing",
-          "status": "proposed"
-        },
-        {
-          "id": "edit-cue.3",
-          "property": "margin-inline-start",
-          "value": "var(--ui-space-sm)",
-          "purpose": "Make editability visible before hover. Separate the action cue from the saved value.",
-          "intent": "Discover editing when using touch or keyboard.",
-          "check": "editing",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "edit-form",
-      "selector": ".ui-editor form",
-      "purpose": "Keep a revealed editor close to the value it changes.",
-      "intent": "Edit without losing the field’s review context.",
-      "check": "editing",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "edit-form.1",
-          "property": "margin-block-start",
-          "value": "var(--ui-space-md)",
-          "purpose": "Keep a revealed editor close to the value it changes. Separate the open form from its disclosure summary.",
-          "intent": "Edit without losing the field’s review context.",
-          "check": "editing",
           "status": "proposed"
         }
       ]
@@ -3106,7 +3484,7 @@
     },
     {
       "id": "forced-focus",
-      "selector": ":where(a, button, input, select, textarea, summary, [tabindex]):focus-visible",
+      "selector": ":where(a, button, input, select, textarea, [tabindex]):focus-visible",
       "purpose": "Respect the user’s forced-color focus palette.",
       "intent": "Find the active target in a high-contrast environment.",
       "check": "forced-colors",
@@ -3118,8 +3496,563 @@
           "id": "forced-focus.1",
           "property": "outline-color",
           "value": "Highlight",
-          "purpose": "Respect the user’s forced-color focus palette. Use the platform focus role rather than preserving the authored blue.",
+          "purpose": "Respect the user’s forced-color focus palette. Use the platform focus role rather than preserving the authored focus color.",
           "intent": "Find the active target in a high-contrast environment.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-field",
+      "selector": ".ui-field",
+      "purpose": "Separate values in a directly editable record.",
+      "intent": "Scan a field’s current value and focus it without opening another surface.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-field.1",
+          "property": "padding-block",
+          "value": "var(--ui-space-md)",
+          "purpose": "Separate values in a directly editable record. Keep each persistent label and prefilled value visually grouped.",
+          "intent": "Scan a field’s current value and focus it without opening another surface.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "inline-field.2",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Separate values in a directly editable record. Distinguish neighboring values without putting a box around every unfocused input.",
+          "intent": "Scan a field’s current value and focus it without opening another surface.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-control",
+      "selector": ".ui-inline-control",
+      "purpose": "Present an unfocused native input like ordinary information.",
+      "intent": "Read existing values and edit them directly with one focus action.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-control.1",
+          "property": "border-color",
+          "value": "transparent",
+          "purpose": "Present an unfocused native input like ordinary information. Keep the existing border width reserved so focusing does not move text or change size.",
+          "intent": "Read existing values and edit them directly with one focus action.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "inline-control.2",
+          "property": "background-color",
+          "value": "transparent",
+          "purpose": "Present an unfocused native input like ordinary information. Let the unfocused value sit on its containing surface instead of looking like an empty form box.",
+          "intent": "Read existing values and edit them directly with one focus action.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-control-focus",
+      "selector": ".ui-inline-control:focus",
+      "purpose": "Reveal native input boundaries as soon as editing receives focus.",
+      "intent": "Know exactly which value is being edited using pointer, touch or keyboard.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-control-focus.1",
+          "property": "border-color",
+          "value": "var(--ui-border)",
+          "purpose": "Reveal native input boundaries as soon as editing receives focus. Expose a contrast-checked input boundary while focused.",
+          "intent": "Know exactly which value is being edited using pointer, touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "inline-control-focus.2",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Reveal native input boundaries as soon as editing receives focus. Give the focused field the active editing surface.",
+          "intent": "Know exactly which value is being edited using pointer, touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "inline-control-focus.3",
+          "property": "outline",
+          "value": "3px solid var(--ui-focus)",
+          "purpose": "Reveal native input boundaries as soon as editing receives focus. Identify editing focus even when it was reached with a pointer rather than focus-visible.",
+          "intent": "Know exactly which value is being edited using pointer, touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "inline-control-focus.4",
+          "property": "outline-offset",
+          "value": "3px",
+          "purpose": "Reveal native input boundaries as soon as editing receives focus. Separate the focus perimeter from the native input border.",
+          "intent": "Know exactly which value is being edited using pointer, touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-control-invalid",
+      "selector": ".ui-inline-control[aria-invalid=\"true\"]",
+      "purpose": "Keep a correction visible after focus leaves an invalid field.",
+      "intent": "Find the value named by its textual error without guessing from color.",
+      "check": "validation",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-control-invalid.1",
+          "property": "border-color",
+          "value": "var(--ui-danger)",
+          "purpose": "Keep a correction visible after focus leaves an invalid field. Make a validation error an explicit exception to borderless unfocused values; linked error text also explains it.",
+          "intent": "Find the value named by its textual error without guessing from color.",
+          "check": "validation",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-notes-rest",
+      "selector": "textarea.ui-inline-control",
+      "purpose": "Keep an unfocused notes value visually quiet.",
+      "intent": "Read a prefilled note without a persistent resize handle suggesting an open editor.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-notes-rest.1",
+          "property": "resize",
+          "value": "none",
+          "purpose": "Keep an unfocused notes value visually quiet. Hide only the resize handle while resting; native rows still provide multiline reading space.",
+          "intent": "Read a prefilled note without a persistent resize handle suggesting an open editor.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "inline-notes-focus",
+      "selector": "textarea.ui-inline-control:focus",
+      "purpose": "Restore native note resizing during editing.",
+      "intent": "Enlarge the notes workspace when the field receives focus.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "inline-notes-focus.1",
+          "property": "resize",
+          "value": "vertical",
+          "purpose": "Restore native note resizing during editing. Allow more editing height without changing its column width.",
+          "intent": "Enlarge the notes workspace when the field receives focus.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "appearance-box",
+      "selector": ".ui-appearance",
+      "purpose": "Group the two independent appearance preferences.",
+      "intent": "Choose brightness and status palette without changing task drafts.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "appearance-box.1",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-xl)",
+          "purpose": "Group the two independent appearance preferences. Separate appearance preferences from navigation and the reference introduction.",
+          "intent": "Choose brightness and status palette without changing task drafts.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "switch-track",
+      "selector": ".ui-switch input[type=\"checkbox\"]",
+      "purpose": "Show a sliding binary preference using a native checkbox.",
+      "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "switch-track.1",
+          "property": "appearance",
+          "value": "none",
+          "purpose": "Show a sliding binary preference using a native checkbox. Replace only the visual checkbox mark; keep its native checked state, input events and switch semantics.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.2",
+          "property": "display",
+          "value": "inline-grid",
+          "purpose": "Show a sliding binary preference using a native checkbox. Place a decorative thumb within the native checkbox footprint.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.3",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Show a sliding binary preference using a native checkbox. Center the thumb vertically without absolute positioning.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.4",
+          "property": "inline-size",
+          "value": "3rem",
+          "purpose": "Show a sliding binary preference using a native checkbox. Provide a clear horizontal travel distance within the labeled target.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.5",
+          "property": "block-size",
+          "value": "1.75rem",
+          "purpose": "Show a sliding binary preference using a native checkbox. Give the track enough height for a distinct thumb.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.6",
+          "property": "padding",
+          "value": "2px",
+          "purpose": "Show a sliding binary preference using a native checkbox. Keep the thumb away from the track boundary.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.7",
+          "property": "border",
+          "value": "2px solid var(--ui-border)",
+          "purpose": "Show a sliding binary preference using a native checkbox. Preserve a visible track outline in all four palettes.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.8",
+          "property": "border-radius",
+          "value": "1rem",
+          "purpose": "Show a sliding binary preference using a native checkbox. Distinguish a sliding preference from a square choice mark.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-track.9",
+          "property": "background-color",
+          "value": "var(--ui-muted)",
+          "purpose": "Show a sliding binary preference using a native checkbox. Give the off position a neutral, contrast-tested track.",
+          "intent": "Set a named on/off preference with native click, touch and Space behavior.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "switch-thumb",
+      "selector": ".ui-switch input[type=\"checkbox\"]::before",
+      "purpose": "Mark the slider’s current position without using color alone.",
+      "intent": "Distinguish on and off from the thumb’s left/right position.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "switch-thumb.1",
+          "property": "content",
+          "value": "\"\"",
+          "purpose": "Mark the slider’s current position without using color alone. Create a decorative thumb only; the actual label and checked state carry the meaning.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb.2",
+          "property": "inline-size",
+          "value": "1.125rem",
+          "purpose": "Mark the slider’s current position without using color alone. Keep the thumb large enough to locate inside the track.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb.3",
+          "property": "block-size",
+          "value": "1.125rem",
+          "purpose": "Mark the slider’s current position without using color alone. Keep the thumb circular rather than stretching it with label text.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb.4",
+          "property": "border-radius",
+          "value": "50%",
+          "purpose": "Mark the slider’s current position without using color alone. Make the moving thumb distinguishable from its rounded track.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb.5",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Mark the slider’s current position without using color alone. Contrast the off-position thumb against the neutral track.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb.6",
+          "property": "transform",
+          "value": "translateX(0)",
+          "purpose": "Mark the slider’s current position without using color alone. Place the off thumb at the start of its 22px travel without changing the target size.",
+          "intent": "Distinguish on and off from the thumb’s left/right position.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "switch-on",
+      "selector": ".ui-switch input[type=\"checkbox\"]:checked",
+      "purpose": "Reinforce an enabled slider preference.",
+      "intent": "Recognize the enabled setting through both position and native state.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "switch-on.1",
+          "property": "background-color",
+          "value": "var(--ui-primary)",
+          "purpose": "Reinforce an enabled slider preference. Use the active action role for the checked track.",
+          "intent": "Recognize the enabled setting through both position and native state.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "switch-thumb-on",
+      "selector": ".ui-switch input[type=\"checkbox\"]:checked::before",
+      "purpose": "Move and contrast the enabled slider thumb.",
+      "intent": "Read the on position in every brightness and palette combination.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "switch-thumb-on.1",
+          "property": "transform",
+          "value": "translateX(1.375rem)",
+          "purpose": "Move and contrast the enabled slider thumb. Move the thumb to the end of the available inner track with no animation.",
+          "intent": "Read the on position in every brightness and palette combination.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "switch-thumb-on.2",
+          "property": "background-color",
+          "value": "var(--ui-on-primary)",
+          "purpose": "Move and contrast the enabled slider thumb. Keep the checked thumb distinct from the active track in dark as well as light mode.",
+          "intent": "Read the on position in every brightness and palette combination.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "distinct-status",
+      "selector": ":root[data-vision=\"distinct\"] .ui-status",
+      "purpose": "Add a shape cue to the alternate status palette.",
+      "intent": "Identify status boundaries without depending on hue perception.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "distinct-status.1",
+          "property": "border",
+          "value": "1px solid currentColor",
+          "purpose": "Add a shape cue to the alternate status palette. Outline named state labels in their contrast-tested text color.",
+          "intent": "Identify status boundaries without depending on hue perception.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "distinct-pending",
+      "selector": ":root[data-vision=\"distinct\"] .ui-status-pending",
+      "purpose": "Separate pending status by line pattern as well as wording.",
+      "intent": "Recognize a pending decision even when colors look similar.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "distinct-pending.1",
+          "property": "border-style",
+          "value": "dashed",
+          "purpose": "Separate pending status by line pattern as well as wording. Pair the Pending word with a dashed boundary distinct from solid saved-state boundaries.",
+          "intent": "Recognize a pending decision even when colors look similar.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "forced-inline",
+      "selector": ".ui-inline-control",
+      "purpose": "Respect an explicit forced-color preference over the borderless presentation.",
+      "intent": "Locate native editing controls in a high-contrast environment.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-inline.1",
+          "property": "border-color",
+          "value": "CanvasText",
+          "purpose": "Respect an explicit forced-color preference over the borderless presentation. Use the user’s system boundary color even when the unfocused design would normally be borderless.",
+          "intent": "Locate native editing controls in a high-contrast environment.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "forced-inline-focus",
+      "selector": ".ui-inline-control:focus",
+      "purpose": "Preserve the system focus indicator for directly edited values.",
+      "intent": "Find the active field under forced colors.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-inline-focus.1",
+          "property": "outline-color",
+          "value": "Highlight",
+          "purpose": "Preserve the system focus indicator for directly edited values. Use the platform focus role for pointer and keyboard editing focus.",
+          "intent": "Find the active field under forced colors.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "forced-switch",
+      "selector": ".ui-switch input[type=\"checkbox\"]",
+      "purpose": "Return slider presentation to a native mark under forced colors.",
+      "intent": "Use a visible native on/off control in the selected system palette.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-switch.1",
+          "property": "appearance",
+          "value": "auto",
+          "purpose": "Return slider presentation to a native mark under forced colors. Let the user agent paint its own high-contrast checkbox for this switch.",
+          "intent": "Use a visible native on/off control in the selected system palette.",
+          "check": "forced-colors",
+          "status": "proposed"
+        },
+        {
+          "id": "forced-switch.2",
+          "property": "inline-size",
+          "value": "1.25rem",
+          "purpose": "Return slider presentation to a native mark under forced colors. Use the ordinary native mark width inside the unchanged large label target.",
+          "intent": "Use a visible native on/off control in the selected system palette.",
+          "check": "forced-colors",
+          "status": "proposed"
+        },
+        {
+          "id": "forced-switch.3",
+          "property": "block-size",
+          "value": "1.25rem",
+          "purpose": "Return slider presentation to a native mark under forced colors. Use the ordinary native mark height while preserving its checked state.",
+          "intent": "Use a visible native on/off control in the selected system palette.",
+          "check": "forced-colors",
+          "status": "proposed"
+        },
+        {
+          "id": "forced-switch.4",
+          "property": "padding",
+          "value": "0",
+          "purpose": "Return slider presentation to a native mark under forced colors. Remove custom-track padding from the restored native mark.",
+          "intent": "Use a visible native on/off control in the selected system palette.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "forced-switch-thumb",
+      "selector": ".ui-switch input[type=\"checkbox\"]::before",
+      "purpose": "Remove the decorative thumb when the native mark returns.",
+      "intent": "Read one unambiguous checked state rather than two overlapping marks.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-switch-thumb.1",
+          "property": "display",
+          "value": "none",
+          "purpose": "Remove the decorative thumb when the native mark returns. Leave the forced-color native checkbox as the only mark.",
+          "intent": "Read one unambiguous checked state rather than two overlapping marks.",
           "check": "forced-colors",
           "status": "proposed"
         }
@@ -3133,38 +4066,38 @@
       4.5
     ],
     [
-      "ink",
-      "surface",
-      4.5
-    ],
-    [
-      "ink",
-      "subtle",
-      4.5
-    ],
-    [
-      "muted",
-      "surface",
-      4.5
-    ],
-    [
       "muted",
       "canvas",
       4.5
     ],
     [
-      "muted",
-      "subtle",
-      4.5
-    ],
-    [
-      "surface",
       "primary",
+      "canvas",
       4.5
     ],
     [
+      "danger",
+      "canvas",
+      4.5
+    ],
+    [
+      "border",
+      "canvas",
+      3
+    ],
+    [
+      "focus",
+      "canvas",
+      3
+    ],
+    [
+      "ink",
       "surface",
-      "primary-hover",
+      4.5
+    ],
+    [
+      "muted",
+      "surface",
       4.5
     ],
     [
@@ -3175,6 +4108,56 @@
     [
       "danger",
       "surface",
+      4.5
+    ],
+    [
+      "border",
+      "surface",
+      3
+    ],
+    [
+      "focus",
+      "surface",
+      3
+    ],
+    [
+      "ink",
+      "subtle",
+      4.5
+    ],
+    [
+      "muted",
+      "subtle",
+      4.5
+    ],
+    [
+      "primary",
+      "subtle",
+      4.5
+    ],
+    [
+      "danger",
+      "subtle",
+      4.5
+    ],
+    [
+      "border",
+      "subtle",
+      3
+    ],
+    [
+      "focus",
+      "subtle",
+      3
+    ],
+    [
+      "on-primary",
+      "primary",
+      4.5
+    ],
+    [
+      "on-primary",
+      "primary-hover",
       4.5
     ],
     [
@@ -3193,19 +4176,111 @@
       4.5
     ],
     [
-      "border",
       "surface",
-      3
-    ],
-    [
-      "focus",
-      "surface",
-      3
-    ],
-    [
-      "focus",
-      "canvas",
+      "muted",
       3
     ]
-  ]
+  ],
+  "palettes": {
+    "light-standard": {
+      "theme": "light",
+      "vision": "standard",
+      "label": "Light · standard",
+      "colors": {
+        "primary": "#284637",
+        "primary-hover": "#1d3529",
+        "ink": "#20352a",
+        "muted": "#526258",
+        "canvas": "#f5f5f0",
+        "surface": "#ffffff",
+        "subtle": "#eaf0e5",
+        "border": "#6c7c70",
+        "divider": "#d6ded5",
+        "focus": "#005fcc",
+        "danger": "#9b2c24",
+        "success": "#235b3b",
+        "success-bg": "#eaf5ec",
+        "warning": "#725000",
+        "warning-bg": "#fff4d6",
+        "disabled": "#526258",
+        "disabled-bg": "#e8ece6",
+        "on-primary": "#ffffff"
+      }
+    },
+    "dark-standard": {
+      "theme": "dark",
+      "vision": "standard",
+      "label": "Dark · standard",
+      "colors": {
+        "primary": "#9bd2ae",
+        "primary-hover": "#b5e3c4",
+        "ink": "#edf5ef",
+        "muted": "#bac9bf",
+        "canvas": "#101712",
+        "surface": "#18231c",
+        "subtle": "#24352a",
+        "border": "#8b9e90",
+        "divider": "#465c4d",
+        "focus": "#80b6ff",
+        "danger": "#ffb4ac",
+        "success": "#a4ddb4",
+        "success-bg": "#1b3826",
+        "warning": "#f5d483",
+        "warning-bg": "#3b3018",
+        "disabled": "#b1c2b5",
+        "disabled-bg": "#2b3b30",
+        "on-primary": "#102318"
+      }
+    },
+    "light-distinct": {
+      "theme": "light",
+      "vision": "distinct",
+      "label": "Light · distinct status colors",
+      "colors": {
+        "primary": "#174b7a",
+        "primary-hover": "#10395f",
+        "ink": "#20352a",
+        "muted": "#526258",
+        "canvas": "#f5f5f0",
+        "surface": "#ffffff",
+        "subtle": "#eaf0e5",
+        "border": "#6c7c70",
+        "divider": "#d6ded5",
+        "focus": "#7025b4",
+        "danger": "#6d2498",
+        "success": "#174b7a",
+        "success-bg": "#e8f1fa",
+        "warning": "#725000",
+        "warning-bg": "#fff4d6",
+        "disabled": "#526258",
+        "disabled-bg": "#e8ece6",
+        "on-primary": "#ffffff"
+      }
+    },
+    "dark-distinct": {
+      "theme": "dark",
+      "vision": "distinct",
+      "label": "Dark · distinct status colors",
+      "colors": {
+        "primary": "#9fcaff",
+        "primary-hover": "#c3deff",
+        "ink": "#edf5ef",
+        "muted": "#bac9bf",
+        "canvas": "#101712",
+        "surface": "#18231c",
+        "subtle": "#24352a",
+        "border": "#8b9e90",
+        "divider": "#465c4d",
+        "focus": "#f1c75b",
+        "danger": "#e2b4ff",
+        "success": "#b3d5ff",
+        "success-bg": "#1b304a",
+        "warning": "#f5d483",
+        "warning-bg": "#3b3018",
+        "disabled": "#b1c2b5",
+        "disabled-bg": "#2b3b30",
+        "on-primary": "#101f30"
+      }
+    }
+  }
 }

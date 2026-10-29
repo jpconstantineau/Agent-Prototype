@@ -1,7 +1,8 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
-import { tokens, rules, bootstrapVersion, contrastPairs } from './system.mjs';
-import {validateRegistry,validateGenerated} from './validate.mjs';
+import { tokens, rules, bootstrapVersion, contrastPairs, palettes, colorUse } from './system.mjs';
+import {designFiles} from './palettes.mjs';
+import {validateRegistry,validateGenerated,contrast} from './validate.mjs';
 const root = new URL('../', import.meta.url);
 const check = process.argv.includes('--check');
 export function cssText() {
@@ -19,12 +20,21 @@ export function ledgerText() {
 }
 export async function outputs() {
   const body = await readFile(new URL('design-body.md', import.meta.url),'utf8');
-  return new Map([
+  const result = new Map([
     ['docs/ui-spec/design-system.css',cssText()],
-    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 1, bootstrapVersion, rules, contrastPairs },null,2)+'\n'],
+    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 2, bootstrapVersion, rules, contrastPairs, palettes },null,2)+'\n'],
     ['UI-Spec/CSS-DECISIONS.md',ledgerText()],
-    ['UI-Spec/DESIGN.md',`---\n${yaml(tokens)}\n---\n\n${body}`],
   ]);
+  for (const [key,palette] of Object.entries(palettes)) {
+    const modeTokens = { ...tokens, name: key==='light-standard' ? tokens.name : `${tokens.name} · ${palette.label}`, colors: palette.colors };
+    const modeBody = key==='light-standard' ? body : body.replace(/\]\((?!https?:|#)([^)]+)\)/g,'](../$1)').replace('## Overview\n','## Overview\n\nThis token document resolves the **'+palette.label+'** combination. Component references bind to this file’s palette; shared rules and review remain in the parent UI-Spec folder.\n');
+    result.set(designFiles[key],`---\n${yaml(modeTokens)}\n---\n\n${modeBody}`);
+  }
+  const table = Object.keys(tokens.colors).map(role=>`| ${role} | ${Object.values(palettes).map(p=>p.colors[role]).join(' | ')} | ${colorUse[role]} |`).join('\n');
+  let matrix='';
+  for(const [key,p] of Object.entries(palettes)) matrix+=`\n## ${p.label}\n\n| Foreground / background | Required | Measured |\n| --- | --- | --- |\n`+contrastPairs.map(([f,b,min])=>`| ${f} / ${b} | ${min}:1 | ${contrast(p.colors[f],p.colors[b]).toFixed(2)}:1 |`).join('\n')+'\n';
+  result.set('UI-Spec/PALETTES.md','# Four appearance combinations\n\nGenerated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These are four independently checked palettes, selected by two preferences: brightness and distinct status colors. All modes retain words, focus and native control semantics. The distinct option avoids red/green status opposition; it is not a universal simulation or cure for every color-vision difference.\n\n| Role | Light standard | Dark standard | Light distinct | Dark distinct | Purpose |\n| --- | --- | --- | --- | --- | --- |\n'+table+'\n\nContrast is tested using unrounded WCAG relative luminance; the following display values are rounded for inspection only.'+matrix);
+  return result;
 }
 export async function build() {
   validateRegistry(rules);

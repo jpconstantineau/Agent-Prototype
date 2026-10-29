@@ -8,24 +8,24 @@ Selector: `:root`. Source: project. Verification family: `tokens`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| tokens.1 | color-scheme | light | Publish semantic values for consistent reuse. Keep native controls aligned with the supplied light palette; forced colors remain user controlled. | Recognize the same meaning across screens. | proposed |
-| tokens.2 | --ui-primary | #284637 | Publish semantic values for consistent reuse. Identify the main available action with the existing green identity. | Recognize the same meaning across screens. | proposed |
-| tokens.3 | --ui-primary-hover | #1d3529 | Publish semantic values for consistent reuse. Confirm pointer targeting by deepening the main-action fill. | Recognize the same meaning across screens. | proposed |
-| tokens.4 | --ui-ink | #20352a | Publish semantic values for consistent reuse. Keep task names and body copy readable on light surfaces. | Recognize the same meaning across screens. | proposed |
+| tokens.1 | color-scheme | light | Publish semantic values for consistent reuse. Provide the default light native-control scheme before a selected palette overrides it; forced colors remain user controlled. | Recognize the same meaning across screens. | proposed |
+| tokens.2 | --ui-primary | #284637 | Publish semantic values for consistent reuse. Identify the main available action with the active palette’s action role. | Recognize the same meaning across screens. | proposed |
+| tokens.3 | --ui-primary-hover | #1d3529 | Publish semantic values for consistent reuse. Confirm pointer targeting with a distinct action fill. | Recognize the same meaning across screens. | proposed |
+| tokens.4 | --ui-ink | #20352a | Publish semantic values for consistent reuse. Keep task names and body copy readable on the active surfaces. | Recognize the same meaning across screens. | proposed |
 | tokens.5 | --ui-muted | #526258 | Publish semantic values for consistent reuse. Distinguish supporting information while keeping ordinary text contrast. | Recognize the same meaning across screens. | proposed |
-| tokens.6 | --ui-canvas | #f5f5f0 | Publish semantic values for consistent reuse. Separate the page background from editable white panels. | Recognize the same meaning across screens. | proposed |
+| tokens.6 | --ui-canvas | #f5f5f0 | Publish semantic values for consistent reuse. Separate the page background from editable panels. | Recognize the same meaning across screens. | proposed |
 | tokens.7 | --ui-surface | #ffffff | Publish semantic values for consistent reuse. Provide an opaque reading and editing plane. | Recognize the same meaning across screens. | proposed |
 | tokens.8 | --ui-subtle | #eaf0e5 | Publish semantic values for consistent reuse. Group secondary content without implying a disabled state. | Recognize the same meaning across screens. | proposed |
 | tokens.9 | --ui-border | #6c7c70 | Publish semantic values for consistent reuse. Identify editable-control boundaries with non-text contrast. | Recognize the same meaning across screens. | proposed |
 | tokens.10 | --ui-divider | #d6ded5 | Publish semantic values for consistent reuse. Separate noninteractive rows without making every row a control. | Recognize the same meaning across screens. | proposed |
-| tokens.11 | --ui-focus | #005fcc | Publish semantic values for consistent reuse. Identify the keyboard destination independently of brand green. | Recognize the same meaning across screens. | proposed |
+| tokens.11 | --ui-focus | #005fcc | Publish semantic values for consistent reuse. Identify the keyboard destination independently of the primary action color. | Recognize the same meaning across screens. | proposed |
 | tokens.12 | --ui-danger | #9b2c24 | Publish semantic values for consistent reuse. Mark a problem alongside explanatory text. | Recognize the same meaning across screens. | proposed |
 | tokens.13 | --ui-success | #235b3b | Publish semantic values for consistent reuse. Reinforce confirmed completion alongside a word label. | Recognize the same meaning across screens. | proposed |
 | tokens.14 | --ui-success-bg | #eaf5ec | Publish semantic values for consistent reuse. Group successful results without an interrupting dialog. | Recognize the same meaning across screens. | proposed |
 | tokens.15 | --ui-warning | #725000 | Publish semantic values for consistent reuse. Highlight a condition that needs attention without declaring failure. | Recognize the same meaning across screens. | proposed |
 | tokens.16 | --ui-warning-bg | #fff4d6 | Publish semantic values for consistent reuse. Give pending decisions a separate, readable surface. | Recognize the same meaning across screens. | proposed |
 | tokens.17 | --ui-disabled | #526258 | Publish semantic values for consistent reuse. Keep the reason for an unavailable action readable. | Recognize the same meaning across screens. | proposed |
-| tokens.18 | --ui-disabled-bg | #e8ece6 | Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled white controls. | Recognize the same meaning across screens. | proposed |
+| tokens.18 | --ui-disabled-bg | #e8ece6 | Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled controls. | Recognize the same meaning across screens. | proposed |
 | tokens.19 | --ui-space-xs | 0.25rem | Publish semantic values for consistent reuse. Use the xs spacing step to express content grouping; its exact use is recorded at each consumer. | Recognize the same meaning across screens. | proposed |
 | tokens.20 | --ui-space-sm | 0.5rem | Publish semantic values for consistent reuse. Use the sm spacing step to express content grouping; its exact use is recorded at each consumer. | Recognize the same meaning across screens. | proposed |
 | tokens.21 | --ui-space-md | 0.75rem | Publish semantic values for consistent reuse. Use the md spacing step to express content grouping; its exact use is recorded at each consumer. | Recognize the same meaning across screens. | proposed |
@@ -36,6 +36,85 @@ Selector: `:root`. Source: project. Verification family: `tokens`.
 | tokens.26 | --ui-radius-small | 0.375rem | Publish semantic values for consistent reuse. Use the small corner size to distinguish controls from containing panels. | Recognize the same meaning across screens. | proposed |
 | tokens.27 | --ui-radius-panel | 0.75rem | Publish semantic values for consistent reuse. Use the panel corner size to distinguish controls from containing panels. | Recognize the same meaning across screens. | proposed |
 | tokens.28 | --ui-font | system-ui, -apple-system, "Segoe UI", sans-serif | Publish semantic values for consistent reuse. Use installed fonts so text is immediately available without a font download. | Recognize the same meaning across screens. | proposed |
+| tokens.29 | --ui-on-primary | #ffffff | Publish semantic values for consistent reuse. Keep the principal-action label and selected slider thumb legible against the active action fill. | Recognize the same meaning across screens. | proposed |
+
+## palette-dark-standard
+
+Selector: `:root[data-bs-theme="dark"]:not([data-vision="distinct"])`. Source: project. Verification family: `colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| palette-dark-standard.1 | color-scheme | dark | Apply the complete Dark · standard palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.2 | --ui-primary | #9bd2ae | Apply the complete Dark · standard palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.3 | --ui-primary-hover | #b5e3c4 | Apply the complete Dark · standard palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.4 | --ui-ink | #edf5ef | Apply the complete Dark · standard palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.5 | --ui-muted | #bac9bf | Apply the complete Dark · standard palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.6 | --ui-canvas | #101712 | Apply the complete Dark · standard palette. Separate the page background from editable panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.7 | --ui-surface | #18231c | Apply the complete Dark · standard palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.8 | --ui-subtle | #24352a | Apply the complete Dark · standard palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.9 | --ui-border | #8b9e90 | Apply the complete Dark · standard palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.10 | --ui-divider | #465c4d | Apply the complete Dark · standard palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.11 | --ui-focus | #80b6ff | Apply the complete Dark · standard palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.12 | --ui-danger | #ffb4ac | Apply the complete Dark · standard palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.13 | --ui-success | #a4ddb4 | Apply the complete Dark · standard palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.14 | --ui-success-bg | #1b3826 | Apply the complete Dark · standard palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.15 | --ui-warning | #f5d483 | Apply the complete Dark · standard palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.16 | --ui-warning-bg | #3b3018 | Apply the complete Dark · standard palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.17 | --ui-disabled | #b1c2b5 | Apply the complete Dark · standard palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.18 | --ui-disabled-bg | #2b3b30 | Apply the complete Dark · standard palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.19 | --ui-on-primary | #102318 | Apply the complete Dark · standard palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+
+## palette-light-distinct
+
+Selector: `:root[data-vision="distinct"]:not([data-bs-theme="dark"])`. Source: project. Verification family: `colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| palette-light-distinct.1 | color-scheme | light | Apply the complete Light · distinct status colors palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.2 | --ui-primary | #174b7a | Apply the complete Light · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.3 | --ui-primary-hover | #10395f | Apply the complete Light · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.4 | --ui-ink | #20352a | Apply the complete Light · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.5 | --ui-muted | #526258 | Apply the complete Light · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.6 | --ui-canvas | #f5f5f0 | Apply the complete Light · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.7 | --ui-surface | #ffffff | Apply the complete Light · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.8 | --ui-subtle | #eaf0e5 | Apply the complete Light · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.9 | --ui-border | #6c7c70 | Apply the complete Light · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.10 | --ui-divider | #d6ded5 | Apply the complete Light · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.11 | --ui-focus | #7025b4 | Apply the complete Light · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.12 | --ui-danger | #6d2498 | Apply the complete Light · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.13 | --ui-success | #174b7a | Apply the complete Light · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.14 | --ui-success-bg | #e8f1fa | Apply the complete Light · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.15 | --ui-warning | #725000 | Apply the complete Light · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.16 | --ui-warning-bg | #fff4d6 | Apply the complete Light · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.17 | --ui-disabled | #526258 | Apply the complete Light · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.18 | --ui-disabled-bg | #e8ece6 | Apply the complete Light · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Light · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+
+## palette-dark-distinct
+
+Selector: `:root[data-bs-theme="dark"][data-vision="distinct"]`. Source: project. Verification family: `colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| palette-dark-distinct.1 | color-scheme | dark | Apply the complete Dark · distinct status colors palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.2 | --ui-primary | #9fcaff | Apply the complete Dark · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.3 | --ui-primary-hover | #c3deff | Apply the complete Dark · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.4 | --ui-ink | #edf5ef | Apply the complete Dark · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.5 | --ui-muted | #bac9bf | Apply the complete Dark · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.6 | --ui-canvas | #101712 | Apply the complete Dark · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.7 | --ui-surface | #18231c | Apply the complete Dark · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.8 | --ui-subtle | #24352a | Apply the complete Dark · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.9 | --ui-border | #8b9e90 | Apply the complete Dark · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.10 | --ui-divider | #465c4d | Apply the complete Dark · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.11 | --ui-focus | #f1c75b | Apply the complete Dark · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.12 | --ui-danger | #e2b4ff | Apply the complete Dark · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.13 | --ui-success | #b3d5ff | Apply the complete Dark · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.14 | --ui-success-bg | #1b304a | Apply the complete Dark · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.15 | --ui-warning | #f5d483 | Apply the complete Dark · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.16 | --ui-warning-bg | #3b3018 | Apply the complete Dark · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.17 | --ui-disabled | #b1c2b5 | Apply the complete Dark · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.18 | --ui-disabled-bg | #2b3b30 | Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.19 | --ui-on-primary | #101f30 | Apply the complete Dark · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## box
 
@@ -55,8 +134,8 @@ Selector: `body`. Source: project. Verification family: `type`.
 | page.2 | font-family | var(--ui-font) | Establish a readable document baseline. Render body text with the documented installed font stack. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
 | page.3 | font-size | 1rem | Establish a readable document baseline. Respect the browser default reading size instead of shrinking all content. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
 | page.4 | line-height | 1.5 | Establish a readable document baseline. Leave room between lines for sustained reading and text spacing preferences. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
-| page.5 | color | var(--ui-ink) | Establish a readable document baseline. Use the main text role on the light canvas. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
-| page.6 | background-color | var(--ui-canvas) | Establish a readable document baseline. Make white work panels distinguishable from the page. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
+| page.5 | color | var(--ui-ink) | Establish a readable document baseline. Use the main text role on the active canvas. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
+| page.6 | background-color | var(--ui-canvas) | Establish a readable document baseline. Make work panels distinguishable from the page in every palette. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
 | page.7 | overflow-wrap | anywhere | Establish a readable document baseline. Wrap long names and URLs rather than widening the page. | Read and navigate ordinary content without zoom or horizontal panning. | proposed |
 
 ## headings
@@ -109,7 +188,7 @@ Selector: `small, .ui-help`. Source: project. Verification family: `type`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | small.1 | font-size | 0.875rem | Distinguish secondary explanations. Keep help at a readable 14px when the default is 16px. | Read help without mistaking it for an editable value. | proposed |
-| small.2 | color | var(--ui-muted) | Distinguish secondary explanations. Reduce emphasis while retaining AA text contrast on supported surfaces. | Read help without mistaking it for an editable value. | proposed |
+| small.2 | color | var(--ui-muted) | Distinguish secondary explanations. Reduce emphasis while retaining AA text contrast on every supported palette surface. | Read help without mistaking it for an editable value. | proposed |
 
 ## links
 
@@ -123,12 +202,12 @@ Selector: `a`. Source: project. Verification family: `focus`.
 
 ## focus
 
-Selector: `:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible`. Source: project. Verification family: `focus`.
+Selector: `:where(a, button, input, select, textarea, [tabindex]):focus-visible`. Source: project. Verification family: `focus`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | focus.1 | outline | 3px solid var(--ui-focus) | Expose keyboard focus on every interactive surface. Use a sufficiently thick, contrasting perimeter instead of removing the native indicator. | Know exactly where keyboard input will act. | proposed |
-| focus.2 | outline-offset | 3px | Expose keyboard focus on every interactive surface. Separate the focus perimeter from the control border and dark button fill. | Know exactly where keyboard input will act. | proposed |
+| focus.2 | outline-offset | 3px | Expose keyboard focus on every interactive surface. Separate the focus perimeter from the control border and active button fill. | Know exactly where keyboard input will act. | proposed |
 
 ## hidden
 
@@ -346,7 +425,7 @@ Selector: `.card`. Source: project. Verification family: `panels`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | panel.1 | background-color | var(--ui-surface) | Contain a related task or reference example. Give the group an opaque surface distinct from the canvas. | Recognize which information and actions belong together. | proposed |
-| panel.2 | border | 1px solid var(--ui-divider) | Contain a related task or reference example. Keep panel edges recognizable on adjacent light surfaces. | Recognize which information and actions belong together. | proposed |
+| panel.2 | border | 1px solid var(--ui-divider) | Contain a related task or reference example. Keep panel edges recognizable on adjacent palette surfaces. | Recognize which information and actions belong together. | proposed |
 | panel.3 | border-radius | var(--ui-radius-panel) | Contain a related task or reference example. Use the larger corner role for containing groups. | Recognize which information and actions belong together. | proposed |
 | panel.4 | padding | var(--ui-space-xl) | Contain a related task or reference example. Leave 24px of internal reading and interaction clearance. | Recognize which information and actions belong together. | proposed |
 | panel.5 | block-size | 100% | Contain a related task or reference example. Align peer panel bottoms within a Bootstrap row without fixing content height. | Recognize which information and actions belong together. | proposed |
@@ -374,7 +453,7 @@ Selector: `.btn`. Source: project. Verification family: `targets`.
 | button.7 | border | 1px solid var(--ui-border) | Present an explicit action as a native button. Show a visible secondary action boundary. | Recognize an available action and activate it precisely. | proposed |
 | button.8 | border-radius | var(--ui-radius-small) | Present an explicit action as a native button. Use the common control corner role. | Recognize an available action and activate it precisely. | proposed |
 | button.9 | background-color | var(--ui-surface) | Present an explicit action as a native button. Keep secondary actions quieter than the primary. | Recognize an available action and activate it precisely. | proposed |
-| button.10 | color | var(--ui-primary) | Present an explicit action as a native button. Identify the action text with a high-contrast green. | Recognize an available action and activate it precisely. | proposed |
+| button.10 | color | var(--ui-primary) | Present an explicit action as a native button. Identify the action text with the contrast-checked action color. | Recognize an available action and activate it precisely. | proposed |
 | button.11 | font-weight | 600 | Present an explicit action as a native button. Distinguish actionable labels from surrounding prose. | Recognize an available action and activate it precisely. | proposed |
 | button.12 | text-align | center | Present an explicit action as a native button. Keep wrapped button labels visually balanced. | Recognize an available action and activate it precisely. | proposed |
 | button.13 | cursor | pointer | Present an explicit action as a native button. Confirm that the button accepts activation when a pointer is used. | Recognize an available action and activate it precisely. | proposed |
@@ -387,7 +466,7 @@ Selector: `.btn-primary`. Source: project. Verification family: `contrast`.
 | --- | --- | --- | --- | --- | --- |
 | primary.1 | background-color | var(--ui-primary) | Identify the principal action within a local group. Fill the main action with the brand/action role. | Choose the intended next step without scanning equal-weight buttons. | proposed |
 | primary.2 | border-color | var(--ui-primary) | Identify the principal action within a local group. Make the border continuous with the main-action fill. | Choose the intended next step without scanning equal-weight buttons. | proposed |
-| primary.3 | color | var(--ui-surface) | Identify the principal action within a local group. Maintain a contrasting light label on the dark fill. | Choose the intended next step without scanning equal-weight buttons. | proposed |
+| primary.3 | color | var(--ui-on-primary) | Identify the principal action within a local group. Keep the label readable on the active theme’s principal-action fill. | Choose the intended next step without scanning equal-weight buttons. | proposed |
 
 ## button-hover
 
@@ -403,7 +482,7 @@ Selector: `.btn-primary:hover:not(:disabled)`. Source: project. Verification fam
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| primary-hover.1 | background-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Deepen the fill while preserving white-label contrast. | Keep the primary action recognizable while pointing at it. | proposed |
+| primary-hover.1 | background-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Change the fill while preserving contrast with the active on-primary label. | Keep the primary action recognizable while pointing at it. | proposed |
 | primary-hover.2 | border-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Keep the perimeter aligned with the hover fill. | Keep the primary action recognizable while pointing at it. | proposed |
 
 ## disabled
@@ -413,7 +492,7 @@ Selector: `.btn:disabled, input:disabled, select:disabled, textarea:disabled`. S
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | disabled.1 | color | var(--ui-disabled) | Show that an action or value is unavailable. Keep disabled text readable instead of lowering the entire element opacity. | Read an unavailable control and look for its adjacent explanation. | proposed |
-| disabled.2 | background-color | var(--ui-disabled-bg) | Show that an action or value is unavailable. Distinguish unavailable values from editable white controls. | Read an unavailable control and look for its adjacent explanation. | proposed |
+| disabled.2 | background-color | var(--ui-disabled-bg) | Show that an action or value is unavailable. Distinguish unavailable values from editable controls. | Read an unavailable control and look for its adjacent explanation. | proposed |
 | disabled.3 | cursor | not-allowed | Show that an action or value is unavailable. Give a pointer hint that activation is unavailable; the native disabled attribute enforces it. | Read an unavailable control and look for its adjacent explanation. | proposed |
 
 ## label
@@ -497,60 +576,6 @@ Selector: `.ui-error`. Source: project. Verification family: `validation`.
 | --- | --- | --- | --- | --- | --- |
 | error.1 | color | var(--ui-danger) | Explain errors next to the affected field. Use the error text role at normal text contrast. | Understand what to fix without interpreting color alone. | proposed |
 | error.2 | font-weight | 600 | Explain errors next to the affected field. Make correction guidance distinguishable from optional help. | Understand what to fix without interpreting color alone. | proposed |
-
-## editor
-
-Selector: `.ui-editor`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| editor.1 | border-block-end | 1px solid var(--ui-divider) | Group a reviewable value and its native edit disclosure. Separate adjacent editable values without presenting a wall of input boxes. | Review current values before choosing to change them. | proposed |
-| editor.2 | padding-block | var(--ui-space-md) | Group a reviewable value and its native edit disclosure. Give each value its own 12px vertical breathing room. | Review current values before choosing to change them. | proposed |
-
-## summary
-
-Selector: `.ui-editor > summary`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| summary.1 | min-block-size | 2.75rem | Expose a label-like click-to-edit affordance. Keep the native disclosure target at least 44px high. | Activate the current value with mouse, touch, Enter or Space. | proposed |
-| summary.2 | padding | var(--ui-space-sm) | Expose a label-like click-to-edit affordance. Separate summary text from its marker and neighboring row. | Activate the current value with mouse, touch, Enter or Space. | proposed |
-| summary.3 | cursor | pointer | Expose a label-like click-to-edit affordance. Confirm the summary is interactive without removing its native disclosure marker. | Activate the current value with mouse, touch, Enter or Space. | proposed |
-| summary.4 | border-radius | var(--ui-radius-small) | Expose a label-like click-to-edit affordance. Give hover feedback the same corner role as other controls. | Activate the current value with mouse, touch, Enter or Space. | proposed |
-
-## summary-hover
-
-Selector: `.ui-editor > summary:hover`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| summary-hover.1 | background-color | var(--ui-subtle) | Make click-to-edit discoverable with pointer feedback. Highlight the existing target without an unexpected layout shift. | Confirm that selecting the value reveals its editor. | proposed |
-
-## summary-label
-
-Selector: `.ui-field-name`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| summary-label.1 | font-weight | 600 | Keep field identity distinct from its saved value. Emphasize the persistent name in the disclosure summary. | Recognize which value the Edit action will change. | proposed |
-
-## edit-cue
-
-Selector: `.ui-edit-cue`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| edit-cue.1 | color | var(--ui-primary) | Make editability visible before hover. Use the action role for the always-visible Edit cue. | Discover editing when using touch or keyboard. | proposed |
-| edit-cue.2 | text-decoration | underline | Make editability visible before hover. Make the cue recognizable without relying on color. | Discover editing when using touch or keyboard. | proposed |
-| edit-cue.3 | margin-inline-start | var(--ui-space-sm) | Make editability visible before hover. Separate the action cue from the saved value. | Discover editing when using touch or keyboard. | proposed |
-
-## edit-form
-
-Selector: `.ui-editor form`. Source: project. Verification family: `editing`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| edit-form.1 | margin-block-start | var(--ui-space-md) | Keep a revealed editor close to the value it changes. Separate the open form from its disclosure summary. | Edit without losing the field’s review context. | proposed |
 
 ## table-region
 
@@ -802,8 +827,166 @@ Selector: `.ui-skip:focus`. Source: project. Verification family: `focus`.
 
 ## forced-focus
 
-Selector: `:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+Selector: `:where(a, button, input, select, textarea, [tabindex]):focus-visible`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| forced-focus.1 | outline-color | Highlight | Respect the user’s forced-color focus palette. Use the platform focus role rather than preserving the authored blue. | Find the active target in a high-contrast environment. | proposed |
+| forced-focus.1 | outline-color | Highlight | Respect the user’s forced-color focus palette. Use the platform focus role rather than preserving the authored focus color. | Find the active target in a high-contrast environment. | proposed |
+
+## inline-field
+
+Selector: `.ui-field`. Source: project. Verification family: `editing`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-field.1 | padding-block | var(--ui-space-md) | Separate values in a directly editable record. Keep each persistent label and prefilled value visually grouped. | Scan a field’s current value and focus it without opening another surface. | proposed |
+| inline-field.2 | border-block-end | 1px solid var(--ui-divider) | Separate values in a directly editable record. Distinguish neighboring values without putting a box around every unfocused input. | Scan a field’s current value and focus it without opening another surface. | proposed |
+
+## inline-control
+
+Selector: `.ui-inline-control`. Source: project. Verification family: `editing`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-control.1 | border-color | transparent | Present an unfocused native input like ordinary information. Keep the existing border width reserved so focusing does not move text or change size. | Read existing values and edit them directly with one focus action. | proposed |
+| inline-control.2 | background-color | transparent | Present an unfocused native input like ordinary information. Let the unfocused value sit on its containing surface instead of looking like an empty form box. | Read existing values and edit them directly with one focus action. | proposed |
+
+## inline-control-focus
+
+Selector: `.ui-inline-control:focus`. Source: project. Verification family: `editing`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-control-focus.1 | border-color | var(--ui-border) | Reveal native input boundaries as soon as editing receives focus. Expose a contrast-checked input boundary while focused. | Know exactly which value is being edited using pointer, touch or keyboard. | proposed |
+| inline-control-focus.2 | background-color | var(--ui-surface) | Reveal native input boundaries as soon as editing receives focus. Give the focused field the active editing surface. | Know exactly which value is being edited using pointer, touch or keyboard. | proposed |
+| inline-control-focus.3 | outline | 3px solid var(--ui-focus) | Reveal native input boundaries as soon as editing receives focus. Identify editing focus even when it was reached with a pointer rather than focus-visible. | Know exactly which value is being edited using pointer, touch or keyboard. | proposed |
+| inline-control-focus.4 | outline-offset | 3px | Reveal native input boundaries as soon as editing receives focus. Separate the focus perimeter from the native input border. | Know exactly which value is being edited using pointer, touch or keyboard. | proposed |
+
+## inline-control-invalid
+
+Selector: `.ui-inline-control[aria-invalid="true"]`. Source: project. Verification family: `validation`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-control-invalid.1 | border-color | var(--ui-danger) | Keep a correction visible after focus leaves an invalid field. Make a validation error an explicit exception to borderless unfocused values; linked error text also explains it. | Find the value named by its textual error without guessing from color. | proposed |
+
+## inline-notes-rest
+
+Selector: `textarea.ui-inline-control`. Source: project. Verification family: `editing`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-notes-rest.1 | resize | none | Keep an unfocused notes value visually quiet. Hide only the resize handle while resting; native rows still provide multiline reading space. | Read a prefilled note without a persistent resize handle suggesting an open editor. | proposed |
+
+## inline-notes-focus
+
+Selector: `textarea.ui-inline-control:focus`. Source: project. Verification family: `editing`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| inline-notes-focus.1 | resize | vertical | Restore native note resizing during editing. Allow more editing height without changing its column width. | Enlarge the notes workspace when the field receives focus. | proposed |
+
+## appearance-box
+
+Selector: `.ui-appearance`. Source: project. Verification family: `controls`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| appearance-box.1 | margin-block-start | var(--ui-space-xl) | Group the two independent appearance preferences. Separate appearance preferences from navigation and the reference introduction. | Choose brightness and status palette without changing task drafts. | proposed |
+
+## switch-track
+
+Selector: `.ui-switch input[type="checkbox"]`. Source: project. Verification family: `controls`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| switch-track.1 | appearance | none | Show a sliding binary preference using a native checkbox. Replace only the visual checkbox mark; keep its native checked state, input events and switch semantics. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.2 | display | inline-grid | Show a sliding binary preference using a native checkbox. Place a decorative thumb within the native checkbox footprint. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.3 | align-items | center | Show a sliding binary preference using a native checkbox. Center the thumb vertically without absolute positioning. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.4 | inline-size | 3rem | Show a sliding binary preference using a native checkbox. Provide a clear horizontal travel distance within the labeled target. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.5 | block-size | 1.75rem | Show a sliding binary preference using a native checkbox. Give the track enough height for a distinct thumb. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.6 | padding | 2px | Show a sliding binary preference using a native checkbox. Keep the thumb away from the track boundary. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.7 | border | 2px solid var(--ui-border) | Show a sliding binary preference using a native checkbox. Preserve a visible track outline in all four palettes. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.8 | border-radius | 1rem | Show a sliding binary preference using a native checkbox. Distinguish a sliding preference from a square choice mark. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+| switch-track.9 | background-color | var(--ui-muted) | Show a sliding binary preference using a native checkbox. Give the off position a neutral, contrast-tested track. | Set a named on/off preference with native click, touch and Space behavior. | proposed |
+
+## switch-thumb
+
+Selector: `.ui-switch input[type="checkbox"]::before`. Source: project. Verification family: `controls`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| switch-thumb.1 | content | "" | Mark the slider’s current position without using color alone. Create a decorative thumb only; the actual label and checked state carry the meaning. | Distinguish on and off from the thumb’s left/right position. | proposed |
+| switch-thumb.2 | inline-size | 1.125rem | Mark the slider’s current position without using color alone. Keep the thumb large enough to locate inside the track. | Distinguish on and off from the thumb’s left/right position. | proposed |
+| switch-thumb.3 | block-size | 1.125rem | Mark the slider’s current position without using color alone. Keep the thumb circular rather than stretching it with label text. | Distinguish on and off from the thumb’s left/right position. | proposed |
+| switch-thumb.4 | border-radius | 50% | Mark the slider’s current position without using color alone. Make the moving thumb distinguishable from its rounded track. | Distinguish on and off from the thumb’s left/right position. | proposed |
+| switch-thumb.5 | background-color | var(--ui-surface) | Mark the slider’s current position without using color alone. Contrast the off-position thumb against the neutral track. | Distinguish on and off from the thumb’s left/right position. | proposed |
+| switch-thumb.6 | transform | translateX(0) | Mark the slider’s current position without using color alone. Place the off thumb at the start of its 22px travel without changing the target size. | Distinguish on and off from the thumb’s left/right position. | proposed |
+
+## switch-on
+
+Selector: `.ui-switch input[type="checkbox"]:checked`. Source: project. Verification family: `controls`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| switch-on.1 | background-color | var(--ui-primary) | Reinforce an enabled slider preference. Use the active action role for the checked track. | Recognize the enabled setting through both position and native state. | proposed |
+
+## switch-thumb-on
+
+Selector: `.ui-switch input[type="checkbox"]:checked::before`. Source: project. Verification family: `controls`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| switch-thumb-on.1 | transform | translateX(1.375rem) | Move and contrast the enabled slider thumb. Move the thumb to the end of the available inner track with no animation. | Read the on position in every brightness and palette combination. | proposed |
+| switch-thumb-on.2 | background-color | var(--ui-on-primary) | Move and contrast the enabled slider thumb. Keep the checked thumb distinct from the active track in dark as well as light mode. | Read the on position in every brightness and palette combination. | proposed |
+
+## distinct-status
+
+Selector: `:root[data-vision="distinct"] .ui-status`. Source: project. Verification family: `states`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| distinct-status.1 | border | 1px solid currentColor | Add a shape cue to the alternate status palette. Outline named state labels in their contrast-tested text color. | Identify status boundaries without depending on hue perception. | proposed |
+
+## distinct-pending
+
+Selector: `:root[data-vision="distinct"] .ui-status-pending`. Source: project. Verification family: `states`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| distinct-pending.1 | border-style | dashed | Separate pending status by line pattern as well as wording. Pair the Pending word with a dashed boundary distinct from solid saved-state boundaries. | Recognize a pending decision even when colors look similar. | proposed |
+
+## forced-inline
+
+Selector: `.ui-inline-control`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| forced-inline.1 | border-color | CanvasText | Respect an explicit forced-color preference over the borderless presentation. Use the user’s system boundary color even when the unfocused design would normally be borderless. | Locate native editing controls in a high-contrast environment. | proposed |
+
+## forced-inline-focus
+
+Selector: `.ui-inline-control:focus`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| forced-inline-focus.1 | outline-color | Highlight | Preserve the system focus indicator for directly edited values. Use the platform focus role for pointer and keyboard editing focus. | Find the active field under forced colors. | proposed |
+
+## forced-switch
+
+Selector: `.ui-switch input[type="checkbox"]`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| forced-switch.1 | appearance | auto | Return slider presentation to a native mark under forced colors. Let the user agent paint its own high-contrast checkbox for this switch. | Use a visible native on/off control in the selected system palette. | proposed |
+| forced-switch.2 | inline-size | 1.25rem | Return slider presentation to a native mark under forced colors. Use the ordinary native mark width inside the unchanged large label target. | Use a visible native on/off control in the selected system palette. | proposed |
+| forced-switch.3 | block-size | 1.25rem | Return slider presentation to a native mark under forced colors. Use the ordinary native mark height while preserving its checked state. | Use a visible native on/off control in the selected system palette. | proposed |
+| forced-switch.4 | padding | 0 | Return slider presentation to a native mark under forced colors. Remove custom-track padding from the restored native mark. | Use a visible native on/off control in the selected system palette. | proposed |
+
+## forced-switch-thumb
+
+Selector: `.ui-switch input[type="checkbox"]::before`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| forced-switch-thumb.1 | display | none | Remove the decorative thumb when the native mark returns. Leave the forced-color native checkbox as the only mark. | Read one unambiguous checked state rather than two overlapping marks. | proposed |

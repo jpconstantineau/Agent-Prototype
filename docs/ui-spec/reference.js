@@ -1,40 +1,39 @@
 // Reference-only behavior; never imports the app store, tools or inference.
 const status = document.querySelector('#edit-status');
-for (const editor of document.querySelectorAll('[data-editor]')) {
-  const form = editor.querySelector('form'), control = form.querySelector('input, textarea, select');
-  const summary = editor.querySelector('summary'), readValue = editor.querySelector('[data-read-value]');
-  const error = form.querySelector('[data-error]');
-  let saved = control.value, wasOpen = false;
-  const title = editor.dataset.editor === 'date' ? 'Due date' : editor.dataset.editor[0].toUpperCase() + editor.dataset.editor.slice(1);
+for (const form of document.querySelectorAll('[data-inline-record]')) {
+  const controls = [...form.querySelectorAll('input, textarea, select')];
+  let saved = controls.map(control => control.value);
   form.noValidate = true;
   for (const button of form.querySelectorAll('button')) button.disabled = false;
-  const clearError = () => { error.hidden = true; error.textContent = ''; control.removeAttribute('aria-invalid'); };
-  const dirty = () => control.value !== saved;
-  const close = () => { editor.open = false; summary.focus(); };
-  const cancel = () => { control.value = saved; clearError(); close(); status.textContent = `${title} changes cancelled.`; };
-  editor.addEventListener('toggle', () => {
-    if (!editor.open && dirty()) {
-      editor.open = true;
-      status.textContent = `Unsaved ${title.toLowerCase()} changes. Choose Save or Cancel before closing.`;
-      return;
-    }
-    if (editor.open && !wasOpen) control.focus();
-    wasOpen = editor.open;
+  const errorFor = control => form.querySelector(`#${control.dataset.error}`);
+  const clearError = control => { const error = errorFor(control); error.hidden = true; error.textContent = ''; control.removeAttribute('aria-invalid'); };
+  const dirty = () => controls.some((control,index) => control.value !== saved[index]);
+  const cancel = () => {
+    controls.forEach((control,index) => { control.value = saved[index]; clearError(control); });
+    status.textContent = 'Example changes cancelled. The last saved values have been restored.';
+    controls[0].focus();
+  };
+  form.addEventListener('input', event => {
+    if (!controls.includes(event.target)) return;
+    clearError(event.target);
+    status.textContent = dirty() ? 'Unsaved example changes. Use Save changes or Cancel changes; leaving a field does not save.' : 'No unsaved example changes.';
   });
-  form.addEventListener('input', clearError);
   form.addEventListener('submit', event => {
     event.preventDefault();
-    if (!control.checkValidity() || (control.required && !control.value.trim())) {
-      error.textContent = control.validity.valueMissing || !control.value.trim() ? `Enter a ${title.toLowerCase()} before saving.` : control.validationMessage;
-      error.hidden = false; control.setAttribute('aria-invalid','true'); control.focus(); return;
+    let firstInvalid;
+    for (const control of controls) {
+      clearError(control);
+      if (control.checkValidity() && !(control.required && !control.value.trim())) continue;
+      const error = errorFor(control);
+      error.textContent = control.required && !control.value.trim() ? 'Error: enter a task title before saving.' : `Error: ${control.validationMessage}`;
+      error.hidden = false; control.setAttribute('aria-invalid','true'); firstInvalid ||= control;
     }
-    // Preserve user-entered whitespace in optional notes; no implicit normalization.
-    saved = control.value;
-    readValue.textContent = control instanceof HTMLSelectElement ? control.selectedOptions[0].textContent : saved || 'Not set';
-    clearError(); close(); status.textContent = `${title} saved in this example page only.`;
+    if (firstInvalid) { firstInvalid.focus(); return; }
+    saved = controls.map(control => control.value);
+    status.textContent = 'Example changes saved in this page only.';
   });
   form.querySelector('[data-cancel]').addEventListener('click', cancel);
-  editor.addEventListener('keydown', event => { if (event.key === 'Escape' && !event.isComposing) { event.preventDefault(); cancel(); } });
+  form.addEventListener('keydown', event => { if (event.key === 'Escape' && !event.isComposing) { event.preventDefault(); cancel(); } });
 }
 const dialog = document.querySelector('#review-dialog'), opener = document.querySelector('#open-review');
 opener.disabled = false;

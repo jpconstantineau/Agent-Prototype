@@ -30,6 +30,76 @@
   --ui-radius-small: 0.375rem; /* tokens.26 */
   --ui-radius-panel: 0.75rem; /* tokens.27 */
   --ui-font: system-ui, -apple-system, "Segoe UI", sans-serif; /* tokens.28 */
+  --ui-on-primary: #ffffff; /* tokens.29 */
+}
+
+/* palette-dark-standard: Apply the complete Dark · standard palette. */
+:root[data-bs-theme="dark"]:not([data-vision="distinct"]) {
+  color-scheme: dark; /* palette-dark-standard.1 */
+  --ui-primary: #9bd2ae; /* palette-dark-standard.2 */
+  --ui-primary-hover: #b5e3c4; /* palette-dark-standard.3 */
+  --ui-ink: #edf5ef; /* palette-dark-standard.4 */
+  --ui-muted: #bac9bf; /* palette-dark-standard.5 */
+  --ui-canvas: #101712; /* palette-dark-standard.6 */
+  --ui-surface: #18231c; /* palette-dark-standard.7 */
+  --ui-subtle: #24352a; /* palette-dark-standard.8 */
+  --ui-border: #8b9e90; /* palette-dark-standard.9 */
+  --ui-divider: #465c4d; /* palette-dark-standard.10 */
+  --ui-focus: #80b6ff; /* palette-dark-standard.11 */
+  --ui-danger: #ffb4ac; /* palette-dark-standard.12 */
+  --ui-success: #a4ddb4; /* palette-dark-standard.13 */
+  --ui-success-bg: #1b3826; /* palette-dark-standard.14 */
+  --ui-warning: #f5d483; /* palette-dark-standard.15 */
+  --ui-warning-bg: #3b3018; /* palette-dark-standard.16 */
+  --ui-disabled: #b1c2b5; /* palette-dark-standard.17 */
+  --ui-disabled-bg: #2b3b30; /* palette-dark-standard.18 */
+  --ui-on-primary: #102318; /* palette-dark-standard.19 */
+}
+
+/* palette-light-distinct: Apply the complete Light · distinct status colors palette. */
+:root[data-vision="distinct"]:not([data-bs-theme="dark"]) {
+  color-scheme: light; /* palette-light-distinct.1 */
+  --ui-primary: #174b7a; /* palette-light-distinct.2 */
+  --ui-primary-hover: #10395f; /* palette-light-distinct.3 */
+  --ui-ink: #20352a; /* palette-light-distinct.4 */
+  --ui-muted: #526258; /* palette-light-distinct.5 */
+  --ui-canvas: #f5f5f0; /* palette-light-distinct.6 */
+  --ui-surface: #ffffff; /* palette-light-distinct.7 */
+  --ui-subtle: #eaf0e5; /* palette-light-distinct.8 */
+  --ui-border: #6c7c70; /* palette-light-distinct.9 */
+  --ui-divider: #d6ded5; /* palette-light-distinct.10 */
+  --ui-focus: #7025b4; /* palette-light-distinct.11 */
+  --ui-danger: #6d2498; /* palette-light-distinct.12 */
+  --ui-success: #174b7a; /* palette-light-distinct.13 */
+  --ui-success-bg: #e8f1fa; /* palette-light-distinct.14 */
+  --ui-warning: #725000; /* palette-light-distinct.15 */
+  --ui-warning-bg: #fff4d6; /* palette-light-distinct.16 */
+  --ui-disabled: #526258; /* palette-light-distinct.17 */
+  --ui-disabled-bg: #e8ece6; /* palette-light-distinct.18 */
+  --ui-on-primary: #ffffff; /* palette-light-distinct.19 */
+}
+
+/* palette-dark-distinct: Apply the complete Dark · distinct status colors palette. */
+:root[data-bs-theme="dark"][data-vision="distinct"] {
+  color-scheme: dark; /* palette-dark-distinct.1 */
+  --ui-primary: #9fcaff; /* palette-dark-distinct.2 */
+  --ui-primary-hover: #c3deff; /* palette-dark-distinct.3 */
+  --ui-ink: #edf5ef; /* palette-dark-distinct.4 */
+  --ui-muted: #bac9bf; /* palette-dark-distinct.5 */
+  --ui-canvas: #101712; /* palette-dark-distinct.6 */
+  --ui-surface: #18231c; /* palette-dark-distinct.7 */
+  --ui-subtle: #24352a; /* palette-dark-distinct.8 */
+  --ui-border: #8b9e90; /* palette-dark-distinct.9 */
+  --ui-divider: #465c4d; /* palette-dark-distinct.10 */
+  --ui-focus: #f1c75b; /* palette-dark-distinct.11 */
+  --ui-danger: #e2b4ff; /* palette-dark-distinct.12 */
+  --ui-success: #b3d5ff; /* palette-dark-distinct.13 */
+  --ui-success-bg: #1b304a; /* palette-dark-distinct.14 */
+  --ui-warning: #f5d483; /* palette-dark-distinct.15 */
+  --ui-warning-bg: #3b3018; /* palette-dark-distinct.16 */
+  --ui-disabled: #b1c2b5; /* palette-dark-distinct.17 */
+  --ui-disabled-bg: #2b3b30; /* palette-dark-distinct.18 */
+  --ui-on-primary: #101f30; /* palette-dark-distinct.19 */
 }
 
 /* box: Make declared sizes include padding and borders. */
@@ -90,7 +160,7 @@ a {
 }
 
 /* focus: Expose keyboard focus on every interactive surface. */
-:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 3px solid var(--ui-focus); /* focus.1 */
   outline-offset: 3px; /* focus.2 */
 }
@@ -279,7 +349,7 @@ main {
 .btn-primary {
   background-color: var(--ui-primary); /* primary.1 */
   border-color: var(--ui-primary); /* primary.2 */
-  color: var(--ui-surface); /* primary.3 */
+  color: var(--ui-on-primary); /* primary.3 */
 }
 
 /* button-hover: Give pointer feedback for secondary actions. */
@@ -356,42 +426,6 @@ legend {
 .ui-error {
   color: var(--ui-danger); /* error.1 */
   font-weight: 600; /* error.2 */
-}
-
-/* editor: Group a reviewable value and its native edit disclosure. */
-.ui-editor {
-  border-block-end: 1px solid var(--ui-divider); /* editor.1 */
-  padding-block: var(--ui-space-md); /* editor.2 */
-}
-
-/* summary: Expose a label-like click-to-edit affordance. */
-.ui-editor > summary {
-  min-block-size: 2.75rem; /* summary.1 */
-  padding: var(--ui-space-sm); /* summary.2 */
-  cursor: pointer; /* summary.3 */
-  border-radius: var(--ui-radius-small); /* summary.4 */
-}
-
-/* summary-hover: Make click-to-edit discoverable with pointer feedback. */
-.ui-editor > summary:hover {
-  background-color: var(--ui-subtle); /* summary-hover.1 */
-}
-
-/* summary-label: Keep field identity distinct from its saved value. */
-.ui-field-name {
-  font-weight: 600; /* summary-label.1 */
-}
-
-/* edit-cue: Make editability visible before hover. */
-.ui-edit-cue {
-  color: var(--ui-primary); /* edit-cue.1 */
-  text-decoration: underline; /* edit-cue.2 */
-  margin-inline-start: var(--ui-space-sm); /* edit-cue.3 */
-}
-
-/* edit-form: Keep a revealed editor close to the value it changes. */
-.ui-editor form {
-  margin-block-start: var(--ui-space-md); /* edit-form.1 */
 }
 
 /* table-region: Contain genuinely two-dimensional information. */
@@ -566,7 +600,122 @@ dialog::backdrop {
 
 @media (forced-colors: active) {
 /* forced-focus: Respect the user’s forced-color focus palette. */
-:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline-color: Highlight; /* forced-focus.1 */
+}
+}
+
+/* inline-field: Separate values in a directly editable record. */
+.ui-field {
+  padding-block: var(--ui-space-md); /* inline-field.1 */
+  border-block-end: 1px solid var(--ui-divider); /* inline-field.2 */
+}
+
+/* inline-control: Present an unfocused native input like ordinary information. */
+.ui-inline-control {
+  border-color: transparent; /* inline-control.1 */
+  background-color: transparent; /* inline-control.2 */
+}
+
+/* inline-control-focus: Reveal native input boundaries as soon as editing receives focus. */
+.ui-inline-control:focus {
+  border-color: var(--ui-border); /* inline-control-focus.1 */
+  background-color: var(--ui-surface); /* inline-control-focus.2 */
+  outline: 3px solid var(--ui-focus); /* inline-control-focus.3 */
+  outline-offset: 3px; /* inline-control-focus.4 */
+}
+
+/* inline-control-invalid: Keep a correction visible after focus leaves an invalid field. */
+.ui-inline-control[aria-invalid="true"] {
+  border-color: var(--ui-danger); /* inline-control-invalid.1 */
+}
+
+/* inline-notes-rest: Keep an unfocused notes value visually quiet. */
+textarea.ui-inline-control {
+  resize: none; /* inline-notes-rest.1 */
+}
+
+/* inline-notes-focus: Restore native note resizing during editing. */
+textarea.ui-inline-control:focus {
+  resize: vertical; /* inline-notes-focus.1 */
+}
+
+/* appearance-box: Group the two independent appearance preferences. */
+.ui-appearance {
+  margin-block-start: var(--ui-space-xl); /* appearance-box.1 */
+}
+
+/* switch-track: Show a sliding binary preference using a native checkbox. */
+.ui-switch input[type="checkbox"] {
+  appearance: none; /* switch-track.1 */
+  display: inline-grid; /* switch-track.2 */
+  align-items: center; /* switch-track.3 */
+  inline-size: 3rem; /* switch-track.4 */
+  block-size: 1.75rem; /* switch-track.5 */
+  padding: 2px; /* switch-track.6 */
+  border: 2px solid var(--ui-border); /* switch-track.7 */
+  border-radius: 1rem; /* switch-track.8 */
+  background-color: var(--ui-muted); /* switch-track.9 */
+}
+
+/* switch-thumb: Mark the slider’s current position without using color alone. */
+.ui-switch input[type="checkbox"]::before {
+  content: ""; /* switch-thumb.1 */
+  inline-size: 1.125rem; /* switch-thumb.2 */
+  block-size: 1.125rem; /* switch-thumb.3 */
+  border-radius: 50%; /* switch-thumb.4 */
+  background-color: var(--ui-surface); /* switch-thumb.5 */
+  transform: translateX(0); /* switch-thumb.6 */
+}
+
+/* switch-on: Reinforce an enabled slider preference. */
+.ui-switch input[type="checkbox"]:checked {
+  background-color: var(--ui-primary); /* switch-on.1 */
+}
+
+/* switch-thumb-on: Move and contrast the enabled slider thumb. */
+.ui-switch input[type="checkbox"]:checked::before {
+  transform: translateX(1.375rem); /* switch-thumb-on.1 */
+  background-color: var(--ui-on-primary); /* switch-thumb-on.2 */
+}
+
+/* distinct-status: Add a shape cue to the alternate status palette. */
+:root[data-vision="distinct"] .ui-status {
+  border: 1px solid currentColor; /* distinct-status.1 */
+}
+
+/* distinct-pending: Separate pending status by line pattern as well as wording. */
+:root[data-vision="distinct"] .ui-status-pending {
+  border-style: dashed; /* distinct-pending.1 */
+}
+
+@media (forced-colors: active) {
+/* forced-inline: Respect an explicit forced-color preference over the borderless presentation. */
+.ui-inline-control {
+  border-color: CanvasText; /* forced-inline.1 */
+}
+}
+
+@media (forced-colors: active) {
+/* forced-inline-focus: Preserve the system focus indicator for directly edited values. */
+.ui-inline-control:focus {
+  outline-color: Highlight; /* forced-inline-focus.1 */
+}
+}
+
+@media (forced-colors: active) {
+/* forced-switch: Return slider presentation to a native mark under forced colors. */
+.ui-switch input[type="checkbox"] {
+  appearance: auto; /* forced-switch.1 */
+  inline-size: 1.25rem; /* forced-switch.2 */
+  block-size: 1.25rem; /* forced-switch.3 */
+  padding: 0; /* forced-switch.4 */
+}
+}
+
+@media (forced-colors: active) {
+/* forced-switch-thumb: Remove the decorative thumb when the native mark returns. */
+.ui-switch input[type="checkbox"]::before {
+  display: none; /* forced-switch-thumb.1 */
 }
 }

@@ -17,6 +17,8 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 | File | Responsibility |
 | --- | --- |
 | [DESIGN.md](DESIGN.md) | Google DESIGN.md alpha format: exact tokens plus the eight canonical rationale sections; primary entry point for coding agents. Generated from system.mjs and design-body.md. |
+| [PALETTES.md](PALETTES.md) / [palettes.mjs](palettes.mjs) | Four resolved color-role tables, contrast matrices and their authoritative source. Alternate Google-format documents are in [themes/](themes/). |
+| [REVISIONS.md](REVISIONS.md) | Maintainer-requested changes and retired/replaced declaration IDs. |
 | [FOUNDATIONS.md](FOUNDATIONS.md) | Color, typography, spacing, responsive layouts, units and CSS cascade contract. |
 | [COMPONENTS.md](COMPONENTS.md) | Semantic HTML/attributes, desktop/mobile components, state contracts and click-to-edit interaction. |
 | [CSS-DECISIONS.md](CSS-DECISIONS.md) | Every shipped CSS declaration, including Bootstrap grid declarations, with stable ID, exact value, purpose, user intent and verification family. Generated, not hand-edited. |
@@ -29,13 +31,13 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 
 Deployed reference: **[UI reference](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/)**. The URL becomes available after this change is published by GitHub Pages. With the local server running, open **http://localhost:5173/ui-spec/**. At the project subpath used in tests, it is http://localhost:5174/Agent-Prototype/ui-spec/.
 
-The page includes token swatches, paired and work/support Bootstrap grids, native text/notes/select/date editors, radio/checkbox labels, enabled/disabled actions, a modal, status/error/progress/empty states, a comparison table and a searchable declaration ledger. All example changes are page memory only and clear on reload. No local-model setup is required.
+The page includes token swatches, paired and work/support Bootstrap grids, prefilled native text/notes/select/date editors that reveal their boxes on focus, two appearance sliders, radio/checkbox labels, enabled/disabled actions, a modal, status/error/progress/empty states, a comparison table and a searchable declaration ledger. Example record changes are page memory only and clear on reload. The two appearance choices alone persist under a reference-specific localStorage key. No local-model setup is required.
 
 ## Bootstrap contract
 
 This is a locally served **Bootstrap 5.3.8-derived subset**, not a renamed full bundle or a claim of full Bootstrap API compatibility. Six grid rules use literal upstream declarations; components follow the familiar Bootstrap class vocabulary with explicitly authored Daylist styles. The subset deliberately keeps the entire shipped CSS small enough to review declaration by declaration. No third-party CSS is exempt from the ledger.
 
-Supported classes: `container`, `row`, `col-md-6`, `col-lg-8`, `col-lg-4`, `card`, `btn`, `btn-primary`, `form-control`, `form-select`, `table`, `table-responsive`. Classes prefixed `ui-` provide documented extensions. Other Bootstrap utilities, components and JavaScript plugins are absent. Use native disclosures/dialog instead of Bootstrap Collapse/Modal plugins. Read [Bootstrap provenance](bootstrap-provenance.json) and the [retained license](../docs/ui-spec/BOOTSTRAP-LICENSE.txt).
+Supported classes: `container`, `row`, `col-md-6`, `col-lg-8`, `col-lg-4`, `card`, `btn`, `btn-primary`, `form-control`, `form-select`, `table`, `table-responsive`. Classes prefixed `ui-` provide documented extensions. Other Bootstrap utilities, components and JavaScript plugins are absent. Use prefilled focus-styled native controls for inline editing and native dialog for modal decisions. No Bootstrap Collapse/Modal plugin is required. Read [Bootstrap provenance](bootstrap-provenance.json) and the [retained license](../docs/ui-spec/BOOTSTRAP-LICENSE.txt).
 
 ## Build and verify
 

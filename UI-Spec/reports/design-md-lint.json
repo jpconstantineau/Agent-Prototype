@@ -1,38 +1,150 @@
 {
   "tool": "@google/design.md",
   "version": "0.4.0",
-  "input": "UI-Spec/DESIGN.md",
-  "inputSha256": "72c24668f53138dec301792c1bc1236b393629c7acc24fea220b7a3edd1ff552",
-  "report": {
-    "findings": [
-      {
-        "severity": "warning",
-        "path": "colors.border",
-        "message": "'border' is defined but never referenced by any component.",
-        "rule": "orphaned-tokens"
-      },
-      {
-        "severity": "warning",
-        "path": "colors.divider",
-        "message": "'divider' is defined but never referenced by any component.",
-        "rule": "orphaned-tokens"
-      },
-      {
-        "severity": "warning",
-        "path": "colors.focus",
-        "message": "'focus' is defined but never referenced by any component.",
-        "rule": "orphaned-tokens"
-      },
-      {
-        "severity": "info",
-        "message": "Design system defines 17 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
-        "rule": "token-summary"
+  "reports": {
+    "light-standard": {
+      "input": "UI-Spec/DESIGN.md",
+      "inputSha256": "5223931f8198aae54e45e0edcaba5871bbd4608633326e539f4a791e0e4aed8b",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 18 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
       }
-    ],
-    "summary": {
-      "errors": 0,
-      "warnings": 3,
-      "infos": 1
+    },
+    "dark-standard": {
+      "input": "UI-Spec/themes/dark.DESIGN.md",
+      "inputSha256": "790a821408793eb20f6ba6a436b59b36c310edb78cce1a754cc9ab940babfcb8",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 18 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "light-distinct": {
+      "input": "UI-Spec/themes/light-distinct.DESIGN.md",
+      "inputSha256": "e925d0ffeebac0da66c6706ca5391221497ff8bdcfa6e215ca3a5023223e2376",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 18 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "dark-distinct": {
+      "input": "UI-Spec/themes/dark-distinct.DESIGN.md",
+      "inputSha256": "c32c9407e6754efc17f778aa1ce3e07571d0f1ecbeddfc3e57445d240b703c04",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 18 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
     }
   }
 }

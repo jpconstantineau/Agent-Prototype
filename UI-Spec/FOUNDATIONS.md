@@ -14,22 +14,22 @@ Implementation agents use these constraints to choose existing patterns and toke
 
 ## Color roles and contrast
 
-The authoritative values are `tokens.colors` in system.mjs and the YAML front matter in DESIGN.md. Use role names rather than hard-coded color values in a component. The system preserves Daylist’s deep green action identity while separating focus blue from state colors.
+The authoritative values are `tokens.colors` in system.mjs and the YAML front matter in DESIGN.md. Use role names rather than hard-coded color values in a component. The default light/standard palette preserves Daylist’s green identity; dark and distinct palettes retain the same semantic roles with separately checked values.
 
 | Role / pairing | Concrete purpose | User intention / consequence |
 | --- | --- | --- |
 | Ink on canvas/surface/subtle | Sustained reading across document and work panels | Read a task or explanation without changing visual interpretation between surfaces. |
 | Muted on canvas/surface/subtle | Lower emphasis for help and metadata, still at ordinary text contrast | Consult supporting detail without confusing it with the main value. “Muted” never means unreadable. |
-| Surface text on primary / primary-hover | Principal action and pointer feedback | Locate the main next step and confirm its target without layout movement. |
+| On-primary text on primary / primary-hover | Principal action and pointer feedback | Locate the main next step and confirm its target without layout movement. |
 | Primary on surface | Links, secondary actions and edit cue | Recognize an available action; underlines or button boundaries also identify its behavior. |
 | Border on surface | Editable boundaries at minimum 3:1 non-text contrast | Identify where to enter a value. Divider is lighter because it separates passive groups, not controls. |
-| Focus on surface/canvas | Keyboard destination; outline offset separates it from dark button fill | Know which control receives the next keystroke. The forced-color rule uses the system Highlight role. |
-| Danger / success / warning on their approved light backgrounds | Error, confirmed result and pending decision | Read the actual state word or error text. Color reinforces rather than replaces text. |
+| Focus on surface/canvas | Keyboard destination; outline offset separates it from the active button fill | Know which control receives the next keystroke. The forced-color rule uses the system Highlight role. |
+| Danger / success / warning on their approved palette backgrounds | Error, confirmed result and pending decision | Read the actual state word or error text. Color reinforces rather than replaces text. |
 | Disabled on disabled-bg | Legible unavailable control | Understand its label and the associated reason rather than interpreting low opacity. |
 
 The executable `contrastPairs` matrix tests these permitted combinations. Text uses at least 4.5:1, including help and disabled copy as a project readability rule; input boundaries and focus use at least 3:1 against adjacent backgrounds. WCAG exempts some disabled/nonessential decoration, but the project chooses stronger legibility. Large-text exceptions are not used to excuse low contrast. Dividers and color swatches are nonessential decoration; no state depends on their contrast alone.
 
-No dark theme is supplied in v1. `color-scheme: light` matches native input surfaces to the actual light tokens; it does not disable forced colors. Do not add dark CSS by merely changing the canvas: all text, input, disabled, error, modal and focus pairings must be reviewed together. No CSS-generated words/icons are essential to understanding a value.
+Four complete palettes are supplied in [PALETTES.md](PALETTES.md), with per-palette Google-format token documents in themes/. Native input surfaces use color-scheme: light or dark for the chosen brightness; forced colors remains user controlled. The on-primary role separates action text from panel surface, which is essential for dark palettes with light action fills. All text, input, disabled, error, modal, slider and focus pairs are checked independently across all four combinations. Do not implement dark mode by inversion or changing only the canvas. No CSS-generated words/icons are essential to understanding a value. The slider thumb is decorative; its native checked state and written label carry its meaning.
 
 ## Typography and reading
 
@@ -76,10 +76,16 @@ Bootstrap’s copied LTR grid rules retain physical left/right gutters. Other ne
 
 ## Cascade and property ownership
 
-Order is tokens → baseline → Bootstrap grid → project layouts → controls/states → reference samples → native dialog/keyboard/forced-color adaptations. All reference CSS is generated into one stylesheet; the app’s legacy styles are not loaded here. Class names do not make this a complete Bootstrap distribution. The `card`, `btn`, `form-control` and table styles are project implementations using the familiar Bootstrap component vocabulary.
+Order is tokens → baseline → Bootstrap grid → project layouts → controls/states → reference samples → native dialog/keyboard/forced-color adaptations. All four palettes and reference CSS are generated into one stylesheet; the app’s legacy styles are not loaded here. Class names do not make this a complete Bootstrap distribution. The `card`, `btn`, `form-control` and table styles are project implementations using the familiar Bootstrap component vocabulary.
 
 Prefer a single-class selector and a documented component/state scope. One deliberate `!important` honors the HTML `hidden` contract even when another component has a display declaration. Do not add more to win an avoidable specificity contest. Attribute selectors reflect real state such as `aria-invalid`, `disabled` and native `open`; no class may pretend that an operation committed.
 
-No animations or transitions are introduced: native interaction and immediate feedback meet this reference’s goals. This also respects reduced-motion users without an unnecessary override of animations that do not exist. No fixed/sticky page chrome, decorative transforms, full-page overflow clipping, ellipsis of essential values, arbitrary z-index ladder or layout-height locks are allowed. The skip-link transform is a documented keyboard navigation exception; the dialog uses the native top layer.
+No animations or transitions are introduced: native interaction and immediate feedback meet this reference’s goals. This also respects reduced-motion users without an unnecessary override of animations that do not exist. No fixed/sticky page chrome, decorative transforms, full-page overflow clipping, ellipsis of essential values, arbitrary z-index ladder or layout-height locks are allowed. The skip-link transform and the slider thumb’s immediate position change are documented functional exceptions; the dialog uses the native top layer.
 
 CSS custom properties are real declarations and appear in the ledger. Shorthands are also declarations: reviewers must consider every longhand they reset. For example `font: inherit` makes control size/family/weight/line-height agree with text; `border` sets width/style/color together; `flex: 0 0 auto` disables both growth and shrink while keeping width authoritative. If only one longhand should change, do not use a shorthand that erases unrelated behavior.
+
+## Quiet native values and governed appearance
+
+An unfocused inline input keeps its full dimensions and padding while only border-color and background-color become transparent. On :focus the same node reveals its boundary, surface and outline; there is no height change or JavaScript style mutation. Invalid input and forced colors deliberately retain a visible boundary after blur. This corrects the previous disclosure-based interpretation of click-to-edit; see [REVISIONS.md](REVISIONS.md).
+
+Brightness and distinct status colors are independent preferences, not separate hand-styled component trees. The root palette attributes replace complete role values, and every consumer uses those values. Distinct palettes avoid opposing red/green status coding, add line patterns and retain text; they do not claim to cover every color-vision difference through hue alone. The primary action foreground and selected switch thumb use on-primary, not surface, in every mode.

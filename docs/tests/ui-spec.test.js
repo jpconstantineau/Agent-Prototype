@@ -2,7 +2,8 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {rules,tokens,contrastPairs} from '../../UI-Spec/system.mjs';
+import {rules,tokens,contrastPairs,palettes} from '../../UI-Spec/system.mjs';
+import {designFiles} from '../../UI-Spec/palettes.mjs';
 import {outputs,cssText} from '../../UI-Spec/build.mjs';
 import {validateRegistry,validateGenerated,checkFamilies,contrast} from '../../UI-Spec/validate.mjs';
 const root=new URL('../../',import.meta.url);
@@ -21,13 +22,17 @@ test('audit rejects missing intent, missing purpose, duplicate IDs and undeclare
 test('all deployed CSS and generated review artifacts exactly match the normative registry',async()=>{
   for(const [path,expected] of await outputs())validateGenerated(await readFile(new URL(path,root),'utf8'),expected,path);
   const files=await readdir(new URL('../ui-spec/',import.meta.url));assert.deepEqual(files.filter(p=>p.endsWith('.css')),['design-system.css']);
-  const html=await readFile(new URL('../ui-spec/index.html',import.meta.url),'utf8'),js=await readFile(new URL('../ui-spec/reference.js',import.meta.url),'utf8');
+  const html=await readFile(new URL('../ui-spec/index.html',import.meta.url),'utf8'),js=await readFile(new URL('../ui-spec/reference.js',import.meta.url),'utf8')+await readFile(new URL('../ui-spec/appearance.js',import.meta.url),'utf8');
   assert.equal((html.match(/rel="stylesheet"/g)||[]).length,1);assert(!/<style\b|\sstyle\s*=/.test(html));assert(!/\.style\b|setAttribute\(['"]style|insertRule|adoptedStyleSheets/.test(js));assert(!/@import/.test(cssText()));
   assert.throws(()=>validateGenerated(cssText()+'body { color: red; }',cssText(),'extra.css'),/Generated file differs/);
   assert.equal((cssText().match(/\/\* [a-z][a-z0-9-]*\.\d+ \*\//g)||[]).length,rules.reduce((n,r)=>n+r.declarations.length,0));
 });
-test('semantic color pairings meet text and control contrast thresholds',()=>{
-  for(const [fg,bg,minimum] of contrastPairs)assert(contrast(tokens.colors[fg],tokens.colors[bg])>=minimum,`${fg}/${bg}: ${contrast(tokens.colors[fg],tokens.colors[bg]).toFixed(2)} < ${minimum}`);
+test('all four complete palettes meet every text, boundary, focus and slider contrast threshold',()=>{
+  assert.equal(Object.keys(palettes).length,4);
+  for(const [key,palette] of Object.entries(palettes)) {
+    assert.deepEqual(Object.keys(palette.colors).sort(),Object.keys(tokens.colors).sort());
+    for(const [fg,bg,minimum] of contrastPairs)assert(contrast(palette.colors[fg],palette.colors[bg])>=minimum,`${key}: ${fg}/${bg}: ${contrast(palette.colors[fg],palette.colors[bg]).toFixed(2)} < ${minimum}`);
+  }
 });
 test('every CSS custom property is declared and consumed; Google token references resolve',()=>{
   const defined=new Set(rules.flatMap(r=>r.declarations).filter(d=>d.property.startsWith('--')).map(d=>d.property));
@@ -38,12 +43,15 @@ test('every CSS custom property is declared and consumed; Google token reference
   }
 });
 test('Google DESIGN.md uses canonical headings and generated structured token groups',async()=>{
-  const text=await readFile(new URL('UI-Spec/DESIGN.md',root),'utf8');
-  assert(text.startsWith('---\nversion: "alpha"\n'));assert.deepEqual([...text.matchAll(/^## (.+)$/gm)].map(m=>m[1]),['Overview','Colors','Typography','Layout','Elevation & Depth','Shapes','Components',"Do's and Don'ts"]);
-  for(const group of ['colors','typography','spacing','rounded','components'])assert(text.includes(`\n${group}:\n`));
   const lint=JSON.parse(await readFile(new URL('UI-Spec/reports/design-md-lint.json',root),'utf8'));
-  assert.equal(lint.inputSha256,createHash('sha256').update(text).digest('hex'),'Official lint snapshot is stale. Re-run the documented lint procedure.');
-  assert.equal(lint.report.summary.errors,0);assert.deepEqual(lint.report.findings.filter(f=>f.severity==='warning').map(f=>f.path),['colors.border','colors.divider','colors.focus']);
+  for(const [key,path] of Object.entries(designFiles)) {
+    const text=await readFile(new URL(path,root),'utf8');
+    assert(text.startsWith('---\nversion: "alpha"\n'));assert.deepEqual([...text.matchAll(/^## (.+)$/gm)].map(m=>m[1]),['Overview','Colors','Typography','Layout','Elevation & Depth','Shapes','Components',"Do's and Don'ts"]);
+    for(const group of ['colors','typography','spacing','rounded','components'])assert(text.includes(`\n${group}:\n`));
+    const result=lint.reports?.[key];assert(result,`Missing official lint for ${key}`);
+    assert.equal(result.inputSha256,createHash('sha256').update(text).digest('hex'),`Official lint snapshot stale: ${key}`);
+    assert.equal(result.report.summary.errors,0);assert.deepEqual(result.report.findings.filter(f=>f.severity==='warning').map(f=>f.path),['colors.border','colors.divider','colors.focus']);
+  }
 });
 test('selected Bootstrap declarations match pinned, licensed upstream provenance',async()=>{
   const provenance=JSON.parse(await readFile(new URL('UI-Spec/bootstrap-provenance.json',root),'utf8'));
