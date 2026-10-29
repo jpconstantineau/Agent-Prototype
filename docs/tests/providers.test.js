@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { object } from '../src/schema.js';
 import { endpointUrl, validateProfile } from '../src/provider-profile-store.js';
-import { LocalHttpProvider, parseCompletion, testEndpoint } from '../src/local-http-provider.js';
+import { LocalHttpProvider, parseCompletion, testEndpoint, discoverModels, parseModels } from '../src/local-http-provider.js';
 import { ChromeProvider } from '../src/chrome-provider.js';
 import { SessionManager } from '../src/session-manager.js';
 import { AgentLoop, responseSchema, systemPrompt } from '../src/agent.js';
@@ -12,6 +12,35 @@ const envelope=(action=final('ready'))=>({choices:[{index:0,message:{role:'assis
 const json=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json'}});
 const schema=object({type:{type:'string',const:'final'},message:{type:'string',minLength:1,maxLength:4000}},['type','message']);
 const route=fallback=>({routeId:'route',revision:1,label:'Local',primary:'local_http',endpointProfileId:'profile',fallback});
+
+test('model discovery uses authenticated bounded GET with inference URL restrictions and exact sorted IDs',async()=>{
+  let request;
+  const ids=await discoverModels({baseUrl:profile().baseUrl,token:'session-secret',fetchImpl:async(url,options)=>{
+    request={url,options};return json({object:'list',data:[{id:'zeta',other:'ignored'},{id:'alpha'},{id:'zeta'},{id:' spaced '}]});
+  }});
+  assert.deepEqual(ids,[' spaced ','alpha','zeta']);assert.equal(request.url,'http://localhost:11434/v1/models');
+  assert.equal(request.options.method,'GET');assert.equal(request.options.mode,'cors');assert.equal(request.options.credentials,'omit');assert.equal(request.options.redirect,'error');assert.equal(request.options.cache,'no-store');
+  assert.deepEqual(request.options.headers,{Accept:'application/json',Authorization:'Bearer session-secret'});assert(!Object.hasOwn(request.options,'body'));
+  await assert.rejects(discoverModels({baseUrl:'https://example.com/v1/',fetchImpl:()=>assert.fail('Must validate URL first')}),/loopback/);
+  assert.deepEqual(parseModels({data:[]}),[]);
+  for(const body of [{}, {data:null}, {data:[{}]}, {data:[{id:' '}]}, {data:[{id:4}]}, {data:[{id:'x'.repeat(201)}]}, {data:[{id:'bad\nname'}]}, {data:Array.from({length:1001},()=>({id:'a'}))}])assert.throws(()=>parseModels(body),/models data array/);
+});
+
+test('discovery errors remain sanitized and do not fall back or infer',async()=>{
+  for(const status of [401,403,404,503]){
+    await assert.rejects(discoverModels({baseUrl:profile().baseUrl,fetchImpl:async()=>json({error:'PRIVATE ERROR BODY'},status)}),e=>e.message.includes(`HTTP ${status}`)&&!e.message.includes('PRIVATE')&&!e.recoverable);
+  }
+  for(const response of [new Response('not json',{headers:{'content-type':'text/html'}}),new Response('{',{headers:{'content-type':'application/json'}}),new Response('x'.repeat(1024*1024+1),{headers:{'content-type':'application/json'}})])await assert.rejects(discoverModels({baseUrl:profile().baseUrl,fetchImpl:async()=>response}),/JSON|MiB/);
+  await assert.rejects(discoverModels({baseUrl:profile().baseUrl,fetchImpl:async()=>{throw new TypeError('PRIVATE NETWORK DETAIL');}}),e=>e.code==='network'&&!e.message.includes('PRIVATE'));
+});
+
+test('discovery timeout and cancellation discard a transport which ignores abort',async t=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  let resolve;
+  const c=new AbortController(),waiting=discoverModels({baseUrl:profile().baseUrl,fetchImpl:()=>new Promise(r=>{resolve=r;})},c.signal);
+  const rejected=assert.rejects(waiting,{name:'AbortError'});c.abort();await rejected;resolve(json({data:[{id:'late'}]}));
+  const timed=discoverModels({baseUrl:profile().baseUrl,timeoutMs:5000,fetchImpl:()=>new Promise(()=>{})});const timeout=assert.rejects(timed,e=>e.code==='timeout');t.mock.timers.tick(5001);await timeout;
+});
 
 test('endpoint URL and closed profile reject public hosts, LAN HTTP, userinfo and path/query tricks',()=>{
   for(const base of ['http://localhost:11434/v1/','http://127.0.0.1:8000/v1/','https://[::1]/v1/'])assert.match(endpointUrl(base),/chat\/completions$/);

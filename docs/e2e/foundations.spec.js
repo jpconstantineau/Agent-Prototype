@@ -100,11 +100,13 @@ test('question surface is safe text, has no horizontal overflow and works at mob
 });
 
 async function configureLocal(page,{fallback='automatic',token=''}={}) {
+  await page.route('http://localhost:11434/v1/models',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({data:[{id:'local-test-model'}]})}));
   await page.getByRole('button',{name:'Model settings',exact:true}).click();
   await page.getByRole('combobox',{name:'Text model',exact:true}).selectOption('local_http');
-  await page.getByLabel('Exact model name',{exact:true}).fill('local-test-model');
   await page.getByLabel('I configured this endpoint to use a locally served, inference-only model',{exact:true}).check();
   if(token)await page.getByLabel('Session bearer token (optional)',{exact:true}).fill(token);
+  await page.getByRole('button',{name:'Load models',exact:true}).click();
+  await page.getByRole('combobox',{name:'Model',exact:true}).selectOption('local-test-model');
   await page.getByRole('combobox',{name:'Chrome fallback',exact:true}).selectOption(fallback);
   await page.getByRole('button',{name:'Save settings',exact:true}).click();
   await expect(page.locator('#endpoint-status')).toContainText('settings saved');
@@ -144,6 +146,7 @@ test('local Settings probes do not execute tools; failed inference falls back on
   expect(state.events.filter(e=>e.type==='model')).toHaveLength(3);
   const resumed=await page.evaluate(()=>window.chromeInput);expect(resumed.result.item.title).toBe('Only once');expect(resumed.result.operationReceiptId).toBeTruthy();
   expect(requests.every(r=>r.headers.authorization==='Bearer private-session-token')).toBe(true);
+  expect(requests.every(r=>r.packet.model==='local-test-model')).toBe(true);
   const download=page.waitForEvent('download');await page.getByText('Browser connection & setup',{exact:true}).click();await page.getByRole('button',{name:'Download last run log'}).click();expect((await download).suggestedFilename()).toMatch(/^daylist-run-/);
 });
 

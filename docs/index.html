@@ -68,12 +68,14 @@
       <label>Text model<select name="primary"><option value="chrome">Chrome Prompt API</option><option value="local_http">Local OpenAI-compatible endpoint</option></select></label>
       <label>Connection label<input name="label" maxlength="80"></label>
       <label>Base URL<input name="baseUrl" type="url" maxlength="500" spellcheck="false"></label>
-      <label>Exact model name<input name="model" maxlength="200" spellcheck="false"></label>
       <label class="check-label"><input name="localModel" type="checkbox">I configured this endpoint to use a locally served, inference-only model</label>
       <label class="check-label"><input name="allowLan" type="checkbox">Allow the explicitly entered private LAN HTTPS endpoint</label>
       <label>Session bearer token (optional)<input name="token" type="password" autocomplete="off" maxlength="4000"></label>
       <button type="button" class="text-button" data-forget-token>Forget session token</button>
       <p>The token stays in page memory and is lost on reload. It is never saved, synced, exported, or included in prompts.</p>
+      <button type="button" class="button secondary" data-load-models>Load models</button>
+      <p id="models-status" role="status">Load the endpoint’s models to choose one.</p>
+      <label>Model<select name="model" disabled aria-describedby="models-status"><option value="">Load models first</option></select></label>
       <div class="form-row"><label>Configured context window<input name="contextWindowTokens" type="number" min="1024" max="131072"></label><label>Output token cap<input name="maxOutputTokens" type="number" min="256" max="8192"></label></div>
       <div class="form-row"><label>Input character limit<input name="inputCharLimit" type="number" min="2000" max="200000"></label><label>Timeout (ms)<input name="timeoutMs" type="number" min="5000" max="180000"></label></div>
       <label>Chrome fallback<select name="fallback"><option value="automatic">Automatic when available</option><option value="ask">Ask before switching</option><option value="off">Off</option></select></label>

@@ -4,6 +4,39 @@ import { ProviderError, unknownUsage } from './inference-provider.js';
 import { abortable } from './runtime.js';
 import { validateQuestionRequest } from './user-input-contract.js';
 const MAX_BYTES = 1024 * 1024;
+export function parseModels(body) {
+  if (!Array.isArray(body?.data) || body.data.length > 1000 || body.data.some(model => !model || typeof model.id !== 'string' || !model.id.trim() || model.id.length > 200 || /[\u0000-\u001f\u007f]/.test(model.id))) {
+    throw new ProviderError('incompatible', 'The endpoint must return a models data array with at most 1000 valid model IDs (1–200 characters each).');
+  }
+  return [...new Set(body.data.map(model => model.id))].sort();
+}
+// Settings-only discovery. It neither generates text nor executes model actions.
+export async function discoverModels({ baseUrl, allowLan = false, token = '', timeoutMs = 90000, fetchImpl = globalThis.fetch?.bind(globalThis) }, signal) {
+  endpointUrl(baseUrl, { allowLan }); // Apply the exact same URL boundary as inference.
+  if (typeof token !== 'string' || /[\r\n]/.test(token) || token.length > 4000) throw new Error('The session token is invalid.');
+  if (!Number.isInteger(timeoutMs) || timeoutMs < 5000 || timeoutMs > 180000) throw new Error('Timeout must be between 5000 and 180000 ms.');
+  signal?.throwIfAborted();
+  const controller = new AbortController(), abort = () => controller.abort(signal.reason);
+  signal?.addEventListener('abort', abort, { once: true });
+  const timer = setTimeout(() => controller.abort(new ProviderError('timeout', 'Loading models timed out.')), timeoutMs);
+  try {
+    const response = await abortable(fetchImpl(new URL('models', baseUrl).href, {
+      method: 'GET', mode: 'cors', credentials: 'omit', cache: 'no-store', redirect: 'error', signal: controller.signal,
+      headers: { Accept: 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    }), controller.signal);
+    if (!response.ok) {
+      await response.body?.cancel().catch(() => {});
+      throw new ProviderError([401,403].includes(response.status) ? 'permission_denied' : 'service_error', `Loading models failed (HTTP ${response.status}). Check the endpoint, credentials, and /v1/models support.`);
+    }
+    const models = parseModels(await readJson(response, controller.signal));
+    controller.signal.throwIfAborted();
+    return models;
+  } catch (error) {
+    if (controller.signal.aborted) throw controller.signal.reason;
+    if (error instanceof ProviderError) throw error;
+    throw new ProviderError('network', 'The browser could not load models. Check CORS, local-network permission, TLS, CSP, and server availability.');
+  } finally { clearTimeout(timer); signal?.removeEventListener('abort', abort); }
+}
 async function readJson(response, signal) {
   if (!/\bapplication\/(?:[\w.-]+\+)?json\b/i.test(response.headers.get('content-type') || '')) throw new ProviderError('incompatible', 'The endpoint did not return JSON.');
   if (Number(response.headers.get('content-length')) > MAX_BYTES) throw new ProviderError('incompatible', 'The endpoint response exceeds 1 MiB.');

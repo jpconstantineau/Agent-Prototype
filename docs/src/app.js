@@ -415,7 +415,7 @@ async function initialize() {
 }
 
 window.addEventListener('pagehide', () => {
-  cancelRun(); modelSettings?.testing?.abort();
+  cancelRun(); modelSettings?.testing?.abort(); modelSettings?.clearModels();
   if (modelSettings) { modelSettings.token = ''; modelSettings.field('token').value = ''; }
   if (activeRunId) runtime?.interruptRun(activeRunId).catch(() => {});
   connection?.dispose();
