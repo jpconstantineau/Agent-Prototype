@@ -116,6 +116,25 @@ Defaults are a 24,000-character local request cap, 2,048 output tokens, 90-secon
 
 Automatic fallback occurs only for eligible inference-service/network failures with remaining attempts. Ask waits for an explicit choice; Off stops. Auth/permission refusal, invalid actions, domain-tool errors, cancellation and exhausted budgets do not switch providers. Chrome fallback reconstructs settled context and receipts, measures the actual new window, and continues at the next counted inference boundary. It never replays tools, resets budgets, or guarantees Chrome availability. If activation/download is needed, Enable Chrome and Continue creates it directly from that click.
 
+### Using Lemonade
+
+[Lemonade](https://lemonade-server.ai/) provides an OpenAI-compatible local model server. Set it up as follows:
+
+1. Start Lemonade and make a local chat model available. Its default base URL is `http://localhost:13305/v1/`; use your configured port and API prefix if different. In Model settings, enter the **base URL ending in `/v1/`**, rather than the full `/v1/models` URL.
+2. Allow the **web app's origin** in Lemonade. For the hosted Daylist app, that origin is `https://jpconstantineau.github.io`, without `/Agent-Prototype/`. If you already have `allowed_origins` entries, retain them and append this origin to the comma-separated list. For a configuration with no existing entries, run:
+
+   ```powershell
+   lemonade config set allowed_origins="https://jpconstantineau.github.io"
+   ```
+
+   Current Lemonade versions apply this CLI setting immediately and persist it. If you edit `config.json` directly instead, restart Lemonade. For a different app deployment, use that page's exact origin, including its port where applicable. Lemonade permits localhost web origins by default. See [Lemonade's allowed-origin configuration](https://lemonade-server.ai/docs/guide/configuration/#allowed-origins).
+3. In Chrome, open the **Daylist page's** site permissions and allow **Local network access** or **Loopback network**, whichever your Chrome version shows. If Chrome prompts when you click Load models, allow that request. This browser permission is separate from Lemonade's allowed-origin setting; see [Chrome's network-access guide](https://developer.chrome.com/docs/modern-web-guidance/guides/security/local-network-access).
+4. Open **Model settings**, select **Local OpenAI-compatible endpoint**, and enter the base URL. If Lemonade requires an API key, enter it in **Session bearer token (optional)**. Click **Load models**, then select the local chat model from the list. Load models uses the current unsaved connection fields; saving is not required before discovery.
+5. Confirm that the endpoint uses a locally served, inference-only model, choose the desired Chrome fallback behavior, and click **Save settings**. Click **Connect / Test** and wait for **Ready**. Model discovery alone does not verify structured-output support; the selected model/backend must also pass these probes.
+6. Close Settings and click **Enable local AI** to use the selected model. After reloading the page, re-enter any required session token, load models and save if the token changed, and run Connect / Test again.
+
+If `/v1/models` opens in the address bar but **Load models** fails, direct navigation has only confirmed that the server responds. A request from Daylist also needs Lemonade's CORS permission for the page's origin and Chrome's network permission. Check both, then retry Load models. Selecting a model is required before saving a local route, but discovery never depends on saving first. Use the exact origin rather than `*` in Lemonade's allowed list. The app's error and Chrome's developer console can help distinguish an HTTP error from browser blocking; a generic fetch failure does not identify the cause by itself.
+
 ### Runtime modules and extension boundary
 
 AgentLoop accepts the executor, SessionManager (or a compatibility prompt session), question broker, diagnostic store, policy and controller identity. SessionManager serializes and invalidates generations. chrome-provider.js and local-http-provider.js implement prepare/generate/measure/dispose. user-input-contract.js, user-input-broker.js and user-input-view.js keep contracts, lifecycle and DOM separate. runtime-store.js owns diagnostics/settings; store.js owns atomic task mutations/receipts. Provider Settings is a human service, never a model tool.

@@ -26,3 +26,5 @@ All asset and module URLs are relative, so the app works under the repository's 
 The browser framework adapts the model → tool → observation loop from [early-signal-tech/duckdb-agent-loop-poc](https://github.com/early-signal-tech/duckdb-agent-loop-poc). No Python code or cloud inference service is needed.
 
 The [foundation implementation guide](docs/README.md#foundation-implementation) covers structured questions, local-model Settings and Chrome fallback, shared runtime behavior, and test limitations. The remaining [epic specifications](spec/README.md) describe later capabilities.
+
+Using Lemonade for local inference? Follow the [Lemonade setup guide](docs/README.md#using-lemonade), including its allowed-origin setting and Chrome network permission for the hosted app.
