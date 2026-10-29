@@ -34,6 +34,23 @@ test('all four complete palettes meet every text, boundary, focus and slider con
     for(const [fg,bg,minimum] of contrastPairs)assert(contrast(palette.colors[fg],palette.colors[bg])>=minimum,`${key}: ${fg}/${bg}: ${contrast(palette.colors[fg],palette.colors[bg]).toFixed(2)} < ${minimum}`);
   }
 });
+test('normal structural fields remain achromatic and subdued across appearance preferences',()=>{
+  const structural=['canvas','surface','subtle','ink','muted','border','divider','disabled','disabled-bg','success-bg','warning-bg'];
+  const channels=hex=>hex.slice(1).match(/../g).map(v=>parseInt(v,16));
+  for(const [key,{theme,colors}] of Object.entries(palettes)) {
+    for(const role of structural) {
+      assert.equal(new Set(channels(colors[role])).size,1,`${key}: ${role} must not add hue to normal structural content`);
+      assert.equal(colors[role],palettes[`${theme}-standard`].colors[role],`${key}: status preference must not tint structural roles`);
+    }
+    const levels=['canvas','surface','subtle'].map(role=>channels(colors[role])[0]);
+    assert.equal(new Set(levels).size,3,`${key}: structural planes need distinguishable gray levels`);
+    assert(Math.max(...levels)-Math.min(...levels)<=24,`${key}: structural separation must stay within the documented quiet range`);
+    for(const level of levels)assert(level>0&&level<255,`${key}: avoid pure black/white large structural fields`);
+  }
+  const notice=rules.find(r=>r.id==='notice').declarations.find(d=>d.property==='border-inline-start');
+  assert.equal(notice.value,'4px solid var(--ui-border)','Routine guidance must not borrow action color');
+  assert.equal(rules.find(r=>r.id==='backdrop').declarations[0].value,'#00000080','Modal dimming must not tint the background');
+});
 test('every CSS custom property is declared and consumed; Google token references resolve',()=>{
   const defined=new Set(rules.flatMap(r=>r.declarations).filter(d=>d.property.startsWith('--')).map(d=>d.property));
   const consumed=new Set([...cssText().matchAll(/var\((--[a-z0-9-]+)/g)].map(m=>m[1]));

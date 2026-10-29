@@ -14,17 +14,17 @@ Implementation agents use these constraints to choose existing patterns and toke
 
 ## Color roles and contrast
 
-The authoritative values are `tokens.colors` in system.mjs and the YAML front matter in DESIGN.md. Use role names rather than hard-coded color values in a component. The default light/standard palette preserves Daylist’s green identity; dark and distinct palettes retain the same semantic roles with separately checked values.
+The authoritative values are `palettes` in palettes.mjs, `tokens.colors` in system.mjs for the default, and each palette's YAML front matter in DESIGN.md. Use role names rather than hard-coded color values in a component. All four combinations use achromatic gray structural surfaces with a modest luminance separation between canvas and panels. Green identity remains confined to compact actions and status foregrounds in the standard palette. [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) explains the ISA-101 inspiration, exact choices and review limits.
 
 | Role / pairing | Concrete purpose | User intention / consequence |
 | --- | --- | --- |
 | Ink on canvas/surface/subtle | Sustained reading across document and work panels | Read a task or explanation without changing visual interpretation between surfaces. |
 | Muted on canvas/surface/subtle | Lower emphasis for help and metadata, still at ordinary text contrast | Consult supporting detail without confusing it with the main value. “Muted” never means unreadable. |
 | On-primary text on primary / primary-hover | Principal action and pointer feedback | Locate the main next step and confirm its target without layout movement. |
-| Primary on surface | Links, secondary actions and edit cue | Recognize an available action; underlines or button boundaries also identify its behavior. |
+| Primary on surface | Links and secondary actions | Recognize an available action; underlines or button boundaries also identify its behavior. |
 | Border on surface | Editable boundaries at minimum 3:1 non-text contrast | Identify where to enter a value. Divider is lighter because it separates passive groups, not controls. |
 | Focus on surface/canvas | Keyboard destination; outline offset separates it from the active button fill | Know which control receives the next keystroke. The forced-color rule uses the system Highlight role. |
-| Danger / success / warning on their approved palette backgrounds | Error, confirmed result and pending decision | Read the actual state word or error text. Color reinforces rather than replaces text. |
+| Danger / success / warning on their approved palette backgrounds | Error, confirmed result and pending decision | Read the actual state word or error text. Color is limited to compact foreground cues; status backgrounds stay neutral. |
 | Disabled on disabled-bg | Legible unavailable control | Understand its label and the associated reason rather than interpreting low opacity. |
 
 The executable `contrastPairs` matrix tests these permitted combinations. Text uses at least 4.5:1, including help and disabled copy as a project readability rule; input boundaries and focus use at least 3:1 against adjacent backgrounds. WCAG exempts some disabled/nonessential decoration, but the project chooses stronger legibility. Large-text exceptions are not used to excuse low contrast. Dividers and color swatches are nonessential decoration; no state depends on their contrast alone.

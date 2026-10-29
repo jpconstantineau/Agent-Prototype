@@ -50,7 +50,7 @@ All four appearance combinations are checked independently for contrast, effecti
 | Family | Observable checks / evidence |
 | --- | --- |
 | tokens | Generated output matches source; all Google token references resolve; canonical section ordering; custom properties have consumers; no untracked CSS. |
-| colors / contrast | Permitted semantic color pairs meet contrast thresholds; sample colors and browser-supported declarations agree with the registry. |
+| colors / contrast | Permitted semantic color pairs meet contrast thresholds; structural roles stay achromatic and nearby in luminance across status preferences; actual body/panel/header/guidance/table colors and samples agree with the registry. See HMI-PHILOSOPHY.md for the intended hierarchy. |
 | type | Body/default size, readable help, heading order, browser-root enlargement, long content and user text spacing remain usable. |
 | grid / reflow | Below/at 768 and 992px, paired/work-support widths and source order; 320/390/768/992/1440px page bounds; enlarged text wraps without page overflow. |
 | navigation / focus | Skip-to-main, native input focus and keyboard slider activation, visible focus outline and visible editing focus and return focus after dialog. |

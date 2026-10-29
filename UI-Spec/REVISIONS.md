@@ -12,6 +12,21 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Muted backgrounds after ffa59bc
+
+The maintainer requested more subdued main-screen backgrounds using high-performance HMI principles such as ISA-101. The previous light near-white/warm surfaces and green-tinted dark surfaces are replaced by achromatic gray/charcoal planes. See [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) for the exact rationale and source interpretation.
+
+| Changed decision | Replacement / consequence |
+| --- | --- |
+| `tokens`, `palette-dark-standard`, `palette-light-distinct`, `palette-dark-distinct` structural color declarations | Shared neutral structural roles within each brightness; modest gray separation for page/panels/support. Every resolved palette and contrast matrix is regenerated. Stable declaration IDs are retained. |
+| `page.6` and structural color role rationale | Background purpose now explicitly keeps large fields quiet so meaningful content and cues have priority. Consumers retain semantic tokens. |
+| `status.2`, `status.6`, `pending.2` | Compact success/pending labels keep colored foreground cues and words but use neutral backgrounds. They do not become colored panels. |
+| `notice.2`, `notice.3` | Routine guidance gets a neutral boundary and fill rather than borrowing the primary action accent. |
+| `backdrop.1` | Neutral black alpha dimming replaces the green-tinted modal veil. |
+| Evidence | A regression check rejects hue in structural roles, mismatched structural colors across status preferences, excessive background separation and pure black/white structural fields. Browser checks verify actual header, notice and table backgrounds as well as body/panels; existing four-mode editing, contrast and preference checks continue to apply. |
+
+The design is inspired by ISA-published principles. Exact gray values and the dark variant are project choices, not an ISA color mandate or evidence of industrial HMI conformance. This revision remains within the live reference and UI-Spec scope.
+
 ## Feedback on d837f50
 
 The maintainer rejected interpreting click-to-edit as opening a disclosure to reveal a separate editor. The required behavior is a prefilled native input whose border/background blend into the page at rest and reveal on focus. This replaces the earlier interaction, not just its label.

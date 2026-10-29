@@ -5,21 +5,21 @@ description: "A Bootstrap-based, native HTML interface for reviewing work and ma
 colors:
   primary: "#9bd2ae"
   primary-hover: "#b5e3c4"
-  ink: "#edf5ef"
-  muted: "#bac9bf"
-  canvas: "#101712"
-  surface: "#18231c"
-  subtle: "#24352a"
-  border: "#8b9e90"
-  divider: "#465c4d"
+  ink: "#ededed"
+  muted: "#c2c2c2"
+  canvas: "#242424"
+  surface: "#2e2e2e"
+  subtle: "#383838"
+  border: "#a3a3a3"
+  divider: "#585858"
   focus: "#80b6ff"
   danger: "#ffb4ac"
   success: "#a4ddb4"
-  success-bg: "#1b3826"
+  success-bg: "#383838"
   warning: "#f5d483"
-  warning-bg: "#3b3018"
-  disabled: "#b1c2b5"
-  disabled-bg: "#2b3b30"
+  warning-bg: "#383838"
+  disabled: "#c2c2c2"
+  disabled-bg: "#404040"
   on-primary: "#102318"
 typography:
   body:
@@ -103,13 +103,15 @@ components:
 
 This token document resolves the **Dark · standard** combination. Component references bind to this file’s palette; shared rules and review remain in the parent UI-Spec folder.
 
-Daylist helps people review work, change it deliberately, and understand what an assistant actually did. The interface should feel calm, concrete and inspectable. The default light/standard green connects primary actions to the existing app; alternate resolved palettes preserve those action roles. Neutral surfaces leave content in charge. This is an implementation proposal, not evidence that maintainers or users have approved these choices.
+Daylist helps people review work, change it deliberately, and understand what an assistant actually did. The interface should feel calm, concrete and inspectable. An achromatic gray canvas and nearby gray panels keep large areas quiet, inspired by ISA-101 high-performance HMI principles. The default light/standard green connects compact primary actions to the existing app; alternate resolved palettes preserve those action roles. This is an implementation proposal, not evidence that maintainers or users have approved these choices.
 
 Read this file before generating reference UI. Use the exact tokens above and the Bootstrap subset in [system.mjs](../system.mjs). Read [COMPONENTS.md](../COMPONENTS.md) for native HTML and click-to-edit behavior. Every shipped declaration, including the copied Bootstrap grid, has its own purpose and user intent in [CSS-DECISIONS.md](../CSS-DECISIONS.md). Additions need the same coverage. Browser tests cannot decide whether the stated intent is the right product decision; use [REVIEW.md](../REVIEW.md) to challenge and revise it.
 
 ## Colors
 
-Use semantic roles, not approximate hex values or arbitrary Bootstrap contextual colors. The default primary is deep green for deliberate actions; brightness and distinct-status preferences select a complete alternate palette. Ink is for sustained reading. Muted text remains readable body information. Light mode uses white surfaces on a warm canvas; dark mode uses separate opaque dark roles. The focus perimeter has a separate meaning from action fill in every palette. Error, success and pending states require words as well as color. Border has control-boundary contrast; divider is only for noninteractive grouping. Disabled controls remain legible and need a nearby explanation.
+Use semantic roles, not approximate hex values or arbitrary Bootstrap contextual colors. The default primary is deep green for deliberate actions; brightness and distinct-status preferences select a complete alternate palette. Ink is for sustained reading. Muted text remains readable body information. Light mode uses a medium-light gray canvas and slightly lighter gray panels; dark mode uses charcoal with nearby gray panels. Structural surfaces, supporting text, dividers, disabled fills and routine guidance boundaries are achromatic in all four combinations. Success and pending labels also use neutral backgrounds. Reserve color for compact actions, focus and explicit state foregrounds; never tint entire sections to decorate normal activity. Error, success and pending states require words as well as color. Border has control-boundary contrast; divider is only for noninteractive grouping. Disabled controls remain legible and need a nearby explanation.
+
+Read [HMI-PHILOSOPHY.md](../HMI-PHILOSOPHY.md) for the source interpretation, exact gray choices and review criteria. These are project-selected web palettes inspired by ISA-101 and ISA-published high-performance HMI guidance, not mandated ISA RGB values or a conformance claim. The light palette is the reference baseline; dark mode is a user preference requiring its own checks. Muting background color must never reduce reading contrast or hide actionable states.
 
 The executable contrast matrix in system.mjs specifies permitted pairings, including 4.5:1 ordinary text and 3:1 control boundaries/focus against their adjacent palette surfaces. Do not assume any two palette colors may be combined. No gradients or image-backed text are supplied. Four resolved combinations are supplied: light/standard, dark/standard, light/distinct and dark/distinct. Read [PALETTES.md](../PALETTES.md) for every value and contrast result. Two native checkbox-based slider switches independently choose Dark mode and Distinct status colors. The optional blue/amber status palette also adds solid/dashed state boundaries; it does not claim to represent every color-vision difference. All four modes use explicit words, visible focus and native state semantics. Native forced-color preferences remain authoritative.
 

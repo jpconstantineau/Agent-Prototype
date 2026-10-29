@@ -18,6 +18,7 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 | --- | --- |
 | [DESIGN.md](DESIGN.md) | Google DESIGN.md alpha format: exact tokens plus the eight canonical rationale sections; primary entry point for coding agents. Generated from system.mjs and design-body.md. |
 | [PALETTES.md](PALETTES.md) / [palettes.mjs](palettes.mjs) | Four resolved color-role tables, contrast matrices and their authoritative source. Alternate Google-format documents are in [themes/](themes/). |
+| [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) | ISA-101 inspiration, muted neutral structural colors, color allocation, exact-value reasoning and checks. |
 | [REVISIONS.md](REVISIONS.md) | Maintainer-requested changes and retired/replaced declaration IDs. |
 | [FOUNDATIONS.md](FOUNDATIONS.md) | Color, typography, spacing, responsive layouts, units and CSS cascade contract. |
 | [COMPONENTS.md](COMPONENTS.md) | Semantic HTML/attributes, desktop/mobile components, state contracts and click-to-edit interaction. |

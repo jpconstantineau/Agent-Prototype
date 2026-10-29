@@ -25,7 +25,7 @@
           "id": "tokens.2",
           "property": "--ui-primary",
           "value": "#284637",
-          "purpose": "Publish semantic values for consistent reuse. Identify the main available action with the active palette’s action role.",
+          "purpose": "Publish semantic values for consistent reuse. Identify the main available action with a restrained accent; never use this fill for large decorative panels.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -42,8 +42,8 @@
         {
           "id": "tokens.4",
           "property": "--ui-ink",
-          "value": "#20352a",
-          "purpose": "Publish semantic values for consistent reuse. Keep task names and body copy readable on the active surfaces.",
+          "value": "#242424",
+          "purpose": "Publish semantic values for consistent reuse. Keep task names and body copy readable with neutral text on the active surfaces.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -51,8 +51,8 @@
         {
           "id": "tokens.5",
           "property": "--ui-muted",
-          "value": "#526258",
-          "purpose": "Publish semantic values for consistent reuse. Distinguish supporting information while keeping ordinary text contrast.",
+          "value": "#505050",
+          "purpose": "Publish semantic values for consistent reuse. Distinguish supporting information with neutral text while keeping ordinary text contrast.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -60,8 +60,8 @@
         {
           "id": "tokens.6",
           "property": "--ui-canvas",
-          "value": "#f5f5f0",
-          "purpose": "Publish semantic values for consistent reuse. Separate the page background from editable panels.",
+          "value": "#d9d9d9",
+          "purpose": "Publish semantic values for consistent reuse. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -69,8 +69,8 @@
         {
           "id": "tokens.7",
           "property": "--ui-surface",
-          "value": "#ffffff",
-          "purpose": "Publish semantic values for consistent reuse. Provide an opaque reading and editing plane.",
+          "value": "#e6e6e6",
+          "purpose": "Publish semantic values for consistent reuse. Separate reading and editing panels using a nearby opaque gray rather than a bright white or colored field.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -78,8 +78,8 @@
         {
           "id": "tokens.8",
           "property": "--ui-subtle",
-          "value": "#eaf0e5",
-          "purpose": "Publish semantic values for consistent reuse. Group secondary content without implying a disabled state.",
+          "value": "#dedede",
+          "purpose": "Publish semantic values for consistent reuse. Group secondary content with a nearby achromatic gray without implying an alarm or disabled state.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -87,8 +87,8 @@
         {
           "id": "tokens.9",
           "property": "--ui-border",
-          "value": "#6c7c70",
-          "purpose": "Publish semantic values for consistent reuse. Identify editable-control boundaries with non-text contrast.",
+          "value": "#737373",
+          "purpose": "Publish semantic values for consistent reuse. Identify editable-control boundaries with neutral non-text contrast.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -96,8 +96,8 @@
         {
           "id": "tokens.10",
           "property": "--ui-divider",
-          "value": "#d6ded5",
-          "purpose": "Publish semantic values for consistent reuse. Separate noninteractive rows without making every row a control.",
+          "value": "#b8b8b8",
+          "purpose": "Publish semantic values for consistent reuse. Separate passive groups with a quiet neutral line without making every row a control.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -132,8 +132,8 @@
         {
           "id": "tokens.14",
           "property": "--ui-success-bg",
-          "value": "#eaf5ec",
-          "purpose": "Publish semantic values for consistent reuse. Group successful results without an interrupting dialog.",
+          "value": "#dedede",
+          "purpose": "Publish semantic values for consistent reuse. Group confirmed results on a neutral gray without making routine completion a colored field.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -150,8 +150,8 @@
         {
           "id": "tokens.16",
           "property": "--ui-warning-bg",
-          "value": "#fff4d6",
-          "purpose": "Publish semantic values for consistent reuse. Give pending decisions a separate, readable surface.",
+          "value": "#dedede",
+          "purpose": "Publish semantic values for consistent reuse. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -159,8 +159,8 @@
         {
           "id": "tokens.17",
           "property": "--ui-disabled",
-          "value": "#526258",
-          "purpose": "Publish semantic values for consistent reuse. Keep the reason for an unavailable action readable.",
+          "value": "#505050",
+          "purpose": "Publish semantic values for consistent reuse. Keep the reason for an unavailable action readable with neutral text.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -168,8 +168,8 @@
         {
           "id": "tokens.18",
           "property": "--ui-disabled-bg",
-          "value": "#e8ece6",
-          "purpose": "Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled controls.",
+          "value": "#d2d2d2",
+          "purpose": "Publish semantic values for consistent reuse. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -298,7 +298,7 @@
           "id": "palette-dark-standard.2",
           "property": "--ui-primary",
           "value": "#9bd2ae",
-          "purpose": "Apply the complete Dark · standard palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Dark · standard palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -315,8 +315,8 @@
         {
           "id": "palette-dark-standard.4",
           "property": "--ui-ink",
-          "value": "#edf5ef",
-          "purpose": "Apply the complete Dark · standard palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "value": "#ededed",
+          "purpose": "Apply the complete Dark · standard palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -324,8 +324,8 @@
         {
           "id": "palette-dark-standard.5",
           "property": "--ui-muted",
-          "value": "#bac9bf",
-          "purpose": "Apply the complete Dark · standard palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "value": "#c2c2c2",
+          "purpose": "Apply the complete Dark · standard palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -333,8 +333,8 @@
         {
           "id": "palette-dark-standard.6",
           "property": "--ui-canvas",
-          "value": "#101712",
-          "purpose": "Apply the complete Dark · standard palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "value": "#242424",
+          "purpose": "Apply the complete Dark · standard palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -342,8 +342,8 @@
         {
           "id": "palette-dark-standard.7",
           "property": "--ui-surface",
-          "value": "#18231c",
-          "purpose": "Apply the complete Dark · standard palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "value": "#2e2e2e",
+          "purpose": "Apply the complete Dark · standard palette. Separate reading and editing panels using a nearby opaque gray rather than a bright white or colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -351,8 +351,8 @@
         {
           "id": "palette-dark-standard.8",
           "property": "--ui-subtle",
-          "value": "#24352a",
-          "purpose": "Apply the complete Dark · standard palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · standard palette. Group secondary content with a nearby achromatic gray without implying an alarm or disabled state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -360,8 +360,8 @@
         {
           "id": "palette-dark-standard.9",
           "property": "--ui-border",
-          "value": "#8b9e90",
-          "purpose": "Apply the complete Dark · standard palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "value": "#a3a3a3",
+          "purpose": "Apply the complete Dark · standard palette. Identify editable-control boundaries with neutral non-text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -369,8 +369,8 @@
         {
           "id": "palette-dark-standard.10",
           "property": "--ui-divider",
-          "value": "#465c4d",
-          "purpose": "Apply the complete Dark · standard palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "value": "#585858",
+          "purpose": "Apply the complete Dark · standard palette. Separate passive groups with a quiet neutral line without making every row a control. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -405,8 +405,8 @@
         {
           "id": "palette-dark-standard.14",
           "property": "--ui-success-bg",
-          "value": "#1b3826",
-          "purpose": "Apply the complete Dark · standard palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · standard palette. Group confirmed results on a neutral gray without making routine completion a colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -423,8 +423,8 @@
         {
           "id": "palette-dark-standard.16",
           "property": "--ui-warning-bg",
-          "value": "#3b3018",
-          "purpose": "Apply the complete Dark · standard palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · standard palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -432,8 +432,8 @@
         {
           "id": "palette-dark-standard.17",
           "property": "--ui-disabled",
-          "value": "#b1c2b5",
-          "purpose": "Apply the complete Dark · standard palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "value": "#c2c2c2",
+          "purpose": "Apply the complete Dark · standard palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -441,8 +441,8 @@
         {
           "id": "palette-dark-standard.18",
           "property": "--ui-disabled-bg",
-          "value": "#2b3b30",
-          "purpose": "Apply the complete Dark · standard palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "value": "#404040",
+          "purpose": "Apply the complete Dark · standard palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -481,7 +481,7 @@
           "id": "palette-light-distinct.2",
           "property": "--ui-primary",
           "value": "#174b7a",
-          "purpose": "Apply the complete Light · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -498,8 +498,8 @@
         {
           "id": "palette-light-distinct.4",
           "property": "--ui-ink",
-          "value": "#20352a",
-          "purpose": "Apply the complete Light · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "value": "#242424",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -507,8 +507,8 @@
         {
           "id": "palette-light-distinct.5",
           "property": "--ui-muted",
-          "value": "#526258",
-          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "value": "#505050",
+          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -516,8 +516,8 @@
         {
           "id": "palette-light-distinct.6",
           "property": "--ui-canvas",
-          "value": "#f5f5f0",
-          "purpose": "Apply the complete Light · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "value": "#d9d9d9",
+          "purpose": "Apply the complete Light · distinct status colors palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -525,8 +525,8 @@
         {
           "id": "palette-light-distinct.7",
           "property": "--ui-surface",
-          "value": "#ffffff",
-          "purpose": "Apply the complete Light · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "value": "#e6e6e6",
+          "purpose": "Apply the complete Light · distinct status colors palette. Separate reading and editing panels using a nearby opaque gray rather than a bright white or colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -534,8 +534,8 @@
         {
           "id": "palette-light-distinct.8",
           "property": "--ui-subtle",
-          "value": "#eaf0e5",
-          "purpose": "Apply the complete Light · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "value": "#dedede",
+          "purpose": "Apply the complete Light · distinct status colors palette. Group secondary content with a nearby achromatic gray without implying an alarm or disabled state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -543,8 +543,8 @@
         {
           "id": "palette-light-distinct.9",
           "property": "--ui-border",
-          "value": "#6c7c70",
-          "purpose": "Apply the complete Light · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "value": "#737373",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify editable-control boundaries with neutral non-text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -552,8 +552,8 @@
         {
           "id": "palette-light-distinct.10",
           "property": "--ui-divider",
-          "value": "#d6ded5",
-          "purpose": "Apply the complete Light · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "value": "#b8b8b8",
+          "purpose": "Apply the complete Light · distinct status colors palette. Separate passive groups with a quiet neutral line without making every row a control. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -588,8 +588,8 @@
         {
           "id": "palette-light-distinct.14",
           "property": "--ui-success-bg",
-          "value": "#e8f1fa",
-          "purpose": "Apply the complete Light · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "value": "#dedede",
+          "purpose": "Apply the complete Light · distinct status colors palette. Group confirmed results on a neutral gray without making routine completion a colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -606,8 +606,8 @@
         {
           "id": "palette-light-distinct.16",
           "property": "--ui-warning-bg",
-          "value": "#fff4d6",
-          "purpose": "Apply the complete Light · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "value": "#dedede",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -615,8 +615,8 @@
         {
           "id": "palette-light-distinct.17",
           "property": "--ui-disabled",
-          "value": "#526258",
-          "purpose": "Apply the complete Light · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "value": "#505050",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -624,8 +624,8 @@
         {
           "id": "palette-light-distinct.18",
           "property": "--ui-disabled-bg",
-          "value": "#e8ece6",
-          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "value": "#d2d2d2",
+          "purpose": "Apply the complete Light · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -664,7 +664,7 @@
           "id": "palette-dark-distinct.2",
           "property": "--ui-primary",
           "value": "#9fcaff",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the main available action with the active palette’s action role. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -681,8 +681,8 @@
         {
           "id": "palette-dark-distinct.4",
           "property": "--ui-ink",
-          "value": "#edf5ef",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Keep task names and body copy readable on the active surfaces. This value is independently contrast checked in this palette.",
+          "value": "#ededed",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -690,8 +690,8 @@
         {
           "id": "palette-dark-distinct.5",
           "property": "--ui-muted",
-          "value": "#bac9bf",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish supporting information while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
+          "value": "#c2c2c2",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -699,8 +699,8 @@
         {
           "id": "palette-dark-distinct.6",
           "property": "--ui-canvas",
-          "value": "#101712",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Separate the page background from editable panels. This value is independently contrast checked in this palette.",
+          "value": "#242424",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -708,8 +708,8 @@
         {
           "id": "palette-dark-distinct.7",
           "property": "--ui-surface",
-          "value": "#18231c",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Provide an opaque reading and editing plane. This value is independently contrast checked in this palette.",
+          "value": "#2e2e2e",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Separate reading and editing panels using a nearby opaque gray rather than a bright white or colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -717,8 +717,8 @@
         {
           "id": "palette-dark-distinct.8",
           "property": "--ui-subtle",
-          "value": "#24352a",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Group secondary content without implying a disabled state. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Group secondary content with a nearby achromatic gray without implying an alarm or disabled state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -726,8 +726,8 @@
         {
           "id": "palette-dark-distinct.9",
           "property": "--ui-border",
-          "value": "#8b9e90",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Identify editable-control boundaries with non-text contrast. This value is independently contrast checked in this palette.",
+          "value": "#a3a3a3",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify editable-control boundaries with neutral non-text contrast. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -735,8 +735,8 @@
         {
           "id": "palette-dark-distinct.10",
           "property": "--ui-divider",
-          "value": "#465c4d",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Separate noninteractive rows without making every row a control. This value is independently contrast checked in this palette.",
+          "value": "#585858",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Separate passive groups with a quiet neutral line without making every row a control. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -771,8 +771,8 @@
         {
           "id": "palette-dark-distinct.14",
           "property": "--ui-success-bg",
-          "value": "#1b304a",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Group successful results without an interrupting dialog. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Group confirmed results on a neutral gray without making routine completion a colored field. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -789,8 +789,8 @@
         {
           "id": "palette-dark-distinct.16",
           "property": "--ui-warning-bg",
-          "value": "#3b3018",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Give pending decisions a separate, readable surface. This value is independently contrast checked in this palette.",
+          "value": "#383838",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -798,8 +798,8 @@
         {
           "id": "palette-dark-distinct.17",
           "property": "--ui-disabled",
-          "value": "#b1c2b5",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the reason for an unavailable action readable. This value is independently contrast checked in this palette.",
+          "value": "#c2c2c2",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -807,8 +807,8 @@
         {
           "id": "palette-dark-distinct.18",
           "property": "--ui-disabled-bg",
-          "value": "#2b3b30",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls from enabled controls. This value is independently contrast checked in this palette.",
+          "value": "#404040",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -904,7 +904,7 @@
           "id": "page.6",
           "property": "background-color",
           "value": "var(--ui-canvas)",
-          "purpose": "Establish a readable document baseline. Make work panels distinguishable from the page in every palette.",
+          "purpose": "Establish a readable document baseline. Use a quiet achromatic canvas so the page does not compete with work panels or state cues in any palette.",
           "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
           "check": "type",
           "status": "proposed"
@@ -2833,7 +2833,7 @@
           "id": "status.2",
           "property": "padding",
           "value": "var(--ui-space-xs) var(--ui-space-sm)",
-          "purpose": "Present an explicit named result or state. Separate status text from its tinted background.",
+          "purpose": "Present an explicit named result or state. Separate status text from its neutral background.",
           "intent": "Understand a state without interpreting an isolated colored dot.",
           "check": "states",
           "status": "proposed"
@@ -2869,7 +2869,7 @@
           "id": "status.6",
           "property": "background-color",
           "value": "var(--ui-success-bg)",
-          "purpose": "Present an explicit named result or state. Group confirmed-state text without a saturated fill.",
+          "purpose": "Present an explicit named result or state. Group confirmed-state text on gray so routine results do not become competing colored panels.",
           "intent": "Understand a state without interpreting an isolated colored dot.",
           "check": "states",
           "status": "proposed"
@@ -2899,7 +2899,7 @@
           "id": "pending.2",
           "property": "background-color",
           "value": "var(--ui-warning-bg)",
-          "purpose": "Distinguish pending review from completed work. Provide a distinct pending-state background.",
+          "purpose": "Distinguish pending review from completed work. Keep the pending label on a neutral surface; its words, foreground and optional dashed boundary carry the distinction.",
           "intent": "Know which item still needs a decision.",
           "check": "states",
           "status": "proposed"
@@ -2928,8 +2928,8 @@
         {
           "id": "notice.2",
           "property": "border-inline-start",
-          "value": "4px solid var(--ui-primary)",
-          "purpose": "Group relevant guidance without interrupting the page. Identify guidance as a distinct block even without background perception.",
+          "value": "4px solid var(--ui-border)",
+          "purpose": "Group relevant guidance without interrupting the page. Identify routine guidance with a neutral boundary so it does not borrow action or alarm color.",
           "intent": "Read a condition and continue the same task.",
           "check": "states",
           "status": "proposed"
@@ -2938,7 +2938,7 @@
           "id": "notice.3",
           "property": "background-color",
           "value": "var(--ui-subtle)",
-          "purpose": "Group relevant guidance without interrupting the page. Group the note without hiding nearby controls.",
+          "purpose": "Group relevant guidance without interrupting the page. Group the note on a quiet gray without hiding nearby controls or suggesting abnormality.",
           "intent": "Read a condition and continue the same task.",
           "check": "states",
           "status": "proposed"
@@ -3378,8 +3378,8 @@
         {
           "id": "backdrop.1",
           "property": "background-color",
-          "value": "#20352a80",
-          "purpose": "Separate a modal decision from its inactive background. Dim the inactive page without suggesting that its data disappeared.",
+          "value": "#00000080",
+          "purpose": "Separate a modal decision from its inactive background. Dim the inactive page with neutral 50% black instead of casting a state-like hue over its content.",
           "intent": "Know which surface currently receives input.",
           "check": "dialog",
           "status": "proposed"
@@ -4189,21 +4189,21 @@
       "colors": {
         "primary": "#284637",
         "primary-hover": "#1d3529",
-        "ink": "#20352a",
-        "muted": "#526258",
-        "canvas": "#f5f5f0",
-        "surface": "#ffffff",
-        "subtle": "#eaf0e5",
-        "border": "#6c7c70",
-        "divider": "#d6ded5",
+        "ink": "#242424",
+        "muted": "#505050",
+        "canvas": "#d9d9d9",
+        "surface": "#e6e6e6",
+        "subtle": "#dedede",
+        "border": "#737373",
+        "divider": "#b8b8b8",
         "focus": "#005fcc",
         "danger": "#9b2c24",
         "success": "#235b3b",
-        "success-bg": "#eaf5ec",
+        "success-bg": "#dedede",
         "warning": "#725000",
-        "warning-bg": "#fff4d6",
-        "disabled": "#526258",
-        "disabled-bg": "#e8ece6",
+        "warning-bg": "#dedede",
+        "disabled": "#505050",
+        "disabled-bg": "#d2d2d2",
         "on-primary": "#ffffff"
       }
     },
@@ -4214,21 +4214,21 @@
       "colors": {
         "primary": "#9bd2ae",
         "primary-hover": "#b5e3c4",
-        "ink": "#edf5ef",
-        "muted": "#bac9bf",
-        "canvas": "#101712",
-        "surface": "#18231c",
-        "subtle": "#24352a",
-        "border": "#8b9e90",
-        "divider": "#465c4d",
+        "ink": "#ededed",
+        "muted": "#c2c2c2",
+        "canvas": "#242424",
+        "surface": "#2e2e2e",
+        "subtle": "#383838",
+        "border": "#a3a3a3",
+        "divider": "#585858",
         "focus": "#80b6ff",
         "danger": "#ffb4ac",
         "success": "#a4ddb4",
-        "success-bg": "#1b3826",
+        "success-bg": "#383838",
         "warning": "#f5d483",
-        "warning-bg": "#3b3018",
-        "disabled": "#b1c2b5",
-        "disabled-bg": "#2b3b30",
+        "warning-bg": "#383838",
+        "disabled": "#c2c2c2",
+        "disabled-bg": "#404040",
         "on-primary": "#102318"
       }
     },
@@ -4239,21 +4239,21 @@
       "colors": {
         "primary": "#174b7a",
         "primary-hover": "#10395f",
-        "ink": "#20352a",
-        "muted": "#526258",
-        "canvas": "#f5f5f0",
-        "surface": "#ffffff",
-        "subtle": "#eaf0e5",
-        "border": "#6c7c70",
-        "divider": "#d6ded5",
+        "ink": "#242424",
+        "muted": "#505050",
+        "canvas": "#d9d9d9",
+        "surface": "#e6e6e6",
+        "subtle": "#dedede",
+        "border": "#737373",
+        "divider": "#b8b8b8",
         "focus": "#7025b4",
         "danger": "#6d2498",
         "success": "#174b7a",
-        "success-bg": "#e8f1fa",
+        "success-bg": "#dedede",
         "warning": "#725000",
-        "warning-bg": "#fff4d6",
-        "disabled": "#526258",
-        "disabled-bg": "#e8ece6",
+        "warning-bg": "#dedede",
+        "disabled": "#505050",
+        "disabled-bg": "#d2d2d2",
         "on-primary": "#ffffff"
       }
     },
@@ -4264,21 +4264,21 @@
       "colors": {
         "primary": "#9fcaff",
         "primary-hover": "#c3deff",
-        "ink": "#edf5ef",
-        "muted": "#bac9bf",
-        "canvas": "#101712",
-        "surface": "#18231c",
-        "subtle": "#24352a",
-        "border": "#8b9e90",
-        "divider": "#465c4d",
+        "ink": "#ededed",
+        "muted": "#c2c2c2",
+        "canvas": "#242424",
+        "surface": "#2e2e2e",
+        "subtle": "#383838",
+        "border": "#a3a3a3",
+        "divider": "#585858",
         "focus": "#f1c75b",
         "danger": "#e2b4ff",
         "success": "#b3d5ff",
-        "success-bg": "#1b304a",
+        "success-bg": "#383838",
         "warning": "#f5d483",
-        "warning-bg": "#3b3018",
-        "disabled": "#b1c2b5",
-        "disabled-bg": "#2b3b30",
+        "warning-bg": "#383838",
+        "disabled": "#c2c2c2",
+        "disabled-bg": "#404040",
         "on-primary": "#101f30"
       }
     }

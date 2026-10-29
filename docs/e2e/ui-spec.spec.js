@@ -131,12 +131,14 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
   const rgb=hex=>`rgb(${hex.slice(1).match(/../g).map(v=>parseInt(v,16)).join(', ')})`;
   const styles=await page.evaluate(()=>{
     const pair=selector=>{const s=getComputedStyle(document.querySelector(selector));return {fg:s.color,bg:s.backgroundColor};};
-    return {body:pair('body'),panel:pair('.card'),primary:pair('[data-inline-record] .btn-primary'),disabled:pair('button[aria-describedby="publish-help"]'),saved:pair('.ui-status:not(.ui-status-pending)'),pending:pair('.ui-status-pending'),error:pair('.ui-error')};
+    return {body:pair('body'),panel:pair('.card'),header:pair('.ui-header'),notice:pair('.ui-notice'),table:pair('.table'),primary:pair('[data-inline-record] .btn-primary'),disabled:pair('button[aria-describedby="publish-help"]'),saved:pair('.ui-status:not(.ui-status-pending)'),pending:pair('.ui-status-pending'),error:pair('.ui-error')};
   });
   for(const [name,fg,bg] of [['body','ink','canvas'],['panel','ink','surface'],['primary','on-primary','primary'],['disabled','disabled','disabled-bg'],['saved','success','success-bg'],['pending','warning','warning-bg']])expect(styles[name],`${key} effective ${name} colors`).toEqual({fg:rgb(palette.colors[fg]),bg:rgb(palette.colors[bg])});
+  for(const [name,role] of [['header','surface'],['notice','subtle'],['table','surface']])expect(styles[name].bg,`${key} quiet ${name} background`).toBe(rgb(palette.colors[role]));
+  expect(await page.locator('.ui-notice').first().evaluate(n=>getComputedStyle(n).borderInlineStartColor)).toBe(rgb(palette.colors.border));
   expect(styles.error.fg).toBe(rgb(palette.colors.danger));
   expect(await page.locator('html').evaluate(n=>getComputedStyle(n).colorScheme)).toBe(palette.theme);
-  await expect(page.locator('[data-color-value="primary"]')).toHaveText(palette.colors.primary);
+  for(const sample of await page.locator('[data-color-value]').all())await expect(sample).toHaveText(palette.colors[await sample.getAttribute('data-color-value')]);
   const input=titleInput(page);await input.fill('Draft survives a palette change');await page.getByLabel('Find a CSS decision',{exact:true}).focus();expect(await input.evaluate(n=>getComputedStyle(n).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
   await input.click();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
   expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor,border:s.borderTopColor,focus:s.outlineColor};})).toEqual({fg:rgb(palette.colors.ink),bg:rgb(palette.colors.surface),border:rgb(palette.colors.border),focus:rgb(palette.colors.focus)});
