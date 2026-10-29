@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Daylist UI guidelines: inspect native forms, Bootstrap layouts and the purpose of each CSS declaration.">
+  <title>Daylist · UI reference</title>
+  <link rel="stylesheet" href="./design-system.css">
+  <script type="module" src="./reference.js"></script>
+</head>
+<body>
+  <a class="ui-skip" href="#main">Skip to reference content</a>
+  <header class="ui-header">
+    <div class="container ui-cluster ui-spread">
+      <a href="../">Daylist / Back to app</a>
+      <nav class="ui-cluster ui-nav" aria-label="Reference sections">
+        <a href="#foundations">Foundations</a><a href="#forms">Forms</a><a href="#tables">Tables</a><a href="#audit">CSS decisions</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container" tabindex="-1">
+    <div class="row">
+      <div class="col-lg-8">
+        <p><small>DAYLIST / UI SYSTEM / PROPOSED FOR REVIEW</small></p>
+        <h1>Clear work. Deliberate changes.</h1>
+        <p class="ui-measure">A practical reference for readable information, native controls and interfaces that explain what an action will do. Inspect the examples at desktop or mobile width.</p>
+        <div class="ui-cluster"><a href="#forms">Try click-to-edit forms</a><a href="#audit">Inspect every CSS decision</a></div>
+      </div>
+      <aside class="col-lg-4" aria-labelledby="review-title">
+        <div class="card">
+          <h2 id="review-title">Review the intent</h2>
+          <p>Each declaration records its exact value, user purpose and verification family. Maintainers can challenge the reasoning, not just the appearance.</p>
+          <p><span class="ui-status ui-status-pending">Proposed · approval pending</span></p>
+          <p class="ui-help">This page uses a local Bootstrap 5.3.8 grid subset. Example edits stay in this page’s memory and never change your tasks.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section id="foundations" class="ui-section" aria-labelledby="foundation-title">
+      <h2 id="foundation-title">Foundations you can inspect</h2>
+      <p class="ui-measure">Color roles carry a stable meaning. State labels, persistent field names and visible focus remain understandable without color. The system font starts at the browser’s normal reading size.</p>
+      <div class="ui-swatch-grid">
+        <div><div class="ui-swatch ui-swatch-primary" aria-hidden="true"></div><strong>Primary</strong><p><code>#284637</code> · deliberate action</p></div>
+        <div><div class="ui-swatch ui-swatch-ink" aria-hidden="true"></div><strong>Ink</strong><p><code>#20352a</code> · sustained reading</p></div>
+        <div><div class="ui-swatch ui-swatch-muted" aria-hidden="true"></div><strong>Muted</strong><p><code>#526258</code> · secondary information</p></div>
+        <div><div class="ui-swatch ui-swatch-canvas" aria-hidden="true"></div><strong>Canvas</strong><p><code>#f5f5f0</code> · page background</p></div>
+        <div><div class="ui-swatch ui-swatch-surface" aria-hidden="true"></div><strong>Surface</strong><p><code>#ffffff</code> · reading and editing</p></div>
+        <div><div class="ui-swatch ui-swatch-focus" aria-hidden="true"></div><strong>Focus</strong><p><code>#005fcc</code> · keyboard destination</p></div>
+        <div><div class="ui-swatch ui-swatch-danger" aria-hidden="true"></div><strong>Error</strong><p><code>#9b2c24</code> · correction needed</p></div>
+        <div><div class="ui-swatch ui-swatch-success" aria-hidden="true"></div><strong>Success</strong><p><code>#235b3b</code> · confirmed result</p></div>
+        <div><div class="ui-swatch ui-swatch-warning" aria-hidden="true"></div><strong>Pending</strong><p><code>#725000</code> · decision still needed</p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><div class="card"><h3>Reading hierarchy</h3><p>A 2rem page title, 1.5rem section heading and 1rem body help distinguish a destination from its content.</p><p class="ui-help">Help is 0.875rem. Long names and URLs wrap instead of forcing the page wider.</p></div></div>
+        <div class="col-md-6"><div class="card"><h3>Space means grouping</h3><p>4, 8, 12, 16, 24, 32 and 48px at the default font size. Small gaps connect related controls; large gaps separate topics.</p><p class="ui-help">These panels share a row from 768px and stack below it. The work/support pair uses an 8/4 split from 992px.</p></div></div>
+      </div>
+    </section>
+
+    <section id="forms" class="ui-section" aria-labelledby="forms-title">
+      <h2 id="forms-title">Review first. Click to edit.</h2>
+      <p id="form-instructions" class="ui-measure">Open a value’s Edit disclosure with a click, Enter or Space. Change the native field, then Save or Cancel. Leaving a field never saves it. Escape cancels an open editor; Enter in notes inserts a new line.</p>
+      <noscript><p class="ui-notice">Native disclosures and fields work without JavaScript. Saving these page-memory examples and the CSS decision search require JavaScript; their action buttons stay disabled.</p></noscript>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <h3>Example task</h3>
+            <details class="ui-editor" data-editor="title">
+              <summary><span class="ui-field-name">Task title</span> · <span data-read-value>Review the interface guidelines</span><span class="ui-edit-cue">Edit</span></summary>
+              <form class="ui-stack" aria-label="Edit task title" aria-describedby="form-instructions">
+                <div><label for="example-title">Task title (required)</label><input class="form-control" id="example-title" name="title" value="Review the interface guidelines" required maxlength="80" autocomplete="off" aria-describedby="title-help title-error"><p id="title-help" class="ui-help">Name the work in 80 characters or fewer.</p><p id="title-error" class="ui-error" data-error role="alert" hidden></p></div>
+                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save title</button><button class="btn" type="button" data-cancel disabled>Cancel title</button></div>
+              </form>
+            </details>
+            <details class="ui-editor" data-editor="notes">
+              <summary><span class="ui-field-name">Notes</span> · <span data-read-value>Check narrow screens and keyboard access.</span><span class="ui-edit-cue">Edit</span></summary>
+              <form class="ui-stack" aria-label="Edit notes">
+                <div><label for="example-notes">Notes (optional)</label><textarea class="form-control" id="example-notes" name="notes" rows="4" maxlength="500" aria-describedby="notes-help notes-error">Check narrow screens and keyboard access.</textarea><p id="notes-help" class="ui-help">Up to 500 characters. Enter adds a line; use Save notes to commit.</p><p id="notes-error" class="ui-error" data-error role="alert" hidden></p></div>
+                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save notes</button><button class="btn" type="button" data-cancel disabled>Cancel notes</button></div>
+              </form>
+            </details>
+            <details class="ui-editor" data-editor="priority">
+              <summary><span class="ui-field-name">Priority</span> · <span data-read-value>Normal</span><span class="ui-edit-cue">Edit</span></summary>
+              <form class="ui-stack" aria-label="Edit priority">
+                <div><label for="example-priority">Priority</label><select class="form-select" id="example-priority" name="priority" aria-describedby="priority-error"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select><p id="priority-error" class="ui-error" data-error role="alert" hidden></p></div>
+                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save priority</button><button class="btn" type="button" data-cancel disabled>Cancel priority</button></div>
+              </form>
+            </details>
+            <details class="ui-editor" data-editor="date">
+              <summary><span class="ui-field-name">Due date</span> · <span data-read-value>Not set</span><span class="ui-edit-cue">Edit</span></summary>
+              <form class="ui-stack" aria-label="Edit due date">
+                <div><label for="example-date">Due date (optional)</label><input class="form-control" type="date" id="example-date" name="dueDate" aria-describedby="date-help date-error"><p id="date-help" class="ui-help">Uses your browser’s date picker. Leave blank for no date.</p><p id="date-error" class="ui-error" data-error role="alert" hidden></p></div>
+                <div class="ui-cluster"><button class="btn btn-primary" type="submit" disabled>Save due date</button><button class="btn" type="button" data-cancel disabled>Cancel due date</button></div>
+              </form>
+            </details>
+            <p id="edit-status" role="status" aria-live="polite">No example changes saved.</p>
+          </div>
+        </div>
+        <aside class="col-lg-4" aria-labelledby="form-rationale"><div class="card ui-stack">
+          <h3 id="form-rationale">Why this interaction?</h3>
+          <p>Saved values stay easy to scan. A persistent Edit cue and the browser’s disclosure marker make editing discoverable before hover.</p>
+          <p>The editor keeps the real label, browser constraints, select arrow and date picker. A draft only replaces the displayed value after successful Save.</p>
+          <p class="ui-notice">Unsaved changes keep an editor open until Save or Cancel. Closing the page clears these demonstration edits.</p>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="ui-section" aria-labelledby="choices-title">
+      <h2 id="choices-title">Native choices and action states</h2>
+      <div class="row">
+        <div class="col-md-6"><div class="card ui-stack">
+          <fieldset><legend>Example review scope</legend><label class="ui-choice"><input type="radio" name="scope" value="all" checked>All interface examples</label><label class="ui-choice"><input type="radio" name="scope" value="forms">Forms only</label></fieldset>
+          <label class="ui-choice"><input type="checkbox" name="include-mobile" checked>Include mobile examples</label>
+          <p class="ui-help">These choices only demonstrate native radio and checkbox behavior.</p>
+          <div class="ui-cluster"><button class="btn btn-primary" id="open-review" type="button" disabled>Review example decision</button><button class="btn" type="button" disabled aria-describedby="publish-help">Publish</button></div>
+          <p id="publish-help" class="ui-help">Publishing is unavailable: this page demonstrates components and does not publish app changes.</p>
+        </div></div>
+        <div class="col-md-6"><div class="card ui-stack">
+          <h3>State is written down</h3>
+          <p><span class="ui-status">Saved</span> <span class="ui-status ui-status-pending">Pending review</span></p>
+          <p class="ui-error">Example error: enter a task title before saving.</p>
+          <div><label for="example-progress">Example review progress · 3 of 5</label><br><progress id="example-progress" value="3" max="5">3 of 5</progress></div>
+          <p id="dialog-status" role="status">No example decision confirmed.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="tables" class="ui-section" aria-labelledby="tables-title">
+      <h2 id="tables-title">Tables keep comparison intact</h2>
+      <p id="table-help" class="ui-measure">On narrow screens, focus this named region and use horizontal scrolling to compare columns. The page itself stays within the viewport. Row names and column headers keep their native relationships.</p>
+      <div class="table-responsive" tabindex="0" role="region" aria-labelledby="table-caption" aria-describedby="table-help">
+        <table class="table">
+          <caption id="table-caption">Example review queue · three interface patterns</caption>
+          <thead><tr><th scope="col">Pattern</th><th scope="col">User task</th><th scope="col">State</th><th scope="col" class="ui-numeric">Checks</th><th scope="col">Owner</th><th scope="col">Next step</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Click-to-edit</th><td>Change one value</td><td><span class="ui-status">Ready to inspect</span></td><td class="ui-numeric">8</td><td>Maintainer</td><td>Try Save and Cancel</td></tr>
+            <tr><th scope="row">Responsive grid</th><td>Keep context nearby</td><td><span class="ui-status ui-status-pending">Pending review</span></td><td class="ui-numeric">5</td><td>Maintainer</td><td>Resize the viewport</td></tr>
+            <tr><th scope="row">Decision ledger</th><td>Challenge a purpose</td><td><span class="ui-status ui-status-pending">Pending review</span></td><td class="ui-numeric">12</td><td>Maintainer</td><td>Inspect a declaration</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ui-empty"><h3>No decisions approved yet</h3><p>These are proposals for maintainer review. Passing a check does not approve the design.</p><a href="#audit">Inspect the decision ledger</a></div>
+    </section>
+
+    <section id="audit" class="ui-section" aria-labelledby="audit-title">
+      <h2 id="audit-title">Every CSS declaration has a reason</h2>
+      <p class="ui-measure">Search a property, selector, decision ID or user intent. This is the same generated registry that produces the CSS. Review disagreements require a change to both the explanation and the implementation.</p>
+      <label for="decision-search">Find a CSS decision</label><input class="form-control" type="search" id="decision-search" placeholder="For example: border, focus or bs-row" aria-describedby="decision-count">
+      <p id="decision-count" role="status">Loading declaration decisions…</p>
+      <div class="table-responsive" tabindex="0" role="region" aria-label="CSS declaration decisions">
+        <table class="table"><caption>Exact values, purposes and user intent · all proposed</caption><thead><tr><th scope="col">ID / selector</th><th scope="col">Property / value</th><th scope="col">Purpose</th><th scope="col">User intent</th><th scope="col">Verification</th></tr></thead><tbody id="decision-rows"></tbody></table>
+      </div>
+    </section>
+  </main>
+  <footer class="container"><p class="ui-help">UI reference · Bootstrap 5.3.8 grid subset · native HTML and vanilla JavaScript · <a href="../">Return to Daylist</a></p></footer>
+  <dialog id="review-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <form method="dialog" class="ui-stack">
+      <h2 id="dialog-title">Confirm an example decision</h2><p id="dialog-description">This demonstrates a native modal. Confirming updates only the status on this reference page.</p>
+      <div class="ui-cluster"><button class="btn" value="cancel" autofocus>Cancel decision</button><button class="btn btn-primary" value="confirm">Confirm example</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

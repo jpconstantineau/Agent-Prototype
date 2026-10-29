@@ -1,0 +1,159 @@
+{
+  "version": "5.3.8",
+  "sourceUrl": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.css",
+  "sha256": "4a50207b956a4ab943640ee993118b554a34e96a23261cfe58b9aa1807a7849b",
+  "rules": [
+    {
+      "id": "bs-container",
+      "selector": ".container",
+      "media": null,
+      "original": ".container,\n.container-fluid,\n.container-xxl,\n.container-xl,\n.container-lg,\n.container-md,\n.container-sm {\n  --bs-gutter-x: 1.5rem;\n  --bs-gutter-y: 0;\n  width: 100%;\n  padding-right: calc(var(--bs-gutter-x) * 0.5);\n  padding-left: calc(var(--bs-gutter-x) * 0.5);\n  margin-right: auto;\n  margin-left: auto;\n}",
+      "declarations": [
+        {
+          "property": "--bs-gutter-x",
+          "value": "1.5rem"
+        },
+        {
+          "property": "--bs-gutter-y",
+          "value": "0"
+        },
+        {
+          "property": "width",
+          "value": "100%"
+        },
+        {
+          "property": "padding-right",
+          "value": "calc(var(--bs-gutter-x) * 0.5)"
+        },
+        {
+          "property": "padding-left",
+          "value": "calc(var(--bs-gutter-x) * 0.5)"
+        },
+        {
+          "property": "margin-right",
+          "value": "auto"
+        },
+        {
+          "property": "margin-left",
+          "value": "auto"
+        }
+      ]
+    },
+    {
+      "id": "bs-row",
+      "selector": ".row",
+      "media": null,
+      "original": ".row {\n  --bs-gutter-x: 1.5rem;\n  --bs-gutter-y: 0;\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: calc(-1 * var(--bs-gutter-y));\n  margin-right: calc(-0.5 * var(--bs-gutter-x));\n  margin-left: calc(-0.5 * var(--bs-gutter-x));\n}",
+      "declarations": [
+        {
+          "property": "--bs-gutter-x",
+          "value": "1.5rem"
+        },
+        {
+          "property": "--bs-gutter-y",
+          "value": "0"
+        },
+        {
+          "property": "display",
+          "value": "flex"
+        },
+        {
+          "property": "flex-wrap",
+          "value": "wrap"
+        },
+        {
+          "property": "margin-top",
+          "value": "calc(-1 * var(--bs-gutter-y))"
+        },
+        {
+          "property": "margin-right",
+          "value": "calc(-0.5 * var(--bs-gutter-x))"
+        },
+        {
+          "property": "margin-left",
+          "value": "calc(-0.5 * var(--bs-gutter-x))"
+        }
+      ]
+    },
+    {
+      "id": "bs-children",
+      "selector": ".row > *",
+      "media": null,
+      "original": ".row > * {\n  flex-shrink: 0;\n  width: 100%;\n  max-width: 100%;\n  padding-right: calc(var(--bs-gutter-x) * 0.5);\n  padding-left: calc(var(--bs-gutter-x) * 0.5);\n  margin-top: var(--bs-gutter-y);\n}",
+      "declarations": [
+        {
+          "property": "flex-shrink",
+          "value": "0"
+        },
+        {
+          "property": "width",
+          "value": "100%"
+        },
+        {
+          "property": "max-width",
+          "value": "100%"
+        },
+        {
+          "property": "padding-right",
+          "value": "calc(var(--bs-gutter-x) * 0.5)"
+        },
+        {
+          "property": "padding-left",
+          "value": "calc(var(--bs-gutter-x) * 0.5)"
+        },
+        {
+          "property": "margin-top",
+          "value": "var(--bs-gutter-y)"
+        }
+      ]
+    },
+    {
+      "id": "bs-half",
+      "selector": ".col-md-6",
+      "media": "(min-width: 768px)",
+      "original": ".col-md-6 {\n    flex: 0 0 auto;\n    width: 50%;\n  }",
+      "declarations": [
+        {
+          "property": "flex",
+          "value": "0 0 auto"
+        },
+        {
+          "property": "width",
+          "value": "50%"
+        }
+      ]
+    },
+    {
+      "id": "bs-main",
+      "selector": ".col-lg-8",
+      "media": "(min-width: 992px)",
+      "original": ".col-lg-8 {\n    flex: 0 0 auto;\n    width: 66.66666667%;\n  }",
+      "declarations": [
+        {
+          "property": "flex",
+          "value": "0 0 auto"
+        },
+        {
+          "property": "width",
+          "value": "66.66666667%"
+        }
+      ]
+    },
+    {
+      "id": "bs-side",
+      "selector": ".col-lg-4",
+      "media": "(min-width: 992px)",
+      "original": ".col-lg-4 {\n    flex: 0 0 auto;\n    width: 33.33333333%;\n  }",
+      "declarations": [
+        {
+          "property": "flex",
+          "value": "0 0 auto"
+        },
+        {
+          "property": "width",
+          "value": "33.33333333%"
+        }
+      ]
+    }
+  ]
+}

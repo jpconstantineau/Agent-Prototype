@@ -143,6 +143,8 @@ Add future capabilities through their own approved epic and the shared policy/di
 
 ## Test
 
+The proposed [UI design system](../UI-Spec/README.md) has a separate [live reference page](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/) and local route `/ui-spec/`. It demonstrates Bootstrap layouts, native click-to-edit forms and a searchable purpose/intent ledger for every reference CSS declaration. The existing app UI remains its own implementation; the reference does not change tasks or model settings. Run `npm run ui:build` after editing the design source and `npm run ui:check` to check generated output. UI verification is included in the test suites below.
+
 ```sh
 npm ci
 npm test

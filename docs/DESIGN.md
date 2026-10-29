@@ -1,5 +1,7 @@
 # Daylist interface rationale
 
+This file records the current app interface. The proposed forward-looking framework is in [UI-Spec/DESIGN.md](../UI-Spec/DESIGN.md), with [component contracts and declaration review](../UI-Spec/README.md). Its [reference page](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/) is isolated from the app until maintainers adopt individual patterns.
+
 The primary job is to capture a task, find it later, and mark it done. The assistant is an optional way to perform those same actions. The interface should make these operations clear before explaining the technology behind them.
 
 ## Review of the original page

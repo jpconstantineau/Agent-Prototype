@@ -1,0 +1,3211 @@
+{
+  "version": 1,
+  "bootstrapVersion": "5.3.8",
+  "rules": [
+    {
+      "id": "tokens",
+      "selector": ":root",
+      "purpose": "Publish semantic values for consistent reuse.",
+      "intent": "Recognize the same meaning across screens.",
+      "check": "tokens",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "tokens.1",
+          "property": "color-scheme",
+          "value": "light",
+          "purpose": "Publish semantic values for consistent reuse. Keep native controls aligned with the supplied light palette; forced colors remain user controlled.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.2",
+          "property": "--ui-primary",
+          "value": "#284637",
+          "purpose": "Publish semantic values for consistent reuse. Identify the main available action with the existing green identity.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.3",
+          "property": "--ui-primary-hover",
+          "value": "#1d3529",
+          "purpose": "Publish semantic values for consistent reuse. Confirm pointer targeting by deepening the main-action fill.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.4",
+          "property": "--ui-ink",
+          "value": "#20352a",
+          "purpose": "Publish semantic values for consistent reuse. Keep task names and body copy readable on light surfaces.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.5",
+          "property": "--ui-muted",
+          "value": "#526258",
+          "purpose": "Publish semantic values for consistent reuse. Distinguish supporting information while keeping ordinary text contrast.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.6",
+          "property": "--ui-canvas",
+          "value": "#f5f5f0",
+          "purpose": "Publish semantic values for consistent reuse. Separate the page background from editable white panels.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.7",
+          "property": "--ui-surface",
+          "value": "#ffffff",
+          "purpose": "Publish semantic values for consistent reuse. Provide an opaque reading and editing plane.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.8",
+          "property": "--ui-subtle",
+          "value": "#eaf0e5",
+          "purpose": "Publish semantic values for consistent reuse. Group secondary content without implying a disabled state.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.9",
+          "property": "--ui-border",
+          "value": "#6c7c70",
+          "purpose": "Publish semantic values for consistent reuse. Identify editable-control boundaries with non-text contrast.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.10",
+          "property": "--ui-divider",
+          "value": "#d6ded5",
+          "purpose": "Publish semantic values for consistent reuse. Separate noninteractive rows without making every row a control.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.11",
+          "property": "--ui-focus",
+          "value": "#005fcc",
+          "purpose": "Publish semantic values for consistent reuse. Identify the keyboard destination independently of brand green.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.12",
+          "property": "--ui-danger",
+          "value": "#9b2c24",
+          "purpose": "Publish semantic values for consistent reuse. Mark a problem alongside explanatory text.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.13",
+          "property": "--ui-success",
+          "value": "#235b3b",
+          "purpose": "Publish semantic values for consistent reuse. Reinforce confirmed completion alongside a word label.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.14",
+          "property": "--ui-success-bg",
+          "value": "#eaf5ec",
+          "purpose": "Publish semantic values for consistent reuse. Group successful results without an interrupting dialog.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.15",
+          "property": "--ui-warning",
+          "value": "#725000",
+          "purpose": "Publish semantic values for consistent reuse. Highlight a condition that needs attention without declaring failure.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.16",
+          "property": "--ui-warning-bg",
+          "value": "#fff4d6",
+          "purpose": "Publish semantic values for consistent reuse. Give pending decisions a separate, readable surface.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.17",
+          "property": "--ui-disabled",
+          "value": "#526258",
+          "purpose": "Publish semantic values for consistent reuse. Keep the reason for an unavailable action readable.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.18",
+          "property": "--ui-disabled-bg",
+          "value": "#e8ece6",
+          "purpose": "Publish semantic values for consistent reuse. Distinguish unavailable controls from enabled white controls.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.19",
+          "property": "--ui-space-xs",
+          "value": "0.25rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the xs spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.20",
+          "property": "--ui-space-sm",
+          "value": "0.5rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the sm spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.21",
+          "property": "--ui-space-md",
+          "value": "0.75rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the md spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.22",
+          "property": "--ui-space-lg",
+          "value": "1rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the lg spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.23",
+          "property": "--ui-space-xl",
+          "value": "1.5rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the xl spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.24",
+          "property": "--ui-space-section",
+          "value": "2rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the section spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.25",
+          "property": "--ui-space-page",
+          "value": "3rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the page spacing step to express content grouping; its exact use is recorded at each consumer.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.26",
+          "property": "--ui-radius-small",
+          "value": "0.375rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the small corner size to distinguish controls from containing panels.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.27",
+          "property": "--ui-radius-panel",
+          "value": "0.75rem",
+          "purpose": "Publish semantic values for consistent reuse. Use the panel corner size to distinguish controls from containing panels.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.28",
+          "property": "--ui-font",
+          "value": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "purpose": "Publish semantic values for consistent reuse. Use installed fonts so text is immediately available without a font download.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "box",
+      "selector": "*, *::before, *::after",
+      "purpose": "Make declared sizes include padding and borders.",
+      "intent": "Keep controls and columns within the visible viewport.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "box.1",
+          "property": "box-sizing",
+          "value": "border-box",
+          "purpose": "Make declared sizes include padding and borders. Prevent padded elements from unexpectedly exceeding their allotted width.",
+          "intent": "Keep controls and columns within the visible viewport.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "page",
+      "selector": "body",
+      "purpose": "Establish a readable document baseline.",
+      "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "page.1",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Establish a readable document baseline. Remove the browser page margin so the container owns one consistent outer gutter.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.2",
+          "property": "font-family",
+          "value": "var(--ui-font)",
+          "purpose": "Establish a readable document baseline. Render body text with the documented installed font stack.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.3",
+          "property": "font-size",
+          "value": "1rem",
+          "purpose": "Establish a readable document baseline. Respect the browser default reading size instead of shrinking all content.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.4",
+          "property": "line-height",
+          "value": "1.5",
+          "purpose": "Establish a readable document baseline. Leave room between lines for sustained reading and text spacing preferences.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.5",
+          "property": "color",
+          "value": "var(--ui-ink)",
+          "purpose": "Establish a readable document baseline. Use the main text role on the light canvas.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.6",
+          "property": "background-color",
+          "value": "var(--ui-canvas)",
+          "purpose": "Establish a readable document baseline. Make white work panels distinguishable from the page.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "page.7",
+          "property": "overflow-wrap",
+          "value": "anywhere",
+          "purpose": "Establish a readable document baseline. Wrap long names and URLs rather than widening the page.",
+          "intent": "Read and navigate ordinary content without zoom or horizontal panning.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "headings",
+      "selector": "h1, h2, h3",
+      "purpose": "Create hierarchy without changing document semantics.",
+      "intent": "Scan sections and locate the task at hand.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "headings.1",
+          "property": "margin",
+          "value": "0 0 var(--ui-space-lg)",
+          "purpose": "Create hierarchy without changing document semantics. Separate headings from following content without cumulative top gaps.",
+          "intent": "Scan sections and locate the task at hand.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "headings.2",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Create hierarchy without changing document semantics. Make headings distinct while keeping their letterforms readable.",
+          "intent": "Scan sections and locate the task at hand.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "headings.3",
+          "property": "line-height",
+          "value": "1.25",
+          "purpose": "Create hierarchy without changing document semantics. Group heading lines more tightly than paragraphs.",
+          "intent": "Scan sections and locate the task at hand.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "title",
+      "selector": "h1",
+      "purpose": "Identify the page once.",
+      "intent": "Know which workspace or example is open.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "title.1",
+          "property": "font-size",
+          "value": "2rem",
+          "purpose": "Identify the page once. Keep the main title legible at narrow widths without oversized display type.",
+          "intent": "Know which workspace or example is open.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "title.2",
+          "property": "line-height",
+          "value": "1.2",
+          "purpose": "Identify the page once. Keep a wrapped page title visually together.",
+          "intent": "Know which workspace or example is open.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "section-title",
+      "selector": "h2",
+      "purpose": "Identify major sections.",
+      "intent": "Find the relevant family of examples.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "section-title.1",
+          "property": "font-size",
+          "value": "1.5rem",
+          "purpose": "Identify major sections. Distinguish sections from both the page title and body.",
+          "intent": "Find the relevant family of examples.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "subheading",
+      "selector": "h3",
+      "purpose": "Identify a component or card.",
+      "intent": "Understand a local group before acting.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "subheading.1",
+          "property": "font-size",
+          "value": "1.125rem",
+          "purpose": "Identify a component or card. Create a local heading without competing with a section title.",
+          "intent": "Understand a local group before acting.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "copy",
+      "selector": "p, ul, ol, dl",
+      "purpose": "Keep prose spacing predictable.",
+      "intent": "Read related information as a single group.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "copy.1",
+          "property": "margin-block",
+          "value": "0 var(--ui-space-lg)",
+          "purpose": "Keep prose spacing predictable. Leave one body-text gap after paragraphs and lists.",
+          "intent": "Read related information as a single group.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "small",
+      "selector": "small, .ui-help",
+      "purpose": "Distinguish secondary explanations.",
+      "intent": "Read help without mistaking it for an editable value.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "small.1",
+          "property": "font-size",
+          "value": "0.875rem",
+          "purpose": "Distinguish secondary explanations. Keep help at a readable 14px when the default is 16px.",
+          "intent": "Read help without mistaking it for an editable value.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "small.2",
+          "property": "color",
+          "value": "var(--ui-muted)",
+          "purpose": "Distinguish secondary explanations. Reduce emphasis while retaining AA text contrast on supported surfaces.",
+          "intent": "Read help without mistaking it for an editable value.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "selector": "a",
+      "purpose": "Make navigation identifiable without color alone.",
+      "intent": "Recognize destinations before clicking.",
+      "check": "focus",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "links.1",
+          "property": "color",
+          "value": "var(--ui-primary)",
+          "purpose": "Make navigation identifiable without color alone. Use the action role for navigation.",
+          "intent": "Recognize destinations before clicking.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "links.2",
+          "property": "text-decoration",
+          "value": "underline",
+          "purpose": "Make navigation identifiable without color alone. Distinguish links from plain text for all color perception.",
+          "intent": "Recognize destinations before clicking.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "links.3",
+          "property": "text-underline-offset",
+          "value": "0.2em",
+          "purpose": "Make navigation identifiable without color alone. Keep the underline clear of letter descenders.",
+          "intent": "Recognize destinations before clicking.",
+          "check": "focus",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "focus",
+      "selector": ":where(a, button, input, select, textarea, summary, [tabindex]):focus-visible",
+      "purpose": "Expose keyboard focus on every interactive surface.",
+      "intent": "Know exactly where keyboard input will act.",
+      "check": "focus",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "focus.1",
+          "property": "outline",
+          "value": "3px solid var(--ui-focus)",
+          "purpose": "Expose keyboard focus on every interactive surface. Use a sufficiently thick, contrasting perimeter instead of removing the native indicator.",
+          "intent": "Know exactly where keyboard input will act.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "focus.2",
+          "property": "outline-offset",
+          "value": "3px",
+          "purpose": "Expose keyboard focus on every interactive surface. Separate the focus perimeter from the control border and dark button fill.",
+          "intent": "Know exactly where keyboard input will act.",
+          "check": "focus",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "hidden",
+      "selector": "[hidden]",
+      "purpose": "Honor the HTML hidden state.",
+      "intent": "Encounter only active content in the current interaction.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "hidden.1",
+          "property": "display",
+          "value": "none !important",
+          "purpose": "Honor the HTML hidden state. Prevent component display rules from revealing hidden errors and inactive status.",
+          "intent": "Encounter only active content in the current interaction.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "native-font",
+      "selector": "button, input, select, textarea",
+      "purpose": "Keep native controls typographically consistent.",
+      "intent": "Read labels and values at the same size as surrounding text.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "native-font.1",
+          "property": "font",
+          "value": "inherit",
+          "purpose": "Keep native controls typographically consistent. Prevent platform form controls from silently shrinking to a small default.",
+          "intent": "Read labels and values at the same size as surrounding text.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "native-accent",
+      "selector": "input[type=\"checkbox\"], input[type=\"radio\"], progress",
+      "purpose": "Retain native control behavior with the action color.",
+      "intent": "Recognize selection and progress without learning custom widgets.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "native-accent.1",
+          "property": "accent-color",
+          "value": "var(--ui-primary)",
+          "purpose": "Retain native control behavior with the action color. Apply identity while leaving native marks and forced-color adaptation intact.",
+          "intent": "Recognize selection and progress without learning custom widgets.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "progress-cap",
+      "selector": "progress",
+      "purpose": "Keep native progress readable inside a narrow panel.",
+      "intent": "Inspect progress while using enlarged text without panning the page.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "progress-cap.1",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Keep native progress readable inside a narrow panel. Cap the browser’s font-relative intrinsic width at the available panel width.",
+          "intent": "Inspect progress while using enlarged text without panning the page.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "selector": "input[type=\"checkbox\"], input[type=\"radio\"]",
+      "purpose": "Keep native choice marks visibly identifiable.",
+      "intent": "See which option is selected inside its larger label target.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "checkbox.1",
+          "property": "inline-size",
+          "value": "1.25rem",
+          "purpose": "Keep native choice marks visibly identifiable. Provide a 20px mark while the surrounding label supplies the full touch area.",
+          "intent": "See which option is selected inside its larger label target.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "checkbox.2",
+          "property": "block-size",
+          "value": "1.25rem",
+          "purpose": "Keep native choice marks visibly identifiable. Give the native choice mark a square footprint.",
+          "intent": "See which option is selected inside its larger label target.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "checkbox.3",
+          "property": "flex-shrink",
+          "value": "0",
+          "purpose": "Keep native choice marks visibly identifiable. Prevent long label text from compressing the mark.",
+          "intent": "See which option is selected inside its larger label target.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-container",
+      "selector": ".container",
+      "purpose": "Use Bootstrap container gutters and centering.",
+      "intent": "Read columns with consistent edge clearance on every screen.",
+      "check": "grid",
+      "media": null,
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-container.1",
+          "property": "--bs-gutter-x",
+          "value": "1.5rem",
+          "purpose": "Use Bootstrap container gutters and centering. Set a 24px total horizontal gutter at the default font size.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.2",
+          "property": "--bs-gutter-y",
+          "value": "0",
+          "purpose": "Use Bootstrap container gutters and centering. Start without a vertical gutter until the page grid opts into one.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.3",
+          "property": "width",
+          "value": "100%",
+          "purpose": "Use Bootstrap container gutters and centering. Fill the available width before the project maximum is applied.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.4",
+          "property": "padding-right",
+          "value": "calc(var(--bs-gutter-x) * 0.5)",
+          "purpose": "Use Bootstrap container gutters and centering. Supply the right half of the Bootstrap gutter.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.5",
+          "property": "padding-left",
+          "value": "calc(var(--bs-gutter-x) * 0.5)",
+          "purpose": "Use Bootstrap container gutters and centering. Supply the left half of the Bootstrap gutter.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.6",
+          "property": "margin-right",
+          "value": "auto",
+          "purpose": "Use Bootstrap container gutters and centering. Center unused space to the right.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-container.7",
+          "property": "margin-left",
+          "value": "auto",
+          "purpose": "Use Bootstrap container gutters and centering. Center unused space to the left.",
+          "intent": "Read columns with consistent edge clearance on every screen.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-row",
+      "selector": ".row",
+      "purpose": "Use Bootstrap wrapping rows.",
+      "intent": "See columns stack naturally when space is limited.",
+      "check": "grid",
+      "media": null,
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-row.1",
+          "property": "--bs-gutter-x",
+          "value": "1.5rem",
+          "purpose": "Use Bootstrap wrapping rows. Provide one consistent total horizontal column gap.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.2",
+          "property": "--bs-gutter-y",
+          "value": "0",
+          "purpose": "Use Bootstrap wrapping rows. Let the project opt into vertical gaps explicitly.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.3",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Use Bootstrap wrapping rows. Lay columns out using the actual Bootstrap flex grid.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.4",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Use Bootstrap wrapping rows. Move columns to another line rather than squeezing their content.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.5",
+          "property": "margin-top",
+          "value": "calc(-1 * var(--bs-gutter-y))",
+          "purpose": "Use Bootstrap wrapping rows. Cancel the first row of child top gutters.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.6",
+          "property": "margin-right",
+          "value": "calc(-0.5 * var(--bs-gutter-x))",
+          "purpose": "Use Bootstrap wrapping rows. Align column content with the container right edge.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-row.7",
+          "property": "margin-left",
+          "value": "calc(-0.5 * var(--bs-gutter-x))",
+          "purpose": "Use Bootstrap wrapping rows. Align column content with the container left edge.",
+          "intent": "See columns stack naturally when space is limited.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-children",
+      "selector": ".row > *",
+      "purpose": "Apply Bootstrap gutters to immediate columns.",
+      "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+      "check": "grid",
+      "media": null,
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-children.1",
+          "property": "flex-shrink",
+          "value": "0",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Preserve a chosen column fraction rather than silently shrinking it.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-children.2",
+          "property": "width",
+          "value": "100%",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Stack every column before a responsive size is selected.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-children.3",
+          "property": "max-width",
+          "value": "100%",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Prevent a column from exceeding its row.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-children.4",
+          "property": "padding-right",
+          "value": "calc(var(--bs-gutter-x) * 0.5)",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Supply a column right half gutter.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-children.5",
+          "property": "padding-left",
+          "value": "calc(var(--bs-gutter-x) * 0.5)",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Supply a column left half gutter.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-children.6",
+          "property": "margin-top",
+          "value": "var(--bs-gutter-y)",
+          "purpose": "Apply Bootstrap gutters to immediate columns. Supply the selected vertical separation between wrapped columns.",
+          "intent": "Keep adjacent panels apart without reducing their reading width unpredictably.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-half",
+      "selector": ".col-md-6",
+      "purpose": "Split paired content at the Bootstrap md breakpoint.",
+      "intent": "Compare related panels side by side when each has enough space.",
+      "check": "grid",
+      "media": "(min-width: 768px)",
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-half.1",
+          "property": "flex",
+          "value": "0 0 auto",
+          "purpose": "Split paired content at the Bootstrap md breakpoint. Keep the responsive column at its explicit fraction.",
+          "intent": "Compare related panels side by side when each has enough space.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-half.2",
+          "property": "width",
+          "value": "50%",
+          "purpose": "Split paired content at the Bootstrap md breakpoint. Allocate six of the twelve Bootstrap columns.",
+          "intent": "Compare related panels side by side when each has enough space.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-main",
+      "selector": ".col-lg-8",
+      "purpose": "Give the main task two thirds of a wide row.",
+      "intent": "Keep the primary workspace more prominent than its supporting panel.",
+      "check": "grid",
+      "media": "(min-width: 992px)",
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-main.1",
+          "property": "flex",
+          "value": "0 0 auto",
+          "purpose": "Give the main task two thirds of a wide row. Keep the main column at its intended fraction.",
+          "intent": "Keep the primary workspace more prominent than its supporting panel.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-main.2",
+          "property": "width",
+          "value": "66.66666667%",
+          "purpose": "Give the main task two thirds of a wide row. Allocate eight of twelve Bootstrap columns.",
+          "intent": "Keep the primary workspace more prominent than its supporting panel.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "bs-side",
+      "selector": ".col-lg-4",
+      "purpose": "Give supporting information one third of a wide row.",
+      "intent": "Read context without losing the main workspace.",
+      "check": "grid",
+      "media": "(min-width: 992px)",
+      "source": "bootstrap",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "bs-side.1",
+          "property": "flex",
+          "value": "0 0 auto",
+          "purpose": "Give supporting information one third of a wide row. Keep the supporting column at its intended fraction.",
+          "intent": "Read context without losing the main workspace.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "bs-side.2",
+          "property": "width",
+          "value": "33.33333333%",
+          "purpose": "Give supporting information one third of a wide row. Allocate four of twelve Bootstrap columns.",
+          "intent": "Read context without losing the main workspace.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "container-cap",
+      "selector": ".container",
+      "purpose": "Bound the total scanning distance.",
+      "intent": "Keep work and navigation close on a large monitor.",
+      "check": "grid",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "container-cap.1",
+          "property": "max-width",
+          "value": "75rem",
+          "purpose": "Bound the total scanning distance. Cap the reference workspace at 1200px with fluid space on smaller screens.",
+          "intent": "Keep work and navigation close on a large monitor.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "grid-gap",
+      "selector": ".row",
+      "purpose": "Separate wrapped panels vertically.",
+      "intent": "Tell one panel from the next on mobile.",
+      "check": "grid",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "grid-gap.1",
+          "property": "--bs-gutter-y",
+          "value": "1.5rem",
+          "purpose": "Separate wrapped panels vertically. Add a 24px vertical gutter using Bootstrap’s existing row contract.",
+          "intent": "Tell one panel from the next on mobile.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "shrink",
+      "selector": ".row > *, .ui-stack, .ui-cluster > *",
+      "purpose": "Allow text-bearing flex and grid children to wrap.",
+      "intent": "Read long values without unintended horizontal page scrolling.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "shrink.1",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Allow text-bearing flex and grid children to wrap. Remove the min-content floor that can force overflow inside flexible layouts.",
+          "intent": "Read long values without unintended horizontal page scrolling.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "header",
+      "selector": ".ui-header",
+      "purpose": "Separate navigation from the working document.",
+      "intent": "Find home and component links without mistaking them for editable content.",
+      "check": "navigation",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "header.1",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Separate navigation from the working document. Give navigation its own opaque reading surface.",
+          "intent": "Find home and component links without mistaking them for editable content.",
+          "check": "navigation",
+          "status": "proposed"
+        },
+        {
+          "id": "header.2",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Separate navigation from the working document. Mark the header boundary without a decorative shadow.",
+          "intent": "Find home and component links without mistaking them for editable content.",
+          "check": "navigation",
+          "status": "proposed"
+        },
+        {
+          "id": "header.3",
+          "property": "padding-block",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Separate navigation from the working document. Give header links room above and below.",
+          "intent": "Find home and component links without mistaking them for editable content.",
+          "check": "navigation",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "cluster",
+      "selector": ".ui-cluster",
+      "purpose": "Group peer actions while allowing wrapping.",
+      "intent": "Find related actions together on both narrow and wide screens.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "cluster.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Group peer actions while allowing wrapping. Place peer actions on a shared axis.",
+          "intent": "Find related actions together on both narrow and wide screens.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "cluster.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Group peer actions while allowing wrapping. Let controls wrap instead of truncating their text.",
+          "intent": "Find related actions together on both narrow and wide screens.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "cluster.3",
+          "property": "gap",
+          "value": "var(--ui-space-md)",
+          "purpose": "Group peer actions while allowing wrapping. Separate individual action targets by 12px.",
+          "intent": "Find related actions together on both narrow and wide screens.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "cluster.4",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Group peer actions while allowing wrapping. Align mixed controls by their visual center.",
+          "intent": "Find related actions together on both narrow and wide screens.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "spread",
+      "selector": ".ui-spread",
+      "purpose": "Separate an identity or title from peer navigation.",
+      "intent": "Distinguish where they are from where they can go.",
+      "check": "navigation",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "spread.1",
+          "property": "justify-content",
+          "value": "space-between",
+          "purpose": "Separate an identity or title from peer navigation. Use available cluster space to separate the two roles while preserving DOM order.",
+          "intent": "Distinguish where they are from where they can go.",
+          "check": "navigation",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "nav-target",
+      "selector": ".ui-nav a",
+      "purpose": "Make text navigation comfortable to activate.",
+      "intent": "Tap section links accurately.",
+      "check": "targets",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "nav-target.1",
+          "property": "display",
+          "value": "inline-flex",
+          "purpose": "Make text navigation comfortable to activate. Allow minimum target height without replacing link semantics.",
+          "intent": "Tap section links accurately.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "nav-target.2",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Make text navigation comfortable to activate. Keep link text centered in its target.",
+          "intent": "Tap section links accurately.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "nav-target.3",
+          "property": "min-block-size",
+          "value": "2.75rem",
+          "purpose": "Make text navigation comfortable to activate. Offer at least a 44px target at the default font size.",
+          "intent": "Tap section links accurately.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "nav-target.4",
+          "property": "padding-inline",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Make text navigation comfortable to activate. Add space around each link’s text.",
+          "intent": "Tap section links accurately.",
+          "check": "targets",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "selector": "main",
+      "purpose": "Separate page content from the header and footer.",
+      "intent": "Start reading without feeling the title is crowded against navigation.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "main.1",
+          "property": "padding-block",
+          "value": "var(--ui-space-section) var(--ui-space-page)",
+          "purpose": "Separate page content from the header and footer. Give the title 32px of separation and the last section 48px of trailing space.",
+          "intent": "Start reading without feeling the title is crowded against navigation.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "stack",
+      "selector": ".ui-stack",
+      "purpose": "Express a vertical group of related blocks.",
+      "intent": "Follow content in a predictable reading order.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "stack.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Express a vertical group of related blocks. Create an explicit layout group without extra margins on children.",
+          "intent": "Follow content in a predictable reading order.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "stack.2",
+          "property": "flex-direction",
+          "value": "column",
+          "purpose": "Express a vertical group of related blocks. Keep the visual order identical to document order.",
+          "intent": "Follow content in a predictable reading order.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "stack.3",
+          "property": "gap",
+          "value": "var(--ui-space-xl)",
+          "purpose": "Express a vertical group of related blocks. Separate peer blocks by 24px.",
+          "intent": "Follow content in a predictable reading order.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "stack-reset",
+      "selector": ".ui-stack > *",
+      "purpose": "Avoid doubling component and stack spacing.",
+      "intent": "Perceive one consistent gap between related blocks.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "stack-reset.1",
+          "property": "margin-block-end",
+          "value": "0",
+          "purpose": "Avoid doubling component and stack spacing. Let the parent gap own separation for direct children.",
+          "intent": "Perceive one consistent gap between related blocks.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "section",
+      "selector": ".ui-section",
+      "purpose": "Separate major component families.",
+      "intent": "Recognize the start of a new topic when scrolling.",
+      "check": "reflow",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "section.1",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-page)",
+          "purpose": "Separate major component families. Leave a 48px interval before each major reference section.",
+          "intent": "Recognize the start of a new topic when scrolling.",
+          "check": "reflow",
+          "status": "proposed"
+        },
+        {
+          "id": "section.2",
+          "property": "scroll-margin-block-start",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Separate major component families. Keep anchor destinations clear of the viewport edge without a sticky header.",
+          "intent": "Recognize the start of a new topic when scrolling.",
+          "check": "reflow",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "panel",
+      "selector": ".card",
+      "purpose": "Contain a related task or reference example.",
+      "intent": "Recognize which information and actions belong together.",
+      "check": "panels",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "panel.1",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Contain a related task or reference example. Give the group an opaque surface distinct from the canvas.",
+          "intent": "Recognize which information and actions belong together.",
+          "check": "panels",
+          "status": "proposed"
+        },
+        {
+          "id": "panel.2",
+          "property": "border",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Contain a related task or reference example. Keep panel edges recognizable on adjacent light surfaces.",
+          "intent": "Recognize which information and actions belong together.",
+          "check": "panels",
+          "status": "proposed"
+        },
+        {
+          "id": "panel.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-panel)",
+          "purpose": "Contain a related task or reference example. Use the larger corner role for containing groups.",
+          "intent": "Recognize which information and actions belong together.",
+          "check": "panels",
+          "status": "proposed"
+        },
+        {
+          "id": "panel.4",
+          "property": "padding",
+          "value": "var(--ui-space-xl)",
+          "purpose": "Contain a related task or reference example. Leave 24px of internal reading and interaction clearance.",
+          "intent": "Recognize which information and actions belong together.",
+          "check": "panels",
+          "status": "proposed"
+        },
+        {
+          "id": "panel.5",
+          "property": "block-size",
+          "value": "100%",
+          "purpose": "Contain a related task or reference example. Align peer panel bottoms within a Bootstrap row without fixing content height.",
+          "intent": "Recognize which information and actions belong together.",
+          "check": "panels",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "measure",
+      "selector": ".ui-measure",
+      "purpose": "Bound prose line length.",
+      "intent": "Read explanations without losing the next line on a wide monitor.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "measure.1",
+          "property": "max-inline-size",
+          "value": "65ch",
+          "purpose": "Bound prose line length. Keep explanatory copy near a comfortable reading measure while allowing narrower wrapping.",
+          "intent": "Read explanations without losing the next line on a wide monitor.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "button",
+      "selector": ".btn",
+      "purpose": "Present an explicit action as a native button.",
+      "intent": "Recognize an available action and activate it precisely.",
+      "check": "targets",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "button.1",
+          "property": "display",
+          "value": "inline-flex",
+          "purpose": "Present an explicit action as a native button. Size button content as one target without changing its native semantics.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.2",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Present an explicit action as a native button. Center text vertically in the minimum target.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.3",
+          "property": "justify-content",
+          "value": "center",
+          "purpose": "Present an explicit action as a native button. Keep short button labels centered.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.4",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Present an explicit action as a native button. Keep optional icon and label distinct.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.5",
+          "property": "min-block-size",
+          "value": "2.75rem",
+          "purpose": "Present an explicit action as a native button. Provide a 44px target without imposing a fixed height on wrapped labels.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.6",
+          "property": "padding",
+          "value": "var(--ui-space-sm) var(--ui-space-lg)",
+          "purpose": "Present an explicit action as a native button. Add 8px vertical and 16px horizontal target clearance.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.7",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Present an explicit action as a native button. Show a visible secondary action boundary.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.8",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Present an explicit action as a native button. Use the common control corner role.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.9",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Present an explicit action as a native button. Keep secondary actions quieter than the primary.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.10",
+          "property": "color",
+          "value": "var(--ui-primary)",
+          "purpose": "Present an explicit action as a native button. Identify the action text with a high-contrast green.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.11",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Present an explicit action as a native button. Distinguish actionable labels from surrounding prose.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.12",
+          "property": "text-align",
+          "value": "center",
+          "purpose": "Present an explicit action as a native button. Keep wrapped button labels visually balanced.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "button.13",
+          "property": "cursor",
+          "value": "pointer",
+          "purpose": "Present an explicit action as a native button. Confirm that the button accepts activation when a pointer is used.",
+          "intent": "Recognize an available action and activate it precisely.",
+          "check": "targets",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "primary",
+      "selector": ".btn-primary",
+      "purpose": "Identify the principal action within a local group.",
+      "intent": "Choose the intended next step without scanning equal-weight buttons.",
+      "check": "contrast",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "primary.1",
+          "property": "background-color",
+          "value": "var(--ui-primary)",
+          "purpose": "Identify the principal action within a local group. Fill the main action with the brand/action role.",
+          "intent": "Choose the intended next step without scanning equal-weight buttons.",
+          "check": "contrast",
+          "status": "proposed"
+        },
+        {
+          "id": "primary.2",
+          "property": "border-color",
+          "value": "var(--ui-primary)",
+          "purpose": "Identify the principal action within a local group. Make the border continuous with the main-action fill.",
+          "intent": "Choose the intended next step without scanning equal-weight buttons.",
+          "check": "contrast",
+          "status": "proposed"
+        },
+        {
+          "id": "primary.3",
+          "property": "color",
+          "value": "var(--ui-surface)",
+          "purpose": "Identify the principal action within a local group. Maintain a contrasting light label on the dark fill.",
+          "intent": "Choose the intended next step without scanning equal-weight buttons.",
+          "check": "contrast",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "button-hover",
+      "selector": ".btn:hover:not(:disabled)",
+      "purpose": "Give pointer feedback for secondary actions.",
+      "intent": "Confirm which action is currently targeted.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "button-hover.1",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Give pointer feedback for secondary actions. Change the fill without moving or resizing the target.",
+          "intent": "Confirm which action is currently targeted.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "primary-hover",
+      "selector": ".btn-primary:hover:not(:disabled)",
+      "purpose": "Give pointer feedback for the principal action.",
+      "intent": "Keep the primary action recognizable while pointing at it.",
+      "check": "contrast",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "primary-hover.1",
+          "property": "background-color",
+          "value": "var(--ui-primary-hover)",
+          "purpose": "Give pointer feedback for the principal action. Deepen the fill while preserving white-label contrast.",
+          "intent": "Keep the primary action recognizable while pointing at it.",
+          "check": "contrast",
+          "status": "proposed"
+        },
+        {
+          "id": "primary-hover.2",
+          "property": "border-color",
+          "value": "var(--ui-primary-hover)",
+          "purpose": "Give pointer feedback for the principal action. Keep the perimeter aligned with the hover fill.",
+          "intent": "Keep the primary action recognizable while pointing at it.",
+          "check": "contrast",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "disabled",
+      "selector": ".btn:disabled, input:disabled, select:disabled, textarea:disabled",
+      "purpose": "Show that an action or value is unavailable.",
+      "intent": "Read an unavailable control and look for its adjacent explanation.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "disabled.1",
+          "property": "color",
+          "value": "var(--ui-disabled)",
+          "purpose": "Show that an action or value is unavailable. Keep disabled text readable instead of lowering the entire element opacity.",
+          "intent": "Read an unavailable control and look for its adjacent explanation.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "disabled.2",
+          "property": "background-color",
+          "value": "var(--ui-disabled-bg)",
+          "purpose": "Show that an action or value is unavailable. Distinguish unavailable values from editable white controls.",
+          "intent": "Read an unavailable control and look for its adjacent explanation.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "disabled.3",
+          "property": "cursor",
+          "value": "not-allowed",
+          "purpose": "Show that an action or value is unavailable. Give a pointer hint that activation is unavailable; the native disabled attribute enforces it.",
+          "intent": "Read an unavailable control and look for its adjacent explanation.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "label",
+      "selector": "label, legend",
+      "purpose": "Identify the value or choices being requested.",
+      "intent": "Understand a field before entering information.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "label.1",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Identify the value or choices being requested. Distinguish persistent field names from values and help.",
+          "intent": "Understand a field before entering information.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "selector": ".form-control, .form-select",
+      "purpose": "Expose ordinary native editing controls.",
+      "intent": "Enter or choose values using familiar browser behavior.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "control.1",
+          "property": "display",
+          "value": "block",
+          "purpose": "Expose ordinary native editing controls. Place the control below its persistent label.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.2",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Expose ordinary native editing controls. Use the available column width for input.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.3",
+          "property": "min-block-size",
+          "value": "2.75rem",
+          "purpose": "Expose ordinary native editing controls. Give editing controls a 44px minimum target.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.4",
+          "property": "padding",
+          "value": "var(--ui-space-sm) var(--ui-space-md)",
+          "purpose": "Expose ordinary native editing controls. Keep entered text clear of the control border.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.5",
+          "property": "color",
+          "value": "var(--ui-ink)",
+          "purpose": "Expose ordinary native editing controls. Use the body text contrast role for entered values.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.6",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Expose ordinary native editing controls. Indicate the active editable surface.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.7",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Expose ordinary native editing controls. Distinguish the input boundary with at least 3:1 contrast.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "control.8",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Expose ordinary native editing controls. Use the shared control corner role.",
+          "intent": "Enter or choose values using familiar browser behavior.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "textarea",
+      "selector": "textarea.form-control",
+      "purpose": "Let multi-line content grow under user control.",
+      "intent": "Review a longer draft without a tiny fixed viewport.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "textarea.1",
+          "property": "min-block-size",
+          "value": "7rem",
+          "purpose": "Let multi-line content grow under user control. Show several lines of a normal note before scrolling.",
+          "intent": "Review a longer draft without a tiny fixed viewport.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "textarea.2",
+          "property": "resize",
+          "value": "vertical",
+          "purpose": "Let multi-line content grow under user control. Allow more reading height without breaking the column width.",
+          "intent": "Review a longer draft without a tiny fixed viewport.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "fieldset",
+      "selector": "fieldset",
+      "purpose": "Keep native group semantics without duplicate visual framing.",
+      "intent": "Understand related options as one named question.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "fieldset.1",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Keep native group semantics without duplicate visual framing. Allow a named group to fit a narrow column.",
+          "intent": "Understand related options as one named question.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "fieldset.2",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Keep native group semantics without duplicate visual framing. Let the parent stack determine outer spacing.",
+          "intent": "Understand related options as one named question.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "fieldset.3",
+          "property": "padding",
+          "value": "0",
+          "purpose": "Keep native group semantics without duplicate visual framing. Use the parent panel’s padding instead of double insetting choices.",
+          "intent": "Understand related options as one named question.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "fieldset.4",
+          "property": "border",
+          "value": "0",
+          "purpose": "Keep native group semantics without duplicate visual framing. Avoid a second box around an already named choice group.",
+          "intent": "Understand related options as one named question.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "legend",
+      "selector": "legend",
+      "purpose": "Give choice groups a persistent visible name.",
+      "intent": "Know what the following radio or checkbox options answer.",
+      "check": "controls",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "legend.1",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Give choice groups a persistent visible name. Place the named question above the option targets.",
+          "intent": "Know what the following radio or checkbox options answer.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "legend.2",
+          "property": "font-size",
+          "value": "1rem",
+          "purpose": "Give choice groups a persistent visible name. Keep question names at readable body size.",
+          "intent": "Know what the following radio or checkbox options answer.",
+          "check": "controls",
+          "status": "proposed"
+        },
+        {
+          "id": "legend.3",
+          "property": "margin-block-end",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Give choice groups a persistent visible name. Separate the group name from its first option.",
+          "intent": "Know what the following radio or checkbox options answer.",
+          "check": "controls",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "choice",
+      "selector": ".ui-choice",
+      "purpose": "Make the whole native choice label a touch target.",
+      "intent": "Select an option without needing to hit a small mark.",
+      "check": "targets",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "choice.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Make the whole native choice label a touch target. Keep the native mark adjacent to its text.",
+          "intent": "Select an option without needing to hit a small mark.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "choice.2",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Make the whole native choice label a touch target. Align the native mark and label text.",
+          "intent": "Select an option without needing to hit a small mark.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "choice.3",
+          "property": "gap",
+          "value": "var(--ui-space-md)",
+          "purpose": "Make the whole native choice label a touch target. Leave 12px between the mark and its explanation.",
+          "intent": "Select an option without needing to hit a small mark.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "choice.4",
+          "property": "min-block-size",
+          "value": "2.75rem",
+          "purpose": "Make the whole native choice label a touch target. Offer at least 44px of label height for activation.",
+          "intent": "Select an option without needing to hit a small mark.",
+          "check": "targets",
+          "status": "proposed"
+        },
+        {
+          "id": "choice.5",
+          "property": "padding-block",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Make the whole native choice label a touch target. Keep multi-line options comfortably separated.",
+          "intent": "Select an option without needing to hit a small mark.",
+          "check": "targets",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "selector": "[aria-invalid=\"true\"]",
+      "purpose": "Identify a field requiring correction.",
+      "intent": "Find the input mentioned in the accompanying error message.",
+      "check": "validation",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "invalid.1",
+          "property": "border-color",
+          "value": "var(--ui-danger)",
+          "purpose": "Identify a field requiring correction. Pair the textual error with a consistent error border.",
+          "intent": "Find the input mentioned in the accompanying error message.",
+          "check": "validation",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "error",
+      "selector": ".ui-error",
+      "purpose": "Explain errors next to the affected field.",
+      "intent": "Understand what to fix without interpreting color alone.",
+      "check": "validation",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "error.1",
+          "property": "color",
+          "value": "var(--ui-danger)",
+          "purpose": "Explain errors next to the affected field. Use the error text role at normal text contrast.",
+          "intent": "Understand what to fix without interpreting color alone.",
+          "check": "validation",
+          "status": "proposed"
+        },
+        {
+          "id": "error.2",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Explain errors next to the affected field. Make correction guidance distinguishable from optional help.",
+          "intent": "Understand what to fix without interpreting color alone.",
+          "check": "validation",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "editor",
+      "selector": ".ui-editor",
+      "purpose": "Group a reviewable value and its native edit disclosure.",
+      "intent": "Review current values before choosing to change them.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "editor.1",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Group a reviewable value and its native edit disclosure. Separate adjacent editable values without presenting a wall of input boxes.",
+          "intent": "Review current values before choosing to change them.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "editor.2",
+          "property": "padding-block",
+          "value": "var(--ui-space-md)",
+          "purpose": "Group a reviewable value and its native edit disclosure. Give each value its own 12px vertical breathing room.",
+          "intent": "Review current values before choosing to change them.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "selector": ".ui-editor > summary",
+      "purpose": "Expose a label-like click-to-edit affordance.",
+      "intent": "Activate the current value with mouse, touch, Enter or Space.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "summary.1",
+          "property": "min-block-size",
+          "value": "2.75rem",
+          "purpose": "Expose a label-like click-to-edit affordance. Keep the native disclosure target at least 44px high.",
+          "intent": "Activate the current value with mouse, touch, Enter or Space.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "summary.2",
+          "property": "padding",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Expose a label-like click-to-edit affordance. Separate summary text from its marker and neighboring row.",
+          "intent": "Activate the current value with mouse, touch, Enter or Space.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "summary.3",
+          "property": "cursor",
+          "value": "pointer",
+          "purpose": "Expose a label-like click-to-edit affordance. Confirm the summary is interactive without removing its native disclosure marker.",
+          "intent": "Activate the current value with mouse, touch, Enter or Space.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "summary.4",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Expose a label-like click-to-edit affordance. Give hover feedback the same corner role as other controls.",
+          "intent": "Activate the current value with mouse, touch, Enter or Space.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "summary-hover",
+      "selector": ".ui-editor > summary:hover",
+      "purpose": "Make click-to-edit discoverable with pointer feedback.",
+      "intent": "Confirm that selecting the value reveals its editor.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "summary-hover.1",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Make click-to-edit discoverable with pointer feedback. Highlight the existing target without an unexpected layout shift.",
+          "intent": "Confirm that selecting the value reveals its editor.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "summary-label",
+      "selector": ".ui-field-name",
+      "purpose": "Keep field identity distinct from its saved value.",
+      "intent": "Recognize which value the Edit action will change.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "summary-label.1",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Keep field identity distinct from its saved value. Emphasize the persistent name in the disclosure summary.",
+          "intent": "Recognize which value the Edit action will change.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "edit-cue",
+      "selector": ".ui-edit-cue",
+      "purpose": "Make editability visible before hover.",
+      "intent": "Discover editing when using touch or keyboard.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "edit-cue.1",
+          "property": "color",
+          "value": "var(--ui-primary)",
+          "purpose": "Make editability visible before hover. Use the action role for the always-visible Edit cue.",
+          "intent": "Discover editing when using touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "edit-cue.2",
+          "property": "text-decoration",
+          "value": "underline",
+          "purpose": "Make editability visible before hover. Make the cue recognizable without relying on color.",
+          "intent": "Discover editing when using touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        },
+        {
+          "id": "edit-cue.3",
+          "property": "margin-inline-start",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Make editability visible before hover. Separate the action cue from the saved value.",
+          "intent": "Discover editing when using touch or keyboard.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "edit-form",
+      "selector": ".ui-editor form",
+      "purpose": "Keep a revealed editor close to the value it changes.",
+      "intent": "Edit without losing the field’s review context.",
+      "check": "editing",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "edit-form.1",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-md)",
+          "purpose": "Keep a revealed editor close to the value it changes. Separate the open form from its disclosure summary.",
+          "intent": "Edit without losing the field’s review context.",
+          "check": "editing",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "table-region",
+      "selector": ".table-responsive",
+      "purpose": "Contain genuinely two-dimensional information.",
+      "intent": "Compare columns on desktop and intentionally pan only the table on mobile.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "table-region.1",
+          "property": "overflow-x",
+          "value": "auto",
+          "purpose": "Contain genuinely two-dimensional information. Keep a wide comparison table from widening the whole page.",
+          "intent": "Compare columns on desktop and intentionally pan only the table on mobile.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "table-region.2",
+          "property": "border",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Contain genuinely two-dimensional information. Expose the bounded table region.",
+          "intent": "Compare columns on desktop and intentionally pan only the table on mobile.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "table-region.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Contain genuinely two-dimensional information. Use the control-sized corner role for this bounded region.",
+          "intent": "Compare columns on desktop and intentionally pan only the table on mobile.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "selector": ".table",
+      "purpose": "Present comparable records with native table semantics.",
+      "intent": "Read row and column relationships without a custom grid widget.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "table.1",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Present comparable records with native table semantics. Fill the available region for consistent column scanning.",
+          "intent": "Read row and column relationships without a custom grid widget.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "table.2",
+          "property": "min-inline-size",
+          "value": "36rem",
+          "purpose": "Present comparable records with native table semantics. Preserve six short comparison columns instead of compressing their meaning.",
+          "intent": "Read row and column relationships without a custom grid widget.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "table.3",
+          "property": "border-collapse",
+          "value": "collapse",
+          "purpose": "Present comparable records with native table semantics. Draw single shared row dividers rather than doubled cell borders.",
+          "intent": "Read row and column relationships without a custom grid widget.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "table.4",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Present comparable records with native table semantics. Keep cell copy on a known contrast-tested surface.",
+          "intent": "Read row and column relationships without a custom grid widget.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "cells",
+      "selector": ".table th, .table td",
+      "purpose": "Keep cell content aligned and separated.",
+      "intent": "Scan a row without confusing neighboring values.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "cells.1",
+          "property": "padding",
+          "value": "var(--ui-space-md) var(--ui-space-lg)",
+          "purpose": "Keep cell content aligned and separated. Add 12px vertical and 16px horizontal reading clearance.",
+          "intent": "Scan a row without confusing neighboring values.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "cells.2",
+          "property": "text-align",
+          "value": "start",
+          "purpose": "Keep cell content aligned and separated. Align text with the document’s reading direction.",
+          "intent": "Scan a row without confusing neighboring values.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "cells.3",
+          "property": "vertical-align",
+          "value": "top",
+          "purpose": "Keep cell content aligned and separated. Align multi-line records by their start rather than their center.",
+          "intent": "Scan a row without confusing neighboring values.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "cells.4",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Keep cell content aligned and separated. Separate records without adding a heavy cell grid.",
+          "intent": "Scan a row without confusing neighboring values.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "table-head",
+      "selector": ".table thead",
+      "purpose": "Distinguish column definitions from records.",
+      "intent": "Know how to interpret each vertical series of values.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "table-head.1",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Distinguish column definitions from records. Give the heading row a separate low-emphasis surface.",
+          "intent": "Know how to interpret each vertical series of values.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "caption",
+      "selector": "caption",
+      "purpose": "Name a native table at its entry point.",
+      "intent": "Understand what is being compared before entering the rows.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "caption.1",
+          "property": "caption-side",
+          "value": "top",
+          "purpose": "Name a native table at its entry point. Put the table’s purpose before its data in visual reading order.",
+          "intent": "Understand what is being compared before entering the rows.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "caption.2",
+          "property": "padding",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Name a native table at its entry point. Keep the caption clear of the table perimeter.",
+          "intent": "Understand what is being compared before entering the rows.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "caption.3",
+          "property": "color",
+          "value": "var(--ui-muted)",
+          "purpose": "Name a native table at its entry point. Distinguish explanatory caption text from record values.",
+          "intent": "Understand what is being compared before entering the rows.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "caption.4",
+          "property": "text-align",
+          "value": "start",
+          "purpose": "Name a native table at its entry point. Keep the caption aligned with row labels.",
+          "intent": "Understand what is being compared before entering the rows.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "numeric",
+      "selector": ".table .ui-numeric",
+      "purpose": "Align comparable numeric quantities.",
+      "intent": "Compare task counts without shifting digit widths.",
+      "check": "table",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "numeric.1",
+          "property": "text-align",
+          "value": "end",
+          "purpose": "Align comparable numeric quantities. Override the table’s ordinary start alignment for a numeric column and align its units place.",
+          "intent": "Compare task counts without shifting digit widths.",
+          "check": "table",
+          "status": "proposed"
+        },
+        {
+          "id": "numeric.2",
+          "property": "font-variant-numeric",
+          "value": "tabular-nums",
+          "purpose": "Align comparable numeric quantities. Give digits equal advance widths where the installed font supports it.",
+          "intent": "Compare task counts without shifting digit widths.",
+          "check": "table",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "selector": ".ui-status",
+      "purpose": "Present an explicit named result or state.",
+      "intent": "Understand a state without interpreting an isolated colored dot.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "status.1",
+          "property": "display",
+          "value": "inline-block",
+          "purpose": "Present an explicit named result or state. Keep a short status label together as one visual item.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "status.2",
+          "property": "padding",
+          "value": "var(--ui-space-xs) var(--ui-space-sm)",
+          "purpose": "Present an explicit named result or state. Separate status text from its tinted background.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "status.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Present an explicit named result or state. Use the same compact shape for peer status labels.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "status.4",
+          "property": "font-size",
+          "value": "0.875rem",
+          "purpose": "Present an explicit named result or state. Keep supplementary state labels readable without competing with task names.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "status.5",
+          "property": "color",
+          "value": "var(--ui-success)",
+          "purpose": "Present an explicit named result or state. Use the success text role only for confirmed successful states.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "status.6",
+          "property": "background-color",
+          "value": "var(--ui-success-bg)",
+          "purpose": "Present an explicit named result or state. Group confirmed-state text without a saturated fill.",
+          "intent": "Understand a state without interpreting an isolated colored dot.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "pending",
+      "selector": ".ui-status-pending",
+      "purpose": "Distinguish pending review from completed work.",
+      "intent": "Know which item still needs a decision.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "pending.1",
+          "property": "color",
+          "value": "var(--ui-warning)",
+          "purpose": "Distinguish pending review from completed work. Use a contrast-tested warning text role with an explicit Pending label.",
+          "intent": "Know which item still needs a decision.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "pending.2",
+          "property": "background-color",
+          "value": "var(--ui-warning-bg)",
+          "purpose": "Distinguish pending review from completed work. Provide a distinct pending-state background.",
+          "intent": "Know which item still needs a decision.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "notice",
+      "selector": ".ui-notice",
+      "purpose": "Group relevant guidance without interrupting the page.",
+      "intent": "Read a condition and continue the same task.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "notice.1",
+          "property": "padding",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Group relevant guidance without interrupting the page. Give the guidance its own readable block.",
+          "intent": "Read a condition and continue the same task.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "notice.2",
+          "property": "border-inline-start",
+          "value": "4px solid var(--ui-primary)",
+          "purpose": "Group relevant guidance without interrupting the page. Identify guidance as a distinct block even without background perception.",
+          "intent": "Read a condition and continue the same task.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "notice.3",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Group relevant guidance without interrupting the page. Group the note without hiding nearby controls.",
+          "intent": "Read a condition and continue the same task.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "selector": ".ui-empty",
+      "purpose": "Explain absence of content in its working area.",
+      "intent": "Understand what is missing and which action can resolve it.",
+      "check": "states",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "empty.1",
+          "property": "padding",
+          "value": "var(--ui-space-section)",
+          "purpose": "Explain absence of content in its working area. Leave room for the empty-state explanation and action.",
+          "intent": "Understand what is missing and which action can resolve it.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "empty.2",
+          "property": "border",
+          "value": "1px dashed var(--ui-border)",
+          "purpose": "Explain absence of content in its working area. Distinguish an empty placeholder from a populated editable panel.",
+          "intent": "Understand what is missing and which action can resolve it.",
+          "check": "states",
+          "status": "proposed"
+        },
+        {
+          "id": "empty.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Explain absence of content in its working area. Keep the empty region visually related to other bounded components.",
+          "intent": "Understand what is missing and which action can resolve it.",
+          "check": "states",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "selector": "code",
+      "purpose": "Distinguish literal implementation identifiers in the reference.",
+      "intent": "Recognize text to copy separately from product instructions.",
+      "check": "type",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "code.1",
+          "property": "font-size",
+          "value": "0.875em",
+          "purpose": "Distinguish literal implementation identifiers in the reference. Keep monospace snippets from dominating surrounding prose.",
+          "intent": "Recognize text to copy separately from product instructions.",
+          "check": "type",
+          "status": "proposed"
+        },
+        {
+          "id": "code.2",
+          "property": "color",
+          "value": "var(--ui-ink)",
+          "purpose": "Distinguish literal implementation identifiers in the reference. Preserve reading contrast on supported reference surfaces.",
+          "intent": "Recognize text to copy separately from product instructions.",
+          "check": "type",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatches",
+      "selector": ".ui-swatch-grid",
+      "purpose": "Present color roles as a responsive comparison group.",
+      "intent": "Compare named colors at narrow and wide widths.",
+      "check": "grid",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatches.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Present color roles as a responsive comparison group. Lay out equal role samples without unrelated framework utilities.",
+          "intent": "Compare named colors at narrow and wide widths.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "swatches.2",
+          "property": "grid-template-columns",
+          "value": "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+          "purpose": "Present color roles as a responsive comparison group. Fit as many 12rem role samples as space allows while permitting one narrow column.",
+          "intent": "Compare named colors at narrow and wide widths.",
+          "check": "grid",
+          "status": "proposed"
+        },
+        {
+          "id": "swatches.3",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Present color roles as a responsive comparison group. Keep separate role samples 16px apart.",
+          "intent": "Compare named colors at narrow and wide widths.",
+          "check": "grid",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch",
+      "selector": ".ui-swatch",
+      "purpose": "Show a token’s actual color as a sample.",
+      "intent": "Associate a documented name and hex value with its appearance.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch.1",
+          "property": "block-size",
+          "value": "3rem",
+          "purpose": "Show a token’s actual color as a sample. Make the color sample large enough to inspect without turning it into a dominant panel.",
+          "intent": "Associate a documented name and hex value with its appearance.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "swatch.2",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Show a token’s actual color as a sample. Keep even white and pale swatches visible.",
+          "intent": "Associate a documented name and hex value with its appearance.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "swatch.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Show a token’s actual color as a sample. Use the common compact sample shape.",
+          "intent": "Associate a documented name and hex value with its appearance.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-primary",
+      "selector": ".ui-swatch-primary",
+      "purpose": "Demonstrate the primary color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-primary.1",
+          "property": "background-color",
+          "value": "var(--ui-primary)",
+          "purpose": "Demonstrate the primary color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-ink",
+      "selector": ".ui-swatch-ink",
+      "purpose": "Demonstrate the ink color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-ink.1",
+          "property": "background-color",
+          "value": "var(--ui-ink)",
+          "purpose": "Demonstrate the ink color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-muted",
+      "selector": ".ui-swatch-muted",
+      "purpose": "Demonstrate the muted color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-muted.1",
+          "property": "background-color",
+          "value": "var(--ui-muted)",
+          "purpose": "Demonstrate the muted color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-canvas",
+      "selector": ".ui-swatch-canvas",
+      "purpose": "Demonstrate the canvas color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-canvas.1",
+          "property": "background-color",
+          "value": "var(--ui-canvas)",
+          "purpose": "Demonstrate the canvas color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-surface",
+      "selector": ".ui-swatch-surface",
+      "purpose": "Demonstrate the surface color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-surface.1",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Demonstrate the surface color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-focus",
+      "selector": ".ui-swatch-focus",
+      "purpose": "Demonstrate the focus color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-focus.1",
+          "property": "background-color",
+          "value": "var(--ui-focus)",
+          "purpose": "Demonstrate the focus color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-danger",
+      "selector": ".ui-swatch-danger",
+      "purpose": "Demonstrate the danger color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-danger.1",
+          "property": "background-color",
+          "value": "var(--ui-danger)",
+          "purpose": "Demonstrate the danger color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-success",
+      "selector": ".ui-swatch-success",
+      "purpose": "Demonstrate the success color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-success.1",
+          "property": "background-color",
+          "value": "var(--ui-success)",
+          "purpose": "Demonstrate the success color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "swatch-warning",
+      "selector": ".ui-swatch-warning",
+      "purpose": "Demonstrate the warning color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-warning.1",
+          "property": "background-color",
+          "value": "var(--ui-warning)",
+          "purpose": "Demonstrate the warning color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dialog",
+      "selector": "dialog",
+      "purpose": "Present a focused decision in the native top layer.",
+      "intent": "Finish or cancel a blocking choice without losing page context.",
+      "check": "dialog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dialog.1",
+          "property": "inline-size",
+          "value": "min(32rem, calc(100% - 2rem))",
+          "purpose": "Present a focused decision in the native top layer. Keep the decision compact with a 16px viewport clearance on each side.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.2",
+          "property": "max-block-size",
+          "value": "calc(100dvh - 2rem)",
+          "purpose": "Present a focused decision in the native top layer. Keep the dialog scrollable inside the currently visible viewport.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.3",
+          "property": "overflow",
+          "value": "auto",
+          "purpose": "Present a focused decision in the native top layer. Allow long or magnified content to remain reachable.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.4",
+          "property": "padding",
+          "value": "var(--ui-space-xl)",
+          "purpose": "Present a focused decision in the native top layer. Give the dialog content 24px of internal clearance.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.5",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Present a focused decision in the native top layer. Expose the decision boundary when backdrop perception is limited.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.6",
+          "property": "border-radius",
+          "value": "var(--ui-radius-panel)",
+          "purpose": "Present a focused decision in the native top layer. Use the containing-panel corner role.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.7",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Present a focused decision in the native top layer. Use the known opaque reading surface.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        },
+        {
+          "id": "dialog.8",
+          "property": "color",
+          "value": "var(--ui-ink)",
+          "purpose": "Present a focused decision in the native top layer. Keep dialog text aligned with the page text role.",
+          "intent": "Finish or cancel a blocking choice without losing page context.",
+          "check": "dialog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "backdrop",
+      "selector": "dialog::backdrop",
+      "purpose": "Separate a modal decision from its inactive background.",
+      "intent": "Know which surface currently receives input.",
+      "check": "dialog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "backdrop.1",
+          "property": "background-color",
+          "value": "#20352a80",
+          "purpose": "Separate a modal decision from its inactive background. Dim the inactive page without suggesting that its data disappeared.",
+          "intent": "Know which surface currently receives input.",
+          "check": "dialog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "skip",
+      "selector": ".ui-skip",
+      "purpose": "Provide a keyboard shortcut to the working document.",
+      "intent": "Bypass repeated navigation.",
+      "check": "focus",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "skip.1",
+          "property": "position",
+          "value": "absolute",
+          "purpose": "Provide a keyboard shortcut to the working document. Keep the skip target independent of header layout.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.2",
+          "property": "inset-block-start",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Provide a keyboard shortcut to the working document. Place the revealed shortcut near the top edge.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.3",
+          "property": "inset-inline-start",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Provide a keyboard shortcut to the working document. Place it at the start of the reading direction.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.4",
+          "property": "transform",
+          "value": "translateY(-200%)",
+          "purpose": "Provide a keyboard shortcut to the working document. Keep the shortcut outside the viewport until focused while preserving keyboard reachability.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.5",
+          "property": "z-index",
+          "value": "1",
+          "purpose": "Provide a keyboard shortcut to the working document. Show the shortcut above ordinary header content without introducing a sticky overlay.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.6",
+          "property": "padding",
+          "value": "var(--ui-space-md)",
+          "purpose": "Provide a keyboard shortcut to the working document. Give the focused shortcut a comfortable target.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        },
+        {
+          "id": "skip.7",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Provide a keyboard shortcut to the working document. Keep shortcut text readable over header content.",
+          "intent": "Bypass repeated navigation.",
+          "check": "focus",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "skip-focus",
+      "selector": ".ui-skip:focus",
+      "purpose": "Reveal the skip shortcut on keyboard focus.",
+      "intent": "See the bypass action before activating it.",
+      "check": "focus",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "skip-focus.1",
+          "property": "transform",
+          "value": "translateY(0)",
+          "purpose": "Reveal the skip shortcut on keyboard focus. Return the focused link to its visible start-edge position.",
+          "intent": "See the bypass action before activating it.",
+          "check": "focus",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "forced-focus",
+      "selector": ":where(a, button, input, select, textarea, summary, [tabindex]):focus-visible",
+      "purpose": "Respect the user’s forced-color focus palette.",
+      "intent": "Find the active target in a high-contrast environment.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-focus.1",
+          "property": "outline-color",
+          "value": "Highlight",
+          "purpose": "Respect the user’s forced-color focus palette. Use the platform focus role rather than preserving the authored blue.",
+          "intent": "Find the active target in a high-contrast environment.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
+    }
+  ],
+  "contrastPairs": [
+    [
+      "ink",
+      "canvas",
+      4.5
+    ],
+    [
+      "ink",
+      "surface",
+      4.5
+    ],
+    [
+      "ink",
+      "subtle",
+      4.5
+    ],
+    [
+      "muted",
+      "surface",
+      4.5
+    ],
+    [
+      "muted",
+      "canvas",
+      4.5
+    ],
+    [
+      "muted",
+      "subtle",
+      4.5
+    ],
+    [
+      "surface",
+      "primary",
+      4.5
+    ],
+    [
+      "surface",
+      "primary-hover",
+      4.5
+    ],
+    [
+      "primary",
+      "surface",
+      4.5
+    ],
+    [
+      "danger",
+      "surface",
+      4.5
+    ],
+    [
+      "success",
+      "success-bg",
+      4.5
+    ],
+    [
+      "warning",
+      "warning-bg",
+      4.5
+    ],
+    [
+      "disabled",
+      "disabled-bg",
+      4.5
+    ],
+    [
+      "border",
+      "surface",
+      3
+    ],
+    [
+      "focus",
+      "surface",
+      3
+    ],
+    [
+      "focus",
+      "canvas",
+      3
+    ]
+  ]
+}

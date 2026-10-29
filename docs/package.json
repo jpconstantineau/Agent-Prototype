@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node server.mjs",
     "test": "node --test tests/*.test.js",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "ui:build": "node ../UI-Spec/build.mjs",
+    "ui:check": "node ../UI-Spec/build.mjs --check"
   },
   "engines": { "node": ">=20" },
   "devDependencies": {

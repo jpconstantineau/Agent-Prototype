@@ -28,3 +28,5 @@ The browser framework adapts the model → tool → observation loop from [early
 The [foundation implementation guide](docs/README.md#foundation-implementation) covers structured questions, local-model Settings and Chrome fallback, shared runtime behavior, and test limitations. The remaining [epic specifications](spec/README.md) describe later capabilities.
 
 Using Lemonade for local inference? Follow the [Lemonade setup guide](docs/README.md#using-lemonade), including its allowed-origin setting and Chrome network permission for the hosted app.
+
+The proposed [UI guidelines and framework](UI-Spec/README.md) document design tokens, native click-to-edit forms, Bootstrap layouts and the user purpose of every CSS declaration. Inspect the [live UI reference](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/) after Pages publishes this revision.

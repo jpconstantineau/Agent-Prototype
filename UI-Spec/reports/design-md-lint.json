@@ -1,0 +1,38 @@
+{
+  "tool": "@google/design.md",
+  "version": "0.4.0",
+  "input": "UI-Spec/DESIGN.md",
+  "inputSha256": "72c24668f53138dec301792c1bc1236b393629c7acc24fea220b7a3edd1ff552",
+  "report": {
+    "findings": [
+      {
+        "severity": "warning",
+        "path": "colors.border",
+        "message": "'border' is defined but never referenced by any component.",
+        "rule": "orphaned-tokens"
+      },
+      {
+        "severity": "warning",
+        "path": "colors.divider",
+        "message": "'divider' is defined but never referenced by any component.",
+        "rule": "orphaned-tokens"
+      },
+      {
+        "severity": "warning",
+        "path": "colors.focus",
+        "message": "'focus' is defined but never referenced by any component.",
+        "rule": "orphaned-tokens"
+      },
+      {
+        "severity": "info",
+        "message": "Design system defines 17 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 11 components.",
+        "rule": "token-summary"
+      }
+    ],
+    "summary": {
+      "errors": 0,
+      "warnings": 3,
+      "infos": 1
+    }
+  }
+}
