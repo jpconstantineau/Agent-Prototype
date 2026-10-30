@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Shared light focus after b010254
+
+The maintainer preferred standard light-mode focus and requested the same blue in the distinct-status appearance. Light/distinct now inherits focus #005fcc from the light palette instead of overriding it with interim azure #006aa8. The existing focus declaration in `palette-light-distinct` keeps its stable ID and revised rationale. Other role values retain their previous values.
+
+Focus is now consistent between standard/distinct preferences at each brightness: #005fcc in light and #409fea in dark. The unit checks enforce that relationship, and existing browser checks cover actual patches, captions, focused controls and the simultaneous violet error state. COLOR-SELECTION.md records purpose and measured contrast.
+
 ## Dark distinct-mode focus separation after 8293cd8
 
 The maintainer found pending and focus too similar in dark/distinct mode and asked whether the color patches reflected the preceding changes. Patches already used the same resolved role tokens as controls; the browser checks now explicitly compare every actual swatch fill and hex caption against its palette in all four modes.

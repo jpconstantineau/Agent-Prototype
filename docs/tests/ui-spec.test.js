@@ -51,11 +51,12 @@ test('normal structural fields remain achromatic and subdued across appearance p
   assert.equal(notice.value,'4px solid var(--ui-border)','Routine guidance must not borrow action color');
   assert.equal(rules.find(r=>r.id==='backdrop').declarations[0].value,'#00000080','Modal dimming must not tint the background');
 });
-test('selected azure stays fixed across appearances and its boundary exception never weakens text or focus checks',()=>{
+test('azure and focus identity stay consistent across status preferences without weakening text or focus checks',()=>{
   assert.equal(contrastExceptions.length,1);
   const exception=contrastExceptions[0];assert.equal(exception.selector,'.btn-primary');
   assert.deepEqual(exception.fills,['primary','primary-hover']);assert.deepEqual(exception.backgrounds,['canvas','surface','subtle']);
   assert.match(exception.reason,/visible|written|label/);assert.match(exception.exclusions,/icon-only.*inputs.*selection marks.*focus/);
+  for(const theme of ['light','dark'])assert.equal(palettes[`${theme}-standard`].colors.focus,palettes[`${theme}-distinct`].colors.focus,`${theme}: status preferences must preserve the focus cue`);
   for(const {colors} of Object.values(palettes)) {
     assert.equal(colors.primary,'#006aa8','The selected primary fill must not become a pale or alternate brand color');
     assert.equal(colors['on-primary'],'#ffffff');

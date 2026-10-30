@@ -13,7 +13,7 @@ Generated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These 
 | subtle | #dedede | #383838 | #dedede | #383838 | Group secondary content with a nearby achromatic gray without implying an alarm or disabled state. |
 | border | #737373 | #a3a3a3 | #737373 | #a3a3a3 | Identify editable-control boundaries with neutral non-text contrast. |
 | divider | #b8b8b8 | #585858 | #b8b8b8 | #585858 | Separate passive groups with a quiet neutral line without making every row a control. |
-| focus | #005fcc | #409fea | #006aa8 | #409fea | Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. |
+| focus | #005fcc | #409fea | #005fcc | #409fea | Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. |
 | danger | #9b2c24 | #f58276 | #6d2498 | #d18bf0 | Mark a problem alongside explanatory text. |
 | success | #235b3b | #4fc685 | #174b7a | #57adf0 | Reinforce confirmed completion alongside a word label. |
 | success-bg | #dedede | #383838 | #dedede | #383838 | Group confirmed results on a neutral gray without making routine completion a colored field. |
@@ -95,19 +95,19 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | interactive / canvas | 4.5:1 | 5.13:1 |
 | danger / canvas | 4.5:1 | 6.31:1 |
 | border / canvas | 3:1 | 3.36:1 |
-| focus / canvas | 3:1 | 4.10:1 |
+| focus / canvas | 3:1 | 4.24:1 |
 | ink / surface | 4.5:1 | 12.44:1 |
 | muted / surface | 4.5:1 | 6.46:1 |
 | interactive / surface | 4.5:1 | 5.80:1 |
 | danger / surface | 4.5:1 | 7.14:1 |
 | border / surface | 3:1 | 3.80:1 |
-| focus / surface | 3:1 | 4.64:1 |
+| focus / surface | 3:1 | 4.80:1 |
 | ink / subtle | 4.5:1 | 11.54:1 |
 | muted / subtle | 4.5:1 | 5.99:1 |
 | interactive / subtle | 4.5:1 | 5.38:1 |
 | danger / subtle | 4.5:1 | 6.63:1 |
 | border / subtle | 3:1 | 3.52:1 |
-| focus / subtle | 3:1 | 4.30:1 |
+| focus / subtle | 3:1 | 4.45:1 |
 | on-primary / primary | 4.5:1 | 5.79:1 |
 | on-primary / primary-hover | 4.5:1 | 7.85:1 |
 | success / success-bg | 4.5:1 | 6.72:1 |
