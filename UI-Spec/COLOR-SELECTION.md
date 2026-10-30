@@ -28,6 +28,22 @@ The resulting method is **a role-based monochromatic blue palette**, anchored in
 
 The Distinct status colors preference changes state/focus cues and line patterns, not the primary, hover or interactive roles. A secondary button retains a neutral surface, neutral boundary and interactive-blue label. “Secondary action” is an emphasis level, not an extra brand hue. There is no tertiary brand accent until a concrete use case and rationale are approved. Success/warning/error remain semantic roles; neutrals are selected for reading/grouping, not from a color-wheel harmony rule. [PALETTES.md](PALETTES.md) records exact values and pairings in every combination.
 
+## Richer dark focus and state cues
+
+The maintainer requested less pastel focus, error, success and pending colors in dark mode. The revised foregrounds have less white and stronger chromatic separation from charcoal while retaining their existing semantic hue families. Saturation is confined to compact text/marks and focus perimeters; neutral backgrounds keep the main screen subdued. Both dark combinations receive the adjustment. Light-mode values and the selected azure button treatment retain their previous values.
+
+| Dark appearance / role | Previous | Revised | Lowest approved contrast | Purpose and user intent |
+| --- | --- | --- | --- | --- |
+| Standard focus | #80b6ff | #409fea | 4.11:1, boundary minimum 3:1 | A clearer medium blue makes the active input/keyboard destination easier to locate without a pale halo. |
+| Standard error | #ffb4ac | #f58276 | 4.66:1, text minimum 4.5:1 | Richer coral makes correction text and an invalid field conspicuous while preserving ordinary-size readability. |
+| Standard success | #a4ddb4 | #4fc685 | 5.44:1, text minimum 4.5:1 | A stronger green distinguishes a confirmed result from neutral metadata; keep the written state and gray label background. |
+| Standard and distinct pending | #f5d483 | #eab54d | 6.26:1, text minimum 4.5:1 | Golden amber gives unresolved decisions clearer emphasis without a large bright warning fill. |
+| Distinct focus | #f1c75b | #e5af3b | 5.88:1, boundary minimum 3:1 | A richer amber preserves the alternate focus family and visible keyboard destination. |
+| Distinct error | #e2b4ff | #d18bf0 | 4.84:1, text minimum 4.5:1 | Stronger violet preserves the alternative to red/green status opposition while keeping textual error identification. |
+| Distinct success | #b3d5ff | #57adf0 | 4.82:1, text minimum 4.5:1 | A more saturated blue identifies the named confirmed result on neutral gray; solid/dashed status boundaries continue to add a non-hue cue. |
+
+These rounded measurements are for inspection; checks use unrounded values. The role matrix remains authoritative. The change does not add glow, colored section fills, animation or a permanent outline to primary actions. Review actual focus/error/status examples, including vision-deficiency simulation, because passing contrast alone does not establish the desired degree of emphasis.
+
 ## Written-label button boundary exception
 
 The approved normal button has a transparent border with its width reserved, an azure fill and a visible written action label. There is no permanent contrasting perimeter or shadow. Hover retains a transparent border. The normal 3px keyboard focus outline with 3px offset still appears through :focus-visible; do not remove it. Forced colors explicitly restores a system ButtonText border and Highlight focus, honoring the user's contrast preference.

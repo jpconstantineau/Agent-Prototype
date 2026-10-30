@@ -155,12 +155,14 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
   const input=titleInput(page);await input.fill('Draft survives a palette change');await page.getByLabel('Find a CSS decision',{exact:true}).focus();expect(await input.evaluate(n=>getComputedStyle(n).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
   await input.click();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
   expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor,border:s.borderTopColor,focus:s.outlineColor};})).toEqual({fg:rgb(palette.colors.ink),bg:rgb(palette.colors.surface),border:rgb(palette.colors.border),focus:rgb(palette.colors.focus)});
+  await page.locator('[data-inline-record]').screenshot({path:`.tmp/ui-${key}-focus.png`});
   await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(input).toHaveValue('Draft survives a palette change');
   await page.getByRole('button',{name:'Save changes',exact:true}).hover();expect(await page.getByRole('button',{name:'Save changes',exact:true}).evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor};})).toEqual({fg:rgb(palette.colors['on-primary']),bg:rgb(palette.colors['primary-hover'])});
   const pending=page.locator('.ui-status-pending').first();await expect(pending).toContainText(/Proposed|Pending/);
   if(palette.vision==='distinct') {expect(await pending.evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('dashed');expect(await page.locator('.ui-status:not(.ui-status-pending)').first().evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('solid');}
   await page.setViewportSize({width:390,height:844});await noPageOverflow(page);await page.locator('#forms').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-mobile.png`});
   await page.setViewportSize({width:1440,height:960});await page.locator('#forms').screenshot({path:`.tmp/ui-${key}-form.png`});
+  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-states.png`});
   const cdp=await context.newCDPSession(page);
   for(const type of ['protanopia','deuteranopia','tritanopia','achromatopsia']) {
     await cdp.send('Emulation.setEmulatedVisionDeficiency',{type});await expect(page.locator('.ui-error').last()).toContainText('error:');await expect(page.locator('.ui-status').filter({hasText:'Saved'}).first()).toBeVisible();

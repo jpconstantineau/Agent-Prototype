@@ -396,8 +396,8 @@
         {
           "id": "palette-dark-standard.11",
           "property": "--ui-focus",
-          "value": "#80b6ff",
-          "purpose": "Apply the complete Dark · standard palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "value": "#409fea",
+          "purpose": "Apply the complete Dark · standard palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -405,8 +405,8 @@
         {
           "id": "palette-dark-standard.12",
           "property": "--ui-danger",
-          "value": "#ffb4ac",
-          "purpose": "Apply the complete Dark · standard palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette.",
+          "value": "#f58276",
+          "purpose": "Apply the complete Dark · standard palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -414,8 +414,8 @@
         {
           "id": "palette-dark-standard.13",
           "property": "--ui-success",
-          "value": "#a4ddb4",
-          "purpose": "Apply the complete Dark · standard palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette.",
+          "value": "#4fc685",
+          "purpose": "Apply the complete Dark · standard palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -432,8 +432,8 @@
         {
           "id": "palette-dark-standard.15",
           "property": "--ui-warning",
-          "value": "#f5d483",
-          "purpose": "Apply the complete Dark · standard palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette.",
+          "value": "#eab54d",
+          "purpose": "Apply the complete Dark · standard palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -798,8 +798,8 @@
         {
           "id": "palette-dark-distinct.11",
           "property": "--ui-focus",
-          "value": "#f1c75b",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "value": "#e5af3b",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -807,8 +807,8 @@
         {
           "id": "palette-dark-distinct.12",
           "property": "--ui-danger",
-          "value": "#e2b4ff",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette.",
+          "value": "#d18bf0",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Mark a problem alongside explanatory text. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -816,8 +816,8 @@
         {
           "id": "palette-dark-distinct.13",
           "property": "--ui-success",
-          "value": "#b3d5ff",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette.",
+          "value": "#57adf0",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Reinforce confirmed completion alongside a word label. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -834,8 +834,8 @@
         {
           "id": "palette-dark-distinct.15",
           "property": "--ui-warning",
-          "value": "#f5d483",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette.",
+          "value": "#eab54d",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Highlight a condition that needs attention without declaring failure. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -4362,11 +4362,11 @@
         "subtle": "#383838",
         "border": "#a3a3a3",
         "divider": "#585858",
-        "focus": "#80b6ff",
-        "danger": "#ffb4ac",
-        "success": "#a4ddb4",
+        "focus": "#409fea",
+        "danger": "#f58276",
+        "success": "#4fc685",
         "success-bg": "#383838",
-        "warning": "#f5d483",
+        "warning": "#eab54d",
         "warning-bg": "#383838",
         "disabled": "#c2c2c2",
         "disabled-bg": "#404040",
@@ -4416,11 +4416,11 @@
         "subtle": "#383838",
         "border": "#a3a3a3",
         "divider": "#585858",
-        "focus": "#f1c75b",
-        "danger": "#e2b4ff",
-        "success": "#b3d5ff",
+        "focus": "#e5af3b",
+        "danger": "#d18bf0",
+        "success": "#57adf0",
         "success-bg": "#383838",
-        "warning": "#f5d483",
+        "warning": "#eab54d",
         "warning-bg": "#383838",
         "disabled": "#c2c2c2",
         "disabled-bg": "#404040",

@@ -13,11 +13,11 @@ Generated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These 
 | subtle | #dedede | #383838 | #dedede | #383838 | Group secondary content with a nearby achromatic gray without implying an alarm or disabled state. |
 | border | #737373 | #a3a3a3 | #737373 | #a3a3a3 | Identify editable-control boundaries with neutral non-text contrast. |
 | divider | #b8b8b8 | #585858 | #b8b8b8 | #585858 | Separate passive groups with a quiet neutral line without making every row a control. |
-| focus | #005fcc | #80b6ff | #7025b4 | #f1c75b | Identify the keyboard destination independently of the primary action color. |
-| danger | #9b2c24 | #ffb4ac | #6d2498 | #e2b4ff | Mark a problem alongside explanatory text. |
-| success | #235b3b | #a4ddb4 | #174b7a | #b3d5ff | Reinforce confirmed completion alongside a word label. |
+| focus | #005fcc | #409fea | #7025b4 | #e5af3b | Identify the keyboard destination independently of the primary action color. |
+| danger | #9b2c24 | #f58276 | #6d2498 | #d18bf0 | Mark a problem alongside explanatory text. |
+| success | #235b3b | #4fc685 | #174b7a | #57adf0 | Reinforce confirmed completion alongside a word label. |
 | success-bg | #dedede | #383838 | #dedede | #383838 | Group confirmed results on a neutral gray without making routine completion a colored field. |
-| warning | #725000 | #f5d483 | #725000 | #f5d483 | Highlight a condition that needs attention without declaring failure. |
+| warning | #725000 | #eab54d | #725000 | #eab54d | Highlight a condition that needs attention without declaring failure. |
 | warning-bg | #dedede | #383838 | #dedede | #383838 | Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. |
 | disabled | #505050 | #c2c2c2 | #505050 | #c2c2c2 | Keep the reason for an unavailable action readable with neutral text. |
 | disabled-bg | #d2d2d2 | #404040 | #d2d2d2 | #404040 | Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. |
@@ -63,25 +63,25 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | ink / canvas | 4.5:1 | 13.26:1 |
 | muted / canvas | 4.5:1 | 8.71:1 |
 | interactive / canvas | 4.5:1 | 6.25:1 |
-| danger / canvas | 4.5:1 | 9.15:1 |
+| danger / canvas | 4.5:1 | 6.16:1 |
 | border / canvas | 3:1 | 6.15:1 |
-| focus / canvas | 3:1 | 7.43:1 |
+| focus / canvas | 3:1 | 5.44:1 |
 | ink / surface | 4.5:1 | 11.60:1 |
 | muted / surface | 4.5:1 | 7.62:1 |
 | interactive / surface | 4.5:1 | 5.47:1 |
-| danger / surface | 4.5:1 | 8.00:1 |
+| danger / surface | 4.5:1 | 5.39:1 |
 | border / surface | 3:1 | 5.38:1 |
-| focus / surface | 3:1 | 6.50:1 |
+| focus / surface | 3:1 | 4.76:1 |
 | ink / subtle | 4.5:1 | 10.02:1 |
 | muted / subtle | 4.5:1 | 6.58:1 |
 | interactive / subtle | 4.5:1 | 4.72:1 |
-| danger / subtle | 4.5:1 | 6.91:1 |
+| danger / subtle | 4.5:1 | 4.66:1 |
 | border / subtle | 3:1 | 4.65:1 |
-| focus / subtle | 3:1 | 5.61:1 |
+| focus / subtle | 3:1 | 4.11:1 |
 | on-primary / primary | 4.5:1 | 5.79:1 |
 | on-primary / primary-hover | 4.5:1 | 7.85:1 |
-| success / success-bg | 4.5:1 | 7.58:1 |
-| warning / warning-bg | 4.5:1 | 8.17:1 |
+| success / success-bg | 4.5:1 | 5.44:1 |
+| warning / warning-bg | 4.5:1 | 6.26:1 |
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
 | on-interactive / interactive | 3:1 | 6.25:1 |
@@ -123,25 +123,25 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | ink / canvas | 4.5:1 | 13.26:1 |
 | muted / canvas | 4.5:1 | 8.71:1 |
 | interactive / canvas | 4.5:1 | 6.25:1 |
-| danger / canvas | 4.5:1 | 9.02:1 |
+| danger / canvas | 4.5:1 | 6.40:1 |
 | border / canvas | 3:1 | 6.15:1 |
-| focus / canvas | 3:1 | 9.65:1 |
+| focus / canvas | 3:1 | 7.78:1 |
 | ink / surface | 4.5:1 | 11.60:1 |
 | muted / surface | 4.5:1 | 7.62:1 |
 | interactive / surface | 4.5:1 | 5.47:1 |
-| danger / surface | 4.5:1 | 7.89:1 |
+| danger / surface | 4.5:1 | 5.60:1 |
 | border / surface | 3:1 | 5.38:1 |
-| focus / surface | 3:1 | 8.45:1 |
+| focus / surface | 3:1 | 6.81:1 |
 | ink / subtle | 4.5:1 | 10.02:1 |
 | muted / subtle | 4.5:1 | 6.58:1 |
 | interactive / subtle | 4.5:1 | 4.72:1 |
-| danger / subtle | 4.5:1 | 6.82:1 |
+| danger / subtle | 4.5:1 | 4.84:1 |
 | border / subtle | 3:1 | 4.65:1 |
-| focus / subtle | 3:1 | 7.29:1 |
+| focus / subtle | 3:1 | 5.88:1 |
 | on-primary / primary | 4.5:1 | 5.79:1 |
 | on-primary / primary-hover | 4.5:1 | 7.85:1 |
-| success / success-bg | 4.5:1 | 7.75:1 |
-| warning / warning-bg | 4.5:1 | 8.17:1 |
+| success / success-bg | 4.5:1 | 4.82:1 |
+| warning / warning-bg | 4.5:1 | 6.26:1 |
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
 | on-interactive / interactive | 3:1 | 6.25:1 |

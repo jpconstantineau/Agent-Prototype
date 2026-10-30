@@ -12,11 +12,11 @@ colors:
   subtle: "#383838"
   border: "#a3a3a3"
   divider: "#585858"
-  focus: "#f1c75b"
-  danger: "#e2b4ff"
-  success: "#b3d5ff"
+  focus: "#e5af3b"
+  danger: "#d18bf0"
+  success: "#57adf0"
   success-bg: "#383838"
-  warning: "#f5d483"
+  warning: "#eab54d"
   warning-bg: "#383838"
   disabled: "#c2c2c2"
   disabled-bg: "#404040"
@@ -126,6 +126,8 @@ Use semantic roles, not approximate hex values or arbitrary Bootstrap contextual
 Ink is for sustained reading. Muted text remains readable body information. Light mode uses a medium-light gray canvas and slightly lighter gray panels; dark mode uses charcoal with nearby gray panels. Structural surfaces, supporting text, dividers, disabled fills and routine guidance boundaries are achromatic in all four combinations. Success and pending labels also use neutral backgrounds. Reserve color for compact actions, focus and explicit state foregrounds; never tint entire sections to decorate normal activity. Error, success and pending states require words as well as color. Border has control-boundary contrast; divider is only for noninteractive grouping. Disabled controls remain legible and need a nearby explanation.
 
 Read [HMI-PHILOSOPHY.md](../HMI-PHILOSOPHY.md) for the source interpretation, exact gray choices and review criteria. These are project-selected web palettes inspired by ISA-101 and ISA-published high-performance HMI guidance, not mandated ISA RGB values or a conformance claim. The light palette is the reference baseline; dark mode is a user preference requiring its own checks. Muting background color must never reduce reading contrast or hide actionable states.
+
+Dark-mode focus and state foregrounds use richer midtones rather than pale tints: blue focus, coral error, green success and golden pending in standard mode; amber focus, violet error, blue success and golden pending in distinct mode. Keep these colors on compact cues and neutral status backgrounds. Their exact decisions and measured contrast are recorded in COLOR-SELECTION.md. Stronger color must not become a glow, large colored panel or substitute for state wording and focus semantics.
 
 The executable contrast matrix in system.mjs specifies permitted pairings, including 4.5:1 ordinary text and 3:1 required control boundaries/focus against their adjacent palette surfaces. A native primary button identified by its visible written action label may have a lower-contrast fill/background edge under the explicit contrastExceptions contract; its label and keyboard focus requirements are unchanged. Transparent borders preserve size in normal and hover states. The exception never applies to selection marks, inputs, icon-only controls or focus. Do not assume any two palette colors may be combined. No gradients or image-backed text are supplied. Four resolved combinations are supplied: light/standard, dark/standard, light/distinct and dark/distinct. Read [PALETTES.md](../PALETTES.md) for every value, passing pair and separate boundary observation. Two native checkbox-based slider switches independently choose Dark mode and Distinct status colors. The optional blue/amber status palette also adds solid/dashed state boundaries; it does not claim to represent every color-vision difference. All four modes use explicit words, visible focus and native state semantics. Native forced-color preferences remain authoritative.
 

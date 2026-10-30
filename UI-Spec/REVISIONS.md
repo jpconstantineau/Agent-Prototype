@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Richer dark focus and state colors after 6381813
+
+The maintainer requested stronger dark-mode focus, error, success and pending colors with moderate emphasis. Standard mode replaces pale blue/coral/mint/amber with richer blue/coral/green/gold midtones. Distinct mode similarly enriches its amber focus, violet error and blue success; pending shares the richer gold. COLOR-SELECTION.md records previous/revised values, each user purpose and measured contrast.
+
+Only the existing focus/danger/success/warning token declarations in `palette-dark-standard` and `palette-dark-distinct` change, retaining stable IDs. Their per-declaration rationale records compact emphasis on charcoal. Light palettes, azure buttons, structural fills, non-color cues, focus geometry and contrast thresholds retain their prior contracts. The existing four-appearance tests cover actual computed colors and interaction; new status/focus screenshots support visual review rather than adding tests that mirror each hex change.
+
 ## Azure and borderless actions after 72ff76e
 
 The maintainer rejected the inherited green primary, selected azure #006aa8 for light mode, rejected the pale dark-mode candidates and accepted the same azure fill on charcoal without a permanent outline. The selected seed/treatment is recorded here; this does not automatically approve every individual declaration rationale. [COLOR-SELECTION.md](COLOR-SELECTION.md) records the monochromatic role method and exact contrast scope.

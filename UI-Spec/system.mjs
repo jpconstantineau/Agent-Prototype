@@ -57,7 +57,7 @@ for (const [key,palette] of Object.entries(palettes).filter(([key])=>key!=='ligh
   const selector = palette.theme==='dark' && palette.vision==='distinct' ? ':root[data-bs-theme="dark"][data-vision="distinct"]' : palette.theme==='dark' ? ':root[data-bs-theme="dark"]:not([data-vision="distinct"])' : ':root[data-vision="distinct"]:not([data-bs-theme="dark"])';
   rule(`palette-${key}`, selector, `Apply the complete ${palette.label} palette.`, 'Read and operate the same components in the chosen appearance without losing semantic cues.', 'colors', [
     ['color-scheme',palette.theme,'Align native controls and scrollbars with this appearance.'],
-    ...Object.entries(palette.colors).map(([role,value])=>[`--ui-${role}`,value,`${colorUse[role]} This value is independently contrast checked in this palette.`]),
+    ...Object.entries(palette.colors).map(([role,value])=>[`--ui-${role}`,value,`${colorUse[role]} This value is independently contrast checked in this palette.${palette.theme==='dark'&&['focus','danger','success','warning'].includes(role)?' Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.':''}`]),
   ]);
 }
 rule('box', '*, *::before, *::after', 'Make declared sizes include padding and borders.', 'Keep controls and columns within the visible viewport.', 'reflow', [['box-sizing','border-box','Prevent padded elements from unexpectedly exceeding their allotted width.']]);
