@@ -1,6 +1,6 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
-import { tokens, rules, bootstrapVersion, contrastPairs, palettes, colorUse } from './system.mjs';
+import { tokens, rules, bootstrapVersion, contrastPairs, contrastExceptions, palettes, colorUse } from './system.mjs';
 import {designFiles} from './palettes.mjs';
 import {validateRegistry,validateGenerated,contrast} from './validate.mjs';
 const root = new URL('../', import.meta.url);
@@ -22,7 +22,7 @@ export async function outputs() {
   const body = await readFile(new URL('design-body.md', import.meta.url),'utf8');
   const result = new Map([
     ['docs/ui-spec/design-system.css',cssText()],
-    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 2, bootstrapVersion, rules, contrastPairs, palettes },null,2)+'\n'],
+    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 3, bootstrapVersion, rules, contrastPairs, contrastExceptions, palettes },null,2)+'\n'],
     ['UI-Spec/CSS-DECISIONS.md',ledgerText()],
   ]);
   for (const [key,palette] of Object.entries(palettes)) {
@@ -33,6 +33,11 @@ export async function outputs() {
   const table = Object.keys(tokens.colors).map(role=>`| ${role} | ${Object.values(palettes).map(p=>p.colors[role]).join(' | ')} | ${colorUse[role]} |`).join('\n');
   let matrix='';
   for(const [key,p] of Object.entries(palettes)) matrix+=`\n## ${p.label}\n\n| Foreground / background | Required | Measured |\n| --- | --- | --- |\n`+contrastPairs.map(([f,b,min])=>`| ${f} / ${b} | ${min}:1 | ${contrast(p.colors[f],p.colors[b]).toFixed(2)}:1 |`).join('\n')+'\n';
+  matrix+='\n## Labelled primary-button boundary observations\n\nThese observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 25 required text/control/focus pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.\n';
+  for(const exception of contrastExceptions) {
+    matrix+=`\n${exception.purpose} ${exception.reason} ${exception.exclusions}\n\n| Appearance | Fill / adjacent background | Measured boundary |\n| --- | --- | --- |\n`;
+    matrix+=Object.values(palettes).flatMap(p=>exception.fills.flatMap(fill=>exception.backgrounds.map(bg=>`| ${p.label} | ${fill} / ${bg} | ${contrast(p.colors[fill],p.colors[bg]).toFixed(2)}:1 |`))).join('\n')+'\n';
+  }
   result.set('UI-Spec/PALETTES.md','# Four appearance combinations\n\nGenerated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These are four independently checked palettes, selected by two preferences: brightness and distinct status colors. All modes retain words, focus and native control semantics. The distinct option avoids red/green status opposition; it is not a universal simulation or cure for every color-vision difference.\n\n| Role | Light standard | Dark standard | Light distinct | Dark distinct | Purpose |\n| --- | --- | --- | --- | --- | --- |\n'+table+'\n\nContrast is tested using unrounded WCAG relative luminance; the following display values are rounded for inspection only.'+matrix);
   return result;
 }

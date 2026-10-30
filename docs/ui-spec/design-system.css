@@ -3,8 +3,8 @@
 /* tokens: Publish semantic values for consistent reuse. */
 :root {
   color-scheme: light; /* tokens.1 */
-  --ui-primary: #284637; /* tokens.2 */
-  --ui-primary-hover: #1d3529; /* tokens.3 */
+  --ui-primary: #006aa8; /* tokens.2 */
+  --ui-primary-hover: #005686; /* tokens.3 */
   --ui-ink: #242424; /* tokens.4 */
   --ui-muted: #505050; /* tokens.5 */
   --ui-canvas: #d9d9d9; /* tokens.6 */
@@ -31,13 +31,15 @@
   --ui-radius-panel: 0.75rem; /* tokens.27 */
   --ui-font: system-ui, -apple-system, "Segoe UI", sans-serif; /* tokens.28 */
   --ui-on-primary: #ffffff; /* tokens.29 */
+  --ui-interactive: #005b90; /* tokens.30 */
+  --ui-on-interactive: #ffffff; /* tokens.31 */
 }
 
 /* palette-dark-standard: Apply the complete Dark · standard palette. */
 :root[data-bs-theme="dark"]:not([data-vision="distinct"]) {
   color-scheme: dark; /* palette-dark-standard.1 */
-  --ui-primary: #9bd2ae; /* palette-dark-standard.2 */
-  --ui-primary-hover: #b5e3c4; /* palette-dark-standard.3 */
+  --ui-primary: #006aa8; /* palette-dark-standard.2 */
+  --ui-primary-hover: #005686; /* palette-dark-standard.3 */
   --ui-ink: #ededed; /* palette-dark-standard.4 */
   --ui-muted: #c2c2c2; /* palette-dark-standard.5 */
   --ui-canvas: #242424; /* palette-dark-standard.6 */
@@ -53,14 +55,16 @@
   --ui-warning-bg: #383838; /* palette-dark-standard.16 */
   --ui-disabled: #c2c2c2; /* palette-dark-standard.17 */
   --ui-disabled-bg: #404040; /* palette-dark-standard.18 */
-  --ui-on-primary: #102318; /* palette-dark-standard.19 */
+  --ui-on-primary: #ffffff; /* palette-dark-standard.19 */
+  --ui-interactive: #40adf0; /* palette-dark-standard.20 */
+  --ui-on-interactive: #242424; /* palette-dark-standard.21 */
 }
 
 /* palette-light-distinct: Apply the complete Light · distinct status colors palette. */
 :root[data-vision="distinct"]:not([data-bs-theme="dark"]) {
   color-scheme: light; /* palette-light-distinct.1 */
-  --ui-primary: #174b7a; /* palette-light-distinct.2 */
-  --ui-primary-hover: #10395f; /* palette-light-distinct.3 */
+  --ui-primary: #006aa8; /* palette-light-distinct.2 */
+  --ui-primary-hover: #005686; /* palette-light-distinct.3 */
   --ui-ink: #242424; /* palette-light-distinct.4 */
   --ui-muted: #505050; /* palette-light-distinct.5 */
   --ui-canvas: #d9d9d9; /* palette-light-distinct.6 */
@@ -77,13 +81,15 @@
   --ui-disabled: #505050; /* palette-light-distinct.17 */
   --ui-disabled-bg: #d2d2d2; /* palette-light-distinct.18 */
   --ui-on-primary: #ffffff; /* palette-light-distinct.19 */
+  --ui-interactive: #005b90; /* palette-light-distinct.20 */
+  --ui-on-interactive: #ffffff; /* palette-light-distinct.21 */
 }
 
 /* palette-dark-distinct: Apply the complete Dark · distinct status colors palette. */
 :root[data-bs-theme="dark"][data-vision="distinct"] {
   color-scheme: dark; /* palette-dark-distinct.1 */
-  --ui-primary: #9fcaff; /* palette-dark-distinct.2 */
-  --ui-primary-hover: #c3deff; /* palette-dark-distinct.3 */
+  --ui-primary: #006aa8; /* palette-dark-distinct.2 */
+  --ui-primary-hover: #005686; /* palette-dark-distinct.3 */
   --ui-ink: #ededed; /* palette-dark-distinct.4 */
   --ui-muted: #c2c2c2; /* palette-dark-distinct.5 */
   --ui-canvas: #242424; /* palette-dark-distinct.6 */
@@ -99,7 +105,9 @@
   --ui-warning-bg: #383838; /* palette-dark-distinct.16 */
   --ui-disabled: #c2c2c2; /* palette-dark-distinct.17 */
   --ui-disabled-bg: #404040; /* palette-dark-distinct.18 */
-  --ui-on-primary: #101f30; /* palette-dark-distinct.19 */
+  --ui-on-primary: #ffffff; /* palette-dark-distinct.19 */
+  --ui-interactive: #40adf0; /* palette-dark-distinct.20 */
+  --ui-on-interactive: #242424; /* palette-dark-distinct.21 */
 }
 
 /* box: Make declared sizes include padding and borders. */
@@ -154,7 +162,7 @@ small, .ui-help {
 
 /* links: Make navigation identifiable without color alone. */
 a {
-  color: var(--ui-primary); /* links.1 */
+  color: var(--ui-interactive); /* links.1 */
   text-decoration: underline; /* links.2 */
   text-underline-offset: 0.2em; /* links.3 */
 }
@@ -177,7 +185,7 @@ button, input, select, textarea {
 
 /* native-accent: Retain native control behavior with the action color. */
 input[type="checkbox"], input[type="radio"], progress {
-  accent-color: var(--ui-primary); /* native-accent.1 */
+  accent-color: var(--ui-interactive); /* native-accent.1 */
 }
 
 /* progress-cap: Keep native progress readable inside a narrow panel. */
@@ -339,7 +347,7 @@ main {
   border: 1px solid var(--ui-border); /* button.7 */
   border-radius: var(--ui-radius-small); /* button.8 */
   background-color: var(--ui-surface); /* button.9 */
-  color: var(--ui-primary); /* button.10 */
+  color: var(--ui-interactive); /* button.10 */
   font-weight: 600; /* button.11 */
   text-align: center; /* button.12 */
   cursor: pointer; /* button.13 */
@@ -348,7 +356,7 @@ main {
 /* primary: Identify the principal action within a local group. */
 .btn-primary {
   background-color: var(--ui-primary); /* primary.1 */
-  border-color: var(--ui-primary); /* primary.2 */
+  border-color: transparent; /* primary.2 */
   color: var(--ui-on-primary); /* primary.3 */
 }
 
@@ -360,7 +368,7 @@ main {
 /* primary-hover: Give pointer feedback for the principal action. */
 .btn-primary:hover:not(:disabled) {
   background-color: var(--ui-primary-hover); /* primary-hover.1 */
-  border-color: var(--ui-primary-hover); /* primary-hover.2 */
+  border-color: transparent; /* primary-hover.2 */
 }
 
 /* disabled: Show that an action or value is unavailable. */
@@ -565,6 +573,11 @@ code {
   background-color: var(--ui-warning); /* swatch-warning.1 */
 }
 
+/* swatch-interactive: Demonstrate the interactive color token. */
+.ui-swatch-interactive {
+  background-color: var(--ui-interactive); /* swatch-interactive.1 */
+}
+
 /* dialog: Present a focused decision in the native top layer. */
 dialog {
   inline-size: min(32rem, calc(100% - 2rem)); /* dialog.1 */
@@ -670,13 +683,13 @@ textarea.ui-inline-control:focus {
 
 /* switch-on: Reinforce an enabled slider preference. */
 .ui-switch input[type="checkbox"]:checked {
-  background-color: var(--ui-primary); /* switch-on.1 */
+  background-color: var(--ui-interactive); /* switch-on.1 */
 }
 
 /* switch-thumb-on: Move and contrast the enabled slider thumb. */
 .ui-switch input[type="checkbox"]:checked::before {
   transform: translateX(1.375rem); /* switch-thumb-on.1 */
-  background-color: var(--ui-on-primary); /* switch-thumb-on.2 */
+  background-color: var(--ui-on-interactive); /* switch-thumb-on.2 */
 }
 
 /* distinct-status: Add a shape cue to the alternate status palette. */
@@ -717,5 +730,12 @@ textarea.ui-inline-control:focus {
 /* forced-switch-thumb: Remove the decorative thumb when the native mark returns. */
 .ui-switch input[type="checkbox"]::before {
   display: none; /* forced-switch-thumb.1 */
+}
+}
+
+@media (forced-colors: active) {
+/* forced-primary: Honor the system palette for a labelled primary button. */
+.btn-primary, .btn-primary:hover:not(:disabled) {
+  border-color: ButtonText; /* forced-primary.1 */
 }
 }

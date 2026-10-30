@@ -4,8 +4,8 @@ Generated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These 
 
 | Role | Light standard | Dark standard | Light distinct | Dark distinct | Purpose |
 | --- | --- | --- | --- | --- | --- |
-| primary | #284637 | #9bd2ae | #174b7a | #9fcaff | Identify the main available action with a restrained accent; never use this fill for large decorative panels. |
-| primary-hover | #1d3529 | #b5e3c4 | #10395f | #c3deff | Confirm pointer targeting with a distinct action fill. |
+| primary | #006aa8 | #006aa8 | #006aa8 | #006aa8 | Identify the main available action with a restrained accent; never use this fill for large decorative panels. |
+| primary-hover | #005686 | #005686 | #005686 | #005686 | Confirm pointer targeting with a distinct action fill. |
 | ink | #242424 | #ededed | #242424 | #ededed | Keep task names and body copy readable with neutral text on the active surfaces. |
 | muted | #505050 | #c2c2c2 | #505050 | #c2c2c2 | Distinguish supporting information with neutral text while keeping ordinary text contrast. |
 | canvas | #d9d9d9 | #242424 | #d9d9d9 | #242424 | Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. |
@@ -21,7 +21,9 @@ Generated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These 
 | warning-bg | #dedede | #383838 | #dedede | #383838 | Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. |
 | disabled | #505050 | #c2c2c2 | #505050 | #c2c2c2 | Keep the reason for an unavailable action readable with neutral text. |
 | disabled-bg | #d2d2d2 | #404040 | #d2d2d2 | #404040 | Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. |
-| on-primary | #ffffff | #102318 | #ffffff | #101f30 | Keep the principal-action label and selected slider thumb legible against the active action fill. |
+| on-primary | #ffffff | #ffffff | #ffffff | #ffffff | Keep the written principal-action label readable against the selected azure fill in both brightness modes. |
+| interactive | #005b90 | #40adf0 | #005b90 | #40adf0 | Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. |
+| on-interactive | #ffffff | #242424 | #ffffff | #242424 | Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. |
 
 Contrast is tested using unrounded WCAG relative luminance; the following display values are rounded for inspection only.
 ## Light · standard
@@ -30,28 +32,29 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | --- | --- | --- |
 | ink / canvas | 4.5:1 | 11.00:1 |
 | muted / canvas | 4.5:1 | 5.71:1 |
-| primary / canvas | 4.5:1 | 7.36:1 |
+| interactive / canvas | 4.5:1 | 5.13:1 |
 | danger / canvas | 4.5:1 | 5.35:1 |
 | border / canvas | 3:1 | 3.36:1 |
 | focus / canvas | 3:1 | 4.24:1 |
 | ink / surface | 4.5:1 | 12.44:1 |
 | muted / surface | 4.5:1 | 6.46:1 |
-| primary / surface | 4.5:1 | 8.32:1 |
+| interactive / surface | 4.5:1 | 5.80:1 |
 | danger / surface | 4.5:1 | 6.05:1 |
 | border / surface | 3:1 | 3.80:1 |
 | focus / surface | 3:1 | 4.80:1 |
 | ink / subtle | 4.5:1 | 11.54:1 |
 | muted / subtle | 4.5:1 | 5.99:1 |
-| primary / subtle | 4.5:1 | 7.72:1 |
+| interactive / subtle | 4.5:1 | 5.38:1 |
 | danger / subtle | 4.5:1 | 5.62:1 |
 | border / subtle | 3:1 | 3.52:1 |
 | focus / subtle | 3:1 | 4.45:1 |
-| on-primary / primary | 4.5:1 | 10.39:1 |
-| on-primary / primary-hover | 4.5:1 | 13.18:1 |
+| on-primary / primary | 4.5:1 | 5.79:1 |
+| on-primary / primary-hover | 4.5:1 | 7.85:1 |
 | success / success-bg | 4.5:1 | 5.93:1 |
 | warning / warning-bg | 4.5:1 | 5.45:1 |
 | disabled / disabled-bg | 4.5:1 | 5.33:1 |
 | surface / muted | 3:1 | 6.46:1 |
+| on-interactive / interactive | 3:1 | 7.24:1 |
 
 ## Dark · standard
 
@@ -59,28 +62,29 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | --- | --- | --- |
 | ink / canvas | 4.5:1 | 13.26:1 |
 | muted / canvas | 4.5:1 | 8.71:1 |
-| primary / canvas | 4.5:1 | 9.04:1 |
+| interactive / canvas | 4.5:1 | 6.25:1 |
 | danger / canvas | 4.5:1 | 9.15:1 |
 | border / canvas | 3:1 | 6.15:1 |
 | focus / canvas | 3:1 | 7.43:1 |
 | ink / surface | 4.5:1 | 11.60:1 |
 | muted / surface | 4.5:1 | 7.62:1 |
-| primary / surface | 4.5:1 | 7.90:1 |
+| interactive / surface | 4.5:1 | 5.47:1 |
 | danger / surface | 4.5:1 | 8.00:1 |
 | border / surface | 3:1 | 5.38:1 |
 | focus / surface | 3:1 | 6.50:1 |
 | ink / subtle | 4.5:1 | 10.02:1 |
 | muted / subtle | 4.5:1 | 6.58:1 |
-| primary / subtle | 4.5:1 | 6.83:1 |
+| interactive / subtle | 4.5:1 | 4.72:1 |
 | danger / subtle | 4.5:1 | 6.91:1 |
 | border / subtle | 3:1 | 4.65:1 |
 | focus / subtle | 3:1 | 5.61:1 |
-| on-primary / primary | 4.5:1 | 9.58:1 |
-| on-primary / primary-hover | 4.5:1 | 11.56:1 |
+| on-primary / primary | 4.5:1 | 5.79:1 |
+| on-primary / primary-hover | 4.5:1 | 7.85:1 |
 | success / success-bg | 4.5:1 | 7.58:1 |
 | warning / warning-bg | 4.5:1 | 8.17:1 |
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
+| on-interactive / interactive | 3:1 | 6.25:1 |
 
 ## Light · distinct status colors
 
@@ -88,28 +92,29 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | --- | --- | --- |
 | ink / canvas | 4.5:1 | 11.00:1 |
 | muted / canvas | 4.5:1 | 5.71:1 |
-| primary / canvas | 4.5:1 | 6.40:1 |
+| interactive / canvas | 4.5:1 | 5.13:1 |
 | danger / canvas | 4.5:1 | 6.31:1 |
 | border / canvas | 3:1 | 3.36:1 |
 | focus / canvas | 3:1 | 5.69:1 |
 | ink / surface | 4.5:1 | 12.44:1 |
 | muted / surface | 4.5:1 | 6.46:1 |
-| primary / surface | 4.5:1 | 7.24:1 |
+| interactive / surface | 4.5:1 | 5.80:1 |
 | danger / surface | 4.5:1 | 7.14:1 |
 | border / surface | 3:1 | 3.80:1 |
 | focus / surface | 3:1 | 6.44:1 |
 | ink / subtle | 4.5:1 | 11.54:1 |
 | muted / subtle | 4.5:1 | 5.99:1 |
-| primary / subtle | 4.5:1 | 6.72:1 |
+| interactive / subtle | 4.5:1 | 5.38:1 |
 | danger / subtle | 4.5:1 | 6.63:1 |
 | border / subtle | 3:1 | 3.52:1 |
 | focus / subtle | 3:1 | 5.97:1 |
-| on-primary / primary | 4.5:1 | 9.04:1 |
-| on-primary / primary-hover | 4.5:1 | 11.85:1 |
+| on-primary / primary | 4.5:1 | 5.79:1 |
+| on-primary / primary-hover | 4.5:1 | 7.85:1 |
 | success / success-bg | 4.5:1 | 6.72:1 |
 | warning / warning-bg | 4.5:1 | 5.45:1 |
 | disabled / disabled-bg | 4.5:1 | 5.33:1 |
 | surface / muted | 3:1 | 6.46:1 |
+| on-interactive / interactive | 3:1 | 7.24:1 |
 
 ## Dark · distinct status colors
 
@@ -117,25 +122,59 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | --- | --- | --- |
 | ink / canvas | 4.5:1 | 13.26:1 |
 | muted / canvas | 4.5:1 | 8.71:1 |
-| primary / canvas | 4.5:1 | 9.14:1 |
+| interactive / canvas | 4.5:1 | 6.25:1 |
 | danger / canvas | 4.5:1 | 9.02:1 |
 | border / canvas | 3:1 | 6.15:1 |
 | focus / canvas | 3:1 | 9.65:1 |
 | ink / surface | 4.5:1 | 11.60:1 |
 | muted / surface | 4.5:1 | 7.62:1 |
-| primary / surface | 4.5:1 | 8.00:1 |
+| interactive / surface | 4.5:1 | 5.47:1 |
 | danger / surface | 4.5:1 | 7.89:1 |
 | border / surface | 3:1 | 5.38:1 |
 | focus / surface | 3:1 | 8.45:1 |
 | ink / subtle | 4.5:1 | 10.02:1 |
 | muted / subtle | 4.5:1 | 6.58:1 |
-| primary / subtle | 4.5:1 | 6.91:1 |
+| interactive / subtle | 4.5:1 | 4.72:1 |
 | danger / subtle | 4.5:1 | 6.82:1 |
 | border / subtle | 3:1 | 4.65:1 |
 | focus / subtle | 3:1 | 7.29:1 |
-| on-primary / primary | 4.5:1 | 9.81:1 |
-| on-primary / primary-hover | 4.5:1 | 12.07:1 |
+| on-primary / primary | 4.5:1 | 5.79:1 |
+| on-primary / primary-hover | 4.5:1 | 7.85:1 |
 | success / success-bg | 4.5:1 | 7.75:1 |
 | warning / warning-bg | 4.5:1 | 8.17:1 |
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
+| on-interactive / interactive | 3:1 | 6.25:1 |
+
+## Labelled primary-button boundary observations
+
+These observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 25 required text/control/focus pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.
+
+Keep the selected azure button fill without a permanent outline in both brightness modes. The fill/background boundary is not required to identify this labelled button. It may be below 3:1; label contrast remains at least 4.5:1 and keyboard focus remains visible at 3:1 against its adjacent surface. Never apply this exception to icon-only controls, inputs, selection marks or focus indicators.
+
+| Appearance | Fill / adjacent background | Measured boundary |
+| --- | --- | --- |
+| Light · standard | primary / canvas | 4.10:1 |
+| Light · standard | primary / surface | 4.64:1 |
+| Light · standard | primary / subtle | 4.30:1 |
+| Light · standard | primary-hover / canvas | 5.56:1 |
+| Light · standard | primary-hover / surface | 6.29:1 |
+| Light · standard | primary-hover / subtle | 5.83:1 |
+| Dark · standard | primary / canvas | 2.68:1 |
+| Dark · standard | primary / surface | 2.35:1 |
+| Dark · standard | primary / subtle | 2.03:1 |
+| Dark · standard | primary-hover / canvas | 1.98:1 |
+| Dark · standard | primary-hover / surface | 1.73:1 |
+| Dark · standard | primary-hover / subtle | 1.49:1 |
+| Light · distinct status colors | primary / canvas | 4.10:1 |
+| Light · distinct status colors | primary / surface | 4.64:1 |
+| Light · distinct status colors | primary / subtle | 4.30:1 |
+| Light · distinct status colors | primary-hover / canvas | 5.56:1 |
+| Light · distinct status colors | primary-hover / surface | 6.29:1 |
+| Light · distinct status colors | primary-hover / subtle | 5.83:1 |
+| Dark · distinct status colors | primary / canvas | 2.68:1 |
+| Dark · distinct status colors | primary / surface | 2.35:1 |
+| Dark · distinct status colors | primary / subtle | 2.03:1 |
+| Dark · distinct status colors | primary-hover / canvas | 1.98:1 |
+| Dark · distinct status colors | primary-hover / surface | 1.73:1 |
+| Dark · distinct status colors | primary-hover / subtle | 1.49:1 |

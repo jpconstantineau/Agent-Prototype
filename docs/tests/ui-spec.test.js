@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {rules,tokens,contrastPairs,palettes} from '../../UI-Spec/system.mjs';
+import {rules,tokens,contrastPairs,contrastExceptions,palettes} from '../../UI-Spec/system.mjs';
 import {designFiles} from '../../UI-Spec/palettes.mjs';
 import {outputs,cssText} from '../../UI-Spec/build.mjs';
 import {validateRegistry,validateGenerated,checkFamilies,contrast} from '../../UI-Spec/validate.mjs';
@@ -50,6 +50,23 @@ test('normal structural fields remain achromatic and subdued across appearance p
   const notice=rules.find(r=>r.id==='notice').declarations.find(d=>d.property==='border-inline-start');
   assert.equal(notice.value,'4px solid var(--ui-border)','Routine guidance must not borrow action color');
   assert.equal(rules.find(r=>r.id==='backdrop').declarations[0].value,'#00000080','Modal dimming must not tint the background');
+});
+test('selected azure stays fixed across appearances and its boundary exception never weakens text or focus checks',()=>{
+  assert.equal(contrastExceptions.length,1);
+  const exception=contrastExceptions[0];assert.equal(exception.selector,'.btn-primary');
+  assert.deepEqual(exception.fills,['primary','primary-hover']);assert.deepEqual(exception.backgrounds,['canvas','surface','subtle']);
+  assert.match(exception.reason,/visible|written|label/);assert.match(exception.exclusions,/icon-only.*inputs.*selection marks.*focus/);
+  for(const {colors} of Object.values(palettes)) {
+    assert.equal(colors.primary,'#006aa8','The selected primary fill must not become a pale or alternate brand color');
+    assert.equal(colors['on-primary'],'#ffffff');
+    for(const fill of exception.fills)assert(contrastPairs.some(([fg,bg,min])=>fg==='on-primary'&&bg===fill&&min>=4.5));
+    for(const bg of exception.backgrounds) {
+      assert(contrastPairs.some(([fg,surface,min])=>fg==='interactive'&&surface===bg&&min>=4.5));
+      assert(contrastPairs.some(([fg,surface,min])=>fg==='focus'&&surface===bg&&min>=3));
+    }
+  }
+  assert(contrastPairs.some(([fg,bg,min])=>fg==='on-interactive'&&bg==='interactive'&&min>=3));
+  assert.match(exception.source,/w3.org/);
 });
 test('every CSS custom property is declared and consumed; Google token references resolve',()=>{
   const defined=new Set(rules.flatMap(r=>r.declarations).filter(d=>d.property.startsWith('--')).map(d=>d.property));

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Apply high-performance HMI principles to the reference interface so large background fields do not compete with work, focus or a condition requiring attention. Record why each structural color changed and how to review it. This governs the reference and future app adoption through the design system.
+Apply high-performance HMI principles to the reference interface so large background fields do not compete with work, focus or a condition requiring attention. Record why each structural color changed and how to review it. This governs the reference and future app adoption through the design system. [COLOR-SELECTION.md](COLOR-SELECTION.md) separately governs the selected azure action and its written-label boundary exception.
 
 ## User intent
 
@@ -49,6 +49,6 @@ Canvas, surface and subtle sit within 24 RGB channel steps in light mode and 20 
 
 Every affected CSS token and consumer retains its stable ID and purpose/intent in [CSS-DECISIONS.md](CSS-DECISIONS.md). `palettes.mjs` owns exact values, `system.mjs` owns declarations/rationale and `build.mjs` generates deployed CSS plus all four DESIGN.md documents. Do not patch generated colors separately.
 
-Automated checks require achromatic structural roles, equal structural colors across status preferences, nearby bounded background levels, and all 96 approved foreground/background contrast pairs. Chrome checks resolve actual component colors, retain focus/editing behavior and exercise color-vision simulations and forced colors. See [VALIDATION.md](VALIDATION.md) for the actual run and limits.
+Automated checks require achromatic structural roles, equal structural colors across status preferences, nearby bounded background levels, and all 100 required foreground/background contrast pairs. The 24 labelled primary-button normal/hover fill/background observations are published separately under their bounded exception; they are not asserted to pass a 3:1 boundary target. Chrome checks resolve actual component colors, retain focus/editing behavior and exercise color-vision simulations and forced colors. See [VALIDATION.md](VALIDATION.md) for the actual run and limits.
 
 Review desktop/mobile in all four appearances under realistic lighting. Confirm that normal backgrounds recede, state words and focus remain easy to find, and panel grouping is clear without hue. Rework the palette and its per-declaration rationale if any purpose or user intent is rejected; passing arithmetic does not decide visual appropriateness.

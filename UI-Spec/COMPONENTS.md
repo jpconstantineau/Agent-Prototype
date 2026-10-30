@@ -65,9 +65,15 @@ The sample preserves whitespace in optional notes. Required titles reject blank/
 
 For asynchronous production saves, add a named Saving state, block duplicate submissions, preserve drafts on failure and announce Saved only after the authoritative transaction commits. Cancellation must reflect the real transaction outcome. Ignore stale responses and keep concurrent-update handling explicit. These are application integration requirements, not persistence claims made by this CSS example.
 
+## Azure primary buttons
+
+Use native buttons with visible written action labels. `.btn-primary` keeps azure #006aa8 and white text in every appearance, with a transparent permanent border and deeper azure hover. The reserved 1px border width keeps its geometry stable. Do not add a bright border, shadow or pale dark-mode fill. Keyboard :focus-visible still shows the separate 3px focus outline with 3px offset; forced colors uses a system ButtonText border and Highlight focus.
+
+The written label identifies this control, so its fill/background edge has the bounded exception in [COLOR-SELECTION.md](COLOR-SELECTION.md). On charcoal panels it is 2.35:1, while the white label is 5.79:1 against azure. Do not generalize that exception to inputs, selection marks, icon-only buttons or focus. Secondary actions retain a neutral boundary/surface and an interactive-blue text label. Links and native selected accents use interactive rather than the primary fill to retain contrast on their actual backgrounds.
+
 ## Appearance controls and four combinations
 
-Two labeled native input[type=checkbox] controls have role=switch and a CSS slider track/thumb: **Dark mode** and **Distinct status colors**. Labels do not change with state. Space toggles a focused switch; native checked is authoritative, so no redundant aria-checked is assigned. The whole label provides the large target; thumb position and a written status identify the selected combination without hue. Forced colors restores a native mark. Movement is immediate with no animation.
+Two labeled native input[type=checkbox] controls have role=switch and a CSS slider track/thumb: **Dark mode** and **Distinct status colors**. Labels do not change with state. Space toggles a focused switch; native checked is authoritative, so no redundant aria-checked is assigned. The whole label provides the large target; thumb position and a written status identify the selected combination without hue. Checked tracks use interactive and thumbs use on-interactive, with at least 3:1 thumb/track contrast. These graphic marks do not inherit the labelled-button boundary exception. Forced colors restores a native mark. Movement is immediate with no animation.
 
 | Dark mode | Distinct status colors | Result |
 | --- | --- | --- |

@@ -1,0 +1,50 @@
+# Azure actions and readable blue accents
+
+## Purpose
+
+Record the maintainer's selected azure and borderless button treatment, how related colors are chosen, and the bounded contrast exception that makes this treatment explicit. Prevent one brand color from being reused as unreadable text or a low-contrast selection mark.
+
+## User intent
+
+Recognize a clear blue primary action on muted gray/charcoal surfaces, without a permanent outline or a pale dark-mode fill. Read links, distinguish checked choices and find keyboard focus in either appearance.
+
+## Agent intent
+
+Implementation agents use the role-specific tokens, preserve the visible-label/focus conditions and update rationale plus checks with any color change. Runtime agents do not select themes or reinterpret semantic status colors through this spec.
+
+## Selected direction and selection method
+
+The maintainer selected **azure #006AA8** from the light-mode comparisons and accepted the same fill on charcoal without a permanent contrasting outline. Earlier inherited forest green, indigo/petrol candidates and pale dark-mode primary fills are superseded. The original green had continuity and contrast rationale but no documented color-wheel derivation.
+
+The resulting method is **a role-based monochromatic blue palette**, anchored in that selected seed. Related hover and interactive colors stay approximately within 201–203 degrees of HSL hue; their lightness and saturation are adjusted for actual use, then the resulting sRGB values are checked against every permitted adjacent surface. This describes a restrained hue family, not a claim that equal HSL steps have equal perceived brightness. No complementary/triadic scheme, new secondary hue or tertiary hue was selected.
+
+| Role | Light | Dark | Purpose and user intent |
+| --- | --- | --- | --- |
+| primary | #006aa8 | #006aa8 | Preserve the selected azure filled action in both appearances. Use for compact, visibly labelled primary buttons; not ordinary text or large panel fills. |
+| primary-hover | #005686 | #005686 | A deeper related azure confirms pointer targeting without moving the button or introducing an outlined/pastel state. |
+| on-primary | #ffffff | #ffffff | Keep the written button label readable: 5.79:1 on the normal fill and 7.85:1 on hover. |
+| interactive | #005b90 | #40adf0 | Use a deeper blue for links and secondary-action labels on light grays and a brighter saturated blue on dark grays. Both meet 4.5:1 on canvas/surface/subtle. Native selected accents and switch tracks also use this role because they must remain distinguishable from adjacent surfaces. This does not change the selected primary fill. |
+| on-interactive | #ffffff | #242424 | Keep the selected slider thumb at least 3:1 against the interactive track. It is a graphic mark, independent of the white primary-button label. Native checkbox/radio rendering retains browser-owned marks. |
+
+The Distinct status colors preference changes state/focus cues and line patterns, not the primary, hover or interactive roles. A secondary button retains a neutral surface, neutral boundary and interactive-blue label. “Secondary action” is an emphasis level, not an extra brand hue. There is no tertiary brand accent until a concrete use case and rationale are approved. Success/warning/error remain semantic roles; neutrals are selected for reading/grouping, not from a color-wheel harmony rule. [PALETTES.md](PALETTES.md) records exact values and pairings in every combination.
+
+## Written-label button boundary exception
+
+The approved normal button has a transparent border with its width reserved, an azure fill and a visible written action label. There is no permanent contrasting perimeter or shadow. Hover retains a transparent border. The normal 3px keyboard focus outline with 3px offset still appears through :focus-visible; do not remove it. Forced colors explicitly restores a system ButtonText border and Highlight focus, honoring the user's contrast preference.
+
+On the dark panel #2e2e2e, the normal azure fill has **2.35:1** contrast against its surroundings while its white label has **5.79:1** against the fill. These are different measurements. The fill is below the project's usual 3:1 meaningful-boundary target. It is not recorded as passing that target.
+
+[W3C's explanation of WCAG non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html#boundaries) allows a boundary to be unnecessary when visible text sufficiently identifies the control. Apply this narrowly to native primary buttons identified by their visible written action labels. Their labels retain at least 4.5:1 against the actual normal/hover fill; their focus indicators retain at least 3:1 against adjacent surfaces. Native behavior, minimum target dimensions and the existing Save/Cancel workflow continue to apply. These conditions support this specific treatment; they do not establish whole-app WCAG conformance.
+
+The exception does **not** cover icon-only controls, text inputs, checkboxes, radio marks, switch selection, focus indicators or status graphics. Never reuse primary as a dark-page link color or a native selected mark just because it is the brand seed. Those uses retain their separate measured contrast requirements. New backgrounds need their own text, focus and boundary review.
+
+## Source, CSS mapping and verification
+
+- `palettes.mjs` owns exact color values; `system.mjs` owns all CSS declarations and the executable `contrastPairs` and `contrastExceptions` contracts. Generated DESIGN.md, CSS, JSON and ledgers must agree.
+- `primary.1`/`.2`/`.3` apply fill, transparent border and written label. `primary-hover.1`/`.2` retain the hover fill and transparent boundary. The inherited button border width remains reserved; no focus or hover layout jump is introduced.
+- `links.1`, `button.10`, `native-accent.1` and `switch-on.1` consume interactive rather than primary. `switch-thumb-on.2` consumes on-interactive. Existing root token IDs remain stable; the two new token declarations are appended.
+- `focus.1`/`.2` still govern the separate visible keyboard outline. `forced-primary.1` governs the explicit system-color boundary exception under forced colors.
+- All **100** required pair checks (25 per appearance) remain enforced. The **24** normal/hover fill/background observations (six per appearance) are published separately as the documented boundary exception, not added to the passing matrix with weakened thresholds.
+- Chrome checks visible labels, normal/hover fill and label contrast, transparent resting/hover border, keyboard focus without layout movement, secondary/link colors, native accents, selected switch track/thumb, disabled styles and forced-color boundaries in all four combinations. Existing form/persistence/navigation checks still apply. See [VALIDATION.md](VALIDATION.md) for actual results.
+
+The maintainer selected this seed and button treatment. Individual declaration rationales remain subject to review; keep the palette method and exception explicit when assessing later changes.

@@ -19,6 +19,7 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 | [DESIGN.md](DESIGN.md) | Google DESIGN.md alpha format: exact tokens plus the eight canonical rationale sections; primary entry point for coding agents. Generated from system.mjs and design-body.md. |
 | [PALETTES.md](PALETTES.md) / [palettes.mjs](palettes.mjs) | Four resolved color-role tables, contrast matrices and their authoritative source. Alternate Google-format documents are in [themes/](themes/). |
 | [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) | ISA-101 inspiration, muted neutral structural colors, color allocation, exact-value reasoning and checks. |
+| [COLOR-SELECTION.md](COLOR-SELECTION.md) | Selected azure in both modes, related interactive-blue roles, borderless labelled buttons, focus and the bounded contrast exception. |
 | [REVISIONS.md](REVISIONS.md) | Maintainer-requested changes and retired/replaced declaration IDs. |
 | [FOUNDATIONS.md](FOUNDATIONS.md) | Color, typography, spacing, responsive layouts, units and CSS cascade contract. |
 | [COMPONENTS.md](COMPONENTS.md) | Semantic HTML/attributes, desktop/mobile components, state contracts and click-to-edit interaction. |
@@ -52,7 +53,7 @@ npm test
 npm run test:browser
 ```
 
-`npm run ui:build` and `npm run ui:check` are equivalent shortcuts from docs. Generated CSS, the live JSON ledger, Markdown ledger and DESIGN.md are committed so GitHub Pages needs no build tool. `UI-Spec/system.mjs` and `design-body.md` are the editing sources. The browser has no dependency on Node, Sass, React, TypeScript, Bootstrap JS, CDN availability or a runtime token compiler.
+`npm run ui:build` and `npm run ui:check` are equivalent shortcuts from docs. Generated CSS, the live JSON ledger, Markdown ledger and DESIGN.md are committed so GitHub Pages needs no build tool. `UI-Spec/palettes.mjs`, `system.mjs` and `design-body.md` are the editing sources. The version-3 live ledger includes both enforced contrast pairs and the explicit written-label button-boundary exception. The browser has no dependency on Node, Sass, React, TypeScript, Bootstrap JS, CDN availability or a runtime token compiler.
 
 “CSS attribute” here means **every authored CSS declaration**: property, value and selector/conditional scope, including custom properties, shorthands, focus/hover/invalid/disabled rules, forced-color overrides and copied Bootstrap rules. Browser/OS internal styles are outside our source control; their retained behavior is documented and tested separately. Tests reject extra CSS, inline style attributes, style mutations, missing rationale, mismatched generated output and unsupported declarations. No waiver is hidden in a third-party stylesheet.
 

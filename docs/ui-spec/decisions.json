@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "bootstrapVersion": "5.3.8",
   "rules": [
     {
@@ -24,7 +24,7 @@
         {
           "id": "tokens.2",
           "property": "--ui-primary",
-          "value": "#284637",
+          "value": "#006aa8",
           "purpose": "Publish semantic values for consistent reuse. Identify the main available action with a restrained accent; never use this fill for large decorative panels.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
@@ -33,7 +33,7 @@
         {
           "id": "tokens.3",
           "property": "--ui-primary-hover",
-          "value": "#1d3529",
+          "value": "#005686",
           "purpose": "Publish semantic values for consistent reuse. Confirm pointer targeting with a distinct action fill.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
@@ -268,7 +268,25 @@
           "id": "tokens.29",
           "property": "--ui-on-primary",
           "value": "#ffffff",
-          "purpose": "Publish semantic values for consistent reuse. Keep the principal-action label and selected slider thumb legible against the active action fill.",
+          "purpose": "Publish semantic values for consistent reuse. Keep the written principal-action label readable against the selected azure fill in both brightness modes.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.30",
+          "property": "--ui-interactive",
+          "value": "#005b90",
+          "purpose": "Publish semantic values for consistent reuse. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces.",
+          "intent": "Recognize the same meaning across screens.",
+          "check": "tokens",
+          "status": "proposed"
+        },
+        {
+          "id": "tokens.31",
+          "property": "--ui-on-interactive",
+          "value": "#ffffff",
+          "purpose": "Publish semantic values for consistent reuse. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -297,7 +315,7 @@
         {
           "id": "palette-dark-standard.2",
           "property": "--ui-primary",
-          "value": "#9bd2ae",
+          "value": "#006aa8",
           "purpose": "Apply the complete Dark · standard palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -306,7 +324,7 @@
         {
           "id": "palette-dark-standard.3",
           "property": "--ui-primary-hover",
-          "value": "#b5e3c4",
+          "value": "#005686",
           "purpose": "Apply the complete Dark · standard palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -450,8 +468,26 @@
         {
           "id": "palette-dark-standard.19",
           "property": "--ui-on-primary",
-          "value": "#102318",
-          "purpose": "Apply the complete Dark · standard palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "value": "#ffffff",
+          "purpose": "Apply the complete Dark · standard palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.20",
+          "property": "--ui-interactive",
+          "value": "#40adf0",
+          "purpose": "Apply the complete Dark · standard palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-standard.21",
+          "property": "--ui-on-interactive",
+          "value": "#242424",
+          "purpose": "Apply the complete Dark · standard palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -480,7 +516,7 @@
         {
           "id": "palette-light-distinct.2",
           "property": "--ui-primary",
-          "value": "#174b7a",
+          "value": "#006aa8",
           "purpose": "Apply the complete Light · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -489,7 +525,7 @@
         {
           "id": "palette-light-distinct.3",
           "property": "--ui-primary-hover",
-          "value": "#10395f",
+          "value": "#005686",
           "purpose": "Apply the complete Light · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -634,7 +670,25 @@
           "id": "palette-light-distinct.19",
           "property": "--ui-on-primary",
           "value": "#ffffff",
-          "purpose": "Apply the complete Light · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.20",
+          "property": "--ui-interactive",
+          "value": "#005b90",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-light-distinct.21",
+          "property": "--ui-on-interactive",
+          "value": "#ffffff",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -663,7 +717,7 @@
         {
           "id": "palette-dark-distinct.2",
           "property": "--ui-primary",
-          "value": "#9fcaff",
+          "value": "#006aa8",
           "purpose": "Apply the complete Dark · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -672,7 +726,7 @@
         {
           "id": "palette-dark-distinct.3",
           "property": "--ui-primary-hover",
-          "value": "#c3deff",
+          "value": "#005686",
           "purpose": "Apply the complete Dark · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
@@ -816,8 +870,26 @@
         {
           "id": "palette-dark-distinct.19",
           "property": "--ui-on-primary",
-          "value": "#101f30",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette.",
+          "value": "#ffffff",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.20",
+          "property": "--ui-interactive",
+          "value": "#40adf0",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette.",
+          "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
+          "check": "colors",
+          "status": "proposed"
+        },
+        {
+          "id": "palette-dark-distinct.21",
+          "property": "--ui-on-interactive",
+          "value": "#242424",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -1095,8 +1167,8 @@
         {
           "id": "links.1",
           "property": "color",
-          "value": "var(--ui-primary)",
-          "purpose": "Make navigation identifiable without color alone. Use the action role for navigation.",
+          "value": "var(--ui-interactive)",
+          "purpose": "Make navigation identifiable without color alone. Use the blue text role that meets ordinary text contrast on each neutral surface; primary is a button fill only.",
           "intent": "Recognize destinations before clicking.",
           "check": "focus",
           "status": "proposed"
@@ -1206,8 +1278,8 @@
         {
           "id": "native-accent.1",
           "property": "accent-color",
-          "value": "var(--ui-primary)",
-          "purpose": "Retain native control behavior with the action color. Apply identity while leaving native marks and forced-color adaptation intact.",
+          "value": "var(--ui-interactive)",
+          "purpose": "Retain native control behavior with the action color. Use a blue with contrast against the adjacent neutral surfaces while leaving native marks and forced-color adaptation intact.",
           "intent": "Recognize selection and progress without learning custom widgets.",
           "check": "controls",
           "status": "proposed"
@@ -2082,8 +2154,8 @@
         {
           "id": "button.10",
           "property": "color",
-          "value": "var(--ui-primary)",
-          "purpose": "Present an explicit action as a native button. Identify the action text with the contrast-checked action color.",
+          "value": "var(--ui-interactive)",
+          "purpose": "Present an explicit action as a native button. Use the contrast-tested blue foreground for unfilled secondary labels rather than the filled-button color.",
           "intent": "Recognize an available action and activate it precisely.",
           "check": "targets",
           "status": "proposed"
@@ -2131,7 +2203,7 @@
           "id": "primary.1",
           "property": "background-color",
           "value": "var(--ui-primary)",
-          "purpose": "Identify the principal action within a local group. Fill the main action with the brand/action role.",
+          "purpose": "Identify the principal action within a local group. Use the selected azure fill in both brightness modes; the written label identifies the button under the documented boundary exception.",
           "intent": "Choose the intended next step without scanning equal-weight buttons.",
           "check": "contrast",
           "status": "proposed"
@@ -2139,8 +2211,8 @@
         {
           "id": "primary.2",
           "property": "border-color",
-          "value": "var(--ui-primary)",
-          "purpose": "Identify the principal action within a local group. Make the border continuous with the main-action fill.",
+          "value": "transparent",
+          "purpose": "Identify the principal action within a local group. Remove a permanent perimeter while reserving border width for stable sizing; visible text and keyboard focus remain mandatory.",
           "intent": "Choose the intended next step without scanning equal-weight buttons.",
           "check": "contrast",
           "status": "proposed"
@@ -2149,7 +2221,7 @@
           "id": "primary.3",
           "property": "color",
           "value": "var(--ui-on-primary)",
-          "purpose": "Identify the principal action within a local group. Keep the label readable on the active theme’s principal-action fill.",
+          "purpose": "Identify the principal action within a local group. Keep the written label at ordinary text contrast against the azure fill in every appearance.",
           "intent": "Choose the intended next step without scanning equal-weight buttons.",
           "check": "contrast",
           "status": "proposed"
@@ -2191,7 +2263,7 @@
           "id": "primary-hover.1",
           "property": "background-color",
           "value": "var(--ui-primary-hover)",
-          "purpose": "Give pointer feedback for the principal action. Change the fill while preserving contrast with the active on-primary label.",
+          "purpose": "Give pointer feedback for the principal action. Darken the related azure fill while preserving label contrast and the visible-text boundary exception.",
           "intent": "Keep the primary action recognizable while pointing at it.",
           "check": "contrast",
           "status": "proposed"
@@ -2199,8 +2271,8 @@
         {
           "id": "primary-hover.2",
           "property": "border-color",
-          "value": "var(--ui-primary-hover)",
-          "purpose": "Give pointer feedback for the principal action. Keep the perimeter aligned with the hover fill.",
+          "value": "transparent",
+          "purpose": "Give pointer feedback for the principal action. Retain the borderless treatment while hovered; a keyboard focus outline is controlled independently.",
           "intent": "Keep the primary action recognizable while pointing at it.",
           "check": "contrast",
           "status": "proposed"
@@ -3282,6 +3354,27 @@
       ]
     },
     {
+      "id": "swatch-interactive",
+      "selector": ".ui-swatch-interactive",
+      "purpose": "Demonstrate the interactive color token.",
+      "intent": "Inspect the actual named color before approving its use.",
+      "check": "colors",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "swatch-interactive.1",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Demonstrate the interactive color token. Apply the exact token without a decorative gradient.",
+          "intent": "Inspect the actual named color before approving its use.",
+          "check": "colors",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "dialog",
       "selector": "dialog",
       "purpose": "Present a focused decision in the native top layer.",
@@ -3867,8 +3960,8 @@
         {
           "id": "switch-on.1",
           "property": "background-color",
-          "value": "var(--ui-primary)",
-          "purpose": "Reinforce an enabled slider preference. Use the active action role for the checked track.",
+          "value": "var(--ui-interactive)",
+          "purpose": "Reinforce an enabled slider preference. Use the blue interactive role so the checked state contrasts with adjacent neutral surfaces; the labelled-button exception does not apply to selection marks.",
           "intent": "Recognize the enabled setting through both position and native state.",
           "check": "controls",
           "status": "proposed"
@@ -3897,8 +3990,8 @@
         {
           "id": "switch-thumb-on.2",
           "property": "background-color",
-          "value": "var(--ui-on-primary)",
-          "purpose": "Move and contrast the enabled slider thumb. Keep the checked thumb distinct from the active track in dark as well as light mode.",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Move and contrast the enabled slider thumb. Contrast the checked thumb against its interactive track independently of the white filled-button label.",
           "intent": "Read the on position in every brightness and palette combination.",
           "check": "controls",
           "status": "proposed"
@@ -4057,6 +4150,27 @@
           "status": "proposed"
         }
       ]
+    },
+    {
+      "id": "forced-primary",
+      "selector": ".btn-primary, .btn-primary:hover:not(:disabled)",
+      "purpose": "Honor the system palette for a labelled primary button.",
+      "intent": "Find the action boundary when explicitly using a forced-color appearance.",
+      "check": "forced-colors",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "forced-primary.1",
+          "property": "border-color",
+          "value": "ButtonText",
+          "purpose": "Honor the system palette for a labelled primary button. Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size.",
+          "intent": "Find the action boundary when explicitly using a forced-color appearance.",
+          "check": "forced-colors",
+          "status": "proposed"
+        }
+      ]
     }
   ],
   "contrastPairs": [
@@ -4071,7 +4185,7 @@
       4.5
     ],
     [
-      "primary",
+      "interactive",
       "canvas",
       4.5
     ],
@@ -4101,7 +4215,7 @@
       4.5
     ],
     [
-      "primary",
+      "interactive",
       "surface",
       4.5
     ],
@@ -4131,7 +4245,7 @@
       4.5
     ],
     [
-      "primary",
+      "interactive",
       "subtle",
       4.5
     ],
@@ -4179,7 +4293,32 @@
       "surface",
       "muted",
       3
+    ],
+    [
+      "on-interactive",
+      "interactive",
+      3
     ]
+  ],
+  "contrastExceptions": [
+    {
+      "id": "labelled-primary-button",
+      "selector": ".btn-primary",
+      "fills": [
+        "primary",
+        "primary-hover"
+      ],
+      "backgrounds": [
+        "canvas",
+        "surface",
+        "subtle"
+      ],
+      "purpose": "Keep the selected azure button fill without a permanent outline in both brightness modes.",
+      "intent": "Recognize the principal action from its visible written label and native button behavior.",
+      "reason": "The fill/background boundary is not required to identify this labelled button. It may be below 3:1; label contrast remains at least 4.5:1 and keyboard focus remains visible at 3:1 against its adjacent surface.",
+      "exclusions": "Never apply this exception to icon-only controls, inputs, selection marks or focus indicators.",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html#boundaries"
+    }
   ],
   "palettes": {
     "light-standard": {
@@ -4187,8 +4326,8 @@
       "vision": "standard",
       "label": "Light · standard",
       "colors": {
-        "primary": "#284637",
-        "primary-hover": "#1d3529",
+        "primary": "#006aa8",
+        "primary-hover": "#005686",
         "ink": "#242424",
         "muted": "#505050",
         "canvas": "#d9d9d9",
@@ -4204,7 +4343,9 @@
         "warning-bg": "#dedede",
         "disabled": "#505050",
         "disabled-bg": "#d2d2d2",
-        "on-primary": "#ffffff"
+        "on-primary": "#ffffff",
+        "interactive": "#005b90",
+        "on-interactive": "#ffffff"
       }
     },
     "dark-standard": {
@@ -4212,8 +4353,8 @@
       "vision": "standard",
       "label": "Dark · standard",
       "colors": {
-        "primary": "#9bd2ae",
-        "primary-hover": "#b5e3c4",
+        "primary": "#006aa8",
+        "primary-hover": "#005686",
         "ink": "#ededed",
         "muted": "#c2c2c2",
         "canvas": "#242424",
@@ -4229,7 +4370,9 @@
         "warning-bg": "#383838",
         "disabled": "#c2c2c2",
         "disabled-bg": "#404040",
-        "on-primary": "#102318"
+        "on-primary": "#ffffff",
+        "interactive": "#40adf0",
+        "on-interactive": "#242424"
       }
     },
     "light-distinct": {
@@ -4237,8 +4380,8 @@
       "vision": "distinct",
       "label": "Light · distinct status colors",
       "colors": {
-        "primary": "#174b7a",
-        "primary-hover": "#10395f",
+        "primary": "#006aa8",
+        "primary-hover": "#005686",
         "ink": "#242424",
         "muted": "#505050",
         "canvas": "#d9d9d9",
@@ -4254,7 +4397,9 @@
         "warning-bg": "#dedede",
         "disabled": "#505050",
         "disabled-bg": "#d2d2d2",
-        "on-primary": "#ffffff"
+        "on-primary": "#ffffff",
+        "interactive": "#005b90",
+        "on-interactive": "#ffffff"
       }
     },
     "dark-distinct": {
@@ -4262,8 +4407,8 @@
       "vision": "distinct",
       "label": "Dark · distinct status colors",
       "colors": {
-        "primary": "#9fcaff",
-        "primary-hover": "#c3deff",
+        "primary": "#006aa8",
+        "primary-hover": "#005686",
         "ink": "#ededed",
         "muted": "#c2c2c2",
         "canvas": "#242424",
@@ -4279,7 +4424,9 @@
         "warning-bg": "#383838",
         "disabled": "#c2c2c2",
         "disabled-bg": "#404040",
-        "on-primary": "#101f30"
+        "on-primary": "#ffffff",
+        "interactive": "#40adf0",
+        "on-interactive": "#242424"
       }
     }
   }

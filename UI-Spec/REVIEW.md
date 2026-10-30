@@ -23,7 +23,7 @@ Each row in CSS-DECISIONS.md has a stable declaration ID. The review scope inclu
 5. **Evidence:** Is the declaration in the generated CSS, is it accepted by the browser, does the example exercise its state, and is the relevant verification present? Then manually assess whether the stated benefit is credible.
 6. **Tradeoff:** What becomes worse or less flexible? Is that acceptable for this use case? Record alternatives instead of treating a framework default as an unquestionable answer.
 
-No human acceptance is recorded yet. The ledger deliberately labels every decision proposed. A passing `ui:check` does not change that label.
+Maintainer selections of azure and its borderless written-label button treatment are recorded in REVISIONS.md and COLOR-SELECTION.md. They do not approve every individual declaration rationale. The ledger deliberately labels individual decisions proposed; a passing `ui:check` does not change that label.
 
 ## Rejection and rework procedure
 
@@ -50,7 +50,7 @@ All four appearance combinations are checked independently for contrast, effecti
 | Family | Observable checks / evidence |
 | --- | --- |
 | tokens | Generated output matches source; all Google token references resolve; canonical section ordering; custom properties have consumers; no untracked CSS. |
-| colors / contrast | Permitted semantic color pairs meet contrast thresholds; structural roles stay achromatic and nearby in luminance across status preferences; actual body/panel/header/guidance/table colors and samples agree with the registry. See HMI-PHILOSOPHY.md for the intended hierarchy. |
+| colors / contrast | Required semantic color pairs meet unchanged thresholds; structural roles stay neutral and nearby in luminance; body/panel/header/guidance/table/action/link/switch colors agree with the registry. The written-label primary-button fill/background exception is published separately, with visible-label/focus conditions checked. See HMI-PHILOSOPHY.md and COLOR-SELECTION.md. |
 | type | Body/default size, readable help, heading order, browser-root enlargement, long content and user text spacing remain usable. |
 | grid / reflow | Below/at 768 and 992px, paired/work-support widths and source order; 320/390/768/992/1440px page bounds; enlarged text wraps without page overflow. |
 | navigation / focus | Skip-to-main, native input focus and keyboard slider activation, visible focus outline and visible editing focus and return focus after dialog. |
@@ -71,6 +71,7 @@ These checks provide **traceability and bounded behavioral evidence**, not proof
 ## Required manual review before product adoption
 
 - Use a keyboard from the address bar: skip link, navigation, all inline inputs and appearance sliders, Save/Cancel, invalid Save, table panning and dialog Escape. Confirm the visible focus follows the logical reading order.
+- Assess whether the azure primary's written action label clearly identifies the button without a permanent contrasting edge. The published boundary observations may be below 3:1; reject this treatment if the real use context needs stronger action-boundary recognition. Never extend this exception to icon-only controls, inputs, selected marks or focus.
 - Test at actual browser zoom of 200% and 400%, with enlarged OS text, long translated labels, very long saved values and the mobile software keyboard. Automated root-size/viewport tests approximate these pressures; they do not replace actual browser zoom or a physical mobile device.
 - Test with NVDA/Chrome on Windows and VoiceOver/Safari on an Apple device if Safari is a deployment target. Confirm field and slider labels, linked help/errors, status timing, table headers and modal focus. Browser accessibility snapshots cannot certify these experiences.
 - Use Windows high contrast / forced colors, reduced motion and default platform controls. There is no authored motion; confirm nothing newly introduced starts animating under a later extension.

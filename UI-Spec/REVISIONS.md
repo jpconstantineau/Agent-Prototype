@@ -12,6 +12,22 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Azure and borderless actions after 72ff76e
+
+The maintainer rejected the inherited green primary, selected azure #006aa8 for light mode, rejected the pale dark-mode candidates and accepted the same azure fill on charcoal without a permanent outline. The selected seed/treatment is recorded here; this does not automatically approve every individual declaration rationale. [COLOR-SELECTION.md](COLOR-SELECTION.md) records the monochromatic role method and exact contrast scope.
+
+| Changed decision | Replacement / consequence |
+| --- | --- |
+| Existing primary/hover/on-primary color declarations in `tokens` and palette overrides | Azure #006aa8, deeper #005686 hover and white written labels in all four combinations; no alternate/pale dark-mode primary. |
+| Appended interactive/on-interactive color declarations | Related blue roles for readable links, secondary labels and selected native marks, plus a separate contrasting switch thumb. Existing root token IDs are retained by appending both declarations after on-primary. |
+| `primary.2`, `primary-hover.2` | Transparent permanent borders reserve the existing width; white labels identify the native button and the separate keyboard focus indicator remains. |
+| `links.1`, `button.10`, `native-accent.1`, `switch-on.1`, `switch-thumb-on.2` | Use the new readable-interactive/selected-thumb roles rather than reusing primary fill and white label everywhere. |
+| `swatch-interactive.1`, `forced-primary.1` | Demonstrate the new foreground/accent role; allow system ButtonText boundaries under forced colors. |
+| Contrast matrix and exception contract | 100 required pair checks remain enforced. The 24 normal/hover button-fill/background observations are published separately under the written-label button exception; no text, selection or focus threshold is weakened. |
+| Verification | All four palettes check actual borderless normal/hover buttons, stable geometry, visible written labels, keyboard focus, readable links/secondary labels, native accents, switch track/thumb and forced-color boundaries. |
+
+Secondary actions remain an emphasis level with neutral framing and a blue label; no second or third brand hue was selected. The revision stays within UI-Spec and the live reference.
+
 ## Muted backgrounds after ffa59bc
 
 The maintainer requested more subdued main-screen backgrounds using high-performance HMI principles such as ISA-101. The previous light near-white/warm surfaces and green-tinted dark surfaces are replaced by achromatic gray/charcoal planes. See [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) for the exact rationale and source interpretation.

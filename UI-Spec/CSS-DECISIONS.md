@@ -9,8 +9,8 @@ Selector: `:root`. Source: project. Verification family: `tokens`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | tokens.1 | color-scheme | light | Publish semantic values for consistent reuse. Provide the default light native-control scheme before a selected palette overrides it; forced colors remain user controlled. | Recognize the same meaning across screens. | proposed |
-| tokens.2 | --ui-primary | #284637 | Publish semantic values for consistent reuse. Identify the main available action with a restrained accent; never use this fill for large decorative panels. | Recognize the same meaning across screens. | proposed |
-| tokens.3 | --ui-primary-hover | #1d3529 | Publish semantic values for consistent reuse. Confirm pointer targeting with a distinct action fill. | Recognize the same meaning across screens. | proposed |
+| tokens.2 | --ui-primary | #006aa8 | Publish semantic values for consistent reuse. Identify the main available action with a restrained accent; never use this fill for large decorative panels. | Recognize the same meaning across screens. | proposed |
+| tokens.3 | --ui-primary-hover | #005686 | Publish semantic values for consistent reuse. Confirm pointer targeting with a distinct action fill. | Recognize the same meaning across screens. | proposed |
 | tokens.4 | --ui-ink | #242424 | Publish semantic values for consistent reuse. Keep task names and body copy readable with neutral text on the active surfaces. | Recognize the same meaning across screens. | proposed |
 | tokens.5 | --ui-muted | #505050 | Publish semantic values for consistent reuse. Distinguish supporting information with neutral text while keeping ordinary text contrast. | Recognize the same meaning across screens. | proposed |
 | tokens.6 | --ui-canvas | #d9d9d9 | Publish semantic values for consistent reuse. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. | Recognize the same meaning across screens. | proposed |
@@ -36,7 +36,9 @@ Selector: `:root`. Source: project. Verification family: `tokens`.
 | tokens.26 | --ui-radius-small | 0.375rem | Publish semantic values for consistent reuse. Use the small corner size to distinguish controls from containing panels. | Recognize the same meaning across screens. | proposed |
 | tokens.27 | --ui-radius-panel | 0.75rem | Publish semantic values for consistent reuse. Use the panel corner size to distinguish controls from containing panels. | Recognize the same meaning across screens. | proposed |
 | tokens.28 | --ui-font | system-ui, -apple-system, "Segoe UI", sans-serif | Publish semantic values for consistent reuse. Use installed fonts so text is immediately available without a font download. | Recognize the same meaning across screens. | proposed |
-| tokens.29 | --ui-on-primary | #ffffff | Publish semantic values for consistent reuse. Keep the principal-action label and selected slider thumb legible against the active action fill. | Recognize the same meaning across screens. | proposed |
+| tokens.29 | --ui-on-primary | #ffffff | Publish semantic values for consistent reuse. Keep the written principal-action label readable against the selected azure fill in both brightness modes. | Recognize the same meaning across screens. | proposed |
+| tokens.30 | --ui-interactive | #005b90 | Publish semantic values for consistent reuse. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. | Recognize the same meaning across screens. | proposed |
+| tokens.31 | --ui-on-interactive | #ffffff | Publish semantic values for consistent reuse. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. | Recognize the same meaning across screens. | proposed |
 
 ## palette-dark-standard
 
@@ -45,8 +47,8 @@ Selector: `:root[data-bs-theme="dark"]:not([data-vision="distinct"])`. Source: p
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | palette-dark-standard.1 | color-scheme | dark | Apply the complete Dark · standard palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-standard.2 | --ui-primary | #9bd2ae | Apply the complete Dark · standard palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-standard.3 | --ui-primary-hover | #b5e3c4 | Apply the complete Dark · standard palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.2 | --ui-primary | #006aa8 | Apply the complete Dark · standard palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.3 | --ui-primary-hover | #005686 | Apply the complete Dark · standard palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.4 | --ui-ink | #ededed | Apply the complete Dark · standard palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.5 | --ui-muted | #c2c2c2 | Apply the complete Dark · standard palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.6 | --ui-canvas | #242424 | Apply the complete Dark · standard palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
@@ -62,7 +64,9 @@ Selector: `:root[data-bs-theme="dark"]:not([data-vision="distinct"])`. Source: p
 | palette-dark-standard.16 | --ui-warning-bg | #383838 | Apply the complete Dark · standard palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.17 | --ui-disabled | #c2c2c2 | Apply the complete Dark · standard palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.18 | --ui-disabled-bg | #404040 | Apply the complete Dark · standard palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-standard.19 | --ui-on-primary | #102318 | Apply the complete Dark · standard palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.19 | --ui-on-primary | #ffffff | Apply the complete Dark · standard palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.20 | --ui-interactive | #40adf0 | Apply the complete Dark · standard palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.21 | --ui-on-interactive | #242424 | Apply the complete Dark · standard palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## palette-light-distinct
 
@@ -71,8 +75,8 @@ Selector: `:root[data-vision="distinct"]:not([data-bs-theme="dark"])`. Source: p
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | palette-light-distinct.1 | color-scheme | light | Apply the complete Light · distinct status colors palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-light-distinct.2 | --ui-primary | #174b7a | Apply the complete Light · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-light-distinct.3 | --ui-primary-hover | #10395f | Apply the complete Light · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.2 | --ui-primary | #006aa8 | Apply the complete Light · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.3 | --ui-primary-hover | #005686 | Apply the complete Light · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.4 | --ui-ink | #242424 | Apply the complete Light · distinct status colors palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.5 | --ui-muted | #505050 | Apply the complete Light · distinct status colors palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.6 | --ui-canvas | #d9d9d9 | Apply the complete Light · distinct status colors palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
@@ -88,7 +92,9 @@ Selector: `:root[data-vision="distinct"]:not([data-bs-theme="dark"])`. Source: p
 | palette-light-distinct.16 | --ui-warning-bg | #dedede | Apply the complete Light · distinct status colors palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.17 | --ui-disabled | #505050 | Apply the complete Light · distinct status colors palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.18 | --ui-disabled-bg | #d2d2d2 | Apply the complete Light · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-light-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Light · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Light · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.20 | --ui-interactive | #005b90 | Apply the complete Light · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.21 | --ui-on-interactive | #ffffff | Apply the complete Light · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## palette-dark-distinct
 
@@ -97,8 +103,8 @@ Selector: `:root[data-bs-theme="dark"][data-vision="distinct"]`. Source: project
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | palette-dark-distinct.1 | color-scheme | dark | Apply the complete Dark · distinct status colors palette. Align native controls and scrollbars with this appearance. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-distinct.2 | --ui-primary | #9fcaff | Apply the complete Dark · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-distinct.3 | --ui-primary-hover | #c3deff | Apply the complete Dark · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.2 | --ui-primary | #006aa8 | Apply the complete Dark · distinct status colors palette. Identify the main available action with a restrained accent; never use this fill for large decorative panels. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.3 | --ui-primary-hover | #005686 | Apply the complete Dark · distinct status colors palette. Confirm pointer targeting with a distinct action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.4 | --ui-ink | #ededed | Apply the complete Dark · distinct status colors palette. Keep task names and body copy readable with neutral text on the active surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.5 | --ui-muted | #c2c2c2 | Apply the complete Dark · distinct status colors palette. Distinguish supporting information with neutral text while keeping ordinary text contrast. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.6 | --ui-canvas | #242424 | Apply the complete Dark · distinct status colors palette. Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
@@ -114,7 +120,9 @@ Selector: `:root[data-bs-theme="dark"][data-vision="distinct"]`. Source: project
 | palette-dark-distinct.16 | --ui-warning-bg | #383838 | Apply the complete Dark · distinct status colors palette. Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.17 | --ui-disabled | #c2c2c2 | Apply the complete Dark · distinct status colors palette. Keep the reason for an unavailable action readable with neutral text. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.18 | --ui-disabled-bg | #404040 | Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-distinct.19 | --ui-on-primary | #101f30 | Apply the complete Dark · distinct status colors palette. Keep the principal-action label and selected slider thumb legible against the active action fill. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Dark · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.20 | --ui-interactive | #40adf0 | Apply the complete Dark · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.21 | --ui-on-interactive | #242424 | Apply the complete Dark · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## box
 
@@ -196,7 +204,7 @@ Selector: `a`. Source: project. Verification family: `focus`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| links.1 | color | var(--ui-primary) | Make navigation identifiable without color alone. Use the action role for navigation. | Recognize destinations before clicking. | proposed |
+| links.1 | color | var(--ui-interactive) | Make navigation identifiable without color alone. Use the blue text role that meets ordinary text contrast on each neutral surface; primary is a button fill only. | Recognize destinations before clicking. | proposed |
 | links.2 | text-decoration | underline | Make navigation identifiable without color alone. Distinguish links from plain text for all color perception. | Recognize destinations before clicking. | proposed |
 | links.3 | text-underline-offset | 0.2em | Make navigation identifiable without color alone. Keep the underline clear of letter descenders. | Recognize destinations before clicking. | proposed |
 
@@ -231,7 +239,7 @@ Selector: `input[type="checkbox"], input[type="radio"], progress`. Source: proje
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| native-accent.1 | accent-color | var(--ui-primary) | Retain native control behavior with the action color. Apply identity while leaving native marks and forced-color adaptation intact. | Recognize selection and progress without learning custom widgets. | proposed |
+| native-accent.1 | accent-color | var(--ui-interactive) | Retain native control behavior with the action color. Use a blue with contrast against the adjacent neutral surfaces while leaving native marks and forced-color adaptation intact. | Recognize selection and progress without learning custom widgets. | proposed |
 
 ## progress-cap
 
@@ -453,7 +461,7 @@ Selector: `.btn`. Source: project. Verification family: `targets`.
 | button.7 | border | 1px solid var(--ui-border) | Present an explicit action as a native button. Show a visible secondary action boundary. | Recognize an available action and activate it precisely. | proposed |
 | button.8 | border-radius | var(--ui-radius-small) | Present an explicit action as a native button. Use the common control corner role. | Recognize an available action and activate it precisely. | proposed |
 | button.9 | background-color | var(--ui-surface) | Present an explicit action as a native button. Keep secondary actions quieter than the primary. | Recognize an available action and activate it precisely. | proposed |
-| button.10 | color | var(--ui-primary) | Present an explicit action as a native button. Identify the action text with the contrast-checked action color. | Recognize an available action and activate it precisely. | proposed |
+| button.10 | color | var(--ui-interactive) | Present an explicit action as a native button. Use the contrast-tested blue foreground for unfilled secondary labels rather than the filled-button color. | Recognize an available action and activate it precisely. | proposed |
 | button.11 | font-weight | 600 | Present an explicit action as a native button. Distinguish actionable labels from surrounding prose. | Recognize an available action and activate it precisely. | proposed |
 | button.12 | text-align | center | Present an explicit action as a native button. Keep wrapped button labels visually balanced. | Recognize an available action and activate it precisely. | proposed |
 | button.13 | cursor | pointer | Present an explicit action as a native button. Confirm that the button accepts activation when a pointer is used. | Recognize an available action and activate it precisely. | proposed |
@@ -464,9 +472,9 @@ Selector: `.btn-primary`. Source: project. Verification family: `contrast`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| primary.1 | background-color | var(--ui-primary) | Identify the principal action within a local group. Fill the main action with the brand/action role. | Choose the intended next step without scanning equal-weight buttons. | proposed |
-| primary.2 | border-color | var(--ui-primary) | Identify the principal action within a local group. Make the border continuous with the main-action fill. | Choose the intended next step without scanning equal-weight buttons. | proposed |
-| primary.3 | color | var(--ui-on-primary) | Identify the principal action within a local group. Keep the label readable on the active theme’s principal-action fill. | Choose the intended next step without scanning equal-weight buttons. | proposed |
+| primary.1 | background-color | var(--ui-primary) | Identify the principal action within a local group. Use the selected azure fill in both brightness modes; the written label identifies the button under the documented boundary exception. | Choose the intended next step without scanning equal-weight buttons. | proposed |
+| primary.2 | border-color | transparent | Identify the principal action within a local group. Remove a permanent perimeter while reserving border width for stable sizing; visible text and keyboard focus remain mandatory. | Choose the intended next step without scanning equal-weight buttons. | proposed |
+| primary.3 | color | var(--ui-on-primary) | Identify the principal action within a local group. Keep the written label at ordinary text contrast against the azure fill in every appearance. | Choose the intended next step without scanning equal-weight buttons. | proposed |
 
 ## button-hover
 
@@ -482,8 +490,8 @@ Selector: `.btn-primary:hover:not(:disabled)`. Source: project. Verification fam
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| primary-hover.1 | background-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Change the fill while preserving contrast with the active on-primary label. | Keep the primary action recognizable while pointing at it. | proposed |
-| primary-hover.2 | border-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Keep the perimeter aligned with the hover fill. | Keep the primary action recognizable while pointing at it. | proposed |
+| primary-hover.1 | background-color | var(--ui-primary-hover) | Give pointer feedback for the principal action. Darken the related azure fill while preserving label contrast and the visible-text boundary exception. | Keep the primary action recognizable while pointing at it. | proposed |
+| primary-hover.2 | border-color | transparent | Give pointer feedback for the principal action. Retain the borderless treatment while hovered; a keyboard focus outline is controlled independently. | Keep the primary action recognizable while pointing at it. | proposed |
 
 ## disabled
 
@@ -780,6 +788,14 @@ Selector: `.ui-swatch-warning`. Source: project. Verification family: `colors`.
 | --- | --- | --- | --- | --- | --- |
 | swatch-warning.1 | background-color | var(--ui-warning) | Demonstrate the warning color token. Apply the exact token without a decorative gradient. | Inspect the actual named color before approving its use. | proposed |
 
+## swatch-interactive
+
+Selector: `.ui-swatch-interactive`. Source: project. Verification family: `colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| swatch-interactive.1 | background-color | var(--ui-interactive) | Demonstrate the interactive color token. Apply the exact token without a decorative gradient. | Inspect the actual named color before approving its use. | proposed |
+
 ## dialog
 
 Selector: `dialog`. Source: project. Verification family: `dialog`.
@@ -929,7 +945,7 @@ Selector: `.ui-switch input[type="checkbox"]:checked`. Source: project. Verifica
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| switch-on.1 | background-color | var(--ui-primary) | Reinforce an enabled slider preference. Use the active action role for the checked track. | Recognize the enabled setting through both position and native state. | proposed |
+| switch-on.1 | background-color | var(--ui-interactive) | Reinforce an enabled slider preference. Use the blue interactive role so the checked state contrasts with adjacent neutral surfaces; the labelled-button exception does not apply to selection marks. | Recognize the enabled setting through both position and native state. | proposed |
 
 ## switch-thumb-on
 
@@ -938,7 +954,7 @@ Selector: `.ui-switch input[type="checkbox"]:checked::before`. Source: project. 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | switch-thumb-on.1 | transform | translateX(1.375rem) | Move and contrast the enabled slider thumb. Move the thumb to the end of the available inner track with no animation. | Read the on position in every brightness and palette combination. | proposed |
-| switch-thumb-on.2 | background-color | var(--ui-on-primary) | Move and contrast the enabled slider thumb. Keep the checked thumb distinct from the active track in dark as well as light mode. | Read the on position in every brightness and palette combination. | proposed |
+| switch-thumb-on.2 | background-color | var(--ui-on-interactive) | Move and contrast the enabled slider thumb. Contrast the checked thumb against its interactive track independently of the white filled-button label. | Read the on position in every brightness and palette combination. | proposed |
 
 ## distinct-status
 
@@ -990,3 +1006,11 @@ Selector: `.ui-switch input[type="checkbox"]::before`; condition: `(forced-color
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | forced-switch-thumb.1 | display | none | Remove the decorative thumb when the native mark returns. Leave the forced-color native checkbox as the only mark. | Read one unambiguous checked state rather than two overlapping marks. | proposed |
+
+## forced-primary
+
+Selector: `.btn-primary, .btn-primary:hover:not(:disabled)`; condition: `(forced-colors: active)`. Source: project. Verification family: `forced-colors`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| forced-primary.1 | border-color | ButtonText | Honor the system palette for a labelled primary button. Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size. | Find the action boundary when explicitly using a forced-color appearance. | proposed |

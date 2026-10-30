@@ -51,7 +51,8 @@
       <h2 id="foundation-title">Foundations you can inspect</h2>
       <p class="ui-measure">Gray backgrounds keep the working area quiet, inspired by high-performance HMI principles. Color is reserved for compact actions, focus and named states. State labels, persistent field names and visible focus remain understandable without color. The system font starts at the browser’s normal reading size.</p>
       <div class="ui-swatch-grid">
-        <div><div class="ui-swatch ui-swatch-primary" aria-hidden="true"></div><strong>Primary</strong><p><code data-color-value="primary">#284637</code> · deliberate action</p></div>
+        <div><div class="ui-swatch ui-swatch-primary" aria-hidden="true"></div><strong>Primary fill</strong><p><code data-color-value="primary">#006aa8</code> · azure action in both modes</p></div>
+        <div><div class="ui-swatch ui-swatch-interactive" aria-hidden="true"></div><strong>Interactive</strong><p><code data-color-value="interactive">#005b90</code> · readable links and selected marks</p></div>
         <div><div class="ui-swatch ui-swatch-ink" aria-hidden="true"></div><strong>Ink</strong><p><code data-color-value="ink">#242424</code> · sustained reading</p></div>
         <div><div class="ui-swatch ui-swatch-muted" aria-hidden="true"></div><strong>Muted</strong><p><code data-color-value="muted">#505050</code> · secondary information</p></div>
         <div><div class="ui-swatch ui-swatch-canvas" aria-hidden="true"></div><strong>Canvas</strong><p><code data-color-value="canvas">#d9d9d9</code> · page background</p></div>
@@ -99,6 +100,7 @@
           <fieldset><legend>Example review scope</legend><label class="ui-choice"><input type="radio" name="scope" value="all" checked>All interface examples</label><label class="ui-choice"><input type="radio" name="scope" value="forms">Forms only</label></fieldset>
           <label class="ui-choice"><input type="checkbox" name="include-mobile" checked>Include mobile examples</label>
           <p class="ui-help">These choices only demonstrate native radio and checkbox behavior.</p>
+          <p class="ui-help" id="primary-button-guidance">Azure buttons keep white written labels in both modes, with no permanent outline. Keyboard focus still gets a visible ring. On dark panels the label contrast is 5.79:1; the fill/background edge is 2.35:1 under the documented written-label button exception. Links and selection marks use a separate readable blue.</p>
           <div class="ui-cluster"><button class="btn btn-primary" id="open-review" type="button" disabled>Review example decision</button><button class="btn" type="button" disabled aria-describedby="publish-help">Publish</button></div>
           <p id="publish-help" class="ui-help">Publishing is unavailable: this page demonstrates components and does not publish app changes.</p>
         </div></div>
