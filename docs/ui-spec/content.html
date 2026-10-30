@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
+<meta name="description" content="Document typography and native HTML across Daylist palettes and densities."><title>Daylist · Document content specimen</title>
+<script src="./appearance.js"></script><link rel="stylesheet" href="./design-system.css">
+</head><body><a class="ui-skip" href="#main">Skip to document content</a>
+  <header class="ui-header">
+    <div class="container ui-cluster ui-spread">
+      <a href="../">Daylist / Back to app</a>
+      <nav class="ui-cluster ui-nav" aria-label="Reference pages"><a href="./">Components and CSS audit</a><a href="#document-title">Content specimen</a></nav>
+    </div>
+    <fieldset class="container ui-appearance">
+      <legend>Appearance</legend>
+      <div class="ui-cluster">
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="theme-dark" aria-describedby="appearance-help" disabled>Dark mode</label>
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="vision-distinct" aria-describedby="appearance-help" disabled>Distinct status colors</label>
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="density-compact" aria-describedby="appearance-help" disabled>Compact mode</label>
+        <span id="appearance-status" role="status">Light · Standard palette · Normal spacing</span>
+      </div>
+      <p id="appearance-help" class="ui-help">Choose brightness, status colors and normal or compact spacing independently. Compact mode fits more content while keeping text readable and touch targets comfortable.</p>
+    </fieldset>
+  </header>
+
+<main id="main" class="container" tabindex="-1"><article class="ui-prose" aria-labelledby="document-title">
+<h1 id="document-title">Document content specimen</h1>
+<p>This page demonstrates authored HTML using the document design layer. It is a visual reference, not a Markdown parser or an expansion of the app’s Markdown dialect.</p>
+<p><strong>Markdown subset:</strong> headings, paragraphs, lists, quotations, code, links, thematic breaks and read-only task markers. <strong>Additional HTML specimens:</strong> tables, figures, annotations, highlights, definitions and disclosures.</p>
+<noscript><p>Content and disclosures work without JavaScript. Appearance switches require JavaScript and remain disabled.</p></noscript>
+<h2 id="heading-hierarchy">Heading hierarchy · major section</h2><p>Heading rank expresses document structure. Sizes stay the same in normal and compact modes. More space before a heading connects it to the content that follows.</p>
+<h3 id="heading-three">Level three · subsection</h3><p>A subsection develops one part of its parent topic.</p>
+<h4 id="heading-four">Level four · local topic</h4><p>A local topic adds a narrower explanation.</p>
+<h5 id="heading-five">Level five · detailed subdivision</h5><p>This deeper level remains larger than ordinary body text.</p>
+<h6 id="heading-six">Level six · deepest heading</h6><p>The deepest heading uses body size with heading weight. These are real heading elements rather than bold paragraphs.</p>
+<h2 id="reading">Paragraphs and inline meaning</h2>
+<p>Body copy uses the system font, a 1rem size and 1.5 line height, capped at 65ch. <strong>Important information</strong> and <em>stressed wording</em> retain their native meaning. A <b>key term</b>, an <i>alternate voice</i> and a <dfn>defined concept</dfn> have separate semantics.</p>
+<p><small>Secondary copy remains readable.</small> A <mark>relevant highlighted passage</mark> has a neutral frame. The change from <del>automatic approval</del> to <ins>explicit review</ins> uses line patterns and this written explanation. <s>Outdated information</s> remains available for comparison.</p>
+<p>A <abbr title="Human-machine interface">HMI</abbr> (human-machine interface) expands on first use. Water is H<sub>2</sub>O, area is measured in m<sup>2</sup>, and a revision can use <time datetime="2026-10-29">29 October 2026</time>.</p>
+<p>See <a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" rel="noopener noreferrer">W3C heading guidance (w3.org)</a>. A long identifier wraps: <code>document_revision_identifier_with_a_very_long_unbroken_value_that_must_remain_visible_on_a_narrow_screen</code>.</p>
+<p>An intentional line break:<br>Document review desk<br>Local workspace. Optional breaks: review<wbr>Workspace<wbr>Revision. Neither element replaces paragraph spacing.</p>
+<h2 id="lists">Lists and definitions</h2><p>Unordered points use real markers and hanging indentation. Wrapped lines align with item text.</p>
+<ul id="nested-bullets"><li>A short review point.</li><li>A longer review point that wraps on narrow screens while its continuation remains aligned with its text rather than the bullet.
+<ul><li>A nested supporting point.<ul><li>A third level.<ul><li>A fourth level.<ul><li>A fifth level.<ul><li>A sixth level remains readable.</li></ul></li></ul></li></ul></li></ul></li></ul></li>
+<li><p>A loose item can contain more than one paragraph.</p><p>This second paragraph belongs to the same item and uses a smaller internal gap.</p><blockquote><p>A quotation can also belong to a list item.</p></blockquote></li></ul>
+<ol id="numbered-steps" start="98"><li>Continue an existing sequence at 98.</li><li>Preserve native number 99.</li><li>Continue at 100 without clipping the extra digit.</li></ol>
+<ol id="large-number" start="999999"><li>A six-digit sequence number retains its marker gutter.</li></ol>
+<dl><dt>Normal density</dt><dd>Roomier group separation with the same reading size.</dd><dt>Compact density</dt><dd>Tighter spaces with protected focus and pointer targets.</dd></dl>
+<p>Task markers are document information. They do not toggle tasks or call tools.</p><ul class="ui-task-list" id="task-markers"><li><span class="ui-task-marker">[Done]</span> Record the original source.</li><li><span class="ui-task-marker">[Open]</span> Review the next revision.</li></ul>
+<h2 id="quotations">Quotations and thematic breaks</h2>
+<blockquote id="sample-quote"><p>A quotation uses a neutral rule and full reading contrast.</p><blockquote><p>A nested quotation stays part of the quoted material.</p></blockquote><p class="ui-attribution">Example attribution · <cite>Document style notes</cite></p></blockquote>
+<p>Inline quotation uses native punctuation: <q>Keep meaning separate from appearance.</q></p><hr><p>The thematic break separates topics using a quiet, single-pixel divider.</p>
+<h2 id="literal-content">Code, keys and output</h2><p>Use <code>document_read</code> for an identifier, <kbd>Ctrl</kbd> + <kbd>Enter</kbd> for keyboard input, and <samp>Revision saved</samp> for output. These examples do not claim an app action happened.</p>
+<pre id="code-sample" tabindex="0" role="region" aria-label="Example JavaScript source"><code>const revision = {
+  title: "Source remains text",
+  example: "&lt;script&gt;alert('inert example')&lt;/script&gt;",
+  longLine: "abcdefghijklmnopqrstuvwxyz_abcdefghijklmnopqrstuvwxyz_abcdefghijklmnopqrstuvwxyz_abcdefghijklmnopqrstuvwxyz_abcdefghijklmnopqrstuvwxyz"
+};
+console.log(revision.title);</code></pre>
+<p>Indentation and long lines are preserved. Tab to the code region and use arrow keys to inspect overflow. No source executes.</p>
+<h2 id="table-heading">Document tables · HTML specimen</h2><p>Small tables fit; wide tables scroll inside a named region. This does not enable Markdown table parsing.</p>
+<div class="ui-prose-table" role="region" aria-labelledby="small-caption" tabindex="0"><table class="table" id="small-table"><caption id="small-caption">Two document revisions</caption><thead><tr><th scope="col">Revision</th><th scope="col">Result</th></tr></thead><tbody><tr><th scope="row">First</th><td>Draft</td></tr><tr><th scope="row">Second</th><td>Reviewed</td></tr></tbody></table></div>
+<div class="ui-prose-table" id="wide-table-region" role="region" aria-labelledby="wide-caption" tabindex="0"><table id="wide-table"><caption id="wide-caption">Long identifiers and monthly review counts</caption><thead><tr><th scope="col">Identifier</th><th scope="col">Document</th><th scope="col">Owner</th><th scope="col">Revision</th><th scope="col">State</th><th scope="col">Jan</th><th scope="col">Feb</th><th scope="col">Mar</th><th scope="col">Apr</th><th scope="col">May</th><th scope="col">Jun</th><th scope="col">Jul</th><th scope="col">Aug</th><th scope="col">Sep</th><th scope="col">Oct</th><th scope="col">Nov</th><th scope="col">Dec</th></tr></thead><tbody><tr><th scope="row"><code>immutable_document_revision_identifier_0123456789abcdef_0123456789abcdef</code></th><td>Review notes</td><td>Workspace</td><td>One</td><td>Draft</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr></tbody></table></div>
+<h2 id="figures">Figures and optional content · HTML specimens</h2>
+<figure id="image-figure"><img src="./content-sample.svg" width="960" height="240" alt="Three neutral blocks increase in height from left to right."><figcaption>A local responsive media example keeps its 4:1 aspect ratio. The caption provides context. Remote images remain outside Markdown v1.</figcaption></figure>
+<figure><img id="missing-image" src="./missing-content-sample.svg" width="320" height="80" alt="Unavailable example image: the source could not be loaded."><figcaption>Failure example: alternative text and this explanation remain available.</figcaption></figure>
+<details id="native-disclosure"><summary>Optional review notes</summary><p>The native disclosure keeps its marker, keyboard behavior and open state. Required explanations belong outside it.</p><ul><li>Check both densities.</li><li>Check focus and longer text.</li></ul></details>
+<p id="specimen-end">End of specimen. No extra trailing block margin is added beyond the container.</p>
+</article></main><footer class="container"><p class="ui-help"><a href="./">Return to components and the CSS audit</a> · Document presentation reference</p></footer></body></html>

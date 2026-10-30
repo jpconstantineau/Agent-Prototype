@@ -29,7 +29,7 @@ export const compactCoarseMinimum='2.75rem';
 export function isBoxDeclaration(property,value='') {
   if(property.startsWith('--'))return densityTokens.some(t=>t.property===property)||/^--bs-gutter-/.test(property)||/^(?:-?\d*\.?\d+(?:px|rem|em|ch|%|vh|dvh)|calc\()/.test(value);
   if(/^(?:border|outline).*-(?:color|style)$/.test(property))return false;
-  return /^(?:margin|padding|(?:row-|column-)?gap$|scroll-margin|border|outline|(?:min-|max-)?(?:inline|block)-size$|(?:min-|max-)?(?:width|height)$|box-sizing$|inset|top$|right$|bottom$|left$|transform$|grid-template-columns$|flex$|flex-basis$|font-size$|line-height$|text-underline-offset$|resize$)/.test(property);
+  return /^(?:margin|padding|(?:row-|column-)?gap$|scroll-margin|border|outline|(?:min-|max-)?(?:inline|block)-size$|(?:min-|max-)?(?:width|height)$|box-sizing$|inset|top$|right$|bottom$|left$|transform$|grid-template-columns$|flex$|flex-basis$|font-size$|line-height$|text-underline-offset$|text-indent$|list-style-position$|resize$)/.test(property);
 }
 function resolve(value,profile) {
   const vars={...profile,'--bs-gutter-x':profile['--ui-space-xl'],'--bs-gutter-y':profile['--ui-space-xl']};

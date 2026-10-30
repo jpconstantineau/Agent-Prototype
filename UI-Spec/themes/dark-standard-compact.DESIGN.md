@@ -24,6 +24,36 @@ colors:
   interactive: "#40adf0"
   on-interactive: "#242424"
 typography:
+  document-h1:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "2rem"
+    fontWeight: 600
+    lineHeight: 1.2
+  document-h2:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "1.75rem"
+    fontWeight: 600
+    lineHeight: 1.25
+  document-h3:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 600
+    lineHeight: 1.25
+  document-h4:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 600
+    lineHeight: 1.3
+  document-h5:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 600
+    lineHeight: 1.35
+  document-h6:
+    fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    fontSize: "1rem"
+    fontWeight: 600
+    lineHeight: 1.4
   body:
     fontFamily: "system-ui, -apple-system, \"Segoe UI\", sans-serif"
     fontSize: "1rem"
@@ -56,6 +86,24 @@ spacing:
   section: "1.5rem"
   page: "2rem"
 components:
+  document-h1:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h1}"
+  document-h2:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h2}"
+  document-h3:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h3}"
+  document-h4:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h4}"
+  document-h5:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h5}"
+  document-h6:
+    textColor: "{colors.ink}"
+    typography: "{typography.document-h6}"
   page:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
@@ -136,6 +184,8 @@ The executable contrast matrix in system.mjs specifies permitted pairings, inclu
 ## Typography
 
 Use installed system fonts, a 1rem body and unitless 1.5 line height. At the normal 16px root, body is 16px and secondary copy is 14px. The browser default size remains authoritative. Heading levels carry document meaning; typography classes must not replace heading order. Page title is 2rem, section title 1.5rem and local heading 1.125rem. Use 600 weight for headings and actionable labels, 400 for ordinary values. Never use all caps or extra tracking as the only hierarchy cue.
+
+Opt-in document content uses `.ui-prose`: h1–h6 sizes are 2 / 1.75 / 1.5 / 1.25 / 1.125 / 1rem with weight 600 and protected type across densities. [CONTENT.md](../CONTENT.md) defines the precise hierarchy, block and list rhythm, inline meaning, code, tables, figures and native disclosures. Its specimen is authored HTML; CSS support never expands the Markdown dialect or supplies agent authority.
 
 Keep explanatory prose within 65ch. Short labels may remain shorter; a table is not a paragraph. Long names wrap, numbers use tabular figures when supported, and text spacing/zoom must not hide content. Let platform font rendering work normally; no antialiasing overrides, remote font blocking, fixed-height text boxes or font-size reset on html.
 

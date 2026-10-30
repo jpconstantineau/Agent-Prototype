@@ -1085,3 +1085,466 @@ Selector: `.btn-primary, .btn-primary:hover:not(:disabled)`; condition: `(forced
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | forced-primary.1 | border-color | ButtonText | Honor the system palette for a labelled primary button. Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size. | Find the action boundary when explicitly using a forced-color appearance. | proposed |
+
+## prose-root
+
+Selector: `.ui-prose`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-root.1 | display | flow-root | Provide an opt-in reading surface for document content. Contain block margin behavior within the document surface without clipping focus or content. | Read a document without changing application navigation, forms or task lists. | proposed |
+| prose-root.2 | max-inline-size | 65ch | Provide an opt-in reading surface for document content. Limit sustained reading width while allowing the available viewport to be narrower. | Read a document without changing application navigation, forms or task lists. | proposed |
+| prose-root.3 | min-inline-size | 0 | Provide an opt-in reading surface for document content. Let embedded documents shrink inside flex/grid workspaces instead of forcing page overflow. | Read a document without changing application navigation, forms or task lists. | proposed |
+| prose-root.4 | color | var(--ui-ink) | Provide an opt-in reading surface for document content. Keep document text on the existing contrast-checked ink role. | Read a document without changing application navigation, forms or task lists. | proposed |
+| prose-root.5 | line-height | 1.5 | Provide an opt-in reading surface for document content. Use the same readable body rhythm in both density profiles. | Read a document without changing application navigation, forms or task lists. | proposed |
+
+## prose-reset
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-reset.1 | margin-block | 0 | Give document block spacing one explicit owner. Reset both block margins before applying sibling rhythm; the first/last block adds no outside margin. | Read paragraphs, quotations and lists without accumulated browser-default margins. | proposed |
+| prose-reset.2 | margin-inline | 0 | Give document block spacing one explicit owner. Remove browser quote/figure side margins so their documented inset owns horizontal space. | Read paragraphs, quotations and lists without accumulated browser-default margins. | proposed |
+
+## prose-rhythm
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table) + :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-rhythm.1 | margin-block-start | var(--ui-space-lg) | Separate consecutive document blocks. Use one 16px normal / 12px compact gap between ordinary neighboring blocks. | Recognize a new reading block without doubled trailing and leading margins. | proposed |
+
+## prose-heading
+
+Selector: `.ui-prose :where(h1, h2, h3, h4, h5, h6)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-heading.1 | font-weight | 600 | Keep all six document ranks visibly related. Distinguish headings from 400-weight body text without extra colors or all-caps labels. | Find the document structure using readable, consistent heading emphasis. | proposed |
+| prose-heading.2 | scroll-margin-block-start | var(--ui-space-lg) | Keep all six document ranks visibly related. Leave breathing room above a heading reached by an anchor without adding flow height. | Find the document structure using readable, consistent heading emphasis. | proposed |
+
+## prose-h1
+
+Selector: `.ui-prose h1`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h1.1 | font-size | 2rem | Express the document heading hierarchy. Identify the document title at the largest reading size. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h1.2 | line-height | 1.2 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-h2
+
+Selector: `.ui-prose h2`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h2.1 | font-size | 1.75rem | Express the document heading hierarchy. Separate major document sections below the title. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h2.2 | line-height | 1.25 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-h3
+
+Selector: `.ui-prose h3`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h3.1 | font-size | 1.5rem | Express the document heading hierarchy. Identify a subsection within a major document topic. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h3.2 | line-height | 1.25 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-h4
+
+Selector: `.ui-prose h4`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h4.1 | font-size | 1.25rem | Express the document heading hierarchy. Mark a local topic without competing with its parent section. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h4.2 | line-height | 1.3 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-h5
+
+Selector: `.ui-prose h5`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h5.1 | font-size | 1.125rem | Express the document heading hierarchy. Distinguish a detailed subdivision while staying above body size. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h5.2 | line-height | 1.35 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-h6
+
+Selector: `.ui-prose h6`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-h6.1 | font-size | 1rem | Express the document heading hierarchy. Keep the deepest heading readable at body size, with heading weight. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+| prose-h6.2 | line-height | 1.4 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. | proposed |
+
+## prose-heading-before
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table) + :where(h1, h2, h3, h4, h5, h6)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-heading-before.1 | margin-block-start | var(--ui-space-xl) | Make a new document topic distinct from preceding content. Use 24px normal / 16px compact before a heading, greater than its following gap. | Associate the heading with what follows rather than the paragraph before it. | proposed |
+
+## prose-heading-after
+
+Selector: `.ui-prose :where(h1, h2, h3, h4, h5, h6) + :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-heading-after.1 | margin-block-start | var(--ui-space-md) | Connect a heading to its introductory content. Use 12px normal / 8px compact after a heading; when two headings are consecutive, this nearer grouping takes precedence. | Start reading the correct section without an oversized gap below its title. | proposed |
+
+## prose-lists
+
+Selector: `.ui-prose :where(ul, ol)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-lists.1 | padding-inline-start | var(--ui-space-xl) | Keep list markers outside aligned item text. Reserve a 24px normal / 16px compact bullet gutter using logical direction. | Follow wrapped items and distinguish nesting without inserting typed bullet characters. | proposed |
+| prose-lists.2 | list-style-position | outside | Keep list markers outside aligned item text. Align wrapped text with item text rather than wrapping beneath the marker. | Follow wrapped items and distinguish nesting without inserting typed bullet characters. | proposed |
+
+## prose-bullets
+
+Selector: `.ui-prose ul`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-bullets.1 | list-style-type | disc | Keep unordered content recognizable at every nesting level. Use a familiar filled bullet; indentation and native list semantics carry nesting. | Recognize a real list even when browser default nested marker choices differ. | proposed |
+
+## prose-numbering
+
+Selector: `.ui-prose ol`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-numbering.1 | list-style-type | decimal | Keep sequence visible and preserve native start/value semantics. Use native decimal counters rather than CSS-generated essential numbers. | Read steps in their actual order, including explicit continuation numbers. | proposed |
+| prose-numbering.2 | padding-inline-start | 4ch | Keep sequence visible and preserve native start/value semantics. Reserve a protected character-based gutter for ordinary multi-digit step numbers. | Read steps in their actual order, including explicit continuation numbers. | proposed |
+
+## prose-wide-numbering
+
+Selector: `.ui-prose ol[start], .ui-prose ol.ui-list-wide`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-wide-numbering.1 | padding-inline-start | 8ch | Allow larger explicit starting numbers. Reserve six digits, punctuation and separation; this structural marker allowance does not shrink with density. | Read up to six-digit sequence numbers without clipping them at the content edge. | proposed |
+
+## prose-item-gap
+
+Selector: `.ui-prose li + li`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-item-gap.1 | margin-block-start | var(--ui-space-sm) | Separate sibling list items. Use 8px normal / 6px compact between item boxes. | Scan individual points while keeping them grouped more closely than independent paragraphs. | proposed |
+
+## prose-nested-list
+
+Selector: `.ui-prose li > :where(ul, ol)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-nested-list.1 | margin-block-start | var(--ui-space-sm) | Keep a nested list attached to its owning item. Use the related-content gap after the parent text; no extra list bottom margin is added. | Read supporting subpoints as part of the parent rather than a new document block. | proposed |
+
+## prose-loose-item
+
+Selector: `.ui-prose li > p + p`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-loose-item.1 | margin-block-start | var(--ui-space-sm) | Separate paragraphs within one list item. Use one related-content gap rather than full document paragraph separation. | Read a longer explanation without confusing each paragraph with a new numbered step. | proposed |
+
+## prose-term
+
+Selector: `.ui-prose dt`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-term.1 | font-weight | 600 | Identify a definition term without changing its semantics. Use heading-like emphasis at body size, without pretending a term is a section heading. | Find the term whose explanation follows. | proposed |
+
+## prose-definition
+
+Selector: `.ui-prose dd`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-definition.1 | margin-inline-start | var(--ui-space-lg) | Associate a definition with its preceding term. Inset definitions by 16px normal / 12px compact instead of the browser default 40px. | Read a term and explanation as one entry with a modest inset. | proposed |
+| prose-definition.2 | margin-block | var(--ui-space-xs) 0 | Associate a definition with its preceding term. Keep 4px after the term and no trailing margin that could double the next entry gap. | Read a term and explanation as one entry with a modest inset. | proposed |
+
+## prose-next-term
+
+Selector: `.ui-prose dd + dt`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-next-term.1 | margin-block-start | var(--ui-space-md) | Separate consecutive definition entries. Use a 12px normal / 8px compact entry boundary. | Recognize where the next term starts. | proposed |
+
+## prose-quote
+
+Selector: `.ui-prose blockquote`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-quote.1 | padding-inline-start | var(--ui-space-lg) | Set quoted material apart without suggesting an alert. Separate quote text from its neutral start rule by 16px normal / 12px compact. | Distinguish another author’s words while reading them at normal body contrast. | proposed |
+| prose-quote.2 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | Set quoted material apart without suggesting an alert. Reuse the neutral 4px normal / 3px compact guidance stroke as a quotation boundary. | Distinguish another author’s words while reading them at normal body contrast. | proposed |
+
+## prose-attribution
+
+Selector: `.ui-prose .ui-attribution`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-attribution.1 | font-size | 0.875rem | Identify a quotation attribution. Use the existing readable secondary size, unchanged by density. | Find the source separately from the quoted passage. | proposed |
+| prose-attribution.2 | color | var(--ui-muted) | Identify a quotation attribution. Use the checked supporting-text role rather than fading the entire quote. | Find the source separately from the quoted passage. | proposed |
+
+## prose-strong
+
+Selector: `.ui-prose :where(strong, b)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-strong.1 | font-weight | 700 | Make textual importance visible. Use a stronger weight than headings where the author marks inline importance or attention. | Recognize emphasis without relying on color. | proposed |
+
+## prose-emphasis
+
+Selector: `.ui-prose :where(em, i, cite, dfn)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-emphasis.1 | font-style | italic | Retain recognizable inline emphasis and titles. Retain native italic semantics without changing text color or size. | Distinguish stress, a cited work or a defined term from ordinary prose. | proposed |
+
+## prose-mark
+
+Selector: `.ui-prose mark`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-mark.1 | background-color | var(--ui-subtle) | Identify a relevant text passage using a neutral framed highlight. Reuse the contrast-tested neutral support plane instead of browser-default yellow. | Locate highlighted content in either brightness without mistaking it for success or error. | proposed |
+| prose-mark.2 | color | var(--ui-ink) | Identify a relevant text passage using a neutral framed highlight. Keep highlighted text at full reading contrast on that plane. | Locate highlighted content in either brightness without mistaking it for success or error. | proposed |
+| prose-mark.3 | outline | 1px solid currentColor | Identify a relevant text passage using a neutral framed highlight. Make the highlight detectable through its boundary as well as a small background difference. | Locate highlighted content in either brightness without mistaking it for success or error. | proposed |
+
+## prose-insertion
+
+Selector: `.ui-prose ins`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-insertion.1 | text-decoration-line | underline | Keep inserted text visibly distinct without green coding. Use a non-color insertion cue. | Recognize an insertion alongside a written change explanation. | proposed |
+| prose-insertion.2 | text-decoration-style | double | Keep inserted text visibly distinct without green coding. Distinguish insertion from ordinary underlined links. | Recognize an insertion alongside a written change explanation. | proposed |
+
+## prose-deletion
+
+Selector: `.ui-prose :where(del, s)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-deletion.1 | text-decoration-line | line-through | Keep removed or outdated text visible. Preserve readable source words while indicating their removal or loss of relevance. | Compare the original wording with its replacement. | proposed |
+
+## prose-monospace
+
+Selector: `.ui-prose :where(code, pre, kbd, samp)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-monospace.1 | font-family | ui-monospace, Consolas, "Liberation Mono", monospace | Make literal code, key names and machine output identifiable. Use installed monospace fonts without a remote font dependency. | Copy exact characters without proportional text disguising their spacing. | proposed |
+| prose-monospace.2 | font-size | 0.875em | Make literal code, key names and machine output identifiable. Keep literal text readable while avoiding oversized monospace glyphs. | Copy exact characters without proportional text disguising their spacing. | proposed |
+| prose-monospace.3 | color | var(--ui-ink) | Make literal code, key names and machine output identifiable. Keep code and output at checked reading contrast, including inside links. | Copy exact characters without proportional text disguising their spacing. | proposed |
+
+## prose-inline-code
+
+Selector: `.ui-prose :not(pre) > code`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-inline-code.1 | background-color | var(--ui-subtle) | Separate a short literal identifier from surrounding prose. Use the existing neutral secondary plane rather than a new syntax palette. | Recognize code without treating it as a button or reducing its copyable content. | proposed |
+| prose-inline-code.2 | padding-inline | var(--ui-space-xs) | Separate a short literal identifier from surrounding prose. Keep 4px at either edge of the identifier without adding line-height-changing block padding. | Recognize code without treating it as a button or reducing its copyable content. | proposed |
+| prose-inline-code.3 | box-decoration-break | clone | Separate a short literal identifier from surrounding prose. Keep the inline code inset/background on each wrapped fragment. | Recognize code without treating it as a button or reducing its copyable content. | proposed |
+
+## prose-pre
+
+Selector: `.ui-prose pre`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-pre.1 | max-inline-size | 100% | Preserve exact source layout inside a bounded reading block. Bound the preformatted box by its document container. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.2 | overflow | auto | Preserve exact source layout inside a bounded reading block. Keep long lines and enlarged text reachable inside the code box. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.3 | white-space | pre | Preserve exact source layout inside a bounded reading block. Preserve source spaces and newlines; wrapping is not silently inserted into code. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.4 | overflow-wrap | normal | Preserve exact source layout inside a bounded reading block. Prevent the inherited prose wrapping rule from breaking literal source layout. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.5 | padding | var(--ui-space-lg) | Preserve exact source layout inside a bounded reading block. Inset code by 16px normal / 12px compact, leaving room for focus. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.6 | border | 1px solid var(--ui-divider) | Preserve exact source layout inside a bounded reading block. Give the code region a quiet boundary without implying an editable form. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+| prose-pre.7 | background-color | var(--ui-subtle) | Preserve exact source layout inside a bounded reading block. Keep the code block neutral in every palette. | Inspect indentation and long code lines without horizontal scrolling of the whole page. | proposed |
+
+## prose-pre-code
+
+Selector: `.ui-prose pre code`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-pre-code.1 | font-size | inherit | Keep the code block’s type scale single-owned. Cancel the nested 0.875em reduction; the pre element already owns that scale. | Read a code block without compounded font-size reduction. | proposed |
+
+## prose-key
+
+Selector: `.ui-prose kbd`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-key.1 | padding | 0 var(--ui-space-xs) | Identify keyboard input as a key name. Reserve a small inline inset while preserving the paragraph rhythm. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. | proposed |
+| prose-key.2 | border | 1px solid var(--ui-border) | Identify keyboard input as a key name. Use a clear neutral key boundary, never a hover/click state. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. | proposed |
+| prose-key.3 | border-radius | var(--ui-radius-small) | Identify keyboard input as a key name. Relate the small keycap shape to other bounded UI without adding a shadow. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. | proposed |
+
+## prose-abbreviation
+
+Selector: `.ui-prose abbr[title]`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-abbreviation.1 | text-decoration | underline dotted | Signal that an abbreviation has an expansion. Use a dotted underline rather than the solid link convention; prose must still explain the term on first use. | Notice supplementary terminology without confusing it with a link. | proposed |
+| prose-abbreviation.2 | text-underline-offset | 0.2em | Signal that an abbreviation has an expansion. Separate the indicator from letter descenders as for existing text links. | Notice supplementary terminology without confusing it with a link. | proposed |
+
+## prose-annotations
+
+Selector: `.ui-prose :where(sub, sup)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-annotations.1 | font-size | 0.875em | Keep small baseline annotations readable. Use a readable relative annotation size instead of a tiny absolute label. | Read formula indices and references without changing the whole line rhythm. | proposed |
+| prose-annotations.2 | line-height | 0 | Keep small baseline annotations readable. Let the surrounding body line own spacing while native sub/super vertical alignment places the annotation. | Read formula indices and references without changing the whole line rhythm. | proposed |
+
+## prose-rule
+
+Selector: `.ui-prose hr`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-rule.1 | border | 0 | Mark a thematic change using a quiet separator. Remove browser inset borders before drawing one intended edge. | Recognize a break in topic without an alarm-like color band. | proposed |
+| prose-rule.2 | border-block-start | 1px solid var(--ui-divider) | Mark a thematic change using a quiet separator. Draw one passive divider with protected 1px width. | Recognize a break in topic without an alarm-like color band. | proposed |
+
+## prose-table-region
+
+Selector: `.ui-prose .ui-prose-table`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-table-region.1 | max-inline-size | 100% | Contain a document table’s two-dimensional layout. Bound the region to the prose width. | Compare wide columns using a named keyboard-accessible region without panning the page. | proposed |
+| prose-table-region.2 | overflow-x | auto | Contain a document table’s two-dimensional layout. Keep horizontal scrolling local to the table. | Compare wide columns using a named keyboard-accessible region without panning the page. | proposed |
+| prose-table-region.3 | padding | var(--ui-space-sm) | Contain a document table’s two-dimensional layout. Reserve 8px normal / 6px compact inner clearance for links and their focus outlines. | Compare wide columns using a named keyboard-accessible region without panning the page. | proposed |
+
+## prose-table
+
+Selector: `.ui-prose table`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-table.1 | inline-size | 100% | Fit document tables to their content and reading region. Use the available comparison width. | Read a small table without inheriting the application example’s six-column width. | proposed |
+| prose-table.2 | min-inline-size | 0 | Fit document tables to their content and reading region. Override the .table sample’s 36rem minimum when reused inside a document. | Read a small table without inheriting the application example’s six-column width. | proposed |
+| prose-table.3 | border-collapse | collapse | Fit document tables to their content and reading region. Avoid doubled cell dividers. | Read a small table without inheriting the application example’s six-column width. | proposed |
+| prose-table.4 | overflow-wrap | normal | Fit document tables to their content and reading region. Keep words and identifiers intact for comparison; a wide table scrolls inside its named region instead of squeezing columns to single letters. | Read a small table without inheriting the application example’s six-column width. | proposed |
+
+## prose-cell
+
+Selector: `.ui-prose :where(th, td)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-cell.1 | padding | var(--ui-space-sm) var(--ui-space-md) | Keep document cells legible and related to their headers. Use 8/12px normal and 6/8px compact vertical/horizontal clearance. | Compare values using semantic columns without cramped or overflowing cells. | proposed |
+| prose-cell.2 | text-align | start | Keep document cells legible and related to their headers. Align ordinary text with its reading direction. | Compare values using semantic columns without cramped or overflowing cells. | proposed |
+| prose-cell.3 | vertical-align | top | Keep document cells legible and related to their headers. Align multiline cells at the start of each record. | Compare values using semantic columns without cramped or overflowing cells. | proposed |
+| prose-cell.4 | border-block-end | 1px solid var(--ui-divider) | Keep document cells legible and related to their headers. Separate rows without heavy full grids. | Compare values using semantic columns without cramped or overflowing cells. | proposed |
+
+## prose-table-caption
+
+Selector: `.ui-prose caption`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-table-caption.1 | caption-side | top | Introduce the comparison before its data. Keep the caption before the data. | Know the table’s purpose before navigating its headers. | proposed |
+| prose-table-caption.2 | text-align | start | Introduce the comparison before its data. Align the caption with reading order. | Know the table’s purpose before navigating its headers. | proposed |
+| prose-table-caption.3 | padding-block-end | var(--ui-space-sm) | Introduce the comparison before its data. Separate the caption from header cells by the related-content gap. | Know the table’s purpose before navigating its headers. | proposed |
+| prose-table-caption.4 | color | var(--ui-muted) | Introduce the comparison before its data. Use the checked supporting role. | Know the table’s purpose before navigating its headers. | proposed |
+
+## prose-image
+
+Selector: `.ui-prose img`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-image.1 | display | block | Fit an explicitly permitted image without distortion. Avoid an inline baseline gap below an illustration. | Inspect local document media without horizontal page overflow. | proposed |
+| prose-image.2 | max-inline-size | 100% | Fit an explicitly permitted image without distortion. Scale down an image wider than its reading container. | Inspect local document media without horizontal page overflow. | proposed |
+| prose-image.3 | block-size | auto | Fit an explicitly permitted image without distortion. Preserve intrinsic aspect ratio, including dimensions reserved by HTML width/height. | Inspect local document media without horizontal page overflow. | proposed |
+
+## prose-figure-caption
+
+Selector: `.ui-prose figcaption`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-figure-caption.1 | margin-block-start | var(--ui-space-sm) | Keep a figure’s explanation attached to its image. Use the related-content gap between media and its caption. | Read the image’s meaning and source without confusing the caption with body content. | proposed |
+| prose-figure-caption.2 | font-size | 0.875rem | Keep a figure’s explanation attached to its image. Use the existing readable secondary size. | Read the image’s meaning and source without confusing the caption with body content. | proposed |
+| prose-figure-caption.3 | color | var(--ui-muted) | Keep a figure’s explanation attached to its image. Keep the explanation readable in every palette. | Read the image’s meaning and source without confusing the caption with body content. | proposed |
+
+## prose-details
+
+Selector: `.ui-prose details`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-details.1 | padding | var(--ui-space-lg) | Bound optional supporting document material. Leave 16px normal / 12px compact inset for text and focus. | Recognize information that can be expanded without hiding the main explanation. | proposed |
+| prose-details.2 | border | 1px solid var(--ui-divider) | Bound optional supporting document material. Identify the optional group with a quiet boundary. | Recognize information that can be expanded without hiding the main explanation. | proposed |
+
+## prose-summary
+
+Selector: `.ui-prose summary`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-summary.1 | min-block-size | var(--ui-control-min) | Keep native disclosure activation visible and comfortable. Use the governed fine/coarse pointer target floor on the native summary. | Open optional material with click, touch, Enter or Space and see its current state. | proposed |
+| prose-summary.2 | cursor | pointer | Keep native disclosure activation visible and comfortable. Confirm activation without replacing the native triangle or keyboard behavior. | Open optional material with click, touch, Enter or Space and see its current state. | proposed |
+| prose-summary.3 | font-weight | 600 | Keep native disclosure activation visible and comfortable. Distinguish the persistent disclosure label from its revealed content. | Open optional material with click, touch, Enter or Space and see its current state. | proposed |
+
+## prose-summary-focus
+
+Selector: `.ui-prose summary:focus-visible`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-summary-focus.1 | outline | 3px solid var(--ui-focus) | Expose keyboard focus on a native disclosure label. Match the protected keyboard focus perimeter used by other native controls. | Find the disclosure receiving keyboard input in every appearance. | proposed |
+| prose-summary-focus.2 | outline-offset | 3px | Expose keyboard focus on a native disclosure label. Separate keyboard focus from the disclosure text and containing border. | Find the disclosure receiving keyboard input in every appearance. | proposed |
+
+## prose-summary-forced-focus
+
+Selector: `.ui-prose summary:focus-visible`; condition: `(forced-colors: active)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-summary-forced-focus.1 | outline-color | Highlight | Respect the system focus color on document disclosures. Use the user-selected platform focus role rather than the authored palette. | Find the optional-content control under a forced-color preference. | proposed |
+
+## prose-summary-content
+
+Selector: `.ui-prose details[open] > summary + *`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-summary-content.1 | margin-block-start | var(--ui-space-sm) | Separate an expanded disclosure from its label. Use one related-content gap after the open summary. | Recognize which content was revealed by the summary. | proposed |
+
+## prose-task-list
+
+Selector: `.ui-prose .ui-task-list`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-task-list.1 | list-style-type | none | Present task markers as read-only document information. Avoid a second bullet beside the explicitly worded task indicator. | Read checked and unchecked states without accidentally changing application tasks. | proposed |
+
+## prose-task-marker
+
+Selector: `.ui-prose .ui-task-marker`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-task-marker.1 | font-weight | 600 | Keep a noninteractive task status next to its text. Emphasize the explicit state word without color dependence. | Recognize the written Done/Open state without mistaking it for an actionable checkbox. | proposed |
+
+## prose-forced-mark
+
+Selector: `.ui-prose mark`; condition: `(forced-colors: active)`. Source: project. Verification family: `prose`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| prose-forced-mark.1 | background-color | Mark | Keep marked text readable in the platform contrast palette. Use the system highlight background. | Find highlighted passages when authored colors are replaced by the user. | proposed |
+| prose-forced-mark.2 | color | MarkText | Keep marked text readable in the platform contrast palette. Use its paired system text foreground. | Find highlighted passages when authored colors are replaced by the user. | proposed |

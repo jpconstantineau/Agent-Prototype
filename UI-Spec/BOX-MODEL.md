@@ -79,6 +79,10 @@ The reference-specific `daylist-ui-reference-appearance-v1` record now stores `{
 
 Changing density keeps the same input nodes, current drafts, validation state and focused preference control. It does not save or cancel a record. Density changes may reflow the page; no content is hidden, ellipsized or reordered to make it appear denser. Normal/compact token documents in themes/ describe resolved values, with protected pointer adaptation explained alongside their minimum control dimensions.
 
+## Document flow spacing
+
+The opt-in `.ui-prose` layer has separate flow-margin ownership described in [CONTENT.md](CONTENT.md). It resets block/inline margins and adds only a leading sibling gap: lg for ordinary blocks, xl before a heading and md after one. List items and captions use sm; definitions use xs/md and an lg inset. Quote/code/disclosure insets use existing tokens; ordered marker gutters remain character-based structural allowances. The flow-root contains outer margin collapse without clipping focus. All these declarations join the generated box audit.
+
 ## Maintainer review and tests
 
 The generated audit lists every authored box-setting declaration, including structural resets, type rhythm and copied framework geometry. Each row identifies its scope, ownership policy, normal/compact expressions, purpose and user intent. New length-valued custom properties must be registered in the density contract; new declarations must retain full ledger rationale. Inspect shorthands for all longhands they reset. Root token IDs and existing rule/tuple IDs remain stable; new declarations are appended or assigned new rule IDs.

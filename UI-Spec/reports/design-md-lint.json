@@ -4,7 +4,7 @@
   "reports": {
     "light-standard": {
       "input": "UI-Spec/DESIGN.md",
-      "inputSha256": "6fa90906c73012f4ccdb2ca0f4bea6c2eecf371cb7e1da3ddc1c67467209bd73",
+      "inputSha256": "e6708a61ef19d96245e3e265f030e5501f5c7f0c5c3346e3de9ea44dfc8ce1d7",
       "report": {
         "findings": [
           {
@@ -27,7 +27,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -40,7 +40,7 @@
     },
     "dark-standard": {
       "input": "UI-Spec/themes/dark.DESIGN.md",
-      "inputSha256": "ba5b55ac49fb09fa7f12c4dba36fa6a94b1d61c94cc83afcb60de51dda318e75",
+      "inputSha256": "6de3a12c889c038bfc03fecb44c9bb71d00ed55b6b65d6b4c6cf0e7e9669d153",
       "report": {
         "findings": [
           {
@@ -63,7 +63,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -76,7 +76,7 @@
     },
     "light-distinct": {
       "input": "UI-Spec/themes/light-distinct.DESIGN.md",
-      "inputSha256": "8d35a7a6d0af835132c9cbf61771a1e26ee5221af91597741296f051e43efd28",
+      "inputSha256": "1edea16739a4a15c50f9f780dc1833ab342085144b7989e9b3dc34cab45bed9e",
       "report": {
         "findings": [
           {
@@ -99,7 +99,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -112,7 +112,7 @@
     },
     "dark-distinct": {
       "input": "UI-Spec/themes/dark-distinct.DESIGN.md",
-      "inputSha256": "18d22040aad7405c3458e6e6fb458f7c356981fb67b7265532caacb5d7b75dfc",
+      "inputSha256": "4fdc850c48656f8f73b3783fd9c3ae493ae7794080ba33b19966935ad5659a8e",
       "report": {
         "findings": [
           {
@@ -135,7 +135,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -148,7 +148,7 @@
     },
     "dark-standard-compact": {
       "input": "UI-Spec/themes/dark-standard-compact.DESIGN.md",
-      "inputSha256": "62d54dfe0f6ad354482f3bc94ae16cf040b8b4110416ad842357dc40c74825ce",
+      "inputSha256": "3b71ee9cba97d64b0bc599f424f679ca76b92e33a5192fadbd70928b9db40598",
       "report": {
         "findings": [
           {
@@ -171,7 +171,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -184,7 +184,7 @@
     },
     "dark-distinct-compact": {
       "input": "UI-Spec/themes/dark-distinct-compact.DESIGN.md",
-      "inputSha256": "0977f47c3e8ea8c78152a92e5c1bfb6b4e16921d88a831e61a6c58ba09553cce",
+      "inputSha256": "32583082f43085b09e5a34898d477cfc6bff97d45f98416c80d8a50690656c6e",
       "report": {
         "findings": [
           {
@@ -207,7 +207,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -220,7 +220,7 @@
     },
     "light-standard-compact": {
       "input": "UI-Spec/themes/light-standard-compact.DESIGN.md",
-      "inputSha256": "01d1ca34a2ebef2b0ac5615f16ef085d49afbc689847bc34fb5cc8c0f354d24b",
+      "inputSha256": "d49445c8804f3b072ec6de48ae2edc299f43863c12d3e2b00841b4826057f0d1",
       "report": {
         "findings": [
           {
@@ -243,7 +243,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],
@@ -256,7 +256,7 @@
     },
     "light-distinct-compact": {
       "input": "UI-Spec/themes/light-distinct-compact.DESIGN.md",
-      "inputSha256": "b987793524d5e8bca0b5ca4a2aa829139f5877a725c7db99fb782ce5f41d40f3",
+      "inputSha256": "18a6afc931b009b3249bbeb480502442e301e81c785700021e76b3ca19cfa12f",
       "report": {
         "findings": [
           {
@@ -279,7 +279,7 @@
           },
           {
             "severity": "info",
-            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "message": "Design system defines 20 colors, 10 typography scales, 2 rounding levels, 7 spacing tokens, 21 components.",
             "rule": "token-summary"
           }
         ],

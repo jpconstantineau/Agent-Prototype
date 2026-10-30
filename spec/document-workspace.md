@@ -268,6 +268,8 @@ If future local image support is added, resolve only explicitly accessible attac
 
 ### Surface mappings and accessibility
 
+Use the opt-in document presentation contract in [UI-Spec/CONTENT.md](../UI-Spec/CONTENT.md) for supported DOM output. Its broader authored-HTML specimens do not expand this dialect. Preserve the safe element/attribute and URL mapping above.
+
 Document preview renders the full bounded source in a scrollable article with a title supplied by document metadata. Map source headings into an appropriate nested section range within that article so they do not replace the page's main heading. Preserve visible list numbering, code whitespace, quoted text, and normal selection/copy. Task indicators have accessible checked/unchecked descriptions but no write handlers. Copy code copies only the source block content, not line labels or toolbar text.
 
 Assistant-message rendering is opt-in and uses identical rules. Human-entered chat text may stay plain to avoid surprising formatting changes. Existing JSON tool receipts stay in escaped preformatted diagnostics. The HTML visualization tool keeps its separate sandboxed iframe contract; Markdown is never upgraded into that richer executable surface just because it contains HTML.

@@ -106,3 +106,7 @@ Each palette above supports normal and compact density, for eight combinations. 
 | Agent chat/support panel | Optional sibling region with clear run/Stop/answer status | Place after task content or an explicitly opened full-width surface | Preserve focus and pending forms when toggled. Adopt through the app’s separate interaction specs; this reference does not implement chat. |
 
 Do not add breadcrumbs without a real hierarchy, tabs without correct selection/keyboard semantics, toasts as the only record of an error, or summary metrics that do not support a user decision. When a native select is suitable, use it before implementing an autocomplete/listbox. Form layout must remain one logical reading order; side-by-side unrelated required questions are a poor default even on desktop.
+
+## Document content
+
+Use the opt-in `.ui-prose` reading layer described in [CONTENT.md](CONTENT.md). It defines six document heading ranks, native lists/definitions/quotations, inline meaning, literal code, document tables, figures and disclosures. The [content specimen](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/content.html) separates Markdown v1 output from additional authored HTML. This layer supplies presentation, not a parser or new tool permission. Place application forms/toolbars outside prose.

@@ -22,6 +22,8 @@ The executable contrast matrix in system.mjs specifies permitted pairings, inclu
 
 Use installed system fonts, a 1rem body and unitless 1.5 line height. At the normal 16px root, body is 16px and secondary copy is 14px. The browser default size remains authoritative. Heading levels carry document meaning; typography classes must not replace heading order. Page title is 2rem, section title 1.5rem and local heading 1.125rem. Use 600 weight for headings and actionable labels, 400 for ordinary values. Never use all caps or extra tracking as the only hierarchy cue.
 
+Opt-in document content uses `.ui-prose`: h1–h6 sizes are 2 / 1.75 / 1.5 / 1.25 / 1.125 / 1rem with weight 600 and protected type across densities. [CONTENT.md](CONTENT.md) defines the precise hierarchy, block and list rhythm, inline meaning, code, tables, figures and native disclosures. Its specimen is authored HTML; CSS support never expands the Markdown dialect or supplies agent authority.
+
 Keep explanatory prose within 65ch. Short labels may remain shorter; a table is not a paragraph. Long names wrap, numbers use tabular figures when supported, and text spacing/zoom must not hide content. Let platform font rendering work normally; no antialiasing overrides, remote font blocking, fixed-height text boxes or font-size reset on html.
 
 ## Layout

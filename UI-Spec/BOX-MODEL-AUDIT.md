@@ -1425,3 +1425,539 @@ Selector: `.ui-switch input[type="checkbox"]`; condition: `(forced-colors: activ
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
 | padding | 0 | 0 | 0 | Return slider presentation to a native mark under forced colors. Remove custom-track padding from the restored native mark. | Use a visible native on/off control in the selected system palette. |
+
+## prose-root.2
+
+Selector: `.ui-prose`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 65ch | 65ch | 65ch | Provide an opt-in reading surface for document content. Limit sustained reading width while allowing the available viewport to be narrower. | Read a document without changing application navigation, forms or task lists. |
+
+## prose-root.3
+
+Selector: `.ui-prose`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Provide an opt-in reading surface for document content. Let embedded documents shrink inside flex/grid workspaces instead of forcing page overflow. | Read a document without changing application navigation, forms or task lists. |
+
+## prose-root.5
+
+Selector: `.ui-prose`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.5 | 1.5 | 1.5 | Provide an opt-in reading surface for document content. Use the same readable body rhythm in both density profiles. | Read a document without changing application navigation, forms or task lists. |
+
+## prose-reset.1
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block | 0 | 0 | 0 | Give document block spacing one explicit owner. Reset both block margins before applying sibling rhythm; the first/last block adds no outside margin. | Read paragraphs, quotations and lists without accumulated browser-default margins. |
+
+## prose-reset.2
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-inline | 0 | 0 | 0 | Give document block spacing one explicit owner. Remove browser quote/figure side margins so their documented inset owns horizontal space. | Read paragraphs, quotations and lists without accumulated browser-default margins. |
+
+## prose-rhythm.1
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table) + :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-lg) | 1rem | 0.75rem | Separate consecutive document blocks. Use one 16px normal / 12px compact gap between ordinary neighboring blocks. | Recognize a new reading block without doubled trailing and leading margins. |
+
+## prose-heading.2
+
+Selector: `.ui-prose :where(h1, h2, h3, h4, h5, h6)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| scroll-margin-block-start | var(--ui-space-lg) | 1rem | 0.75rem | Keep all six document ranks visibly related. Leave breathing room above a heading reached by an anchor without adding flow height. | Find the document structure using readable, consistent heading emphasis. |
+
+## prose-h1.1
+
+Selector: `.ui-prose h1`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 2rem | 2rem | 2rem | Express the document heading hierarchy. Identify the document title at the largest reading size. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h1.2
+
+Selector: `.ui-prose h1`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.2 | 1.2 | 1.2 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h2.1
+
+Selector: `.ui-prose h2`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.75rem | 1.75rem | 1.75rem | Express the document heading hierarchy. Separate major document sections below the title. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h2.2
+
+Selector: `.ui-prose h2`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.25 | 1.25 | 1.25 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h3.1
+
+Selector: `.ui-prose h3`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.5rem | 1.5rem | 1.5rem | Express the document heading hierarchy. Identify a subsection within a major document topic. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h3.2
+
+Selector: `.ui-prose h3`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.25 | 1.25 | 1.25 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h4.1
+
+Selector: `.ui-prose h4`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.25rem | 1.25rem | 1.25rem | Express the document heading hierarchy. Mark a local topic without competing with its parent section. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h4.2
+
+Selector: `.ui-prose h4`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.3 | 1.3 | 1.3 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h5.1
+
+Selector: `.ui-prose h5`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.125rem | 1.125rem | 1.125rem | Express the document heading hierarchy. Distinguish a detailed subdivision while staying above body size. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h5.2
+
+Selector: `.ui-prose h5`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.35 | 1.35 | 1.35 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h6.1
+
+Selector: `.ui-prose h6`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1rem | 1rem | 1rem | Express the document heading hierarchy. Keep the deepest heading readable at body size, with heading weight. This size is protected in both densities. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-h6.2
+
+Selector: `.ui-prose h6`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1.4 | 1.4 | 1.4 | Express the document heading hierarchy. Keep wrapped heading lines together while allowing glyphs and annotations room. | Recognize a heading rank without reducing text size in compact mode. |
+
+## prose-heading-before.1
+
+Selector: `.ui-prose :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table) + :where(h1, h2, h3, h4, h5, h6)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-xl) | 1.5rem | 1rem | Make a new document topic distinct from preceding content. Use 24px normal / 16px compact before a heading, greater than its following gap. | Associate the heading with what follows rather than the paragraph before it. |
+
+## prose-heading-after.1
+
+Selector: `.ui-prose :where(h1, h2, h3, h4, h5, h6) + :where(p, ul, ol, dl, blockquote, pre, figure, details, hr, h1, h2, h3, h4, h5, h6, .ui-prose-table)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Connect a heading to its introductory content. Use 12px normal / 8px compact after a heading; when two headings are consecutive, this nearer grouping takes precedence. | Start reading the correct section without an oversized gap below its title. |
+
+## prose-lists.1
+
+Selector: `.ui-prose :where(ul, ol)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | var(--ui-space-xl) | 1.5rem | 1rem | Keep list markers outside aligned item text. Reserve a 24px normal / 16px compact bullet gutter using logical direction. | Follow wrapped items and distinguish nesting without inserting typed bullet characters. |
+
+## prose-lists.2
+
+Selector: `.ui-prose :where(ul, ol)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| list-style-position | outside | outside | outside | Keep list markers outside aligned item text. Align wrapped text with item text rather than wrapping beneath the marker. | Follow wrapped items and distinguish nesting without inserting typed bullet characters. |
+
+## prose-numbering.2
+
+Selector: `.ui-prose ol`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | 4ch | 4ch | 4ch | Keep sequence visible and preserve native start/value semantics. Reserve a protected character-based gutter for ordinary multi-digit step numbers. | Read steps in their actual order, including explicit continuation numbers. |
+
+## prose-wide-numbering.1
+
+Selector: `.ui-prose ol[start], .ui-prose ol.ui-list-wide`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | 8ch | 8ch | 8ch | Allow larger explicit starting numbers. Reserve six digits, punctuation and separation; this structural marker allowance does not shrink with density. | Read up to six-digit sequence numbers without clipping them at the content edge. |
+
+## prose-item-gap.1
+
+Selector: `.ui-prose li + li`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate sibling list items. Use 8px normal / 6px compact between item boxes. | Scan individual points while keeping them grouped more closely than independent paragraphs. |
+
+## prose-nested-list.1
+
+Selector: `.ui-prose li > :where(ul, ol)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep a nested list attached to its owning item. Use the related-content gap after the parent text; no extra list bottom margin is added. | Read supporting subpoints as part of the parent rather than a new document block. |
+
+## prose-loose-item.1
+
+Selector: `.ui-prose li > p + p`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate paragraphs within one list item. Use one related-content gap rather than full document paragraph separation. | Read a longer explanation without confusing each paragraph with a new numbered step. |
+
+## prose-definition.1
+
+Selector: `.ui-prose dd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-inline-start | var(--ui-space-lg) | 1rem | 0.75rem | Associate a definition with its preceding term. Inset definitions by 16px normal / 12px compact instead of the browser default 40px. | Read a term and explanation as one entry with a modest inset. |
+
+## prose-definition.2
+
+Selector: `.ui-prose dd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block | var(--ui-space-xs) 0 | 0.25rem 0 | 0.25rem 0 | Associate a definition with its preceding term. Keep 4px after the term and no trailing margin that could double the next entry gap. | Read a term and explanation as one entry with a modest inset. |
+
+## prose-next-term.1
+
+Selector: `.ui-prose dd + dt`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Separate consecutive definition entries. Use a 12px normal / 8px compact entry boundary. | Recognize where the next term starts. |
+
+## prose-quote.1
+
+Selector: `.ui-prose blockquote`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | var(--ui-space-lg) | 1rem | 0.75rem | Set quoted material apart without suggesting an alert. Separate quote text from its neutral start rule by 16px normal / 12px compact. | Distinguish another author’s words while reading them at normal body contrast. |
+
+## prose-quote.2
+
+Selector: `.ui-prose blockquote`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | 4px solid var(--ui-border) | 3px solid var(--ui-border) | Set quoted material apart without suggesting an alert. Reuse the neutral 4px normal / 3px compact guidance stroke as a quotation boundary. | Distinguish another author’s words while reading them at normal body contrast. |
+
+## prose-attribution.1
+
+Selector: `.ui-prose .ui-attribution`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Identify a quotation attribution. Use the existing readable secondary size, unchanged by density. | Find the source separately from the quoted passage. |
+
+## prose-mark.3
+
+Selector: `.ui-prose mark`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 1px solid currentColor | 1px solid currentColor | 1px solid currentColor | Identify a relevant text passage using a neutral framed highlight. Make the highlight detectable through its boundary as well as a small background difference. | Locate highlighted content in either brightness without mistaking it for success or error. |
+
+## prose-monospace.2
+
+Selector: `.ui-prose :where(code, pre, kbd, samp)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875em | 0.875em | 0.875em | Make literal code, key names and machine output identifiable. Keep literal text readable while avoiding oversized monospace glyphs. | Copy exact characters without proportional text disguising their spacing. |
+
+## prose-inline-code.2
+
+Selector: `.ui-prose :not(pre) > code`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline | var(--ui-space-xs) | 0.25rem | 0.25rem | Separate a short literal identifier from surrounding prose. Keep 4px at either edge of the identifier without adding line-height-changing block padding. | Recognize code without treating it as a button or reducing its copyable content. |
+
+## prose-pre.1
+
+Selector: `.ui-prose pre`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Preserve exact source layout inside a bounded reading block. Bound the preformatted box by its document container. | Inspect indentation and long code lines without horizontal scrolling of the whole page. |
+
+## prose-pre.5
+
+Selector: `.ui-prose pre`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Preserve exact source layout inside a bounded reading block. Inset code by 16px normal / 12px compact, leaving room for focus. | Inspect indentation and long code lines without horizontal scrolling of the whole page. |
+
+## prose-pre.6
+
+Selector: `.ui-prose pre`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Preserve exact source layout inside a bounded reading block. Give the code region a quiet boundary without implying an editable form. | Inspect indentation and long code lines without horizontal scrolling of the whole page. |
+
+## prose-pre-code.1
+
+Selector: `.ui-prose pre code`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | inherit | inherit | inherit | Keep the code block’s type scale single-owned. Cancel the nested 0.875em reduction; the pre element already owns that scale. | Read a code block without compounded font-size reduction. |
+
+## prose-key.1
+
+Selector: `.ui-prose kbd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 var(--ui-space-xs) | 0 0.25rem | 0 0.25rem | Identify keyboard input as a key name. Reserve a small inline inset while preserving the paragraph rhythm. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. |
+
+## prose-key.2
+
+Selector: `.ui-prose kbd`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Identify keyboard input as a key name. Use a clear neutral key boundary, never a hover/click state. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. |
+
+## prose-key.3
+
+Selector: `.ui-prose kbd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Identify keyboard input as a key name. Relate the small keycap shape to other bounded UI without adding a shadow. | Recognize an instruction such as Ctrl and Enter without a fake interactive button. |
+
+## prose-abbreviation.2
+
+Selector: `.ui-prose abbr[title]`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| text-underline-offset | 0.2em | 0.2em | 0.2em | Signal that an abbreviation has an expansion. Separate the indicator from letter descenders as for existing text links. | Notice supplementary terminology without confusing it with a link. |
+
+## prose-annotations.1
+
+Selector: `.ui-prose :where(sub, sup)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875em | 0.875em | 0.875em | Keep small baseline annotations readable. Use a readable relative annotation size instead of a tiny absolute label. | Read formula indices and references without changing the whole line rhythm. |
+
+## prose-annotations.2
+
+Selector: `.ui-prose :where(sub, sup)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 0 | 0 | 0 | Keep small baseline annotations readable. Let the surrounding body line own spacing while native sub/super vertical alignment places the annotation. | Read formula indices and references without changing the whole line rhythm. |
+
+## prose-rule.1
+
+Selector: `.ui-prose hr`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Mark a thematic change using a quiet separator. Remove browser inset borders before drawing one intended edge. | Recognize a break in topic without an alarm-like color band. |
+
+## prose-rule.2
+
+Selector: `.ui-prose hr`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Mark a thematic change using a quiet separator. Draw one passive divider with protected 1px width. | Recognize a break in topic without an alarm-like color band. |
+
+## prose-table-region.1
+
+Selector: `.ui-prose .ui-prose-table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Contain a document table’s two-dimensional layout. Bound the region to the prose width. | Compare wide columns using a named keyboard-accessible region without panning the page. |
+
+## prose-table-region.3
+
+Selector: `.ui-prose .ui-prose-table`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Contain a document table’s two-dimensional layout. Reserve 8px normal / 6px compact inner clearance for links and their focus outlines. | Compare wide columns using a named keyboard-accessible region without panning the page. |
+
+## prose-table.1
+
+Selector: `.ui-prose table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Fit document tables to their content and reading region. Use the available comparison width. | Read a small table without inheriting the application example’s six-column width. |
+
+## prose-table.2
+
+Selector: `.ui-prose table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Fit document tables to their content and reading region. Override the .table sample’s 36rem minimum when reused inside a document. | Read a small table without inheriting the application example’s six-column width. |
+
+## prose-table.3
+
+Selector: `.ui-prose table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-collapse | collapse | collapse | collapse | Fit document tables to their content and reading region. Avoid doubled cell dividers. | Read a small table without inheriting the application example’s six-column width. |
+
+## prose-cell.1
+
+Selector: `.ui-prose :where(th, td)`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) var(--ui-space-md) | 0.5rem 0.75rem | 0.375rem 0.5rem | Keep document cells legible and related to their headers. Use 8/12px normal and 6/8px compact vertical/horizontal clearance. | Compare values using semantic columns without cramped or overflowing cells. |
+
+## prose-cell.4
+
+Selector: `.ui-prose :where(th, td)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Keep document cells legible and related to their headers. Separate rows without heavy full grids. | Compare values using semantic columns without cramped or overflowing cells. |
+
+## prose-table-caption.3
+
+Selector: `.ui-prose caption`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block-end | var(--ui-space-sm) | 0.5rem | 0.375rem | Introduce the comparison before its data. Separate the caption from header cells by the related-content gap. | Know the table’s purpose before navigating its headers. |
+
+## prose-image.2
+
+Selector: `.ui-prose img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Fit an explicitly permitted image without distortion. Scale down an image wider than its reading container. | Inspect local document media without horizontal page overflow. |
+
+## prose-image.3
+
+Selector: `.ui-prose img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | auto | auto | auto | Fit an explicitly permitted image without distortion. Preserve intrinsic aspect ratio, including dimensions reserved by HTML width/height. | Inspect local document media without horizontal page overflow. |
+
+## prose-figure-caption.1
+
+Selector: `.ui-prose figcaption`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep a figure’s explanation attached to its image. Use the related-content gap between media and its caption. | Read the image’s meaning and source without confusing the caption with body content. |
+
+## prose-figure-caption.2
+
+Selector: `.ui-prose figcaption`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Keep a figure’s explanation attached to its image. Use the existing readable secondary size. | Read the image’s meaning and source without confusing the caption with body content. |
+
+## prose-details.1
+
+Selector: `.ui-prose details`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound optional supporting document material. Leave 16px normal / 12px compact inset for text and focus. | Recognize information that can be expanded without hiding the main explanation. |
+
+## prose-details.2
+
+Selector: `.ui-prose details`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Bound optional supporting document material. Identify the optional group with a quiet boundary. | Recognize information that can be expanded without hiding the main explanation. |
+
+## prose-summary.1
+
+Selector: `.ui-prose summary`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Keep native disclosure activation visible and comfortable. Use the governed fine/coarse pointer target floor on the native summary. | Open optional material with click, touch, Enter or Space and see its current state. |
+
+## prose-summary-focus.1
+
+Selector: `.ui-prose summary:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | Expose keyboard focus on a native disclosure label. Match the protected keyboard focus perimeter used by other native controls. | Find the disclosure receiving keyboard input in every appearance. |
+
+## prose-summary-focus.2
+
+Selector: `.ui-prose summary:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline-offset | 3px | 3px | 3px | Expose keyboard focus on a native disclosure label. Separate keyboard focus from the disclosure text and containing border. | Find the disclosure receiving keyboard input in every appearance. |
+
+## prose-summary-content.1
+
+Selector: `.ui-prose details[open] > summary + *`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate an expanded disclosure from its label. Use one related-content gap after the open summary. | Recognize which content was revealed by the summary. |

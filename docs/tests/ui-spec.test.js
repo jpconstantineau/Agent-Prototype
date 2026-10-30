@@ -12,7 +12,7 @@ const root=new URL('../../',import.meta.url);
 test('every CSS declaration maps to a purpose, user intent and actual verification family',async()=>{
   assert.equal(validateRegistry(rules),true);
   const used=new Set(rules.map(r=>r.check));assert.deepEqual(used,checkFamilies);
-  const tests=await readFile(new URL('../e2e/ui-spec.spec.js',import.meta.url),'utf8');
+  const tests=(await Promise.all(['ui-spec.spec.js','ui-prose.spec.js'].map(p=>readFile(new URL('../e2e/'+p,import.meta.url),'utf8')))).join('\n');
   for(const family of checkFamilies)assert(tests.includes(`'${family}'`),`Missing browser verification family ${family}`);
 });
 test('audit rejects missing intent, missing purpose, duplicate IDs and undeclared checks',()=>{
@@ -23,8 +23,8 @@ test('audit rejects missing intent, missing purpose, duplicate IDs and undeclare
 test('all deployed CSS and generated review artifacts exactly match the normative registry',async()=>{
   for(const [path,expected] of await outputs())validateGenerated(await readFile(new URL(path,root),'utf8'),expected,path);
   const files=await readdir(new URL('../ui-spec/',import.meta.url));assert.deepEqual(files.filter(p=>p.endsWith('.css')),['design-system.css']);
-  const html=await readFile(new URL('../ui-spec/index.html',import.meta.url),'utf8'),js=await readFile(new URL('../ui-spec/reference.js',import.meta.url),'utf8')+await readFile(new URL('../ui-spec/appearance.js',import.meta.url),'utf8');
-  assert.equal((html.match(/rel="stylesheet"/g)||[]).length,1);assert(!/<style\b|\sstyle\s*=/.test(html));assert(!/\.style\b|setAttribute\(['"]style|insertRule|adoptedStyleSheets/.test(js));assert(!/@import/.test(cssText()));
+  const html=(await Promise.all(['index.html','content.html'].map(p=>readFile(new URL('../ui-spec/'+p,import.meta.url),'utf8')))).join('\n'),js=await readFile(new URL('../ui-spec/reference.js',import.meta.url),'utf8')+await readFile(new URL('../ui-spec/appearance.js',import.meta.url),'utf8');
+  assert.equal((html.match(/rel="stylesheet"/g)||[]).length,2);assert(!/<style\b|\sstyle\s*=/.test(html));assert(!/\.style\b|setAttribute\(['"]style|insertRule|adoptedStyleSheets/.test(js));assert(!/@import/.test(cssText()));
   assert.throws(()=>validateGenerated(cssText()+'body { color: red; }',cssText(),'extra.css'),/Generated file differs/);
   assert.equal((cssText().match(/\/\* [a-z][a-z0-9-]*\.\d+ \*\//g)||[]).length,rules.reduce((n,r)=>n+r.declarations.length,0));
 });

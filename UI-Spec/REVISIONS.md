@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Document content additions after a3e02c5
+
+The maintainer accepted filling the document-formatting gaps. prose.mjs appends scoped prose-* rules through the shared registry, with a six-level document scale, explicit block/list spacing, inline meaning, quotations, literal content, document tables, responsive figures and native disclosures. Existing application heading sizes and IDs retain their values. CONTENT.md distinguishes authored styles, retained native behavior and renderer integration requirements. The authored content.html specimen shares all appearance/density settings and one audited stylesheet. Styles do not expand Markdown v1 or implement a parser.
+
+Document heading typography/components are added to all eight Google-format documents. Tests cover scope isolation, all combinations, nested and continued lists, inert source, local scrolling, disclosures/focus, media fallback, user spacing/forced colors and no JavaScript. Native summary focus needed a dedicated governed rule because the earlier component focus selector did not include summary.
+
 ## Box-model and margin review after fcb1d71
 
 The maintainer requested normal/compact density and specifically included margins. BOX-MODEL.md defines each gap owner; the generated BOX-MODEL-AUDIT.md inventories every geometry declaration with source, normal/compact behavior, purpose and user intent. density.mjs registers all dimensional tokens and rejects new unregistered length-valued custom properties.

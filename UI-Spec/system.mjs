@@ -1,3 +1,4 @@
+import {proseHeadings,installProse} from './prose.mjs';
 import {palettes} from './palettes.mjs';
 import {densityTokens,densityProfiles,coarseTargetMedia,compactCoarseMinimum} from './density.mjs';
 export {palettes};
@@ -11,6 +12,7 @@ export const tokens = {
   description: 'A Bootstrap-based, native HTML interface for reviewing work and making deliberate changes.',
   colors: palettes['light-standard'].colors,
   typography: {
+    ...Object.fromEntries(proseHeadings.map(h=>[`document-h${h.level}`,{fontFamily:'system-ui, -apple-system, "Segoe UI", sans-serif',fontSize:h.size,fontWeight:600,lineHeight:Number(h.rhythm)}])),
     body: { fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif', fontSize: '1rem', fontWeight: 400, lineHeight: 1.5 },
     small: { fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif', fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5 },
     heading: { fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif', fontSize: '1.5rem', fontWeight: 600, lineHeight: 1.25 },
@@ -19,6 +21,7 @@ export const tokens = {
   rounded: Object.fromEntries(['small','panel'].map(key=>[key,densityProfiles.normal[`--ui-radius-${key}`]])),
   spacing: Object.fromEntries(['xs','sm','md','lg','xl','section','page'].map(key=>[key,densityProfiles.normal[`--ui-space-${key}`]])),
   components: {
+    ...Object.fromEntries(proseHeadings.map(h=>[`document-h${h.level}`,{textColor:'{colors.ink}',typography:`{typography.document-h${h.level}}`}])),
     page: { backgroundColor: '{colors.canvas}', textColor: '{colors.ink}', typography: '{typography.body}' },
     help: { textColor: '{colors.muted}', typography: '{typography.small}' },
     notice: { backgroundColor: '{colors.subtle}', textColor: '{colors.ink}', padding: '{spacing.lg}' },
@@ -156,6 +159,7 @@ rule('forced-inline-focus', '.ui-inline-control:focus', 'Preserve the system foc
 rule('forced-switch', '.ui-switch input[type="checkbox"]', 'Return slider presentation to a native mark under forced colors.', 'Use a visible native on/off control in the selected system palette.', 'forced-colors', [['appearance','auto','Let the user agent paint its own high-contrast checkbox for this switch.'], ['inline-size','1.25rem','Use the ordinary native mark width inside the unchanged large label target.'], ['block-size','1.25rem','Use the ordinary native mark height while preserving its checked state.'], ['padding','0','Remove custom-track padding from the restored native mark.']], '(forced-colors: active)');
 rule('forced-switch-thumb', '.ui-switch input[type="checkbox"]::before', 'Remove the decorative thumb when the native mark returns.', 'Read one unambiguous checked state rather than two overlapping marks.', 'forced-colors', [['display','none','Leave the forced-color native checkbox as the only mark.']], '(forced-colors: active)');
 rule('forced-primary', '.btn-primary, .btn-primary:hover:not(:disabled)', 'Honor the system palette for a labelled primary button.', 'Find the action boundary when explicitly using a forced-color appearance.', 'forced-colors', [['border-color','ButtonText','Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size.']], '(forced-colors: active)');
+installProse(rule);
 export { rules };
 
 export const contrastPairs = [

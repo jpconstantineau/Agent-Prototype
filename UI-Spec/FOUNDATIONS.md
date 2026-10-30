@@ -46,7 +46,7 @@ Four complete palettes are supplied in [PALETTES.md](PALETTES.md), with per-pale
 
 Use installed `system-ui, -apple-system, "Segoe UI", sans-serif`. This avoids invisible text, font downloads and an external font dependency; exact glyph metrics can vary by OS, so test the intended platforms. Do not add letter spacing or font smoothing solely for visual polish. Explanatory prose caps at 65ch; flexible wrapping protects long URLs and translated labels. `overflow-wrap: anywhere` is a fallback for long unbroken content, not a substitute for readable labels.
 
-Keep actual h1–h3 hierarchy, paragraphs, lists and code elements. HTML heading levels express structure, never a desired font size. Rem values respond to the user’s root size. Do not set `html { font-size: ... }`, disable pinch zoom or assume 1rem always equals 16px.
+Application components retain the h1–h3 scale above. Opt-in `.ui-prose` documents use six ranks: 2 / 1.75 / 1.5 / 1.25 / 1.125 / 1rem, with protected type in both densities. [CONTENT.md](CONTENT.md) defines line heights, heading semantics and document block/list/code/table/media behavior. Keep actual heading hierarchy, paragraphs, lists and code elements. HTML heading levels express structure, never a desired font size. Rem values respond to the user’s root size. Do not set `html { font-size: ... }`, disable pinch zoom or assume 1rem always equals 16px.
 
 ## Spacing, sizes and breakpoints
 
