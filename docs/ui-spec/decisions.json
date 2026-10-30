@@ -798,8 +798,8 @@
         {
           "id": "palette-dark-distinct.11",
           "property": "--ui-focus",
-          "value": "#e5af3b",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
+          "value": "#409fea",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel. Use the same azure-blue focus as dark standard mode instead of a second amber; pending retains its named golden state cue.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -4416,7 +4416,7 @@
         "subtle": "#383838",
         "border": "#a3a3a3",
         "divider": "#585858",
-        "focus": "#e5af3b",
+        "focus": "#409fea",
         "danger": "#d18bf0",
         "success": "#57adf0",
         "success-bg": "#383838",

@@ -36,9 +36,15 @@ The focus outline remains 3px with a 3px offset. Its contrast is 4.10:1 on canva
 
 The four-appearance browser checks cover the actual focus color. The light/distinct case also submits a blank field and checks that the focused invalid input simultaneously retains its azure outline, violet error border and linked error text. Only light/distinct focus changes; other palette values retain their prior contracts.
 
+## Dark distinct-mode focus and pending separation
+
+The maintainer found dark distinct-mode amber focus #e5af3b too close to pending #eab54d. Focus now uses **azure-blue #409fea**, matching standard dark-mode focus and staying in the selected primary family. Pending keeps its golden amber. Focus has 5.44:1 contrast on canvas, 4.76:1 on surface and 4.11:1 on subtle, exceeding its 3:1 requirement on every approved dark background. The focus outline retains its separate 3px perimeter and 3px neutral offset; pending retains its written label and dashed status boundary.
+
+The color patches and their hex captions are governed by the same CSS roles as the controls: swatches use `--ui-focus`/`--ui-warning`, the focus outline uses `--ui-focus`, pending text uses `--ui-warning`, and appearance.js reads resolved tokens when updating captions. The browser checks both actual swatch fills and captions in all four appearances, alongside the actual focus ring and pending text. Patches cannot retain a previous palette independently of the examples. This change affects only the dark/distinct focus value.
+
 ## Richer dark focus and state cues
 
-The maintainer requested less pastel focus, error, success and pending colors in dark mode. The revised foregrounds have less white and stronger chromatic separation from charcoal while retaining their existing semantic hue families. Saturation is confined to compact text/marks and focus perimeters; neutral backgrounds keep the main screen subdued. Both dark combinations receive the adjustment. Light-mode values and the selected azure button treatment retain their previous values.
+The maintainer requested less pastel focus, error, success and pending colors in dark mode. The revised foregrounds have less white and stronger chromatic separation from charcoal. Error, success and pending retain their semantic hue families; focus uses azure-blue in both dark appearances to separate it from pending amber. Saturation is confined to compact text/marks and focus perimeters; neutral backgrounds keep the main screen subdued. Both dark combinations receive the adjustment. The selected azure button treatment retains its previous values; the light/distinct focus refinement is documented above.
 
 | Dark appearance / role | Previous | Revised | Lowest approved contrast | Purpose and user intent |
 | --- | --- | --- | --- | --- |
@@ -46,7 +52,7 @@ The maintainer requested less pastel focus, error, success and pending colors in
 | Standard error | #ffb4ac | #f58276 | 4.66:1, text minimum 4.5:1 | Richer coral makes correction text and an invalid field conspicuous while preserving ordinary-size readability. |
 | Standard success | #a4ddb4 | #4fc685 | 5.44:1, text minimum 4.5:1 | A stronger green distinguishes a confirmed result from neutral metadata; keep the written state and gray label background. |
 | Standard and distinct pending | #f5d483 | #eab54d | 6.26:1, text minimum 4.5:1 | Golden amber gives unresolved decisions clearer emphasis without a large bright warning fill. |
-| Distinct focus | #f1c75b | #e5af3b | 5.88:1, boundary minimum 3:1 | A richer amber preserves the alternate focus family and visible keyboard destination. |
+| Distinct focus | #e5af3b | #409fea | 4.11:1, boundary minimum 3:1 | Azure-blue matches standard dark focus and separates the active keyboard/input perimeter from pending amber. |
 | Distinct error | #e2b4ff | #d18bf0 | 4.84:1, text minimum 4.5:1 | Stronger violet preserves the alternative to red/green status opposition while keeping textual error identification. |
 | Distinct success | #b3d5ff | #57adf0 | 4.82:1, text minimum 4.5:1 | A more saturated blue identifies the named confirmed result on neutral gray; solid/dashed status boundaries continue to add a non-hue cue. |
 

@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Dark distinct-mode focus separation after 8293cd8
+
+The maintainer found pending and focus too similar in dark/distinct mode and asked whether the color patches reflected the preceding changes. Patches already used the same resolved role tokens as controls; the browser checks now explicitly compare every actual swatch fill and hex caption against its palette in all four modes.
+
+Dark/distinct focus moves from amber #e5af3b to azure-blue #409fea, matching standard dark focus and leaving pending gold #eab54d. The existing `palette-dark-distinct` focus declaration keeps its stable ID with a revised rationale. Other color values retain their prior contracts. COLOR-SELECTION.md records purpose, mapping and all three dark-background contrast measurements; regenerated CSS and patches follow the same token change.
+
 ## Light distinct-mode focus separation after eb7e53c
 
 The maintainer found light/distinct focus #7025b4 too close to violet error #6d2498 and requested focus nearer to primary. The existing focus token declaration in `palette-light-distinct` now uses azure #006aa8, with its per-declaration rationale updated and stable ID retained. The error color and other palette values retain their previous values. COLOR-SELECTION.md records the purpose and all three light-background contrast measurements.

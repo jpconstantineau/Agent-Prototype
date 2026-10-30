@@ -139,7 +139,12 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
   expect(await page.locator('.ui-notice').first().evaluate(n=>getComputedStyle(n).borderInlineStartColor)).toBe(rgb(palette.colors.border));
   expect(styles.error.fg).toBe(rgb(palette.colors.danger));
   expect(await page.locator('html').evaluate(n=>getComputedStyle(n).colorScheme)).toBe(palette.theme);
-  for(const sample of await page.locator('[data-color-value]').all())await expect(sample).toHaveText(palette.colors[await sample.getAttribute('data-color-value')]);
+  for(const sample of await page.locator('[data-color-value]').all()) {
+    const role=await sample.getAttribute('data-color-value');
+    await expect(sample).toHaveText(palette.colors[role]);
+    expect(await page.locator(`.ui-swatch-${role}`).evaluate(n=>getComputedStyle(n).backgroundColor),`${key} actual ${role} color patch`).toBe(rgb(palette.colors[role]));
+  }
+  await page.locator('.ui-swatch-grid').screenshot({path:`.tmp/ui-${key}-swatches.png`});
   const primary=page.getByRole('button',{name:'Save changes',exact:true});
   await expect(primary).toHaveText('Save changes');
   expect(await primary.evaluate(n=>{const s=getComputedStyle(n);return {border:s.borderTopColor,outline:s.outlineStyle};})).toEqual({border:'rgba(0, 0, 0, 0)',outline:'none'});

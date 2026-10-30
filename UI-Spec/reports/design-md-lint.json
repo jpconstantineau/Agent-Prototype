@@ -4,7 +4,7 @@
   "reports": {
     "light-standard": {
       "input": "UI-Spec/DESIGN.md",
-      "inputSha256": "ad3df781019a6cf1002d8940b357d9a883ec4978e1b71735de7946ce9340b7ee",
+      "inputSha256": "9bb6959afd07ba54dbb19a5509c3e33f3f46cbcea5907d388f2c7c390d897474",
       "report": {
         "findings": [
           {
@@ -40,7 +40,7 @@
     },
     "dark-standard": {
       "input": "UI-Spec/themes/dark.DESIGN.md",
-      "inputSha256": "30adc59f486b69a5a19a3f44c457e3231d7247fece0c084b1ab93bfdf5562324",
+      "inputSha256": "e80af28a70e271b27acd804123d29750842399015e0734cd059213b39f59a753",
       "report": {
         "findings": [
           {
@@ -76,7 +76,7 @@
     },
     "light-distinct": {
       "input": "UI-Spec/themes/light-distinct.DESIGN.md",
-      "inputSha256": "abd7b3de80f9109d843c307741f47f6cb96a3afc08a6a214e1289f80265846c7",
+      "inputSha256": "41fda7d813e7fe93d2eef7663d0d112bca0e6793bfe9d788bd6f9f683deb2384",
       "report": {
         "findings": [
           {
@@ -112,7 +112,7 @@
     },
     "dark-distinct": {
       "input": "UI-Spec/themes/dark-distinct.DESIGN.md",
-      "inputSha256": "c0cf949da8dc4fa595db154e56fdc1c714ee87609a07ee44843ac7763c46e6bc",
+      "inputSha256": "97e261d1649c7630f3e2f720acf366bd20125a95bb9094873d438d9e498d69ca",
       "report": {
         "findings": [
           {
