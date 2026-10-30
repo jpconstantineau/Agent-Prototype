@@ -1522,6 +1522,12 @@ textarea.ui-inline-control:focus {
   border-radius: 50%; /* catalog-badge-dot.5 */
 }
 
+/* catalog-badge-dot-corner: Center the notification dot on its owner’s actual upper trailing corner. */
+.ui-badge--offset.ui-badge--dot {
+  inset-block-start: calc(var(--ui-space-md) - 0.3125rem); /* catalog-badge-dot-corner.1 */
+  inset-inline-end: calc(var(--ui-space-md) - 0.3125rem); /* catalog-badge-dot-corner.2 */
+}
+
 /* catalog-rating-choice: Keep the visibly different one-to-five star labels inside their targets. */
 .ui-rating-choice {
   flex-wrap: wrap; /* catalog-rating-choice.1 */

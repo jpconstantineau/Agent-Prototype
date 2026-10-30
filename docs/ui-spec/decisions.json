@@ -8451,6 +8451,36 @@
       ]
     },
     {
+      "id": "catalog-badge-dot-corner",
+      "selector": ".ui-badge--offset.ui-badge--dot",
+      "purpose": "Center the notification dot on its owner’s actual upper trailing corner.",
+      "intent": "Recognize an attached notification rather than a floating cue detached from its control.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-dot-corner.1",
+          "property": "inset-block-start",
+          "value": "calc(var(--ui-space-md) - 0.3125rem)",
+          "purpose": "Center the notification dot on its owner’s actual upper trailing corner. Subtract half the ten-pixel dot height from the owner’s reserved top clearance, centering the dot on the top edge in either density.",
+          "intent": "Recognize an attached notification rather than a floating cue detached from its control.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot-corner.2",
+          "property": "inset-inline-end",
+          "value": "calc(var(--ui-space-md) - 0.3125rem)",
+          "purpose": "Center the notification dot on its owner’s actual upper trailing corner. Subtract half the dot width from the reserved trailing clearance, centering it on the owner’s trailing edge in either reading direction.",
+          "intent": "Recognize an attached notification rather than a floating cue detached from its control.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "catalog-rating-choice",
       "selector": ".ui-rating-choice",
       "purpose": "Keep the visibly different one-to-five star labels inside their targets.",
@@ -20917,6 +20947,30 @@
       "behavior": "Protected geometry or structural reset",
       "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill.",
       "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
+    },
+    {
+      "id": "catalog-badge-dot-corner.1",
+      "selector": ".ui-badge--offset.ui-badge--dot",
+      "condition": null,
+      "property": "inset-block-start",
+      "value": "calc(var(--ui-space-md) - 0.3125rem)",
+      "normal": "calc(0.75rem - 0.3125rem)",
+      "compact": "calc(0.5rem - 0.3125rem)",
+      "behavior": "Density governed",
+      "purpose": "Center the notification dot on its owner’s actual upper trailing corner. Subtract half the ten-pixel dot height from the owner’s reserved top clearance, centering the dot on the top edge in either density.",
+      "intent": "Recognize an attached notification rather than a floating cue detached from its control."
+    },
+    {
+      "id": "catalog-badge-dot-corner.2",
+      "selector": ".ui-badge--offset.ui-badge--dot",
+      "condition": null,
+      "property": "inset-inline-end",
+      "value": "calc(var(--ui-space-md) - 0.3125rem)",
+      "normal": "calc(0.75rem - 0.3125rem)",
+      "compact": "calc(0.5rem - 0.3125rem)",
+      "behavior": "Density governed",
+      "purpose": "Center the notification dot on its owner’s actual upper trailing corner. Subtract half the dot width from the reserved trailing clearance, centering it on the owner’s trailing edge in either reading direction.",
+      "intent": "Recognize an attached notification rather than a floating cue detached from its control."
     },
     {
       "id": "catalog-rating-choice.2",

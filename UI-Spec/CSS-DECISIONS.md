@@ -2125,6 +2125,15 @@ Selector: `.ui-badge--dot`. Source: project. Verification family: `catalog`.
 | catalog-badge-dot.4 | border | 0 | Offer an empty offset notification dot when an exact count is unavailable. Let the checked fill define the decorative silhouette. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
 | catalog-badge-dot.5 | border-radius | 50% | Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
 
+## catalog-badge-dot-corner
+
+Selector: `.ui-badge--offset.ui-badge--dot`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-dot-corner.1 | inset-block-start | calc(var(--ui-space-md) - 0.3125rem) | Center the notification dot on its owner’s actual upper trailing corner. Subtract half the ten-pixel dot height from the owner’s reserved top clearance, centering the dot on the top edge in either density. | Recognize an attached notification rather than a floating cue detached from its control. | proposed |
+| catalog-badge-dot-corner.2 | inset-inline-end | calc(var(--ui-space-md) - 0.3125rem) | Center the notification dot on its owner’s actual upper trailing corner. Subtract half the dot width from the reserved trailing clearance, centering it on the owner’s trailing edge in either reading direction. | Recognize an attached notification rather than a floating cue detached from its control. | proposed |
+
 ## catalog-rating-choice
 
 Selector: `.ui-rating-choice`. Source: project. Verification family: `catalog`.

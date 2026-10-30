@@ -2842,6 +2842,22 @@ Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
 | --- | --- | --- | --- | --- | --- |
 | border-radius | 50% | 50% | 50% | Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill. | Recognize the supplementary cue through the owner’s name and written explanation. |
 
+## catalog-badge-dot-corner.1
+
+Selector: `.ui-badge--offset.ui-badge--dot`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-start | calc(var(--ui-space-md) - 0.3125rem) | calc(0.75rem - 0.3125rem) | calc(0.5rem - 0.3125rem) | Center the notification dot on its owner’s actual upper trailing corner. Subtract half the ten-pixel dot height from the owner’s reserved top clearance, centering the dot on the top edge in either density. | Recognize an attached notification rather than a floating cue detached from its control. |
+
+## catalog-badge-dot-corner.2
+
+Selector: `.ui-badge--offset.ui-badge--dot`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-end | calc(var(--ui-space-md) - 0.3125rem) | calc(0.75rem - 0.3125rem) | calc(0.5rem - 0.3125rem) | Center the notification dot on its owner’s actual upper trailing corner. Subtract half the dot width from the reserved trailing clearance, centering it on the owner’s trailing edge in either reading direction. | Recognize an attached notification rather than a floating cue detached from its control. |
+
 ## catalog-rating-choice.2
 
 Selector: `.ui-rating-choice`. Policy: Protected geometry or structural reset.

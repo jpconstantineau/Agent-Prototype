@@ -12,6 +12,10 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Notification-dot corner attachment after 876949b
+
+The empty notification dot appeared detached because it was aligned to the padded wrapper’s outer corner. Its center must coincide with the owning control’s top/trailing corner. New catalog-badge-dot-corner.1–2 subtract the half-diameter from the wrapper’s governed top/trailing clearance. The dot remains 10px at the default root. Tests measure the actual dot center against the owner’s corner in all eight appearance/density combinations and both reading directions. No transform or extra outside margin is needed.
+
 ## TailAdmin contextual review after 7d00fc2
 
 Reviewed the requested TailAdmin UI Elements index and all 21 linked HTML examples, plus Button groups in its demo navigation. TAILADMIN-REVIEW.md records every source, mapped component ID, gap decision and use case. No upstream source code, assets, palette or runtime is imported.

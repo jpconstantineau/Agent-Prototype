@@ -109,6 +109,8 @@ Sources: [shadcn/ui core catalog](https://ui.shadcn.com/docs/components), [butto
 
 ## Contextual composition additions
 
+Offset notification dots center on the owner’s actual top/trailing corner, rather than the outer edge of the wrapper’s reserved space. catalog-badge-dot-corner subtracts the 0.3125rem half-diameter from the same governed clearance used by ui-badge-anchor. This maintains exact corner attachment in normal/compact density and both reading directions while leaving enough wrapper space to avoid clipping.
+
 TAILADMIN-REVIEW.md maps 21 requested categories and the extra button-group demo to actual project component IDs. New compositions include avatar sizes/images/named presence groups; neutral-surface outline badges; action symbols and safe danger previews; responsive media cards and action footers; native checklist/single-choice lists; grouped navigation popovers; labelled known/indeterminate progress; native dialog-form previews; settled semantic notifications; and in-flow page announcements. Preserve user-selected folder tabs and border-only alert dialogs. Links retain readable contrast rather than adopting arbitrary opacity variants.
 
 The dedicated image grid preserves complete meaningful art with intrinsic sizes, captions and alternatives. Native video uses original local media/poster/captions and a transcript, with explicit playback controls, no autoplay, and complete-frame containment in wide/standard/square hosts. Record ribbons remain in flow so long labels cannot cover content. These are project additions, not new names attributed to the original core inventories.
