@@ -28,6 +28,14 @@ The resulting method is **a role-based monochromatic blue palette**, anchored in
 
 The Distinct status colors preference changes state/focus cues and line patterns, not the primary, hover or interactive roles. A secondary button retains a neutral surface, neutral boundary and interactive-blue label. “Secondary action” is an emphasis level, not an extra brand hue. There is no tertiary brand accent until a concrete use case and rationale are approved. Success/warning/error remain semantic roles; neutrals are selected for reading/grouping, not from a color-wheel harmony rule. [PALETTES.md](PALETTES.md) records exact values and pairings in every combination.
 
+## Light distinct-mode focus and error separation
+
+The maintainer found the previous light distinct-mode focus #7025b4 too similar to the violet error #6d2498. Focus now uses **azure #006aa8**, matching the selected primary family, while the error remains violet. The distinct palette no longer presents two neighboring purples for these different meanings.
+
+The focus outline remains 3px with a 3px offset. Its contrast is 4.10:1 on canvas, 4.64:1 on surface and 4.30:1 on subtle, exceeding the required 3:1 on all approved light backgrounds. Separate focus and primary tokens retain their distinct roles even where their current hex values match. The offset neutral gap identifies the ring around an azure button; an invalid field retains a violet border plus error wording inside the separate blue focus perimeter. Neither condition relies on hue alone, and forced colors still uses the system focus palette.
+
+The four-appearance browser checks cover the actual focus color. The light/distinct case also submits a blank field and checks that the focused invalid input simultaneously retains its azure outline, violet error border and linked error text. Only light/distinct focus changes; other palette values retain their prior contracts.
+
 ## Richer dark focus and state cues
 
 The maintainer requested less pastel focus, error, success and pending colors in dark mode. The revised foregrounds have less white and stronger chromatic separation from charcoal while retaining their existing semantic hue families. Saturation is confined to compact text/marks and focus perimeters; neutral backgrounds keep the main screen subdued. Both dark combinations receive the adjustment. Light-mode values and the selected azure button treatment retain their previous values.

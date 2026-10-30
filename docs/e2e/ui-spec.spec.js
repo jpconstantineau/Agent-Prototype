@@ -156,6 +156,13 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
   await input.click();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
   expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor,border:s.borderTopColor,focus:s.outlineColor};})).toEqual({fg:rgb(palette.colors.ink),bg:rgb(palette.colors.surface),border:rgb(palette.colors.border),focus:rgb(palette.colors.focus)});
   await page.locator('[data-inline-record]').screenshot({path:`.tmp/ui-${key}-focus.png`});
+  if(key==='light-distinct') {
+    await input.fill('');await primary.click();await expect(input).toBeFocused();await expect(input).toHaveAttribute('aria-invalid','true');await expect(page.locator('#title-error')).toContainText('Error:');
+    expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {focus:s.outlineColor,error:s.borderTopColor};})).toEqual({focus:rgb(palette.colors.focus),error:rgb(palette.colors.danger)});
+    expect(palette.colors.focus).not.toBe(palette.colors.danger);
+    await page.locator('[data-inline-record]').screenshot({path:'.tmp/ui-light-distinct-invalid-focus.png'});
+    await input.fill('Draft survives a palette change');
+  }
   await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(input).toHaveValue('Draft survives a palette change');
   await page.getByRole('button',{name:'Save changes',exact:true}).hover();expect(await page.getByRole('button',{name:'Save changes',exact:true}).evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor};})).toEqual({fg:rgb(palette.colors['on-primary']),bg:rgb(palette.colors['primary-hover'])});
   const pending=page.locator('.ui-status-pending').first();await expect(pending).toContainText(/Proposed|Pending/);

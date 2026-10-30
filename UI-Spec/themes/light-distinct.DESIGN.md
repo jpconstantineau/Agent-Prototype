@@ -12,7 +12,7 @@ colors:
   subtle: "#dedede"
   border: "#737373"
   divider: "#b8b8b8"
-  focus: "#7025b4"
+  focus: "#006aa8"
   danger: "#6d2498"
   success: "#174b7a"
   success-bg: "#dedede"
@@ -128,6 +128,8 @@ Ink is for sustained reading. Muted text remains readable body information. Ligh
 Read [HMI-PHILOSOPHY.md](../HMI-PHILOSOPHY.md) for the source interpretation, exact gray choices and review criteria. These are project-selected web palettes inspired by ISA-101 and ISA-published high-performance HMI guidance, not mandated ISA RGB values or a conformance claim. The light palette is the reference baseline; dark mode is a user preference requiring its own checks. Muting background color must never reduce reading contrast or hide actionable states.
 
 Dark-mode focus and state foregrounds use richer midtones rather than pale tints: blue focus, coral error, green success and golden pending in standard mode; amber focus, violet error, blue success and golden pending in distinct mode. Keep these colors on compact cues and neutral status backgrounds. Their exact decisions and measured contrast are recorded in COLOR-SELECTION.md. Stronger color must not become a glow, large colored panel or substitute for state wording and focus semantics.
+
+In light/distinct mode, focus uses the primary-family azure #006aa8 while errors retain violet #6d2498. A focused invalid field shows the separate offset azure ring, violet border and textual error together; do not use a second neighboring purple for focus. The ring exceeds 3:1 against every permitted light background. The focus role remains separate from the primary fill role even where their values match.
 
 The executable contrast matrix in system.mjs specifies permitted pairings, including 4.5:1 ordinary text and 3:1 required control boundaries/focus against their adjacent palette surfaces. A native primary button identified by its visible written action label may have a lower-contrast fill/background edge under the explicit contrastExceptions contract; its label and keyboard focus requirements are unchanged. Transparent borders preserve size in normal and hover states. The exception never applies to selection marks, inputs, icon-only controls or focus. Do not assume any two palette colors may be combined. No gradients or image-backed text are supplied. Four resolved combinations are supplied: light/standard, dark/standard, light/distinct and dark/distinct. Read [PALETTES.md](../PALETTES.md) for every value, passing pair and separate boundary observation. Two native checkbox-based slider switches independently choose Dark mode and Distinct status colors. The optional blue/amber status palette also adds solid/dashed state boundaries; it does not claim to represent every color-vision difference. All four modes use explicit words, visible focus and native state semantics. Native forced-color preferences remain authoritative.
 

@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Light distinct-mode focus separation after eb7e53c
+
+The maintainer found light/distinct focus #7025b4 too close to violet error #6d2498 and requested focus nearer to primary. The existing focus token declaration in `palette-light-distinct` now uses azure #006aa8, with its per-declaration rationale updated and stable ID retained. The error color and other palette values retain their previous values. COLOR-SELECTION.md records the purpose and all three light-background contrast measurements.
+
+The light/distinct browser case now checks a focused invalid input with an azure outline, violet border and linked written error simultaneously. Existing contrast, keyboard, forced-color and vision-simulation coverage remains in place. Shared design documents, CSS and review artifacts are regenerated from the same source.
+
 ## Richer dark focus and state colors after 6381813
 
 The maintainer requested stronger dark-mode focus, error, success and pending colors with moderate emphasis. Standard mode replaces pale blue/coral/mint/amber with richer blue/coral/green/gold midtones. Distinct mode similarly enriches its amber focus, violet error and blue success; pending shares the richer gold. COLOR-SELECTION.md records previous/revised values, each user purpose and measured contrast.

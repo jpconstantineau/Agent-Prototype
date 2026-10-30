@@ -11,7 +11,7 @@ const dark = { primary: '#006aa8', 'primary-hover': '#005686', ink: '#ededed', m
 export const palettes = {
   'light-standard': { theme: 'light', vision: 'standard', label: 'Light · standard', colors: light },
   'dark-standard': { theme: 'dark', vision: 'standard', label: 'Dark · standard', colors: dark },
-  'light-distinct': { theme: 'light', vision: 'distinct', label: 'Light · distinct status colors', colors: { ...light, focus: '#7025b4', danger: '#6d2498', success: '#174b7a' } },
+  'light-distinct': { theme: 'light', vision: 'distinct', label: 'Light · distinct status colors', colors: { ...light, focus: '#006aa8', danger: '#6d2498', success: '#174b7a' } },
   'dark-distinct': { theme: 'dark', vision: 'distinct', label: 'Dark · distinct status colors', colors: { ...dark, focus: '#e5af3b', danger: '#d18bf0', success: '#57adf0' } },
 };
 export const designFiles = {

@@ -106,7 +106,7 @@
           "id": "tokens.11",
           "property": "--ui-focus",
           "value": "#005fcc",
-          "purpose": "Publish semantic values for consistent reuse. Identify the keyboard destination independently of the primary action color.",
+          "purpose": "Publish semantic values for consistent reuse. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -397,7 +397,7 @@
           "id": "palette-dark-standard.11",
           "property": "--ui-focus",
           "value": "#409fea",
-          "purpose": "Apply the complete Dark · standard palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
+          "purpose": "Apply the complete Dark · standard palette. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -597,8 +597,8 @@
         {
           "id": "palette-light-distinct.11",
           "property": "--ui-focus",
-          "value": "#7025b4",
-          "purpose": "Apply the complete Light · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette.",
+          "value": "#006aa8",
+          "purpose": "Apply the complete Light · distinct status colors palette. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. This value is independently contrast checked in this palette. Use the selected azure family instead of a second violet; the offset focus perimeter stays distinct from the violet error border and wording.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -799,7 +799,7 @@
           "id": "palette-dark-distinct.11",
           "property": "--ui-focus",
           "value": "#e5af3b",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination independently of the primary action color. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control. This value is independently contrast checked in this palette. Use a richer midtone rather than a pale tint so this compact cue is distinct on charcoal without coloring the surrounding panel.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -4389,7 +4389,7 @@
         "subtle": "#dedede",
         "border": "#737373",
         "divider": "#b8b8b8",
-        "focus": "#7025b4",
+        "focus": "#006aa8",
         "danger": "#6d2498",
         "success": "#174b7a",
         "success-bg": "#dedede",
