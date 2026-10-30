@@ -1548,3 +1548,1659 @@ Selector: `.ui-prose mark`; condition: `(forced-colors: active)`. Source: projec
 | --- | --- | --- | --- | --- | --- |
 | prose-forced-mark.1 | background-color | Mark | Keep marked text readable in the platform contrast palette. Use the system highlight background. | Find highlighted passages when authored colors are replaced by the user. | proposed |
 | prose-forced-mark.2 | color | MarkText | Keep marked text readable in the platform contrast palette. Use its paired system text foreground. | Find highlighted passages when authored colors are replaced by the user. | proposed |
+
+## catalog-card
+
+Selector: `.ui-card`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card.1 | padding | var(--ui-space-xl) | Contain one related item and its actions. Inset content with the governed panel token and clear offset focus. | Recognize which heading, content and action belong together. | proposed |
+| catalog-card.2 | min-inline-size | 0 | Contain one related item and its actions. Allow the containing card to shrink around bounded source and native editors. | Recognize which heading, content and action belong together. | proposed |
+| catalog-card.3 | border | 1px solid var(--ui-divider) | Contain one related item and its actions. Keep the passive group edge crisp. | Recognize which heading, content and action belong together. | proposed |
+| catalog-card.4 | border-radius | var(--ui-radius-panel) | Contain one related item and its actions. Distinguish the container from its controls. | Recognize which heading, content and action belong together. | proposed |
+| catalog-card.5 | background-color | var(--ui-surface) | Contain one related item and its actions. Use the checked opaque reading plane. | Recognize which heading, content and action belong together. | proposed |
+| catalog-card.6 | color | var(--ui-ink) | Contain one related item and its actions. Keep copy at the checked reading contrast. | Recognize which heading, content and action belong together. | proposed |
+
+## catalog-gallery
+
+Selector: `.ui-catalog`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery.1 | display | grid | Lay out independently inspectable component examples. Give sections one gap owner. | Review components without page-level horizontal panning. | proposed |
+| catalog-gallery.2 | grid-template-columns | minmax(0, 1fr) | Lay out independently inspectable component examples. Keep the page track shrinkable even when a sample contains long literal source. | Review components without page-level horizontal panning. | proposed |
+| catalog-gallery.3 | gap | var(--ui-space-xl) | Lay out independently inspectable component examples. Separate peer sections with the governed token. | Review components without page-level horizontal panning. | proposed |
+| catalog-gallery.4 | min-inline-size | 0 | Lay out independently inspectable component examples. Let long content shrink within the page. | Review components without page-level horizontal panning. | proposed |
+
+## catalog-sample
+
+Selector: `.ui-catalog-sample`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-sample.1 | padding | var(--ui-space-lg) | Bound the live component within its review example. Clear content and offset focus from the boundary. | Distinguish the example from gallery navigation and adjacent components. | proposed |
+| catalog-sample.2 | border | 1px solid var(--ui-divider) | Bound the live component within its review example. Identify the live example without status color. | Distinguish the example from gallery navigation and adjacent components. | proposed |
+| catalog-sample.3 | min-inline-size | 0 | Bound the live component within its review example. Allow native controls to fit narrow hosts. | Distinguish the example from gallery navigation and adjacent components. | proposed |
+
+## catalog-sample-children
+
+Selector: `.ui-catalog-sample > *`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-sample-children.1 | margin-block-end | 0 | Let the live sample own its trailing inset. Remove extra child trailing gaps. | Read a balanced sample without duplicate paragraph margins. | proposed |
+
+## catalog-sample-siblings
+
+Selector: `.ui-catalog-sample > * + *`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-sample-siblings.1 | margin-block-start | var(--ui-space-md) | Separate peer controls inside one example. Use one leading local-content gap. | Recognize separate sample elements while keeping their group together. | proposed |
+
+## catalog-index
+
+Selector: `.ui-catalog-index`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-index.1 | display | grid | Keep the component index responsive. Lay out independent links in available columns. | Find a named example without an excessively long single-column index. | proposed |
+| catalog-index.2 | grid-template-columns | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | Keep the component index responsive. Preserve a useful link measure while allowing one narrow column. | Find a named example without an excessively long single-column index. | proposed |
+| catalog-index.3 | gap | var(--ui-space-sm) | Keep the component index responsive. Separate related index links. | Find a named example without an excessively long single-column index. | proposed |
+| catalog-index.4 | padding-inline-start | var(--ui-space-lg) | Keep the component index responsive. Reserve a native marker gutter. | Find a named example without an excessively long single-column index. | proposed |
+
+## catalog-source
+
+Selector: `.ui-catalog-source`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-source.1 | max-inline-size | 100% | Keep inspectable markup bounded. Bound source to its card. | Copy literal example markup without panning the document. | proposed |
+| catalog-source.2 | overflow | auto | Keep inspectable markup bounded. Keep overflow locally reachable. | Copy literal example markup without panning the document. | proposed |
+| catalog-source.3 | padding | var(--ui-space-lg) | Keep inspectable markup bounded. Leave reading and focus clearance. | Copy literal example markup without panning the document. | proposed |
+| catalog-source.4 | background-color | var(--ui-subtle) | Keep inspectable markup bounded. Distinguish source from the live surface. | Copy literal example markup without panning the document. | proposed |
+| catalog-source.5 | white-space | pre-wrap | Keep inspectable markup bounded. Preserve line breaks while wrapping long markup. | Copy literal example markup without panning the document. | proposed |
+
+## catalog-source-code
+
+Selector: `.ui-catalog-source code`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-source-code.1 | font-size | inherit | Keep nested source type single-owned. Let pre own the source type size. | Read literal markup without compounded size reduction. | proposed |
+
+## catalog-button
+
+Selector: `.ui-button`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-button.1 | display | inline-flex | Style a real action target consistently. Make one aligned native action target. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.2 | align-items | center | Style a real action target consistently. Center the label vertically. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.3 | justify-content | center | Style a real action target consistently. Center short labels. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.4 | gap | var(--ui-space-sm) | Style a real action target consistently. Separate a mark from its written action. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.5 | min-block-size | var(--ui-control-min) | Style a real action target consistently. Use the pointer-specific target floor. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.6 | min-inline-size | var(--ui-control-min) | Style a real action target consistently. Keep short targets sufficiently wide. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.7 | padding | var(--ui-control-pad-block) var(--ui-space-lg) | Style a real action target consistently. Apply governed target clearance without smaller text. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.8 | border-width | 1px | Style a real action target consistently. Reserve a crisp boundary without resetting primary border color. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.9 | border-style | solid | Style a real action target consistently. Keep boundary geometry stable. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.10 | border-radius | var(--ui-radius-small) | Style a real action target consistently. Use the control corner role. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.11 | font-size | inherit | Style a real action target consistently. Respect the body reading size rather than a smaller platform default. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.12 | font-weight | 600 | Style a real action target consistently. Identify the action label. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.13 | text-align | center | Style a real action target consistently. Balance wrapped labels. | Activate a named action with native pointer and keyboard behavior. | proposed |
+| catalog-button.14 | cursor | pointer | Style a real action target consistently. Confirm pointer activation. | Activate a named action with native pointer and keyboard behavior. | proposed |
+
+## catalog-secondary
+
+Selector: `.ui-button:not(.btn-primary)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-secondary.1 | color | var(--ui-interactive) | Style neutral named actions. Use the tested blue text role. | Recognize secondary actions through readable labels and boundaries. | proposed |
+| catalog-secondary.2 | background-color | var(--ui-surface) | Style neutral named actions. Use a checked reading plane. | Recognize secondary actions through readable labels and boundaries. | proposed |
+| catalog-secondary.3 | border-color | var(--ui-border) | Style neutral named actions. Expose the unfilled action boundary. | Recognize secondary actions through readable labels and boundaries. | proposed |
+
+## catalog-secondary-hover
+
+Selector: `.ui-button:not(.btn-primary):hover:not(:disabled)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-secondary-hover.1 | background-color | var(--ui-subtle) | Confirm the action under the pointer. Use the neutral hover plane. | Recognize the targeted action without geometry movement. | proposed |
+
+## catalog-disabled
+
+Selector: `.ui-button:disabled`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-disabled.1 | color | var(--ui-disabled) | Keep unavailable native actions legible. Use the checked disabled text. | Read why an action is unavailable without interpreting low opacity. | proposed |
+| catalog-disabled.2 | background-color | var(--ui-disabled-bg) | Keep unavailable native actions legible. Use the neutral unavailable plane. | Read why an action is unavailable without interpreting low opacity. | proposed |
+| catalog-disabled.3 | cursor | not-allowed | Keep unavailable native actions legible. Supplement native disabled semantics. | Read why an action is unavailable without interpreting low opacity. | proposed |
+
+## catalog-button-group
+
+Selector: `.ui-button-group, .ui-join`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-button-group.1 | display | flex | Keep related actions adjacent while allowing wrapping. Group peer native targets in source order. | Recognize peer actions without hidden overflow or roving-menu semantics. | proposed |
+| catalog-button-group.2 | flex-wrap | wrap | Keep related actions adjacent while allowing wrapping. Keep long actions visible. | Recognize peer actions without hidden overflow or roving-menu semantics. | proposed |
+| catalog-button-group.3 | gap | var(--ui-space-sm) | Keep related actions adjacent while allowing wrapping. Clear offset focus between peer actions. | Recognize peer actions without hidden overflow or roving-menu semantics. | proposed |
+
+## catalog-join
+
+Selector: `.ui-join`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-join.1 | padding | var(--ui-space-sm) | Frame a related action group. Clear contained focus perimeters. | Recognize joined actions while each remains separately reachable. | proposed |
+| catalog-join.2 | border | 1px solid var(--ui-divider) | Frame a related action group. Add a passive outer group edge. | Recognize joined actions while each remains separately reachable. | proposed |
+| catalog-join.3 | border-radius | var(--ui-radius-small) | Frame a related action group. Use a related-control shape. | Recognize joined actions while each remains separately reachable. | proposed |
+
+## catalog-editors
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-editors.1 | font | inherit | Keep native editors readable and bounded. Preserve normal control type. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.2 | color | var(--ui-ink) | Keep native editors readable and bounded. Keep text at checked contrast. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.3 | background-color | var(--ui-surface) | Keep native editors readable and bounded. Use the known editing plane. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.4 | border | 1px solid var(--ui-border) | Keep native editors readable and bounded. Identify real native editing boundaries. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.5 | border-radius | var(--ui-radius-small) | Keep native editors readable and bounded. Use the existing control shape. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.6 | padding | var(--ui-control-pad-block) var(--ui-space-md) | Keep native editors readable and bounded. Use governed editor insets. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.7 | min-block-size | var(--ui-control-min) | Keep native editors readable and bounded. Protect pointer-specific targets. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.8 | inline-size | 100% | Keep native editors readable and bounded. Fit the available field width. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.9 | min-inline-size | 0 | Keep native editors readable and bounded. Remove intrinsic native width floors. | Enter values with platform affordances and visible focus. | proposed |
+| catalog-editors.10 | max-inline-size | 100% | Keep native editors readable and bounded. Keep the box within its host. | Enter values with platform affordances and visible focus. | proposed |
+
+## catalog-textarea
+
+Selector: `.ui-textarea`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-textarea.1 | min-block-size | var(--ui-notes-min) | Provide a native multiline editor. Offer the governed initial multiline viewport. | Enter line breaks and resize notes vertically. | proposed |
+| catalog-textarea.2 | resize | vertical | Provide a native multiline editor. Allow more notes height without widening the page. | Enter line breaks and resize notes vertically. | proposed |
+
+## catalog-otp
+
+Selector: `.ui-otp`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-otp.1 | font-family | ui-monospace, Consolas, monospace | Keep a verification code in one native input. Distinguish exact code characters. | Paste or receive a whole code without scripted character-box navigation. | proposed |
+| catalog-otp.2 | letter-spacing | 0.25em | Keep a verification code in one native input. Separate characters while preserving one native paste target. | Paste or receive a whole code without scripted character-box navigation. | proposed |
+
+## catalog-file-input
+
+Selector: `.ui-file-input::file-selector-button`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-file-input.1 | font | inherit | Expose the browser-owned file chooser. Keep the chooser at reading size. | Choose a file only after an explicit native action. | proposed |
+| catalog-file-input.2 | min-block-size | var(--ui-control-min) | Expose the browser-owned file chooser. Protect native chooser activation. | Choose a file only after an explicit native action. | proposed |
+| catalog-file-input.3 | margin-inline-end | var(--ui-space-sm) | Expose the browser-owned file chooser. Separate the chooser from the native filename. | Choose a file only after an explicit native action. | proposed |
+
+## catalog-field
+
+Selector: `.ui-fieldset, .ui-form-field`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-field.1 | display | grid | Group a persistent label, native control and supporting help. Give label, editor and help one gap owner. | Understand the question and enter a value without losing its name. | proposed |
+| catalog-field.2 | gap | var(--ui-space-sm) | Group a persistent label, native control and supporting help. Clear the offset focus ring between rows. | Understand the question and enter a value without losing its name. | proposed |
+| catalog-field.3 | min-inline-size | 0 | Group a persistent label, native control and supporting help. Let native controls fit the host. | Understand the question and enter a value without losing its name. | proposed |
+| catalog-field.4 | padding | 0 | Group a persistent label, native control and supporting help. Avoid duplicating panel inset. | Understand the question and enter a value without losing its name. | proposed |
+| catalog-field.5 | border | 0 | Group a persistent label, native control and supporting help. Retain fieldset semantics without a duplicate frame. | Understand the question and enter a value without losing its name. | proposed |
+| catalog-field.6 | margin | 0 | Group a persistent label, native control and supporting help. Remove browser fieldset outer gaps. | Understand the question and enter a value without losing its name. | proposed |
+
+## catalog-label
+
+Selector: `.ui-label`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-label.1 | display | block | Keep a native control named. Keep a persistent name on its own line. | Activate the associated input by selecting its persistent label. | proposed |
+| catalog-label.2 | font-weight | 600 | Keep a native control named. Distinguish the question from its value. | Activate the associated input by selecting its persistent label. | proposed |
+
+## catalog-input-group
+
+Selector: `.ui-input-group`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-input-group.1 | display | flex | Associate a fixed prefix or suffix with an input. Keep fixed units beside the editor. | Understand units/context without putting fake values into the editable string. | proposed |
+| catalog-input-group.2 | align-items | center | Associate a fixed prefix or suffix with an input. Align the adornment with the value. | Understand units/context without putting fake values into the editable string. | proposed |
+| catalog-input-group.3 | gap | var(--ui-space-sm) | Associate a fixed prefix or suffix with an input. Separate fixed text while clearing focus. | Understand units/context without putting fake values into the editable string. | proposed |
+| catalog-input-group.4 | min-inline-size | 0 | Associate a fixed prefix or suffix with an input. Allow the editor to shrink. | Understand units/context without putting fake values into the editable string. | proposed |
+
+## catalog-group-input
+
+Selector: `.ui-input-group > input`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-group-input.1 | flex | 1 1 0 | Give editable text the remaining group width. Use available space and permit shrinking. | Read units without losing the editable region. | proposed |
+| catalog-group-input.2 | min-inline-size | 0 | Give editable text the remaining group width. Remove the native intrinsic width floor. | Read units without losing the editable region. | proposed |
+
+## catalog-checkbox
+
+Selector: `.ui-checkbox, .ui-radio`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-checkbox.1 | inline-size | 1.25rem | Style a native multiple-choice mark. Keep the existing 20px native mark. | Toggle an explicitly labelled option without custom state synchronization. | proposed |
+| catalog-checkbox.2 | block-size | 1.25rem | Style a native multiple-choice mark. Keep the native mark square. | Toggle an explicitly labelled option without custom state synchronization. | proposed |
+| catalog-checkbox.3 | accent-color | var(--ui-interactive) | Style a native multiple-choice mark. Use the checked selection accent. | Toggle an explicitly labelled option without custom state synchronization. | proposed |
+
+## catalog-radio
+
+Selector: `.ui-radio`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-radio.1 | flex-shrink | 0 | Present mutually exclusive native choices. Prevent long option labels from compressing marks. | Use labels and arrow keys to choose one option. | proposed |
+
+## catalog-slider
+
+Selector: `.ui-range`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-slider.1 | inline-size | 100% | Expose a bounded numeric choice. Expose the available native track. | Change a value with native arrow keys or pointer input. | proposed |
+| catalog-slider.2 | min-inline-size | 0 | Expose a bounded numeric choice. Keep the track within narrow hosts. | Change a value with native arrow keys or pointer input. | proposed |
+| catalog-slider.3 | min-block-size | var(--ui-control-min) | Expose a bounded numeric choice. Protect native slider hit height. | Change a value with native arrow keys or pointer input. | proposed |
+| catalog-slider.4 | accent-color | var(--ui-interactive) | Expose a bounded numeric choice. Retain native value/keyboard behavior with the selection accent. | Change a value with native arrow keys or pointer input. | proposed |
+
+## catalog-switch
+
+Selector: `.ui-toggle`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-switch.1 | border-radius | var(--ui-radius-small) | Present a named binary native preference. Relate the choice label to existing switches. | Toggle an explicit choice with native checked state and Space. | proposed |
+| catalog-switch.2 | padding-inline | var(--ui-space-sm) | Present a named binary native preference. Clear the native mark and label from the edge. | Toggle an explicit choice with native checked state and Space. | proposed |
+
+## catalog-toggle
+
+Selector: `.ui-toggle-button`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-toggle.1 | display | inline-flex | Use native checkbox semantics for a persistent binary choice. Keep the real check and stable label together. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.2 | align-items | center | Use native checkbox semantics for a persistent binary choice. Align native state with text. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.3 | gap | var(--ui-space-sm) | Use native checkbox semantics for a persistent binary choice. Separate mark and name. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.4 | min-block-size | var(--ui-control-min) | Use native checkbox semantics for a persistent binary choice. Use the governed target floor. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.5 | padding | var(--ui-control-pad-block) var(--ui-space-md) | Use native checkbox semantics for a persistent binary choice. Inset the selectable label. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.6 | border | 1px solid var(--ui-border) | Use native checkbox semantics for a persistent binary choice. Expose the option boundary. | See and change the selected option without a fake aria-pressed button. | proposed |
+| catalog-toggle.7 | border-radius | var(--ui-radius-small) | Use native checkbox semantics for a persistent binary choice. Use a control shape. | See and change the selected option without a fake aria-pressed button. | proposed |
+
+## catalog-checked-option
+
+Selector: `.ui-toggle-button:has(input:checked)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-checked-option.1 | background-color | var(--ui-subtle) | Make the actual native choice distinct. Use neutral selected grouping. | Recognize checked state through mark and emphasis. | proposed |
+| catalog-checked-option.2 | font-weight | 600 | Make the actual native choice distinct. Supplement the native check with emphasis. | Recognize checked state through mark and emphasis. | proposed |
+
+## catalog-toggle-group
+
+Selector: `.ui-toggle-group`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-toggle-group.1 | display | flex | Keep several persistent binary choices together. Group native choices together. | Select multiple explicit options with native checkbox behavior. | proposed |
+| catalog-toggle-group.2 | flex-wrap | wrap | Keep several persistent binary choices together. Keep all choices reachable. | Select multiple explicit options with native checkbox behavior. | proposed |
+| catalog-toggle-group.3 | gap | var(--ui-space-sm) | Keep several persistent binary choices together. Clear peer focus. | Select multiple explicit options with native checkbox behavior. | proposed |
+| catalog-toggle-group.4 | border | 0 | Keep several persistent binary choices together. Retain group semantics without another frame. | Select multiple explicit options with native checkbox behavior. | proposed |
+| catalog-toggle-group.5 | padding | 0 | Keep several persistent binary choices together. Let the host own its inset. | Select multiple explicit options with native checkbox behavior. | proposed |
+
+## catalog-rating
+
+Selector: `.ui-rating`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating.1 | display | flex | Offer a bounded native single-choice scale. Keep rating labels in sequence. | Choose a named rating with arrow keys and full-size labels. | proposed |
+| catalog-rating.2 | flex-wrap | wrap | Offer a bounded native single-choice scale. Preserve all options on mobile. | Choose a named rating with arrow keys and full-size labels. | proposed |
+| catalog-rating.3 | gap | var(--ui-space-sm) | Offer a bounded native single-choice scale. Separate complete label targets. | Choose a named rating with arrow keys and full-size labels. | proposed |
+| catalog-rating.4 | border | 0 | Offer a bounded native single-choice scale. Retain native group semantics. | Choose a named rating with arrow keys and full-size labels. | proposed |
+| catalog-rating.5 | padding | 0 | Offer a bounded native single-choice scale. Use the containing inset. | Choose a named rating with arrow keys and full-size labels. | proposed |
+
+## catalog-disclosures
+
+Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-disclosures.1 | padding | var(--ui-space-lg) | Frame optional native disclosures. Clear reading and focus from the edge. | Find the named summary and inspect optional content. | proposed |
+| catalog-disclosures.2 | border | 1px solid var(--ui-divider) | Frame optional native disclosures. Use a quiet containing edge. | Find the named summary and inspect optional content. | proposed |
+| catalog-disclosures.3 | border-radius | var(--ui-radius-small) | Frame optional native disclosures. Use the bounded-support shape. | Find the named summary and inspect optional content. | proposed |
+
+## catalog-summaries
+
+Selector: `.ui-accordion > summary, .ui-collapse > summary, .ui-sidebar > summary, .ui-trace > summary`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-summaries.1 | min-block-size | var(--ui-control-min) | Keep native disclosure labels operable. Protect the summary target height. | Use original summary markers and native activation keys. | proposed |
+| catalog-summaries.2 | font-weight | 600 | Keep native disclosure labels operable. Identify the controlling label. | Use original summary markers and native activation keys. | proposed |
+| catalog-summaries.3 | cursor | pointer | Keep native disclosure labels operable. Supplement the native affordance. | Use original summary markers and native activation keys. | proposed |
+
+## catalog-summary-focus
+
+Selector: `.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-summary-focus.1 | outline | 3px solid var(--ui-focus) | Include summaries in governed keyboard focus. Use the protected focus perimeter. | Find the disclosure receiving the next keystroke. | proposed |
+| catalog-summary-focus.2 | outline-offset | 3px | Include summaries in governed keyboard focus. Separate focus from text and boundaries. | Find the disclosure receiving the next keystroke. | proposed |
+
+## catalog-summary-forced
+
+Selector: `.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible`; condition: `(forced-colors: active)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-summary-forced.1 | outline-color | Highlight | Honor system focus on native disclosures. Use the platform focus role. | Find controls in the requested high-contrast palette. | proposed |
+
+## catalog-disclosed-content
+
+Selector: `.ui-accordion[open] > summary + *, .ui-collapse[open] > summary + *, .ui-sidebar[open] > summary + *, .ui-trace[open] > summary + *`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-disclosed-content.1 | margin-block-start | var(--ui-space-sm) | Separate revealed content from its control. Use a related-content gap. | Read the revealed content as part of the selected explanation. | proposed |
+
+## catalog-accordion
+
+Selector: `.ui-accordion + .ui-accordion`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-accordion.1 | margin-block-start | var(--ui-space-sm) | Group related optional explanations. Separate peer summaries without splitting the family. | Expand one named explanation while keeping other summaries reachable. | proposed |
+
+## catalog-collapse
+
+Selector: `.ui-collapse`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-collapse.1 | background-color | var(--ui-subtle) | Disclose optional supporting material. Use the existing optional-support plane. | Open and close an explanation with native Enter/Space behavior. | proposed |
+
+## catalog-sidebar
+
+Selector: `.ui-sidebar`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-sidebar.1 | max-inline-size | 24rem | Group optional navigation or support next to content. Keep support navigation at a bounded measure. | Reveal a named support list without sacrificing source order. | proposed |
+
+## catalog-trace
+
+Selector: `.ui-trace ol`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-trace.1 | padding-inline-start | 4ch | Group a supplied sequence of diagnostic steps. Reserve native step-number space. | Inspect an ordered explanation without mistaking it for live execution. | proposed |
+
+## catalog-alert
+
+Selector: `.ui-alert`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-alert.1 | padding | var(--ui-space-lg) | Make a condition and its next step readable together. Keep condition and next step clear of the edge. | Recognize an important message from its wording and structure. | proposed |
+| catalog-alert.2 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | Make a condition and its next step readable together. Identify guidance with the neutral governed stroke. | Recognize an important message from its wording and structure. | proposed |
+| catalog-alert.3 | background-color | var(--ui-subtle) | Make a condition and its next step readable together. Keep routine guidance quiet. | Recognize an important message from its wording and structure. | proposed |
+
+## catalog-empty
+
+Selector: `.ui-empty-state`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-empty.1 | padding | var(--ui-space-section) | Explain missing data and one recovery destination. Give absence and recovery a clear working area. | Distinguish an empty example from an error or loading state. | proposed |
+| catalog-empty.2 | border | 1px dashed var(--ui-border) | Explain missing data and one recovery destination. Distinguish a placeholder from populated content. | Distinguish an empty example from an error or loading state. | proposed |
+| catalog-empty.3 | border-radius | var(--ui-radius-small) | Explain missing data and one recovery destination. Use the bounded-support shape. | Distinguish an empty example from an error or loading state. | proposed |
+
+## catalog-avatar
+
+Selector: `.ui-avatar`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar.1 | display | inline-grid | Show an identity thumbnail or initials. Center authored initials within a compact mark. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.2 | place-items | center | Show an identity thumbnail or initials. Align initials on both axes. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.3 | inline-size | var(--ui-swatch-size) | Show an identity thumbnail or initials. Use the governed visual sample size. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.4 | aspect-ratio | 1 | Show an identity thumbnail or initials. Reserve a square before cropping. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.5 | border-radius | 50% | Show an identity thumbnail or initials. Distinguish identity from an action. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.6 | border | 1px solid var(--ui-border) | Show an identity thumbnail or initials. Keep the silhouette visible. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.7 | background-color | var(--ui-subtle) | Show an identity thumbnail or initials. Use a checked neutral plane. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.8 | font-weight | 600 | Show an identity thumbnail or initials. Keep short initials identifiable. | Associate a written person name with a compact identity mark. | proposed |
+
+## catalog-badge
+
+Selector: `.ui-badge`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge.1 | display | inline-block | Keep short metadata visibly grouped. Keep short metadata together. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.2 | padding | var(--ui-space-xs) var(--ui-space-sm) | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.3 | border | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.4 | border-radius | var(--ui-radius-small) | Keep short metadata visibly grouped. Use the short-label shape. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.5 | font-size | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. | proposed |
+
+## catalog-aura
+
+Selector: `.ui-aura`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-aura.1 | padding | var(--ui-space-lg) | Demonstrate an optional accent frame without tinting a large work area. Separate the requested accent from text. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+| catalog-aura.2 | border | var(--ui-switch-stroke) solid transparent | Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+| catalog-aura.3 | border-radius | var(--ui-radius-panel) | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+| catalog-aura.4 | background | linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-interactive), var(--ui-divider), var(--ui-interactive)) border-box | Demonstrate an optional accent frame without tinting a large work area. Limit the static accent to the border while keeping the reading field neutral. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+
+## catalog-aspect-ratio
+
+Selector: `.ui-aspect-ratio`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-aspect-ratio.1 | aspect-ratio | 16 / 9 | Reserve a predictable media frame. Reserve a familiar wide media rectangle. | Inspect media without distortion or layout jumps. | proposed |
+| catalog-aspect-ratio.2 | display | grid | Reserve a predictable media frame. Keep media within the reserved frame. | Inspect media without distortion or layout jumps. | proposed |
+| catalog-aspect-ratio.3 | background-color | var(--ui-subtle) | Reserve a predictable media frame. Keep letterboxed space neutral. | Inspect media without distortion or layout jumps. | proposed |
+
+## catalog-aspect-image
+
+Selector: `.ui-aspect-ratio img`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-aspect-image.1 | inline-size | 100% | Keep the whole supplied image within its frame. Fit the frame width. | Inspect media without distortion or essential cropping. | proposed |
+| catalog-aspect-image.2 | block-size | 100% | Keep the whole supplied image within its frame. Fit its reserved height. | Inspect media without distortion or essential cropping. | proposed |
+| catalog-aspect-image.3 | min-block-size | 0 | Keep the whole supplied image within its frame. Permit grid shrinking. | Inspect media without distortion or essential cropping. | proposed |
+| catalog-aspect-image.4 | object-fit | contain | Keep the whole supplied image within its frame. Preserve the full source aspect ratio. | Inspect media without distortion or essential cropping. | proposed |
+
+## catalog-attachment
+
+Selector: `.ui-attachment`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-attachment.1 | display | inline-flex | Present an explicitly named file destination. Group the file name with its metadata. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+| catalog-attachment.2 | flex-wrap | wrap | Present an explicitly named file destination. Keep long metadata within the host. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+| catalog-attachment.3 | gap | var(--ui-space-sm) | Present an explicitly named file destination. Separate name and format. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+| catalog-attachment.4 | padding | var(--ui-space-md) | Present an explicitly named file destination. Give the destination an inspection target. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+| catalog-attachment.5 | border | 1px solid var(--ui-border) | Present an explicitly named file destination. Identify the supplied file destination. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+| catalog-attachment.6 | min-block-size | var(--ui-control-min) | Present an explicitly named file destination. Protect the target minimum. | Open the supplied local sample without a disguised action or automatic upload. | proposed |
+
+## catalog-navigation-lists
+
+Selector: `.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-menu ul`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-navigation-lists.1 | display | flex | Keep ordinary destinations in predictable source order. Group related destinations. | Navigate real links without fake application-menu semantics. | proposed |
+| catalog-navigation-lists.2 | flex-wrap | wrap | Keep ordinary destinations in predictable source order. Keep long labels visible. | Navigate real links without fake application-menu semantics. | proposed |
+| catalog-navigation-lists.3 | gap | var(--ui-space-sm) | Keep ordinary destinations in predictable source order. Separate native targets. | Navigate real links without fake application-menu semantics. | proposed |
+| catalog-navigation-lists.4 | list-style-type | none | Keep ordinary destinations in predictable source order. Remove decorative bullets while retaining explicit list semantics. | Navigate real links without fake application-menu semantics. | proposed |
+| catalog-navigation-lists.5 | padding | 0 | Keep ordinary destinations in predictable source order. Let the host own the inset. | Navigate real links without fake application-menu semantics. | proposed |
+| catalog-navigation-lists.6 | margin | 0 | Keep ordinary destinations in predictable source order. Avoid duplicate list gaps. | Navigate real links without fake application-menu semantics. | proposed |
+
+## catalog-navigation-menu
+
+Selector: `.ui-menu ul`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-navigation-menu.1 | flex-direction | column | Keep destinations grouped and keyboard reachable. Present a vertical list of ordinary destinations. | Navigate named destinations with ordinary links and tab order. | proposed |
+
+## catalog-breadcrumb
+
+Selector: `.ui-breadcrumb [aria-current="page"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-breadcrumb.1 | font-weight | 600 | Express a real navigation hierarchy. Identify the current location beyond color. | Find the parent destination and identify the current page. | proposed |
+
+## catalog-pagination
+
+Selector: `.ui-pagination [aria-current="page"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-pagination.1 | font-weight | 600 | Express the current position and available page destinations. Distinguish the current index. | Navigate a known page without confusing a visual index with loaded data. | proposed |
+| catalog-pagination.2 | border-block-end | 2px solid currentColor | Express the current position and available page destinations. Give the current page a non-color cue. | Navigate a known page without confusing a visual index with loaded data. | proposed |
+
+## catalog-tabs
+
+Selector: `.ui-tabs`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tabs.1 | display | grid | Offer linked destinations or a native choice between preloaded panels. Keep native choices before their panels. | Choose a labelled preview without a fake ARIA tab state. | proposed |
+| catalog-tabs.2 | gap | var(--ui-space-sm) | Offer linked destinations or a native choice between preloaded panels. Clear choice focus. | Choose a labelled preview without a fake ARIA tab state. | proposed |
+| catalog-tabs.3 | border | 0 | Offer linked destinations or a native choice between preloaded panels. Retain the legend without another frame. | Choose a labelled preview without a fake ARIA tab state. | proposed |
+| catalog-tabs.4 | padding | 0 | Offer linked destinations or a native choice between preloaded panels. Use the containing inset. | Choose a labelled preview without a fake ARIA tab state. | proposed |
+| catalog-tabs.5 | margin | 0 | Offer linked destinations or a native choice between preloaded panels. Remove default fieldset outer gaps. | Choose a labelled preview without a fake ARIA tab state. | proposed |
+
+## catalog-tab-links
+
+Selector: `.ui-tab-links a`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tab-links.1 | padding | var(--ui-space-sm) | Distinguish destination links without fake tab roles. Inset the written label. | Follow a real destination using normal keyboard activation. | proposed |
+| catalog-tab-links.2 | border-block-end | 2px solid var(--ui-divider) | Distinguish destination links without fake tab roles. Identify the row of destinations. | Follow a real destination using normal keyboard activation. | proposed |
+| catalog-tab-links.3 | min-block-size | var(--ui-control-min) | Distinguish destination links without fake tab roles. Protect native link activation. | Follow a real destination using normal keyboard activation. | proposed |
+
+## catalog-nav-targets
+
+Selector: `.ui-breadcrumb a, .ui-pagination a, .ui-dock a, .ui-menu a`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-nav-targets.1 | display | inline-flex | Keep component navigation usable. Allow minimum dimensions on real links. | Activate named destinations accurately. | proposed |
+| catalog-nav-targets.2 | align-items | center | Keep component navigation usable. Center text within the target. | Activate named destinations accurately. | proposed |
+| catalog-nav-targets.3 | min-block-size | var(--ui-control-min) | Keep component navigation usable. Use the pointer-specific target floor. | Activate named destinations accurately. | proposed |
+| catalog-nav-targets.4 | padding-inline | var(--ui-space-sm) | Keep component navigation usable. Clear the label from peer links. | Activate named destinations accurately. | proposed |
+
+## catalog-navbar
+
+Selector: `.ui-navbar`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-navbar.1 | display | flex | Group identity and primary destinations. Keep identity and destinations related. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.2 | flex-wrap | wrap | Group identity and primary destinations. Preserve every destination on mobile. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.3 | align-items | center | Group identity and primary destinations. Align identity with links. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.4 | justify-content | space-between | Group identity and primary destinations. Separate roles without changing DOM order. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.5 | gap | var(--ui-space-md) | Group identity and primary destinations. Keep a local group gap. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.6 | padding | var(--ui-space-lg) | Group identity and primary destinations. Clear text and native targets. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+| catalog-navbar.7 | background-color | var(--ui-subtle) | Group identity and primary destinations. Use a quiet navigation plane. | Locate navigation that wraps rather than disappearing on narrow screens. | proposed |
+
+## catalog-dock
+
+Selector: `.ui-dock`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-dock.1 | justify-content | space-around | Group a small set of working-area destinations. Distribute the small destination set. | Find the current location without floating over document content. | proposed |
+| catalog-dock.2 | border-block-start | 1px solid var(--ui-divider) | Group a small set of working-area destinations. Expose the local navigation boundary. | Find the current location without floating over document content. | proposed |
+| catalog-dock.3 | padding | var(--ui-space-sm) | Group a small set of working-area destinations. Clear native link focus. | Find the current location without floating over document content. | proposed |
+
+## catalog-footer
+
+Selector: `.ui-footer`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-footer.1 | display | flex | Group document-end information and destinations. Group closing text and destinations. | Find supporting links without confusing them with the main task. | proposed |
+| catalog-footer.2 | flex-wrap | wrap | Group document-end information and destinations. Preserve closing content on narrow screens. | Find supporting links without confusing them with the main task. | proposed |
+| catalog-footer.3 | gap | var(--ui-space-lg) | Group document-end information and destinations. Separate footer purposes. | Find supporting links without confusing them with the main task. | proposed |
+| catalog-footer.4 | padding-block | var(--ui-space-lg) | Group document-end information and destinations. Give closing information reading clearance. | Find supporting links without confusing them with the main task. | proposed |
+| catalog-footer.5 | border-block-start | 1px solid var(--ui-divider) | Group document-end information and destinations. Mark the end of main content. | Find supporting links without confusing them with the main task. | proposed |
+
+## catalog-hero
+
+Selector: `.ui-hero`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-hero.1 | padding | var(--ui-space-section) | Introduce one purpose and a next destination. Give the introduction a clear start. | Understand the surface before choosing an action. | proposed |
+| catalog-hero.2 | background-color | var(--ui-subtle) | Introduce one purpose and a next destination. Keep the large field neutral. | Understand the surface before choosing an action. | proposed |
+| catalog-hero.3 | max-inline-size | 65ch | Introduce one purpose and a next destination. Bound sustained introductory copy. | Understand the surface before choosing an action. | proposed |
+
+## catalog-chat
+
+Selector: `.ui-chat`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-chat.1 | display | grid | Group author, timestamp and message content. Keep author, body and time in order. | Read who said what without relying on left/right alignment or hue alone. | proposed |
+| catalog-chat.2 | gap | var(--ui-space-sm) | Group author, timestamp and message content. Separate message parts without extra cards. | Read who said what without relying on left/right alignment or hue alone. | proposed |
+
+## catalog-bubble
+
+Selector: `.ui-bubble`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-bubble.1 | padding | var(--ui-space-md) | Bound supplied conversation text. Use the local message inset. | Read a message as belonging to its written author. | proposed |
+| catalog-bubble.2 | border-radius | var(--ui-radius-panel) | Bound supplied conversation text. Identify the message group. | Read a message as belonging to its written author. | proposed |
+| catalog-bubble.3 | background-color | var(--ui-subtle) | Bound supplied conversation text. Use a neutral conversation plane. | Read a message as belonging to its written author. | proposed |
+| catalog-bubble.4 | max-inline-size | 65ch | Bound supplied conversation text. Keep message lines readable. | Read a message as belonging to its written author. | proposed |
+
+## catalog-message
+
+Selector: `.ui-message`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-message.1 | margin | 0 | Separate message content from its metadata. Let the chat gap own separation. | Read exact wording without depending on alignment. | proposed |
+| catalog-message.2 | overflow-wrap | anywhere | Separate message content from its metadata. Keep long message tokens bounded. | Read exact wording without depending on alignment. | proposed |
+
+## catalog-item
+
+Selector: `.ui-item-list`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-item.1 | list-style-type | none | Present comparable named rows. Use comparable rows with explicit list semantics. | Scan items and use their explicit links without making whole rows clickable. | proposed |
+| catalog-item.2 | padding | 0 | Present comparable named rows. Let each item own its inset. | Scan items and use their explicit links without making whole rows clickable. | proposed |
+| catalog-item.3 | margin | 0 | Present comparable named rows. Avoid duplicate list outer gaps. | Scan items and use their explicit links without making whole rows clickable. | proposed |
+
+## catalog-item-row
+
+Selector: `.ui-item`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-item-row.1 | display | flex | Separate supplied records from peers. Keep record information and link together. | Scan the named record and its explicit destination. | proposed |
+| catalog-item-row.2 | flex-wrap | wrap | Separate supplied records from peers. Preserve long names. | Scan the named record and its explicit destination. | proposed |
+| catalog-item-row.3 | justify-content | space-between | Separate supplied records from peers. Separate content and action without reordering. | Scan the named record and its explicit destination. | proposed |
+| catalog-item-row.4 | gap | var(--ui-space-sm) | Separate supplied records from peers. Leave focus room around links. | Scan the named record and its explicit destination. | proposed |
+| catalog-item-row.5 | padding | var(--ui-space-md) | Separate supplied records from peers. Inset each record. | Scan the named record and its explicit destination. | proposed |
+| catalog-item-row.6 | border-block-end | 1px solid var(--ui-divider) | Separate supplied records from peers. Separate records quietly. | Scan the named record and its explicit destination. | proposed |
+
+## catalog-kbd
+
+Selector: `.ui-kbd`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-kbd.1 | font-family | ui-monospace, Consolas, monospace | Distinguish a key name from an app control. Identify literal key names. | Read a keyboard instruction without trying to click the keycap. | proposed |
+| catalog-kbd.2 | padding | 0 var(--ui-space-xs) | Distinguish a key name from an app control. Leave inline clearance without inflating line rhythm. | Read a keyboard instruction without trying to click the keycap. | proposed |
+| catalog-kbd.3 | border | 1px solid var(--ui-border) | Distinguish a key name from an app control. Identify a noninteractive keycap. | Read a keyboard instruction without trying to click the keycap. | proposed |
+| catalog-kbd.4 | border-radius | var(--ui-radius-small) | Distinguish a key name from an app control. Use the bounded-control shape. | Read a keyboard instruction without trying to click the keycap. | proposed |
+
+## catalog-marker
+
+Selector: `.ui-marker`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-marker.1 | color | var(--ui-ink) | Identify a relevant text fragment. Keep the phrase readable. | Find the marked phrase without interpreting an alarm color. | proposed |
+| catalog-marker.2 | background-color | var(--ui-subtle) | Identify a relevant text fragment. Avoid default yellow/status coloring. | Find the marked phrase without interpreting an alarm color. | proposed |
+| catalog-marker.3 | outline | 1px solid currentColor | Identify a relevant text fragment. Expose a non-color highlight boundary. | Find the marked phrase without interpreting an alarm color. | proposed |
+
+## catalog-direction
+
+Selector: `.ui-direction`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-direction.1 | text-align | start | Respect the document language direction through logical layout. Let native dir choose the reading edge. | Read mixed direction content without visual order hacks. | proposed |
+| catalog-direction.2 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | Respect the document language direction through logical layout. Demonstrate a logical start boundary. | Read mixed direction content without visual order hacks. | proposed |
+| catalog-direction.3 | padding-inline-start | var(--ui-space-md) | Respect the document language direction through logical layout. Clear text from the direction-aware boundary. | Read mixed direction content without visual order hacks. | proposed |
+
+## catalog-popover-panels
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-popover-panels.1 | padding | var(--ui-space-lg) | Style browser-owned nonmodal top-layer surfaces. Clear reading text and focus. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.2 | border | 1px solid var(--ui-border) | Style browser-owned nonmodal top-layer surfaces. Expose the top-layer boundary. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.3 | border-radius | var(--ui-radius-small) | Style browser-owned nonmodal top-layer surfaces. Use the support-surface shape. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.4 | background-color | var(--ui-surface) | Style browser-owned nonmodal top-layer surfaces. Use a checked opaque plane. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.5 | color | var(--ui-ink) | Style browser-owned nonmodal top-layer surfaces. Keep support text readable. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.6 | max-inline-size | min(32rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Style browser-owned nonmodal top-layer surfaces. Fit the surface within narrow viewports. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.7 | max-block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | Style browser-owned nonmodal top-layer surfaces. Fit enlarged content inside the dynamic viewport. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.8 | overflow | auto | Style browser-owned nonmodal top-layer surfaces. Keep long content reachable. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.9 | margin | var(--ui-space-sm) | Style browser-owned nonmodal top-layer surfaces. Clear the popup from its invoker. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.10 | inset | auto | Style browser-owned nonmodal top-layer surfaces. Replace UA viewport centering with implicit-anchor placement. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.11 | position-area | block-end | Style browser-owned nonmodal top-layer surfaces. Place support beside its native invoker. | Read support while native dismissal and relationships remain authoritative. | proposed |
+| catalog-popover-panels.12 | position-try-fallbacks | flip-block, flip-inline | Style browser-owned nonmodal top-layer surfaces. Allow placement on another side when edges lack space. | Read support while native dismissal and relationships remain authoritative. | proposed |
+
+## catalog-popover
+
+Selector: `.ui-popover`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-popover.1 | inline-size | min(28rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Show nonmodal supporting information in the top layer. Give this support type useful bounded width while preserving viewport clearance. | Open a named surface and dismiss it with Escape or a click outside. | proposed |
+
+## catalog-dropdown
+
+Selector: `.ui-dropdown`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-dropdown.1 | inline-size | min(20rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Expose a compact group of navigation links on request. Give this support type useful bounded width while preserving viewport clearance. | Open the link group and navigate it with ordinary Tab/Enter. | proposed |
+
+## catalog-hover-card
+
+Selector: `.ui-hover-card`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-hover-card.1 | inline-size | min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Show a supplementary preview without replacing the primary link. Give this support type useful bounded width while preserving viewport clearance. | Inspect extra context on hover, focus or explicit click. | proposed |
+
+## catalog-tooltip
+
+Selector: `.ui-tooltip`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tooltip.1 | inline-size | min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Offer supplementary noninteractive help without hiding required instructions. Give this support type useful bounded width while preserving viewport clearance. | Read help on hover/focus/click and dismiss it without moving focus. | proposed |
+
+## catalog-megamenu
+
+Selector: `.ui-megamenu`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-megamenu.1 | inline-size | min(40rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | Group several destination categories in one requested surface. Give this support type useful bounded width while preserving viewport clearance. | Open grouped links with ordinary keyboard navigation and native dismissal. | proposed |
+
+## catalog-tooltip-type
+
+Selector: `.ui-tooltip`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tooltip-type.1 | font-size | 0.875rem | Keep optional help readable without overpowering its invoker. Use the protected readable help size. | Read supplementary help in the established secondary size. | proposed |
+
+## catalog-megamenu-grid
+
+Selector: `.ui-megamenu > div`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-megamenu-grid.1 | display | grid | Lay out destination categories within a native popover. Keep categories together. | Find grouped destinations without panning the page. | proposed |
+| catalog-megamenu-grid.2 | grid-template-columns | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | Lay out destination categories within a native popover. Fit columns only when each has useful width. | Find grouped destinations without panning the page. | proposed |
+| catalog-megamenu-grid.3 | gap | var(--ui-space-lg) | Lay out destination categories within a native popover. Separate destination categories. | Find grouped destinations without panning the page. | proposed |
+
+## catalog-modal-panels
+
+Selector: `.ui-modal, .ui-alert-dialog, .ui-drawer, .ui-sheet`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-modal-panels.1 | inline-size | min(32rem, calc(100% - 2 * var(--ui-dialog-clearance))) | Bound browser-owned modal surfaces. Preserve governed outer clearance. | Dismiss support natively while keeping long content reachable. | proposed |
+| catalog-modal-panels.2 | max-block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | Bound browser-owned modal surfaces. Fit the dynamic viewport. | Dismiss support natively while keeping long content reachable. | proposed |
+| catalog-modal-panels.3 | padding | var(--ui-space-xl) | Bound browser-owned modal surfaces. Clear text and safe-close focus from the edge. | Dismiss support natively while keeping long content reachable. | proposed |
+| catalog-modal-panels.4 | overflow | auto | Bound browser-owned modal surfaces. Keep enlarged content reachable. | Dismiss support natively while keeping long content reachable. | proposed |
+
+## catalog-dialog
+
+Selector: `.ui-modal`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-dialog.1 | border-radius | var(--ui-radius-panel) | Present a bounded modal surface with native focus handling. Use the containing-group modal shape. | Read and dismiss a blocking explanation without losing the opener. | proposed |
+
+## catalog-alert-dialog
+
+Selector: `.ui-alert-dialog`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-alert-dialog.1 | border-inline-start-width | var(--ui-notice-stroke) | Focus a blocking example decision in the native top layer. Give the blocking decision a restrained neutral start emphasis. | Read the decision and cancel safely with native focus return. | proposed |
+
+## catalog-drawer
+
+Selector: `.ui-drawer`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-drawer.1 | inset-inline-start | auto | Place a named modal support surface at an edge. Align to the inline end. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+| catalog-drawer.2 | inset-inline-end | var(--ui-dialog-clearance) | Place a named modal support surface at an edge. Preserve outer edge clearance. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+| catalog-drawer.3 | inset-block | var(--ui-dialog-clearance) | Place a named modal support surface at an edge. Leave visible top/bottom edges. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+| catalog-drawer.4 | margin | 0 | Place a named modal support surface at an edge. Prevent UA auto-centering. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+| catalog-drawer.5 | inline-size | min(24rem, calc(100% - 2 * var(--ui-dialog-clearance))) | Place a named modal support surface at an edge. Keep support narrow and mobile-bounded. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+| catalog-drawer.6 | block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | Place a named modal support surface at an edge. Use available height with outer clearance. | Open and dismiss an edge panel with native focus and Escape behavior. | proposed |
+
+## catalog-sheet
+
+Selector: `.ui-sheet`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-sheet.1 | inset-block-start | auto | Place a blocking support surface along the lower edge. Place support near the bottom. | Read and dismiss supplementary content with native modal behavior. | proposed |
+| catalog-sheet.2 | inset-block-end | var(--ui-dialog-clearance) | Place a blocking support surface along the lower edge. Preserve bottom outer clearance. | Read and dismiss supplementary content with native modal behavior. | proposed |
+| catalog-sheet.3 | margin-block | 0 | Place a blocking support surface along the lower edge. Avoid vertical auto-centering. | Read and dismiss supplementary content with native modal behavior. | proposed |
+| catalog-sheet.4 | inline-size | min(48rem, calc(100% - 2 * var(--ui-dialog-clearance))) | Place a blocking support surface along the lower edge. Allow wider support without mobile overflow. | Read and dismiss supplementary content with native modal behavior. | proposed |
+
+## catalog-carousel
+
+Selector: `.ui-carousel`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-carousel.1 | display | flex | Offer an ordered horizontally scrollable set of panels. Keep supplied panels in real horizontal order. | Reach every panel through native scrolling and named fragment links. | proposed |
+| catalog-carousel.2 | gap | var(--ui-space-lg) | Offer an ordered horizontally scrollable set of panels. Separate panel boundaries. | Reach every panel through native scrolling and named fragment links. | proposed |
+| catalog-carousel.3 | overflow-x | auto | Offer an ordered horizontally scrollable set of panels. Keep scrolling local and native. | Reach every panel through native scrolling and named fragment links. | proposed |
+| catalog-carousel.4 | scroll-snap-type | x proximity | Offer an ordered horizontally scrollable set of panels. Help settle near panels without mandatory scroll trapping. | Reach every panel through native scrolling and named fragment links. | proposed |
+| catalog-carousel.5 | padding | var(--ui-space-sm) | Offer an ordered horizontally scrollable set of panels. Clear focus around links in slides. | Reach every panel through native scrolling and named fragment links. | proposed |
+
+## catalog-slide
+
+Selector: `.ui-slide`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-slide.1 | flex | 0 0 100% | Give one supplied panel a local viewport. Keep panels from becoming squeezed fragments. | Inspect one panel and reach peers without auto-rotation. | proposed |
+| catalog-slide.2 | scroll-snap-align | start | Give one supplied panel a local viewport. Settle at the reading start. | Inspect one panel and reach peers without auto-rotation. | proposed |
+| catalog-slide.3 | padding | var(--ui-space-lg) | Give one supplied panel a local viewport. Clear panel contents. | Inspect one panel and reach peers without auto-rotation. | proposed |
+| catalog-slide.4 | border | 1px solid var(--ui-divider) | Give one supplied panel a local viewport. Identify peer panels. | Inspect one panel and reach peers without auto-rotation. | proposed |
+| catalog-slide.5 | min-inline-size | 0 | Give one supplied panel a local viewport. Let supplied text wrap. | Inspect one panel and reach peers without auto-rotation. | proposed |
+
+## catalog-code-block
+
+Selector: `.ui-code-block`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-code-block.1 | max-inline-size | 100% | Bound exact source content and its label. Bound source by its host. | Inspect selectable source with local scrolling. | proposed |
+| catalog-code-block.2 | overflow | auto | Bound exact source content and its label. Preserve long lines with local scrolling. | Inspect selectable source with local scrolling. | proposed |
+| catalog-code-block.3 | white-space | pre | Bound exact source content and its label. Keep source whitespace exact. | Inspect selectable source with local scrolling. | proposed |
+| catalog-code-block.4 | overflow-wrap | normal | Bound exact source content and its label. Do not split literal source. | Inspect selectable source with local scrolling. | proposed |
+| catalog-code-block.5 | padding | var(--ui-space-lg) | Bound exact source content and its label. Clear source and focus. | Inspect selectable source with local scrolling. | proposed |
+| catalog-code-block.6 | background-color | var(--ui-subtle) | Bound exact source content and its label. Use a neutral source plane. | Inspect selectable source with local scrolling. | proposed |
+
+## catalog-scroll-area
+
+Selector: `.ui-scroll-area`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-scroll-area.1 | max-block-size | 12rem | Bound an inspection region without clipping content. Give the inspection region a bounded initial viewport. | Reach overflow by keyboard, pointer and native scrollbar. | proposed |
+| catalog-scroll-area.2 | overflow | auto | Bound an inspection region without clipping content. Keep all content natively reachable. | Reach overflow by keyboard, pointer and native scrollbar. | proposed |
+| catalog-scroll-area.3 | padding | var(--ui-space-lg) | Bound an inspection region without clipping content. Clear reading and focus. | Reach overflow by keyboard, pointer and native scrollbar. | proposed |
+| catalog-scroll-area.4 | border | 1px solid var(--ui-border) | Bound an inspection region without clipping content. Identify independent scrolling. | Reach overflow by keyboard, pointer and native scrollbar. | proposed |
+
+## catalog-resizable
+
+Selector: `.ui-resizable`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-resizable.1 | inline-size | min(100%, 28rem) | Allow native CSS resizing of a bounded example workspace. Start at a bounded inspection width. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.2 | max-inline-size | 100% | Allow native CSS resizing of a bounded example workspace. Prevent resizing past its host. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.3 | min-block-size | 6rem | Allow native CSS resizing of a bounded example workspace. Keep a useful initial inspection area. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.4 | resize | both | Allow native CSS resizing of a bounded example workspace. Expose native pointer resizing, not a split-pane keyboard contract. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.5 | overflow | auto | Allow native CSS resizing of a bounded example workspace. Make content reachable without resizing. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.6 | padding | var(--ui-space-lg) | Allow native CSS resizing of a bounded example workspace. Leave internal reading clearance. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+| catalog-resizable.7 | border | 1px solid var(--ui-border) | Allow native CSS resizing of a bounded example workspace. Identify the resize surface. | Enlarge a nonessential inspection area while its content remains reachable. | proposed |
+
+## catalog-separator
+
+Selector: `.ui-divider`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-separator.1 | border | 0 | Separate topics without extra decorative panels. Remove the browser inset rule before drawing one intended edge. | Recognize a change in content group. | proposed |
+| catalog-separator.2 | border-block-start | 1px solid var(--ui-divider) | Separate topics without extra decorative panels. Separate topics with one passive crisp boundary. | Recognize a change in content group. | proposed |
+| catalog-separator.3 | margin-block | var(--ui-space-lg) | Separate topics without extra decorative panels. Separate neighboring topics with a governed gap. | Recognize a change in content group. | proposed |
+
+## catalog-progress
+
+Selector: `.ui-progress`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-progress.1 | inline-size | 100% | Display an actual bounded completion amount. Use available width for the supplied amount. | Read the quantity both as text and a native progress value. | proposed |
+| catalog-progress.2 | max-inline-size | 100% | Display an actual bounded completion amount. Bound native intrinsic sizing. | Read the quantity both as text and a native progress value. | proposed |
+| catalog-progress.3 | accent-color | var(--ui-interactive) | Display an actual bounded completion amount. Use the existing native selection accent. | Read the quantity both as text and a native progress value. | proposed |
+
+## catalog-radial-progress
+
+Selector: `.ui-radial-progress`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-radial-progress.1 | display | inline-grid | Pair a supplied completion amount with a circular graphic. Overlay the decorative ring and real amount. | Read the written percentage and accessible value independently of color. | proposed |
+| catalog-radial-progress.2 | place-items | center | Pair a supplied completion amount with a circular graphic. Center the supplied text. | Read the written percentage and accessible value independently of color. | proposed |
+| catalog-radial-progress.3 | inline-size | calc(2 * var(--ui-swatch-size)) | Pair a supplied completion amount with a circular graphic. Use the governed visual scale without smaller type. | Read the written percentage and accessible value independently of color. | proposed |
+| catalog-radial-progress.4 | aspect-ratio | 1 | Pair a supplied completion amount with a circular graphic. Keep the amount graphic square. | Read the written percentage and accessible value independently of color. | proposed |
+| catalog-radial-progress.5 | border-radius | 50% | Pair a supplied completion amount with a circular graphic. Make the graphic circular. | Read the written percentage and accessible value independently of color. | proposed |
+| catalog-radial-progress.6 | background | conic-gradient(var(--ui-interactive) calc(attr(aria-valuenow type(<number>), 0) * 3.6deg), var(--ui-divider) 0deg) | Pair a supplied completion amount with a circular graphic. Derive the graphic from the accessible percentage rather than a second independently authored value. | Read the written percentage and accessible value independently of color. | proposed |
+
+## catalog-radial-hole
+
+Selector: `.ui-radial-progress::before`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-radial-hole.1 | content | "" | Keep the ring center a readable neutral plane. Draw only a decorative center. | Read the amount without text over competing colors. | proposed |
+| catalog-radial-hole.2 | grid-area | 1 / 1 | Keep the ring center a readable neutral plane. Place the center behind text in one grid cell. | Read the amount without text over competing colors. | proposed |
+| catalog-radial-hole.3 | inline-size | calc(100% - 2 * var(--ui-space-sm)) | Keep the ring center a readable neutral plane. Apply governed ring thickness. | Read the amount without text over competing colors. | proposed |
+| catalog-radial-hole.4 | aspect-ratio | 1 | Keep the ring center a readable neutral plane. Keep the center square before cropping. | Read the amount without text over competing colors. | proposed |
+| catalog-radial-hole.5 | border-radius | 50% | Keep the ring center a readable neutral plane. Match the circular outer edge. | Read the amount without text over competing colors. | proposed |
+| catalog-radial-hole.6 | background-color | var(--ui-surface) | Keep the ring center a readable neutral plane. Use checked text/background pairing. | Read the amount without text over competing colors. | proposed |
+
+## catalog-radial-label
+
+Selector: `.ui-radial-progress > span`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-radial-label.1 | grid-area | 1 / 1 | Keep the supplied amount above its decorative center. Overlay real text after the decorative center. | Read the percentage independently of the circular graphic. | proposed |
+| catalog-radial-label.2 | position | relative | Keep the supplied amount above its decorative center. Paint text above the center without a z-index ladder. | Read the percentage independently of the circular graphic. | proposed |
+| catalog-radial-label.3 | color | var(--ui-ink) | Keep the supplied amount above its decorative center. Use checked reading ink. | Read the percentage independently of the circular graphic. | proposed |
+
+## catalog-skeleton
+
+Selector: `.ui-skeleton`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-skeleton.1 | min-block-size | var(--ui-swatch-size) | Reserve the shape of forthcoming content. Reserve a governed placeholder shape. | Recognize placeholder structure alongside written loading text. | proposed |
+| catalog-skeleton.2 | border | 1px dashed var(--ui-border) | Reserve the shape of forthcoming content. Identify placeholder structure without pulsing. | Recognize placeholder structure alongside written loading text. | proposed |
+| catalog-skeleton.3 | background-color | var(--ui-subtle) | Reserve the shape of forthcoming content. Keep loading placeholders neutral. | Recognize placeholder structure alongside written loading text. | proposed |
+| catalog-skeleton.4 | border-radius | var(--ui-radius-small) | Reserve the shape of forthcoming content. Relate the placeholder to bounded content. | Recognize placeholder structure alongside written loading text. | proposed |
+
+## catalog-spinner
+
+Selector: `.ui-spinner`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-spinner.1 | display | inline-block | Supplement a written loading state with an optional motion cue. Keep a small decorative work cue beside written text. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.2 | inline-size | 1.25rem | Supplement a written loading state with an optional motion cue. Use the existing native-mark scale. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.3 | aspect-ratio | 1 | Supplement a written loading state with an optional motion cue. Reserve a square before cropping. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.4 | border | var(--ui-switch-stroke) solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.5 | border-block-start-color | var(--ui-interactive) | Supplement a written loading state with an optional motion cue. Distinguish a segment during optional rotation. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.6 | border-radius | 50% | Supplement a written loading state with an optional motion cue. Keep the work cue circular. | Recognize ongoing work without motion being the only information. | proposed |
+
+## catalog-spin-enabled
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-spin-enabled.1 | animation | ui-catalog-spin 1s linear infinite | Enable only the explicitly requested loading preview. Rotate the supplementary cue only after native opt-in. | Inspect motion with written state and an immediate stop control. | proposed |
+
+## catalog-text-rotate
+
+Selector: `.ui-text-rotate`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-text-rotate.1 | display | flex | Demonstrate an optional sequence of supplementary labels. Keep all labels visible in static fallback. | Inspect the effect while the complete wording remains persistently available. | proposed |
+| catalog-text-rotate.2 | flex-wrap | wrap | Demonstrate an optional sequence of supplementary labels. Preserve complete supplied wording. | Inspect the effect while the complete wording remains persistently available. | proposed |
+| catalog-text-rotate.3 | gap | var(--ui-space-sm) | Demonstrate an optional sequence of supplementary labels. Separate the static labels. | Inspect the effect while the complete wording remains persistently available. | proposed |
+
+## catalog-rotation-layout
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rotation-layout.1 | display | grid | Reserve one text position for an explicitly requested effect. Overlay supplementary labels in a stable cell. | Inspect rotation without moving surrounding controls. | proposed |
+
+## catalog-rotation-labels
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rotation-labels.1 | grid-area | 1 / 1 | Rotate supplementary labels whose wording remains persistent elsewhere. Keep label position stable. | Inspect the effect without losing content. | proposed |
+| catalog-rotation-labels.2 | opacity | 0 | Rotate supplementary labels whose wording remains persistent elsewhere. Hide inactive decorative copies, not essential text. | Inspect the effect without losing content. | proposed |
+| catalog-rotation-labels.3 | animation | ui-catalog-word 9s linear infinite | Rotate supplementary labels whose wording remains persistent elsewhere. Show three supplementary labels slowly over nine seconds. | Inspect the effect without losing content. | proposed |
+
+## catalog-rotation-second
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span:nth-child(2)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rotation-second.1 | animation-delay | 3s | Sequence the second supplementary label. Offset by one third of the loop. | Compare labels in a predictable order. | proposed |
+
+## catalog-rotation-third
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span:nth-child(3)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rotation-third.1 | animation-delay | 6s | Sequence the third supplementary label. Offset by two thirds of the loop. | Compare labels in a predictable order. | proposed |
+
+## catalog-rotation-pause
+
+Selector: `.ui-motion-preview:hover .ui-text-rotate > span, .ui-motion-preview:focus-within .ui-text-rotate > span`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rotation-pause.1 | animation-play-state | paused | Allow stationary inspection of the optional effect. Pause on hover/focus; the checkbox resets to complete static wording. | Pause rotation while interacting with its preview. | proposed |
+
+## catalog-motion-reduced
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span`; condition: `(prefers-reduced-motion: reduce)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-motion-reduced.1 | animation | none | Honor reduced motion even when the preview is selected. Disable the requested visual motion under the platform preference. | Read the same complete labels without authored animation. | proposed |
+| catalog-motion-reduced.2 | opacity | 1 | Honor reduced motion even when the preview is selected. Keep every static label visible. | Read the same complete labels without authored animation. | proposed |
+| catalog-motion-reduced.3 | grid-area | auto | Honor reduced motion even when the preview is selected. Return static labels to separate cells. | Read the same complete labels without authored animation. | proposed |
+
+## catalog-spin-frame
+
+Selector: `to`. Source: project. Animation: ui-catalog-spin. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-spin-frame.1 | transform | rotate(1turn) | Define only the explicitly enabled supplementary animation. Complete one optional rotation; reduced motion disables it. | Inspect visual motion without changing essential content or data. | proposed |
+
+## catalog-word-visible
+
+Selector: `0%, 30%`. Source: project. Animation: ui-catalog-word. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-word-visible.1 | opacity | 1 | Define only the explicitly enabled supplementary animation. Keep the current supplementary label readable. | Inspect visual motion without changing essential content or data. | proposed |
+
+## catalog-word-hidden
+
+Selector: `33%, 100%`. Source: project. Animation: ui-catalog-word. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-word-hidden.1 | opacity | 0 | Define only the explicitly enabled supplementary animation. Let the next decorative label occupy the cell while persistent text remains. | Inspect visual motion without changing essential content or data. | proposed |
+
+## catalog-table
+
+Selector: `.ui-data-table`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-table.1 | inline-size | 100% | Keep a small semantic comparison readable. Use the available comparison width. | Compare values under real headers without a custom grid widget. | proposed |
+| catalog-table.2 | border-collapse | collapse | Keep a small semantic comparison readable. Avoid doubled record dividers. | Compare values under real headers without a custom grid widget. | proposed |
+| catalog-table.3 | overflow-wrap | normal | Keep a small semantic comparison readable. Preserve whole words and use local scrolling for wide data. | Compare values under real headers without a custom grid widget. | proposed |
+
+## catalog-table-cells
+
+Selector: `.ui-data-table th, .ui-data-table td`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-table-cells.1 | padding | var(--ui-space-sm) var(--ui-space-md) | Keep supplied records aligned with real headers. Use governed cell clearance. | Compare rows without compressed words or a heavy full grid. | proposed |
+| catalog-table-cells.2 | text-align | start | Keep supplied records aligned with real headers. Align with the reading direction. | Compare rows without compressed words or a heavy full grid. | proposed |
+| catalog-table-cells.3 | vertical-align | top | Keep supplied records aligned with real headers. Align multiline record starts. | Compare rows without compressed words or a heavy full grid. | proposed |
+| catalog-table-cells.4 | border-block-end | 1px solid var(--ui-divider) | Keep supplied records aligned with real headers. Separate rows quietly. | Compare rows without compressed words or a heavy full grid. | proposed |
+
+## catalog-toast
+
+Selector: `.ui-toast`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-toast.1 | padding | var(--ui-space-lg) | Group a settled notification and its text. Clear settled notification text. | Read feedback without obscuring the active working area. | proposed |
+| catalog-toast.2 | border | 1px solid var(--ui-border) | Group a settled notification and its text. Identify the feedback item. | Read feedback without obscuring the active working area. | proposed |
+| catalog-toast.3 | border-radius | var(--ui-radius-small) | Group a settled notification and its text. Use the short-support shape. | Read feedback without obscuring the active working area. | proposed |
+| catalog-toast.4 | background-color | var(--ui-subtle) | Group a settled notification and its text. Keep feedback neutral and in flow. | Read feedback without obscuring the active working area. | proposed |
+
+## catalog-countdown
+
+Selector: `.ui-countdown`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-countdown.1 | font-variant-numeric | tabular-nums | Keep supplied time fields aligned. Align supplied duration digits. | Read an explicitly static duration example without a misleading running clock. | proposed |
+| catalog-countdown.2 | font-family | ui-monospace, Consolas, monospace | Keep supplied time fields aligned. Keep time fields stable without implying ticking. | Read an explicitly static duration example without a misleading running clock. | proposed |
+| catalog-countdown.3 | font-size | 1.5rem | Keep supplied time fields aligned. Make the explicitly static duration inspectable. | Read an explicitly static duration example without a misleading running clock. | proposed |
+
+## catalog-diff
+
+Selector: `.ui-diff`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-diff.1 | display | grid | Keep before/after content adjacent for inspection. Keep both supplied versions in peer groups. | Compare both versions without hiding either from keyboard or touch users. | proposed |
+| catalog-diff.2 | grid-template-columns | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | Keep before/after content adjacent for inspection. Pair versions only when useful reading width exists. | Compare both versions without hiding either from keyboard or touch users. | proposed |
+| catalog-diff.3 | gap | var(--ui-space-lg) | Keep before/after content adjacent for inspection. Separate versions without hiding either. | Compare both versions without hiding either from keyboard or touch users. | proposed |
+
+## catalog-stage
+
+Selector: `.ui-component-stage`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-stage.1 | position | relative | Bound corner-position examples within their own workspace. Make this sample the placement containing block. | Inspect positioning without covering page controls. | proposed |
+| catalog-stage.2 | min-block-size | 12rem | Bound corner-position examples within their own workspace. Reserve visible space around the corner action. | Inspect positioning without covering page controls. | proposed |
+| catalog-stage.3 | padding | var(--ui-space-lg) | Bound corner-position examples within their own workspace. Clear ordinary stage text. | Inspect positioning without covering page controls. | proposed |
+| catalog-stage.4 | padding-block-end | calc(var(--ui-control-min) + 2 * var(--ui-space-lg)) | Bound corner-position examples within their own workspace. Reserve flow room for the corner action instead of covering text. | Inspect positioning without covering page controls. | proposed |
+| catalog-stage.5 | border | 1px solid var(--ui-divider) | Bound corner-position examples within their own workspace. Expose the local workspace boundary. | Inspect positioning without covering page controls. | proposed |
+
+## catalog-fab
+
+Selector: `.ui-fab`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-fab.1 | position | absolute | Keep a named corner action and secondary links together. Place the action within its named stage, not the viewport. | Open the extra destinations with native click, keyboard and Escape behavior. | proposed |
+| catalog-fab.2 | inset-inline-end | var(--ui-space-lg) | Keep a named corner action and secondary links together. Leave governed edge clearance. | Open the extra destinations with native click, keyboard and Escape behavior. | proposed |
+| catalog-fab.3 | inset-block-end | var(--ui-space-lg) | Keep a named corner action and secondary links together. Use the governed bottom clearance. | Open the extra destinations with native click, keyboard and Escape behavior. | proposed |
+
+## catalog-filter
+
+Selector: `.ui-filter`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-filter.1 | display | grid | Filter a bounded preloaded example through native choice state. Keep native criteria before supplied results. | Select a visible criterion and restore all examples with Reset. | proposed |
+| catalog-filter.2 | gap | var(--ui-space-md) | Filter a bounded preloaded example through native choice state. Separate criteria from results. | Select a visible criterion and restore all examples with Reset. | proposed |
+
+## catalog-filter-results
+
+Selector: `.ui-filter-results`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-filter-results.1 | display | grid | Keep supplied matching records together. Give results one gap owner. | Read preloaded records matching the native choice. | proposed |
+| catalog-filter-results.2 | gap | var(--ui-space-sm) | Keep supplied matching records together. Separate related result items. | Read preloaded records matching the native choice. | proposed |
+
+## catalog-filter-open
+
+Selector: `.ui-filter:has(input[value="open"]:checked) .ui-filter-result:not([data-state="open"])`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-filter-open.1 | display | none | Apply a native criterion to fixed supplied records. Hide only nonmatching preloaded records; Reset restores the default. | Inspect matches without an invented query or result count. | proposed |
+
+## catalog-filter-done
+
+Selector: `.ui-filter:has(input[value="done"]:checked) .ui-filter-result:not([data-state="done"])`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-filter-done.1 | display | none | Apply a native criterion to fixed supplied records. Hide only nonmatching preloaded records; Reset restores the default. | Inspect matches without an invented query or result count. | proposed |
+
+## catalog-hover-3d
+
+Selector: `.ui-hover-3d`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-hover-3d.1 | padding | var(--ui-space-xl) | Demonstrate an optional spatial card treatment. Clear the noninteractive card for its optional tilt. | Inspect the requested visual treatment without moving an interactive target. | proposed |
+| catalog-hover-3d.2 | border | 1px solid var(--ui-divider) | Demonstrate an optional spatial card treatment. Keep the example bounded. | Inspect the requested visual treatment without moving an interactive target. | proposed |
+| catalog-hover-3d.3 | background-color | var(--ui-subtle) | Demonstrate an optional spatial card treatment. Use a quiet readable surface. | Inspect the requested visual treatment without moving an interactive target. | proposed |
+
+## catalog-tilt
+
+Selector: `.ui-hover-3d:hover`; condition: `(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tilt.1 | transform | perspective(40rem) rotateX(2deg) rotateY(-2deg) | Demonstrate a small spatial treatment on noninteractive content. Use a small fixed CSS tilt rather than script-based pointer tracking. | Inspect the requested 3D appearance without continuous motion. | proposed |
+
+## catalog-hover-gallery
+
+Selector: `.ui-hover-gallery`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-hover-gallery.1 | display | grid | Preview one of several supplied images. Put native choices before supplied figures. | Use hover for a temporary preview or native radios for keyboard/touch selection. | proposed |
+| catalog-hover-gallery.2 | gap | var(--ui-space-sm) | Preview one of several supplied images. Clear choice focus from media. | Use hover for a temporary preview or native radios for keyboard/touch selection. | proposed |
+| catalog-hover-gallery.3 | border | 0 | Preview one of several supplied images. Retain the legend without extra framing. | Use hover for a temporary preview or native radios for keyboard/touch selection. | proposed |
+| catalog-hover-gallery.4 | padding | 0 | Preview one of several supplied images. Use the host inset. | Use hover for a temporary preview or native radios for keyboard/touch selection. | proposed |
+
+## catalog-gallery-figures
+
+Selector: `.ui-hover-gallery > figure`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-figures.1 | margin | 0 | Keep supplied previews grouped as native figures. Let the gallery gap own separation. | Inspect the chosen image and caption without losing the choices. | proposed |
+| catalog-gallery-figures.2 | display | none | Keep supplied previews grouped as native figures. Hide only nonselected previews. | Inspect the chosen image and caption without losing the choices. | proposed |
+
+## catalog-gallery-one
+
+Selector: `.ui-hover-gallery:has(input[value="one"]:checked) > figure[data-preview="one"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-one.1 | display | block | Show the preview selected through native radio state. Expose this selected figure and caption. | Inspect the same image using keyboard, pointer or touch. | proposed |
+
+## catalog-gallery-two
+
+Selector: `.ui-hover-gallery:has(input[value="two"]:checked) > figure[data-preview="two"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-two.1 | display | block | Show the preview selected through native radio state. Expose this selected figure and caption. | Inspect the same image using keyboard, pointer or touch. | proposed |
+
+## catalog-gallery-three
+
+Selector: `.ui-hover-gallery:has(input[value="three"]:checked) > figure[data-preview="three"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-three.1 | display | block | Show the preview selected through native radio state. Expose this selected figure and caption. | Inspect the same image using keyboard, pointer or touch. | proposed |
+
+## catalog-gallery-hover-hide
+
+Selector: `.ui-hover-gallery:has(label[data-preview]:hover) > figure[data-preview]`; condition: `(hover: hover) and (pointer: fine)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-hover-hide.1 | display | none | Replace the selected preview only during pointer inspection. Hide all supplied figures before exposing the hovered one. | Inspect another image temporarily without changing native selection. | proposed |
+
+## catalog-gallery-hover-one
+
+Selector: `.ui-hover-gallery:has(label[data-preview="one"]:hover) > figure[data-preview="one"]`; condition: `(hover: hover) and (pointer: fine)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-hover-one.1 | display | block | Expose the figure associated with the hovered choice. Show only the supplied figure for the hovered choice. | Use hover inspection while radios remain the keyboard/touch route. | proposed |
+
+## catalog-gallery-hover-two
+
+Selector: `.ui-hover-gallery:has(label[data-preview="two"]:hover) > figure[data-preview="two"]`; condition: `(hover: hover) and (pointer: fine)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-hover-two.1 | display | block | Expose the figure associated with the hovered choice. Show only the supplied figure for the hovered choice. | Use hover inspection while radios remain the keyboard/touch route. | proposed |
+
+## catalog-gallery-hover-three
+
+Selector: `.ui-hover-gallery:has(label[data-preview="three"]:hover) > figure[data-preview="three"]`; condition: `(hover: hover) and (pointer: fine)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-hover-three.1 | display | block | Expose the figure associated with the hovered choice. Show only the supplied figure for the hovered choice. | Use hover inspection while radios remain the keyboard/touch route. | proposed |
+
+## catalog-gallery-image
+
+Selector: `.ui-hover-gallery img`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-gallery-image.1 | display | block | Keep supplied gallery media responsive. Remove the inline baseline gap. | Inspect local media without page overflow. | proposed |
+| catalog-gallery-image.2 | max-inline-size | 100% | Keep supplied gallery media responsive. Bound media to its host. | Inspect local media without page overflow. | proposed |
+| catalog-gallery-image.3 | block-size | auto | Keep supplied gallery media responsive. Preserve source aspect ratio. | Inspect local media without page overflow. | proposed |
+
+## catalog-indicator
+
+Selector: `.ui-indicator`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-indicator.1 | display | inline-grid | Place compact metadata beside its owning item. Keep item and metadata in one local group. | Read a written count/status in the correct context. | proposed |
+| catalog-indicator.2 | gap | var(--ui-space-xs) | Place compact metadata beside its owning item. Separate the written indicator. | Read a written count/status in the correct context. | proposed |
+| catalog-indicator.3 | justify-items | end | Place compact metadata beside its owning item. Associate metadata with a corner without overlay. | Read a written count/status in the correct context. | proposed |
+
+## catalog-link
+
+Selector: `.ui-link`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-link.1 | text-decoration-thickness | 0.1em | Keep a destination distinguishable from plain text. Keep the existing underline intentional without color-only meaning. | Follow a meaningful underlined destination with native behavior. | proposed |
+
+## catalog-mask
+
+Selector: `.ui-mask`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mask.1 | display | block | Demonstrate optional cropping of nonessential artwork. Separate the illustrative crop from prose. | Compare shape treatments while retaining a written media explanation. | proposed |
+| catalog-mask.2 | inline-size | var(--ui-swatch-size) | Demonstrate optional cropping of nonessential artwork. Use the governed visual sample size. | Compare shape treatments while retaining a written media explanation. | proposed |
+| catalog-mask.3 | aspect-ratio | 1 | Demonstrate optional cropping of nonessential artwork. Reserve a square crop area. | Compare shape treatments while retaining a written media explanation. | proposed |
+| catalog-mask.4 | object-fit | cover | Demonstrate optional cropping of nonessential artwork. Fill the nonessential shape without distortion. | Compare shape treatments while retaining a written media explanation. | proposed |
+| catalog-mask.5 | clip-path | circle(50%) | Demonstrate optional cropping of nonessential artwork. Demonstrate cropping only on nonessential artwork. | Compare shape treatments while retaining a written media explanation. | proposed |
+
+## catalog-mask-hexagon
+
+Selector: `.ui-mask--hexagon`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mask-hexagon.1 | clip-path | polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) | Offer another optional crop shape. Use a hexagonal crop with unchanged external explanation. | Compare shape treatments while the caption carries meaning. | proposed |
+
+## catalog-mockup-frames
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mockup-frames.1 | padding | var(--ui-space-md) | Frame explicitly illustrative interface samples. Clear the supplied example contents. | Recognize illustration rather than actual system controls. | proposed |
+| catalog-mockup-frames.2 | border | var(--ui-switch-stroke) solid var(--ui-border) | Frame explicitly illustrative interface samples. Use a governed illustrative frame. | Recognize illustration rather than actual system controls. | proposed |
+| catalog-mockup-frames.3 | border-radius | var(--ui-radius-panel) | Frame explicitly illustrative interface samples. Use the containing shape. | Recognize illustration rather than actual system controls. | proposed |
+| catalog-mockup-frames.4 | background-color | var(--ui-subtle) | Frame explicitly illustrative interface samples. Keep the illustrative host neutral. | Recognize illustration rather than actual system controls. | proposed |
+| catalog-mockup-frames.5 | max-inline-size | 100% | Frame explicitly illustrative interface samples. Keep the mockup within its host. | Recognize illustration rather than actual system controls. | proposed |
+| catalog-mockup-frames.6 | margin | 0 | Frame explicitly illustrative interface samples. Let the component inset own its edges rather than adding native figure margins to its explicit width. | Recognize illustration rather than actual system controls. | proposed |
+
+## catalog-mockup-browser
+
+Selector: `.ui-mockup-browser > header`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mockup-browser.1 | padding-block-end | var(--ui-space-sm) | Frame a labelled example of a browser-like surface. Separate the written illustrative address. | Recognize illustrative chrome rather than real navigation controls. | proposed |
+| catalog-mockup-browser.2 | border-block-end | 1px solid var(--ui-divider) | Frame a labelled example of a browser-like surface. Show a toolbar boundary without fake controls. | Recognize illustrative chrome rather than real navigation controls. | proposed |
+
+## catalog-mockup-code
+
+Selector: `.ui-mockup-code pre`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mockup-code.1 | overflow | auto | Frame a labelled source example. Keep exact source locally reachable. | Inspect source without mistaking the frame for an executable editor. | proposed |
+| catalog-mockup-code.2 | white-space | pre | Frame a labelled source example. Preserve the illustrated source as text. | Inspect source without mistaking the frame for an executable editor. | proposed |
+
+## catalog-mockup-phone
+
+Selector: `.ui-mockup-phone`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mockup-phone.1 | inline-size | min(18rem, 100%) | Bound a small-device preview. Use a small responsive device-preview frame. | Inspect a contained illustrative mobile layout without clipping its explanation. | proposed |
+| catalog-mockup-phone.2 | min-block-size | 20rem | Bound a small-device preview. Give the illustration room without clipping text. | Inspect a contained illustrative mobile layout without clipping its explanation. | proposed |
+| catalog-mockup-phone.3 | border-width | var(--ui-space-sm) | Bound a small-device preview. Distinguish the static device frame from live input boundaries. | Inspect a contained illustrative mobile layout without clipping its explanation. | proposed |
+
+## catalog-mockup-window
+
+Selector: `.ui-mockup-window > header`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-mockup-window.1 | font-weight | 600 | Frame a labelled desktop-like example. Identify the written mockup caption. | Recognize the illustrative content area and caption. | proposed |
+| catalog-mockup-window.2 | border-block-end | 1px solid var(--ui-divider) | Frame a labelled desktop-like example. Separate the illustrative caption from its body. | Recognize the illustrative content area and caption. | proposed |
+
+## catalog-stack
+
+Selector: `.ui-visual-stack`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-stack.1 | padding | var(--ui-space-lg) | Indicate grouped material through nonessential background layers. Clear foreground content from the optional rear-layer cue. | Read the foreground item without hidden essential content beneath it. | proposed |
+| catalog-stack.2 | border | 1px solid var(--ui-border) | Indicate grouped material through nonessential background layers. Bound the meaningful foreground. | Read the foreground item without hidden essential content beneath it. | proposed |
+| catalog-stack.3 | box-shadow | var(--ui-space-xs) var(--ui-space-xs) 0 0 var(--ui-divider), var(--ui-space-sm) var(--ui-space-sm) 0 0 var(--ui-subtle) | Indicate grouped material through nonessential background layers. Suggest two empty rear planes without overlapping meaningful content. | Read the foreground item without hidden essential content beneath it. | proposed |
+| catalog-stack.4 | background-color | var(--ui-surface) | Indicate grouped material through nonessential background layers. Keep foreground copy on a checked plane. | Read the foreground item without hidden essential content beneath it. | proposed |
+
+## catalog-stat
+
+Selector: `.ui-stat`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-stat.1 | display | grid | Pair a supplied number with its meaning and period. Keep number and context in a definition group. | Interpret a quantity without a dashboard number lacking context. | proposed |
+| catalog-stat.2 | gap | var(--ui-space-xs) | Pair a supplied number with its meaning and period. Attach the context to its quantity. | Interpret a quantity without a dashboard number lacking context. | proposed |
+| catalog-stat.3 | margin | 0 | Pair a supplied number with its meaning and period. Let the host own outside clearance. | Interpret a quantity without a dashboard number lacking context. | proposed |
+
+## catalog-stat-value
+
+Selector: `.ui-stat dd`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-stat-value.1 | margin | 0 | Make supplied quantities readable with context. Avoid default definition indentation. | Interpret the quantity alongside its title and period. | proposed |
+| catalog-stat-value.2 | font-size | 2rem | Make supplied quantities readable with context. Use the existing title scale for the contextual quantity. | Interpret the quantity alongside its title and period. | proposed |
+| catalog-stat-value.3 | font-variant-numeric | tabular-nums | Make supplied quantities readable with context. Keep digits stable where the font supports it. | Interpret the quantity alongside its title and period. | proposed |
+
+## catalog-status
+
+Selector: `.ui-status-indicator`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-status.1 | display | inline-flex | Keep a state label and supplementary mark together. Keep mark and wording together. | Read the explicit state without relying on hue. | proposed |
+| catalog-status.2 | align-items | center | Keep a state label and supplementary mark together. Align the supplementary mark. | Read the explicit state without relying on hue. | proposed |
+| catalog-status.3 | gap | var(--ui-space-sm) | Keep a state label and supplementary mark together. Separate the real state word. | Read the explicit state without relying on hue. | proposed |
+
+## catalog-status-dot
+
+Selector: `.ui-status-indicator::before`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-status-dot.1 | content | "" | Supplement written state with a nonessential mark. Generate no essential words. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.2 | inline-size | 0.75rem | Supplement written state with a nonessential mark. Keep the cue subordinate to text. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.3 | aspect-ratio | 1 | Supplement written state with a nonessential mark. Keep a square before cropping. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.4 | border-radius | 50% | Supplement written state with a nonessential mark. Distinguish the passive mark from a control. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.5 | background-color | var(--ui-success) | Supplement written state with a nonessential mark. Use the checked state color as a supplementary cue. | Recognize a compact state without relying on hue. | proposed |
+
+## catalog-steps
+
+Selector: `.ui-steps`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-steps.1 | padding-inline-start | 4ch | Present a supplied process order and current step. Reserve native step numbering space. | Locate the current point without interpreting color alone. | proposed |
+| catalog-steps.2 | margin | 0 | Present a supplied process order and current step. Let the host own outside gaps. | Locate the current point without interpreting color alone. | proposed |
+
+## catalog-current-step
+
+Selector: `.ui-steps [aria-current="step"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-current-step.1 | font-weight | 600 | Identify the supplied current process position. Supplement the explicit Current word. | Locate the current point through wording and emphasis. | proposed |
+| catalog-current-step.2 | text-decoration | underline | Identify the supplied current process position. Provide a non-color visual cue. | Locate the current point through wording and emphasis. | proposed |
+
+## catalog-timeline
+
+Selector: `.ui-timeline`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-timeline.1 | list-style-type | none | Group supplied events in chronological order. Use written timestamps rather than extra glyphs. | Read event dates, descriptions and ordering as real text. | proposed |
+| catalog-timeline.2 | padding | 0 | Group supplied events in chronological order. Let events own their inset. | Read event dates, descriptions and ordering as real text. | proposed |
+| catalog-timeline.3 | margin | 0 | Group supplied events in chronological order. Remove duplicate outer gaps. | Read event dates, descriptions and ordering as real text. | proposed |
+
+## catalog-timeline-events
+
+Selector: `.ui-timeline li`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-timeline-events.1 | padding | var(--ui-space-sm) var(--ui-space-lg) | Connect supplied chronological events. Use governed event clearance. | Read time and description as one event in source order. | proposed |
+| catalog-timeline-events.2 | border-inline-start | 2px solid var(--ui-divider) | Connect supplied chronological events. Provide a passive timeline rule. | Read time and description as one event in source order. | proposed |
+
+## catalog-swap
+
+Selector: `.ui-swap`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-swap.1 | display | grid | Switch between two supplied presentations using a native choice. Keep control and alternative text together. | Read an alternate detail level without replacing the control or saving anything. | proposed |
+| catalog-swap.2 | gap | var(--ui-space-sm) | Switch between two supplied presentations using a native choice. Separate the stable label from its output. | Read an alternate detail level without replacing the control or saving anything. | proposed |
+
+## catalog-swap-short
+
+Selector: `.ui-swap:has(input:checked) .ui-swap-short`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-swap-short.1 | display | none | Keep the supplied detail level controlled by native choice. Hide short text when detailed presentation is selected. | Read alternate wording without replacing the control. | proposed |
+
+## catalog-swap-detail
+
+Selector: `.ui-swap:not(:has(input:checked)) .ui-swap-detail`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-swap-detail.1 | display | none | Reserve detailed wording for its native choice. Hide detail until the visible checkbox is selected. | Choose when to inspect longer supplied wording. | proposed |
+
+## catalog-theme-controller
+
+Selector: `.ui-theme-controller`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-theme-controller.1 | accent-color | var(--ui-interactive) | Preview a complete local palette through native choice state. Keep the native preview mark aligned with the local palette. | Compare brightness without a script, page-wide preference write or data change. | proposed |
+
+## catalog-theme-sandbox
+
+Selector: `.ui-theme-sandbox`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-theme-sandbox.1 | padding | var(--ui-space-lg) | Bound a purely CSS palette comparison. Clear preview text and controls. | Compare local brightness without changing stored preferences or data. | proposed |
+| catalog-theme-sandbox.2 | background-color | var(--ui-surface) | Bound a purely CSS palette comparison. Use the locally resolved reading plane. | Compare local brightness without changing stored preferences or data. | proposed |
+| catalog-theme-sandbox.3 | color | var(--ui-ink) | Bound a purely CSS palette comparison. Use the locally resolved checked ink. | Compare local brightness without changing stored preferences or data. | proposed |
+| catalog-theme-sandbox.4 | border | 1px solid var(--ui-border) | Bound a purely CSS palette comparison. Identify the preview boundary. | Compare local brightness without changing stored preferences or data. | proposed |
+
+## catalog-theme-standard
+
+Selector: `:root:not([data-vision="distinct"]) .ui-theme-sandbox:has(.ui-theme-controller:checked)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-theme-standard.1 | --ui-primary | #006aa8 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard primary role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.2 | --ui-primary-hover | #005686 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard primary-hover role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.3 | --ui-ink | #ededed | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard ink role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.4 | --ui-muted | #c2c2c2 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard muted role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.5 | --ui-canvas | #242424 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard canvas role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.6 | --ui-surface | #2e2e2e | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard surface role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.7 | --ui-subtle | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard subtle role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.8 | --ui-border | #a3a3a3 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard border role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.9 | --ui-divider | #585858 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard divider role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.10 | --ui-focus | #409fea | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard focus role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.11 | --ui-danger | #f58276 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard danger role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.12 | --ui-success | #4fc685 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard success role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.13 | --ui-success-bg | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard success-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.14 | --ui-warning | #eab54d | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard warning role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.15 | --ui-warning-bg | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard warning-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.16 | --ui-disabled | #c2c2c2 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard disabled role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.17 | --ui-disabled-bg | #404040 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard disabled-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.18 | --ui-on-primary | #ffffff | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard on-primary role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.19 | --ui-interactive | #40adf0 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard interactive role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.20 | --ui-on-interactive | #242424 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-standard on-interactive role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-standard.21 | color-scheme | dark | Apply a complete checked palette only inside the native preview. Keep browser-owned native marks coherent with the preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+
+## catalog-theme-distinct
+
+Selector: `:root[data-vision="distinct"] .ui-theme-sandbox:has(.ui-theme-controller:checked)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-theme-distinct.1 | --ui-primary | #006aa8 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct primary role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.2 | --ui-primary-hover | #005686 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct primary-hover role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.3 | --ui-ink | #ededed | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct ink role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.4 | --ui-muted | #c2c2c2 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct muted role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.5 | --ui-canvas | #242424 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct canvas role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.6 | --ui-surface | #2e2e2e | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct surface role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.7 | --ui-subtle | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct subtle role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.8 | --ui-border | #a3a3a3 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct border role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.9 | --ui-divider | #585858 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct divider role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.10 | --ui-focus | #409fea | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct focus role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.11 | --ui-danger | #d18bf0 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct danger role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.12 | --ui-success | #57adf0 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct success role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.13 | --ui-success-bg | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct success-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.14 | --ui-warning | #eab54d | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct warning role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.15 | --ui-warning-bg | #383838 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct warning-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.16 | --ui-disabled | #c2c2c2 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct disabled role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.17 | --ui-disabled-bg | #404040 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct disabled-bg role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.18 | --ui-on-primary | #ffffff | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct on-primary role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.19 | --ui-interactive | #40adf0 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct interactive role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.20 | --ui-on-interactive | #242424 | Apply a complete checked palette only inside the native preview. Reuse the independently checked dark-distinct on-interactive role in this explicit local preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+| catalog-theme-distinct.21 | color-scheme | dark | Apply a complete checked palette only inside the native preview. Keep browser-owned native marks coherent with the preview. | Inspect a coherent dark appearance without script or storage writes. | proposed |
+
+## catalog-validator
+
+Selector: `.ui-validator`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-validator.1 | display | grid | Expose browser-enforced input constraints with visible correction guidance. Keep constraints and guidance in one field sequence. | Correct an invalid example without a custom validation engine. | proposed |
+| catalog-validator.2 | gap | var(--ui-space-sm) | Expose browser-enforced input constraints with visible correction guidance. Clear focus between the input and explanation. | Correct an invalid example without a custom validation engine. | proposed |
+
+## catalog-validation-rest
+
+Selector: `.ui-validator .ui-validation-error`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-validation-rest.1 | display | none | Reserve supplementary correction for a real invalid interaction. Keep correction out of the initial flow. | Read error guidance after the native value is invalid. | proposed |
+
+## catalog-validation-border
+
+Selector: `.ui-validator input:user-invalid`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-validation-border.1 | border-color | var(--ui-danger) | Expose browser-determined invalid input. Use the checked error role after native user-invalid is true. | Find the actual value needing correction. | proposed |
+
+## catalog-validation-message
+
+Selector: `.ui-validator:has(input:user-invalid) .ui-validation-error`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-validation-message.1 | display | block | Show written guidance for the actual invalid value. Show the authored correction beside the invalid editor. | Correct the example without interpreting a colored border alone. | proposed |
+| catalog-validation-message.2 | color | var(--ui-danger) | Show written guidance for the actual invalid value. Retain checked error text contrast. | Correct the example without interpreting a colored border alone. | proposed |
+
+## catalog-tab-panel-one
+
+Selector: `.ui-tabs:not(:has(input[value="one"]:checked)) .ui-tab-panel[data-panel="one"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tab-panel-one.1 | display | none | Map native radio state to a supplied preview. Hide only the nonselected preloaded panel. | Read the chosen panel without fake ARIA tab state. | proposed |
+
+## catalog-tab-panel-two
+
+Selector: `.ui-tabs:not(:has(input[value="two"]:checked)) .ui-tab-panel[data-panel="two"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tab-panel-two.1 | display | none | Map native radio state to a supplied preview. Hide only the nonselected preloaded panel. | Read the chosen panel without fake ARIA tab state. | proposed |
+
+## catalog-motion-preview
+
+Selector: `.ui-motion-preview`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-motion-preview.1 | padding | var(--ui-space-lg) | Keep optional visual effects and their controls together. Clear the opt-in control and supplementary effect. | Stop or reset the effect through a visible native choice. | proposed |
+| catalog-motion-preview.2 | border | 1px solid var(--ui-divider) | Keep optional visual effects and their controls together. Identify the bounded optional-motion example. | Stop or reset the effect through a visible native choice. | proposed |
+
+## catalog-diff-wipe
+
+Selector: `.ui-diff-wipe`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-diff-wipe.1 | position | relative | Provide an optional native pointer-resize image comparison. Contain both supplied illustration layers. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+| catalog-diff-wipe.2 | container-type | inline-size | Provide an optional native pointer-resize image comparison. Give both layers the same container-relative image width during native resizing. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+| catalog-diff-wipe.3 | inline-size | 100% | Provide an optional native pointer-resize image comparison. Fit the available example width. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+| catalog-diff-wipe.4 | aspect-ratio | 3 / 1 | Provide an optional native pointer-resize image comparison. Reserve the supplied illustrations’ intrinsic ratio. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+| catalog-diff-wipe.5 | margin | 0 | Provide an optional native pointer-resize image comparison. Let the host own outer clearance. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+| catalog-diff-wipe.6 | border | 1px solid var(--ui-border) | Provide an optional native pointer-resize image comparison. Expose the comparison frame. | Inspect a wipe effect while complete labelled versions remain separately readable. | proposed |
+
+## catalog-diff-image
+
+Selector: `.ui-diff-wipe img`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-diff-image.1 | display | block | Keep supplied comparison layers aligned. Remove image baseline gaps. | Compare clipping rather than stretching either illustration. | proposed |
+| catalog-diff-image.2 | inline-size | 100cqw | Keep supplied comparison layers aligned. Keep the source width tied to the whole comparison frame. | Compare clipping rather than stretching either illustration. | proposed |
+| catalog-diff-image.3 | block-size | 100% | Keep supplied comparison layers aligned. Fill the reserved frame height. | Compare clipping rather than stretching either illustration. | proposed |
+| catalog-diff-image.4 | object-fit | cover | Keep supplied comparison layers aligned. Preserve aspect ratio while covering the same frame. | Compare clipping rather than stretching either illustration. | proposed |
+
+## catalog-diff-before
+
+Selector: `.ui-diff-before`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-diff-before.1 | position | absolute | Let the browser resize the optional foreground reveal. Overlay the before image on its peer. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.2 | inset-block-start | 0 | Let the browser resize the optional foreground reveal. Align both source images at the top. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.3 | inset-inline-start | 0 | Let the browser resize the optional foreground reveal. Align both sources at the reading start. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.4 | inline-size | 50% | Let the browser resize the optional foreground reveal. Start with both versions partially visible. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.5 | max-inline-size | 100% | Let the browser resize the optional foreground reveal. Prevent native resizing past the frame. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.6 | min-inline-size | 2rem | Let the browser resize the optional foreground reveal. Keep the optional handle visible. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.7 | block-size | 100% | Let the browser resize the optional foreground reveal. Keep the reveal at full image height. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.8 | resize | horizontal | Let the browser resize the optional foreground reveal. Use the native pointer resize handle; full versions remain the keyboard alternative. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.9 | overflow | hidden | Let the browser resize the optional foreground reveal. Clip only the optional duplicate before layer, never the labelled original. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.10 | border-inline-end | 2px solid var(--ui-border) | Let the browser resize the optional foreground reveal. Identify the reveal boundary. | Inspect the supplied before layer without custom pointer code. | proposed |
+| catalog-diff-before.11 | background-color | var(--ui-surface) | Let the browser resize the optional foreground reveal. Keep the duplicate illustration plane opaque. | Inspect the supplied before layer without custom pointer code. | proposed |
+
+## catalog-diff-full-images
+
+Selector: `.ui-diff img`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-diff-full-images.1 | display | block | Keep both original comparison images fully available. Separate each supplied image from its caption. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
+| catalog-diff-full-images.2 | max-inline-size | 100% | Keep both original comparison images fully available. Keep the full image within its comparison card. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
+| catalog-diff-full-images.3 | block-size | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |

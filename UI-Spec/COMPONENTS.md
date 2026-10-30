@@ -110,3 +110,7 @@ Do not add breadcrumbs without a real hierarchy, tabs without correct selection/
 ## Document content
 
 Use the opt-in `.ui-prose` reading layer described in [CONTENT.md](CONTENT.md). It defines six document heading ranks, native lists/definitions/quotations, inline meaning, literal code, document tables, figures and disclosures. The [content specimen](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/content.html) separates Markdown v1 output from additional authored HTML. This layer supplies presentation, not a parser or new tool permission. Place application forms/toolbars outside prose.
+
+## Expanded HTML/CSS catalog
+
+[CSS-COMPONENTS.md](CSS-COMPONENTS.md) defines the native/presentation/alternative/script distinction, platform requirements and integration rules for the expanded component framework. [COMPONENT-CATALOG.md](COMPONENT-CATALOG.md) supplies the exhaustive reviewed name mapping, public classes and complete example markup. Inspect the [live catalog](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html). Native browser actions work without component JavaScript; state engines, application writes and async data remain separate.

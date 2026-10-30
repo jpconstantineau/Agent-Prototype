@@ -1961,3 +1961,2355 @@ Selector: `.ui-prose details[open] > summary + *`. Policy: Density governed.
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
 | margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate an expanded disclosure from its label. Use one related-content gap after the open summary. | Recognize which content was revealed by the summary. |
+
+## catalog-card.1
+
+Selector: `.ui-card`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xl) | 1.5rem | 1rem | Contain one related item and its actions. Inset content with the governed panel token and clear offset focus. | Recognize which heading, content and action belong together. |
+
+## catalog-card.2
+
+Selector: `.ui-card`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Contain one related item and its actions. Allow the containing card to shrink around bounded source and native editors. | Recognize which heading, content and action belong together. |
+
+## catalog-card.3
+
+Selector: `.ui-card`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Contain one related item and its actions. Keep the passive group edge crisp. | Recognize which heading, content and action belong together. |
+
+## catalog-card.4
+
+Selector: `.ui-card`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Contain one related item and its actions. Distinguish the container from its controls. | Recognize which heading, content and action belong together. |
+
+## catalog-gallery.2
+
+Selector: `.ui-catalog`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | minmax(0, 1fr) | minmax(0, 1fr) | minmax(0, 1fr) | Lay out independently inspectable component examples. Keep the page track shrinkable even when a sample contains long literal source. | Review components without page-level horizontal panning. |
+
+## catalog-gallery.3
+
+Selector: `.ui-catalog`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xl) | 1.5rem | 1rem | Lay out independently inspectable component examples. Separate peer sections with the governed token. | Review components without page-level horizontal panning. |
+
+## catalog-gallery.4
+
+Selector: `.ui-catalog`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Lay out independently inspectable component examples. Let long content shrink within the page. | Review components without page-level horizontal panning. |
+
+## catalog-sample.1
+
+Selector: `.ui-catalog-sample`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound the live component within its review example. Clear content and offset focus from the boundary. | Distinguish the example from gallery navigation and adjacent components. |
+
+## catalog-sample.2
+
+Selector: `.ui-catalog-sample`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Bound the live component within its review example. Identify the live example without status color. | Distinguish the example from gallery navigation and adjacent components. |
+
+## catalog-sample.3
+
+Selector: `.ui-catalog-sample`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Bound the live component within its review example. Allow native controls to fit narrow hosts. | Distinguish the example from gallery navigation and adjacent components. |
+
+## catalog-sample-children.1
+
+Selector: `.ui-catalog-sample > *`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-end | 0 | 0 | 0 | Let the live sample own its trailing inset. Remove extra child trailing gaps. | Read a balanced sample without duplicate paragraph margins. |
+
+## catalog-sample-siblings.1
+
+Selector: `.ui-catalog-sample > * + *`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Separate peer controls inside one example. Use one leading local-content gap. | Recognize separate sample elements while keeping their group together. |
+
+## catalog-index.2
+
+Selector: `.ui-catalog-index`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | Keep the component index responsive. Preserve a useful link measure while allowing one narrow column. | Find a named example without an excessively long single-column index. |
+
+## catalog-index.3
+
+Selector: `.ui-catalog-index`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep the component index responsive. Separate related index links. | Find a named example without an excessively long single-column index. |
+
+## catalog-index.4
+
+Selector: `.ui-catalog-index`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | var(--ui-space-lg) | 1rem | 0.75rem | Keep the component index responsive. Reserve a native marker gutter. | Find a named example without an excessively long single-column index. |
+
+## catalog-source.1
+
+Selector: `.ui-catalog-source`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep inspectable markup bounded. Bound source to its card. | Copy literal example markup without panning the document. |
+
+## catalog-source.3
+
+Selector: `.ui-catalog-source`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Keep inspectable markup bounded. Leave reading and focus clearance. | Copy literal example markup without panning the document. |
+
+## catalog-source-code.1
+
+Selector: `.ui-catalog-source code`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | inherit | inherit | inherit | Keep nested source type single-owned. Let pre own the source type size. | Read literal markup without compounded size reduction. |
+
+## catalog-button.4
+
+Selector: `.ui-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Style a real action target consistently. Separate a mark from its written action. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.5
+
+Selector: `.ui-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Style a real action target consistently. Use the pointer-specific target floor. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.6
+
+Selector: `.ui-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | var(--ui-control-min) | 2.75rem | 2.25rem | Style a real action target consistently. Keep short targets sufficiently wide. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.7
+
+Selector: `.ui-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-control-pad-block) var(--ui-space-lg) | 0.5rem 1rem | 0.25rem 0.75rem | Style a real action target consistently. Apply governed target clearance without smaller text. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.8
+
+Selector: `.ui-button`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-width | 1px | 1px | 1px | Style a real action target consistently. Reserve a crisp boundary without resetting primary border color. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.10
+
+Selector: `.ui-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Style a real action target consistently. Use the control corner role. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button.11
+
+Selector: `.ui-button`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | inherit | inherit | inherit | Style a real action target consistently. Respect the body reading size rather than a smaller platform default. | Activate a named action with native pointer and keyboard behavior. |
+
+## catalog-button-group.3
+
+Selector: `.ui-button-group, .ui-join`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep related actions adjacent while allowing wrapping. Clear offset focus between peer actions. | Recognize peer actions without hidden overflow or roving-menu semantics. |
+
+## catalog-join.1
+
+Selector: `.ui-join`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Frame a related action group. Clear contained focus perimeters. | Recognize joined actions while each remains separately reachable. |
+
+## catalog-join.2
+
+Selector: `.ui-join`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Frame a related action group. Add a passive outer group edge. | Recognize joined actions while each remains separately reachable. |
+
+## catalog-join.3
+
+Selector: `.ui-join`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Frame a related action group. Use a related-control shape. | Recognize joined actions while each remains separately reachable. |
+
+## catalog-editors.4
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Keep native editors readable and bounded. Identify real native editing boundaries. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.5
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Keep native editors readable and bounded. Use the existing control shape. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.6
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-control-pad-block) var(--ui-space-md) | 0.5rem 0.75rem | 0.25rem 0.5rem | Keep native editors readable and bounded. Use governed editor insets. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.7
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Keep native editors readable and bounded. Protect pointer-specific targets. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.8
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Keep native editors readable and bounded. Fit the available field width. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.9
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Keep native editors readable and bounded. Remove intrinsic native width floors. | Enter values with platform affordances and visible focus. |
+
+## catalog-editors.10
+
+Selector: `.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep native editors readable and bounded. Keep the box within its host. | Enter values with platform affordances and visible focus. |
+
+## catalog-textarea.1
+
+Selector: `.ui-textarea`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-notes-min) | 7rem | 5.5rem | Provide a native multiline editor. Offer the governed initial multiline viewport. | Enter line breaks and resize notes vertically. |
+
+## catalog-textarea.2
+
+Selector: `.ui-textarea`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| resize | vertical | vertical | vertical | Provide a native multiline editor. Allow more notes height without widening the page. | Enter line breaks and resize notes vertically. |
+
+## catalog-otp.2
+
+Selector: `.ui-otp`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| letter-spacing | 0.25em | 0.25em | 0.25em | Keep a verification code in one native input. Separate characters while preserving one native paste target. | Paste or receive a whole code without scripted character-box navigation. |
+
+## catalog-file-input.2
+
+Selector: `.ui-file-input::file-selector-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Expose the browser-owned file chooser. Protect native chooser activation. | Choose a file only after an explicit native action. |
+
+## catalog-file-input.3
+
+Selector: `.ui-file-input::file-selector-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-inline-end | var(--ui-space-sm) | 0.5rem | 0.375rem | Expose the browser-owned file chooser. Separate the chooser from the native filename. | Choose a file only after an explicit native action. |
+
+## catalog-field.2
+
+Selector: `.ui-fieldset, .ui-form-field`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Group a persistent label, native control and supporting help. Clear the offset focus ring between rows. | Understand the question and enter a value without losing its name. |
+
+## catalog-field.3
+
+Selector: `.ui-fieldset, .ui-form-field`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Group a persistent label, native control and supporting help. Let native controls fit the host. | Understand the question and enter a value without losing its name. |
+
+## catalog-field.4
+
+Selector: `.ui-fieldset, .ui-form-field`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Group a persistent label, native control and supporting help. Avoid duplicating panel inset. | Understand the question and enter a value without losing its name. |
+
+## catalog-field.5
+
+Selector: `.ui-fieldset, .ui-form-field`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Group a persistent label, native control and supporting help. Retain fieldset semantics without a duplicate frame. | Understand the question and enter a value without losing its name. |
+
+## catalog-field.6
+
+Selector: `.ui-fieldset, .ui-form-field`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Group a persistent label, native control and supporting help. Remove browser fieldset outer gaps. | Understand the question and enter a value without losing its name. |
+
+## catalog-input-group.3
+
+Selector: `.ui-input-group`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Associate a fixed prefix or suffix with an input. Separate fixed text while clearing focus. | Understand units/context without putting fake values into the editable string. |
+
+## catalog-input-group.4
+
+Selector: `.ui-input-group`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Associate a fixed prefix or suffix with an input. Allow the editor to shrink. | Understand units/context without putting fake values into the editable string. |
+
+## catalog-group-input.1
+
+Selector: `.ui-input-group > input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| flex | 1 1 0 | 1 1 0 | 1 1 0 | Give editable text the remaining group width. Use available space and permit shrinking. | Read units without losing the editable region. |
+
+## catalog-group-input.2
+
+Selector: `.ui-input-group > input`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Give editable text the remaining group width. Remove the native intrinsic width floor. | Read units without losing the editable region. |
+
+## catalog-checkbox.1
+
+Selector: `.ui-checkbox, .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 1.25rem | 1.25rem | 1.25rem | Style a native multiple-choice mark. Keep the existing 20px native mark. | Toggle an explicitly labelled option without custom state synchronization. |
+
+## catalog-checkbox.2
+
+Selector: `.ui-checkbox, .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1.25rem | 1.25rem | 1.25rem | Style a native multiple-choice mark. Keep the native mark square. | Toggle an explicitly labelled option without custom state synchronization. |
+
+## catalog-slider.1
+
+Selector: `.ui-range`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Expose a bounded numeric choice. Expose the available native track. | Change a value with native arrow keys or pointer input. |
+
+## catalog-slider.2
+
+Selector: `.ui-range`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Expose a bounded numeric choice. Keep the track within narrow hosts. | Change a value with native arrow keys or pointer input. |
+
+## catalog-slider.3
+
+Selector: `.ui-range`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Expose a bounded numeric choice. Protect native slider hit height. | Change a value with native arrow keys or pointer input. |
+
+## catalog-switch.1
+
+Selector: `.ui-toggle`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Present a named binary native preference. Relate the choice label to existing switches. | Toggle an explicit choice with native checked state and Space. |
+
+## catalog-switch.2
+
+Selector: `.ui-toggle`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline | var(--ui-space-sm) | 0.5rem | 0.375rem | Present a named binary native preference. Clear the native mark and label from the edge. | Toggle an explicit choice with native checked state and Space. |
+
+## catalog-toggle.3
+
+Selector: `.ui-toggle-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Use native checkbox semantics for a persistent binary choice. Separate mark and name. | See and change the selected option without a fake aria-pressed button. |
+
+## catalog-toggle.4
+
+Selector: `.ui-toggle-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Use native checkbox semantics for a persistent binary choice. Use the governed target floor. | See and change the selected option without a fake aria-pressed button. |
+
+## catalog-toggle.5
+
+Selector: `.ui-toggle-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-control-pad-block) var(--ui-space-md) | 0.5rem 0.75rem | 0.25rem 0.5rem | Use native checkbox semantics for a persistent binary choice. Inset the selectable label. | See and change the selected option without a fake aria-pressed button. |
+
+## catalog-toggle.6
+
+Selector: `.ui-toggle-button`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Use native checkbox semantics for a persistent binary choice. Expose the option boundary. | See and change the selected option without a fake aria-pressed button. |
+
+## catalog-toggle.7
+
+Selector: `.ui-toggle-button`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Use native checkbox semantics for a persistent binary choice. Use a control shape. | See and change the selected option without a fake aria-pressed button. |
+
+## catalog-toggle-group.3
+
+Selector: `.ui-toggle-group`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep several persistent binary choices together. Clear peer focus. | Select multiple explicit options with native checkbox behavior. |
+
+## catalog-toggle-group.4
+
+Selector: `.ui-toggle-group`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Keep several persistent binary choices together. Retain group semantics without another frame. | Select multiple explicit options with native checkbox behavior. |
+
+## catalog-toggle-group.5
+
+Selector: `.ui-toggle-group`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Keep several persistent binary choices together. Let the host own its inset. | Select multiple explicit options with native checkbox behavior. |
+
+## catalog-rating.3
+
+Selector: `.ui-rating`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Offer a bounded native single-choice scale. Separate complete label targets. | Choose a named rating with arrow keys and full-size labels. |
+
+## catalog-rating.4
+
+Selector: `.ui-rating`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Offer a bounded native single-choice scale. Retain native group semantics. | Choose a named rating with arrow keys and full-size labels. |
+
+## catalog-rating.5
+
+Selector: `.ui-rating`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Offer a bounded native single-choice scale. Use the containing inset. | Choose a named rating with arrow keys and full-size labels. |
+
+## catalog-disclosures.1
+
+Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Frame optional native disclosures. Clear reading and focus from the edge. | Find the named summary and inspect optional content. |
+
+## catalog-disclosures.2
+
+Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Frame optional native disclosures. Use a quiet containing edge. | Find the named summary and inspect optional content. |
+
+## catalog-disclosures.3
+
+Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Frame optional native disclosures. Use the bounded-support shape. | Find the named summary and inspect optional content. |
+
+## catalog-summaries.1
+
+Selector: `.ui-accordion > summary, .ui-collapse > summary, .ui-sidebar > summary, .ui-trace > summary`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Keep native disclosure labels operable. Protect the summary target height. | Use original summary markers and native activation keys. |
+
+## catalog-summary-focus.1
+
+Selector: `.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | Include summaries in governed keyboard focus. Use the protected focus perimeter. | Find the disclosure receiving the next keystroke. |
+
+## catalog-summary-focus.2
+
+Selector: `.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline-offset | 3px | 3px | 3px | Include summaries in governed keyboard focus. Separate focus from text and boundaries. | Find the disclosure receiving the next keystroke. |
+
+## catalog-disclosed-content.1
+
+Selector: `.ui-accordion[open] > summary + *, .ui-collapse[open] > summary + *, .ui-sidebar[open] > summary + *, .ui-trace[open] > summary + *`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate revealed content from its control. Use a related-content gap. | Read the revealed content as part of the selected explanation. |
+
+## catalog-accordion.1
+
+Selector: `.ui-accordion + .ui-accordion`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-sm) | 0.5rem | 0.375rem | Group related optional explanations. Separate peer summaries without splitting the family. | Expand one named explanation while keeping other summaries reachable. |
+
+## catalog-sidebar.1
+
+Selector: `.ui-sidebar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 24rem | 24rem | 24rem | Group optional navigation or support next to content. Keep support navigation at a bounded measure. | Reveal a named support list without sacrificing source order. |
+
+## catalog-trace.1
+
+Selector: `.ui-trace ol`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | 4ch | 4ch | 4ch | Group a supplied sequence of diagnostic steps. Reserve native step-number space. | Inspect an ordered explanation without mistaking it for live execution. |
+
+## catalog-alert.1
+
+Selector: `.ui-alert`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Make a condition and its next step readable together. Keep condition and next step clear of the edge. | Recognize an important message from its wording and structure. |
+
+## catalog-alert.2
+
+Selector: `.ui-alert`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | 4px solid var(--ui-border) | 3px solid var(--ui-border) | Make a condition and its next step readable together. Identify guidance with the neutral governed stroke. | Recognize an important message from its wording and structure. |
+
+## catalog-empty.1
+
+Selector: `.ui-empty-state`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-section) | 2rem | 1.5rem | Explain missing data and one recovery destination. Give absence and recovery a clear working area. | Distinguish an empty example from an error or loading state. |
+
+## catalog-empty.2
+
+Selector: `.ui-empty-state`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px dashed var(--ui-border) | 1px dashed var(--ui-border) | 1px dashed var(--ui-border) | Explain missing data and one recovery destination. Distinguish a placeholder from populated content. | Distinguish an empty example from an error or loading state. |
+
+## catalog-empty.3
+
+Selector: `.ui-empty-state`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Explain missing data and one recovery destination. Use the bounded-support shape. | Distinguish an empty example from an error or loading state. |
+
+## catalog-avatar.3
+
+Selector: `.ui-avatar`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | var(--ui-swatch-size) | 3rem | 2.5rem | Show an identity thumbnail or initials. Use the governed visual sample size. | Associate a written person name with a compact identity mark. |
+
+## catalog-avatar.4
+
+Selector: `.ui-avatar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Show an identity thumbnail or initials. Reserve a square before cropping. | Associate a written person name with a compact identity mark. |
+
+## catalog-avatar.5
+
+Selector: `.ui-avatar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Show an identity thumbnail or initials. Distinguish identity from an action. | Associate a written person name with a compact identity mark. |
+
+## catalog-avatar.6
+
+Selector: `.ui-avatar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Show an identity thumbnail or initials. Keep the silhouette visible. | Associate a written person name with a compact identity mark. |
+
+## catalog-badge.2
+
+Selector: `.ui-badge`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xs) var(--ui-space-sm) | 0.25rem 0.5rem | 0.25rem 0.375rem | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read a state or category without depending on a colored dot. |
+
+## catalog-badge.3
+
+Selector: `.ui-badge`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read a state or category without depending on a colored dot. |
+
+## catalog-badge.4
+
+Selector: `.ui-badge`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Keep short metadata visibly grouped. Use the short-label shape. | Read a state or category without depending on a colored dot. |
+
+## catalog-badge.5
+
+Selector: `.ui-badge`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. |
+
+## catalog-aura.1
+
+Selector: `.ui-aura`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Demonstrate an optional accent frame without tinting a large work area. Separate the requested accent from text. | Locate the explicitly labelled example emphasis without confusing it with focus. |
+
+## catalog-aura.2
+
+Selector: `.ui-aura`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | var(--ui-switch-stroke) solid transparent | 2px solid transparent | 1px solid transparent | Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment. | Locate the explicitly labelled example emphasis without confusing it with focus. |
+
+## catalog-aura.3
+
+Selector: `.ui-aura`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. |
+
+## catalog-aspect-ratio.1
+
+Selector: `.ui-aspect-ratio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 16 / 9 | 16 / 9 | 16 / 9 | Reserve a predictable media frame. Reserve a familiar wide media rectangle. | Inspect media without distortion or layout jumps. |
+
+## catalog-aspect-image.1
+
+Selector: `.ui-aspect-ratio img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Keep the whole supplied image within its frame. Fit the frame width. | Inspect media without distortion or essential cropping. |
+
+## catalog-aspect-image.2
+
+Selector: `.ui-aspect-ratio img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 100% | 100% | 100% | Keep the whole supplied image within its frame. Fit its reserved height. | Inspect media without distortion or essential cropping. |
+
+## catalog-aspect-image.3
+
+Selector: `.ui-aspect-ratio img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | 0 | 0 | 0 | Keep the whole supplied image within its frame. Permit grid shrinking. | Inspect media without distortion or essential cropping. |
+
+## catalog-aspect-image.4
+
+Selector: `.ui-aspect-ratio img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| object-fit | contain | contain | contain | Keep the whole supplied image within its frame. Preserve the full source aspect ratio. | Inspect media without distortion or essential cropping. |
+
+## catalog-attachment.3
+
+Selector: `.ui-attachment`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Present an explicitly named file destination. Separate name and format. | Open the supplied local sample without a disguised action or automatic upload. |
+
+## catalog-attachment.4
+
+Selector: `.ui-attachment`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-md) | 0.75rem | 0.5rem | Present an explicitly named file destination. Give the destination an inspection target. | Open the supplied local sample without a disguised action or automatic upload. |
+
+## catalog-attachment.5
+
+Selector: `.ui-attachment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Present an explicitly named file destination. Identify the supplied file destination. | Open the supplied local sample without a disguised action or automatic upload. |
+
+## catalog-attachment.6
+
+Selector: `.ui-attachment`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Present an explicitly named file destination. Protect the target minimum. | Open the supplied local sample without a disguised action or automatic upload. |
+
+## catalog-navigation-lists.3
+
+Selector: `.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-menu ul`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep ordinary destinations in predictable source order. Separate native targets. | Navigate real links without fake application-menu semantics. |
+
+## catalog-navigation-lists.5
+
+Selector: `.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-menu ul`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Keep ordinary destinations in predictable source order. Let the host own the inset. | Navigate real links without fake application-menu semantics. |
+
+## catalog-navigation-lists.6
+
+Selector: `.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-menu ul`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Keep ordinary destinations in predictable source order. Avoid duplicate list gaps. | Navigate real links without fake application-menu semantics. |
+
+## catalog-pagination.2
+
+Selector: `.ui-pagination [aria-current="page"]`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 2px solid currentColor | 2px solid currentColor | 2px solid currentColor | Express the current position and available page destinations. Give the current page a non-color cue. | Navigate a known page without confusing a visual index with loaded data. |
+
+## catalog-tabs.2
+
+Selector: `.ui-tabs`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Offer linked destinations or a native choice between preloaded panels. Clear choice focus. | Choose a labelled preview without a fake ARIA tab state. |
+
+## catalog-tabs.3
+
+Selector: `.ui-tabs`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Offer linked destinations or a native choice between preloaded panels. Retain the legend without another frame. | Choose a labelled preview without a fake ARIA tab state. |
+
+## catalog-tabs.4
+
+Selector: `.ui-tabs`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Offer linked destinations or a native choice between preloaded panels. Use the containing inset. | Choose a labelled preview without a fake ARIA tab state. |
+
+## catalog-tabs.5
+
+Selector: `.ui-tabs`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Offer linked destinations or a native choice between preloaded panels. Remove default fieldset outer gaps. | Choose a labelled preview without a fake ARIA tab state. |
+
+## catalog-tab-links.1
+
+Selector: `.ui-tab-links a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Distinguish destination links without fake tab roles. Inset the written label. | Follow a real destination using normal keyboard activation. |
+
+## catalog-tab-links.2
+
+Selector: `.ui-tab-links a`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | Distinguish destination links without fake tab roles. Identify the row of destinations. | Follow a real destination using normal keyboard activation. |
+
+## catalog-tab-links.3
+
+Selector: `.ui-tab-links a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Distinguish destination links without fake tab roles. Protect native link activation. | Follow a real destination using normal keyboard activation. |
+
+## catalog-nav-targets.3
+
+Selector: `.ui-breadcrumb a, .ui-pagination a, .ui-dock a, .ui-menu a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Keep component navigation usable. Use the pointer-specific target floor. | Activate named destinations accurately. |
+
+## catalog-nav-targets.4
+
+Selector: `.ui-breadcrumb a, .ui-pagination a, .ui-dock a, .ui-menu a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep component navigation usable. Clear the label from peer links. | Activate named destinations accurately. |
+
+## catalog-navbar.5
+
+Selector: `.ui-navbar`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-md) | 0.75rem | 0.5rem | Group identity and primary destinations. Keep a local group gap. | Locate navigation that wraps rather than disappearing on narrow screens. |
+
+## catalog-navbar.6
+
+Selector: `.ui-navbar`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Group identity and primary destinations. Clear text and native targets. | Locate navigation that wraps rather than disappearing on narrow screens. |
+
+## catalog-dock.2
+
+Selector: `.ui-dock`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Group a small set of working-area destinations. Expose the local navigation boundary. | Find the current location without floating over document content. |
+
+## catalog-dock.3
+
+Selector: `.ui-dock`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Group a small set of working-area destinations. Clear native link focus. | Find the current location without floating over document content. |
+
+## catalog-footer.3
+
+Selector: `.ui-footer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Group document-end information and destinations. Separate footer purposes. | Find supporting links without confusing them with the main task. |
+
+## catalog-footer.4
+
+Selector: `.ui-footer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block | var(--ui-space-lg) | 1rem | 0.75rem | Group document-end information and destinations. Give closing information reading clearance. | Find supporting links without confusing them with the main task. |
+
+## catalog-footer.5
+
+Selector: `.ui-footer`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Group document-end information and destinations. Mark the end of main content. | Find supporting links without confusing them with the main task. |
+
+## catalog-hero.1
+
+Selector: `.ui-hero`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-section) | 2rem | 1.5rem | Introduce one purpose and a next destination. Give the introduction a clear start. | Understand the surface before choosing an action. |
+
+## catalog-hero.3
+
+Selector: `.ui-hero`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 65ch | 65ch | 65ch | Introduce one purpose and a next destination. Bound sustained introductory copy. | Understand the surface before choosing an action. |
+
+## catalog-chat.2
+
+Selector: `.ui-chat`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Group author, timestamp and message content. Separate message parts without extra cards. | Read who said what without relying on left/right alignment or hue alone. |
+
+## catalog-bubble.1
+
+Selector: `.ui-bubble`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-md) | 0.75rem | 0.5rem | Bound supplied conversation text. Use the local message inset. | Read a message as belonging to its written author. |
+
+## catalog-bubble.2
+
+Selector: `.ui-bubble`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Bound supplied conversation text. Identify the message group. | Read a message as belonging to its written author. |
+
+## catalog-bubble.4
+
+Selector: `.ui-bubble`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 65ch | 65ch | 65ch | Bound supplied conversation text. Keep message lines readable. | Read a message as belonging to its written author. |
+
+## catalog-message.1
+
+Selector: `.ui-message`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Separate message content from its metadata. Let the chat gap own separation. | Read exact wording without depending on alignment. |
+
+## catalog-item.2
+
+Selector: `.ui-item-list`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Present comparable named rows. Let each item own its inset. | Scan items and use their explicit links without making whole rows clickable. |
+
+## catalog-item.3
+
+Selector: `.ui-item-list`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Present comparable named rows. Avoid duplicate list outer gaps. | Scan items and use their explicit links without making whole rows clickable. |
+
+## catalog-item-row.4
+
+Selector: `.ui-item`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate supplied records from peers. Leave focus room around links. | Scan the named record and its explicit destination. |
+
+## catalog-item-row.5
+
+Selector: `.ui-item`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-md) | 0.75rem | 0.5rem | Separate supplied records from peers. Inset each record. | Scan the named record and its explicit destination. |
+
+## catalog-item-row.6
+
+Selector: `.ui-item`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Separate supplied records from peers. Separate records quietly. | Scan the named record and its explicit destination. |
+
+## catalog-kbd.2
+
+Selector: `.ui-kbd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 var(--ui-space-xs) | 0 0.25rem | 0 0.25rem | Distinguish a key name from an app control. Leave inline clearance without inflating line rhythm. | Read a keyboard instruction without trying to click the keycap. |
+
+## catalog-kbd.3
+
+Selector: `.ui-kbd`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Distinguish a key name from an app control. Identify a noninteractive keycap. | Read a keyboard instruction without trying to click the keycap. |
+
+## catalog-kbd.4
+
+Selector: `.ui-kbd`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Distinguish a key name from an app control. Use the bounded-control shape. | Read a keyboard instruction without trying to click the keycap. |
+
+## catalog-marker.3
+
+Selector: `.ui-marker`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 1px solid currentColor | 1px solid currentColor | 1px solid currentColor | Identify a relevant text fragment. Expose a non-color highlight boundary. | Find the marked phrase without interpreting an alarm color. |
+
+## catalog-direction.2
+
+Selector: `.ui-direction`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | 4px solid var(--ui-border) | 3px solid var(--ui-border) | Respect the document language direction through logical layout. Demonstrate a logical start boundary. | Read mixed direction content without visual order hacks. |
+
+## catalog-direction.3
+
+Selector: `.ui-direction`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | var(--ui-space-md) | 0.75rem | 0.5rem | Respect the document language direction through logical layout. Clear text from the direction-aware boundary. | Read mixed direction content without visual order hacks. |
+
+## catalog-popover-panels.1
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Style browser-owned nonmodal top-layer surfaces. Clear reading text and focus. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.2
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Style browser-owned nonmodal top-layer surfaces. Expose the top-layer boundary. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.3
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Style browser-owned nonmodal top-layer surfaces. Use the support-surface shape. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.6
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | min(32rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(32rem, calc(100vw - 2 * 1rem)) | min(32rem, calc(100vw - 2 * 0.75rem)) | Style browser-owned nonmodal top-layer surfaces. Fit the surface within narrow viewports. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.7
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | calc(100dvh - 2 * 1rem) | calc(100dvh - 2 * 0.75rem) | Style browser-owned nonmodal top-layer surfaces. Fit enlarged content inside the dynamic viewport. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.9
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | var(--ui-space-sm) | 0.5rem | 0.375rem | Style browser-owned nonmodal top-layer surfaces. Clear the popup from its invoker. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.10
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset | auto | auto | auto | Style browser-owned nonmodal top-layer surfaces. Replace UA viewport centering with implicit-anchor placement. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover-panels.11
+
+Selector: `.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| position-area | block-end | block-end | block-end | Style browser-owned nonmodal top-layer surfaces. Place support beside its native invoker. | Read support while native dismissal and relationships remain authoritative. |
+
+## catalog-popover.1
+
+Selector: `.ui-popover`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(28rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(28rem, calc(100vw - 2 * 1rem)) | min(28rem, calc(100vw - 2 * 0.75rem)) | Show nonmodal supporting information in the top layer. Give this support type useful bounded width while preserving viewport clearance. | Open a named surface and dismiss it with Escape or a click outside. |
+
+## catalog-dropdown.1
+
+Selector: `.ui-dropdown`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(20rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(20rem, calc(100vw - 2 * 1rem)) | min(20rem, calc(100vw - 2 * 0.75rem)) | Expose a compact group of navigation links on request. Give this support type useful bounded width while preserving viewport clearance. | Open the link group and navigate it with ordinary Tab/Enter. |
+
+## catalog-hover-card.1
+
+Selector: `.ui-hover-card`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(24rem, calc(100vw - 2 * 1rem)) | min(24rem, calc(100vw - 2 * 0.75rem)) | Show a supplementary preview without replacing the primary link. Give this support type useful bounded width while preserving viewport clearance. | Inspect extra context on hover, focus or explicit click. |
+
+## catalog-tooltip.1
+
+Selector: `.ui-tooltip`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(24rem, calc(100vw - 2 * 1rem)) | min(24rem, calc(100vw - 2 * 0.75rem)) | Offer supplementary noninteractive help without hiding required instructions. Give this support type useful bounded width while preserving viewport clearance. | Read help on hover/focus/click and dismiss it without moving focus. |
+
+## catalog-megamenu.1
+
+Selector: `.ui-megamenu`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(40rem, calc(100vw - 2 * var(--ui-dialog-clearance))) | min(40rem, calc(100vw - 2 * 1rem)) | min(40rem, calc(100vw - 2 * 0.75rem)) | Group several destination categories in one requested surface. Give this support type useful bounded width while preserving viewport clearance. | Open grouped links with ordinary keyboard navigation and native dismissal. |
+
+## catalog-tooltip-type.1
+
+Selector: `.ui-tooltip`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Keep optional help readable without overpowering its invoker. Use the protected readable help size. | Read supplementary help in the established secondary size. |
+
+## catalog-megamenu-grid.2
+
+Selector: `.ui-megamenu > div`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | Lay out destination categories within a native popover. Fit columns only when each has useful width. | Find grouped destinations without panning the page. |
+
+## catalog-megamenu-grid.3
+
+Selector: `.ui-megamenu > div`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Lay out destination categories within a native popover. Separate destination categories. | Find grouped destinations without panning the page. |
+
+## catalog-modal-panels.1
+
+Selector: `.ui-modal, .ui-alert-dialog, .ui-drawer, .ui-sheet`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(32rem, calc(100% - 2 * var(--ui-dialog-clearance))) | min(32rem, calc(100% - 2 * 1rem)) | min(32rem, calc(100% - 2 * 0.75rem)) | Bound browser-owned modal surfaces. Preserve governed outer clearance. | Dismiss support natively while keeping long content reachable. |
+
+## catalog-modal-panels.2
+
+Selector: `.ui-modal, .ui-alert-dialog, .ui-drawer, .ui-sheet`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | calc(100dvh - 2 * 1rem) | calc(100dvh - 2 * 0.75rem) | Bound browser-owned modal surfaces. Fit the dynamic viewport. | Dismiss support natively while keeping long content reachable. |
+
+## catalog-modal-panels.3
+
+Selector: `.ui-modal, .ui-alert-dialog, .ui-drawer, .ui-sheet`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xl) | 1.5rem | 1rem | Bound browser-owned modal surfaces. Clear text and safe-close focus from the edge. | Dismiss support natively while keeping long content reachable. |
+
+## catalog-dialog.1
+
+Selector: `.ui-modal`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Present a bounded modal surface with native focus handling. Use the containing-group modal shape. | Read and dismiss a blocking explanation without losing the opener. |
+
+## catalog-alert-dialog.1
+
+Selector: `.ui-alert-dialog`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start-width | var(--ui-notice-stroke) | 4px | 3px | Focus a blocking example decision in the native top layer. Give the blocking decision a restrained neutral start emphasis. | Read the decision and cancel safely with native focus return. |
+
+## catalog-drawer.1
+
+Selector: `.ui-drawer`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-start | auto | auto | auto | Place a named modal support surface at an edge. Align to the inline end. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-drawer.2
+
+Selector: `.ui-drawer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-end | var(--ui-dialog-clearance) | 1rem | 0.75rem | Place a named modal support surface at an edge. Preserve outer edge clearance. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-drawer.3
+
+Selector: `.ui-drawer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block | var(--ui-dialog-clearance) | 1rem | 0.75rem | Place a named modal support surface at an edge. Leave visible top/bottom edges. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-drawer.4
+
+Selector: `.ui-drawer`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Place a named modal support surface at an edge. Prevent UA auto-centering. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-drawer.5
+
+Selector: `.ui-drawer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(24rem, calc(100% - 2 * var(--ui-dialog-clearance))) | min(24rem, calc(100% - 2 * 1rem)) | min(24rem, calc(100% - 2 * 0.75rem)) | Place a named modal support surface at an edge. Keep support narrow and mobile-bounded. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-drawer.6
+
+Selector: `.ui-drawer`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | calc(100dvh - 2 * var(--ui-dialog-clearance)) | calc(100dvh - 2 * 1rem) | calc(100dvh - 2 * 0.75rem) | Place a named modal support surface at an edge. Use available height with outer clearance. | Open and dismiss an edge panel with native focus and Escape behavior. |
+
+## catalog-sheet.1
+
+Selector: `.ui-sheet`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-start | auto | auto | auto | Place a blocking support surface along the lower edge. Place support near the bottom. | Read and dismiss supplementary content with native modal behavior. |
+
+## catalog-sheet.2
+
+Selector: `.ui-sheet`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-end | var(--ui-dialog-clearance) | 1rem | 0.75rem | Place a blocking support surface along the lower edge. Preserve bottom outer clearance. | Read and dismiss supplementary content with native modal behavior. |
+
+## catalog-sheet.3
+
+Selector: `.ui-sheet`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block | 0 | 0 | 0 | Place a blocking support surface along the lower edge. Avoid vertical auto-centering. | Read and dismiss supplementary content with native modal behavior. |
+
+## catalog-sheet.4
+
+Selector: `.ui-sheet`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(48rem, calc(100% - 2 * var(--ui-dialog-clearance))) | min(48rem, calc(100% - 2 * 1rem)) | min(48rem, calc(100% - 2 * 0.75rem)) | Place a blocking support surface along the lower edge. Allow wider support without mobile overflow. | Read and dismiss supplementary content with native modal behavior. |
+
+## catalog-carousel.2
+
+Selector: `.ui-carousel`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Offer an ordered horizontally scrollable set of panels. Separate panel boundaries. | Reach every panel through native scrolling and named fragment links. |
+
+## catalog-carousel.5
+
+Selector: `.ui-carousel`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Offer an ordered horizontally scrollable set of panels. Clear focus around links in slides. | Reach every panel through native scrolling and named fragment links. |
+
+## catalog-slide.1
+
+Selector: `.ui-slide`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| flex | 0 0 100% | 0 0 100% | 0 0 100% | Give one supplied panel a local viewport. Keep panels from becoming squeezed fragments. | Inspect one panel and reach peers without auto-rotation. |
+
+## catalog-slide.2
+
+Selector: `.ui-slide`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| scroll-snap-align | start | start | start | Give one supplied panel a local viewport. Settle at the reading start. | Inspect one panel and reach peers without auto-rotation. |
+
+## catalog-slide.3
+
+Selector: `.ui-slide`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Give one supplied panel a local viewport. Clear panel contents. | Inspect one panel and reach peers without auto-rotation. |
+
+## catalog-slide.4
+
+Selector: `.ui-slide`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Give one supplied panel a local viewport. Identify peer panels. | Inspect one panel and reach peers without auto-rotation. |
+
+## catalog-slide.5
+
+Selector: `.ui-slide`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Give one supplied panel a local viewport. Let supplied text wrap. | Inspect one panel and reach peers without auto-rotation. |
+
+## catalog-code-block.1
+
+Selector: `.ui-code-block`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Bound exact source content and its label. Bound source by its host. | Inspect selectable source with local scrolling. |
+
+## catalog-code-block.5
+
+Selector: `.ui-code-block`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound exact source content and its label. Clear source and focus. | Inspect selectable source with local scrolling. |
+
+## catalog-scroll-area.1
+
+Selector: `.ui-scroll-area`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-block-size | 12rem | 12rem | 12rem | Bound an inspection region without clipping content. Give the inspection region a bounded initial viewport. | Reach overflow by keyboard, pointer and native scrollbar. |
+
+## catalog-scroll-area.3
+
+Selector: `.ui-scroll-area`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound an inspection region without clipping content. Clear reading and focus. | Reach overflow by keyboard, pointer and native scrollbar. |
+
+## catalog-scroll-area.4
+
+Selector: `.ui-scroll-area`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Bound an inspection region without clipping content. Identify independent scrolling. | Reach overflow by keyboard, pointer and native scrollbar. |
+
+## catalog-resizable.1
+
+Selector: `.ui-resizable`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(100%, 28rem) | min(100%, 28rem) | min(100%, 28rem) | Allow native CSS resizing of a bounded example workspace. Start at a bounded inspection width. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-resizable.2
+
+Selector: `.ui-resizable`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Allow native CSS resizing of a bounded example workspace. Prevent resizing past its host. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-resizable.3
+
+Selector: `.ui-resizable`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | 6rem | 6rem | 6rem | Allow native CSS resizing of a bounded example workspace. Keep a useful initial inspection area. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-resizable.4
+
+Selector: `.ui-resizable`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| resize | both | both | both | Allow native CSS resizing of a bounded example workspace. Expose native pointer resizing, not a split-pane keyboard contract. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-resizable.6
+
+Selector: `.ui-resizable`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Allow native CSS resizing of a bounded example workspace. Leave internal reading clearance. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-resizable.7
+
+Selector: `.ui-resizable`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Allow native CSS resizing of a bounded example workspace. Identify the resize surface. | Enlarge a nonessential inspection area while its content remains reachable. |
+
+## catalog-separator.1
+
+Selector: `.ui-divider`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Separate topics without extra decorative panels. Remove the browser inset rule before drawing one intended edge. | Recognize a change in content group. |
+
+## catalog-separator.2
+
+Selector: `.ui-divider`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Separate topics without extra decorative panels. Separate topics with one passive crisp boundary. | Recognize a change in content group. |
+
+## catalog-separator.3
+
+Selector: `.ui-divider`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block | var(--ui-space-lg) | 1rem | 0.75rem | Separate topics without extra decorative panels. Separate neighboring topics with a governed gap. | Recognize a change in content group. |
+
+## catalog-progress.1
+
+Selector: `.ui-progress`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Display an actual bounded completion amount. Use available width for the supplied amount. | Read the quantity both as text and a native progress value. |
+
+## catalog-progress.2
+
+Selector: `.ui-progress`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Display an actual bounded completion amount. Bound native intrinsic sizing. | Read the quantity both as text and a native progress value. |
+
+## catalog-radial-progress.3
+
+Selector: `.ui-radial-progress`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | calc(2 * var(--ui-swatch-size)) | calc(2 * 3rem) | calc(2 * 2.5rem) | Pair a supplied completion amount with a circular graphic. Use the governed visual scale without smaller type. | Read the written percentage and accessible value independently of color. |
+
+## catalog-radial-progress.4
+
+Selector: `.ui-radial-progress`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Pair a supplied completion amount with a circular graphic. Keep the amount graphic square. | Read the written percentage and accessible value independently of color. |
+
+## catalog-radial-progress.5
+
+Selector: `.ui-radial-progress`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Pair a supplied completion amount with a circular graphic. Make the graphic circular. | Read the written percentage and accessible value independently of color. |
+
+## catalog-radial-hole.3
+
+Selector: `.ui-radial-progress::before`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | calc(100% - 2 * var(--ui-space-sm)) | calc(100% - 2 * 0.5rem) | calc(100% - 2 * 0.375rem) | Keep the ring center a readable neutral plane. Apply governed ring thickness. | Read the amount without text over competing colors. |
+
+## catalog-radial-hole.4
+
+Selector: `.ui-radial-progress::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Keep the ring center a readable neutral plane. Keep the center square before cropping. | Read the amount without text over competing colors. |
+
+## catalog-radial-hole.5
+
+Selector: `.ui-radial-progress::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Keep the ring center a readable neutral plane. Match the circular outer edge. | Read the amount without text over competing colors. |
+
+## catalog-skeleton.1
+
+Selector: `.ui-skeleton`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-swatch-size) | 3rem | 2.5rem | Reserve the shape of forthcoming content. Reserve a governed placeholder shape. | Recognize placeholder structure alongside written loading text. |
+
+## catalog-skeleton.2
+
+Selector: `.ui-skeleton`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px dashed var(--ui-border) | 1px dashed var(--ui-border) | 1px dashed var(--ui-border) | Reserve the shape of forthcoming content. Identify placeholder structure without pulsing. | Recognize placeholder structure alongside written loading text. |
+
+## catalog-skeleton.4
+
+Selector: `.ui-skeleton`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Reserve the shape of forthcoming content. Relate the placeholder to bounded content. | Recognize placeholder structure alongside written loading text. |
+
+## catalog-spinner.2
+
+Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 1.25rem | 1.25rem | 1.25rem | Supplement a written loading state with an optional motion cue. Use the existing native-mark scale. | Recognize ongoing work without motion being the only information. |
+
+## catalog-spinner.3
+
+Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Supplement a written loading state with an optional motion cue. Reserve a square before cropping. | Recognize ongoing work without motion being the only information. |
+
+## catalog-spinner.4
+
+Selector: `.ui-spinner`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | var(--ui-switch-stroke) solid var(--ui-border) | 2px solid var(--ui-border) | 1px solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke. | Recognize ongoing work without motion being the only information. |
+
+## catalog-spinner.6
+
+Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Supplement a written loading state with an optional motion cue. Keep the work cue circular. | Recognize ongoing work without motion being the only information. |
+
+## catalog-text-rotate.3
+
+Selector: `.ui-text-rotate`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Demonstrate an optional sequence of supplementary labels. Separate the static labels. | Inspect the effect while the complete wording remains persistently available. |
+
+## catalog-spin-frame.1
+
+Selector: `to`; condition: `Animation ui-catalog-spin`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| transform | rotate(1turn) | rotate(1turn) | rotate(1turn) | Define only the explicitly enabled supplementary animation. Complete one optional rotation; reduced motion disables it. | Inspect visual motion without changing essential content or data. |
+
+## catalog-table.1
+
+Selector: `.ui-data-table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Keep a small semantic comparison readable. Use the available comparison width. | Compare values under real headers without a custom grid widget. |
+
+## catalog-table.2
+
+Selector: `.ui-data-table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-collapse | collapse | collapse | collapse | Keep a small semantic comparison readable. Avoid doubled record dividers. | Compare values under real headers without a custom grid widget. |
+
+## catalog-table-cells.1
+
+Selector: `.ui-data-table th, .ui-data-table td`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) var(--ui-space-md) | 0.5rem 0.75rem | 0.375rem 0.5rem | Keep supplied records aligned with real headers. Use governed cell clearance. | Compare rows without compressed words or a heavy full grid. |
+
+## catalog-table-cells.4
+
+Selector: `.ui-data-table th, .ui-data-table td`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Keep supplied records aligned with real headers. Separate rows quietly. | Compare rows without compressed words or a heavy full grid. |
+
+## catalog-toast.1
+
+Selector: `.ui-toast`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Group a settled notification and its text. Clear settled notification text. | Read feedback without obscuring the active working area. |
+
+## catalog-toast.2
+
+Selector: `.ui-toast`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Group a settled notification and its text. Identify the feedback item. | Read feedback without obscuring the active working area. |
+
+## catalog-toast.3
+
+Selector: `.ui-toast`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Group a settled notification and its text. Use the short-support shape. | Read feedback without obscuring the active working area. |
+
+## catalog-countdown.3
+
+Selector: `.ui-countdown`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.5rem | 1.5rem | 1.5rem | Keep supplied time fields aligned. Make the explicitly static duration inspectable. | Read an explicitly static duration example without a misleading running clock. |
+
+## catalog-diff.2
+
+Selector: `.ui-diff`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) | Keep before/after content adjacent for inspection. Pair versions only when useful reading width exists. | Compare both versions without hiding either from keyboard or touch users. |
+
+## catalog-diff.3
+
+Selector: `.ui-diff`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Keep before/after content adjacent for inspection. Separate versions without hiding either. | Compare both versions without hiding either from keyboard or touch users. |
+
+## catalog-stage.2
+
+Selector: `.ui-component-stage`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | 12rem | 12rem | 12rem | Bound corner-position examples within their own workspace. Reserve visible space around the corner action. | Inspect positioning without covering page controls. |
+
+## catalog-stage.3
+
+Selector: `.ui-component-stage`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound corner-position examples within their own workspace. Clear ordinary stage text. | Inspect positioning without covering page controls. |
+
+## catalog-stage.4
+
+Selector: `.ui-component-stage`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block-end | calc(var(--ui-control-min) + 2 * var(--ui-space-lg)) | calc(2.75rem + 2 * 1rem) | calc(2.25rem + 2 * 0.75rem) | Bound corner-position examples within their own workspace. Reserve flow room for the corner action instead of covering text. | Inspect positioning without covering page controls. |
+
+## catalog-stage.5
+
+Selector: `.ui-component-stage`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Bound corner-position examples within their own workspace. Expose the local workspace boundary. | Inspect positioning without covering page controls. |
+
+## catalog-fab.2
+
+Selector: `.ui-fab`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-end | var(--ui-space-lg) | 1rem | 0.75rem | Keep a named corner action and secondary links together. Leave governed edge clearance. | Open the extra destinations with native click, keyboard and Escape behavior. |
+
+## catalog-fab.3
+
+Selector: `.ui-fab`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-end | var(--ui-space-lg) | 1rem | 0.75rem | Keep a named corner action and secondary links together. Use the governed bottom clearance. | Open the extra destinations with native click, keyboard and Escape behavior. |
+
+## catalog-filter.2
+
+Selector: `.ui-filter`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-md) | 0.75rem | 0.5rem | Filter a bounded preloaded example through native choice state. Separate criteria from results. | Select a visible criterion and restore all examples with Reset. |
+
+## catalog-filter-results.2
+
+Selector: `.ui-filter-results`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep supplied matching records together. Separate related result items. | Read preloaded records matching the native choice. |
+
+## catalog-hover-3d.1
+
+Selector: `.ui-hover-3d`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xl) | 1.5rem | 1rem | Demonstrate an optional spatial card treatment. Clear the noninteractive card for its optional tilt. | Inspect the requested visual treatment without moving an interactive target. |
+
+## catalog-hover-3d.2
+
+Selector: `.ui-hover-3d`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Demonstrate an optional spatial card treatment. Keep the example bounded. | Inspect the requested visual treatment without moving an interactive target. |
+
+## catalog-tilt.1
+
+Selector: `.ui-hover-3d:hover`; condition: `(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| transform | perspective(40rem) rotateX(2deg) rotateY(-2deg) | perspective(40rem) rotateX(2deg) rotateY(-2deg) | perspective(40rem) rotateX(2deg) rotateY(-2deg) | Demonstrate a small spatial treatment on noninteractive content. Use a small fixed CSS tilt rather than script-based pointer tracking. | Inspect the requested 3D appearance without continuous motion. |
+
+## catalog-hover-gallery.2
+
+Selector: `.ui-hover-gallery`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Preview one of several supplied images. Clear choice focus from media. | Use hover for a temporary preview or native radios for keyboard/touch selection. |
+
+## catalog-hover-gallery.3
+
+Selector: `.ui-hover-gallery`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Preview one of several supplied images. Retain the legend without extra framing. | Use hover for a temporary preview or native radios for keyboard/touch selection. |
+
+## catalog-hover-gallery.4
+
+Selector: `.ui-hover-gallery`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Preview one of several supplied images. Use the host inset. | Use hover for a temporary preview or native radios for keyboard/touch selection. |
+
+## catalog-gallery-figures.1
+
+Selector: `.ui-hover-gallery > figure`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Keep supplied previews grouped as native figures. Let the gallery gap own separation. | Inspect the chosen image and caption without losing the choices. |
+
+## catalog-gallery-image.2
+
+Selector: `.ui-hover-gallery img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep supplied gallery media responsive. Bound media to its host. | Inspect local media without page overflow. |
+
+## catalog-gallery-image.3
+
+Selector: `.ui-hover-gallery img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | auto | auto | auto | Keep supplied gallery media responsive. Preserve source aspect ratio. | Inspect local media without page overflow. |
+
+## catalog-indicator.2
+
+Selector: `.ui-indicator`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Place compact metadata beside its owning item. Separate the written indicator. | Read a written count/status in the correct context. |
+
+## catalog-mask.2
+
+Selector: `.ui-mask`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | var(--ui-swatch-size) | 3rem | 2.5rem | Demonstrate optional cropping of nonessential artwork. Use the governed visual sample size. | Compare shape treatments while retaining a written media explanation. |
+
+## catalog-mask.3
+
+Selector: `.ui-mask`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Demonstrate optional cropping of nonessential artwork. Reserve a square crop area. | Compare shape treatments while retaining a written media explanation. |
+
+## catalog-mask.4
+
+Selector: `.ui-mask`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| object-fit | cover | cover | cover | Demonstrate optional cropping of nonessential artwork. Fill the nonessential shape without distortion. | Compare shape treatments while retaining a written media explanation. |
+
+## catalog-mask.5
+
+Selector: `.ui-mask`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| clip-path | circle(50%) | circle(50%) | circle(50%) | Demonstrate optional cropping of nonessential artwork. Demonstrate cropping only on nonessential artwork. | Compare shape treatments while retaining a written media explanation. |
+
+## catalog-mask-hexagon.1
+
+Selector: `.ui-mask--hexagon`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| clip-path | polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) | polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) | polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) | Offer another optional crop shape. Use a hexagonal crop with unchanged external explanation. | Compare shape treatments while the caption carries meaning. |
+
+## catalog-mockup-frames.1
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-md) | 0.75rem | 0.5rem | Frame explicitly illustrative interface samples. Clear the supplied example contents. | Recognize illustration rather than actual system controls. |
+
+## catalog-mockup-frames.2
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | var(--ui-switch-stroke) solid var(--ui-border) | 2px solid var(--ui-border) | 1px solid var(--ui-border) | Frame explicitly illustrative interface samples. Use a governed illustrative frame. | Recognize illustration rather than actual system controls. |
+
+## catalog-mockup-frames.3
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Frame explicitly illustrative interface samples. Use the containing shape. | Recognize illustration rather than actual system controls. |
+
+## catalog-mockup-frames.5
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Frame explicitly illustrative interface samples. Keep the mockup within its host. | Recognize illustration rather than actual system controls. |
+
+## catalog-mockup-frames.6
+
+Selector: `.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Frame explicitly illustrative interface samples. Let the component inset own its edges rather than adding native figure margins to its explicit width. | Recognize illustration rather than actual system controls. |
+
+## catalog-mockup-browser.1
+
+Selector: `.ui-mockup-browser > header`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block-end | var(--ui-space-sm) | 0.5rem | 0.375rem | Frame a labelled example of a browser-like surface. Separate the written illustrative address. | Recognize illustrative chrome rather than real navigation controls. |
+
+## catalog-mockup-browser.2
+
+Selector: `.ui-mockup-browser > header`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Frame a labelled example of a browser-like surface. Show a toolbar boundary without fake controls. | Recognize illustrative chrome rather than real navigation controls. |
+
+## catalog-mockup-phone.1
+
+Selector: `.ui-mockup-phone`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | min(18rem, 100%) | min(18rem, 100%) | min(18rem, 100%) | Bound a small-device preview. Use a small responsive device-preview frame. | Inspect a contained illustrative mobile layout without clipping its explanation. |
+
+## catalog-mockup-phone.2
+
+Selector: `.ui-mockup-phone`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | 20rem | 20rem | 20rem | Bound a small-device preview. Give the illustration room without clipping text. | Inspect a contained illustrative mobile layout without clipping its explanation. |
+
+## catalog-mockup-phone.3
+
+Selector: `.ui-mockup-phone`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-width | var(--ui-space-sm) | 0.5rem | 0.375rem | Bound a small-device preview. Distinguish the static device frame from live input boundaries. | Inspect a contained illustrative mobile layout without clipping its explanation. |
+
+## catalog-mockup-window.2
+
+Selector: `.ui-mockup-window > header`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Frame a labelled desktop-like example. Separate the illustrative caption from its body. | Recognize the illustrative content area and caption. |
+
+## catalog-stack.1
+
+Selector: `.ui-visual-stack`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Indicate grouped material through nonessential background layers. Clear foreground content from the optional rear-layer cue. | Read the foreground item without hidden essential content beneath it. |
+
+## catalog-stack.2
+
+Selector: `.ui-visual-stack`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Indicate grouped material through nonessential background layers. Bound the meaningful foreground. | Read the foreground item without hidden essential content beneath it. |
+
+## catalog-stack.3
+
+Selector: `.ui-visual-stack`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| box-shadow | var(--ui-space-xs) var(--ui-space-xs) 0 0 var(--ui-divider), var(--ui-space-sm) var(--ui-space-sm) 0 0 var(--ui-subtle) | 0.25rem 0.25rem 0 0 var(--ui-divider), 0.5rem 0.5rem 0 0 var(--ui-subtle) | 0.25rem 0.25rem 0 0 var(--ui-divider), 0.375rem 0.375rem 0 0 var(--ui-subtle) | Indicate grouped material through nonessential background layers. Suggest two empty rear planes without overlapping meaningful content. | Read the foreground item without hidden essential content beneath it. |
+
+## catalog-stat.2
+
+Selector: `.ui-stat`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Pair a supplied number with its meaning and period. Attach the context to its quantity. | Interpret a quantity without a dashboard number lacking context. |
+
+## catalog-stat.3
+
+Selector: `.ui-stat`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Pair a supplied number with its meaning and period. Let the host own outside clearance. | Interpret a quantity without a dashboard number lacking context. |
+
+## catalog-stat-value.1
+
+Selector: `.ui-stat dd`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Make supplied quantities readable with context. Avoid default definition indentation. | Interpret the quantity alongside its title and period. |
+
+## catalog-stat-value.2
+
+Selector: `.ui-stat dd`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 2rem | 2rem | 2rem | Make supplied quantities readable with context. Use the existing title scale for the contextual quantity. | Interpret the quantity alongside its title and period. |
+
+## catalog-status.3
+
+Selector: `.ui-status-indicator`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep a state label and supplementary mark together. Separate the real state word. | Read the explicit state without relying on hue. |
+
+## catalog-status-dot.2
+
+Selector: `.ui-status-indicator::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 0.75rem | 0.75rem | 0.75rem | Supplement written state with a nonessential mark. Keep the cue subordinate to text. | Recognize a compact state without relying on hue. |
+
+## catalog-status-dot.3
+
+Selector: `.ui-status-indicator::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Supplement written state with a nonessential mark. Keep a square before cropping. | Recognize a compact state without relying on hue. |
+
+## catalog-status-dot.4
+
+Selector: `.ui-status-indicator::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Supplement written state with a nonessential mark. Distinguish the passive mark from a control. | Recognize a compact state without relying on hue. |
+
+## catalog-steps.1
+
+Selector: `.ui-steps`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-start | 4ch | 4ch | 4ch | Present a supplied process order and current step. Reserve native step numbering space. | Locate the current point without interpreting color alone. |
+
+## catalog-steps.2
+
+Selector: `.ui-steps`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Present a supplied process order and current step. Let the host own outside gaps. | Locate the current point without interpreting color alone. |
+
+## catalog-timeline.2
+
+Selector: `.ui-timeline`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Group supplied events in chronological order. Let events own their inset. | Read event dates, descriptions and ordering as real text. |
+
+## catalog-timeline.3
+
+Selector: `.ui-timeline`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Group supplied events in chronological order. Remove duplicate outer gaps. | Read event dates, descriptions and ordering as real text. |
+
+## catalog-timeline-events.1
+
+Selector: `.ui-timeline li`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) var(--ui-space-lg) | 0.5rem 1rem | 0.375rem 0.75rem | Connect supplied chronological events. Use governed event clearance. | Read time and description as one event in source order. |
+
+## catalog-timeline-events.2
+
+Selector: `.ui-timeline li`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | Connect supplied chronological events. Provide a passive timeline rule. | Read time and description as one event in source order. |
+
+## catalog-swap.2
+
+Selector: `.ui-swap`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Switch between two supplied presentations using a native choice. Separate the stable label from its output. | Read an alternate detail level without replacing the control or saving anything. |
+
+## catalog-theme-sandbox.1
+
+Selector: `.ui-theme-sandbox`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Bound a purely CSS palette comparison. Clear preview text and controls. | Compare local brightness without changing stored preferences or data. |
+
+## catalog-theme-sandbox.4
+
+Selector: `.ui-theme-sandbox`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Bound a purely CSS palette comparison. Identify the preview boundary. | Compare local brightness without changing stored preferences or data. |
+
+## catalog-validator.2
+
+Selector: `.ui-validator`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Expose browser-enforced input constraints with visible correction guidance. Clear focus between the input and explanation. | Correct an invalid example without a custom validation engine. |
+
+## catalog-motion-preview.1
+
+Selector: `.ui-motion-preview`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Keep optional visual effects and their controls together. Clear the opt-in control and supplementary effect. | Stop or reset the effect through a visible native choice. |
+
+## catalog-motion-preview.2
+
+Selector: `.ui-motion-preview`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Keep optional visual effects and their controls together. Identify the bounded optional-motion example. | Stop or reset the effect through a visible native choice. |
+
+## catalog-diff-wipe.3
+
+Selector: `.ui-diff-wipe`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Provide an optional native pointer-resize image comparison. Fit the available example width. | Inspect a wipe effect while complete labelled versions remain separately readable. |
+
+## catalog-diff-wipe.4
+
+Selector: `.ui-diff-wipe`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 3 / 1 | 3 / 1 | 3 / 1 | Provide an optional native pointer-resize image comparison. Reserve the supplied illustrations’ intrinsic ratio. | Inspect a wipe effect while complete labelled versions remain separately readable. |
+
+## catalog-diff-wipe.5
+
+Selector: `.ui-diff-wipe`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Provide an optional native pointer-resize image comparison. Let the host own outer clearance. | Inspect a wipe effect while complete labelled versions remain separately readable. |
+
+## catalog-diff-wipe.6
+
+Selector: `.ui-diff-wipe`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Provide an optional native pointer-resize image comparison. Expose the comparison frame. | Inspect a wipe effect while complete labelled versions remain separately readable. |
+
+## catalog-diff-image.2
+
+Selector: `.ui-diff-wipe img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100cqw | 100cqw | 100cqw | Keep supplied comparison layers aligned. Keep the source width tied to the whole comparison frame. | Compare clipping rather than stretching either illustration. |
+
+## catalog-diff-image.3
+
+Selector: `.ui-diff-wipe img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 100% | 100% | 100% | Keep supplied comparison layers aligned. Fill the reserved frame height. | Compare clipping rather than stretching either illustration. |
+
+## catalog-diff-image.4
+
+Selector: `.ui-diff-wipe img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| object-fit | cover | cover | cover | Keep supplied comparison layers aligned. Preserve aspect ratio while covering the same frame. | Compare clipping rather than stretching either illustration. |
+
+## catalog-diff-before.2
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-start | 0 | 0 | 0 | Let the browser resize the optional foreground reveal. Align both source images at the top. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.3
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-start | 0 | 0 | 0 | Let the browser resize the optional foreground reveal. Align both sources at the reading start. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.4
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 50% | 50% | 50% | Let the browser resize the optional foreground reveal. Start with both versions partially visible. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.5
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Let the browser resize the optional foreground reveal. Prevent native resizing past the frame. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.6
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 2rem | 2rem | 2rem | Let the browser resize the optional foreground reveal. Keep the optional handle visible. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.7
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 100% | 100% | 100% | Let the browser resize the optional foreground reveal. Keep the reveal at full image height. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.8
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| resize | horizontal | horizontal | horizontal | Let the browser resize the optional foreground reveal. Use the native pointer resize handle; full versions remain the keyboard alternative. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-before.10
+
+Selector: `.ui-diff-before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-end | 2px solid var(--ui-border) | 2px solid var(--ui-border) | 2px solid var(--ui-border) | Let the browser resize the optional foreground reveal. Identify the reveal boundary. | Inspect the supplied before layer without custom pointer code. |
+
+## catalog-diff-full-images.2
+
+Selector: `.ui-diff img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep both original comparison images fully available. Keep the full image within its comparison card. | Inspect either full version without relying on the optional pointer-only reveal. |
+
+## catalog-diff-full-images.3
+
+Selector: `.ui-diff img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | auto | auto | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. |

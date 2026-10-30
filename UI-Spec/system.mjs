@@ -1,3 +1,4 @@
+import {installCatalog} from './catalog-styles.mjs';
 import {proseHeadings,installProse} from './prose.mjs';
 import {palettes} from './palettes.mjs';
 import {densityTokens,densityProfiles,coarseTargetMedia,compactCoarseMinimum} from './density.mjs';
@@ -160,6 +161,7 @@ rule('forced-switch', '.ui-switch input[type="checkbox"]', 'Return slider presen
 rule('forced-switch-thumb', '.ui-switch input[type="checkbox"]::before', 'Remove the decorative thumb when the native mark returns.', 'Read one unambiguous checked state rather than two overlapping marks.', 'forced-colors', [['display','none','Leave the forced-color native checkbox as the only mark.']], '(forced-colors: active)');
 rule('forced-primary', '.btn-primary, .btn-primary:hover:not(:disabled)', 'Honor the system palette for a labelled primary button.', 'Find the action boundary when explicitly using a forced-color appearance.', 'forced-colors', [['border-color','ButtonText','Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size.']], '(forced-colors: active)');
 installProse(rule);
+installCatalog(rule,rules);
 export { rules };
 
 export const contrastPairs = [

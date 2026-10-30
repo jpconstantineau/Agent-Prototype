@@ -22,7 +22,7 @@ test(`reference baseline and complete CSSOM audit: ${families.baseline.join(', '
   await expect(page.getByRole('heading',{level:1})).toHaveText('Clear work. Deliberate changes.');
   await expect(page.locator('#decision-rows tr')).toHaveCount(rules.reduce((n,r)=>n+r.declarations.length,0));
   const audit=await page.evaluate(rules=>{
-    const leaves=[];const walk=list=>{for(const rule of list){if(rule instanceof CSSStyleRule)leaves.push(rule);else if(rule.cssRules)walk(rule.cssRules);}};
+    const leaves=[];const walk=list=>{for(const rule of list){if((rule instanceof CSSStyleRule || rule instanceof CSSKeyframeRule))leaves.push(rule);else if(rule.cssRules)walk(rule.cssRules);}};
     walk(document.styleSheets[0].cssRules);
     const missing=[];
     rules.forEach((r,index)=>{

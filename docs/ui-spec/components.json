@@ -1,0 +1,1735 @@
+{
+  "version": 1,
+  "sources": {
+    "shadcn": {
+      "url": "https://ui.shadcn.com/docs/components",
+      "version": "Core catalog reviewed 2026-10-29"
+    },
+    "daisy": {
+      "url": "https://daisyui.com/components/",
+      "version": "5.7.50 catalog reviewed 2026-10-29"
+    }
+  },
+  "counts": {
+    "shadcn": 66,
+    "daisy": 68
+  },
+  "components": [
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Accordion"
+        ],
+        "daisy": [
+          "Accordion"
+        ]
+      },
+      "classes": [
+        "ui-accordion"
+      ],
+      "purpose": "Group related optional explanations.",
+      "intent": "Expand one named explanation while keeping other summaries reachable.",
+      "contract": "Native details with a shared name gives exclusive opening; no scripted animation."
+    },
+    {
+      "id": "alert",
+      "title": "Alert",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Alert"
+        ],
+        "daisy": [
+          "Alert"
+        ]
+      },
+      "classes": [
+        "ui-alert"
+      ],
+      "purpose": "Make a condition and its next step readable together.",
+      "intent": "Recognize an important message from its wording and structure.",
+      "contract": "Static message; live role/announcement timing belongs to real application events."
+    },
+    {
+      "id": "alert-dialog",
+      "title": "Alert dialog",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Alert Dialog"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-alert-dialog"
+      ],
+      "purpose": "Focus a blocking example decision in the native top layer.",
+      "intent": "Read the decision and cancel safely with native focus return.",
+      "contract": "dialog + role=alertdialog + commandfor; example buttons only close, never mutate data."
+    },
+    {
+      "id": "aspect-ratio",
+      "title": "Aspect ratio",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Aspect Ratio"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-aspect-ratio"
+      ],
+      "purpose": "Reserve a predictable media frame.",
+      "intent": "Inspect media without distortion or layout jumps.",
+      "contract": "16:9 frame; object-fit contains the full source, with a written caption."
+    },
+    {
+      "id": "attachment",
+      "title": "Attachment",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Attachment"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-attachment"
+      ],
+      "purpose": "Present an explicitly named file destination.",
+      "intent": "Open the supplied local sample without a disguised action or automatic upload.",
+      "contract": "Native link; preview parsing, upload progress and attachment permissions are separate."
+    },
+    {
+      "id": "aura",
+      "title": "Aura / emphasis border",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Aura"
+        ]
+      },
+      "classes": [
+        "ui-aura"
+      ],
+      "purpose": "Demonstrate an optional accent frame without tinting a large work area.",
+      "intent": "Locate the explicitly labelled example emphasis without confusing it with focus.",
+      "contract": "Static layered border; no pulsing, no status meaning, no default application adoption."
+    },
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Avatar"
+        ],
+        "daisy": [
+          "Avatar"
+        ]
+      },
+      "classes": [
+        "ui-avatar"
+      ],
+      "purpose": "Show an identity thumbnail or initials.",
+      "intent": "Associate a written person name with a compact identity mark.",
+      "contract": "Initials fallback is authored text; no failed-image detection logic is implied."
+    },
+    {
+      "id": "badge",
+      "title": "Badge",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Badge"
+        ],
+        "daisy": [
+          "Badge"
+        ]
+      },
+      "classes": [
+        "ui-badge"
+      ],
+      "purpose": "Keep short metadata visibly grouped.",
+      "intent": "Read a state or category without depending on a colored dot.",
+      "contract": "Written label is authoritative; no interactive semantics on passive badges."
+    },
+    {
+      "id": "breadcrumb",
+      "title": "Breadcrumbs",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Breadcrumb"
+        ],
+        "daisy": [
+          "Breadcrumbs"
+        ]
+      },
+      "classes": [
+        "ui-breadcrumb"
+      ],
+      "purpose": "Express a real navigation hierarchy.",
+      "intent": "Find the parent destination and identify the current page.",
+      "contract": "Named nav and ordered links; current item uses aria-current=page."
+    },
+    {
+      "id": "chat",
+      "title": "Chat messages",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Bubble",
+          "Message"
+        ],
+        "daisy": [
+          "Chat bubble"
+        ]
+      },
+      "classes": [
+        "ui-chat",
+        "ui-bubble",
+        "ui-message"
+      ],
+      "purpose": "Group author, timestamp and message content.",
+      "intent": "Read who said what without relying on left/right alignment or hue alone.",
+      "contract": "Static message layout; sending, streaming, receipts and persistence require application logic."
+    },
+    {
+      "id": "button",
+      "title": "Button",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Button"
+        ],
+        "daisy": [
+          "Button"
+        ]
+      },
+      "classes": [
+        "ui-button"
+      ],
+      "purpose": "Style a real action target consistently.",
+      "intent": "Activate a named action with native pointer and keyboard behavior.",
+      "contract": "Visual variants and disabled semantics; application actions are outside CSS."
+    },
+    {
+      "id": "button-group",
+      "title": "Button group / join",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Button Group"
+        ],
+        "daisy": [
+          "Join (group items)"
+        ]
+      },
+      "classes": [
+        "ui-button-group",
+        "ui-join"
+      ],
+      "purpose": "Keep related actions adjacent while allowing wrapping.",
+      "intent": "Recognize peer actions without hidden overflow or roving-menu semantics.",
+      "contract": "Native buttons/links retain separate tab stops; joined framing is optional."
+    },
+    {
+      "id": "calendar",
+      "title": "Calendar widget",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Calendar"
+        ],
+        "daisy": [
+          "Calendar"
+        ]
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Record the boundary of custom calendar behavior.",
+      "intent": "Avoid a fake calendar that cannot navigate dates correctly.",
+      "contract": "Month navigation, date arithmetic and custom grid keyboard behavior need logic; native date input is demonstrated separately."
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Card"
+        ],
+        "daisy": [
+          "Card"
+        ]
+      },
+      "classes": [
+        "ui-card"
+      ],
+      "purpose": "Contain one related item and its actions.",
+      "intent": "Recognize which heading, content and action belong together.",
+      "contract": "Content-driven height; card container itself is not a fake clickable button."
+    },
+    {
+      "id": "carousel",
+      "title": "Carousel / scroll gallery",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Carousel"
+        ],
+        "daisy": [
+          "Carousel"
+        ]
+      },
+      "classes": [
+        "ui-carousel",
+        "ui-slide"
+      ],
+      "purpose": "Offer an ordered horizontally scrollable set of panels.",
+      "intent": "Reach every panel through native scrolling and named fragment links.",
+      "contract": "CSS scroll snap, no auto-rotation or looping controls; full managed carousel is a separate widget."
+    },
+    {
+      "id": "chart",
+      "title": "Interactive chart",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Chart"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Keep visualization behavior distinct from decorative styling.",
+      "intent": "Inspect actual data with correct scales and accessible alternatives.",
+      "contract": "The upstream chart adapter uses a chart engine; data mapping, interactive legends and tooltips need logic."
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Checkbox"
+        ],
+        "daisy": [
+          "Checkbox"
+        ]
+      },
+      "classes": [
+        "ui-checkbox"
+      ],
+      "purpose": "Style a native multiple-choice mark.",
+      "intent": "Toggle an explicitly labelled option without custom state synchronization.",
+      "contract": "Native input[type=checkbox] and full-size label; checked is authoritative."
+    },
+    {
+      "id": "code-block",
+      "title": "Code block",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Code Block"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-code-block"
+      ],
+      "purpose": "Bound exact source content and its label.",
+      "intent": "Inspect selectable source with local scrolling.",
+      "contract": "Inert pre/code; copy-to-clipboard and syntax parsing are separate logic."
+    },
+    {
+      "id": "collapse",
+      "title": "Collapsible",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Collapsible"
+        ],
+        "daisy": [
+          "Collapse"
+        ]
+      },
+      "classes": [
+        "ui-collapse"
+      ],
+      "purpose": "Disclose optional supporting material.",
+      "intent": "Open and close an explanation with native Enter/Space behavior.",
+      "contract": "Native details/summary; essential instructions remain outside collapsed content."
+    },
+    {
+      "id": "combobox",
+      "title": "Native suggestions",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Combobox"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-combobox"
+      ],
+      "purpose": "Offer browser-owned suggestions for an editable value.",
+      "intent": "Choose a suggestion or retain typed text without a custom listbox.",
+      "contract": "input + datalist; free text remains allowed. Async search and a constrained ARIA combobox need logic."
+    },
+    {
+      "id": "command",
+      "title": "Command palette",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Command"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Separate command discovery and execution from appearance.",
+      "intent": "Search and invoke the intended authorized command.",
+      "contract": "Filtering, keyboard selection and command dispatch require logic."
+    },
+    {
+      "id": "context-menu",
+      "title": "Context menu",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Context Menu"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Avoid replacing browser context behavior with a visual-only menu.",
+      "intent": "Use a correctly positioned menu with focus and dismissal behavior.",
+      "contract": "Context invocation, roving focus and target-specific actions require logic."
+    },
+    {
+      "id": "data-table",
+      "title": "Data table engine",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Data Table"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Separate a table engine from native table styling.",
+      "intent": "Sort, filter, select and page actual records correctly.",
+      "contract": "Static tables are included; data transformation and selection synchronization need logic."
+    },
+    {
+      "id": "date-picker",
+      "title": "Native date picker",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Date Picker"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-date-picker"
+      ],
+      "purpose": "Expose a date through the browser-owned editor.",
+      "intent": "Choose or type a valid date with native constraints.",
+      "contract": "input[type=date]; not a custom popover calendar or date-range engine."
+    },
+    {
+      "id": "dialog",
+      "title": "Dialog / modal",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Dialog"
+        ],
+        "daisy": [
+          "Modal"
+        ]
+      },
+      "classes": [
+        "ui-modal"
+      ],
+      "purpose": "Present a bounded modal surface with native focus handling.",
+      "intent": "Read and dismiss a blocking explanation without losing the opener.",
+      "contract": "Native dialog, command=show-modal/close and autofocus on safe close action; Chrome command support required."
+    },
+    {
+      "id": "direction",
+      "title": "Direction",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Direction"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-direction"
+      ],
+      "purpose": "Respect the document language direction through logical layout.",
+      "intent": "Read mixed direction content without visual order hacks.",
+      "contract": "Native dir and bdi; user content cannot inject arbitrary dir attributes through Markdown."
+    },
+    {
+      "id": "drawer",
+      "title": "Drawer",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Drawer"
+        ],
+        "daisy": [
+          "Drawer sidebar"
+        ]
+      },
+      "classes": [
+        "ui-drawer"
+      ],
+      "purpose": "Place a named modal support surface at an edge.",
+      "intent": "Open and dismiss an edge panel with native focus and Escape behavior.",
+      "contract": "Native dialog edge placement; swipe gestures, drag velocity and responsive app state are not CSS."
+    },
+    {
+      "id": "dropdown",
+      "title": "Dropdown links",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Dropdown Menu"
+        ],
+        "daisy": [
+          "Dropdown"
+        ]
+      },
+      "classes": [
+        "ui-dropdown"
+      ],
+      "purpose": "Expose a compact group of navigation links on request.",
+      "intent": "Open the link group and navigate it with ordinary Tab/Enter.",
+      "contract": "Native popover and semantic nav; not role=menu or a roving-focus application menu."
+    },
+    {
+      "id": "empty",
+      "title": "Empty state",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Empty"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-empty-state"
+      ],
+      "purpose": "Explain missing data and one recovery destination.",
+      "intent": "Distinguish an empty example from an error or loading state.",
+      "contract": "Static explanation; actual empty/loading/error decisions come from application data."
+    },
+    {
+      "id": "field",
+      "title": "Field and fieldset",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Field"
+        ],
+        "daisy": [
+          "Fieldset"
+        ]
+      },
+      "classes": [
+        "ui-fieldset",
+        "ui-form-field"
+      ],
+      "purpose": "Group a persistent label, native control and supporting help.",
+      "intent": "Understand the question and enter a value without losing its name.",
+      "contract": "Native fieldset/legend/label and described help; no application validation engine."
+    },
+    {
+      "id": "hover-card",
+      "title": "Hover / focus preview",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Hover Card"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-hover-card"
+      ],
+      "purpose": "Show a supplementary preview without replacing the primary link.",
+      "intent": "Inspect extra context on hover, focus or explicit click.",
+      "contract": "Native interestfor plus popovertarget click fallback; no hover-only essential content."
+    },
+    {
+      "id": "input",
+      "title": "Text input",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Input"
+        ],
+        "daisy": [
+          "Text Input"
+        ]
+      },
+      "classes": [
+        "ui-input"
+      ],
+      "purpose": "Provide a readable native single-line editor.",
+      "intent": "Enter and select text with browser affordances and visible focus.",
+      "contract": "Native text/search/email types; domain validation and storage are separate."
+    },
+    {
+      "id": "input-group",
+      "title": "Input group",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Input Group"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-input-group"
+      ],
+      "purpose": "Associate a fixed prefix or suffix with an input.",
+      "intent": "Understand units/context without putting fake values into the editable string.",
+      "contract": "Persistent label stays outside; adornments do not replace the accessible name."
+    },
+    {
+      "id": "otp",
+      "title": "One-time code input",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Input OTP"
+        ],
+        "daisy": [
+          "OTP"
+        ]
+      },
+      "classes": [
+        "ui-otp"
+      ],
+      "purpose": "Keep a verification code in one native input.",
+      "intent": "Paste or receive a whole code without scripted character-box navigation.",
+      "contract": "One input, numeric inputmode, pattern, maxlength and one-time-code autocomplete; no verification request or auto-submit."
+    },
+    {
+      "id": "item",
+      "title": "Item / list",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Item"
+        ],
+        "daisy": [
+          "List"
+        ]
+      },
+      "classes": [
+        "ui-item-list",
+        "ui-item"
+      ],
+      "purpose": "Present comparable named rows.",
+      "intent": "Scan items and use their explicit links without making whole rows clickable.",
+      "contract": "Native list semantics and visible labels; selection/virtualization need logic."
+    },
+    {
+      "id": "kbd",
+      "title": "Keyboard key",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Kbd"
+        ],
+        "daisy": [
+          "Kbd"
+        ]
+      },
+      "classes": [
+        "ui-kbd"
+      ],
+      "purpose": "Distinguish a key name from an app control.",
+      "intent": "Read a keyboard instruction without trying to click the keycap.",
+      "contract": "Native kbd; no role=button or interaction handler."
+    },
+    {
+      "id": "label",
+      "title": "Label",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Label"
+        ],
+        "daisy": [
+          "Label"
+        ]
+      },
+      "classes": [
+        "ui-label"
+      ],
+      "purpose": "Keep a native control named.",
+      "intent": "Activate the associated input by selecting its persistent label.",
+      "contract": "Native for/id association; required wording is visible."
+    },
+    {
+      "id": "marker",
+      "title": "Text marker",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Marker"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-marker"
+      ],
+      "purpose": "Identify a relevant text fragment.",
+      "intent": "Find the marked phrase without interpreting an alarm color.",
+      "contract": "Native mark, neutral checked colors and a thin frame."
+    },
+    {
+      "id": "menubar",
+      "title": "Application menubar",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Menubar"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Distinguish an application menu from site links.",
+      "intent": "Use the expected arrow-key and submenu behavior.",
+      "contract": "Roving tabindex, command state and nested menu lifecycle require logic; semantic navigation is included."
+    },
+    {
+      "id": "message-scroller",
+      "title": "Automatic message scroller",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Message Scroller"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Keep chat scroll-state decisions explicit.",
+      "intent": "Read earlier messages without forced jumps while new messages arrive.",
+      "contract": "Unread tracking, stick-to-bottom conditions and streaming observation need logic; native scroll area is included."
+    },
+    {
+      "id": "native-select",
+      "title": "Native select",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Native Select"
+        ],
+        "daisy": [
+          "Select"
+        ]
+      },
+      "classes": [
+        "ui-select"
+      ],
+      "purpose": "Use the browser-owned option picker.",
+      "intent": "Choose one value with native keyboard and mobile behavior.",
+      "contract": "Real select/options; no custom listbox, filtering or async options."
+    },
+    {
+      "id": "navigation-menu",
+      "title": "Navigation links",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Navigation Menu"
+        ],
+        "daisy": [
+          "Menu"
+        ]
+      },
+      "classes": [
+        "ui-menu"
+      ],
+      "purpose": "Keep destinations grouped and keyboard reachable.",
+      "intent": "Navigate named destinations with ordinary links and tab order.",
+      "contract": "Semantic nav/list; no ARIA menubar or arrow-key submenu emulation."
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination links",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Pagination"
+        ],
+        "daisy": [
+          "Pagination"
+        ]
+      },
+      "classes": [
+        "ui-pagination"
+      ],
+      "purpose": "Express the current position and available page destinations.",
+      "intent": "Navigate a known page without confusing a visual index with loaded data.",
+      "contract": "Real hrefs and aria-current=page; querying or calculating result pages is application logic."
+    },
+    {
+      "id": "popover",
+      "title": "Popover",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Popover"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-popover"
+      ],
+      "purpose": "Show nonmodal supporting information in the top layer.",
+      "intent": "Open a named surface and dismiss it with Escape or a click outside.",
+      "contract": "Native popover=auto and popovertarget; no manual aria-expanded synchronization."
+    },
+    {
+      "id": "progress",
+      "title": "Progress",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Progress"
+        ],
+        "daisy": [
+          "Progress"
+        ]
+      },
+      "classes": [
+        "ui-progress"
+      ],
+      "purpose": "Display an actual bounded completion amount.",
+      "intent": "Read the quantity both as text and a native progress value.",
+      "contract": "Static fixture value/max; measuring work completion is separate logic."
+    },
+    {
+      "id": "questionnaire",
+      "title": "Questionnaire workflow",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Questionnaire"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Separate question presentation from a response broker.",
+      "intent": "Submit the intended structured answer exactly once.",
+      "contract": "Branching, schema validation and agent continuation require the existing application contracts."
+    },
+    {
+      "id": "radio",
+      "title": "Radio group",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Radio Group"
+        ],
+        "daisy": [
+          "Radio"
+        ]
+      },
+      "classes": [
+        "ui-radio"
+      ],
+      "purpose": "Present mutually exclusive native choices.",
+      "intent": "Use labels and arrow keys to choose one option.",
+      "contract": "Shared native name, fieldset and legend; no invented custom selection state."
+    },
+    {
+      "id": "resizable",
+      "title": "Resizable surface",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Resizable"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-resizable"
+      ],
+      "purpose": "Allow native CSS resizing of a bounded example workspace.",
+      "intent": "Enlarge a nonessential inspection area while its content remains reachable.",
+      "contract": "CSS resize handle is pointer-oriented, not an accessible split-pane replacement; text/content remains reachable without resizing."
+    },
+    {
+      "id": "scroll-area",
+      "title": "Scroll area",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Scroll Area"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-scroll-area"
+      ],
+      "purpose": "Bound an inspection region without clipping content.",
+      "intent": "Reach overflow by keyboard, pointer and native scrollbar.",
+      "contract": "Named tabindex=0 region; native scrollbar, no custom drag engine."
+    },
+    {
+      "id": "select",
+      "title": "Custom select/listbox",
+      "kind": "script",
+      "upstream": {
+        "shadcn": [
+          "Select"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "none"
+      ],
+      "purpose": "Keep a custom selection widget separate from its painted surface.",
+      "intent": "Select reliably using its expected keyboard, focus and typeahead behavior.",
+      "contract": "The bespoke listbox implementation needs logic; use the included native select when suitable."
+    },
+    {
+      "id": "separator",
+      "title": "Separator / divider",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Separator"
+        ],
+        "daisy": [
+          "Divider"
+        ]
+      },
+      "classes": [
+        "ui-divider"
+      ],
+      "purpose": "Separate topics without extra decorative panels.",
+      "intent": "Recognize a change in content group.",
+      "contract": "Semantic hr or an explicitly decorative rule; protected 1px boundary."
+    },
+    {
+      "id": "sheet",
+      "title": "Sheet",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Sheet"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-sheet"
+      ],
+      "purpose": "Place a blocking support surface along the lower edge.",
+      "intent": "Read and dismiss supplementary content with native modal behavior.",
+      "contract": "Native dialog; no draggable sheet gestures or snap-position engine."
+    },
+    {
+      "id": "sidebar",
+      "title": "Sidebar",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Sidebar"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-sidebar"
+      ],
+      "purpose": "Group optional navigation or support next to content.",
+      "intent": "Reveal a named support list without sacrificing source order.",
+      "contract": "Native details inside aside; no persisted app layout or shortcut manager."
+    },
+    {
+      "id": "skeleton",
+      "title": "Skeleton",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Skeleton"
+        ],
+        "daisy": [
+          "Skeleton"
+        ]
+      },
+      "classes": [
+        "ui-skeleton"
+      ],
+      "purpose": "Reserve the shape of forthcoming content.",
+      "intent": "Recognize placeholder structure alongside written loading text.",
+      "contract": "Static nonessential blocks, aria-hidden; do not invent progress or replace error text."
+    },
+    {
+      "id": "slider",
+      "title": "Native range slider",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Slider"
+        ],
+        "daisy": [
+          "Range slider"
+        ]
+      },
+      "classes": [
+        "ui-range"
+      ],
+      "purpose": "Expose a bounded numeric choice.",
+      "intent": "Change a value with native arrow keys or pointer input.",
+      "contract": "input[type=range]; browser accessibility owns the value, no fake dynamic output."
+    },
+    {
+      "id": "spinner",
+      "title": "Loading / spinner",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Spinner"
+        ],
+        "daisy": [
+          "Loading"
+        ]
+      },
+      "classes": [
+        "ui-spinner"
+      ],
+      "purpose": "Supplement a written loading state with an optional motion cue.",
+      "intent": "Recognize ongoing work without motion being the only information.",
+      "contract": "CSS animation explicitly enabled in the specimen; reduced motion retains a static cue and written text."
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Switch"
+        ],
+        "daisy": [
+          "Toggle"
+        ]
+      },
+      "classes": [
+        "ui-toggle"
+      ],
+      "purpose": "Present a named binary native preference.",
+      "intent": "Toggle an explicit choice with native checked state and Space.",
+      "contract": "Native checkbox role=switch with the existing track/thumb composition; no silent application save."
+    },
+    {
+      "id": "table",
+      "title": "Table",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Table"
+        ],
+        "daisy": [
+          "Table"
+        ]
+      },
+      "classes": [
+        "ui-data-table"
+      ],
+      "purpose": "Keep a small semantic comparison readable.",
+      "intent": "Compare values under real headers without a custom grid widget.",
+      "contract": "Native caption/th scope and bounded overflow; sorting/filtering remain excluded."
+    },
+    {
+      "id": "tabs",
+      "title": "Tabbed links / native panel chooser",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Tabs"
+        ],
+        "daisy": [
+          "Tabs"
+        ]
+      },
+      "classes": [
+        "ui-tabs",
+        "ui-tab-links"
+      ],
+      "purpose": "Offer linked destinations or a native choice between preloaded panels.",
+      "intent": "Choose a labelled preview without a fake ARIA tab state.",
+      "contract": "Radio fieldset uses native selection and CSS panels; link variant is navigation. Full role=tab keyboard/ARIA synchronization requires logic."
+    },
+    {
+      "id": "textarea",
+      "title": "Textarea",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Textarea"
+        ],
+        "daisy": [
+          "Textarea"
+        ]
+      },
+      "classes": [
+        "ui-textarea"
+      ],
+      "purpose": "Provide a native multiline editor.",
+      "intent": "Enter line breaks and resize notes vertically.",
+      "contract": "Native rows and editable text; no rich-text editing or auto-save."
+    },
+    {
+      "id": "toast",
+      "title": "Toast presentation",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Toast"
+        ],
+        "daisy": [
+          "Toast"
+        ]
+      },
+      "classes": [
+        "ui-toast"
+      ],
+      "purpose": "Group a settled notification and its text.",
+      "intent": "Read feedback without obscuring the active working area.",
+      "contract": "In-flow notification stack in the reference; spawning, live timing, timers and dismissal policy need logic."
+    },
+    {
+      "id": "toggle",
+      "title": "Checkbox button",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Toggle"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-toggle-button"
+      ],
+      "purpose": "Use native checkbox semantics for a persistent binary choice.",
+      "intent": "See and change the selected option without a fake aria-pressed button.",
+      "contract": "Visible checkbox with a styled label; a true aria-pressed button needs state synchronization."
+    },
+    {
+      "id": "toggle-group",
+      "title": "Multiple toggle choices",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [
+          "Toggle Group"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-toggle-group"
+      ],
+      "purpose": "Keep several persistent binary choices together.",
+      "intent": "Select multiple explicit options with native checkbox behavior.",
+      "contract": "Native fieldset/checkboxes; no ARIA toolbar or roving focus is claimed."
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Tooltip"
+        ],
+        "daisy": [
+          "Tooltip"
+        ]
+      },
+      "classes": [
+        "ui-tooltip"
+      ],
+      "purpose": "Offer supplementary noninteractive help without hiding required instructions.",
+      "intent": "Read help on hover/focus/click and dismiss it without moving focus.",
+      "contract": "Chrome native interestfor, hint popover and described text; explicit popovertarget is a click fallback."
+    },
+    {
+      "id": "trace",
+      "title": "Trace disclosure",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [
+          "Trace"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-trace"
+      ],
+      "purpose": "Group a supplied sequence of diagnostic steps.",
+      "intent": "Inspect an ordered explanation without mistaking it for live execution.",
+      "contract": "Native details/ol presentation; capturing spans, timing and observability data need logic."
+    },
+    {
+      "id": "typography",
+      "title": "Typography",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [
+          "Typography"
+        ],
+        "daisy": []
+      },
+      "classes": [
+        "ui-prose"
+      ],
+      "purpose": "Use the established document reading layer.",
+      "intent": "Navigate semantic headings, lists, quotations and code.",
+      "contract": "Reuses the audited prose classes and separate content specimen."
+    },
+    {
+      "id": "countdown",
+      "title": "Countdown number display",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Countdown"
+        ]
+      },
+      "classes": [
+        "ui-countdown"
+      ],
+      "purpose": "Keep supplied time fields aligned.",
+      "intent": "Read an explicitly static duration example without a misleading running clock.",
+      "contract": "Presentation only; clock reads, deadlines and ticking require application logic."
+    },
+    {
+      "id": "diff",
+      "title": "Comparison / diff view",
+      "kind": "alternative",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Diff"
+        ]
+      },
+      "classes": [
+        "ui-diff",
+        "ui-diff-wipe"
+      ],
+      "purpose": "Keep before/after content adjacent for inspection.",
+      "intent": "Compare both versions without hiding either from keyboard or touch users.",
+      "contract": "Paired comparison plus optional native CSS pointer-resize wipe; both full images remain separately readable. A keyboard range/drag engine is a separate widget."
+    },
+    {
+      "id": "dock",
+      "title": "Bottom navigation / dock",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Dock"
+        ]
+      },
+      "classes": [
+        "ui-dock"
+      ],
+      "purpose": "Group a small set of working-area destinations.",
+      "intent": "Find the current location without floating over document content.",
+      "contract": "Positioned within its bounded example surface, not a viewport overlay."
+    },
+    {
+      "id": "fab",
+      "title": "Corner action / speed dial",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "FAB / Speed Dial"
+        ]
+      },
+      "classes": [
+        "ui-fab"
+      ],
+      "purpose": "Keep a named corner action and secondary links together.",
+      "intent": "Open the extra destinations with native click, keyboard and Escape behavior.",
+      "contract": "Native popover; contained corner positioning avoids covering the page."
+    },
+    {
+      "id": "file-input",
+      "title": "File input",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "File Input"
+        ]
+      },
+      "classes": [
+        "ui-file-input"
+      ],
+      "purpose": "Expose the browser-owned file chooser.",
+      "intent": "Choose a file only after an explicit native action.",
+      "contract": "Local selection only; no upload, reading, permission grant or persistence occurs."
+    },
+    {
+      "id": "filter",
+      "title": "Fixed-data filter",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Filter"
+        ]
+      },
+      "classes": [
+        "ui-filter"
+      ],
+      "purpose": "Filter a bounded preloaded example through native choice state.",
+      "intent": "Select a visible criterion and restore all examples with Reset.",
+      "contract": "Native radios/reset and CSS :has; querying stores or computing result counts needs logic."
+    },
+    {
+      "id": "footer",
+      "title": "Footer",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Footer"
+        ]
+      },
+      "classes": [
+        "ui-footer"
+      ],
+      "purpose": "Group document-end information and destinations.",
+      "intent": "Find supporting links without confusing them with the main task.",
+      "contract": "Semantic footer with wrapping links; no fixed viewport placement."
+    },
+    {
+      "id": "hero",
+      "title": "Introductory panel / hero",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Hero"
+        ]
+      },
+      "classes": [
+        "ui-hero"
+      ],
+      "purpose": "Introduce one purpose and a next destination.",
+      "intent": "Understand the surface before choosing an action.",
+      "contract": "Quiet neutral panel and existing heading scale; no full-screen marketing treatment."
+    },
+    {
+      "id": "hover-3d",
+      "title": "Hover 3D",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Hover 3D Card"
+        ]
+      },
+      "classes": [
+        "ui-hover-3d"
+      ],
+      "purpose": "Demonstrate an optional spatial card treatment.",
+      "intent": "Inspect the requested visual treatment without moving an interactive target.",
+      "contract": "Decorative noninteractive card only, small immediate tilt; disabled for reduced motion and coarse pointers."
+    },
+    {
+      "id": "hover-gallery",
+      "title": "Hover gallery",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Hover Gallery"
+        ]
+      },
+      "classes": [
+        "ui-hover-gallery"
+      ],
+      "purpose": "Preview one of several supplied images.",
+      "intent": "Use hover for a temporary preview or native radios for keyboard/touch selection.",
+      "contract": "All choices remain reachable; no auto-advance, fetching or hover-only information."
+    },
+    {
+      "id": "indicator",
+      "title": "Indicator",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Indicator"
+        ]
+      },
+      "classes": [
+        "ui-indicator"
+      ],
+      "purpose": "Place compact metadata beside its owning item.",
+      "intent": "Read a written count/status in the correct context.",
+      "contract": "In-flow corner alignment; no unexplained colored-only badge."
+    },
+    {
+      "id": "link",
+      "title": "Link",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Link"
+        ]
+      },
+      "classes": [
+        "ui-link"
+      ],
+      "purpose": "Keep a destination distinguishable from plain text.",
+      "intent": "Follow a meaningful underlined destination with native behavior.",
+      "contract": "Native anchor, existing color/focus roles and an actual href."
+    },
+    {
+      "id": "mask",
+      "title": "Image mask",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Mask"
+        ]
+      },
+      "classes": [
+        "ui-mask"
+      ],
+      "purpose": "Demonstrate optional cropping of nonessential artwork.",
+      "intent": "Compare shape treatments while retaining a written media explanation.",
+      "contract": "Circle and polygon variants; never crop text or essential image information."
+    },
+    {
+      "id": "megamenu",
+      "title": "Large navigation popover",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Megamenu"
+        ]
+      },
+      "classes": [
+        "ui-megamenu"
+      ],
+      "purpose": "Group several destination categories in one requested surface.",
+      "intent": "Open grouped links with ordinary keyboard navigation and native dismissal.",
+      "contract": "Native popover/nav, responsive wrapping; no ARIA menubar, hover trap or fetched content."
+    },
+    {
+      "id": "mockup-browser",
+      "title": "Browser mockup",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Browser mockup"
+        ]
+      },
+      "classes": [
+        "ui-mockup-browser"
+      ],
+      "purpose": "Frame a labelled example of a browser-like surface.",
+      "intent": "Recognize illustrative chrome rather than real navigation controls.",
+      "contract": "Static illustration with written mockup label; no fake functional toolbar."
+    },
+    {
+      "id": "mockup-code",
+      "title": "Code mockup",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Code mockup"
+        ]
+      },
+      "classes": [
+        "ui-mockup-code"
+      ],
+      "purpose": "Frame a labelled source example.",
+      "intent": "Inspect source without mistaking the frame for an executable editor.",
+      "contract": "Static pre/code composition and decorative caption only."
+    },
+    {
+      "id": "mockup-phone",
+      "title": "Phone mockup",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Phone mockup"
+        ]
+      },
+      "classes": [
+        "ui-mockup-phone"
+      ],
+      "purpose": "Bound a small-device preview.",
+      "intent": "Inspect a contained illustrative mobile layout without clipping its explanation.",
+      "contract": "Static responsive frame, no device emulation or browser API."
+    },
+    {
+      "id": "mockup-window",
+      "title": "Window mockup",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Window mockup"
+        ]
+      },
+      "classes": [
+        "ui-mockup-window"
+      ],
+      "purpose": "Frame a labelled desktop-like example.",
+      "intent": "Recognize the illustrative content area and caption.",
+      "contract": "No fake close/minimize buttons or actual window control."
+    },
+    {
+      "id": "navbar",
+      "title": "Navigation bar",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Navbar"
+        ]
+      },
+      "classes": [
+        "ui-navbar"
+      ],
+      "purpose": "Group identity and primary destinations.",
+      "intent": "Locate navigation that wraps rather than disappearing on narrow screens.",
+      "contract": "Semantic header/nav with normal source order; no scripted responsive menu."
+    },
+    {
+      "id": "radial-progress",
+      "title": "Radial progress",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Radial progress"
+        ]
+      },
+      "classes": [
+        "ui-radial-progress"
+      ],
+      "purpose": "Pair a supplied completion amount with a circular graphic.",
+      "intent": "Read the written percentage and accessible value independently of color.",
+      "contract": "CSS graphic derives from aria-valuenow; updating actual work progress requires logic."
+    },
+    {
+      "id": "rating",
+      "title": "Rating",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Rating"
+        ]
+      },
+      "classes": [
+        "ui-rating"
+      ],
+      "purpose": "Offer a bounded native single-choice scale.",
+      "intent": "Choose a named rating with arrow keys and full-size labels.",
+      "contract": "Native radio group with explicit number labels; no star-only names or automatic write."
+    },
+    {
+      "id": "stack",
+      "title": "Visual stack",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Stack"
+        ]
+      },
+      "classes": [
+        "ui-visual-stack"
+      ],
+      "purpose": "Indicate grouped material through nonessential background layers.",
+      "intent": "Read the foreground item without hidden essential content beneath it.",
+      "contract": "Only decorative rear layers overlap; all meaningful text remains in the foreground."
+    },
+    {
+      "id": "stat",
+      "title": "Statistic",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Stat"
+        ]
+      },
+      "classes": [
+        "ui-stat"
+      ],
+      "purpose": "Pair a supplied number with its meaning and period.",
+      "intent": "Interpret a quantity without a dashboard number lacking context.",
+      "contract": "Native definition structure and tabular digits; no invented live measurements."
+    },
+    {
+      "id": "status",
+      "title": "Status",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Status"
+        ]
+      },
+      "classes": [
+        "ui-status-indicator"
+      ],
+      "purpose": "Keep a state label and supplementary mark together.",
+      "intent": "Read the explicit state without relying on hue.",
+      "contract": "Written state remains authoritative; status truth comes from the application."
+    },
+    {
+      "id": "steps",
+      "title": "Steps",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Steps"
+        ]
+      },
+      "classes": [
+        "ui-steps"
+      ],
+      "purpose": "Present a supplied process order and current step.",
+      "intent": "Locate the current point without interpreting color alone.",
+      "contract": "Native ordered list, written state and aria-current=step; no workflow advancement logic."
+    },
+    {
+      "id": "swap",
+      "title": "Swap",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Swap"
+        ]
+      },
+      "classes": [
+        "ui-swap"
+      ],
+      "purpose": "Switch between two supplied presentations using a native choice.",
+      "intent": "Read an alternate detail level without replacing the control or saving anything.",
+      "contract": "Visible checkbox and CSS states; the stable label describes the choice."
+    },
+    {
+      "id": "text-rotate",
+      "title": "Text rotation",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Text Rotate"
+        ]
+      },
+      "classes": [
+        "ui-text-rotate"
+      ],
+      "purpose": "Demonstrate an optional sequence of supplementary labels.",
+      "intent": "Inspect the effect while the complete wording remains persistently available.",
+      "contract": "CSS animation opt-in, pause/reset control and reduced-motion fallback; essential text never exists only in the rotating layer."
+    },
+    {
+      "id": "theme-controller",
+      "title": "CSS theme preview",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Theme Controller"
+        ]
+      },
+      "classes": [
+        "ui-theme-controller",
+        "ui-theme-sandbox"
+      ],
+      "purpose": "Preview a complete local palette through native choice state.",
+      "intent": "Compare brightness without a script, page-wide preference write or data change.",
+      "contract": "CSS :has checkbox overrides the bounded preview; persistence and system-default resolution remain the existing preference script."
+    },
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Timeline"
+        ]
+      },
+      "classes": [
+        "ui-timeline"
+      ],
+      "purpose": "Group supplied events in chronological order.",
+      "intent": "Read event dates, descriptions and ordering as real text.",
+      "contract": "Native list/time markup; collecting or sorting events requires logic."
+    },
+    {
+      "id": "validator",
+      "title": "Native validation styling",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": [
+          "Validator"
+        ]
+      },
+      "classes": [
+        "ui-validator"
+      ],
+      "purpose": "Expose browser-enforced input constraints with visible correction guidance.",
+      "intent": "Correct an invalid example without a custom validation engine.",
+      "contract": "Native required/type/pattern and :user-invalid; server/domain checks and custom error synchronization need logic."
+    }
+  ]
+}

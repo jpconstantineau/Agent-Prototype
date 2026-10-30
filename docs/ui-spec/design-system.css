@@ -1111,3 +1111,1193 @@ textarea.ui-inline-control:focus {
   color: MarkText; /* prose-forced-mark.2 */
 }
 }
+
+/* catalog-card: Contain one related item and its actions. */
+.ui-card {
+  padding: var(--ui-space-xl); /* catalog-card.1 */
+  min-inline-size: 0; /* catalog-card.2 */
+  border: 1px solid var(--ui-divider); /* catalog-card.3 */
+  border-radius: var(--ui-radius-panel); /* catalog-card.4 */
+  background-color: var(--ui-surface); /* catalog-card.5 */
+  color: var(--ui-ink); /* catalog-card.6 */
+}
+
+/* catalog-gallery: Lay out independently inspectable component examples. */
+.ui-catalog {
+  display: grid; /* catalog-gallery.1 */
+  grid-template-columns: minmax(0, 1fr); /* catalog-gallery.2 */
+  gap: var(--ui-space-xl); /* catalog-gallery.3 */
+  min-inline-size: 0; /* catalog-gallery.4 */
+}
+
+/* catalog-sample: Bound the live component within its review example. */
+.ui-catalog-sample {
+  padding: var(--ui-space-lg); /* catalog-sample.1 */
+  border: 1px solid var(--ui-divider); /* catalog-sample.2 */
+  min-inline-size: 0; /* catalog-sample.3 */
+}
+
+/* catalog-sample-children: Let the live sample own its trailing inset. */
+.ui-catalog-sample > * {
+  margin-block-end: 0; /* catalog-sample-children.1 */
+}
+
+/* catalog-sample-siblings: Separate peer controls inside one example. */
+.ui-catalog-sample > * + * {
+  margin-block-start: var(--ui-space-md); /* catalog-sample-siblings.1 */
+}
+
+/* catalog-index: Keep the component index responsive. */
+.ui-catalog-index {
+  display: grid; /* catalog-index.1 */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); /* catalog-index.2 */
+  gap: var(--ui-space-sm); /* catalog-index.3 */
+  padding-inline-start: var(--ui-space-lg); /* catalog-index.4 */
+}
+
+/* catalog-source: Keep inspectable markup bounded. */
+.ui-catalog-source {
+  max-inline-size: 100%; /* catalog-source.1 */
+  overflow: auto; /* catalog-source.2 */
+  padding: var(--ui-space-lg); /* catalog-source.3 */
+  background-color: var(--ui-subtle); /* catalog-source.4 */
+  white-space: pre-wrap; /* catalog-source.5 */
+}
+
+/* catalog-source-code: Keep nested source type single-owned. */
+.ui-catalog-source code {
+  font-size: inherit; /* catalog-source-code.1 */
+}
+
+/* catalog-button: Style a real action target consistently. */
+.ui-button {
+  display: inline-flex; /* catalog-button.1 */
+  align-items: center; /* catalog-button.2 */
+  justify-content: center; /* catalog-button.3 */
+  gap: var(--ui-space-sm); /* catalog-button.4 */
+  min-block-size: var(--ui-control-min); /* catalog-button.5 */
+  min-inline-size: var(--ui-control-min); /* catalog-button.6 */
+  padding: var(--ui-control-pad-block) var(--ui-space-lg); /* catalog-button.7 */
+  border-width: 1px; /* catalog-button.8 */
+  border-style: solid; /* catalog-button.9 */
+  border-radius: var(--ui-radius-small); /* catalog-button.10 */
+  font-size: inherit; /* catalog-button.11 */
+  font-weight: 600; /* catalog-button.12 */
+  text-align: center; /* catalog-button.13 */
+  cursor: pointer; /* catalog-button.14 */
+}
+
+/* catalog-secondary: Style neutral named actions. */
+.ui-button:not(.btn-primary) {
+  color: var(--ui-interactive); /* catalog-secondary.1 */
+  background-color: var(--ui-surface); /* catalog-secondary.2 */
+  border-color: var(--ui-border); /* catalog-secondary.3 */
+}
+
+/* catalog-secondary-hover: Confirm the action under the pointer. */
+.ui-button:not(.btn-primary):hover:not(:disabled) {
+  background-color: var(--ui-subtle); /* catalog-secondary-hover.1 */
+}
+
+/* catalog-disabled: Keep unavailable native actions legible. */
+.ui-button:disabled {
+  color: var(--ui-disabled); /* catalog-disabled.1 */
+  background-color: var(--ui-disabled-bg); /* catalog-disabled.2 */
+  cursor: not-allowed; /* catalog-disabled.3 */
+}
+
+/* catalog-button-group: Keep related actions adjacent while allowing wrapping. */
+.ui-button-group, .ui-join {
+  display: flex; /* catalog-button-group.1 */
+  flex-wrap: wrap; /* catalog-button-group.2 */
+  gap: var(--ui-space-sm); /* catalog-button-group.3 */
+}
+
+/* catalog-join: Frame a related action group. */
+.ui-join {
+  padding: var(--ui-space-sm); /* catalog-join.1 */
+  border: 1px solid var(--ui-divider); /* catalog-join.2 */
+  border-radius: var(--ui-radius-small); /* catalog-join.3 */
+}
+
+/* catalog-editors: Keep native editors readable and bounded. */
+.ui-input, .ui-select, .ui-textarea, .ui-date-picker, .ui-combobox, .ui-otp, .ui-file-input {
+  font: inherit; /* catalog-editors.1 */
+  color: var(--ui-ink); /* catalog-editors.2 */
+  background-color: var(--ui-surface); /* catalog-editors.3 */
+  border: 1px solid var(--ui-border); /* catalog-editors.4 */
+  border-radius: var(--ui-radius-small); /* catalog-editors.5 */
+  padding: var(--ui-control-pad-block) var(--ui-space-md); /* catalog-editors.6 */
+  min-block-size: var(--ui-control-min); /* catalog-editors.7 */
+  inline-size: 100%; /* catalog-editors.8 */
+  min-inline-size: 0; /* catalog-editors.9 */
+  max-inline-size: 100%; /* catalog-editors.10 */
+}
+
+/* catalog-textarea: Provide a native multiline editor. */
+.ui-textarea {
+  min-block-size: var(--ui-notes-min); /* catalog-textarea.1 */
+  resize: vertical; /* catalog-textarea.2 */
+}
+
+/* catalog-otp: Keep a verification code in one native input. */
+.ui-otp {
+  font-family: ui-monospace, Consolas, monospace; /* catalog-otp.1 */
+  letter-spacing: 0.25em; /* catalog-otp.2 */
+}
+
+/* catalog-file-input: Expose the browser-owned file chooser. */
+.ui-file-input::file-selector-button {
+  font: inherit; /* catalog-file-input.1 */
+  min-block-size: var(--ui-control-min); /* catalog-file-input.2 */
+  margin-inline-end: var(--ui-space-sm); /* catalog-file-input.3 */
+}
+
+/* catalog-field: Group a persistent label, native control and supporting help. */
+.ui-fieldset, .ui-form-field {
+  display: grid; /* catalog-field.1 */
+  gap: var(--ui-space-sm); /* catalog-field.2 */
+  min-inline-size: 0; /* catalog-field.3 */
+  padding: 0; /* catalog-field.4 */
+  border: 0; /* catalog-field.5 */
+  margin: 0; /* catalog-field.6 */
+}
+
+/* catalog-label: Keep a native control named. */
+.ui-label {
+  display: block; /* catalog-label.1 */
+  font-weight: 600; /* catalog-label.2 */
+}
+
+/* catalog-input-group: Associate a fixed prefix or suffix with an input. */
+.ui-input-group {
+  display: flex; /* catalog-input-group.1 */
+  align-items: center; /* catalog-input-group.2 */
+  gap: var(--ui-space-sm); /* catalog-input-group.3 */
+  min-inline-size: 0; /* catalog-input-group.4 */
+}
+
+/* catalog-group-input: Give editable text the remaining group width. */
+.ui-input-group > input {
+  flex: 1 1 0; /* catalog-group-input.1 */
+  min-inline-size: 0; /* catalog-group-input.2 */
+}
+
+/* catalog-checkbox: Style a native multiple-choice mark. */
+.ui-checkbox, .ui-radio {
+  inline-size: 1.25rem; /* catalog-checkbox.1 */
+  block-size: 1.25rem; /* catalog-checkbox.2 */
+  accent-color: var(--ui-interactive); /* catalog-checkbox.3 */
+}
+
+/* catalog-radio: Present mutually exclusive native choices. */
+.ui-radio {
+  flex-shrink: 0; /* catalog-radio.1 */
+}
+
+/* catalog-slider: Expose a bounded numeric choice. */
+.ui-range {
+  inline-size: 100%; /* catalog-slider.1 */
+  min-inline-size: 0; /* catalog-slider.2 */
+  min-block-size: var(--ui-control-min); /* catalog-slider.3 */
+  accent-color: var(--ui-interactive); /* catalog-slider.4 */
+}
+
+/* catalog-switch: Present a named binary native preference. */
+.ui-toggle {
+  border-radius: var(--ui-radius-small); /* catalog-switch.1 */
+  padding-inline: var(--ui-space-sm); /* catalog-switch.2 */
+}
+
+/* catalog-toggle: Use native checkbox semantics for a persistent binary choice. */
+.ui-toggle-button {
+  display: inline-flex; /* catalog-toggle.1 */
+  align-items: center; /* catalog-toggle.2 */
+  gap: var(--ui-space-sm); /* catalog-toggle.3 */
+  min-block-size: var(--ui-control-min); /* catalog-toggle.4 */
+  padding: var(--ui-control-pad-block) var(--ui-space-md); /* catalog-toggle.5 */
+  border: 1px solid var(--ui-border); /* catalog-toggle.6 */
+  border-radius: var(--ui-radius-small); /* catalog-toggle.7 */
+}
+
+/* catalog-checked-option: Make the actual native choice distinct. */
+.ui-toggle-button:has(input:checked) {
+  background-color: var(--ui-subtle); /* catalog-checked-option.1 */
+  font-weight: 600; /* catalog-checked-option.2 */
+}
+
+/* catalog-toggle-group: Keep several persistent binary choices together. */
+.ui-toggle-group {
+  display: flex; /* catalog-toggle-group.1 */
+  flex-wrap: wrap; /* catalog-toggle-group.2 */
+  gap: var(--ui-space-sm); /* catalog-toggle-group.3 */
+  border: 0; /* catalog-toggle-group.4 */
+  padding: 0; /* catalog-toggle-group.5 */
+}
+
+/* catalog-rating: Offer a bounded native single-choice scale. */
+.ui-rating {
+  display: flex; /* catalog-rating.1 */
+  flex-wrap: wrap; /* catalog-rating.2 */
+  gap: var(--ui-space-sm); /* catalog-rating.3 */
+  border: 0; /* catalog-rating.4 */
+  padding: 0; /* catalog-rating.5 */
+}
+
+/* catalog-disclosures: Frame optional native disclosures. */
+.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace {
+  padding: var(--ui-space-lg); /* catalog-disclosures.1 */
+  border: 1px solid var(--ui-divider); /* catalog-disclosures.2 */
+  border-radius: var(--ui-radius-small); /* catalog-disclosures.3 */
+}
+
+/* catalog-summaries: Keep native disclosure labels operable. */
+.ui-accordion > summary, .ui-collapse > summary, .ui-sidebar > summary, .ui-trace > summary {
+  min-block-size: var(--ui-control-min); /* catalog-summaries.1 */
+  font-weight: 600; /* catalog-summaries.2 */
+  cursor: pointer; /* catalog-summaries.3 */
+}
+
+/* catalog-summary-focus: Include summaries in governed keyboard focus. */
+.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible {
+  outline: 3px solid var(--ui-focus); /* catalog-summary-focus.1 */
+  outline-offset: 3px; /* catalog-summary-focus.2 */
+}
+
+@media (forced-colors: active) {
+/* catalog-summary-forced: Honor system focus on native disclosures. */
+.ui-accordion > summary:focus-visible, .ui-collapse > summary:focus-visible, .ui-sidebar > summary:focus-visible, .ui-trace > summary:focus-visible {
+  outline-color: Highlight; /* catalog-summary-forced.1 */
+}
+}
+
+/* catalog-disclosed-content: Separate revealed content from its control. */
+.ui-accordion[open] > summary + *, .ui-collapse[open] > summary + *, .ui-sidebar[open] > summary + *, .ui-trace[open] > summary + * {
+  margin-block-start: var(--ui-space-sm); /* catalog-disclosed-content.1 */
+}
+
+/* catalog-accordion: Group related optional explanations. */
+.ui-accordion + .ui-accordion {
+  margin-block-start: var(--ui-space-sm); /* catalog-accordion.1 */
+}
+
+/* catalog-collapse: Disclose optional supporting material. */
+.ui-collapse {
+  background-color: var(--ui-subtle); /* catalog-collapse.1 */
+}
+
+/* catalog-sidebar: Group optional navigation or support next to content. */
+.ui-sidebar {
+  max-inline-size: 24rem; /* catalog-sidebar.1 */
+}
+
+/* catalog-trace: Group a supplied sequence of diagnostic steps. */
+.ui-trace ol {
+  padding-inline-start: 4ch; /* catalog-trace.1 */
+}
+
+/* catalog-alert: Make a condition and its next step readable together. */
+.ui-alert {
+  padding: var(--ui-space-lg); /* catalog-alert.1 */
+  border-inline-start: var(--ui-notice-stroke) solid var(--ui-border); /* catalog-alert.2 */
+  background-color: var(--ui-subtle); /* catalog-alert.3 */
+}
+
+/* catalog-empty: Explain missing data and one recovery destination. */
+.ui-empty-state {
+  padding: var(--ui-space-section); /* catalog-empty.1 */
+  border: 1px dashed var(--ui-border); /* catalog-empty.2 */
+  border-radius: var(--ui-radius-small); /* catalog-empty.3 */
+}
+
+/* catalog-avatar: Show an identity thumbnail or initials. */
+.ui-avatar {
+  display: inline-grid; /* catalog-avatar.1 */
+  place-items: center; /* catalog-avatar.2 */
+  inline-size: var(--ui-swatch-size); /* catalog-avatar.3 */
+  aspect-ratio: 1; /* catalog-avatar.4 */
+  border-radius: 50%; /* catalog-avatar.5 */
+  border: 1px solid var(--ui-border); /* catalog-avatar.6 */
+  background-color: var(--ui-subtle); /* catalog-avatar.7 */
+  font-weight: 600; /* catalog-avatar.8 */
+}
+
+/* catalog-badge: Keep short metadata visibly grouped. */
+.ui-badge {
+  display: inline-block; /* catalog-badge.1 */
+  padding: var(--ui-space-xs) var(--ui-space-sm); /* catalog-badge.2 */
+  border: 1px solid var(--ui-border); /* catalog-badge.3 */
+  border-radius: var(--ui-radius-small); /* catalog-badge.4 */
+  font-size: 0.875rem; /* catalog-badge.5 */
+}
+
+/* catalog-aura: Demonstrate an optional accent frame without tinting a large work area. */
+.ui-aura {
+  padding: var(--ui-space-lg); /* catalog-aura.1 */
+  border: var(--ui-switch-stroke) solid transparent; /* catalog-aura.2 */
+  border-radius: var(--ui-radius-panel); /* catalog-aura.3 */
+  background: linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-interactive), var(--ui-divider), var(--ui-interactive)) border-box; /* catalog-aura.4 */
+}
+
+/* catalog-aspect-ratio: Reserve a predictable media frame. */
+.ui-aspect-ratio {
+  aspect-ratio: 16 / 9; /* catalog-aspect-ratio.1 */
+  display: grid; /* catalog-aspect-ratio.2 */
+  background-color: var(--ui-subtle); /* catalog-aspect-ratio.3 */
+}
+
+/* catalog-aspect-image: Keep the whole supplied image within its frame. */
+.ui-aspect-ratio img {
+  inline-size: 100%; /* catalog-aspect-image.1 */
+  block-size: 100%; /* catalog-aspect-image.2 */
+  min-block-size: 0; /* catalog-aspect-image.3 */
+  object-fit: contain; /* catalog-aspect-image.4 */
+}
+
+/* catalog-attachment: Present an explicitly named file destination. */
+.ui-attachment {
+  display: inline-flex; /* catalog-attachment.1 */
+  flex-wrap: wrap; /* catalog-attachment.2 */
+  gap: var(--ui-space-sm); /* catalog-attachment.3 */
+  padding: var(--ui-space-md); /* catalog-attachment.4 */
+  border: 1px solid var(--ui-border); /* catalog-attachment.5 */
+  min-block-size: var(--ui-control-min); /* catalog-attachment.6 */
+}
+
+/* catalog-navigation-lists: Keep ordinary destinations in predictable source order. */
+.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-menu ul {
+  display: flex; /* catalog-navigation-lists.1 */
+  flex-wrap: wrap; /* catalog-navigation-lists.2 */
+  gap: var(--ui-space-sm); /* catalog-navigation-lists.3 */
+  list-style-type: none; /* catalog-navigation-lists.4 */
+  padding: 0; /* catalog-navigation-lists.5 */
+  margin: 0; /* catalog-navigation-lists.6 */
+}
+
+/* catalog-navigation-menu: Keep destinations grouped and keyboard reachable. */
+.ui-menu ul {
+  flex-direction: column; /* catalog-navigation-menu.1 */
+}
+
+/* catalog-breadcrumb: Express a real navigation hierarchy. */
+.ui-breadcrumb [aria-current="page"] {
+  font-weight: 600; /* catalog-breadcrumb.1 */
+}
+
+/* catalog-pagination: Express the current position and available page destinations. */
+.ui-pagination [aria-current="page"] {
+  font-weight: 600; /* catalog-pagination.1 */
+  border-block-end: 2px solid currentColor; /* catalog-pagination.2 */
+}
+
+/* catalog-tabs: Offer linked destinations or a native choice between preloaded panels. */
+.ui-tabs {
+  display: grid; /* catalog-tabs.1 */
+  gap: var(--ui-space-sm); /* catalog-tabs.2 */
+  border: 0; /* catalog-tabs.3 */
+  padding: 0; /* catalog-tabs.4 */
+  margin: 0; /* catalog-tabs.5 */
+}
+
+/* catalog-tab-links: Distinguish destination links without fake tab roles. */
+.ui-tab-links a {
+  padding: var(--ui-space-sm); /* catalog-tab-links.1 */
+  border-block-end: 2px solid var(--ui-divider); /* catalog-tab-links.2 */
+  min-block-size: var(--ui-control-min); /* catalog-tab-links.3 */
+}
+
+/* catalog-nav-targets: Keep component navigation usable. */
+.ui-breadcrumb a, .ui-pagination a, .ui-dock a, .ui-menu a {
+  display: inline-flex; /* catalog-nav-targets.1 */
+  align-items: center; /* catalog-nav-targets.2 */
+  min-block-size: var(--ui-control-min); /* catalog-nav-targets.3 */
+  padding-inline: var(--ui-space-sm); /* catalog-nav-targets.4 */
+}
+
+/* catalog-navbar: Group identity and primary destinations. */
+.ui-navbar {
+  display: flex; /* catalog-navbar.1 */
+  flex-wrap: wrap; /* catalog-navbar.2 */
+  align-items: center; /* catalog-navbar.3 */
+  justify-content: space-between; /* catalog-navbar.4 */
+  gap: var(--ui-space-md); /* catalog-navbar.5 */
+  padding: var(--ui-space-lg); /* catalog-navbar.6 */
+  background-color: var(--ui-subtle); /* catalog-navbar.7 */
+}
+
+/* catalog-dock: Group a small set of working-area destinations. */
+.ui-dock {
+  justify-content: space-around; /* catalog-dock.1 */
+  border-block-start: 1px solid var(--ui-divider); /* catalog-dock.2 */
+  padding: var(--ui-space-sm); /* catalog-dock.3 */
+}
+
+/* catalog-footer: Group document-end information and destinations. */
+.ui-footer {
+  display: flex; /* catalog-footer.1 */
+  flex-wrap: wrap; /* catalog-footer.2 */
+  gap: var(--ui-space-lg); /* catalog-footer.3 */
+  padding-block: var(--ui-space-lg); /* catalog-footer.4 */
+  border-block-start: 1px solid var(--ui-divider); /* catalog-footer.5 */
+}
+
+/* catalog-hero: Introduce one purpose and a next destination. */
+.ui-hero {
+  padding: var(--ui-space-section); /* catalog-hero.1 */
+  background-color: var(--ui-subtle); /* catalog-hero.2 */
+  max-inline-size: 65ch; /* catalog-hero.3 */
+}
+
+/* catalog-chat: Group author, timestamp and message content. */
+.ui-chat {
+  display: grid; /* catalog-chat.1 */
+  gap: var(--ui-space-sm); /* catalog-chat.2 */
+}
+
+/* catalog-bubble: Bound supplied conversation text. */
+.ui-bubble {
+  padding: var(--ui-space-md); /* catalog-bubble.1 */
+  border-radius: var(--ui-radius-panel); /* catalog-bubble.2 */
+  background-color: var(--ui-subtle); /* catalog-bubble.3 */
+  max-inline-size: 65ch; /* catalog-bubble.4 */
+}
+
+/* catalog-message: Separate message content from its metadata. */
+.ui-message {
+  margin: 0; /* catalog-message.1 */
+  overflow-wrap: anywhere; /* catalog-message.2 */
+}
+
+/* catalog-item: Present comparable named rows. */
+.ui-item-list {
+  list-style-type: none; /* catalog-item.1 */
+  padding: 0; /* catalog-item.2 */
+  margin: 0; /* catalog-item.3 */
+}
+
+/* catalog-item-row: Separate supplied records from peers. */
+.ui-item {
+  display: flex; /* catalog-item-row.1 */
+  flex-wrap: wrap; /* catalog-item-row.2 */
+  justify-content: space-between; /* catalog-item-row.3 */
+  gap: var(--ui-space-sm); /* catalog-item-row.4 */
+  padding: var(--ui-space-md); /* catalog-item-row.5 */
+  border-block-end: 1px solid var(--ui-divider); /* catalog-item-row.6 */
+}
+
+/* catalog-kbd: Distinguish a key name from an app control. */
+.ui-kbd {
+  font-family: ui-monospace, Consolas, monospace; /* catalog-kbd.1 */
+  padding: 0 var(--ui-space-xs); /* catalog-kbd.2 */
+  border: 1px solid var(--ui-border); /* catalog-kbd.3 */
+  border-radius: var(--ui-radius-small); /* catalog-kbd.4 */
+}
+
+/* catalog-marker: Identify a relevant text fragment. */
+.ui-marker {
+  color: var(--ui-ink); /* catalog-marker.1 */
+  background-color: var(--ui-subtle); /* catalog-marker.2 */
+  outline: 1px solid currentColor; /* catalog-marker.3 */
+}
+
+/* catalog-direction: Respect the document language direction through logical layout. */
+.ui-direction {
+  text-align: start; /* catalog-direction.1 */
+  border-inline-start: var(--ui-notice-stroke) solid var(--ui-border); /* catalog-direction.2 */
+  padding-inline-start: var(--ui-space-md); /* catalog-direction.3 */
+}
+
+/* catalog-popover-panels: Style browser-owned nonmodal top-layer surfaces. */
+.ui-popover, .ui-dropdown, .ui-hover-card, .ui-tooltip, .ui-megamenu {
+  padding: var(--ui-space-lg); /* catalog-popover-panels.1 */
+  border: 1px solid var(--ui-border); /* catalog-popover-panels.2 */
+  border-radius: var(--ui-radius-small); /* catalog-popover-panels.3 */
+  background-color: var(--ui-surface); /* catalog-popover-panels.4 */
+  color: var(--ui-ink); /* catalog-popover-panels.5 */
+  max-inline-size: min(32rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-popover-panels.6 */
+  max-block-size: calc(100dvh - 2 * var(--ui-dialog-clearance)); /* catalog-popover-panels.7 */
+  overflow: auto; /* catalog-popover-panels.8 */
+  margin: var(--ui-space-sm); /* catalog-popover-panels.9 */
+  inset: auto; /* catalog-popover-panels.10 */
+  position-area: block-end; /* catalog-popover-panels.11 */
+  position-try-fallbacks: flip-block, flip-inline; /* catalog-popover-panels.12 */
+}
+
+/* catalog-popover: Show nonmodal supporting information in the top layer. */
+.ui-popover {
+  inline-size: min(28rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-popover.1 */
+}
+
+/* catalog-dropdown: Expose a compact group of navigation links on request. */
+.ui-dropdown {
+  inline-size: min(20rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-dropdown.1 */
+}
+
+/* catalog-hover-card: Show a supplementary preview without replacing the primary link. */
+.ui-hover-card {
+  inline-size: min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-hover-card.1 */
+}
+
+/* catalog-tooltip: Offer supplementary noninteractive help without hiding required instructions. */
+.ui-tooltip {
+  inline-size: min(24rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-tooltip.1 */
+}
+
+/* catalog-megamenu: Group several destination categories in one requested surface. */
+.ui-megamenu {
+  inline-size: min(40rem, calc(100vw - 2 * var(--ui-dialog-clearance))); /* catalog-megamenu.1 */
+}
+
+/* catalog-tooltip-type: Keep optional help readable without overpowering its invoker. */
+.ui-tooltip {
+  font-size: 0.875rem; /* catalog-tooltip-type.1 */
+}
+
+/* catalog-megamenu-grid: Lay out destination categories within a native popover. */
+.ui-megamenu > div {
+  display: grid; /* catalog-megamenu-grid.1 */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); /* catalog-megamenu-grid.2 */
+  gap: var(--ui-space-lg); /* catalog-megamenu-grid.3 */
+}
+
+/* catalog-modal-panels: Bound browser-owned modal surfaces. */
+.ui-modal, .ui-alert-dialog, .ui-drawer, .ui-sheet {
+  inline-size: min(32rem, calc(100% - 2 * var(--ui-dialog-clearance))); /* catalog-modal-panels.1 */
+  max-block-size: calc(100dvh - 2 * var(--ui-dialog-clearance)); /* catalog-modal-panels.2 */
+  padding: var(--ui-space-xl); /* catalog-modal-panels.3 */
+  overflow: auto; /* catalog-modal-panels.4 */
+}
+
+/* catalog-dialog: Present a bounded modal surface with native focus handling. */
+.ui-modal {
+  border-radius: var(--ui-radius-panel); /* catalog-dialog.1 */
+}
+
+/* catalog-alert-dialog: Focus a blocking example decision in the native top layer. */
+.ui-alert-dialog {
+  border-inline-start-width: var(--ui-notice-stroke); /* catalog-alert-dialog.1 */
+}
+
+/* catalog-drawer: Place a named modal support surface at an edge. */
+.ui-drawer {
+  inset-inline-start: auto; /* catalog-drawer.1 */
+  inset-inline-end: var(--ui-dialog-clearance); /* catalog-drawer.2 */
+  inset-block: var(--ui-dialog-clearance); /* catalog-drawer.3 */
+  margin: 0; /* catalog-drawer.4 */
+  inline-size: min(24rem, calc(100% - 2 * var(--ui-dialog-clearance))); /* catalog-drawer.5 */
+  block-size: calc(100dvh - 2 * var(--ui-dialog-clearance)); /* catalog-drawer.6 */
+}
+
+/* catalog-sheet: Place a blocking support surface along the lower edge. */
+.ui-sheet {
+  inset-block-start: auto; /* catalog-sheet.1 */
+  inset-block-end: var(--ui-dialog-clearance); /* catalog-sheet.2 */
+  margin-block: 0; /* catalog-sheet.3 */
+  inline-size: min(48rem, calc(100% - 2 * var(--ui-dialog-clearance))); /* catalog-sheet.4 */
+}
+
+/* catalog-carousel: Offer an ordered horizontally scrollable set of panels. */
+.ui-carousel {
+  display: flex; /* catalog-carousel.1 */
+  gap: var(--ui-space-lg); /* catalog-carousel.2 */
+  overflow-x: auto; /* catalog-carousel.3 */
+  scroll-snap-type: x proximity; /* catalog-carousel.4 */
+  padding: var(--ui-space-sm); /* catalog-carousel.5 */
+}
+
+/* catalog-slide: Give one supplied panel a local viewport. */
+.ui-slide {
+  flex: 0 0 100%; /* catalog-slide.1 */
+  scroll-snap-align: start; /* catalog-slide.2 */
+  padding: var(--ui-space-lg); /* catalog-slide.3 */
+  border: 1px solid var(--ui-divider); /* catalog-slide.4 */
+  min-inline-size: 0; /* catalog-slide.5 */
+}
+
+/* catalog-code-block: Bound exact source content and its label. */
+.ui-code-block {
+  max-inline-size: 100%; /* catalog-code-block.1 */
+  overflow: auto; /* catalog-code-block.2 */
+  white-space: pre; /* catalog-code-block.3 */
+  overflow-wrap: normal; /* catalog-code-block.4 */
+  padding: var(--ui-space-lg); /* catalog-code-block.5 */
+  background-color: var(--ui-subtle); /* catalog-code-block.6 */
+}
+
+/* catalog-scroll-area: Bound an inspection region without clipping content. */
+.ui-scroll-area {
+  max-block-size: 12rem; /* catalog-scroll-area.1 */
+  overflow: auto; /* catalog-scroll-area.2 */
+  padding: var(--ui-space-lg); /* catalog-scroll-area.3 */
+  border: 1px solid var(--ui-border); /* catalog-scroll-area.4 */
+}
+
+/* catalog-resizable: Allow native CSS resizing of a bounded example workspace. */
+.ui-resizable {
+  inline-size: min(100%, 28rem); /* catalog-resizable.1 */
+  max-inline-size: 100%; /* catalog-resizable.2 */
+  min-block-size: 6rem; /* catalog-resizable.3 */
+  resize: both; /* catalog-resizable.4 */
+  overflow: auto; /* catalog-resizable.5 */
+  padding: var(--ui-space-lg); /* catalog-resizable.6 */
+  border: 1px solid var(--ui-border); /* catalog-resizable.7 */
+}
+
+/* catalog-separator: Separate topics without extra decorative panels. */
+.ui-divider {
+  border: 0; /* catalog-separator.1 */
+  border-block-start: 1px solid var(--ui-divider); /* catalog-separator.2 */
+  margin-block: var(--ui-space-lg); /* catalog-separator.3 */
+}
+
+/* catalog-progress: Display an actual bounded completion amount. */
+.ui-progress {
+  inline-size: 100%; /* catalog-progress.1 */
+  max-inline-size: 100%; /* catalog-progress.2 */
+  accent-color: var(--ui-interactive); /* catalog-progress.3 */
+}
+
+/* catalog-radial-progress: Pair a supplied completion amount with a circular graphic. */
+.ui-radial-progress {
+  display: inline-grid; /* catalog-radial-progress.1 */
+  place-items: center; /* catalog-radial-progress.2 */
+  inline-size: calc(2 * var(--ui-swatch-size)); /* catalog-radial-progress.3 */
+  aspect-ratio: 1; /* catalog-radial-progress.4 */
+  border-radius: 50%; /* catalog-radial-progress.5 */
+  background: conic-gradient(var(--ui-interactive) calc(attr(aria-valuenow type(<number>), 0) * 3.6deg), var(--ui-divider) 0deg); /* catalog-radial-progress.6 */
+}
+
+/* catalog-radial-hole: Keep the ring center a readable neutral plane. */
+.ui-radial-progress::before {
+  content: ""; /* catalog-radial-hole.1 */
+  grid-area: 1 / 1; /* catalog-radial-hole.2 */
+  inline-size: calc(100% - 2 * var(--ui-space-sm)); /* catalog-radial-hole.3 */
+  aspect-ratio: 1; /* catalog-radial-hole.4 */
+  border-radius: 50%; /* catalog-radial-hole.5 */
+  background-color: var(--ui-surface); /* catalog-radial-hole.6 */
+}
+
+/* catalog-radial-label: Keep the supplied amount above its decorative center. */
+.ui-radial-progress > span {
+  grid-area: 1 / 1; /* catalog-radial-label.1 */
+  position: relative; /* catalog-radial-label.2 */
+  color: var(--ui-ink); /* catalog-radial-label.3 */
+}
+
+/* catalog-skeleton: Reserve the shape of forthcoming content. */
+.ui-skeleton {
+  min-block-size: var(--ui-swatch-size); /* catalog-skeleton.1 */
+  border: 1px dashed var(--ui-border); /* catalog-skeleton.2 */
+  background-color: var(--ui-subtle); /* catalog-skeleton.3 */
+  border-radius: var(--ui-radius-small); /* catalog-skeleton.4 */
+}
+
+/* catalog-spinner: Supplement a written loading state with an optional motion cue. */
+.ui-spinner {
+  display: inline-block; /* catalog-spinner.1 */
+  inline-size: 1.25rem; /* catalog-spinner.2 */
+  aspect-ratio: 1; /* catalog-spinner.3 */
+  border: var(--ui-switch-stroke) solid var(--ui-border); /* catalog-spinner.4 */
+  border-block-start-color: var(--ui-interactive); /* catalog-spinner.5 */
+  border-radius: 50%; /* catalog-spinner.6 */
+}
+
+/* catalog-spin-enabled: Enable only the explicitly requested loading preview. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner {
+  animation: ui-catalog-spin 1s linear infinite; /* catalog-spin-enabled.1 */
+}
+
+/* catalog-text-rotate: Demonstrate an optional sequence of supplementary labels. */
+.ui-text-rotate {
+  display: flex; /* catalog-text-rotate.1 */
+  flex-wrap: wrap; /* catalog-text-rotate.2 */
+  gap: var(--ui-space-sm); /* catalog-text-rotate.3 */
+}
+
+/* catalog-rotation-layout: Reserve one text position for an explicitly requested effect. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate {
+  display: grid; /* catalog-rotation-layout.1 */
+}
+
+/* catalog-rotation-labels: Rotate supplementary labels whose wording remains persistent elsewhere. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span {
+  grid-area: 1 / 1; /* catalog-rotation-labels.1 */
+  opacity: 0; /* catalog-rotation-labels.2 */
+  animation: ui-catalog-word 9s linear infinite; /* catalog-rotation-labels.3 */
+}
+
+/* catalog-rotation-second: Sequence the second supplementary label. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span:nth-child(2) {
+  animation-delay: 3s; /* catalog-rotation-second.1 */
+}
+
+/* catalog-rotation-third: Sequence the third supplementary label. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span:nth-child(3) {
+  animation-delay: 6s; /* catalog-rotation-third.1 */
+}
+
+/* catalog-rotation-pause: Allow stationary inspection of the optional effect. */
+.ui-motion-preview:hover .ui-text-rotate > span, .ui-motion-preview:focus-within .ui-text-rotate > span {
+  animation-play-state: paused; /* catalog-rotation-pause.1 */
+}
+
+@media (prefers-reduced-motion: reduce) {
+/* catalog-motion-reduced: Honor reduced motion even when the preview is selected. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span {
+  animation: none; /* catalog-motion-reduced.1 */
+  opacity: 1; /* catalog-motion-reduced.2 */
+  grid-area: auto; /* catalog-motion-reduced.3 */
+}
+}
+
+@keyframes ui-catalog-spin {
+/* catalog-spin-frame: Define only the explicitly enabled supplementary animation. */
+to {
+  transform: rotate(1turn); /* catalog-spin-frame.1 */
+}
+}
+
+@keyframes ui-catalog-word {
+/* catalog-word-visible: Define only the explicitly enabled supplementary animation. */
+0%, 30% {
+  opacity: 1; /* catalog-word-visible.1 */
+}
+/* catalog-word-hidden: Define only the explicitly enabled supplementary animation. */
+33%, 100% {
+  opacity: 0; /* catalog-word-hidden.1 */
+}
+}
+
+/* catalog-table: Keep a small semantic comparison readable. */
+.ui-data-table {
+  inline-size: 100%; /* catalog-table.1 */
+  border-collapse: collapse; /* catalog-table.2 */
+  overflow-wrap: normal; /* catalog-table.3 */
+}
+
+/* catalog-table-cells: Keep supplied records aligned with real headers. */
+.ui-data-table th, .ui-data-table td {
+  padding: var(--ui-space-sm) var(--ui-space-md); /* catalog-table-cells.1 */
+  text-align: start; /* catalog-table-cells.2 */
+  vertical-align: top; /* catalog-table-cells.3 */
+  border-block-end: 1px solid var(--ui-divider); /* catalog-table-cells.4 */
+}
+
+/* catalog-toast: Group a settled notification and its text. */
+.ui-toast {
+  padding: var(--ui-space-lg); /* catalog-toast.1 */
+  border: 1px solid var(--ui-border); /* catalog-toast.2 */
+  border-radius: var(--ui-radius-small); /* catalog-toast.3 */
+  background-color: var(--ui-subtle); /* catalog-toast.4 */
+}
+
+/* catalog-countdown: Keep supplied time fields aligned. */
+.ui-countdown {
+  font-variant-numeric: tabular-nums; /* catalog-countdown.1 */
+  font-family: ui-monospace, Consolas, monospace; /* catalog-countdown.2 */
+  font-size: 1.5rem; /* catalog-countdown.3 */
+}
+
+/* catalog-diff: Keep before/after content adjacent for inspection. */
+.ui-diff {
+  display: grid; /* catalog-diff.1 */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); /* catalog-diff.2 */
+  gap: var(--ui-space-lg); /* catalog-diff.3 */
+}
+
+/* catalog-stage: Bound corner-position examples within their own workspace. */
+.ui-component-stage {
+  position: relative; /* catalog-stage.1 */
+  min-block-size: 12rem; /* catalog-stage.2 */
+  padding: var(--ui-space-lg); /* catalog-stage.3 */
+  padding-block-end: calc(var(--ui-control-min) + 2 * var(--ui-space-lg)); /* catalog-stage.4 */
+  border: 1px solid var(--ui-divider); /* catalog-stage.5 */
+}
+
+/* catalog-fab: Keep a named corner action and secondary links together. */
+.ui-fab {
+  position: absolute; /* catalog-fab.1 */
+  inset-inline-end: var(--ui-space-lg); /* catalog-fab.2 */
+  inset-block-end: var(--ui-space-lg); /* catalog-fab.3 */
+}
+
+/* catalog-filter: Filter a bounded preloaded example through native choice state. */
+.ui-filter {
+  display: grid; /* catalog-filter.1 */
+  gap: var(--ui-space-md); /* catalog-filter.2 */
+}
+
+/* catalog-filter-results: Keep supplied matching records together. */
+.ui-filter-results {
+  display: grid; /* catalog-filter-results.1 */
+  gap: var(--ui-space-sm); /* catalog-filter-results.2 */
+}
+
+/* catalog-filter-open: Apply a native criterion to fixed supplied records. */
+.ui-filter:has(input[value="open"]:checked) .ui-filter-result:not([data-state="open"]) {
+  display: none; /* catalog-filter-open.1 */
+}
+
+/* catalog-filter-done: Apply a native criterion to fixed supplied records. */
+.ui-filter:has(input[value="done"]:checked) .ui-filter-result:not([data-state="done"]) {
+  display: none; /* catalog-filter-done.1 */
+}
+
+/* catalog-hover-3d: Demonstrate an optional spatial card treatment. */
+.ui-hover-3d {
+  padding: var(--ui-space-xl); /* catalog-hover-3d.1 */
+  border: 1px solid var(--ui-divider); /* catalog-hover-3d.2 */
+  background-color: var(--ui-subtle); /* catalog-hover-3d.3 */
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+/* catalog-tilt: Demonstrate a small spatial treatment on noninteractive content. */
+.ui-hover-3d:hover {
+  transform: perspective(40rem) rotateX(2deg) rotateY(-2deg); /* catalog-tilt.1 */
+}
+}
+
+/* catalog-hover-gallery: Preview one of several supplied images. */
+.ui-hover-gallery {
+  display: grid; /* catalog-hover-gallery.1 */
+  gap: var(--ui-space-sm); /* catalog-hover-gallery.2 */
+  border: 0; /* catalog-hover-gallery.3 */
+  padding: 0; /* catalog-hover-gallery.4 */
+}
+
+/* catalog-gallery-figures: Keep supplied previews grouped as native figures. */
+.ui-hover-gallery > figure {
+  margin: 0; /* catalog-gallery-figures.1 */
+  display: none; /* catalog-gallery-figures.2 */
+}
+
+/* catalog-gallery-one: Show the preview selected through native radio state. */
+.ui-hover-gallery:has(input[value="one"]:checked) > figure[data-preview="one"] {
+  display: block; /* catalog-gallery-one.1 */
+}
+
+/* catalog-gallery-two: Show the preview selected through native radio state. */
+.ui-hover-gallery:has(input[value="two"]:checked) > figure[data-preview="two"] {
+  display: block; /* catalog-gallery-two.1 */
+}
+
+/* catalog-gallery-three: Show the preview selected through native radio state. */
+.ui-hover-gallery:has(input[value="three"]:checked) > figure[data-preview="three"] {
+  display: block; /* catalog-gallery-three.1 */
+}
+
+@media (hover: hover) and (pointer: fine) {
+/* catalog-gallery-hover-hide: Replace the selected preview only during pointer inspection. */
+.ui-hover-gallery:has(label[data-preview]:hover) > figure[data-preview] {
+  display: none; /* catalog-gallery-hover-hide.1 */
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+/* catalog-gallery-hover-one: Expose the figure associated with the hovered choice. */
+.ui-hover-gallery:has(label[data-preview="one"]:hover) > figure[data-preview="one"] {
+  display: block; /* catalog-gallery-hover-one.1 */
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+/* catalog-gallery-hover-two: Expose the figure associated with the hovered choice. */
+.ui-hover-gallery:has(label[data-preview="two"]:hover) > figure[data-preview="two"] {
+  display: block; /* catalog-gallery-hover-two.1 */
+}
+}
+
+@media (hover: hover) and (pointer: fine) {
+/* catalog-gallery-hover-three: Expose the figure associated with the hovered choice. */
+.ui-hover-gallery:has(label[data-preview="three"]:hover) > figure[data-preview="three"] {
+  display: block; /* catalog-gallery-hover-three.1 */
+}
+}
+
+/* catalog-gallery-image: Keep supplied gallery media responsive. */
+.ui-hover-gallery img {
+  display: block; /* catalog-gallery-image.1 */
+  max-inline-size: 100%; /* catalog-gallery-image.2 */
+  block-size: auto; /* catalog-gallery-image.3 */
+}
+
+/* catalog-indicator: Place compact metadata beside its owning item. */
+.ui-indicator {
+  display: inline-grid; /* catalog-indicator.1 */
+  gap: var(--ui-space-xs); /* catalog-indicator.2 */
+  justify-items: end; /* catalog-indicator.3 */
+}
+
+/* catalog-link: Keep a destination distinguishable from plain text. */
+.ui-link {
+  text-decoration-thickness: 0.1em; /* catalog-link.1 */
+}
+
+/* catalog-mask: Demonstrate optional cropping of nonessential artwork. */
+.ui-mask {
+  display: block; /* catalog-mask.1 */
+  inline-size: var(--ui-swatch-size); /* catalog-mask.2 */
+  aspect-ratio: 1; /* catalog-mask.3 */
+  object-fit: cover; /* catalog-mask.4 */
+  clip-path: circle(50%); /* catalog-mask.5 */
+}
+
+/* catalog-mask-hexagon: Offer another optional crop shape. */
+.ui-mask--hexagon {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); /* catalog-mask-hexagon.1 */
+}
+
+/* catalog-mockup-frames: Frame explicitly illustrative interface samples. */
+.ui-mockup-browser, .ui-mockup-code, .ui-mockup-phone, .ui-mockup-window {
+  padding: var(--ui-space-md); /* catalog-mockup-frames.1 */
+  border: var(--ui-switch-stroke) solid var(--ui-border); /* catalog-mockup-frames.2 */
+  border-radius: var(--ui-radius-panel); /* catalog-mockup-frames.3 */
+  background-color: var(--ui-subtle); /* catalog-mockup-frames.4 */
+  max-inline-size: 100%; /* catalog-mockup-frames.5 */
+  margin: 0; /* catalog-mockup-frames.6 */
+}
+
+/* catalog-mockup-browser: Frame a labelled example of a browser-like surface. */
+.ui-mockup-browser > header {
+  padding-block-end: var(--ui-space-sm); /* catalog-mockup-browser.1 */
+  border-block-end: 1px solid var(--ui-divider); /* catalog-mockup-browser.2 */
+}
+
+/* catalog-mockup-code: Frame a labelled source example. */
+.ui-mockup-code pre {
+  overflow: auto; /* catalog-mockup-code.1 */
+  white-space: pre; /* catalog-mockup-code.2 */
+}
+
+/* catalog-mockup-phone: Bound a small-device preview. */
+.ui-mockup-phone {
+  inline-size: min(18rem, 100%); /* catalog-mockup-phone.1 */
+  min-block-size: 20rem; /* catalog-mockup-phone.2 */
+  border-width: var(--ui-space-sm); /* catalog-mockup-phone.3 */
+}
+
+/* catalog-mockup-window: Frame a labelled desktop-like example. */
+.ui-mockup-window > header {
+  font-weight: 600; /* catalog-mockup-window.1 */
+  border-block-end: 1px solid var(--ui-divider); /* catalog-mockup-window.2 */
+}
+
+/* catalog-stack: Indicate grouped material through nonessential background layers. */
+.ui-visual-stack {
+  padding: var(--ui-space-lg); /* catalog-stack.1 */
+  border: 1px solid var(--ui-border); /* catalog-stack.2 */
+  box-shadow: var(--ui-space-xs) var(--ui-space-xs) 0 0 var(--ui-divider), var(--ui-space-sm) var(--ui-space-sm) 0 0 var(--ui-subtle); /* catalog-stack.3 */
+  background-color: var(--ui-surface); /* catalog-stack.4 */
+}
+
+/* catalog-stat: Pair a supplied number with its meaning and period. */
+.ui-stat {
+  display: grid; /* catalog-stat.1 */
+  gap: var(--ui-space-xs); /* catalog-stat.2 */
+  margin: 0; /* catalog-stat.3 */
+}
+
+/* catalog-stat-value: Make supplied quantities readable with context. */
+.ui-stat dd {
+  margin: 0; /* catalog-stat-value.1 */
+  font-size: 2rem; /* catalog-stat-value.2 */
+  font-variant-numeric: tabular-nums; /* catalog-stat-value.3 */
+}
+
+/* catalog-status: Keep a state label and supplementary mark together. */
+.ui-status-indicator {
+  display: inline-flex; /* catalog-status.1 */
+  align-items: center; /* catalog-status.2 */
+  gap: var(--ui-space-sm); /* catalog-status.3 */
+}
+
+/* catalog-status-dot: Supplement written state with a nonessential mark. */
+.ui-status-indicator::before {
+  content: ""; /* catalog-status-dot.1 */
+  inline-size: 0.75rem; /* catalog-status-dot.2 */
+  aspect-ratio: 1; /* catalog-status-dot.3 */
+  border-radius: 50%; /* catalog-status-dot.4 */
+  background-color: var(--ui-success); /* catalog-status-dot.5 */
+}
+
+/* catalog-steps: Present a supplied process order and current step. */
+.ui-steps {
+  padding-inline-start: 4ch; /* catalog-steps.1 */
+  margin: 0; /* catalog-steps.2 */
+}
+
+/* catalog-current-step: Identify the supplied current process position. */
+.ui-steps [aria-current="step"] {
+  font-weight: 600; /* catalog-current-step.1 */
+  text-decoration: underline; /* catalog-current-step.2 */
+}
+
+/* catalog-timeline: Group supplied events in chronological order. */
+.ui-timeline {
+  list-style-type: none; /* catalog-timeline.1 */
+  padding: 0; /* catalog-timeline.2 */
+  margin: 0; /* catalog-timeline.3 */
+}
+
+/* catalog-timeline-events: Connect supplied chronological events. */
+.ui-timeline li {
+  padding: var(--ui-space-sm) var(--ui-space-lg); /* catalog-timeline-events.1 */
+  border-inline-start: 2px solid var(--ui-divider); /* catalog-timeline-events.2 */
+}
+
+/* catalog-swap: Switch between two supplied presentations using a native choice. */
+.ui-swap {
+  display: grid; /* catalog-swap.1 */
+  gap: var(--ui-space-sm); /* catalog-swap.2 */
+}
+
+/* catalog-swap-short: Keep the supplied detail level controlled by native choice. */
+.ui-swap:has(input:checked) .ui-swap-short {
+  display: none; /* catalog-swap-short.1 */
+}
+
+/* catalog-swap-detail: Reserve detailed wording for its native choice. */
+.ui-swap:not(:has(input:checked)) .ui-swap-detail {
+  display: none; /* catalog-swap-detail.1 */
+}
+
+/* catalog-theme-controller: Preview a complete local palette through native choice state. */
+.ui-theme-controller {
+  accent-color: var(--ui-interactive); /* catalog-theme-controller.1 */
+}
+
+/* catalog-theme-sandbox: Bound a purely CSS palette comparison. */
+.ui-theme-sandbox {
+  padding: var(--ui-space-lg); /* catalog-theme-sandbox.1 */
+  background-color: var(--ui-surface); /* catalog-theme-sandbox.2 */
+  color: var(--ui-ink); /* catalog-theme-sandbox.3 */
+  border: 1px solid var(--ui-border); /* catalog-theme-sandbox.4 */
+}
+
+/* catalog-theme-standard: Apply a complete checked palette only inside the native preview. */
+:root:not([data-vision="distinct"]) .ui-theme-sandbox:has(.ui-theme-controller:checked) {
+  --ui-primary: #006aa8; /* catalog-theme-standard.1 */
+  --ui-primary-hover: #005686; /* catalog-theme-standard.2 */
+  --ui-ink: #ededed; /* catalog-theme-standard.3 */
+  --ui-muted: #c2c2c2; /* catalog-theme-standard.4 */
+  --ui-canvas: #242424; /* catalog-theme-standard.5 */
+  --ui-surface: #2e2e2e; /* catalog-theme-standard.6 */
+  --ui-subtle: #383838; /* catalog-theme-standard.7 */
+  --ui-border: #a3a3a3; /* catalog-theme-standard.8 */
+  --ui-divider: #585858; /* catalog-theme-standard.9 */
+  --ui-focus: #409fea; /* catalog-theme-standard.10 */
+  --ui-danger: #f58276; /* catalog-theme-standard.11 */
+  --ui-success: #4fc685; /* catalog-theme-standard.12 */
+  --ui-success-bg: #383838; /* catalog-theme-standard.13 */
+  --ui-warning: #eab54d; /* catalog-theme-standard.14 */
+  --ui-warning-bg: #383838; /* catalog-theme-standard.15 */
+  --ui-disabled: #c2c2c2; /* catalog-theme-standard.16 */
+  --ui-disabled-bg: #404040; /* catalog-theme-standard.17 */
+  --ui-on-primary: #ffffff; /* catalog-theme-standard.18 */
+  --ui-interactive: #40adf0; /* catalog-theme-standard.19 */
+  --ui-on-interactive: #242424; /* catalog-theme-standard.20 */
+  color-scheme: dark; /* catalog-theme-standard.21 */
+}
+
+/* catalog-theme-distinct: Apply a complete checked palette only inside the native preview. */
+:root[data-vision="distinct"] .ui-theme-sandbox:has(.ui-theme-controller:checked) {
+  --ui-primary: #006aa8; /* catalog-theme-distinct.1 */
+  --ui-primary-hover: #005686; /* catalog-theme-distinct.2 */
+  --ui-ink: #ededed; /* catalog-theme-distinct.3 */
+  --ui-muted: #c2c2c2; /* catalog-theme-distinct.4 */
+  --ui-canvas: #242424; /* catalog-theme-distinct.5 */
+  --ui-surface: #2e2e2e; /* catalog-theme-distinct.6 */
+  --ui-subtle: #383838; /* catalog-theme-distinct.7 */
+  --ui-border: #a3a3a3; /* catalog-theme-distinct.8 */
+  --ui-divider: #585858; /* catalog-theme-distinct.9 */
+  --ui-focus: #409fea; /* catalog-theme-distinct.10 */
+  --ui-danger: #d18bf0; /* catalog-theme-distinct.11 */
+  --ui-success: #57adf0; /* catalog-theme-distinct.12 */
+  --ui-success-bg: #383838; /* catalog-theme-distinct.13 */
+  --ui-warning: #eab54d; /* catalog-theme-distinct.14 */
+  --ui-warning-bg: #383838; /* catalog-theme-distinct.15 */
+  --ui-disabled: #c2c2c2; /* catalog-theme-distinct.16 */
+  --ui-disabled-bg: #404040; /* catalog-theme-distinct.17 */
+  --ui-on-primary: #ffffff; /* catalog-theme-distinct.18 */
+  --ui-interactive: #40adf0; /* catalog-theme-distinct.19 */
+  --ui-on-interactive: #242424; /* catalog-theme-distinct.20 */
+  color-scheme: dark; /* catalog-theme-distinct.21 */
+}
+
+/* catalog-validator: Expose browser-enforced input constraints with visible correction guidance. */
+.ui-validator {
+  display: grid; /* catalog-validator.1 */
+  gap: var(--ui-space-sm); /* catalog-validator.2 */
+}
+
+/* catalog-validation-rest: Reserve supplementary correction for a real invalid interaction. */
+.ui-validator .ui-validation-error {
+  display: none; /* catalog-validation-rest.1 */
+}
+
+/* catalog-validation-border: Expose browser-determined invalid input. */
+.ui-validator input:user-invalid {
+  border-color: var(--ui-danger); /* catalog-validation-border.1 */
+}
+
+/* catalog-validation-message: Show written guidance for the actual invalid value. */
+.ui-validator:has(input:user-invalid) .ui-validation-error {
+  display: block; /* catalog-validation-message.1 */
+  color: var(--ui-danger); /* catalog-validation-message.2 */
+}
+
+/* catalog-tab-panel-one: Map native radio state to a supplied preview. */
+.ui-tabs:not(:has(input[value="one"]:checked)) .ui-tab-panel[data-panel="one"] {
+  display: none; /* catalog-tab-panel-one.1 */
+}
+
+/* catalog-tab-panel-two: Map native radio state to a supplied preview. */
+.ui-tabs:not(:has(input[value="two"]:checked)) .ui-tab-panel[data-panel="two"] {
+  display: none; /* catalog-tab-panel-two.1 */
+}
+
+/* catalog-motion-preview: Keep optional visual effects and their controls together. */
+.ui-motion-preview {
+  padding: var(--ui-space-lg); /* catalog-motion-preview.1 */
+  border: 1px solid var(--ui-divider); /* catalog-motion-preview.2 */
+}
+
+/* catalog-diff-wipe: Provide an optional native pointer-resize image comparison. */
+.ui-diff-wipe {
+  position: relative; /* catalog-diff-wipe.1 */
+  container-type: inline-size; /* catalog-diff-wipe.2 */
+  inline-size: 100%; /* catalog-diff-wipe.3 */
+  aspect-ratio: 3 / 1; /* catalog-diff-wipe.4 */
+  margin: 0; /* catalog-diff-wipe.5 */
+  border: 1px solid var(--ui-border); /* catalog-diff-wipe.6 */
+}
+
+/* catalog-diff-image: Keep supplied comparison layers aligned. */
+.ui-diff-wipe img {
+  display: block; /* catalog-diff-image.1 */
+  inline-size: 100cqw; /* catalog-diff-image.2 */
+  block-size: 100%; /* catalog-diff-image.3 */
+  object-fit: cover; /* catalog-diff-image.4 */
+}
+
+/* catalog-diff-before: Let the browser resize the optional foreground reveal. */
+.ui-diff-before {
+  position: absolute; /* catalog-diff-before.1 */
+  inset-block-start: 0; /* catalog-diff-before.2 */
+  inset-inline-start: 0; /* catalog-diff-before.3 */
+  inline-size: 50%; /* catalog-diff-before.4 */
+  max-inline-size: 100%; /* catalog-diff-before.5 */
+  min-inline-size: 2rem; /* catalog-diff-before.6 */
+  block-size: 100%; /* catalog-diff-before.7 */
+  resize: horizontal; /* catalog-diff-before.8 */
+  overflow: hidden; /* catalog-diff-before.9 */
+  border-inline-end: 2px solid var(--ui-border); /* catalog-diff-before.10 */
+  background-color: var(--ui-surface); /* catalog-diff-before.11 */
+}
+
+/* catalog-diff-full-images: Keep both original comparison images fully available. */
+.ui-diff img {
+  display: block; /* catalog-diff-full-images.1 */
+  max-inline-size: 100%; /* catalog-diff-full-images.2 */
+  block-size: auto; /* catalog-diff-full-images.3 */
+}

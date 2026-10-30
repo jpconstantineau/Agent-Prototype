@@ -83,6 +83,10 @@ Changing density keeps the same input nodes, current drafts, validation state an
 
 The opt-in `.ui-prose` layer has separate flow-margin ownership described in [CONTENT.md](CONTENT.md). It resets block/inline margins and adds only a leading sibling gap: lg for ordinary blocks, xl before a heading and md after one. List items and captions use sm; definitions use xs/md and an lg inset. Quote/code/disclosure insets use existing tokens; ordered marker gutters remain character-based structural allowances. The flow-root contains outer margin collapse without clipping focus. All these declarations join the generated box audit.
 
+## Catalog component geometry
+
+The expanded catalog uses the same density and pointer floors. Its grid track and cards explicitly shrink around bounded source/native editors; mockup figures reset native outside margins so explicit widths fit. Native popovers/dialogs use governed viewport clearance. Paired comparison originals remain responsive; only an optional duplicate image is clipped by the native pointer-resize wipe, with its full versions visible separately. Placeholder/thumbnail/ring sizes use the sample token; 1px boundaries, type, focus and structural ratios are protected. All geometry and the optional animation transform frames are included in the box audit. See [CSS-COMPONENTS.md](CSS-COMPONENTS.md).
+
 ## Maintainer review and tests
 
 The generated audit lists every authored box-setting declaration, including structural resets, type rhythm and copied framework geometry. Each row identifies its scope, ownership policy, normal/compact expressions, purpose and user intent. New length-valued custom properties must be registered in the density contract; new declarations must retain full ledger rationale. Inspect shorthands for all longhands they reset. Root token IDs and existing rule/tuple IDs remain stable; new declarations are appended or assigned new rule IDs.

@@ -29,7 +29,7 @@ export const compactCoarseMinimum='2.75rem';
 export function isBoxDeclaration(property,value='') {
   if(property.startsWith('--'))return densityTokens.some(t=>t.property===property)||/^--bs-gutter-/.test(property)||/^(?:-?\d*\.?\d+(?:px|rem|em|ch|%|vh|dvh)|calc\()/.test(value);
   if(/^(?:border|outline).*-(?:color|style)$/.test(property))return false;
-  return /^(?:margin|padding|(?:row-|column-)?gap$|scroll-margin|border|outline|(?:min-|max-)?(?:inline|block)-size$|(?:min-|max-)?(?:width|height)$|box-sizing$|inset|top$|right$|bottom$|left$|transform$|grid-template-columns$|flex$|flex-basis$|font-size$|line-height$|text-underline-offset$|text-indent$|list-style-position$|resize$)/.test(property);
+  return /^(?:margin|padding|(?:row-|column-)?gap$|scroll-margin|border|outline|(?:min-|max-)?(?:inline|block)-size$|(?:min-|max-)?(?:width|height)$|box-sizing$|inset|top$|right$|bottom$|left$|transform$|grid-template-columns$|flex$|flex-basis$|font-size$|line-height$|text-underline-offset$|text-indent$|letter-spacing$|word-spacing$|list-style-position$|box-shadow$|aspect-ratio$|clip-path$|object-fit$|object-position$|position-area$|scroll-padding|scroll-snap-align$|resize$)/.test(property);
 }
 function resolve(value,profile) {
   const vars={...profile,'--bs-gutter-x':profile['--ui-space-xl'],'--bs-gutter-y':profile['--ui-space-xl']};
@@ -40,7 +40,7 @@ export function boxAudit(rules) {
     const token=densityTokens.find(t=>t.property===d.property);
     const behavior=rule.source==='bootstrap'?'Framework baseline; project gutter override governs density':rule.id==='density-compact'?'Compact override':rule.id==='density-coarse-floor'?'Protected pointer floor':token||/var\(--ui-(?:space|radius|control|notes|notice|switch|swatch|dialog)-/.test(d.value)?'Density governed':'Protected geometry or structural reset';
     const conditionalToken=['density-compact','density-coarse-floor'].includes(rule.id);
-    return {id:d.id,selector:rule.selector,condition:rule.media,property:d.property,value:d.value,normal:conditionalToken?'Not active':token?token.normal:resolve(d.value,densityProfiles.normal),compact:conditionalToken?d.value:token?token.compact:resolve(d.value,densityProfiles.compact),behavior,purpose:d.purpose,intent:d.intent};
+    return {id:d.id,selector:rule.selector,condition:rule.media||(rule.keyframes?'Animation '+rule.keyframes:null),property:d.property,value:d.value,normal:conditionalToken?'Not active':token?token.normal:resolve(d.value,densityProfiles.normal),compact:conditionalToken?d.value:token?token.compact:resolve(d.value,densityProfiles.compact),behavior,purpose:d.purpose,intent:d.intent};
   }));
 }
 export function validateDensity(rules,decisions=densityTokens) {

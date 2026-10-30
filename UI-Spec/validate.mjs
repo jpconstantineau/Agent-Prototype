@@ -1,4 +1,4 @@
-export const checkFamilies = new Set(['tokens','reflow','type','focus','editing','controls','grid','navigation','targets','panels','contrast','validation','table','states','colors','dialog','forced-colors','density','prose']);
+export const checkFamilies = new Set(['tokens','reflow','type','focus','editing','controls','grid','navigation','targets','panels','contrast','validation','table','states','colors','dialog','forced-colors','density','prose','catalog']);
 export function validateGenerated(actual, expected, path) {
   if (actual !== expected) throw new Error(`Generated file differs: ${path}. Run node UI-Spec/build.mjs.`);
 }
@@ -7,6 +7,7 @@ export function validateRegistry(rules) {
   const remember = id => { if (typeof id !== 'string' || !/^[a-z][a-z0-9-]*(?:\.\d+)?$/.test(id) || ids.has(id)) throw new Error(`Invalid or duplicate decision ID: ${id}`); ids.add(id); };
   for (const r of rules) {
     remember(r.id);
+    if (r.keyframes && !/^[a-z][a-z0-9-]+$/.test(r.keyframes)) throw new Error('Invalid animation scope: '+r.id);
     if (!r.selector || /[{}]/.test(r.selector) || !checkFamilies.has(r.check) || !['project','bootstrap'].includes(r.source) || !r.declarations?.length) throw new Error(`Invalid rule scope/source/check: ${r.id}`);
     const properties = new Set();
     for (const d of r.declarations) {

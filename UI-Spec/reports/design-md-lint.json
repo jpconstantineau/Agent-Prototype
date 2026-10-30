@@ -4,7 +4,7 @@
   "reports": {
     "light-standard": {
       "input": "UI-Spec/DESIGN.md",
-      "inputSha256": "e6708a61ef19d96245e3e265f030e5501f5c7f0c5c3346e3de9ea44dfc8ce1d7",
+      "inputSha256": "f3eefb5a6fc3122fb88fe9481f76157d70b4c2195615d82b2a1f1626fb66d7d4",
       "report": {
         "findings": [
           {
@@ -40,7 +40,7 @@
     },
     "dark-standard": {
       "input": "UI-Spec/themes/dark.DESIGN.md",
-      "inputSha256": "6de3a12c889c038bfc03fecb44c9bb71d00ed55b6b65d6b4c6cf0e7e9669d153",
+      "inputSha256": "894e4d1668fb9ef71ab008039f86f47c46a70ee403c4bb9be15e2f0d84257b16",
       "report": {
         "findings": [
           {
@@ -76,7 +76,7 @@
     },
     "light-distinct": {
       "input": "UI-Spec/themes/light-distinct.DESIGN.md",
-      "inputSha256": "1edea16739a4a15c50f9f780dc1833ab342085144b7989e9b3dc34cab45bed9e",
+      "inputSha256": "33fc90cc2b5e71952d08eff4826059d99609bc8a5b82627422073bb4ad655b0a",
       "report": {
         "findings": [
           {
@@ -112,7 +112,7 @@
     },
     "dark-distinct": {
       "input": "UI-Spec/themes/dark-distinct.DESIGN.md",
-      "inputSha256": "4fdc850c48656f8f73b3783fd9c3ae493ae7794080ba33b19966935ad5659a8e",
+      "inputSha256": "65e5e4b62519ffd190bbef942832e270f1b364317789a98dd8f7097e4b7ad9d5",
       "report": {
         "findings": [
           {
@@ -148,7 +148,7 @@
     },
     "dark-standard-compact": {
       "input": "UI-Spec/themes/dark-standard-compact.DESIGN.md",
-      "inputSha256": "3b71ee9cba97d64b0bc599f424f679ca76b92e33a5192fadbd70928b9db40598",
+      "inputSha256": "c7ddf965a8aab25fca71e8925b9279334be72e1ce387d3c15f9eb409c346617e",
       "report": {
         "findings": [
           {
@@ -184,7 +184,7 @@
     },
     "dark-distinct-compact": {
       "input": "UI-Spec/themes/dark-distinct-compact.DESIGN.md",
-      "inputSha256": "32583082f43085b09e5a34898d477cfc6bff97d45f98416c80d8a50690656c6e",
+      "inputSha256": "c77eb20d1d040238fe875829ca5527383b7f48256399fe7d8734bc755b0a1523",
       "report": {
         "findings": [
           {
@@ -220,7 +220,7 @@
     },
     "light-standard-compact": {
       "input": "UI-Spec/themes/light-standard-compact.DESIGN.md",
-      "inputSha256": "d49445c8804f3b072ec6de48ae2edc299f43863c12d3e2b00841b4826057f0d1",
+      "inputSha256": "2e57021c50d6e3fabc3045183ed21fb27f9349bb38b74e240ece002795f4f8f6",
       "report": {
         "findings": [
           {
@@ -256,7 +256,7 @@
     },
     "light-distinct-compact": {
       "input": "UI-Spec/themes/light-distinct-compact.DESIGN.md",
-      "inputSha256": "18a6afc931b009b3249bbeb480502442e301e81c785700021e76b3ca19cfa12f",
+      "inputSha256": "297f35a1d4d3fa401851496cbe035344a996aa4dbfffd28cfb66d1f5ea408f13",
       "report": {
         "findings": [
           {

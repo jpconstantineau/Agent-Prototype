@@ -12,6 +12,12 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Native component catalog after b274445
+
+The maintainer requested CSS-only counterparts from the shadcn/ui and daisyUI catalogs. A dated core inventory maps 66 and 68 names into 96 families, with 87 live native/presentation/alternative examples and nine excluded script-dependent engines. The generated coverage contract records exact classes/HTML and explicit behavior limits. New catalog-* rules/frames append after existing prose rules without changing earlier component objects or palette values.
+
+The live gallery uses one stylesheet, shared preference script and browser-owned component behavior. Native dialog commands, popovers, interest tooltips, fieldsets, radios and details avoid fake ARIA widgets. Motion remains optional/off by default, with persistent text and reduced-motion rules; three audited frames support the two requested visual effects. decisions.json version 5 records animation scope and components.json exposes the independent component contract. Source/DOM checks found and corrected duplicate IDs, a nonshrinking gallery track, native figure margins and selector specificity for gallery/animation states.
+
 ## Document content additions after a3e02c5
 
 The maintainer accepted filling the document-formatting gaps. prose.mjs appends scoped prose-* rules through the shared registry, with a six-level document scale, explicit block/list spacing, inline meaning, quotations, literal content, document tables, responsive figures and native disclosures. Existing application heading sizes and IDs retain their values. CONTENT.md distinguishes authored styles, retained native behavior and renderer integration requirements. The authored content.html specimen shares all appearance/density settings and one audited stylesheet. Styles do not expand Markdown v1 or implement a parser.
