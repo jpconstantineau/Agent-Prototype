@@ -5,7 +5,7 @@ import { resolve, sep, extname } from 'node:path';
 import { contentSecurityPolicy } from './server-policy.mjs';
 
 const root = fileURLToPath(new URL('./', import.meta.url));
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.webm': 'video/webm', '.vtt': 'text/vtt' };
 const port = Number(process.env.PORT || 5173);
 const basePath = `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}/`.replace('//', '/');
 const csp = contentSecurityPolicy(process.env.LOCAL_MODEL_ORIGINS);
@@ -26,7 +26,7 @@ createServer(async (req, res) => {
     const path = resolve(root, relativePath);
     // The UI reference has an explicit asset allowlist; specifications stay private
     // to the checkout, as do package metadata, tests and arbitrary repository files.
-    const uiAssets = ['ui-spec/index.html','ui-spec/content.html','ui-spec/catalog.html','ui-spec/dashboard.html','ui-spec/components.json','ui-spec/catalog-art-one.svg','ui-spec/catalog-art-two.svg','ui-spec/catalog-art-three.svg','ui-spec/content-sample.svg','ui-spec/design-system.css','ui-spec/reference.js','ui-spec/appearance.js','ui-spec/decisions.json','ui-spec/BOOTSTRAP-LICENSE.txt'];
+    const uiAssets = ['ui-spec/index.html','ui-spec/content.html','ui-spec/catalog.html','ui-spec/dashboard.html','ui-spec/components.json','ui-spec/catalog-art-one.svg','ui-spec/catalog-art-two.svg','ui-spec/catalog-art-three.svg','ui-spec/content-sample.svg','ui-spec/catalog-avatar.svg','ui-spec/catalog-video-poster.svg','ui-spec/catalog-motion.webm','ui-spec/catalog-motion.vtt','ui-spec/design-system.css','ui-spec/reference.js','ui-spec/appearance.js','ui-spec/decisions.json','ui-spec/BOOTSTRAP-LICENSE.txt'];
     const uiAsset = uiAssets.includes(relativePath);
     const allowed = path === resolve(root, 'index.html') || path.startsWith(resolve(root, 'src') + sep) || uiAsset;
     const type = types[extname(path)] || (uiAsset && extname(path) === '.json' ? 'application/json' : uiAsset && extname(path) === '.txt' ? 'text/plain' : null);
@@ -36,7 +36,7 @@ createServer(async (req, res) => {
     }
     const data = await readFile(path);
     res.writeHead(200, {
-      'Content-Type': `${type}; charset=utf-8`,
+      'Content-Type': type === 'video/webm' ? type : `${type}; charset=utf-8`,
       'Cache-Control': 'no-store',
       'X-Content-Type-Options': 'nosniff',
       'Content-Security-Policy': csp,

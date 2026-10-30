@@ -1972,7 +1972,7 @@ Selector: `.ui-alert`. Source: project. Verification family: `catalog`.
 
 ## catalog-accent-default
 
-Selector: `.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator`. Source: project. Verification family: `catalog`.
+Selector: `.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator, .ui-toast, .ui-announcement`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
@@ -3491,6 +3491,299 @@ Selector: `.ui-diff img`. Source: project. Verification family: `catalog`.
 | catalog-diff-full-images.1 | display | block | Keep both original comparison images fully available. Separate each supplied image from its caption. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
 | catalog-diff-full-images.2 | max-inline-size | 100% | Keep both original comparison images fully available. Keep the full image within its comparison card. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
 | catalog-diff-full-images.3 | block-size | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
+
+## catalog-alert-link
+
+Selector: `.ui-alert a`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-alert-link.1 | color | inherit | Make an alert’s recovery destination readable on its semantic fill. Use the same checked on-fill ink as the alert text. | Follow the next step without losing link identity or contrast. | proposed |
+| catalog-alert-link.2 | text-decoration | underline | Make an alert’s recovery destination readable on its semantic fill. Identify navigation independently of color. | Follow the next step without losing link identity or contrast. | proposed |
+
+## catalog-alert-link-focus
+
+Selector: `.ui-alert a:focus-visible`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-alert-link-focus.1 | outline | 3px solid var(--ui-on-interactive) | Adapt the protected focus perimeter to a colored alert surface. Use ink checked against every alert fill instead of a neutral-surface blue. | Find the actual recovery link receiving keyboard input. | proposed |
+| catalog-alert-link-focus.2 | outline-offset | 3px | Adapt the protected focus perimeter to a colored alert surface. Separate the focus perimeter from the link’s text. | Find the actual recovery link receiving keyboard input. | proposed |
+
+## catalog-alert-link-forced
+
+Selector: `.ui-alert a:focus-visible`; condition: `(forced-colors: active)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-alert-link-forced.1 | outline-color | Highlight | Respect system focus for recovery links inside alerts. Use the platform focus role. | Find the destination under the requested high-contrast preference. | proposed |
+
+## catalog-avatar-small
+
+Selector: `.ui-avatar--small`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar-small.1 | inline-size | 2rem | Use a compact identity mark alongside dense record rows. Reserve a protected 32px identity disc at the default root. | Recognize short initials without reducing readable text size. | proposed |
+
+## catalog-avatar-large
+
+Selector: `.ui-avatar--large`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar-large.1 | inline-size | 4rem | Give a profile or detailed identity a stronger visual anchor. Reserve a 64px identity disc without enlarging unrelated controls. | Associate supplied artwork or initials with the persistent written name. | proposed |
+
+## catalog-avatar-image
+
+Selector: `.ui-avatar img`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar-image.1 | inline-size | 100% | Fit a supplied identity thumbnail to its disc. Fit the governed avatar width. | Recognize the thumbnail while its written identity remains available. | proposed |
+| catalog-avatar-image.2 | block-size | 100% | Fit a supplied identity thumbnail to its disc. Fit the reserved square disc. | Recognize the thumbnail while its written identity remains available. | proposed |
+| catalog-avatar-image.3 | object-fit | cover | Fit a supplied identity thumbnail to its disc. Crop only the identity thumbnail, never meaningful document artwork. | Recognize the thumbnail while its written identity remains available. | proposed |
+| catalog-avatar-image.4 | border-radius | inherit | Fit a supplied identity thumbnail to its disc. Follow the containing disc’s silhouette. | Recognize the thumbnail while its written identity remains available. | proposed |
+
+## catalog-avatar-group
+
+Selector: `.ui-avatar-group`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar-group.1 | display | flex | Keep several named identities together without hidden overlapping faces. Keep members in source order. | Inspect all supplied members and their written identities. | proposed |
+| catalog-avatar-group.2 | flex-wrap | wrap | Keep several named identities together without hidden overlapping faces. Keep every member visible on mobile. | Inspect all supplied members and their written identities. | proposed |
+| catalog-avatar-group.3 | gap | var(--ui-space-lg) | Keep several named identities together without hidden overlapping faces. Separate independently named members. | Inspect all supplied members and their written identities. | proposed |
+| catalog-avatar-group.4 | list-style-type | none | Keep several named identities together without hidden overlapping faces. Remove decorative bullets from the explicit member list. | Inspect all supplied members and their written identities. | proposed |
+| catalog-avatar-group.5 | padding | 0 | Keep several named identities together without hidden overlapping faces. Let the sample own its inset. | Inspect all supplied members and their written identities. | proposed |
+| catalog-avatar-group.6 | margin | 0 | Keep several named identities together without hidden overlapping faces. Avoid duplicate list outer gaps. | Inspect all supplied members and their written identities. | proposed |
+
+## catalog-avatar-member
+
+Selector: `.ui-avatar-group > li`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-avatar-member.1 | display | grid | Associate one identity mark with its own name and state. Keep each member’s mark and wording together. | Read which status belongs to which member. | proposed |
+| catalog-avatar-member.2 | gap | var(--ui-space-xs) | Associate one identity mark with its own name and state. Attach names and aligned presence to the mark. | Read which status belongs to which member. | proposed |
+| catalog-avatar-member.3 | min-inline-size | 0 | Associate one identity mark with its own name and state. Permit names to wrap within their member group. | Read which status belongs to which member. | proposed |
+
+## catalog-badge-outline
+
+Selector: `.ui-badge--outline`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-outline.1 | background-color | var(--ui-surface) | Offer quiet supplemental metadata on the neutral reading plane. Keep the metadata field neutral. | Read the label without requiring a filled annotation for every category. | proposed |
+| catalog-badge-outline.2 | color | var(--ui-accent) | Offer quiet supplemental metadata on the neutral reading plane. Use the explicitly checked semantic foreground on the surface. | Read the label without requiring a filled annotation for every category. | proposed |
+| catalog-badge-outline.3 | border-color | var(--ui-accent) | Offer quiet supplemental metadata on the neutral reading plane. Retain a clear badge boundary alongside the written label. | Read the label without requiring a filled annotation for every category. | proposed |
+
+## catalog-button-danger
+
+Selector: `.ui-button.ui-button--danger`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-button-danger.1 | color | var(--ui-danger) | Distinguish a destructive-action preview from an ordinary next step. Use checked error text on the neutral button surface. | Recognize the named action before entering a safe confirmation surface. | proposed |
+| catalog-button-danger.2 | border-color | var(--ui-danger) | Distinguish a destructive-action preview from an ordinary next step. Supplement the explicit action wording with a bounded semantic edge. | Recognize the named action before entering a safe confirmation surface. | proposed |
+
+## catalog-button-icon
+
+Selector: `.ui-button-icon`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-button-icon.1 | display | inline-block | Keep a supplementary action symbol with the visible name. Reserve a predictable inline symbol box. | Read the complete action without relying on an icon alone. | proposed |
+| catalog-button-icon.2 | inline-size | 1.25em | Keep a supplementary action symbol with the visible name. Align the symbol to the control’s existing text size. | Read the complete action without relying on an icon alone. | proposed |
+| catalog-button-icon.3 | text-align | center | Keep a supplementary action symbol with the visible name. Center the supplementary symbol in its reserved box. | Read the complete action without relying on an icon alone. | proposed |
+| catalog-button-icon.4 | flex-shrink | 0 | Keep a supplementary action symbol with the visible name. Keep the symbol discernible beside wrapped action wording. | Read the complete action without relying on an icon alone. | proposed |
+
+## catalog-card-horizontal
+
+Selector: `.ui-card--horizontal`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card-horizontal.1 | display | grid | Arrange supplied media and content as one named record. Keep media and content in meaningful source order. | Read the complete record before selecting its actual destination. | proposed |
+| catalog-card-horizontal.2 | grid-template-columns | minmax(0, 1fr) | Arrange supplied media and content as one named record. Stack content while available width is limited. | Read the complete record before selecting its actual destination. | proposed |
+| catalog-card-horizontal.3 | gap | var(--ui-space-lg) | Arrange supplied media and content as one named record. Separate the visual from its explanation. | Read the complete record before selecting its actual destination. | proposed |
+
+## catalog-card-horizontal-wide
+
+Selector: `.ui-card--horizontal`; condition: `(min-width: 768px)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card-horizontal-wide.1 | grid-template-columns | minmax(0, 1fr) minmax(0, 2fr) | Use a horizontal record when both media and text have useful width. Give the explanatory content twice the media width at the existing medium breakpoint. | Compare the illustration with its explanation without excessive vertical scrolling. | proposed |
+
+## catalog-card-media
+
+Selector: `.ui-card-media`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card-media.1 | display | block | Keep a record’s supplied image responsive and fully visible. Remove the image baseline gap. | Inspect meaningful artwork without stretching or cropping. | proposed |
+| catalog-card-media.2 | inline-size | 100% | Keep a record’s supplied image responsive and fully visible. Fit its allocated grid track. | Inspect meaningful artwork without stretching or cropping. | proposed |
+| catalog-card-media.3 | block-size | auto | Keep a record’s supplied image responsive and fully visible. Preserve intrinsic image proportions. | Inspect meaningful artwork without stretching or cropping. | proposed |
+| catalog-card-media.4 | max-inline-size | 100% | Keep a record’s supplied image responsive and fully visible. Prevent intrinsic width from widening the card. | Inspect meaningful artwork without stretching or cropping. | proposed |
+
+## catalog-card-content
+
+Selector: `.ui-card-content`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card-content.1 | min-inline-size | 0 | Let long record wording fit its available grid column. Allow long text to wrap inside the content track. | Read the complete description without page-level overflow. | proposed |
+
+## catalog-card-actions
+
+Selector: `.ui-card-actions`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-card-actions.1 | display | flex | Separate a record’s actual destinations from its explanatory content. Group actual destinations in source order. | Identify actions belonging to this record without making its whole surface clickable. | proposed |
+| catalog-card-actions.2 | flex-wrap | wrap | Separate a record’s actual destinations from its explanatory content. Keep long action names reachable. | Identify actions belonging to this record without making its whole surface clickable. | proposed |
+| catalog-card-actions.3 | gap | var(--ui-space-sm) | Separate a record’s actual destinations from its explanatory content. Clear focus around peer destinations. | Identify actions belonging to this record without making its whole surface clickable. | proposed |
+| catalog-card-actions.4 | padding-block-start | var(--ui-space-md) | Separate a record’s actual destinations from its explanatory content. Separate actions from the preceding explanation. | Identify actions belonging to this record without making its whole surface clickable. | proposed |
+| catalog-card-actions.5 | border-block-start | 1px solid var(--ui-divider) | Separate a record’s actual destinations from its explanatory content. Mark the action footer with a passive separator. | Identify actions belonging to this record without making its whole surface clickable. | proposed |
+
+## catalog-modal-form
+
+Selector: `.ui-modal-form`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-modal-form.1 | display | grid | Keep a local native dialog draft labelled and bounded. Keep label, native field and finish action in order. | Enter a preview value with native validation before closing the local form. | proposed |
+| catalog-modal-form.2 | gap | var(--ui-space-sm) | Keep a local native dialog draft labelled and bounded. Protect focus clearance between local form controls. | Enter a preview value with native validation before closing the local form. | proposed |
+| catalog-modal-form.3 | margin-block-start | var(--ui-space-lg) | Keep a local native dialog draft labelled and bounded. Separate the safe Close action from the optional form preview. | Enter a preview value with native validation before closing the local form. | proposed |
+
+## catalog-notification-edge
+
+Selector: `.ui-toast`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-notification-edge.1 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-accent) | Give settled item-level notifications a compact semantic cue. Use the existing notice stroke and labelled event color. | Read the event title and explanation without a floating timed overlay. | proposed |
+
+## catalog-announcement
+
+Selector: `.ui-announcement`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-announcement.1 | display | grid | Explain a condition or update that applies to the current page. Keep the page-level explanation and its next steps together. | Find the scope, timing and available next steps without an overlay hiding work. | proposed |
+| catalog-announcement.2 | gap | var(--ui-space-lg) | Explain a condition or update that applies to the current page. Separate the scope explanation from available destinations. | Find the scope, timing and available next steps without an overlay hiding work. | proposed |
+| catalog-announcement.3 | padding | var(--ui-space-lg) | Explain a condition or update that applies to the current page. Clear text and focus from the bounded banner edge. | Find the scope, timing and available next steps without an overlay hiding work. | proposed |
+| catalog-announcement.4 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-accent) | Explain a condition or update that applies to the current page. Identify the page-wide message using a compact information edge. | Find the scope, timing and available next steps without an overlay hiding work. | proposed |
+| catalog-announcement.5 | background-color | var(--ui-subtle) | Explain a condition or update that applies to the current page. Keep the broad reading field neutral and in flow. | Find the scope, timing and available next steps without an overlay hiding work. | proposed |
+
+## catalog-announcement-actions
+
+Selector: `.ui-announcement-actions`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-announcement-actions.1 | display | flex | Keep real next-step destinations within their announcement context. Group the actual destinations together. | Choose a relevant follow-up without obscuring the current work. | proposed |
+| catalog-announcement-actions.2 | flex-wrap | wrap | Keep real next-step destinations within their announcement context. Preserve every action at small widths. | Choose a relevant follow-up without obscuring the current work. | proposed |
+| catalog-announcement-actions.3 | gap | var(--ui-space-sm) | Keep real next-step destinations within their announcement context. Keep peer target focus separate. | Choose a relevant follow-up without obscuring the current work. | proposed |
+
+## catalog-image
+
+Selector: `.ui-image`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-image.1 | display | block | Present complete meaningful images with intrinsic dimensions and captions. Remove the inline image baseline gap. | Inspect related visuals at the available width without stretching or losing essential content. | proposed |
+| catalog-image.2 | inline-size | 100% | Present complete meaningful images with intrinsic dimensions and captions. Fit the containing image or gallery track. | Inspect related visuals at the available width without stretching or losing essential content. | proposed |
+| catalog-image.3 | max-inline-size | 100% | Present complete meaningful images with intrinsic dimensions and captions. Prevent intrinsic media from widening the page. | Inspect related visuals at the available width without stretching or losing essential content. | proposed |
+| catalog-image.4 | block-size | auto | Present complete meaningful images with intrinsic dimensions and captions. Preserve the complete source aspect ratio. | Inspect related visuals at the available width without stretching or losing essential content. | proposed |
+
+## catalog-image-grid
+
+Selector: `.ui-image-grid`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-image-grid.1 | display | grid | Group related complete images using the available space. Keep each figure and caption in one track. | Compare all visuals and their captions without a scripted gallery. | proposed |
+| catalog-image-grid.2 | grid-template-columns | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | Group related complete images using the available space. Add columns only when an image has useful inspection width. | Compare all visuals and their captions without a scripted gallery. | proposed |
+| catalog-image-grid.3 | gap | var(--ui-space-lg) | Group related complete images using the available space. Separate each meaningful visual from its peers. | Compare all visuals and their captions without a scripted gallery. | proposed |
+
+## catalog-image-figure
+
+Selector: `.ui-image-grid > figure`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-image-figure.1 | margin | 0 | Give the gallery sole ownership of figure clearance. Avoid native figure margins being added to the grid gap. | Read a balanced image/caption group without native side offsets. | proposed |
+
+## catalog-ribbon
+
+Selector: `.ui-ribbon`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-ribbon.1 | display | inline-block | Highlight a record-level version or category without covering its content. Keep a real record flag in normal flow. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.2 | inline-size | fit-content | Highlight a record-level version or category without covering its content. Bound the filled accent to its written metadata. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.3 | max-inline-size | 100% | Highlight a record-level version or category without covering its content. Let long metadata remain within its record. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.4 | padding | var(--ui-space-xs) var(--ui-space-lg) | Highlight a record-level version or category without covering its content. Make the flag readable without becoming an action target. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.5 | background-color | var(--ui-interactive) | Highlight a record-level version or category without covering its content. Use a bounded information accent for the record label. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.6 | color | var(--ui-on-interactive) | Highlight a record-level version or category without covering its content. Use checked ink against the flag fill. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.7 | border-inline-start | var(--ui-notice-stroke) solid currentColor | Highlight a record-level version or category without covering its content. Give the flag a distinct non-color start edge. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+| catalog-ribbon.8 | font-weight | 600 | Highlight a record-level version or category without covering its content. Identify the metadata without an oversized promotional heading. | Read the special metadata before the item heading and distinguish it from operational status. | proposed |
+
+## catalog-ribbon-host
+
+Selector: `.ui-ribbon-host`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-ribbon-host.1 | display | grid | Reserve real layout space for a record’s flag and heading. Keep the flag before the heading in source and visual order. | Read metadata without an overlay covering its associated content. | proposed |
+| catalog-ribbon-host.2 | gap | var(--ui-space-md) | Reserve real layout space for a record’s flag and heading. Separate the record flag from its content. | Read metadata without an overlay covering its associated content. | proposed |
+
+## catalog-video
+
+Selector: `.ui-video`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-video.1 | display | block | Present a supplied video with browser-owned playback controls and alternatives. Give native media a predictable bounded box. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+| catalog-video.2 | inline-size | 100% | Present a supplied video with browser-owned playback controls and alternatives. Fit the supplied video to its containing surface. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+| catalog-video.3 | max-inline-size | 100% | Present a supplied video with browser-owned playback controls and alternatives. Prevent native intrinsic sizing from widening the page. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+| catalog-video.4 | aspect-ratio | 16 / 9 | Present a supplied video with browser-owned playback controls and alternatives. Reserve a common wide video frame before loading media. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+| catalog-video.5 | object-fit | contain | Present a supplied video with browser-owned playback controls and alternatives. Keep the whole supplied video visible rather than crop its meaning. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+| catalog-video.6 | background-color | var(--ui-subtle) | Present a supplied video with browser-owned playback controls and alternatives. Keep letterboxed space neutral. | Choose when to play, pause or inspect captions without automatic media or cropped content. | proposed |
+
+## catalog-video-figure
+
+Selector: `.ui-video-figure`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-video-figure.1 | margin | 0 | Keep native video and its caption inside the governed sample clearance. Give the sample sole ownership of outer media clearance. | Inspect the supplied clip without unnecessary native figure side offsets. | proposed |
+
+## catalog-video-caption
+
+Selector: `.ui-video-figure figcaption`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-video-caption.1 | margin-block-end | var(--ui-space-md) | Separate the video label from its native control focus. Reserve more than the protected focus perimeter before the player. | Read the format and locate keyboard focus without overlapping the caption. | proposed |
+
+## catalog-video-standard
+
+Selector: `.ui-video--standard`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-video-standard.1 | aspect-ratio | 4 / 3 | Fit older or instructional recordings in their familiar frame. Reserve a standard-format media host without stretching its contents. | Inspect the full supplied video within a four-to-three surface. | proposed |
+
+## catalog-video-square
+
+Selector: `.ui-video--square`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-video-square.1 | aspect-ratio | 1 | Show square-format media without a custom player. Reserve a square host while object-fit preserves the supplied video. | Use the same native controls and inspect the complete frame. | proposed |
 
 ## dashboard-grid
 

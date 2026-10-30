@@ -1,6 +1,7 @@
 import {catalog,includedCatalog,catalogSources,validateCatalog} from './component-catalog.mjs';
 import {catalogPage,catalogDocument} from './catalog-output.mjs';
 import {dashboardPage} from './dashboard-output.mjs';
+import {tailadminReviewDocument} from './tailadmin-review.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { tokens, rules, bootstrapVersion, contrastPairs, contrastExceptions, palettes, colorUse } from './system.mjs';
@@ -38,6 +39,7 @@ export async function outputs() {
   result.set('docs/ui-spec/dashboard.html',dashboardPage(await readFile(new URL('docs/ui-spec/index.html',root),'utf8')));
   result.set('docs/ui-spec/components.json',JSON.stringify({version:1,sources:catalogSources,counts:validateCatalog(),components:catalog},null,2)+'\n');
   result.set('UI-Spec/COMPONENT-CATALOG.md',catalogDocument());
+  result.set('UI-Spec/TAILADMIN-REVIEW.md',tailadminReviewDocument());
   for (const [key,path] of Object.entries(designFiles)) {
     const density=key.endsWith('-compact')?'compact':'normal',palette=palettes[key.replace(/-compact$/,'')],profile=densityProfiles[density];
     const modeTokens = { ...tokens, name: key==='light-standard' ? tokens.name : `${tokens.name} · ${palette.label} · ${density}`, colors: palette.colors,

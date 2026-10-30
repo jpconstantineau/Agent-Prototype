@@ -12,7 +12,7 @@ Find an inspectable native component, understand its behavior and avoid confusin
 
 Implementation agents use the listed classes/HTML and audited declaration rationale. Runtime agents gain no tool access through this catalog. A visual component neither runs an application action nor grants permission to data.
 
-Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/components) (66 names), [daisyUI 5.7.50](https://daisyui.com/components/) (68 names). Names are deduplicated into 96 families: 87 included examples and nine script-dependent widget engines. These are independently authored equivalents, not imported upstream implementations or a promise of every upstream variant. AI extension packages, community registries, chart integrations and form adapters are separate integrations, outside these core catalogs. Their static message/code/disclosure primitives are covered here.
+Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/components) (66 names), [daisyUI 5.7.50](https://daisyui.com/components/) (68 names). Those upstream names map to 96 unique core families, plus 4 original project extensions: 100 total families and 91 included examples and nine script-dependent widget engines. These are independently authored equivalents, not imported upstream implementations or a promise of every upstream variant. AI extension packages, community registries, interactive chart engines and form adapters are separate integrations, outside these core catalogs. The [TailAdmin review](TAILADMIN-REVIEW.md) documents the added project families and richer compositions; no TailAdmin implementation is imported. Their static message/code/disclosure primitives are covered here.
 
 | Family | shadcn/ui names | daisyUI names | Classification | Public classes / example |
 | --- | --- | --- | --- | --- |
@@ -22,14 +22,14 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | Aspect ratio | Aspect Ratio | — | presentation | .ui-aspect-ratio · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-aspect-ratio) |
 | Attachment | Attachment | — | native | .ui-attachment · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-attachment) |
 | Aura / emphasis border | — | Aura | presentation | .ui-aura, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-aura) |
-| Avatar | Avatar | Avatar | presentation | .ui-avatar, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-avatar) |
-| Badge | Badge | Badge | presentation | .ui-badge, .ui-badge-anchor, .ui-badge--offset, .ui-badge--counter, .ui-badge--dot, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-badge) |
+| Avatar | Avatar | Avatar | presentation | .ui-avatar, .ui-avatar--small, .ui-avatar--large, .ui-avatar-group, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-avatar) |
+| Badge | Badge | Badge | presentation | .ui-badge, .ui-badge--outline, .ui-badge-anchor, .ui-badge--offset, .ui-badge--counter, .ui-badge--dot, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-badge) |
 | Breadcrumbs | Breadcrumb | Breadcrumbs | native | .ui-breadcrumb, .ui-path-separator · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-breadcrumb) |
 | Chat messages | Bubble, Message | Chat bubble | presentation | .ui-chat, .ui-bubble, .ui-message, .ui-chat--outgoing, .ui-chat--incoming · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-chat) |
-| Button | Button | Button | native | .ui-button · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-button) |
+| Button | Button | Button | native | .ui-button, .ui-button-icon, .ui-button--danger · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-button) |
 | Button group / join | Button Group | Join (group items) | presentation | .ui-button-group, .ui-join · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-button-group) |
 | Calendar widget | Calendar | Calendar | script | Application logic required |
-| Card | Card | Card | presentation | .ui-card · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-card) |
+| Card | Card | Card | presentation | .ui-card, .ui-card--horizontal, .ui-card-media, .ui-card-content, .ui-card-actions · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-card) |
 | Carousel / scroll gallery | Carousel | Carousel | alternative | .ui-carousel, .ui-slide · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-carousel) |
 | Interactive chart | Chart | — | script | Application logic required |
 | Checkbox | Checkbox | Checkbox | native | .ui-checkbox · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-checkbox) |
@@ -40,7 +40,7 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | Context menu | Context Menu | — | script | Application logic required |
 | Data table engine | Data Table | — | script | Application logic required |
 | Native date picker | Date Picker | — | alternative | .ui-date-picker · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-date-picker) |
-| Dialog / modal | Dialog | Modal | native | .ui-modal · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-dialog) |
+| Dialog / modal | Dialog | Modal | native | .ui-modal, .ui-modal-form · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-dialog) |
 | Direction | Direction | — | native | .ui-direction · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-direction) |
 | Drawer | Drawer | Drawer sidebar | alternative | .ui-drawer · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-drawer) |
 | Dropdown links | Dropdown Menu | Dropdown | alternative | .ui-dropdown · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-dropdown) |
@@ -112,6 +112,10 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | CSS theme preview | — | Theme Controller | native | .ui-theme-controller, .ui-theme-sandbox · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-theme-controller) |
 | Timeline | — | Timeline | presentation | .ui-timeline · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-timeline) |
 | Native validation styling | — | Validator | native | .ui-validator · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-validator) |
+| Page announcement | — | — | presentation | .ui-announcement, .ui-announcement-actions · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-announcement) |
+| Responsive images and grids | — | — | presentation | .ui-image, .ui-image-grid · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-image) |
+| Record ribbon / flag | — | — | presentation | .ui-ribbon, .ui-ribbon-host · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-ribbon) |
+| Native video and aspect ratios | — | — | native | .ui-video, .ui-video-figure, .ui-video--standard, .ui-video--square · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-video) |
 
 ## Accordion
 
@@ -138,7 +142,7 @@ Classification: **presentation**. Five labelled semantic fills; mode-dependent c
 Public classes: `.ui-alert`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<p>Static color variants; these examples do not announce live application events.</p><div class="ui-stack"><aside class="ui-alert ui-tone--success"><strong>Success · example:</strong> The example review is complete.</aside><aside class="ui-alert ui-tone--error"><strong>Error · example:</strong> The example could not be saved. Review the supplied details.</aside><aside class="ui-alert ui-tone--pending"><strong>Pending · example:</strong> The example is waiting for review.</aside><aside class="ui-alert ui-tone--info"><strong>Information · example:</strong> Review the supplied settings before continuing.</aside><aside class="ui-alert ui-tone--neutral"><strong>Neutral · example:</strong> No example work is scheduled.</aside></div>
+<p>Static color variants; these examples do not announce live application events.</p><div class="ui-stack"><aside class="ui-alert ui-tone--success"><strong>Success · example:</strong> The example review is complete. <a href="./content.html">Inspect the example guidance</a></aside><aside class="ui-alert ui-tone--error"><strong>Error · example:</strong> The example could not be saved. Review the supplied details. <a href="./content.html">Inspect the example guidance</a></aside><aside class="ui-alert ui-tone--pending"><strong>Pending · example:</strong> The example is waiting for review. <a href="./content.html">Inspect the example guidance</a></aside><aside class="ui-alert ui-tone--info"><strong>Information · example:</strong> Review the supplied settings before continuing. <a href="./content.html">Inspect the example guidance</a></aside><aside class="ui-alert ui-tone--neutral"><strong>Neutral · example:</strong> No example work is scheduled. <a href="./content.html">Inspect the example guidance</a></aside></div>
 ```
 
 ## Alert dialog
@@ -205,10 +209,10 @@ User intent: Associate a written person name with a compact identity mark.
 
 Classification: **presentation**. Filled colored discs with checked initials contrast and adjacent names. Identity color implies no person status; no failed-image detection logic.
 
-Public classes: `.ui-avatar`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-avatar`, `.ui-avatar--small`, `.ui-avatar--large`, `.ui-avatar-group`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<p>Filled identity discs. Colors distinguish examples; they do not imply a person’s status.</p><div class="ui-stack"><div class="ui-cluster"><span class="ui-avatar ui-tone--success" aria-hidden="true">JD</span><span>Jordan Doe · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--error" aria-hidden="true">AL</span><span>Alex Lee · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--pending" aria-hidden="true">SC</span><span>Sam Chen · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--info" aria-hidden="true">ME</span><span>Morgan Ellis · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--neutral" aria-hidden="true">TR</span><span>Taylor Reed · example identity</span></div></div>
+<p>Filled identity discs. Colors distinguish examples; they do not imply a person’s status.</p><div class="ui-stack"><div class="ui-cluster"><span class="ui-avatar ui-tone--success" aria-hidden="true">JD</span><span>Jordan Doe · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--error" aria-hidden="true">AL</span><span>Alex Lee · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--pending" aria-hidden="true">SC</span><span>Sam Chen · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--info" aria-hidden="true">ME</span><span>Morgan Ellis · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--neutral" aria-hidden="true">TR</span><span>Taylor Reed · example identity</span></div></div><h3>Identity size and supplied image</h3><div class="ui-cluster"><span class="ui-avatar ui-avatar--small ui-tone--info" aria-hidden="true">AL</span><span>Alex Lee · compact identity</span><span class="ui-avatar ui-avatar--large ui-tone--neutral" aria-hidden="true"><img src="./catalog-avatar.svg" width="64" height="64" alt=""></span><span>Jordan Doe · supplied illustrative thumbnail</span></div><h3>Named group and observed presence</h3><ul class="ui-avatar-group" role="list" aria-label="Example review group"><li><span class="ui-avatar ui-tone--info" aria-hidden="true">AL</span><strong>Alex Lee</strong><span class="ui-status-indicator ui-tone--success">Available · example</span></li><li><span class="ui-avatar ui-tone--neutral" aria-hidden="true">SC</span><strong>Sam Chen</strong><span class="ui-status-indicator ui-tone--pending">Busy · example</span></li></ul><p class="ui-help">Presence is separately supplied state, never inferred from identity color or an image download.</p>
 ```
 
 ## Badge
@@ -219,10 +223,10 @@ User intent: Read supplemental metadata or counts in their owner’s context.
 
 Classification: **presentation**. Additional information appears inside an inline pill or offset corner badge. Counters contain real text; a count-free dot repeats the owner’s accessible name and written explanation. Status uses a separate aligned indicator.
 
-Public classes: `.ui-badge`, `.ui-badge-anchor`, `.ui-badge--offset`, `.ui-badge--counter`, `.ui-badge--dot`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-badge`, `.ui-badge--outline`, `.ui-badge-anchor`, `.ui-badge--offset`, `.ui-badge--counter`, `.ui-badge--dot`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<p>Badges carry extra information. Inline labels and offset counters are separate from aligned status indicators.</p><div class="ui-cluster"><span class="ui-badge ui-tone--success">Success · example metadata</span><span class="ui-badge ui-tone--error">Error · example metadata</span><span class="ui-badge ui-tone--pending">Pending · example metadata</span><span class="ui-badge ui-tone--info">Information · example metadata</span><span class="ui-badge ui-tone--neutral">Neutral · example metadata</span></div><div class="ui-cluster"><span class="ui-badge-anchor"><a class="ui-button" href="./content.html" aria-label="Documents, 3 unread example revisions">Documents</a><span class="ui-badge ui-badge--offset ui-badge--counter ui-tone--info" aria-hidden="true">3</span></span><span class="ui-badge-anchor"><span class="ui-avatar ui-tone--neutral" aria-hidden="true">JD</span><span class="ui-badge ui-badge--offset ui-badge--counter ui-tone--pending" aria-hidden="true">99+</span></span><span class="ui-badge-anchor"><a class="ui-button" href="./catalog.html#catalog-badge" aria-label="Notifications, new example items available">Notifications</a><span class="ui-badge ui-badge--offset ui-badge--dot ui-tone--error" aria-hidden="true"></span></span></div><p class="ui-help">Examples: 3 unread revisions; Jordan has 99+ annotations; new notifications are available. Badge content is real HTML text; empty dots repeat meaning supplied in the owner’s accessible name and this explanation.</p>
+<p>Badges carry extra information. Inline labels and offset counters are separate from aligned status indicators.</p><div class="ui-cluster"><span class="ui-badge ui-tone--success">Success · example metadata</span><span class="ui-badge ui-tone--error">Error · example metadata</span><span class="ui-badge ui-tone--pending">Pending · example metadata</span><span class="ui-badge ui-tone--info">Information · example metadata</span><span class="ui-badge ui-tone--neutral">Neutral · example metadata</span></div><div class="ui-cluster"><span class="ui-badge-anchor"><a class="ui-button" href="./content.html" aria-label="Documents, 3 unread example revisions">Documents</a><span class="ui-badge ui-badge--offset ui-badge--counter ui-tone--info" aria-hidden="true">3</span></span><span class="ui-badge-anchor"><span class="ui-avatar ui-tone--neutral" aria-hidden="true">JD</span><span class="ui-badge ui-badge--offset ui-badge--counter ui-tone--pending" aria-hidden="true">99+</span></span><span class="ui-badge-anchor"><a class="ui-button" href="./catalog.html#catalog-badge" aria-label="Notifications, new example items available">Notifications</a><span class="ui-badge ui-badge--offset ui-badge--dot ui-tone--error" aria-hidden="true"></span></span></div><p class="ui-help">Examples: 3 unread revisions; Jordan has 99+ annotations; new notifications are available. Badge content is real HTML text; empty dots repeat meaning supplied in the owner’s accessible name and this explanation.</p><h3>Quiet metadata on a neutral surface</h3><div class="ui-cluster"><span class="ui-badge ui-badge--outline ui-tone--success">Success · outline metadata</span><span class="ui-badge ui-badge--outline ui-tone--error">Error · outline metadata</span><span class="ui-badge ui-badge--outline ui-tone--pending">Pending · outline metadata</span><span class="ui-badge ui-badge--outline ui-tone--info">Information · outline metadata</span><span class="ui-badge ui-badge--outline ui-tone--neutral">Neutral · outline metadata</span></div>
 ```
 
 ## Breadcrumbs
@@ -261,10 +265,10 @@ User intent: Activate a named action with native pointer and keyboard behavior.
 
 Classification: **native**. Visual variants and disabled semantics; application actions are outside CSS.
 
-Public classes: `.ui-button`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-button`, `.ui-button-icon`, `.ui-button--danger`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<div class="ui-cluster"><button class="ui-button" type="button" >Example secondary</button><button class="ui-button btn-primary" type="button">Example primary</button><button class="ui-button" type="button" disabled aria-describedby="catalog-disabled-help">Unavailable example</button></div><p id="catalog-disabled-help" class="ui-help">The disabled example has no operation to perform.</p>
+<div class="ui-cluster"><button class="ui-button" type="button" >Example secondary</button><button class="ui-button btn-primary" type="button">Example primary</button><button class="ui-button" type="button" disabled aria-describedby="catalog-disabled-help">Unavailable example</button></div><p id="catalog-disabled-help" class="ui-help">The disabled example has no operation to perform.</p><div class="ui-cluster"><a class="ui-button" href="./content.html"><span class="ui-button-icon" aria-hidden="true">→</span>Open document guide</a><button class="ui-button ui-button--danger" type="button" commandfor="dialog-alert-dialog-error" command="show-modal">Review removal example</button><button class="ui-button" type="button" disabled aria-describedby="catalog-pending-action-help">Working · unavailable example</button></div><p class="ui-help" id="catalog-pending-action-help">The pending button illustrates unavailable work. No request is running. The removal preview only opens a safe dialog and cannot delete data.</p>
 ```
 
 ## Button group / join
@@ -299,10 +303,10 @@ User intent: Recognize which heading, content and action belong together.
 
 Classification: **presentation**. Content-driven height; card container itself is not a fake clickable button.
 
-Public classes: `.ui-card`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-card`, `.ui-card--horizontal`, `.ui-card-media`, `.ui-card-content`, `.ui-card-actions`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<article class="ui-card"><h3>A named example item</h3><p>Content determines this card’s height. The card itself is not clickable.</p><a href="./content.html">Inspect document styles</a></article>
+<article class="ui-card"><h3>A named example item</h3><p>Content determines this card’s height. The card itself is not clickable.</p><a href="./content.html">Inspect document styles</a></article><article class="ui-card ui-card--horizontal"><img class="ui-card-media" src="./catalog-art-two.svg" width="480" height="160" alt="Neutral grid illustration accompanying this document record."><div class="ui-card-content"><h3>Document layout reference</h3><p>A supplied illustration, readable explanation and actual destination belong to this record. It stacks at small widths.</p><footer class="ui-card-actions"><a href="./content.html">Inspect document content</a><a href="./dashboard.html">Inspect dashboard patterns</a></footer></div></article>
 ```
 
 ## Carousel / scroll gallery
@@ -438,10 +442,10 @@ User intent: Read and dismiss a blocking explanation without losing the opener.
 
 Classification: **native**. Native dialog, command=show-modal/close and autofocus on safe close action; Chrome command support required.
 
-Public classes: `.ui-modal`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-modal`, `.ui-modal-form`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<button class="ui-button" type="button" commandfor="dialog-modal" command="show-modal">Open modal example</button><dialog class="ui-modal" id="dialog-modal" aria-labelledby="dialog-modal-title" aria-describedby="dialog-modal-help"><h3 id="dialog-modal-title">modal example</h3><p id="dialog-modal-help">This is a native presentation example. Closing it does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-modal" command="close">Close modal example</button></dialog>
+<button class="ui-button" type="button" commandfor="dialog-modal" command="show-modal">Open modal example</button><dialog class="ui-modal" id="dialog-modal" aria-labelledby="dialog-modal-title" aria-describedby="dialog-modal-help"><h3 id="dialog-modal-title">modal example</h3><p id="dialog-modal-help">This is a native presentation example. Closing it does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-modal" command="close">Close modal example</button></dialog><button class="ui-button" type="button" commandfor="dialog-form-preview" command="show-modal">Open form-preview example</button><dialog class="ui-modal" id="dialog-form-preview" aria-labelledby="dialog-form-preview-title" aria-describedby="dialog-form-preview-help"><h3 id="dialog-form-preview-title">Local form preview</h3><p id="dialog-form-preview-help">This native draft is not saved to the app. Close cancels the preview; Finish validates locally and closes without an application write.</p><button class="ui-button" type="button" autofocus commandfor="dialog-form-preview" command="close">Close form-preview example</button><form class="ui-modal-form" method="dialog"><label class="ui-label" for="catalog-dialog-draft">Example draft label (required)</label><input class="ui-input" id="catalog-dialog-draft" name="draft-label" value="Example review" required><button class="ui-button" type="submit" value="preview-complete">Finish local preview</button></form></dialog>
 ```
 
 ## Direction
@@ -483,7 +487,7 @@ Classification: **alternative**. Native popover and semantic nav; not role=menu 
 Public classes: `.ui-dropdown`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<button class="ui-button" type="button" id="invoker-dropdown" popovertarget="popup-dropdown" >Open dropdown example</button><div class="ui-dropdown" id="popup-dropdown" popover="auto" aria-label="dropdown example"><nav class="ui-menu" aria-label="Example dropdown destinations"><ul role="list"><li><a href="./">Component reference</a></li><li><a href="./content.html">Document styles</a></li></ul></nav></div>
+<button class="ui-button" type="button" id="invoker-dropdown" popovertarget="popup-dropdown" >Open dropdown example</button><div class="ui-dropdown" id="popup-dropdown" popover="auto" aria-label="dropdown example"><nav class="ui-menu" aria-label="Example grouped destinations"><h3>Read</h3><ul role="list"><li><a href="./">Component reference</a></li><li><a href="./content.html">Document styles</a></li></ul><hr class="ui-divider"><h3>Inspect</h3><ul role="list"><li><a href="./dashboard.html">Dashboard specimens</a></li><li><a href="#catalog-image">Image specimens</a></li></ul></nav></div>
 ```
 
 ## Empty state
@@ -581,7 +585,7 @@ Classification: **presentation**. Native list semantics and visible labels; sele
 Public classes: `.ui-item-list`, `.ui-item`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<ul class="ui-item-list" role="list"><li class="ui-item"><span>Document style guide</span><a href="./content.html">Inspect document</a></li><li class="ui-item"><span>Component reference</span><a href="./">Inspect reference</a></li></ul>
+<ul class="ui-item-list" role="list"><li class="ui-item"><span>Document style guide</span><a href="./content.html">Inspect document</a></li><li class="ui-item"><span>Component reference</span><a href="./">Inspect reference</a></li></ul><fieldset class="ui-fieldset"><legend>Example review checklist · local native choices</legend><ul class="ui-item-list" role="list"><li class="ui-item"><label class="ui-choice"><input class="ui-checkbox" type="checkbox" name="catalog-local-checklist" value="labels">Review persistent labels</label></li><li class="ui-item"><label class="ui-choice"><input class="ui-checkbox" type="checkbox" name="catalog-local-checklist" value="contrast">Review contrast</label></li></ul></fieldset><fieldset class="ui-fieldset"><legend>Example single review priority</legend><ul class="ui-item-list" role="list"><li class="ui-item"><label class="ui-choice"><input class="ui-radio" type="radio" name="catalog-list-priority" value="first" checked>Review labels first</label></li><li class="ui-item"><label class="ui-choice"><input class="ui-radio" type="radio" name="catalog-list-priority" value="second">Review geometry first</label></li></ul></fieldset><p class="ui-help">Native choices change only their own local controls. No task is created, checked off or saved.</p>
 ```
 
 ## Keyboard key
@@ -685,7 +689,7 @@ Classification: **native**. Visible numerical destinations 1–3 have descriptiv
 Public classes: `.ui-pagination`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<p>Numbered destinations across the three reference pages; page 3 is current.</p><nav class="ui-pagination" aria-label="Example reference pagination"><ol role="list"><li><a href="./" aria-label="Page 1 · component reference">1</a></li><li><a href="./content.html" aria-label="Page 2 · document content">2</a></li><li><span aria-current="page" aria-label="Page 3 · current catalog">3</span></li></ol></nav>
+<p>Page 3 of 3. Numbered destinations across the original three reference pages; additional specimens are in the site navigation.</p><nav class="ui-pagination" aria-label="Example reference pagination"><ol role="list"><li><a href="./" aria-label="Page 1 · component reference">1</a></li><li><a href="./content.html" aria-label="Page 2 · document content">2</a></li><li><span aria-current="page" aria-label="Page 3 · current catalog">3</span></li></ol></nav>
 ```
 
 ## Popover
@@ -713,7 +717,7 @@ Classification: **native**. Static fixture value/max; measuring work completion 
 Public classes: `.ui-progress`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<label for="catalog-control-progress">Example review progress · 3 of 5</label><progress class="ui-progress" id="catalog-control-progress" value="3" max="5">3 of 5</progress>
+<label for="catalog-control-progress">Example review progress · 3 of 5</label><progress class="ui-progress" id="catalog-control-progress" value="3" max="5">3 of 5</progress><label for="catalog-progress-unknown">Example work with an unknown total</label><progress class="ui-progress" id="catalog-progress-unknown">Work total unknown</progress><p class="ui-help">The second native progress element has no value attribute. It asserts no percentage or ETA. These are presentation examples; no work is running.</p>
 ```
 
 ## Questionnaire workflow
@@ -930,7 +934,7 @@ Classification: **presentation**. In-flow notification stack in the reference; s
 Public classes: `.ui-toast`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<div class="ui-stack"><aside class="ui-toast"><strong>Example settled notification</strong><p>This in-flow sample has no timer, hidden request or auto-dismiss.</p></aside><aside class="ui-toast">A second supplied notification remains readable below it.</aside></div>
+<div class="ui-stack"><aside class="ui-toast ui-tone--success"><strong>Success · settled example notification</strong><p>This item-level message has no timer, live event, automatic dismissal or persisted read state.</p></aside><aside class="ui-toast ui-tone--error"><strong>Error · settled example notification</strong><p>This item-level message has no timer, live event, automatic dismissal or persisted read state.</p></aside><aside class="ui-toast ui-tone--pending"><strong>Pending · settled example notification</strong><p>This item-level message has no timer, live event, automatic dismissal or persisted read state.</p></aside><aside class="ui-toast ui-tone--info"><strong>Information · settled example notification</strong><p>This item-level message has no timer, live event, automatic dismissal or persisted read state.</p></aside><aside class="ui-toast ui-tone--neutral"><strong>Neutral · settled example notification</strong><p>This item-level message has no timer, live event, automatic dismissal or persisted read state.</p></aside></div>
 ```
 
 ## Checkbox button
@@ -1421,4 +1425,60 @@ Public classes: `.ui-validator`. Supporting classes in the exact composition are
 
 ```html
 <form class="ui-validator" action="#catalog-validator" method="get"><label class="ui-label" for="catalog-email">Example email address (required)</label><input class="ui-input" id="catalog-email" name="example-email" type="email" required aria-describedby="catalog-email-help"><p class="ui-help" id="catalog-email-help">Use a fictitious example such as demo@example.test. Native HTML validates this field. A valid submission navigates within this gallery; no data is stored.</p><p class="ui-validation-error">Error: enter a complete email address before submitting the example.</p><button class="ui-button" type="submit">Check native example constraints</button></form>
+```
+
+## Page announcement
+
+Purpose: Explain a condition or update that applies to the current page.
+
+User intent: Find the scope, timing and available next steps without an overlay hiding work.
+
+Classification: **presentation**. In-flow labelled announcement and real destinations; no automatic live role, timer, consent action or dismissal persistence.
+
+Public classes: `.ui-announcement`, `.ui-announcement-actions`. Supporting classes in the exact composition are covered by the CSS ledger.
+
+```html
+<aside class="ui-announcement ui-tone--info" aria-labelledby="catalog-announcement-title"><div><h3 id="catalog-announcement-title">Reference update · page-level example</h3><p>This notice applies to the whole example surface. Review the new media and dashboard guidance before using it.</p><p>Published 30 October 2026 · static reference message.</p></div><div class="ui-announcement-actions"><a class="ui-button" href="./dashboard.html">Read dashboard examples</a><a class="ui-button" href="./content.html">Read content guidance</a></div></aside>
+```
+
+## Responsive images and grids
+
+Purpose: Present complete meaningful images with intrinsic dimensions and captions.
+
+User intent: Inspect related visuals at the available width without stretching or losing essential content.
+
+Classification: **presentation**. Native img/figure, local sources and explicit alternatives; responsive grid is CSS, while image failure detection and uploads require logic.
+
+Public classes: `.ui-image`, `.ui-image-grid`. Supporting classes in the exact composition are covered by the CSS ledger.
+
+```html
+<div class="ui-image-grid"><figure><img class="ui-image" src="./catalog-art-one.svg" width="480" height="160" loading="lazy" alt="Complete neutral list layout illustration."><figcaption>Example list layout · full artwork and intrinsic proportions retained.</figcaption></figure><figure><img class="ui-image" src="./catalog-art-two.svg" width="480" height="160" loading="lazy" alt="Complete neutral grid layout illustration."><figcaption>Example grid layout · full artwork and intrinsic proportions retained.</figcaption></figure><figure><img class="ui-image" src="./catalog-art-three.svg" width="480" height="160" loading="lazy" alt="Complete neutral document layout illustration."><figcaption>Example document layout · full artwork and intrinsic proportions retained.</figcaption></figure></div>
+```
+
+## Record ribbon / flag
+
+Purpose: Highlight a record-level version or category without covering its content.
+
+User intent: Read the special metadata before the item heading and distinguish it from operational status.
+
+Classification: **presentation**. Static in-flow real-text flag; no rotated clipped overlay, count semantics, false urgency or implicit action.
+
+Public classes: `.ui-ribbon`, `.ui-ribbon-host`. Supporting classes in the exact composition are covered by the CSS ledger.
+
+```html
+<article class="ui-card ui-ribbon-host"><span class="ui-ribbon">Reference preview</span><div><h3>Draft document pattern</h3><p>The flag describes this record’s version. It remains in flow and covers no heading, content or control.</p><a href="./content.html">Inspect the document pattern</a></div></article>
+```
+
+## Native video and aspect ratios
+
+Purpose: Present a supplied video with browser-owned playback controls and alternatives.
+
+User intent: Choose when to play, pause or inspect captions without automatic media or cropped content.
+
+Classification: **native**. Local silent WebM, caption track and transcript; native controls, no autoplay or external embeds. Aspect-ratio examples contain the same complete frame.
+
+Public classes: `.ui-video`, `.ui-video-figure`, `.ui-video--standard`, `.ui-video--square`. Supporting classes in the exact composition are covered by the CSS ledger.
+
+```html
+<p>Original silent two-second clip: a blue rectangle moves left to right. No audio, autoplay or external embed. Use native controls to play; this transcript remains available.</p><figure class="ui-video-figure"><figcaption id="catalog-video-wide-title">Native video · 16:9 host, full source frame</figcaption><video class="ui-video" id="catalog-video-wide" controls playsinline preload="none" poster="./catalog-video-poster.svg" tabindex="0" width="480" aria-labelledby="catalog-video-wide-title"><source src="./catalog-motion.webm" type="video/webm"><track kind="captions" src="./catalog-motion.vtt" srclang="en" label="English descriptions" default>Your browser cannot play the local example. Read the transcript above.</video></figure><figure class="ui-video-figure"><figcaption id="catalog-video-standard-title">Native video · 4:3 host, full source frame</figcaption><video class="ui-video ui-video--standard" id="catalog-video-standard" controls playsinline preload="none" poster="./catalog-video-poster.svg" tabindex="0" width="480" aria-labelledby="catalog-video-standard-title"><source src="./catalog-motion.webm" type="video/webm"><track kind="captions" src="./catalog-motion.vtt" srclang="en" label="English descriptions" default>Your browser cannot play the local example. Read the transcript above.</video></figure><figure class="ui-video-figure"><figcaption id="catalog-video-square-title">Native video · 1:1 host, full source frame</figcaption><video class="ui-video ui-video--square" id="catalog-video-square" controls playsinline preload="none" poster="./catalog-video-poster.svg" tabindex="0" width="480" aria-labelledby="catalog-video-square-title"><source src="./catalog-motion.webm" type="video/webm"><track kind="captions" src="./catalog-motion.vtt" srclang="en" label="English descriptions" default>Your browser cannot play the local example. Read the transcript above.</video></figure>
 ```

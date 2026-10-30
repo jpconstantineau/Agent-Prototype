@@ -150,6 +150,9 @@
       },
       "classes": [
         "ui-avatar",
+        "ui-avatar--small",
+        "ui-avatar--large",
+        "ui-avatar-group",
         "ui-tone--success",
         "ui-tone--error",
         "ui-tone--pending",
@@ -174,6 +177,7 @@
       },
       "classes": [
         "ui-badge",
+        "ui-badge--outline",
         "ui-badge-anchor",
         "ui-badge--offset",
         "ui-badge--counter",
@@ -245,7 +249,9 @@
         ]
       },
       "classes": [
-        "ui-button"
+        "ui-button",
+        "ui-button-icon",
+        "ui-button--danger"
       ],
       "purpose": "Style a real action target consistently.",
       "intent": "Activate a named action with native pointer and keyboard behavior.",
@@ -303,7 +309,11 @@
         ]
       },
       "classes": [
-        "ui-card"
+        "ui-card",
+        "ui-card--horizontal",
+        "ui-card-media",
+        "ui-card-content",
+        "ui-card-actions"
       ],
       "purpose": "Contain one related item and its actions.",
       "intent": "Recognize which heading, content and action belong together.",
@@ -499,7 +509,8 @@
         ]
       },
       "classes": [
-        "ui-modal"
+        "ui-modal",
+        "ui-modal-form"
       ],
       "purpose": "Present a bounded modal surface with native focus handling.",
       "intent": "Read and dismiss a blocking explanation without losing the opener.",
@@ -1771,6 +1782,72 @@
       "purpose": "Expose browser-enforced input constraints with visible correction guidance.",
       "intent": "Correct an invalid example without a custom validation engine.",
       "contract": "Native required/type/pattern and :user-invalid; server/domain checks and custom error synchronization need logic."
+    },
+    {
+      "id": "announcement",
+      "title": "Page announcement",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": []
+      },
+      "classes": [
+        "ui-announcement",
+        "ui-announcement-actions"
+      ],
+      "purpose": "Explain a condition or update that applies to the current page.",
+      "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+      "contract": "In-flow labelled announcement and real destinations; no automatic live role, timer, consent action or dismissal persistence."
+    },
+    {
+      "id": "image",
+      "title": "Responsive images and grids",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": []
+      },
+      "classes": [
+        "ui-image",
+        "ui-image-grid"
+      ],
+      "purpose": "Present complete meaningful images with intrinsic dimensions and captions.",
+      "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+      "contract": "Native img/figure, local sources and explicit alternatives; responsive grid is CSS, while image failure detection and uploads require logic."
+    },
+    {
+      "id": "ribbon",
+      "title": "Record ribbon / flag",
+      "kind": "presentation",
+      "upstream": {
+        "shadcn": [],
+        "daisy": []
+      },
+      "classes": [
+        "ui-ribbon",
+        "ui-ribbon-host"
+      ],
+      "purpose": "Highlight a record-level version or category without covering its content.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+      "contract": "Static in-flow real-text flag; no rotated clipped overlay, count semantics, false urgency or implicit action."
+    },
+    {
+      "id": "video",
+      "title": "Native video and aspect ratios",
+      "kind": "native",
+      "upstream": {
+        "shadcn": [],
+        "daisy": []
+      },
+      "classes": [
+        "ui-video",
+        "ui-video-figure",
+        "ui-video--standard",
+        "ui-video--square"
+      ],
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+      "contract": "Local silent WebM, caption track and transcript; native controls, no autoplay or external embeds. Aspect-ratio examples contain the same complete frame."
     }
   ]
 }

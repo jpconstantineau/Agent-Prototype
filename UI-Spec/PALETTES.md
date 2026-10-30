@@ -60,6 +60,8 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | on-interactive / danger | 4.5:1 | 7.56:1 |
 | on-interactive / warning | 4.5:1 | 7.34:1 |
 | on-interactive / muted | 4.5:1 | 8.06:1 |
+| success / surface | 4.5:1 | 6.40:1 |
+| warning / surface | 4.5:1 | 5.88:1 |
 
 ## Dark · standard
 
@@ -95,6 +97,8 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | on-interactive / danger | 4.5:1 | 6.16:1 |
 | on-interactive / warning | 4.5:1 | 8.29:1 |
 | on-interactive / muted | 4.5:1 | 8.71:1 |
+| success / surface | 4.5:1 | 6.30:1 |
+| warning / surface | 4.5:1 | 7.25:1 |
 
 ## Light · distinct status colors
 
@@ -130,6 +134,8 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | on-interactive / danger | 4.5:1 | 8.91:1 |
 | on-interactive / warning | 4.5:1 | 7.34:1 |
 | on-interactive / muted | 4.5:1 | 8.06:1 |
+| success / surface | 4.5:1 | 7.24:1 |
+| warning / surface | 4.5:1 | 5.88:1 |
 
 ## Dark · distinct status colors
 
@@ -165,10 +171,12 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | on-interactive / danger | 4.5:1 | 6.40:1 |
 | on-interactive / warning | 4.5:1 | 8.29:1 |
 | on-interactive / muted | 4.5:1 | 8.71:1 |
+| success / surface | 4.5:1 | 5.59:1 |
+| warning / surface | 4.5:1 | 7.25:1 |
 
 ## Labelled primary-button boundary observations
 
-These observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 30 required text/control/focus and accent-fill pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.
+These observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 32 required text/control/focus and accent-fill pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.
 
 Keep the selected azure button fill without a permanent outline in both brightness modes. The fill/background boundary is not required to identify this labelled button. It may be below 3:1; label contrast remains at least 4.5:1 and keyboard focus remains visible at 3:1 against its adjacent surface. Never apply this exception to icon-only controls, inputs, selection marks or focus indicators.
 

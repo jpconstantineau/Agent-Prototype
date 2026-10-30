@@ -12,6 +12,18 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## TailAdmin contextual review after 7d00fc2
+
+Reviewed the requested TailAdmin UI Elements index and all 21 linked HTML examples, plus Button groups in its demo navigation. TAILADMIN-REVIEW.md records every source, mapped component ID, gap decision and use case. No upstream source code, assets, palette or runtime is imported.
+
+Four original project families extend the existing 96 core families: announcement, image, ribbon and native video. There are now 100 families, with 91 runnable compositions and nine script-dependent engine boundaries. Existing samples add recovery links on colored alerts, avatar sizes/image/named presence, quiet metadata badges, text-plus-symbol actions, safe danger previews, responsive media cards/footers, native choice lists, grouped popover navigation, explicit pagination context, native dialog-form validation, settled semantic notifications and indeterminate native progress.
+
+Existing approved choices remain authoritative, including muted structural fields, selected azure, native folder tabs, count/status distinction and border-only alert dialogs. Optional media preserve complete meaningful frames and use original local fixtures; the silent video is played through native controls with captions/transcript and no autoplay. Ribbons reserve in-flow space instead of covering content. CSS never infers event truth, saves a local dialog draft, grants an agent permission or supplies a live notification policy.
+
+New catalog- records document each composition’s geometry and intent. catalog-accent-default expands to the announcement/notification consumers; existing palette values and density profiles remain unchanged. The registry contains 400 style/frame records, 1,264 declarations and 674 geometry entries. Quiet badge text adds success/surface and warning/surface requirements, bringing contrast checks to 128 across four palettes. Filled-alert links use checked on-fill text/focus plus a forced-color override. The exact changed/new IDs appear in CSS-DECISIONS.md and BOX-MODEL-AUDIT.md.
+
+The Google-format component narrative now distinguishes the 96 core families from the four project additions. All eight documents were re-linted against the pinned official schema with zero errors and the same three documented warnings per appearance/density document. Maintainer review of purposes, real assistive technology and physical-device behavior remains separate from automated evidence.
+
 ## Border-only dialogs, offset information badges and dashboard reference after ffd5b7d
 
 The maintainer clarified that alert dialogs should color only their border, badges should convey extra information rather than duplicate aligned state indicators, and each rating option needs its own visible star count. The latest contracts supersede the earlier colored-heading, badge-dot and cumulative-star proposals below.

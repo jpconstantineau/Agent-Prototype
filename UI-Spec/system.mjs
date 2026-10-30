@@ -171,6 +171,7 @@ export const contrastPairs = [
   ['on-primary','primary',4.5],['on-primary','primary-hover',4.5],['success','success-bg',4.5],['warning','warning-bg',4.5],['disabled','disabled-bg',4.5],['surface','muted',3],
   ['on-interactive','interactive',3],
   ...['interactive','success','danger','warning','muted'].map(fill=>['on-interactive',fill,4.5]),
+  ['success','surface',4.5],['warning','surface',4.5],
 ];
 export const contrastExceptions = [{
   id: 'labelled-primary-button', selector: '.btn-primary', fills: ['primary','primary-hover'], backgrounds: ['canvas','surface','subtle'],

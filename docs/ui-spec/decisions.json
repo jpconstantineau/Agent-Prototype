@@ -7822,7 +7822,7 @@
     },
     {
       "id": "catalog-accent-default",
-      "selector": ".ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator",
+      "selector": ".ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator, .ui-toast, .ui-announcement",
       "purpose": "Share a small semantic accent vocabulary across component examples.",
       "intent": "Recognize the written condition while colors follow the selected appearance.",
       "check": "catalog",
@@ -13925,6 +13925,1113 @@
       ]
     },
     {
+      "id": "catalog-alert-link",
+      "selector": ".ui-alert a",
+      "purpose": "Make an alert’s recovery destination readable on its semantic fill.",
+      "intent": "Follow the next step without losing link identity or contrast.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-alert-link.1",
+          "property": "color",
+          "value": "inherit",
+          "purpose": "Make an alert’s recovery destination readable on its semantic fill. Use the same checked on-fill ink as the alert text.",
+          "intent": "Follow the next step without losing link identity or contrast.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-alert-link.2",
+          "property": "text-decoration",
+          "value": "underline",
+          "purpose": "Make an alert’s recovery destination readable on its semantic fill. Identify navigation independently of color.",
+          "intent": "Follow the next step without losing link identity or contrast.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-alert-link-focus",
+      "selector": ".ui-alert a:focus-visible",
+      "purpose": "Adapt the protected focus perimeter to a colored alert surface.",
+      "intent": "Find the actual recovery link receiving keyboard input.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-alert-link-focus.1",
+          "property": "outline",
+          "value": "3px solid var(--ui-on-interactive)",
+          "purpose": "Adapt the protected focus perimeter to a colored alert surface. Use ink checked against every alert fill instead of a neutral-surface blue.",
+          "intent": "Find the actual recovery link receiving keyboard input.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-alert-link-focus.2",
+          "property": "outline-offset",
+          "value": "3px",
+          "purpose": "Adapt the protected focus perimeter to a colored alert surface. Separate the focus perimeter from the link’s text.",
+          "intent": "Find the actual recovery link receiving keyboard input.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-alert-link-forced",
+      "selector": ".ui-alert a:focus-visible",
+      "purpose": "Respect system focus for recovery links inside alerts.",
+      "intent": "Find the destination under the requested high-contrast preference.",
+      "check": "catalog",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-alert-link-forced.1",
+          "property": "outline-color",
+          "value": "Highlight",
+          "purpose": "Respect system focus for recovery links inside alerts. Use the platform focus role.",
+          "intent": "Find the destination under the requested high-contrast preference.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-avatar-small",
+      "selector": ".ui-avatar--small",
+      "purpose": "Use a compact identity mark alongside dense record rows.",
+      "intent": "Recognize short initials without reducing readable text size.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-avatar-small.1",
+          "property": "inline-size",
+          "value": "2rem",
+          "purpose": "Use a compact identity mark alongside dense record rows. Reserve a protected 32px identity disc at the default root.",
+          "intent": "Recognize short initials without reducing readable text size.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-avatar-large",
+      "selector": ".ui-avatar--large",
+      "purpose": "Give a profile or detailed identity a stronger visual anchor.",
+      "intent": "Associate supplied artwork or initials with the persistent written name.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-avatar-large.1",
+          "property": "inline-size",
+          "value": "4rem",
+          "purpose": "Give a profile or detailed identity a stronger visual anchor. Reserve a 64px identity disc without enlarging unrelated controls.",
+          "intent": "Associate supplied artwork or initials with the persistent written name.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-avatar-image",
+      "selector": ".ui-avatar img",
+      "purpose": "Fit a supplied identity thumbnail to its disc.",
+      "intent": "Recognize the thumbnail while its written identity remains available.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-avatar-image.1",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Fit a supplied identity thumbnail to its disc. Fit the governed avatar width.",
+          "intent": "Recognize the thumbnail while its written identity remains available.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-image.2",
+          "property": "block-size",
+          "value": "100%",
+          "purpose": "Fit a supplied identity thumbnail to its disc. Fit the reserved square disc.",
+          "intent": "Recognize the thumbnail while its written identity remains available.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-image.3",
+          "property": "object-fit",
+          "value": "cover",
+          "purpose": "Fit a supplied identity thumbnail to its disc. Crop only the identity thumbnail, never meaningful document artwork.",
+          "intent": "Recognize the thumbnail while its written identity remains available.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-image.4",
+          "property": "border-radius",
+          "value": "inherit",
+          "purpose": "Fit a supplied identity thumbnail to its disc. Follow the containing disc’s silhouette.",
+          "intent": "Recognize the thumbnail while its written identity remains available.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-avatar-group",
+      "selector": ".ui-avatar-group",
+      "purpose": "Keep several named identities together without hidden overlapping faces.",
+      "intent": "Inspect all supplied members and their written identities.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-avatar-group.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Keep members in source order.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-group.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Keep every member visible on mobile.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-group.3",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Separate independently named members.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-group.4",
+          "property": "list-style-type",
+          "value": "none",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Remove decorative bullets from the explicit member list.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-group.5",
+          "property": "padding",
+          "value": "0",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Let the sample own its inset.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-group.6",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Keep several named identities together without hidden overlapping faces. Avoid duplicate list outer gaps.",
+          "intent": "Inspect all supplied members and their written identities.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-avatar-member",
+      "selector": ".ui-avatar-group > li",
+      "purpose": "Associate one identity mark with its own name and state.",
+      "intent": "Read which status belongs to which member.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-avatar-member.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Associate one identity mark with its own name and state. Keep each member’s mark and wording together.",
+          "intent": "Read which status belongs to which member.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-member.2",
+          "property": "gap",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Associate one identity mark with its own name and state. Attach names and aligned presence to the mark.",
+          "intent": "Read which status belongs to which member.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar-member.3",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Associate one identity mark with its own name and state. Permit names to wrap within their member group.",
+          "intent": "Read which status belongs to which member.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-badge-outline",
+      "selector": ".ui-badge--outline",
+      "purpose": "Offer quiet supplemental metadata on the neutral reading plane.",
+      "intent": "Read the label without requiring a filled annotation for every category.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-outline.1",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Offer quiet supplemental metadata on the neutral reading plane. Keep the metadata field neutral.",
+          "intent": "Read the label without requiring a filled annotation for every category.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-outline.2",
+          "property": "color",
+          "value": "var(--ui-accent)",
+          "purpose": "Offer quiet supplemental metadata on the neutral reading plane. Use the explicitly checked semantic foreground on the surface.",
+          "intent": "Read the label without requiring a filled annotation for every category.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-outline.3",
+          "property": "border-color",
+          "value": "var(--ui-accent)",
+          "purpose": "Offer quiet supplemental metadata on the neutral reading plane. Retain a clear badge boundary alongside the written label.",
+          "intent": "Read the label without requiring a filled annotation for every category.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-button-danger",
+      "selector": ".ui-button.ui-button--danger",
+      "purpose": "Distinguish a destructive-action preview from an ordinary next step.",
+      "intent": "Recognize the named action before entering a safe confirmation surface.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-button-danger.1",
+          "property": "color",
+          "value": "var(--ui-danger)",
+          "purpose": "Distinguish a destructive-action preview from an ordinary next step. Use checked error text on the neutral button surface.",
+          "intent": "Recognize the named action before entering a safe confirmation surface.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-button-danger.2",
+          "property": "border-color",
+          "value": "var(--ui-danger)",
+          "purpose": "Distinguish a destructive-action preview from an ordinary next step. Supplement the explicit action wording with a bounded semantic edge.",
+          "intent": "Recognize the named action before entering a safe confirmation surface.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-button-icon",
+      "selector": ".ui-button-icon",
+      "purpose": "Keep a supplementary action symbol with the visible name.",
+      "intent": "Read the complete action without relying on an icon alone.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-button-icon.1",
+          "property": "display",
+          "value": "inline-block",
+          "purpose": "Keep a supplementary action symbol with the visible name. Reserve a predictable inline symbol box.",
+          "intent": "Read the complete action without relying on an icon alone.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-button-icon.2",
+          "property": "inline-size",
+          "value": "1.25em",
+          "purpose": "Keep a supplementary action symbol with the visible name. Align the symbol to the control’s existing text size.",
+          "intent": "Read the complete action without relying on an icon alone.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-button-icon.3",
+          "property": "text-align",
+          "value": "center",
+          "purpose": "Keep a supplementary action symbol with the visible name. Center the supplementary symbol in its reserved box.",
+          "intent": "Read the complete action without relying on an icon alone.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-button-icon.4",
+          "property": "flex-shrink",
+          "value": "0",
+          "purpose": "Keep a supplementary action symbol with the visible name. Keep the symbol discernible beside wrapped action wording.",
+          "intent": "Read the complete action without relying on an icon alone.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-card-horizontal",
+      "selector": ".ui-card--horizontal",
+      "purpose": "Arrange supplied media and content as one named record.",
+      "intent": "Read the complete record before selecting its actual destination.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-card-horizontal.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Arrange supplied media and content as one named record. Keep media and content in meaningful source order.",
+          "intent": "Read the complete record before selecting its actual destination.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-horizontal.2",
+          "property": "grid-template-columns",
+          "value": "minmax(0, 1fr)",
+          "purpose": "Arrange supplied media and content as one named record. Stack content while available width is limited.",
+          "intent": "Read the complete record before selecting its actual destination.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-horizontal.3",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Arrange supplied media and content as one named record. Separate the visual from its explanation.",
+          "intent": "Read the complete record before selecting its actual destination.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-card-horizontal-wide",
+      "selector": ".ui-card--horizontal",
+      "purpose": "Use a horizontal record when both media and text have useful width.",
+      "intent": "Compare the illustration with its explanation without excessive vertical scrolling.",
+      "check": "catalog",
+      "media": "(min-width: 768px)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-card-horizontal-wide.1",
+          "property": "grid-template-columns",
+          "value": "minmax(0, 1fr) minmax(0, 2fr)",
+          "purpose": "Use a horizontal record when both media and text have useful width. Give the explanatory content twice the media width at the existing medium breakpoint.",
+          "intent": "Compare the illustration with its explanation without excessive vertical scrolling.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-card-media",
+      "selector": ".ui-card-media",
+      "purpose": "Keep a record’s supplied image responsive and fully visible.",
+      "intent": "Inspect meaningful artwork without stretching or cropping.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-card-media.1",
+          "property": "display",
+          "value": "block",
+          "purpose": "Keep a record’s supplied image responsive and fully visible. Remove the image baseline gap.",
+          "intent": "Inspect meaningful artwork without stretching or cropping.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-media.2",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Keep a record’s supplied image responsive and fully visible. Fit its allocated grid track.",
+          "intent": "Inspect meaningful artwork without stretching or cropping.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-media.3",
+          "property": "block-size",
+          "value": "auto",
+          "purpose": "Keep a record’s supplied image responsive and fully visible. Preserve intrinsic image proportions.",
+          "intent": "Inspect meaningful artwork without stretching or cropping.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-media.4",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Keep a record’s supplied image responsive and fully visible. Prevent intrinsic width from widening the card.",
+          "intent": "Inspect meaningful artwork without stretching or cropping.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-card-content",
+      "selector": ".ui-card-content",
+      "purpose": "Let long record wording fit its available grid column.",
+      "intent": "Read the complete description without page-level overflow.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-card-content.1",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Let long record wording fit its available grid column. Allow long text to wrap inside the content track.",
+          "intent": "Read the complete description without page-level overflow.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-card-actions",
+      "selector": ".ui-card-actions",
+      "purpose": "Separate a record’s actual destinations from its explanatory content.",
+      "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-card-actions.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Separate a record’s actual destinations from its explanatory content. Group actual destinations in source order.",
+          "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-actions.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Separate a record’s actual destinations from its explanatory content. Keep long action names reachable.",
+          "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-actions.3",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Separate a record’s actual destinations from its explanatory content. Clear focus around peer destinations.",
+          "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-actions.4",
+          "property": "padding-block-start",
+          "value": "var(--ui-space-md)",
+          "purpose": "Separate a record’s actual destinations from its explanatory content. Separate actions from the preceding explanation.",
+          "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-card-actions.5",
+          "property": "border-block-start",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Separate a record’s actual destinations from its explanatory content. Mark the action footer with a passive separator.",
+          "intent": "Identify actions belonging to this record without making its whole surface clickable.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-modal-form",
+      "selector": ".ui-modal-form",
+      "purpose": "Keep a local native dialog draft labelled and bounded.",
+      "intent": "Enter a preview value with native validation before closing the local form.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-modal-form.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Keep a local native dialog draft labelled and bounded. Keep label, native field and finish action in order.",
+          "intent": "Enter a preview value with native validation before closing the local form.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-modal-form.2",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Keep a local native dialog draft labelled and bounded. Protect focus clearance between local form controls.",
+          "intent": "Enter a preview value with native validation before closing the local form.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-modal-form.3",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Keep a local native dialog draft labelled and bounded. Separate the safe Close action from the optional form preview.",
+          "intent": "Enter a preview value with native validation before closing the local form.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-notification-edge",
+      "selector": ".ui-toast",
+      "purpose": "Give settled item-level notifications a compact semantic cue.",
+      "intent": "Read the event title and explanation without a floating timed overlay.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-notification-edge.1",
+          "property": "border-inline-start",
+          "value": "var(--ui-notice-stroke) solid var(--ui-accent)",
+          "purpose": "Give settled item-level notifications a compact semantic cue. Use the existing notice stroke and labelled event color.",
+          "intent": "Read the event title and explanation without a floating timed overlay.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-announcement",
+      "selector": ".ui-announcement",
+      "purpose": "Explain a condition or update that applies to the current page.",
+      "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-announcement.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Explain a condition or update that applies to the current page. Keep the page-level explanation and its next steps together.",
+          "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement.2",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Explain a condition or update that applies to the current page. Separate the scope explanation from available destinations.",
+          "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement.3",
+          "property": "padding",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Explain a condition or update that applies to the current page. Clear text and focus from the bounded banner edge.",
+          "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement.4",
+          "property": "border-inline-start",
+          "value": "var(--ui-notice-stroke) solid var(--ui-accent)",
+          "purpose": "Explain a condition or update that applies to the current page. Identify the page-wide message using a compact information edge.",
+          "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement.5",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Explain a condition or update that applies to the current page. Keep the broad reading field neutral and in flow.",
+          "intent": "Find the scope, timing and available next steps without an overlay hiding work.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-announcement-actions",
+      "selector": ".ui-announcement-actions",
+      "purpose": "Keep real next-step destinations within their announcement context.",
+      "intent": "Choose a relevant follow-up without obscuring the current work.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-announcement-actions.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Keep real next-step destinations within their announcement context. Group the actual destinations together.",
+          "intent": "Choose a relevant follow-up without obscuring the current work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement-actions.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Keep real next-step destinations within their announcement context. Preserve every action at small widths.",
+          "intent": "Choose a relevant follow-up without obscuring the current work.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-announcement-actions.3",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Keep real next-step destinations within their announcement context. Keep peer target focus separate.",
+          "intent": "Choose a relevant follow-up without obscuring the current work.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-image",
+      "selector": ".ui-image",
+      "purpose": "Present complete meaningful images with intrinsic dimensions and captions.",
+      "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-image.1",
+          "property": "display",
+          "value": "block",
+          "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Remove the inline image baseline gap.",
+          "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-image.2",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Fit the containing image or gallery track.",
+          "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-image.3",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Prevent intrinsic media from widening the page.",
+          "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-image.4",
+          "property": "block-size",
+          "value": "auto",
+          "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Preserve the complete source aspect ratio.",
+          "intent": "Inspect related visuals at the available width without stretching or losing essential content.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-image-grid",
+      "selector": ".ui-image-grid",
+      "purpose": "Group related complete images using the available space.",
+      "intent": "Compare all visuals and their captions without a scripted gallery.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-image-grid.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Group related complete images using the available space. Keep each figure and caption in one track.",
+          "intent": "Compare all visuals and their captions without a scripted gallery.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-image-grid.2",
+          "property": "grid-template-columns",
+          "value": "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+          "purpose": "Group related complete images using the available space. Add columns only when an image has useful inspection width.",
+          "intent": "Compare all visuals and their captions without a scripted gallery.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-image-grid.3",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Group related complete images using the available space. Separate each meaningful visual from its peers.",
+          "intent": "Compare all visuals and their captions without a scripted gallery.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-image-figure",
+      "selector": ".ui-image-grid > figure",
+      "purpose": "Give the gallery sole ownership of figure clearance.",
+      "intent": "Read a balanced image/caption group without native side offsets.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-image-figure.1",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Give the gallery sole ownership of figure clearance. Avoid native figure margins being added to the grid gap.",
+          "intent": "Read a balanced image/caption group without native side offsets.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-ribbon",
+      "selector": ".ui-ribbon",
+      "purpose": "Highlight a record-level version or category without covering its content.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-ribbon.1",
+          "property": "display",
+          "value": "inline-block",
+          "purpose": "Highlight a record-level version or category without covering its content. Keep a real record flag in normal flow.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.2",
+          "property": "inline-size",
+          "value": "fit-content",
+          "purpose": "Highlight a record-level version or category without covering its content. Bound the filled accent to its written metadata.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.3",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Highlight a record-level version or category without covering its content. Let long metadata remain within its record.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.4",
+          "property": "padding",
+          "value": "var(--ui-space-xs) var(--ui-space-lg)",
+          "purpose": "Highlight a record-level version or category without covering its content. Make the flag readable without becoming an action target.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.5",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Highlight a record-level version or category without covering its content. Use a bounded information accent for the record label.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.6",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Highlight a record-level version or category without covering its content. Use checked ink against the flag fill.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.7",
+          "property": "border-inline-start",
+          "value": "var(--ui-notice-stroke) solid currentColor",
+          "purpose": "Highlight a record-level version or category without covering its content. Give the flag a distinct non-color start edge.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon.8",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Highlight a record-level version or category without covering its content. Identify the metadata without an oversized promotional heading.",
+          "intent": "Read the special metadata before the item heading and distinguish it from operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-ribbon-host",
+      "selector": ".ui-ribbon-host",
+      "purpose": "Reserve real layout space for a record’s flag and heading.",
+      "intent": "Read metadata without an overlay covering its associated content.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-ribbon-host.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Reserve real layout space for a record’s flag and heading. Keep the flag before the heading in source and visual order.",
+          "intent": "Read metadata without an overlay covering its associated content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-ribbon-host.2",
+          "property": "gap",
+          "value": "var(--ui-space-md)",
+          "purpose": "Reserve real layout space for a record’s flag and heading. Separate the record flag from its content.",
+          "intent": "Read metadata without an overlay covering its associated content.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-video",
+      "selector": ".ui-video",
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-video.1",
+          "property": "display",
+          "value": "block",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Give native media a predictable bounded box.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-video.2",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Fit the supplied video to its containing surface.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-video.3",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Prevent native intrinsic sizing from widening the page.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-video.4",
+          "property": "aspect-ratio",
+          "value": "16 / 9",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Reserve a common wide video frame before loading media.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-video.5",
+          "property": "object-fit",
+          "value": "contain",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Keep the whole supplied video visible rather than crop its meaning.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-video.6",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Keep letterboxed space neutral.",
+          "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-video-figure",
+      "selector": ".ui-video-figure",
+      "purpose": "Keep native video and its caption inside the governed sample clearance.",
+      "intent": "Inspect the supplied clip without unnecessary native figure side offsets.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-video-figure.1",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Keep native video and its caption inside the governed sample clearance. Give the sample sole ownership of outer media clearance.",
+          "intent": "Inspect the supplied clip without unnecessary native figure side offsets.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-video-caption",
+      "selector": ".ui-video-figure figcaption",
+      "purpose": "Separate the video label from its native control focus.",
+      "intent": "Read the format and locate keyboard focus without overlapping the caption.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-video-caption.1",
+          "property": "margin-block-end",
+          "value": "var(--ui-space-md)",
+          "purpose": "Separate the video label from its native control focus. Reserve more than the protected focus perimeter before the player.",
+          "intent": "Read the format and locate keyboard focus without overlapping the caption.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-video-standard",
+      "selector": ".ui-video--standard",
+      "purpose": "Fit older or instructional recordings in their familiar frame.",
+      "intent": "Inspect the full supplied video within a four-to-three surface.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-video-standard.1",
+          "property": "aspect-ratio",
+          "value": "4 / 3",
+          "purpose": "Fit older or instructional recordings in their familiar frame. Reserve a standard-format media host without stretching its contents.",
+          "intent": "Inspect the full supplied video within a four-to-three surface.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-video-square",
+      "selector": ".ui-video--square",
+      "purpose": "Show square-format media without a custom player.",
+      "intent": "Use the same native controls and inspect the complete frame.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-video-square.1",
+          "property": "aspect-ratio",
+          "value": "1",
+          "purpose": "Show square-format media without a custom player. Reserve a square host while object-fit preserves the supplied video.",
+          "intent": "Use the same native controls and inspect the complete frame.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "dashboard-grid",
       "selector": ".ui-dashboard-grid",
       "purpose": "Arrange independent dashboard summaries using the available width.",
@@ -15226,6 +16333,16 @@
     [
       "on-interactive",
       "muted",
+      4.5
+    ],
+    [
+      "success",
+      "surface",
+      4.5
+    ],
+    [
+      "warning",
+      "surface",
       4.5
     ]
   ],
@@ -22440,6 +23557,606 @@
       "behavior": "Protected geometry or structural reset",
       "purpose": "Keep both original comparison images fully available. Preserve the source image ratio.",
       "intent": "Inspect either full version without relying on the optional pointer-only reveal."
+    },
+    {
+      "id": "catalog-alert-link-focus.1",
+      "selector": ".ui-alert a:focus-visible",
+      "condition": null,
+      "property": "outline",
+      "value": "3px solid var(--ui-on-interactive)",
+      "normal": "3px solid var(--ui-on-interactive)",
+      "compact": "3px solid var(--ui-on-interactive)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Adapt the protected focus perimeter to a colored alert surface. Use ink checked against every alert fill instead of a neutral-surface blue.",
+      "intent": "Find the actual recovery link receiving keyboard input."
+    },
+    {
+      "id": "catalog-alert-link-focus.2",
+      "selector": ".ui-alert a:focus-visible",
+      "condition": null,
+      "property": "outline-offset",
+      "value": "3px",
+      "normal": "3px",
+      "compact": "3px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Adapt the protected focus perimeter to a colored alert surface. Separate the focus perimeter from the link’s text.",
+      "intent": "Find the actual recovery link receiving keyboard input."
+    },
+    {
+      "id": "catalog-avatar-small.1",
+      "selector": ".ui-avatar--small",
+      "condition": null,
+      "property": "inline-size",
+      "value": "2rem",
+      "normal": "2rem",
+      "compact": "2rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use a compact identity mark alongside dense record rows. Reserve a protected 32px identity disc at the default root.",
+      "intent": "Recognize short initials without reducing readable text size."
+    },
+    {
+      "id": "catalog-avatar-large.1",
+      "selector": ".ui-avatar--large",
+      "condition": null,
+      "property": "inline-size",
+      "value": "4rem",
+      "normal": "4rem",
+      "compact": "4rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give a profile or detailed identity a stronger visual anchor. Reserve a 64px identity disc without enlarging unrelated controls.",
+      "intent": "Associate supplied artwork or initials with the persistent written name."
+    },
+    {
+      "id": "catalog-avatar-image.1",
+      "selector": ".ui-avatar img",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Fit a supplied identity thumbnail to its disc. Fit the governed avatar width.",
+      "intent": "Recognize the thumbnail while its written identity remains available."
+    },
+    {
+      "id": "catalog-avatar-image.2",
+      "selector": ".ui-avatar img",
+      "condition": null,
+      "property": "block-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Fit a supplied identity thumbnail to its disc. Fit the reserved square disc.",
+      "intent": "Recognize the thumbnail while its written identity remains available."
+    },
+    {
+      "id": "catalog-avatar-image.3",
+      "selector": ".ui-avatar img",
+      "condition": null,
+      "property": "object-fit",
+      "value": "cover",
+      "normal": "cover",
+      "compact": "cover",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Fit a supplied identity thumbnail to its disc. Crop only the identity thumbnail, never meaningful document artwork.",
+      "intent": "Recognize the thumbnail while its written identity remains available."
+    },
+    {
+      "id": "catalog-avatar-image.4",
+      "selector": ".ui-avatar img",
+      "condition": null,
+      "property": "border-radius",
+      "value": "inherit",
+      "normal": "inherit",
+      "compact": "inherit",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Fit a supplied identity thumbnail to its disc. Follow the containing disc’s silhouette.",
+      "intent": "Recognize the thumbnail while its written identity remains available."
+    },
+    {
+      "id": "catalog-avatar-group.3",
+      "selector": ".ui-avatar-group",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Keep several named identities together without hidden overlapping faces. Separate independently named members.",
+      "intent": "Inspect all supplied members and their written identities."
+    },
+    {
+      "id": "catalog-avatar-group.5",
+      "selector": ".ui-avatar-group",
+      "condition": null,
+      "property": "padding",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep several named identities together without hidden overlapping faces. Let the sample own its inset.",
+      "intent": "Inspect all supplied members and their written identities."
+    },
+    {
+      "id": "catalog-avatar-group.6",
+      "selector": ".ui-avatar-group",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep several named identities together without hidden overlapping faces. Avoid duplicate list outer gaps.",
+      "intent": "Inspect all supplied members and their written identities."
+    },
+    {
+      "id": "catalog-avatar-member.2",
+      "selector": ".ui-avatar-group > li",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Associate one identity mark with its own name and state. Attach names and aligned presence to the mark.",
+      "intent": "Read which status belongs to which member."
+    },
+    {
+      "id": "catalog-avatar-member.3",
+      "selector": ".ui-avatar-group > li",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Associate one identity mark with its own name and state. Permit names to wrap within their member group.",
+      "intent": "Read which status belongs to which member."
+    },
+    {
+      "id": "catalog-button-icon.2",
+      "selector": ".ui-button-icon",
+      "condition": null,
+      "property": "inline-size",
+      "value": "1.25em",
+      "normal": "1.25em",
+      "compact": "1.25em",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a supplementary action symbol with the visible name. Align the symbol to the control’s existing text size.",
+      "intent": "Read the complete action without relying on an icon alone."
+    },
+    {
+      "id": "catalog-card-horizontal.2",
+      "selector": ".ui-card--horizontal",
+      "condition": null,
+      "property": "grid-template-columns",
+      "value": "minmax(0, 1fr)",
+      "normal": "minmax(0, 1fr)",
+      "compact": "minmax(0, 1fr)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Arrange supplied media and content as one named record. Stack content while available width is limited.",
+      "intent": "Read the complete record before selecting its actual destination."
+    },
+    {
+      "id": "catalog-card-horizontal.3",
+      "selector": ".ui-card--horizontal",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Arrange supplied media and content as one named record. Separate the visual from its explanation.",
+      "intent": "Read the complete record before selecting its actual destination."
+    },
+    {
+      "id": "catalog-card-horizontal-wide.1",
+      "selector": ".ui-card--horizontal",
+      "condition": "(min-width: 768px)",
+      "property": "grid-template-columns",
+      "value": "minmax(0, 1fr) minmax(0, 2fr)",
+      "normal": "minmax(0, 1fr) minmax(0, 2fr)",
+      "compact": "minmax(0, 1fr) minmax(0, 2fr)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use a horizontal record when both media and text have useful width. Give the explanatory content twice the media width at the existing medium breakpoint.",
+      "intent": "Compare the illustration with its explanation without excessive vertical scrolling."
+    },
+    {
+      "id": "catalog-card-media.2",
+      "selector": ".ui-card-media",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a record’s supplied image responsive and fully visible. Fit its allocated grid track.",
+      "intent": "Inspect meaningful artwork without stretching or cropping."
+    },
+    {
+      "id": "catalog-card-media.3",
+      "selector": ".ui-card-media",
+      "condition": null,
+      "property": "block-size",
+      "value": "auto",
+      "normal": "auto",
+      "compact": "auto",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a record’s supplied image responsive and fully visible. Preserve intrinsic image proportions.",
+      "intent": "Inspect meaningful artwork without stretching or cropping."
+    },
+    {
+      "id": "catalog-card-media.4",
+      "selector": ".ui-card-media",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a record’s supplied image responsive and fully visible. Prevent intrinsic width from widening the card.",
+      "intent": "Inspect meaningful artwork without stretching or cropping."
+    },
+    {
+      "id": "catalog-card-content.1",
+      "selector": ".ui-card-content",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Let long record wording fit its available grid column. Allow long text to wrap inside the content track.",
+      "intent": "Read the complete description without page-level overflow."
+    },
+    {
+      "id": "catalog-card-actions.3",
+      "selector": ".ui-card-actions",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Separate a record’s actual destinations from its explanatory content. Clear focus around peer destinations.",
+      "intent": "Identify actions belonging to this record without making its whole surface clickable."
+    },
+    {
+      "id": "catalog-card-actions.4",
+      "selector": ".ui-card-actions",
+      "condition": null,
+      "property": "padding-block-start",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Separate a record’s actual destinations from its explanatory content. Separate actions from the preceding explanation.",
+      "intent": "Identify actions belonging to this record without making its whole surface clickable."
+    },
+    {
+      "id": "catalog-card-actions.5",
+      "selector": ".ui-card-actions",
+      "condition": null,
+      "property": "border-block-start",
+      "value": "1px solid var(--ui-divider)",
+      "normal": "1px solid var(--ui-divider)",
+      "compact": "1px solid var(--ui-divider)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Separate a record’s actual destinations from its explanatory content. Mark the action footer with a passive separator.",
+      "intent": "Identify actions belonging to this record without making its whole surface clickable."
+    },
+    {
+      "id": "catalog-modal-form.2",
+      "selector": ".ui-modal-form",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Keep a local native dialog draft labelled and bounded. Protect focus clearance between local form controls.",
+      "intent": "Enter a preview value with native validation before closing the local form."
+    },
+    {
+      "id": "catalog-modal-form.3",
+      "selector": ".ui-modal-form",
+      "condition": null,
+      "property": "margin-block-start",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Keep a local native dialog draft labelled and bounded. Separate the safe Close action from the optional form preview.",
+      "intent": "Enter a preview value with native validation before closing the local form."
+    },
+    {
+      "id": "catalog-notification-edge.1",
+      "selector": ".ui-toast",
+      "condition": null,
+      "property": "border-inline-start",
+      "value": "var(--ui-notice-stroke) solid var(--ui-accent)",
+      "normal": "4px solid var(--ui-accent)",
+      "compact": "3px solid var(--ui-accent)",
+      "behavior": "Density governed",
+      "purpose": "Give settled item-level notifications a compact semantic cue. Use the existing notice stroke and labelled event color.",
+      "intent": "Read the event title and explanation without a floating timed overlay."
+    },
+    {
+      "id": "catalog-announcement.2",
+      "selector": ".ui-announcement",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Explain a condition or update that applies to the current page. Separate the scope explanation from available destinations.",
+      "intent": "Find the scope, timing and available next steps without an overlay hiding work."
+    },
+    {
+      "id": "catalog-announcement.3",
+      "selector": ".ui-announcement",
+      "condition": null,
+      "property": "padding",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Explain a condition or update that applies to the current page. Clear text and focus from the bounded banner edge.",
+      "intent": "Find the scope, timing and available next steps without an overlay hiding work."
+    },
+    {
+      "id": "catalog-announcement.4",
+      "selector": ".ui-announcement",
+      "condition": null,
+      "property": "border-inline-start",
+      "value": "var(--ui-notice-stroke) solid var(--ui-accent)",
+      "normal": "4px solid var(--ui-accent)",
+      "compact": "3px solid var(--ui-accent)",
+      "behavior": "Density governed",
+      "purpose": "Explain a condition or update that applies to the current page. Identify the page-wide message using a compact information edge.",
+      "intent": "Find the scope, timing and available next steps without an overlay hiding work."
+    },
+    {
+      "id": "catalog-announcement-actions.3",
+      "selector": ".ui-announcement-actions",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Keep real next-step destinations within their announcement context. Keep peer target focus separate.",
+      "intent": "Choose a relevant follow-up without obscuring the current work."
+    },
+    {
+      "id": "catalog-image.2",
+      "selector": ".ui-image",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Fit the containing image or gallery track.",
+      "intent": "Inspect related visuals at the available width without stretching or losing essential content."
+    },
+    {
+      "id": "catalog-image.3",
+      "selector": ".ui-image",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Prevent intrinsic media from widening the page.",
+      "intent": "Inspect related visuals at the available width without stretching or losing essential content."
+    },
+    {
+      "id": "catalog-image.4",
+      "selector": ".ui-image",
+      "condition": null,
+      "property": "block-size",
+      "value": "auto",
+      "normal": "auto",
+      "compact": "auto",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present complete meaningful images with intrinsic dimensions and captions. Preserve the complete source aspect ratio.",
+      "intent": "Inspect related visuals at the available width without stretching or losing essential content."
+    },
+    {
+      "id": "catalog-image-grid.2",
+      "selector": ".ui-image-grid",
+      "condition": null,
+      "property": "grid-template-columns",
+      "value": "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+      "normal": "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+      "compact": "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Group related complete images using the available space. Add columns only when an image has useful inspection width.",
+      "intent": "Compare all visuals and their captions without a scripted gallery."
+    },
+    {
+      "id": "catalog-image-grid.3",
+      "selector": ".ui-image-grid",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Group related complete images using the available space. Separate each meaningful visual from its peers.",
+      "intent": "Compare all visuals and their captions without a scripted gallery."
+    },
+    {
+      "id": "catalog-image-figure.1",
+      "selector": ".ui-image-grid > figure",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give the gallery sole ownership of figure clearance. Avoid native figure margins being added to the grid gap.",
+      "intent": "Read a balanced image/caption group without native side offsets."
+    },
+    {
+      "id": "catalog-ribbon.2",
+      "selector": ".ui-ribbon",
+      "condition": null,
+      "property": "inline-size",
+      "value": "fit-content",
+      "normal": "fit-content",
+      "compact": "fit-content",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Highlight a record-level version or category without covering its content. Bound the filled accent to its written metadata.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status."
+    },
+    {
+      "id": "catalog-ribbon.3",
+      "selector": ".ui-ribbon",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Highlight a record-level version or category without covering its content. Let long metadata remain within its record.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status."
+    },
+    {
+      "id": "catalog-ribbon.4",
+      "selector": ".ui-ribbon",
+      "condition": null,
+      "property": "padding",
+      "value": "var(--ui-space-xs) var(--ui-space-lg)",
+      "normal": "0.25rem 1rem",
+      "compact": "0.25rem 0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Highlight a record-level version or category without covering its content. Make the flag readable without becoming an action target.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status."
+    },
+    {
+      "id": "catalog-ribbon.7",
+      "selector": ".ui-ribbon",
+      "condition": null,
+      "property": "border-inline-start",
+      "value": "var(--ui-notice-stroke) solid currentColor",
+      "normal": "4px solid currentColor",
+      "compact": "3px solid currentColor",
+      "behavior": "Density governed",
+      "purpose": "Highlight a record-level version or category without covering its content. Give the flag a distinct non-color start edge.",
+      "intent": "Read the special metadata before the item heading and distinguish it from operational status."
+    },
+    {
+      "id": "catalog-ribbon-host.2",
+      "selector": ".ui-ribbon-host",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Reserve real layout space for a record’s flag and heading. Separate the record flag from its content.",
+      "intent": "Read metadata without an overlay covering its associated content."
+    },
+    {
+      "id": "catalog-video.2",
+      "selector": ".ui-video",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Fit the supplied video to its containing surface.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content."
+    },
+    {
+      "id": "catalog-video.3",
+      "selector": ".ui-video",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Prevent native intrinsic sizing from widening the page.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content."
+    },
+    {
+      "id": "catalog-video.4",
+      "selector": ".ui-video",
+      "condition": null,
+      "property": "aspect-ratio",
+      "value": "16 / 9",
+      "normal": "16 / 9",
+      "compact": "16 / 9",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Reserve a common wide video frame before loading media.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content."
+    },
+    {
+      "id": "catalog-video.5",
+      "selector": ".ui-video",
+      "condition": null,
+      "property": "object-fit",
+      "value": "contain",
+      "normal": "contain",
+      "compact": "contain",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present a supplied video with browser-owned playback controls and alternatives. Keep the whole supplied video visible rather than crop its meaning.",
+      "intent": "Choose when to play, pause or inspect captions without automatic media or cropped content."
+    },
+    {
+      "id": "catalog-video-figure.1",
+      "selector": ".ui-video-figure",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep native video and its caption inside the governed sample clearance. Give the sample sole ownership of outer media clearance.",
+      "intent": "Inspect the supplied clip without unnecessary native figure side offsets."
+    },
+    {
+      "id": "catalog-video-caption.1",
+      "selector": ".ui-video-figure figcaption",
+      "condition": null,
+      "property": "margin-block-end",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Separate the video label from its native control focus. Reserve more than the protected focus perimeter before the player.",
+      "intent": "Read the format and locate keyboard focus without overlapping the caption."
+    },
+    {
+      "id": "catalog-video-standard.1",
+      "selector": ".ui-video--standard",
+      "condition": null,
+      "property": "aspect-ratio",
+      "value": "4 / 3",
+      "normal": "4 / 3",
+      "compact": "4 / 3",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Fit older or instructional recordings in their familiar frame. Reserve a standard-format media host without stretching its contents.",
+      "intent": "Inspect the full supplied video within a four-to-three surface."
+    },
+    {
+      "id": "catalog-video-square.1",
+      "selector": ".ui-video--square",
+      "condition": null,
+      "property": "aspect-ratio",
+      "value": "1",
+      "normal": "1",
+      "compact": "1",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Show square-format media without a custom player. Reserve a square host while object-fit preserves the supplied video.",
+      "intent": "Use the same native controls and inspect the complete frame."
     },
     {
       "id": "dashboard-grid.2",

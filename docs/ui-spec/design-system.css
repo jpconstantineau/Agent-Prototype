@@ -1413,7 +1413,7 @@ textarea.ui-inline-control:focus {
 }
 
 /* catalog-accent-default: Share a small semantic accent vocabulary across component examples. */
-.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator {
+.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator, .ui-toast, .ui-announcement {
   --ui-accent: var(--ui-interactive); /* catalog-accent-default.1 */
 }
 
@@ -2503,6 +2503,213 @@ to {
   display: block; /* catalog-diff-full-images.1 */
   max-inline-size: 100%; /* catalog-diff-full-images.2 */
   block-size: auto; /* catalog-diff-full-images.3 */
+}
+
+/* catalog-alert-link: Make an alert’s recovery destination readable on its semantic fill. */
+.ui-alert a {
+  color: inherit; /* catalog-alert-link.1 */
+  text-decoration: underline; /* catalog-alert-link.2 */
+}
+
+/* catalog-alert-link-focus: Adapt the protected focus perimeter to a colored alert surface. */
+.ui-alert a:focus-visible {
+  outline: 3px solid var(--ui-on-interactive); /* catalog-alert-link-focus.1 */
+  outline-offset: 3px; /* catalog-alert-link-focus.2 */
+}
+
+@media (forced-colors: active) {
+/* catalog-alert-link-forced: Respect system focus for recovery links inside alerts. */
+.ui-alert a:focus-visible {
+  outline-color: Highlight; /* catalog-alert-link-forced.1 */
+}
+}
+
+/* catalog-avatar-small: Use a compact identity mark alongside dense record rows. */
+.ui-avatar--small {
+  inline-size: 2rem; /* catalog-avatar-small.1 */
+}
+
+/* catalog-avatar-large: Give a profile or detailed identity a stronger visual anchor. */
+.ui-avatar--large {
+  inline-size: 4rem; /* catalog-avatar-large.1 */
+}
+
+/* catalog-avatar-image: Fit a supplied identity thumbnail to its disc. */
+.ui-avatar img {
+  inline-size: 100%; /* catalog-avatar-image.1 */
+  block-size: 100%; /* catalog-avatar-image.2 */
+  object-fit: cover; /* catalog-avatar-image.3 */
+  border-radius: inherit; /* catalog-avatar-image.4 */
+}
+
+/* catalog-avatar-group: Keep several named identities together without hidden overlapping faces. */
+.ui-avatar-group {
+  display: flex; /* catalog-avatar-group.1 */
+  flex-wrap: wrap; /* catalog-avatar-group.2 */
+  gap: var(--ui-space-lg); /* catalog-avatar-group.3 */
+  list-style-type: none; /* catalog-avatar-group.4 */
+  padding: 0; /* catalog-avatar-group.5 */
+  margin: 0; /* catalog-avatar-group.6 */
+}
+
+/* catalog-avatar-member: Associate one identity mark with its own name and state. */
+.ui-avatar-group > li {
+  display: grid; /* catalog-avatar-member.1 */
+  gap: var(--ui-space-xs); /* catalog-avatar-member.2 */
+  min-inline-size: 0; /* catalog-avatar-member.3 */
+}
+
+/* catalog-badge-outline: Offer quiet supplemental metadata on the neutral reading plane. */
+.ui-badge--outline {
+  background-color: var(--ui-surface); /* catalog-badge-outline.1 */
+  color: var(--ui-accent); /* catalog-badge-outline.2 */
+  border-color: var(--ui-accent); /* catalog-badge-outline.3 */
+}
+
+/* catalog-button-danger: Distinguish a destructive-action preview from an ordinary next step. */
+.ui-button.ui-button--danger {
+  color: var(--ui-danger); /* catalog-button-danger.1 */
+  border-color: var(--ui-danger); /* catalog-button-danger.2 */
+}
+
+/* catalog-button-icon: Keep a supplementary action symbol with the visible name. */
+.ui-button-icon {
+  display: inline-block; /* catalog-button-icon.1 */
+  inline-size: 1.25em; /* catalog-button-icon.2 */
+  text-align: center; /* catalog-button-icon.3 */
+  flex-shrink: 0; /* catalog-button-icon.4 */
+}
+
+/* catalog-card-horizontal: Arrange supplied media and content as one named record. */
+.ui-card--horizontal {
+  display: grid; /* catalog-card-horizontal.1 */
+  grid-template-columns: minmax(0, 1fr); /* catalog-card-horizontal.2 */
+  gap: var(--ui-space-lg); /* catalog-card-horizontal.3 */
+}
+
+@media (min-width: 768px) {
+/* catalog-card-horizontal-wide: Use a horizontal record when both media and text have useful width. */
+.ui-card--horizontal {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); /* catalog-card-horizontal-wide.1 */
+}
+}
+
+/* catalog-card-media: Keep a record’s supplied image responsive and fully visible. */
+.ui-card-media {
+  display: block; /* catalog-card-media.1 */
+  inline-size: 100%; /* catalog-card-media.2 */
+  block-size: auto; /* catalog-card-media.3 */
+  max-inline-size: 100%; /* catalog-card-media.4 */
+}
+
+/* catalog-card-content: Let long record wording fit its available grid column. */
+.ui-card-content {
+  min-inline-size: 0; /* catalog-card-content.1 */
+}
+
+/* catalog-card-actions: Separate a record’s actual destinations from its explanatory content. */
+.ui-card-actions {
+  display: flex; /* catalog-card-actions.1 */
+  flex-wrap: wrap; /* catalog-card-actions.2 */
+  gap: var(--ui-space-sm); /* catalog-card-actions.3 */
+  padding-block-start: var(--ui-space-md); /* catalog-card-actions.4 */
+  border-block-start: 1px solid var(--ui-divider); /* catalog-card-actions.5 */
+}
+
+/* catalog-modal-form: Keep a local native dialog draft labelled and bounded. */
+.ui-modal-form {
+  display: grid; /* catalog-modal-form.1 */
+  gap: var(--ui-space-sm); /* catalog-modal-form.2 */
+  margin-block-start: var(--ui-space-lg); /* catalog-modal-form.3 */
+}
+
+/* catalog-notification-edge: Give settled item-level notifications a compact semantic cue. */
+.ui-toast {
+  border-inline-start: var(--ui-notice-stroke) solid var(--ui-accent); /* catalog-notification-edge.1 */
+}
+
+/* catalog-announcement: Explain a condition or update that applies to the current page. */
+.ui-announcement {
+  display: grid; /* catalog-announcement.1 */
+  gap: var(--ui-space-lg); /* catalog-announcement.2 */
+  padding: var(--ui-space-lg); /* catalog-announcement.3 */
+  border-inline-start: var(--ui-notice-stroke) solid var(--ui-accent); /* catalog-announcement.4 */
+  background-color: var(--ui-subtle); /* catalog-announcement.5 */
+}
+
+/* catalog-announcement-actions: Keep real next-step destinations within their announcement context. */
+.ui-announcement-actions {
+  display: flex; /* catalog-announcement-actions.1 */
+  flex-wrap: wrap; /* catalog-announcement-actions.2 */
+  gap: var(--ui-space-sm); /* catalog-announcement-actions.3 */
+}
+
+/* catalog-image: Present complete meaningful images with intrinsic dimensions and captions. */
+.ui-image {
+  display: block; /* catalog-image.1 */
+  inline-size: 100%; /* catalog-image.2 */
+  max-inline-size: 100%; /* catalog-image.3 */
+  block-size: auto; /* catalog-image.4 */
+}
+
+/* catalog-image-grid: Group related complete images using the available space. */
+.ui-image-grid {
+  display: grid; /* catalog-image-grid.1 */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); /* catalog-image-grid.2 */
+  gap: var(--ui-space-lg); /* catalog-image-grid.3 */
+}
+
+/* catalog-image-figure: Give the gallery sole ownership of figure clearance. */
+.ui-image-grid > figure {
+  margin: 0; /* catalog-image-figure.1 */
+}
+
+/* catalog-ribbon: Highlight a record-level version or category without covering its content. */
+.ui-ribbon {
+  display: inline-block; /* catalog-ribbon.1 */
+  inline-size: fit-content; /* catalog-ribbon.2 */
+  max-inline-size: 100%; /* catalog-ribbon.3 */
+  padding: var(--ui-space-xs) var(--ui-space-lg); /* catalog-ribbon.4 */
+  background-color: var(--ui-interactive); /* catalog-ribbon.5 */
+  color: var(--ui-on-interactive); /* catalog-ribbon.6 */
+  border-inline-start: var(--ui-notice-stroke) solid currentColor; /* catalog-ribbon.7 */
+  font-weight: 600; /* catalog-ribbon.8 */
+}
+
+/* catalog-ribbon-host: Reserve real layout space for a record’s flag and heading. */
+.ui-ribbon-host {
+  display: grid; /* catalog-ribbon-host.1 */
+  gap: var(--ui-space-md); /* catalog-ribbon-host.2 */
+}
+
+/* catalog-video: Present a supplied video with browser-owned playback controls and alternatives. */
+.ui-video {
+  display: block; /* catalog-video.1 */
+  inline-size: 100%; /* catalog-video.2 */
+  max-inline-size: 100%; /* catalog-video.3 */
+  aspect-ratio: 16 / 9; /* catalog-video.4 */
+  object-fit: contain; /* catalog-video.5 */
+  background-color: var(--ui-subtle); /* catalog-video.6 */
+}
+
+/* catalog-video-figure: Keep native video and its caption inside the governed sample clearance. */
+.ui-video-figure {
+  margin: 0; /* catalog-video-figure.1 */
+}
+
+/* catalog-video-caption: Separate the video label from its native control focus. */
+.ui-video-figure figcaption {
+  margin-block-end: var(--ui-space-md); /* catalog-video-caption.1 */
+}
+
+/* catalog-video-standard: Fit older or instructional recordings in their familiar frame. */
+.ui-video--standard {
+  aspect-ratio: 4 / 3; /* catalog-video-standard.1 */
+}
+
+/* catalog-video-square: Show square-format media without a custom player. */
+.ui-video--square {
+  aspect-ratio: 1; /* catalog-video-square.1 */
 }
 
 /* dashboard-grid: Arrange independent dashboard summaries using the available width. */

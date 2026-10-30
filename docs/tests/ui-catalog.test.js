@@ -1,14 +1,20 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {catalog,includedCatalog,validateCatalog} from '../../UI-Spec/component-catalog.mjs';
+import {catalog,includedCatalog,coreCatalog,projectCatalog,validateCatalog} from '../../UI-Spec/component-catalog.mjs';
+import {tailadminReview,tailadminSource} from '../../UI-Spec/tailadmin-review.mjs';
 import {examples,validateExamples} from '../../UI-Spec/catalog-examples.mjs';
 import {rules} from '../../UI-Spec/system.mjs';
 import {dashboardExamples,percentage} from '../../UI-Spec/dashboard-examples.mjs';
 test('reviewed core catalogs have complete, unique classification and runnable class/markup coverage',()=>{
- assert.deepEqual(validateCatalog(),{shadcn:66,daisy:68});assert.equal(catalog.length,96);assert.equal(includedCatalog.length,87);validateExamples(includedCatalog);
+ assert.deepEqual(validateCatalog(),{shadcn:66,daisy:68});assert.equal(coreCatalog.length,96);assert.equal(projectCatalog.length,4);assert.equal(catalog.length,100);assert.equal(includedCatalog.length,91);validateExamples(includedCatalog);
  for(const c of includedCatalog)for(const name of c.classes){assert(new RegExp('class="[^"]*\\b'+name+'\\b').test(examples[c.id]),c.id+': missing class in example '+name);assert(rules.some(r=>r.selector.includes('.'+name)),c.id+': missing audited CSS '+name);}
  assert.throws(()=>validateCatalog([...catalog,catalog[0]]),/Invalid catalog/);assert.throws(()=>validateExamples([{id:'missing'}]),/Missing example/);
  for(const c of catalog.filter(c=>c.kind==='script'))assert(!examples[c.id],'Do not present a CSS shell as a runnable widget: '+c.id);
+});
+
+test('TailAdmin review maps every requested entry and the additional button-group demo to actual contracts',()=>{
+ assert.equal(tailadminReview.length,22);assert.equal(new Set(tailadminReview.map(r=>r.name)).size,22);assert.equal(tailadminSource.reviewed,'2026-10-30');
+ for(const row of tailadminReview){assert(row.url.startsWith('https://demo.tailadmin.com/'));assert(row.decision.length>=100);assert(row.targets.every(id=>catalog.some(c=>c.id===id)));}
 });
 
 test('dashboard examples retain supplied values, audited classes and a valid shared scale',()=>{

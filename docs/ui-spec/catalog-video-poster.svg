@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <rect width="480" height="270" fill="#dedede"/>
+  <text x="24" y="40" font-family="sans-serif" font-size="20" fill="#242424">Silent example: moving block</text>
+  <rect x="24" y="96" width="96" height="72" fill="#006aa8"/>
+</svg>

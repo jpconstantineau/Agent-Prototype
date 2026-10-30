@@ -4602,6 +4602,406 @@ Selector: `.ui-diff img`. Policy: Protected geometry or structural reset.
 | --- | --- | --- | --- | --- | --- |
 | block-size | auto | auto | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. |
 
+## catalog-alert-link-focus.1
+
+Selector: `.ui-alert a:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 3px solid var(--ui-on-interactive) | 3px solid var(--ui-on-interactive) | 3px solid var(--ui-on-interactive) | Adapt the protected focus perimeter to a colored alert surface. Use ink checked against every alert fill instead of a neutral-surface blue. | Find the actual recovery link receiving keyboard input. |
+
+## catalog-alert-link-focus.2
+
+Selector: `.ui-alert a:focus-visible`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline-offset | 3px | 3px | 3px | Adapt the protected focus perimeter to a colored alert surface. Separate the focus perimeter from the link’s text. | Find the actual recovery link receiving keyboard input. |
+
+## catalog-avatar-small.1
+
+Selector: `.ui-avatar--small`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 2rem | 2rem | 2rem | Use a compact identity mark alongside dense record rows. Reserve a protected 32px identity disc at the default root. | Recognize short initials without reducing readable text size. |
+
+## catalog-avatar-large.1
+
+Selector: `.ui-avatar--large`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 4rem | 4rem | 4rem | Give a profile or detailed identity a stronger visual anchor. Reserve a 64px identity disc without enlarging unrelated controls. | Associate supplied artwork or initials with the persistent written name. |
+
+## catalog-avatar-image.1
+
+Selector: `.ui-avatar img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Fit a supplied identity thumbnail to its disc. Fit the governed avatar width. | Recognize the thumbnail while its written identity remains available. |
+
+## catalog-avatar-image.2
+
+Selector: `.ui-avatar img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 100% | 100% | 100% | Fit a supplied identity thumbnail to its disc. Fit the reserved square disc. | Recognize the thumbnail while its written identity remains available. |
+
+## catalog-avatar-image.3
+
+Selector: `.ui-avatar img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| object-fit | cover | cover | cover | Fit a supplied identity thumbnail to its disc. Crop only the identity thumbnail, never meaningful document artwork. | Recognize the thumbnail while its written identity remains available. |
+
+## catalog-avatar-image.4
+
+Selector: `.ui-avatar img`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | inherit | inherit | inherit | Fit a supplied identity thumbnail to its disc. Follow the containing disc’s silhouette. | Recognize the thumbnail while its written identity remains available. |
+
+## catalog-avatar-group.3
+
+Selector: `.ui-avatar-group`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Keep several named identities together without hidden overlapping faces. Separate independently named members. | Inspect all supplied members and their written identities. |
+
+## catalog-avatar-group.5
+
+Selector: `.ui-avatar-group`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Keep several named identities together without hidden overlapping faces. Let the sample own its inset. | Inspect all supplied members and their written identities. |
+
+## catalog-avatar-group.6
+
+Selector: `.ui-avatar-group`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Keep several named identities together without hidden overlapping faces. Avoid duplicate list outer gaps. | Inspect all supplied members and their written identities. |
+
+## catalog-avatar-member.2
+
+Selector: `.ui-avatar-group > li`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Associate one identity mark with its own name and state. Attach names and aligned presence to the mark. | Read which status belongs to which member. |
+
+## catalog-avatar-member.3
+
+Selector: `.ui-avatar-group > li`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Associate one identity mark with its own name and state. Permit names to wrap within their member group. | Read which status belongs to which member. |
+
+## catalog-button-icon.2
+
+Selector: `.ui-button-icon`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 1.25em | 1.25em | 1.25em | Keep a supplementary action symbol with the visible name. Align the symbol to the control’s existing text size. | Read the complete action without relying on an icon alone. |
+
+## catalog-card-horizontal.2
+
+Selector: `.ui-card--horizontal`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | minmax(0, 1fr) | minmax(0, 1fr) | minmax(0, 1fr) | Arrange supplied media and content as one named record. Stack content while available width is limited. | Read the complete record before selecting its actual destination. |
+
+## catalog-card-horizontal.3
+
+Selector: `.ui-card--horizontal`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Arrange supplied media and content as one named record. Separate the visual from its explanation. | Read the complete record before selecting its actual destination. |
+
+## catalog-card-horizontal-wide.1
+
+Selector: `.ui-card--horizontal`; condition: `(min-width: 768px)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | minmax(0, 1fr) minmax(0, 2fr) | minmax(0, 1fr) minmax(0, 2fr) | minmax(0, 1fr) minmax(0, 2fr) | Use a horizontal record when both media and text have useful width. Give the explanatory content twice the media width at the existing medium breakpoint. | Compare the illustration with its explanation without excessive vertical scrolling. |
+
+## catalog-card-media.2
+
+Selector: `.ui-card-media`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Keep a record’s supplied image responsive and fully visible. Fit its allocated grid track. | Inspect meaningful artwork without stretching or cropping. |
+
+## catalog-card-media.3
+
+Selector: `.ui-card-media`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | auto | auto | auto | Keep a record’s supplied image responsive and fully visible. Preserve intrinsic image proportions. | Inspect meaningful artwork without stretching or cropping. |
+
+## catalog-card-media.4
+
+Selector: `.ui-card-media`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep a record’s supplied image responsive and fully visible. Prevent intrinsic width from widening the card. | Inspect meaningful artwork without stretching or cropping. |
+
+## catalog-card-content.1
+
+Selector: `.ui-card-content`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Let long record wording fit its available grid column. Allow long text to wrap inside the content track. | Read the complete description without page-level overflow. |
+
+## catalog-card-actions.3
+
+Selector: `.ui-card-actions`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate a record’s actual destinations from its explanatory content. Clear focus around peer destinations. | Identify actions belonging to this record without making its whole surface clickable. |
+
+## catalog-card-actions.4
+
+Selector: `.ui-card-actions`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Separate a record’s actual destinations from its explanatory content. Separate actions from the preceding explanation. | Identify actions belonging to this record without making its whole surface clickable. |
+
+## catalog-card-actions.5
+
+Selector: `.ui-card-actions`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Separate a record’s actual destinations from its explanatory content. Mark the action footer with a passive separator. | Identify actions belonging to this record without making its whole surface clickable. |
+
+## catalog-modal-form.2
+
+Selector: `.ui-modal-form`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep a local native dialog draft labelled and bounded. Protect focus clearance between local form controls. | Enter a preview value with native validation before closing the local form. |
+
+## catalog-modal-form.3
+
+Selector: `.ui-modal-form`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-lg) | 1rem | 0.75rem | Keep a local native dialog draft labelled and bounded. Separate the safe Close action from the optional form preview. | Enter a preview value with native validation before closing the local form. |
+
+## catalog-notification-edge.1
+
+Selector: `.ui-toast`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid var(--ui-accent) | 4px solid var(--ui-accent) | 3px solid var(--ui-accent) | Give settled item-level notifications a compact semantic cue. Use the existing notice stroke and labelled event color. | Read the event title and explanation without a floating timed overlay. |
+
+## catalog-announcement.2
+
+Selector: `.ui-announcement`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Explain a condition or update that applies to the current page. Separate the scope explanation from available destinations. | Find the scope, timing and available next steps without an overlay hiding work. |
+
+## catalog-announcement.3
+
+Selector: `.ui-announcement`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-lg) | 1rem | 0.75rem | Explain a condition or update that applies to the current page. Clear text and focus from the bounded banner edge. | Find the scope, timing and available next steps without an overlay hiding work. |
+
+## catalog-announcement.4
+
+Selector: `.ui-announcement`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid var(--ui-accent) | 4px solid var(--ui-accent) | 3px solid var(--ui-accent) | Explain a condition or update that applies to the current page. Identify the page-wide message using a compact information edge. | Find the scope, timing and available next steps without an overlay hiding work. |
+
+## catalog-announcement-actions.3
+
+Selector: `.ui-announcement-actions`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep real next-step destinations within their announcement context. Keep peer target focus separate. | Choose a relevant follow-up without obscuring the current work. |
+
+## catalog-image.2
+
+Selector: `.ui-image`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Present complete meaningful images with intrinsic dimensions and captions. Fit the containing image or gallery track. | Inspect related visuals at the available width without stretching or losing essential content. |
+
+## catalog-image.3
+
+Selector: `.ui-image`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Present complete meaningful images with intrinsic dimensions and captions. Prevent intrinsic media from widening the page. | Inspect related visuals at the available width without stretching or losing essential content. |
+
+## catalog-image.4
+
+Selector: `.ui-image`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | auto | auto | auto | Present complete meaningful images with intrinsic dimensions and captions. Preserve the complete source aspect ratio. | Inspect related visuals at the available width without stretching or losing essential content. |
+
+## catalog-image-grid.2
+
+Selector: `.ui-image-grid`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 12rem), 1fr)) | Group related complete images using the available space. Add columns only when an image has useful inspection width. | Compare all visuals and their captions without a scripted gallery. |
+
+## catalog-image-grid.3
+
+Selector: `.ui-image-grid`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Group related complete images using the available space. Separate each meaningful visual from its peers. | Compare all visuals and their captions without a scripted gallery. |
+
+## catalog-image-figure.1
+
+Selector: `.ui-image-grid > figure`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Give the gallery sole ownership of figure clearance. Avoid native figure margins being added to the grid gap. | Read a balanced image/caption group without native side offsets. |
+
+## catalog-ribbon.2
+
+Selector: `.ui-ribbon`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | fit-content | fit-content | fit-content | Highlight a record-level version or category without covering its content. Bound the filled accent to its written metadata. | Read the special metadata before the item heading and distinguish it from operational status. |
+
+## catalog-ribbon.3
+
+Selector: `.ui-ribbon`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Highlight a record-level version or category without covering its content. Let long metadata remain within its record. | Read the special metadata before the item heading and distinguish it from operational status. |
+
+## catalog-ribbon.4
+
+Selector: `.ui-ribbon`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xs) var(--ui-space-lg) | 0.25rem 1rem | 0.25rem 0.75rem | Highlight a record-level version or category without covering its content. Make the flag readable without becoming an action target. | Read the special metadata before the item heading and distinguish it from operational status. |
+
+## catalog-ribbon.7
+
+Selector: `.ui-ribbon`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-start | var(--ui-notice-stroke) solid currentColor | 4px solid currentColor | 3px solid currentColor | Highlight a record-level version or category without covering its content. Give the flag a distinct non-color start edge. | Read the special metadata before the item heading and distinguish it from operational status. |
+
+## catalog-ribbon-host.2
+
+Selector: `.ui-ribbon-host`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-md) | 0.75rem | 0.5rem | Reserve real layout space for a record’s flag and heading. Separate the record flag from its content. | Read metadata without an overlay covering its associated content. |
+
+## catalog-video.2
+
+Selector: `.ui-video`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Present a supplied video with browser-owned playback controls and alternatives. Fit the supplied video to its containing surface. | Choose when to play, pause or inspect captions without automatic media or cropped content. |
+
+## catalog-video.3
+
+Selector: `.ui-video`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Present a supplied video with browser-owned playback controls and alternatives. Prevent native intrinsic sizing from widening the page. | Choose when to play, pause or inspect captions without automatic media or cropped content. |
+
+## catalog-video.4
+
+Selector: `.ui-video`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 16 / 9 | 16 / 9 | 16 / 9 | Present a supplied video with browser-owned playback controls and alternatives. Reserve a common wide video frame before loading media. | Choose when to play, pause or inspect captions without automatic media or cropped content. |
+
+## catalog-video.5
+
+Selector: `.ui-video`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| object-fit | contain | contain | contain | Present a supplied video with browser-owned playback controls and alternatives. Keep the whole supplied video visible rather than crop its meaning. | Choose when to play, pause or inspect captions without automatic media or cropped content. |
+
+## catalog-video-figure.1
+
+Selector: `.ui-video-figure`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Keep native video and its caption inside the governed sample clearance. Give the sample sole ownership of outer media clearance. | Inspect the supplied clip without unnecessary native figure side offsets. |
+
+## catalog-video-caption.1
+
+Selector: `.ui-video-figure figcaption`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-end | var(--ui-space-md) | 0.75rem | 0.5rem | Separate the video label from its native control focus. Reserve more than the protected focus perimeter before the player. | Read the format and locate keyboard focus without overlapping the caption. |
+
+## catalog-video-standard.1
+
+Selector: `.ui-video--standard`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 4 / 3 | 4 / 3 | 4 / 3 | Fit older or instructional recordings in their familiar frame. Reserve a standard-format media host without stretching its contents. | Inspect the full supplied video within a four-to-three surface. |
+
+## catalog-video-square.1
+
+Selector: `.ui-video--square`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Show square-format media without a custom player. Reserve a square host while object-fit preserves the supplied video. | Use the same native controls and inspect the complete frame. |
+
 ## dashboard-grid.2
 
 Selector: `.ui-dashboard-grid`. Policy: Protected geometry or structural reset.
