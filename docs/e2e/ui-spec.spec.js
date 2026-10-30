@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {rules,palettes} from '../../UI-Spec/system.mjs';
+import {writeFile} from 'node:fs/promises';
 
 // Family labels are checked against every declaration's verification mapping.
 const families = {
@@ -7,6 +8,7 @@ const families = {
   layout: ['grid','reflow','targets','navigation'],
   keyboard: ['focus','editing','validation'],
   comparison: ['table'], modal: ['dialog'], adaptive: ['forced-colors'],
+  density: ['density'],
 };
 const titleInput=page=>page.getByLabel('Task title (required)',{exact:true});
 async function reference(page) {
@@ -104,8 +106,9 @@ test(`native modal confirmation, cancellation and focus return: ${families.modal
   await open.click();await page.keyboard.press('Escape');await expect(page.locator('#dialog-status')).toContainText('cancelled');
 });
 
-test(`text enlargement, spacing, reduced motion and high contrast: ${families.adaptive.join(', ')}`,async({page})=>{
+for(const density of ['normal','compact']) test(`text enlargement, spacing, reduced motion and high contrast / ${density}: ${families.adaptive.join(', ')}`,async({page})=>{
   await reference(page);await page.setViewportSize({width:390,height:844});
+  await page.getByRole('switch',{name:'Compact mode',exact:true}).setChecked(density==='compact');
   // Test user overrides are intentionally outside the shipped stylesheet audit.
   await page.route('**/ui-spec/user-spacing.css',route=>route.fulfill({contentType:'text/css',body:'html { font-size: 200%; } p, label, input, textarea { line-height: 1.5; letter-spacing: .12em; word-spacing: .16em; } p { margin-bottom: 2em; }'}));
   await page.addStyleTag({url:new URL('user-spacing.css',page.url()).href});
@@ -121,10 +124,11 @@ test('native HTML reference remains inspectable without JavaScript',async({brows
   await page.goto(`${baseURL}ui-spec/`);await expect(page.locator('noscript p')).toBeVisible();expect(await page.locator('noscript p').evaluate(n=>n.textContent)).toContain('Prefilled fields');await expect(titleInput(page)).toBeVisible();await titleInput(page).click();expect(await titleInput(page).evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');await expect(page.getByRole('button',{name:'Save changes',exact:true})).toBeDisabled();await expect(page.getByRole('switch',{name:'Dark mode',exact:true})).toBeDisabled();await noPageOverflow(page);await context.close();
 });
 
-for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: effective colors, direct editing and non-color cues`,async({page,context})=>{
+for(const density of ['normal','compact']) for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key} / ${density}: effective colors, direct editing and non-color cues`,async({page,context})=>{
   await reference(page);
   const dark=page.getByRole('switch',{name:'Dark mode',exact:true}),distinct=page.getByRole('switch',{name:'Distinct status colors',exact:true});
   await dark.setChecked(palette.theme==='dark');await distinct.setChecked(palette.vision==='distinct');
+  await page.getByRole('switch',{name:'Compact mode',exact:true}).setChecked(density==='compact');await expect(page.locator('html')).toHaveAttribute('data-density',density);
   await expect(page.locator('html')).toHaveAttribute('data-bs-theme',palette.theme);await expect(page.locator('html')).toHaveAttribute('data-vision',palette.vision);
   const actual=await page.evaluate(roles=>{const s=getComputedStyle(document.documentElement);return Object.fromEntries(roles.map(role=>[role,s.getPropertyValue(`--ui-${role}`).trim()]));},Object.keys(palette.colors));
   expect(actual).toEqual(palette.colors);
@@ -144,7 +148,7 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
     await expect(sample).toHaveText(palette.colors[role]);
     expect(await page.locator(`.ui-swatch-${role}`).evaluate(n=>getComputedStyle(n).backgroundColor),`${key} actual ${role} color patch`).toBe(rgb(palette.colors[role]));
   }
-  await page.locator('.ui-swatch-grid').screenshot({path:`.tmp/ui-${key}-swatches.png`});
+  await page.locator('.ui-swatch-grid').screenshot({path:`.tmp/ui-${key}-${density}-swatches.png`});
   const primary=page.getByRole('button',{name:'Save changes',exact:true});
   await expect(primary).toHaveText('Save changes');
   expect(await primary.evaluate(n=>{const s=getComputedStyle(n);return {border:s.borderTopColor,outline:s.outlineStyle};})).toEqual({border:'rgba(0, 0, 0, 0)',outline:'none'});
@@ -160,26 +164,26 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
   const input=titleInput(page);await input.fill('Draft survives a palette change');await page.getByLabel('Find a CSS decision',{exact:true}).focus();expect(await input.evaluate(n=>getComputedStyle(n).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
   await input.click();expect(await input.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
   expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor,border:s.borderTopColor,focus:s.outlineColor};})).toEqual({fg:rgb(palette.colors.ink),bg:rgb(palette.colors.surface),border:rgb(palette.colors.border),focus:rgb(palette.colors.focus)});
-  await page.locator('[data-inline-record]').screenshot({path:`.tmp/ui-${key}-focus.png`});
+  await page.locator('[data-inline-record]').screenshot({path:`.tmp/ui-${key}-${density}-focus.png`});
   if(key==='light-distinct') {
     await input.fill('');await primary.click();await expect(input).toBeFocused();await expect(input).toHaveAttribute('aria-invalid','true');await expect(page.locator('#title-error')).toContainText('Error:');
     expect(await input.evaluate(n=>{const s=getComputedStyle(n);return {focus:s.outlineColor,error:s.borderTopColor};})).toEqual({focus:rgb(palette.colors.focus),error:rgb(palette.colors.danger)});
     expect(palette.colors.focus).not.toBe(palette.colors.danger);
-    await page.locator('[data-inline-record]').screenshot({path:'.tmp/ui-light-distinct-invalid-focus.png'});
+    await page.locator('[data-inline-record]').screenshot({path:`.tmp/ui-${key}-${density}-invalid-focus.png`});
     await input.fill('Draft survives a palette change');
   }
   await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(input).toHaveValue('Draft survives a palette change');
   await page.getByRole('button',{name:'Save changes',exact:true}).hover();expect(await page.getByRole('button',{name:'Save changes',exact:true}).evaluate(n=>{const s=getComputedStyle(n);return {fg:s.color,bg:s.backgroundColor};})).toEqual({fg:rgb(palette.colors['on-primary']),bg:rgb(palette.colors['primary-hover'])});
   const pending=page.locator('.ui-status-pending').first();await expect(pending).toContainText(/Proposed|Pending/);
   if(palette.vision==='distinct') {expect(await pending.evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('dashed');expect(await page.locator('.ui-status:not(.ui-status-pending)').first().evaluate(n=>getComputedStyle(n).borderTopStyle)).toBe('solid');}
-  await page.setViewportSize({width:390,height:844});await noPageOverflow(page);await page.locator('#forms').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-mobile.png`});
-  await page.setViewportSize({width:1440,height:960});await page.locator('#forms').screenshot({path:`.tmp/ui-${key}-form.png`});
-  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-states.png`});
+  await page.setViewportSize({width:390,height:844});await noPageOverflow(page);await page.locator('#forms').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-${density}-mobile.png`});
+  await page.setViewportSize({width:1440,height:960});await page.locator('#forms').screenshot({path:`.tmp/ui-${key}-${density}-form.png`});
+  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-${density}-states.png`});
   const cdp=await context.newCDPSession(page);
   for(const type of ['protanopia','deuteranopia','tritanopia','achromatopsia']) {
     await cdp.send('Emulation.setEmulatedVisionDeficiency',{type});await expect(page.locator('.ui-error').last()).toContainText('error:');await expect(page.locator('.ui-status').filter({hasText:'Saved'}).first()).toBeVisible();
   }
-  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-achromatopsia.png`});await cdp.send('Emulation.setEmulatedVisionDeficiency',{type:'none'});await cdp.detach();
+  await page.locator('#choices-title').scrollIntoViewIfNeeded();await page.screenshot({path:`.tmp/ui-${key}-${density}-achromatopsia.png`});await cdp.send('Emulation.setEmulatedVisionDeficiency',{type:'none'});await cdp.detach();
   await page.emulateMedia({forcedColors:'active'});await input.focus();expect(await input.evaluate(n=>getComputedStyle(n).outlineStyle)).toBe('solid');expect(await dark.evaluate(n=>getComputedStyle(n).appearance)).toBe('auto');
   await primary.hover();expect(await primary.evaluate(n=>{const s=getComputedStyle(n);return s.borderTopColor===s.color&&s.borderTopColor!=='rgba(0, 0, 0, 0)';})).toBe(true);
   await page.getByRole('button',{name:'Cancel changes',exact:true}).focus();await page.keyboard.press('Shift+Tab');await expect(primary).toBeFocused();expect(await primary.evaluate(n=>getComputedStyle(n).outlineWidth)).toBe('3px');
@@ -188,13 +192,42 @@ for(const [key,palette] of Object.entries(palettes)) test(`appearance ${key}: ef
 test('appearance uses system brightness initially, persists explicit choices and preserves drafts',async({page})=>{
   await page.emulateMedia({colorScheme:'dark'});await reference(page);await expect(page.getByRole('switch',{name:'Dark mode',exact:true})).toBeChecked();
   await titleInput(page).fill('Keep this draft');const dark=page.getByRole('switch',{name:'Dark mode',exact:true}),distinct=page.getByRole('switch',{name:'Distinct status colors',exact:true});
-  await dark.focus();await dark.press('Space');await expect(dark).not.toBeChecked();await distinct.check();await expect(titleInput(page)).toHaveValue('Keep this draft');await expect(page.locator('#edit-status')).toContainText('Unsaved');
+  const compact=page.getByRole('switch',{name:'Compact mode',exact:true});
+  await dark.focus();await dark.press('Space');await expect(dark).not.toBeChecked();await distinct.check();await compact.check();await expect(compact).toBeFocused();await expect(titleInput(page)).toHaveValue('Keep this draft');await expect(page.locator('#edit-status')).toContainText('Unsaved');
   await page.reload();await expect(dark).not.toBeChecked();await expect(distinct).toBeChecked();await expect(titleInput(page)).toHaveValue('Review the interface guidelines');
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('daylist-ui-reference-appearance-v1')))).toEqual({theme:'light',vision:'distinct'});
+  await expect(compact).toBeChecked();await expect(page.locator('html')).toHaveAttribute('data-density','compact');
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('daylist-ui-reference-appearance-v1')))).toEqual({theme:'light',vision:'distinct',density:'compact'});
 });
 
 test('denied preference storage keeps appearance and editing usable',async({page})=>{
   await page.emulateMedia({colorScheme:'light'});
   await page.addInitScript(()=>{Object.defineProperty(Storage.prototype,'getItem',{value(){throw new DOMException('Denied','SecurityError');}});Object.defineProperty(Storage.prototype,'setItem',{value(){throw new DOMException('Denied','SecurityError');}});});
-  await reference(page);await page.getByRole('switch',{name:'Dark mode',exact:true}).check();await expect(page.locator('html')).toHaveAttribute('data-bs-theme','dark');await expect(page.locator('#appearance-status')).toContainText('cannot remember');await titleInput(page).fill('Still editable');await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.locator('#edit-status')).toContainText('saved');
+  await reference(page);await page.getByRole('switch',{name:'Dark mode',exact:true}).check();await page.getByRole('switch',{name:'Compact mode',exact:true}).check();await expect(page.locator('html')).toHaveAttribute('data-bs-theme','dark');await expect(page.locator('html')).toHaveAttribute('data-density','compact');await expect(page.locator('#appearance-status')).toContainText('cannot remember');await titleInput(page).fill('Still editable');await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.locator('#edit-status')).toContainText('saved');
+});
+
+test(`compact margins and box ownership recover actual content space: ${families.density.join(', ')}`,async({page})=>{
+  await reference(page);const compact=page.getByRole('switch',{name:'Compact mode',exact:true});
+  const measure=()=>page.evaluate(()=>{
+    const style=selector=>getComputedStyle(document.querySelector(selector)),form=document.querySelector('[data-inline-record]'),field=document.querySelector('.ui-field'),input=field.querySelector('input'),label=field.querySelector('label'),help=field.querySelector('.ui-help');
+    return {formHeight:form.getBoundingClientRect().height,rowHeight:document.querySelector('#tables tbody tr').getBoundingClientRect().height,bodySize:style('body').fontSize,lineHeight:style('body').lineHeight,paragraphMargin:style('main > .row .ui-measure').marginBlockEnd,sectionMargin:style('#forms').marginBlockStart,panelPadding:style('[data-inline-record]').paddingTop,cellPadding:style('#tables td').paddingTop,gutter:parseFloat(style('.container').paddingLeft)*2,noticeStroke:style('.ui-notice').borderInlineStartWidth,switchStroke:style('#density-compact').borderTopWidth,fieldGap:style('.ui-field').rowGap,childMargins:[...field.children].map(n=>({start:getComputedStyle(n).marginBlockStart,end:getComputedStyle(n).marginBlockEnd})),labelClearance:input.getBoundingClientRect().top-label.getBoundingClientRect().bottom,helpClearance:help.getBoundingClientRect().top-input.getBoundingClientRect().bottom,lastPanelMargin:getComputedStyle(document.querySelector('#review-title').parentElement.lastElementChild).marginBlockEnd,inputBorder:style('#example-title').borderTopWidth};
+  });
+  await titleInput(page).fill('Density keeps my draft');const normal=await measure();await compact.focus();await compact.press('Space');await expect(compact).toBeFocused();await expect(titleInput(page)).toHaveValue('Density keeps my draft');const dense=await measure();
+  expect(normal).toMatchObject({bodySize:'16px',lineHeight:'24px',paragraphMargin:'16px',sectionMargin:'48px',panelPadding:'24px',cellPadding:'12px',gutter:24,noticeStroke:'4px',switchStroke:'2px',fieldGap:'8px',lastPanelMargin:'0px',inputBorder:'1px'});
+  expect(dense).toMatchObject({bodySize:'16px',lineHeight:'24px',paragraphMargin:'12px',sectionMargin:'32px',panelPadding:'16px',cellPadding:'8px',gutter:16,noticeStroke:'3px',switchStroke:'1px',fieldGap:'6px',lastPanelMargin:'0px',inputBorder:'1px'});
+  for(const m of [normal,dense]){expect(m.childMargins.every(v=>v.start==='0px'&&v.end==='0px')).toBe(true);expect(m.labelClearance).toBeGreaterThanOrEqual(6);expect(m.helpClearance).toBeGreaterThanOrEqual(6);}
+  expect(dense.formHeight).toBeLessThan(normal.formHeight);expect(dense.rowHeight).toBeLessThan(normal.rowHeight);
+  for(const width of [320,390,767,768,991,992,1440]){await page.setViewportSize({width,height:960});await noPageOverflow(page);}
+  for(const target of await page.locator('.ui-nav a,.ui-choice,.btn:visible,.ui-inline-control').all()){const box=await target.boundingBox();expect(box.height).toBeGreaterThanOrEqual(36);expect(box.width).toBeGreaterThanOrEqual(36);}
+  await writeFile('.tmp/ui-density-measurements.json',JSON.stringify({normal,compact:dense},null,2));
+});
+
+test('compact touch targets keep the protected coarse-pointer floor',async({browser,baseURL})=>{
+  const context=await browser.newContext({baseURL,viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  try{const page=await context.newPage();await reference(page);await page.getByRole('switch',{name:'Compact mode',exact:true}).check();expect(await page.evaluate(()=>matchMedia('(any-pointer: coarse)').matches)).toBe(true);
+    for(const target of await page.locator('.ui-nav a,.ui-choice,.btn:visible,.ui-inline-control').all()){const box=await target.boundingBox();expect(box.height).toBeGreaterThanOrEqual(44);expect(box.width).toBeGreaterThanOrEqual(44);}await noPageOverflow(page);
+  }finally{await context.close();}
+});
+
+test('legacy or invalid density preferences preserve the previous color choices and default to normal',async({page})=>{
+  for(const density of [undefined,'invalid']){await page.addInitScript(value=>localStorage.setItem('daylist-ui-reference-appearance-v1',JSON.stringify({theme:'dark',vision:'distinct',...(value?{density:value}:{})})),density);await reference(page);await expect(page.locator('html')).toHaveAttribute('data-bs-theme','dark');await expect(page.locator('html')).toHaveAttribute('data-vision','distinct');await expect(page.locator('html')).toHaveAttribute('data-density','normal');await expect(page.getByRole('switch',{name:'Compact mode',exact:true})).not.toBeChecked();}
 });

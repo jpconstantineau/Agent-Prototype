@@ -12,6 +12,16 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Box-model and margin review after fcb1d71
+
+The maintainer requested normal/compact density and specifically included margins. BOX-MODEL.md defines each gap owner; the generated BOX-MODEL-AUDIT.md inventories every geometry declaration with source, normal/compact behavior, purpose and user intent. density.mjs registers all dimensional tokens and rejects new unregistered length-valued custom properties.
+
+Compact reduces heading/paragraph/section margins, panel and field padding, toolbar/field/stack gaps, Bootstrap gutters, initial notes height, radii, switch geometry and heavier guidance strokes. Ordinary panels now remove their final child’s redundant trailing margin. Inline fields explicitly reset child margins and use grid row gaps, with minmax(0, 1fr) preventing intrinsic-width overflow. One-pixel boundaries, focus geometry, type, structural zero/auto/percentage values and reading widths remain protected. Coarse/hybrid/no-pointer surfaces retain the normal target floor.
+
+Existing root token tuple IDs and consumer IDs remain stable; new root declarations append after existing entries. New rule IDs are density-compact, density-coarse-floor, grid-density, field-margins and panel-last-margin. inline-field appends grid layout declarations after its existing slots. Six copied Bootstrap groups retain their pinned source values; project gutter overrides follow them.
+
+A third native Compact mode switch persists density alongside theme/vision under the existing reference key, with old records defaulting to normal. Eight resolved Google-format documents and browser cases cover the independent combinations. Switching retains native nodes, drafts and validation. Tests measure actual form/table reduction and margin ownership, rather than claiming every value can be uniformly scaled. This revision affects the isolated UI reference and guidelines.
+
 ## Shared light focus after b010254
 
 The maintainer preferred standard light-mode focus and requested the same blue in the distinct-status appearance. Light/distinct now inherits focus #005fcc from the light palette instead of overriding it with interim azure #006aa8. The existing focus declaration in `palette-light-distinct` keeps its stable ID and revised rationale. Other role values retain their previous values.

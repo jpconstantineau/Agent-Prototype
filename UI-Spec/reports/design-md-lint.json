@@ -4,7 +4,7 @@
   "reports": {
     "light-standard": {
       "input": "UI-Spec/DESIGN.md",
-      "inputSha256": "c660ae91bfe303c257133a3ae9457e8f7024c94bccbf3fcee1ee0575e71aa45a",
+      "inputSha256": "6fa90906c73012f4ccdb2ca0f4bea6c2eecf371cb7e1da3ddc1c67467209bd73",
       "report": {
         "findings": [
           {
@@ -40,7 +40,7 @@
     },
     "dark-standard": {
       "input": "UI-Spec/themes/dark.DESIGN.md",
-      "inputSha256": "9df80eb9acab9941bd7763230654e04907c0a44b5650220ebfc740d6adc72f02",
+      "inputSha256": "ba5b55ac49fb09fa7f12c4dba36fa6a94b1d61c94cc83afcb60de51dda318e75",
       "report": {
         "findings": [
           {
@@ -76,7 +76,7 @@
     },
     "light-distinct": {
       "input": "UI-Spec/themes/light-distinct.DESIGN.md",
-      "inputSha256": "01038c8d460200a028734d43cc4cda2e73eda37f8c23e7478b469ed3278ccf1b",
+      "inputSha256": "8d35a7a6d0af835132c9cbf61771a1e26ee5221af91597741296f051e43efd28",
       "report": {
         "findings": [
           {
@@ -112,7 +112,151 @@
     },
     "dark-distinct": {
       "input": "UI-Spec/themes/dark-distinct.DESIGN.md",
-      "inputSha256": "93799a9a083dc5af7d24667163bf13416403289af5a3e6ee56b03b4d1c095793",
+      "inputSha256": "18d22040aad7405c3458e6e6fb458f7c356981fb67b7265532caacb5d7b75dfc",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "dark-standard-compact": {
+      "input": "UI-Spec/themes/dark-standard-compact.DESIGN.md",
+      "inputSha256": "62d54dfe0f6ad354482f3bc94ae16cf040b8b4110416ad842357dc40c74825ce",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "dark-distinct-compact": {
+      "input": "UI-Spec/themes/dark-distinct-compact.DESIGN.md",
+      "inputSha256": "0977f47c3e8ea8c78152a92e5c1bfb6b4e16921d88a831e61a6c58ba09553cce",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "light-standard-compact": {
+      "input": "UI-Spec/themes/light-standard-compact.DESIGN.md",
+      "inputSha256": "01d1ca34a2ebef2b0ac5615f16ef085d49afbc689847bc34fb5cc8c0f354d24b",
+      "report": {
+        "findings": [
+          {
+            "severity": "warning",
+            "path": "colors.border",
+            "message": "'border' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.divider",
+            "message": "'divider' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "warning",
+            "path": "colors.focus",
+            "message": "'focus' is defined but never referenced by any component.",
+            "rule": "orphaned-tokens"
+          },
+          {
+            "severity": "info",
+            "message": "Design system defines 20 colors, 4 typography scales, 2 rounding levels, 7 spacing tokens, 15 components.",
+            "rule": "token-summary"
+          }
+        ],
+        "summary": {
+          "errors": 0,
+          "warnings": 3,
+          "infos": 1
+        }
+      }
+    },
+    "light-distinct-compact": {
+      "input": "UI-Spec/themes/light-distinct-compact.DESIGN.md",
+      "inputSha256": "b987793524d5e8bca0b5ca4a2aa829139f5877a725c7db99fb782ce5f41d40f3",
       "report": {
         "findings": [
           {

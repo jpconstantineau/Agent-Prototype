@@ -20,6 +20,8 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 | [PALETTES.md](PALETTES.md) / [palettes.mjs](palettes.mjs) | Four resolved color-role tables, contrast matrices and their authoritative source. Alternate Google-format documents are in [themes/](themes/). |
 | [HMI-PHILOSOPHY.md](HMI-PHILOSOPHY.md) | ISA-101 inspiration, muted neutral structural colors, color allocation, exact-value reasoning and checks. |
 | [COLOR-SELECTION.md](COLOR-SELECTION.md) | Selected azure in both modes, related interactive-blue roles, borderless labelled buttons, focus and the bounded contrast exception. |
+| [BOX-MODEL.md](BOX-MODEL.md) / [BOX-MODEL-AUDIT.md](BOX-MODEL-AUDIT.md) | Margin/padding/gap ownership, normal/compact density, protected geometry and every box-setting declaration's reason and user intent. |
+| [density.mjs](density.mjs) | Authoritative density values/rationales, pointer floor, audit classification and validation. |
 | [REVISIONS.md](REVISIONS.md) | Maintainer-requested changes and retired/replaced declaration IDs. |
 | [FOUNDATIONS.md](FOUNDATIONS.md) | Color, typography, spacing, responsive layouts, units and CSS cascade contract. |
 | [COMPONENTS.md](COMPONENTS.md) | Semantic HTML/attributes, desktop/mobile components, state contracts and click-to-edit interaction. |
@@ -33,7 +35,7 @@ An implementation agent reads the design tokens, native HTML contracts and decla
 
 Deployed reference: **[UI reference](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/)**. The URL becomes available after this change is published by GitHub Pages. With the local server running, open **http://localhost:5173/ui-spec/**. At the project subpath used in tests, it is http://localhost:5174/Agent-Prototype/ui-spec/.
 
-The page includes token swatches, paired and work/support Bootstrap grids, prefilled native text/notes/select/date editors that reveal their boxes on focus, two appearance sliders, radio/checkbox labels, enabled/disabled actions, a modal, status/error/progress/empty states, a comparison table and a searchable declaration ledger. Example record changes are page memory only and clear on reload. The two appearance choices alone persist under a reference-specific localStorage key. No local-model setup is required.
+The page includes token swatches, paired and work/support Bootstrap grids, prefilled native text/notes/select/date editors, three preference sliders including **Compact mode**, native choices, actions, a modal, states, a comparison table and searchable CSS decisions. Four palettes combine with normal/compact density; eight resolved DESIGN.md documents are supplied. Example record changes stay in page memory. The three appearance choices alone persist under a reference-specific localStorage key, with compatible defaults for old records. No local-model setup is required.
 
 ## Bootstrap contract
 
@@ -53,7 +55,7 @@ npm test
 npm run test:browser
 ```
 
-`npm run ui:build` and `npm run ui:check` are equivalent shortcuts from docs. Generated CSS, the live JSON ledger, Markdown ledger and DESIGN.md are committed so GitHub Pages needs no build tool. `UI-Spec/palettes.mjs`, `system.mjs` and `design-body.md` are the editing sources. The version-3 live ledger includes both enforced contrast pairs and the explicit written-label button-boundary exception. The browser has no dependency on Node, Sass, React, TypeScript, Bootstrap JS, CDN availability or a runtime token compiler.
+`npm run ui:build` and `npm run ui:check` are equivalent shortcuts from docs. Generated CSS, live JSON/Markdown ledgers, box audit and eight DESIGN.md documents are committed so GitHub Pages needs no build tool. `UI-Spec/palettes.mjs`, `density.mjs`, `system.mjs` and `design-body.md` are the sources. The version-4 live ledger adds density decisions/profiles, pointer floors and the box audit alongside contrast contracts. The browser has no dependency on Node, Sass, React, TypeScript, Bootstrap JS, CDN availability or a runtime token compiler.
 
 “CSS attribute” here means **every authored CSS declaration**: property, value and selector/conditional scope, including custom properties, shorthands, focus/hover/invalid/disabled rules, forced-color overrides and copied Bootstrap rules. Browser/OS internal styles are outside our source control; their retained behavior is documented and tested separately. Tests reject extra CSS, inline style attributes, style mutations, missing rationale, mismatched generated output and unsupported declarations. No waiver is hidden in a third-party stylesheet.
 

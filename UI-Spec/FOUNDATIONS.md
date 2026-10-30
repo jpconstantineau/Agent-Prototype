@@ -50,28 +50,30 @@ Keep actual h1–h3 hierarchy, paragraphs, lists and code elements. HTML heading
 
 ## Spacing, sizes and breakpoints
 
-| Token | Rem | Default px | Purpose |
+| Token | Normal / compact rem | Normal / compact px at 16px root | Purpose |
 | --- | --- | --- | --- |
-| xs | .25 | 4 | Compact separation inside a status label. |
-| sm | .5 | 8 | Choice separation, button vertical padding and small navigation insets. |
-| md | .75 | 12 | Field/value separation and cell padding. |
-| lg | 1 | 16 | Between related controls and local text blocks. |
-| xl | 1.5 | 24 | Panel inset and gaps between peer panels. |
-| section | 2 | 32 | Start-of-document and empty-state clearance. |
-| page | 3 | 48 | Major topic separation and trailing page room. |
+| xs | .25 / .25 | 4 / 4 | Minimum inset inside a status label. |
+| sm | .5 / .375 | 8 / 6 | Choice separation, field row gaps and small navigation insets. |
+| md | .75 / .5 | 12 / 8 | Field and cell padding. |
+| lg | 1 / .75 | 16 / 12 | Related controls and ordinary text-block margins. |
+| xl | 1.5 / 1 | 24 / 16 | Panel inset, peer gaps and grid gutters. |
+| section | 2 / 1.5 | 32 / 24 | Start-of-document and empty-state clearance. |
+| page | 3 / 2 | 48 / 32 | Major section margins and trailing page room. |
 
-The 44px minimum target is a project comfort rule, above WCAG 2.2’s 24px minimum subject to its exceptions. It maps to `min-block-size: 2.75rem`, never a fixed height; at enlarged text, controls grow. The 20px native checkbox/radio mark sits inside its full-height clickable label. Inline prose links retain native inline behavior; navigation links get the larger target treatment.
+Normal uses a 2.75rem (44px at the default root) minimum target. Compact uses 2.25rem (36px) for fine pointers; coarse, hybrid and no-pointer surfaces retain 2.75rem. These are project comfort rules above WCAG 2.2’s 24px minimum subject to its exceptions. They govern minimum height, never a fixed height; at enlarged text, controls grow. Text size and line height remain unchanged. [BOX-MODEL.md](BOX-MODEL.md) documents every density value and margin owner; [BOX-MODEL-AUDIT.md](BOX-MODEL-AUDIT.md) inventories all geometry declarations. The 20px native checkbox/radio mark sits inside its full-height clickable label. Inline prose links retain native inline behavior; navigation links get the larger target treatment.
 
 | Viewport | Layout | User purpose |
 | --- | --- | --- |
 | Below 768px | Source-order single column | Read and edit without needing to pan the page or jump across columns. |
 | 768px and above | `col-md-6` paired panels | Compare related content when both panels have useful reading width. |
 | 992px and above | `col-lg-8` main / `col-lg-4` support | Preserve the main task’s prominence while keeping context nearby. |
-| All widths | 100% fluid container capped at 75rem, total 1.5rem horizontal gutter | Keep edge clearance on mobile and cap scanning distance on large screens. |
+| All widths | 100% fluid container capped at 75rem, total 1.5rem normal / 1rem compact horizontal gutter | Keep edge clearance on mobile and cap scanning distance on large screens. |
 
 These use Bootstrap’s md/lg thresholds and twelve-column fractions. Other standard Bootstrap thresholds (sm 576, xl 1200, xxl 1400) are reference information, not implemented class families. Add a breakpoint only when content demonstrates the need. Use CSS media queries, not user-agent/device detection or JavaScript width calculations. The color sample gallery uses CSS grid auto-fit for a different task: fitting equal, small samples. Do not use CSS grid as a replacement for semantic tables.
 
-The copied Bootstrap row starts with a zero vertical gutter, and `grid-gap` explicitly replaces it with 1.5rem for the reference. Retaining the literal baseline makes upstream comparison possible; the project override expresses the chosen visible separation. Review this small redundancy as part of adopting a Bootstrap-derived baseline, rather than reading the copied zero as the effective reference gap.
+The copied Bootstrap row starts with a zero vertical gutter. Project overrides set both gutter axes to the xl token: 1.5rem normal / 1rem compact. Retaining the six literal baseline rules makes upstream comparison possible; their negative margins cancel the outer half-gutters/first-row gutter. Review this deliberate baseline/override relationship rather than reading the copied zero as the effective reference gap.
+
+Margins have one owner per context: ordinary headings/paragraphs use lg trailing margins; stack children and field children reset those margins and use the parent gap; a non-stack panel’s final child has no extra trailing margin because panel padding owns that edge. Sections use page start margins. Zero resets and automatic centering do not shrink. Field grid gaps remain at least 6px to clear the focus outline and offset.
 
 Bootstrap’s copied LTR grid rules retain physical left/right gutters. Other new styles use logical properties. This reference is tested in English LTR. RTL adoption requires a reviewed grid adaptation and browser verification, not a claim that logical properties alone make the copied grid fully RTL-ready. Never reverse source order with CSS to simulate RTL.
 
@@ -89,4 +91,4 @@ CSS custom properties are real declarations and appear in the ledger. Shorthands
 
 An unfocused inline input keeps its full dimensions and padding while only border-color and background-color become transparent. On :focus the same node reveals its boundary, surface and outline; there is no height change or JavaScript style mutation. Invalid input and forced colors deliberately retain a visible boundary after blur. This corrects the previous disclosure-based interpretation of click-to-edit; see [REVISIONS.md](REVISIONS.md).
 
-Brightness and distinct status colors are independent preferences, not separate hand-styled component trees. The root palette attributes replace complete role values, and every consumer uses those values. Distinct palettes avoid opposing red/green status coding, add line patterns and retain text; they do not claim to cover every color-vision difference through hue alone. Primary fill/hover remain the selected azure family across preferences. Primary text uses on-primary; selected switch thumbs use on-interactive against interactive. Forced colors may restore a system boundary around the otherwise borderless primary button.
+Brightness, distinct status colors and density are independent preferences implemented through one component tree. Four palettes × two density profiles produce eight resolved combinations. Compact reduces margins, padding, gaps and heavier strokes; existing 1px boundaries, text and focus remain protected. The root palette attributes replace complete role values, and every consumer uses those values. Distinct palettes avoid opposing red/green status coding, add line patterns and retain text; they do not claim to cover every color-vision difference through hue alone. Primary fill/hover remain the selected azure family across preferences. Primary text uses on-primary; selected switch thumbs use on-interactive against interactive. Forced colors may restore a system boundary around the otherwise borderless primary button.

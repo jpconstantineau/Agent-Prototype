@@ -24,9 +24,10 @@
       <div class="ui-cluster">
         <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="theme-dark" aria-describedby="appearance-help" disabled>Dark mode</label>
         <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="vision-distinct" aria-describedby="appearance-help" disabled>Distinct status colors</label>
-        <span id="appearance-status" role="status">Light · Standard palette</span>
+        <label class="ui-choice ui-switch"><input type="checkbox" role="switch" id="density-compact" aria-describedby="appearance-help" disabled>Compact mode</label>
+        <span id="appearance-status" role="status">Light · Standard palette · Normal spacing</span>
       </div>
-      <p id="appearance-help" class="ui-help">Choose light or dark and an optional blue/amber status palette. Every combination also uses words and shape cues.</p>
+      <p id="appearance-help" class="ui-help">Choose brightness, status colors and normal or compact spacing independently. Compact mode fits more content while keeping text readable and touch targets comfortable.</p>
     </fieldset>
   </header>
   <main id="main" class="container" tabindex="-1">
@@ -64,7 +65,7 @@
       </div>
       <div class="row">
         <div class="col-md-6"><div class="card"><h3>Reading hierarchy</h3><p>A 2rem page title, 1.5rem section heading and 1rem body help distinguish a destination from its content.</p><p class="ui-help">Help is 0.875rem. Long names and URLs wrap instead of forcing the page wider.</p></div></div>
-        <div class="col-md-6"><div class="card"><h3>Space means grouping</h3><p>4, 8, 12, 16, 24, 32 and 48px at the default font size. Small gaps connect related controls; large gaps separate topics.</p><p class="ui-help">These panels share a row from 768px and stack below it. The work/support pair uses an 8/4 split from 992px.</p></div></div>
+        <div class="col-md-6"><div class="card"><h3>Space means grouping</h3><p>Normal spacing uses 4, 8, 12, 16, 24, 32 and 48px at the default font size. Compact uses 4, 6, 8, 12, 16, 24 and 32px. Margins separate topics; padding insets content; one gap owns separation inside each group.</p><p class="ui-help">Compact reduces the heavier guidance/switch strokes while retaining crisp 1px boundaries and the focus ring. Text size stays the same. These panels share a row from 768px and stack below it.</p></div></div>
       </div>
     </section>
 

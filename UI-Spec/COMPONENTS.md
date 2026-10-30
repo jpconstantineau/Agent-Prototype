@@ -57,9 +57,11 @@ Only CSS owns that visual state. JavaScript manages record drafts, validation an
 | Cancel changes / Escape outside IME composition | Restore all fields to the last accepted record and clear errors; focus the title | Back out of the whole draft without a write. |
 | Enter in text input | Native form submission activates the visible Save action | Keep familiar native form behavior. |
 | Enter in textarea / IME composition | Native newline/composition; no implicit Save or composition-time Escape cancellation | Finish the text before deciding to submit. |
-| Change appearance | Change only the governing palette attributes; retain focus and all field values | Inspect another mode without altering the record. |
+| Change appearance | Change only the governing palette/density attributes; retain focus and all field values | Inspect another mode without altering the record. |
 | Reload/navigation | Example draft and accepted record values reset; appearance preference alone may persist | Keep this reference’s limited persistence scope explicit. |
 | No JavaScript | Prefilled controls, label focus and CSS box reveal work; example Save/Cancel and appearance controls disabled with an explanation | Preserve inspectability without pretending to persist or apply preferences. |
+
+Fields use a grid of label, value, help and visible error. Child block margins are zero; the parent row gap supplies 8px normal / 6px compact separation, clearing the 3px focus outline plus 3px offset. Field padding and divider separate neighboring records. Ordinary panels remove their final child’s trailing margin; stack panels own their gaps. Density never changes font size, line height, Save/Cancel semantics or a draft. See [BOX-MODEL.md](BOX-MODEL.md) for border floors and every margin owner.
 
 The sample preserves whitespace in optional notes. Required titles reject blank/whitespace-only input, with a visible maxlength constraint. A select keeps native option values and labels; a date keeps native date-picker behavior. Single-line inputs can scroll internally to inspect a long value; choose a textarea when every line must stay visible without caret movement. Never duplicate a read value over an input, overlay an invisible input, use contenteditable, hide a value with CSS text clipping or add a fake clickable label in place of the control.
 
@@ -71,9 +73,9 @@ Use native buttons with visible written action labels. `.btn-primary` keeps azur
 
 The written label identifies this control, so its fill/background edge has the bounded exception in [COLOR-SELECTION.md](COLOR-SELECTION.md). On charcoal panels it is 2.35:1, while the white label is 5.79:1 against azure. Do not generalize that exception to inputs, selection marks, icon-only buttons or focus. Secondary actions retain a neutral boundary/surface and an interactive-blue text label. Links and native selected accents use interactive rather than the primary fill to retain contrast on their actual backgrounds.
 
-## Appearance controls and four combinations
+## Appearance controls and eight combinations
 
-Two labeled native input[type=checkbox] controls have role=switch and a CSS slider track/thumb: **Dark mode** and **Distinct status colors**. Labels do not change with state. Space toggles a focused switch; native checked is authoritative, so no redundant aria-checked is assigned. The whole label provides the large target; thumb position and a written status identify the selected combination without hue. Checked tracks use interactive and thumbs use on-interactive, with at least 3:1 thumb/track contrast. These graphic marks do not inherit the labelled-button boundary exception. Forced colors restores a native mark. Movement is immediate with no animation.
+Three labeled native input[type=checkbox] controls have role=switch and a CSS slider track/thumb: **Dark mode**, **Distinct status colors** and **Compact mode**. Labels do not change with state. Space toggles a focused switch; native checked is authoritative, so no redundant aria-checked is assigned. The whole label provides the large target; thumb position and a written status identify the selected combination without hue. Checked tracks use interactive and thumbs use on-interactive, with at least 3:1 thumb/track contrast. These graphic marks do not inherit the labelled-button boundary exception. Forced colors restores a native mark. Movement is immediate with no animation.
 
 | Dark mode | Distinct status colors | Result |
 | --- | --- | --- |
@@ -82,7 +84,7 @@ Two labeled native input[type=checkbox] controls have role=switch and a CSS slid
 | Off | On | Light / distinct blue/amber status palette |
 | On | On | Dark / distinct blue/amber status palette |
 
-The root data-bs-theme attribute follows Bootstrap’s light/dark convention; data-vision adds standard/distinct. Complete role palettes govern every component through the same custom properties. A small external script applies a valid preference before CSS, uses system brightness when none exists, and persists only these two choices to the reference-specific localStorage key daylist-ui-reference-appearance-v1. Malformed or denied storage never blocks the page; changed preferences still apply in memory. Appearance is not a theme setting for the production app and does not enter agent prompts or task data. No-JavaScript mode stays in the complete light/standard fallback.
+Each palette above supports normal and compact density, for eight combinations. The root data-bs-theme attribute follows Bootstrap’s light/dark convention; data-vision adds standard/distinct and data-density adds normal/compact. Complete palettes and density profiles govern every component through the same custom properties. A small external script applies a valid preference before CSS, uses system brightness when none exists, and persists {theme, vision, density} to the reference-specific localStorage key daylist-ui-reference-appearance-v1. Existing two-property records preserve their theme/vision and default density to normal; invalid density also defaults to normal. Malformed or denied storage never blocks the page; changed preferences still apply in memory. Appearance is not a theme setting for the production app and does not enter agent prompts or task data. No-JavaScript mode stays in the complete light/standard/normal fallback.
 
 “Distinct” is a preference rather than a color-blind/OK classification. All four combinations must remain understandable without color. Named Saved/Pending/Error states, native marks, focus and persistent labels are mandatory. Distinct status labels also use solid versus dashed borders; error wording never depends on red versus green. Color-vision simulations are useful visual checks, not a universal guarantee or a substitute for testing with people.
 
@@ -94,7 +96,7 @@ The root data-bs-theme attribute follows Bootstrap’s light/dark convention; da
 | Main/support workspace | 8/4 Bootstrap pair from lg | One column, task before explanation | Prioritize the work while keeping context adjacent when space permits. |
 | Peer cards | Half-width from md | Stack with vertical gutter | Compare equal-role information without duplicating actions. Cards group content; they are not clickable unless a real named link is provided. |
 | Action toolbar | Wrapping flex cluster | Actions wrap and remain full-size | No icon-only mystery buttons or horizontal button strip that disappears off screen. |
-| Editable record | Prefilled native values with quiet unfocused borders | Same structure, 44px minimum targets | Focus reveals the same field; Save/Cancel explicitly accepts or reverts the draft. |
+| Editable record | Prefilled native values with quiet unfocused borders | Same structure, 44px normal; compact 36px fine-pointer / 44px coarse-pointer minima | Focus reveals the same field; Save/Cancel explicitly accepts or reverts the draft. |
 | Data table | Native two-dimensional comparison | Named horizontal scroll region | Keep comparison semantics; ordinary forms remain outside dense table cells. Never hide essential columns. |
 | Search/filter | Persistent label, search input, result count | Full available width; no submit-on-every-keystroke inference | Filter already-loaded reference data locally; zero results keeps the query editable and announces zero. |
 | Pagination | Real Prev/Next buttons/links plus visible range | Wrapping controls, same order | Use for genuinely long server/store collections; not needed for the tiny static sample table. Preserve filters and current position on error. |

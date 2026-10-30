@@ -45,7 +45,7 @@ Stable IDs identify a rule and tuple slot, not a cryptographic version. Do not i
 
 ## Automated verification families
 
-All four appearance combinations are checked independently for contrast, effective CSS values, keyboard focus and non-color cues. Every declaration references a named family; each family is explicitly tested in `docs/e2e/ui-spec.spec.js` or `docs/tests/ui-spec.test.js`. One family tests outcomes of several declarations, rather than asserting hundreds of implementation values in meaningless mirror tests.
+All eight palette/density combinations are checked independently for contrast, effective CSS values, keyboard focus and non-color cues. Every declaration references a named family; each family is explicitly tested in `docs/e2e/ui-spec.spec.js` or `docs/tests/ui-spec.test.js`. One family tests outcomes of several declarations, rather than asserting hundreds of implementation values in meaningless mirror tests.
 
 | Family | Observable checks / evidence |
 | --- | --- |
@@ -54,7 +54,8 @@ All four appearance combinations are checked independently for contrast, effecti
 | type | Body/default size, readable help, heading order, browser-root enlargement, long content and user text spacing remain usable. |
 | grid / reflow | Below/at 768 and 992px, paired/work-support widths and source order; 320/390/768/992/1440px page bounds; enlarged text wraps without page overflow. |
 | navigation / focus | Skip-to-main, native input focus and keyboard slider activation, visible focus outline and visible editing focus and return focus after dialog. |
-| targets | Primary buttons, summaries, navigation and choice labels meet the 44px project minimum at normal root size. |
+| targets | Primary buttons, navigation and choice labels meet 44px normal and 36px fine-pointer compact minima at the default root; coarse-pointer compact retains 44px. Inline prose links follow their native treatment. |
+| density | Every geometry declaration has a box audit entry; every dimensional custom property has normal/compact rationale. Computed margins, padding, gutters, field gaps and strokes match their owners; form/table height decreases without smaller text. Field focus has at least 6px clearance, targets remain usable and switching preserves drafts/preferences. |
 | editing | Accepted-record/draft separation; focus-only chrome; valid Save; Cancel/Escape; no element replacement; no blur-save; textarea newline and IME; select/date values; safe text output; no-JavaScript baseline. |
 | validation | Required/blank rejection, linked textual error, invalid field focus, correction and unchanged accepted value. |
 | controls | Native radio/checkbox/select/date behavior and genuine disabled attributes. |
@@ -64,13 +65,14 @@ All four appearance combinations are checked independently for contrast, effecti
 | dialog | Native modal top layer, safe initial focus, Cancel/Escape, explicit confirmation, focus return, viewport bounds. |
 | forced-colors | Emulated forced colors retain visible focus and native controls; no forced-color-adjust:none rule. |
 
-Structural tests reject a missing purpose/intent even when the CSS happens to look correct. Browser CSSOM comparison checks the full generated rule/declaration count and CSS.supports for every property/value, so a typo silently discarded by CSS parsing cannot count as covered. The reference loads only the one audited stylesheet. Inline styles, style elements, style assignment in JavaScript and extra stylesheet imports are prohibited. Negative tests demonstrate that missing rationale, duplicate IDs and altered generated CSS are detected.
+Structural tests reject a missing purpose/intent or unregistered dimensional custom property even when the CSS happens to look correct. All eight Google-format documents are generated and linted. Browser CSSOM comparison checks the full generated rule/declaration count and CSS.supports for every property/value, so a typo silently discarded by CSS parsing cannot count as covered. The reference loads only the one audited stylesheet. Inline styles, style elements, style assignment in JavaScript and extra stylesheet imports are prohibited. Negative tests demonstrate that missing rationale, duplicate IDs and altered generated CSS are detected.
 
 These checks provide **traceability and bounded behavioral evidence**, not proof of good intent, complete WCAG conformance or screen-reader usability. Bootstrap’s source match proves provenance, not that the copied default is an appropriate product decision.
 
 ## Required manual review before product adoption
 
 - Use a keyboard from the address bar: skip link, navigation, all inline inputs and appearance sliders, Save/Cancel, invalid Save, table panning and dialog Escape. Confirm the visible focus follows the logical reading order.
+- Review [BOX-MODEL.md](BOX-MODEL.md) and the exhaustive [box audit](BOX-MODEL-AUDIT.md): challenge each margin, padding, gutter and gap owner. Reject doubled trailing paragraph/panel spacing. Compare both densities on fine-pointer and touch/hybrid hardware; preserve 1px boundaries, 3px focus with 3px offset and unchanged type. Confirm compact’s measured space saving does not obscure grouping or field focus.
 - Assess whether the azure primary's written action label clearly identifies the button without a permanent contrasting edge. The published boundary observations may be below 3:1; reject this treatment if the real use context needs stronger action-boundary recognition. Never extend this exception to icon-only controls, inputs, selected marks or focus.
 - Test at actual browser zoom of 200% and 400%, with enlarged OS text, long translated labels, very long saved values and the mobile software keyboard. Automated root-size/viewport tests approximate these pressures; they do not replace actual browser zoom or a physical mobile device.
 - Test with NVDA/Chrome on Windows and VoiceOver/Safari on an Apple device if Safari is a deployment target. Confirm field and slider labels, linked help/errors, status timing, table headers and modal focus. Browser accessibility snapshots cannot certify these experiences.

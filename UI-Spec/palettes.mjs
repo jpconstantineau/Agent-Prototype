@@ -19,4 +19,8 @@ export const designFiles = {
   'dark-standard': 'UI-Spec/themes/dark.DESIGN.md',
   'light-distinct': 'UI-Spec/themes/light-distinct.DESIGN.md',
   'dark-distinct': 'UI-Spec/themes/dark-distinct.DESIGN.md',
+  'light-standard-compact': 'UI-Spec/themes/light-standard-compact.DESIGN.md',
+  'dark-standard-compact': 'UI-Spec/themes/dark-standard-compact.DESIGN.md',
+  'light-distinct-compact': 'UI-Spec/themes/light-distinct-compact.DESIGN.md',
+  'dark-distinct-compact': 'UI-Spec/themes/dark-distinct-compact.DESIGN.md',
 };

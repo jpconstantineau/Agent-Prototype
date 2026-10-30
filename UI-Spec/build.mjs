@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { tokens, rules, bootstrapVersion, contrastPairs, contrastExceptions, palettes, colorUse } from './system.mjs';
 import {designFiles} from './palettes.mjs';
+import {densityTokens,densityProfiles,boxAudit,validateDensity,compactCoarseMinimum,coarseTargetMedia} from './density.mjs';
 import {validateRegistry,validateGenerated,contrast} from './validate.mjs';
 const root = new URL('../', import.meta.url);
 const check = process.argv.includes('--check');
@@ -22,14 +23,20 @@ export async function outputs() {
   const body = await readFile(new URL('design-body.md', import.meta.url),'utf8');
   const result = new Map([
     ['docs/ui-spec/design-system.css',cssText()],
-    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 3, bootstrapVersion, rules, contrastPairs, contrastExceptions, palettes },null,2)+'\n'],
+    ['docs/ui-spec/decisions.json',JSON.stringify({ version: 4, bootstrapVersion, rules, contrastPairs, contrastExceptions, palettes, densityTokens, densityProfiles, compactCoarseMinimum, coarseTargetMedia, boxAudit:boxAudit(rules) },null,2)+'\n'],
     ['UI-Spec/CSS-DECISIONS.md',ledgerText()],
   ]);
-  for (const [key,palette] of Object.entries(palettes)) {
-    const modeTokens = { ...tokens, name: key==='light-standard' ? tokens.name : `${tokens.name} · ${palette.label}`, colors: palette.colors };
-    const modeBody = key==='light-standard' ? body : body.replace(/\]\((?!https?:|#)([^)]+)\)/g,'](../$1)').replace('## Overview\n','## Overview\n\nThis token document resolves the **'+palette.label+'** combination. Component references bind to this file’s palette; shared rules and review remain in the parent UI-Spec folder.\n');
-    result.set(designFiles[key],`---\n${yaml(modeTokens)}\n---\n\n${modeBody}`);
+  for (const [key,path] of Object.entries(designFiles)) {
+    const density=key.endsWith('-compact')?'compact':'normal',palette=palettes[key.replace(/-compact$/,'')],profile=densityProfiles[density];
+    const modeTokens = { ...tokens, name: key==='light-standard' ? tokens.name : `${tokens.name} · ${palette.label} · ${density}`, colors: palette.colors,
+      spacing:Object.fromEntries(Object.keys(tokens.spacing).map(k=>[k,profile[`--ui-space-${k}`]])),rounded:Object.fromEntries(Object.keys(tokens.rounded).map(k=>[k,profile[`--ui-radius-${k}`]])),
+      components:{...tokens.components,'button-primary':{...tokens.components['button-primary'],padding:`${profile['--ui-control-pad-block']} ${profile['--ui-space-lg']}`,height:profile['--ui-control-min']},'input-editing':{...tokens.components['input-editing'],height:profile['--ui-control-min']}},
+    };
+    const modeBody = key==='light-standard' ? body : body.replace(/\]\((?!https?:|#)([^)]+)\)/g,'](../$1)').replace('## Overview\n','## Overview\n\nThis token document resolves **'+palette.label+' / '+density+' density**. Component references bind to these values; compact minimum heights describe fine-pointer use, with the protected 44px-at-default-root coarse/no-pointer minimum in the shared CSS. Shared rules and review remain in the parent UI-Spec folder.\n');
+    result.set(path,`---\n${yaml(modeTokens)}\n---\n\n${modeBody}`);
   }
+  const entries=boxAudit(rules);
+  result.set('UI-Spec/BOX-MODEL-AUDIT.md','# Box-model declaration audit\n\nGenerated from system.mjs and density.mjs. Every spacing, sizing, margin, padding, gap, border, outline, radius, position, type-rhythm and density-token declaration has a scope, owner, normal/compact expression, purpose and user intent. Expressions are not a substitute for browser layout. Conditional rows apply only in their recorded condition. Bootstrap rows describe the literal pinned baseline; project gutter overrides govern the effective density. Read [BOX-MODEL.md](BOX-MODEL.md) for the box and margin ownership contract.\n\n'+entries.map(e=>`## ${e.id}\n\nSelector: \`${e.selector}\`${e.condition?`; condition: \`${e.condition}\``:''}. Policy: ${e.behavior}.\n\n| Property | Source value | Normal | Compact | Purpose | User intent |\n| --- | --- | --- | --- | --- | --- |\n| ${[e.property,e.value,e.normal,e.compact,e.purpose,e.intent].map(cell).join(' | ')} |\n`).join('\n'));
   const table = Object.keys(tokens.colors).map(role=>`| ${role} | ${Object.values(palettes).map(p=>p.colors[role]).join(' | ')} | ${colorUse[role]} |`).join('\n');
   let matrix='';
   for(const [key,p] of Object.entries(palettes)) matrix+=`\n## ${p.label}\n\n| Foreground / background | Required | Measured |\n| --- | --- | --- |\n`+contrastPairs.map(([f,b,min])=>`| ${f} / ${b} | ${min}:1 | ${contrast(p.colors[f],p.colors[b]).toFixed(2)}:1 |`).join('\n')+'\n';
@@ -43,6 +50,7 @@ export async function outputs() {
 }
 export async function build() {
   validateRegistry(rules);
+  validateDensity(rules);
   for (const [path, value] of await outputs()) {
     const url = new URL(path,root);
     if (check) validateGenerated(await readFile(url,'utf8'), value, path);

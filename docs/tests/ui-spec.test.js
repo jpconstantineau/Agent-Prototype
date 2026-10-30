@@ -6,6 +6,7 @@ import {rules,tokens,contrastPairs,contrastExceptions,palettes} from '../../UI-S
 import {designFiles} from '../../UI-Spec/palettes.mjs';
 import {outputs,cssText} from '../../UI-Spec/build.mjs';
 import {validateRegistry,validateGenerated,checkFamilies,contrast} from '../../UI-Spec/validate.mjs';
+import {densityTokens,densityProfiles,boxAudit,isBoxDeclaration,validateDensity,compactCoarseMinimum,coarseTargetMedia} from '../../UI-Spec/density.mjs';
 const root=new URL('../../',import.meta.url);
 
 test('every CSS declaration maps to a purpose, user intent and actual verification family',async()=>{
@@ -48,7 +49,7 @@ test('normal structural fields remain achromatic and subdued across appearance p
     for(const level of levels)assert(level>0&&level<255,`${key}: avoid pure black/white large structural fields`);
   }
   const notice=rules.find(r=>r.id==='notice').declarations.find(d=>d.property==='border-inline-start');
-  assert.equal(notice.value,'4px solid var(--ui-border)','Routine guidance must not borrow action color');
+  assert.match(notice.value,/solid var\(--ui-border\)/,'Routine guidance must retain a neutral boundary across densities');
   assert.equal(rules.find(r=>r.id==='backdrop').declarations[0].value,'#00000080','Modal dimming must not tint the background');
 });
 test('azure and focus identity stay consistent across status preferences without weakening text or focus checks',()=>{
@@ -76,6 +77,24 @@ test('every CSS custom property is declared and consumed; Google token reference
   for(const [,path] of JSON.stringify(tokens).matchAll(/\{([a-zA-Z0-9.-]+)\}/g)) {
     let node=tokens;for(const key of path.split('.'))node=node?.[key];assert(node!==undefined,`Unknown token ${path}`);
   }
+});
+test('box audit covers every geometry declaration and rejects unregistered or unexplained spacing decisions',()=>{
+  assert.equal(validateDensity(rules),true);
+  const expected=rules.flatMap(r=>r.declarations.filter(d=>isBoxDeclaration(d.property,d.value)).map(d=>d.id));
+  const audit=boxAudit(rules);assert.deepEqual(audit.map(e=>e.id),expected);
+  for(const entry of audit){assert(entry.purpose.length>=40);assert(entry.intent.length>=25);assert(entry.normal&&entry.compact&&entry.behavior);}
+  for(const key of ['purpose','intent']){const broken=structuredClone(densityTokens);broken[0][key]='';assert.throws(()=>validateDensity(rules,broken),/density decision/);}
+  const unknown=structuredClone(rules);unknown[0].declarations.push({...unknown[0].declarations[0],id:'unregistered-space.1',property:'--ui-unregistered-space',value:'7px'});
+  assert.throws(()=>validateDensity(unknown),/Unregistered spacing token/);
+  const pointer=audit.find(e=>e.id==='density-coarse-floor.1');assert.equal(pointer.normal,'Not active');assert.equal(pointer.compact,compactCoarseMinimum);
+});
+test('compact density reduces content clearance while preserving focus room and pointer target floors',()=>{
+  const px=value=>parseFloat(value)*(value.endsWith('rem')?16:1);
+  for(const token of densityTokens)assert(px(token.compact)<=px(token.normal),`${token.property} must not grow under compact density`);
+  assert(px(densityProfiles.compact['--ui-space-sm'])>=6,'Field row gaps must clear the 3px outline plus 3px offset');
+  assert(px(densityProfiles.compact['--ui-control-min'])>=36);assert(px(compactCoarseMinimum)>=44);assert.match(coarseTargetMedia,/any-pointer: coarse/);assert.match(coarseTargetMedia,/pointer: none/);
+  assert(px(densityProfiles.compact['--ui-switch-stroke'])>=1);assert(px(densityProfiles.compact['--ui-notice-stroke'])>=3);
+  for(const rule of rules.filter(r=>r.id.startsWith('density-')))assert(rule.declarations.every(d=>d.property.startsWith('--')),'Density must not shrink text or replace the native interaction tree');
 });
 test('Google DESIGN.md uses canonical headings and generated structured token groups',async()=>{
   const lint=JSON.parse(await readFile(new URL('UI-Spec/reports/design-md-lint.json',root),'utf8'));
