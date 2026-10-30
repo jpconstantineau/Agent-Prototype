@@ -1344,6 +1344,28 @@ textarea.ui-inline-control:focus {
   padding: 0; /* catalog-rating.5 */
 }
 
+/* catalog-rating-star: Use familiar star labels alongside real native rating choices. */
+.ui-rating-star {
+  font-size: 1.5rem; /* catalog-rating-star.1 */
+  line-height: 1; /* catalog-rating-star.2 */
+  color: var(--ui-interactive); /* catalog-rating-star.3 */
+}
+
+/* catalog-rating-filled-rest: Keep unchosen stars outlined until a native rating is selected. */
+.ui-rating-star--filled {
+  display: none; /* catalog-rating-filled-rest.1 */
+}
+
+/* catalog-rating-filled: Map native rating state to cumulative filled star labels. */
+.ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled {
+  display: inline; /* catalog-rating-filled.1 */
+}
+
+/* catalog-rating-outline: Avoid showing both decorative star copies for a selected value. */
+.ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline {
+  display: none; /* catalog-rating-outline.1 */
+}
+
 /* catalog-disclosures: Frame optional native disclosures. */
 .ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace {
   padding: var(--ui-space-lg); /* catalog-disclosures.1 */
@@ -1399,8 +1421,44 @@ textarea.ui-inline-control:focus {
 /* catalog-alert: Make a condition and its next step readable together. */
 .ui-alert {
   padding: var(--ui-space-lg); /* catalog-alert.1 */
-  border-inline-start: var(--ui-notice-stroke) solid var(--ui-border); /* catalog-alert.2 */
-  background-color: var(--ui-subtle); /* catalog-alert.3 */
+  border-inline-start: var(--ui-notice-stroke) solid currentColor; /* catalog-alert.2 */
+  background-color: var(--ui-accent); /* catalog-alert.3 */
+  color: var(--ui-on-interactive); /* catalog-alert.4 */
+}
+
+/* catalog-accent-default: Share a small semantic accent vocabulary across component examples. */
+.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator {
+  --ui-accent: var(--ui-interactive); /* catalog-accent-default.1 */
+}
+
+/* catalog-tone-success: Map the success variant to the governed semantic palette. */
+.ui-tone--success {
+  --ui-accent: var(--ui-success); /* catalog-tone-success.1 */
+}
+
+/* catalog-tone-error: Map the error variant to the governed semantic palette. */
+.ui-tone--error {
+  --ui-accent: var(--ui-danger); /* catalog-tone-error.1 */
+}
+
+/* catalog-tone-pending: Map the pending variant to the governed semantic palette. */
+.ui-tone--pending {
+  --ui-accent: var(--ui-warning); /* catalog-tone-pending.1 */
+}
+
+/* catalog-tone-info: Map the info variant to the governed semantic palette. */
+.ui-tone--info {
+  --ui-accent: var(--ui-interactive); /* catalog-tone-info.1 */
+}
+
+/* catalog-tone-neutral: Map the neutral variant to the governed semantic palette. */
+.ui-tone--neutral {
+  --ui-accent: var(--ui-muted); /* catalog-tone-neutral.1 */
+}
+
+/* catalog-dialog-accent: Carry the same labelled alert accent into the native dialog. */
+.ui-alert-dialog {
+  border-inline-start-color: var(--ui-accent); /* catalog-dialog-accent.1 */
 }
 
 /* catalog-empty: Explain missing data and one recovery destination. */
@@ -1417,26 +1475,39 @@ textarea.ui-inline-control:focus {
   inline-size: var(--ui-swatch-size); /* catalog-avatar.3 */
   aspect-ratio: 1; /* catalog-avatar.4 */
   border-radius: 50%; /* catalog-avatar.5 */
-  border: 1px solid var(--ui-border); /* catalog-avatar.6 */
-  background-color: var(--ui-subtle); /* catalog-avatar.7 */
+  border: 1px solid var(--ui-accent); /* catalog-avatar.6 */
+  background-color: var(--ui-accent); /* catalog-avatar.7 */
   font-weight: 600; /* catalog-avatar.8 */
+  color: var(--ui-on-interactive); /* catalog-avatar.9 */
 }
 
 /* catalog-badge: Keep short metadata visibly grouped. */
 .ui-badge {
-  display: inline-block; /* catalog-badge.1 */
+  display: inline-flex; /* catalog-badge.1 */
   padding: var(--ui-space-xs) var(--ui-space-sm); /* catalog-badge.2 */
   border: 1px solid var(--ui-border); /* catalog-badge.3 */
   border-radius: var(--ui-radius-small); /* catalog-badge.4 */
   font-size: 0.875rem; /* catalog-badge.5 */
+  align-items: center; /* catalog-badge.6 */
+  gap: var(--ui-space-sm); /* catalog-badge.7 */
 }
 
 /* catalog-aura: Demonstrate an optional accent frame without tinting a large work area. */
 .ui-aura {
   padding: var(--ui-space-lg); /* catalog-aura.1 */
-  border: var(--ui-switch-stroke) solid transparent; /* catalog-aura.2 */
+  border: var(--ui-notice-stroke) solid transparent; /* catalog-aura.2 */
   border-radius: var(--ui-radius-panel); /* catalog-aura.3 */
-  background: linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-interactive), var(--ui-divider), var(--ui-interactive)) border-box; /* catalog-aura.4 */
+  background: linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-accent), var(--ui-divider), var(--ui-accent)) border-box; /* catalog-aura.4 */
+}
+
+/* catalog-badge-dot: Expose a visible colored dot without replacing badge wording. */
+.ui-badge::before {
+  content: ""; /* catalog-badge-dot.1 */
+  inline-size: 0.625rem; /* catalog-badge-dot.2 */
+  aspect-ratio: 1; /* catalog-badge-dot.3 */
+  flex-shrink: 0; /* catalog-badge-dot.4 */
+  border-radius: 50%; /* catalog-badge-dot.5 */
+  background-color: var(--ui-accent); /* catalog-badge-dot.6 */
 }
 
 /* catalog-aspect-ratio: Reserve a predictable media frame. */
@@ -1484,6 +1555,20 @@ textarea.ui-inline-control:focus {
   font-weight: 600; /* catalog-breadcrumb.1 */
 }
 
+/* catalog-breadcrumb-align: Align parent links, path separators and the current location. */
+.ui-breadcrumb li {
+  display: inline-flex; /* catalog-breadcrumb-align.1 */
+  align-items: center; /* catalog-breadcrumb-align.2 */
+  gap: var(--ui-space-sm); /* catalog-breadcrumb-align.3 */
+  min-block-size: var(--ui-control-min); /* catalog-breadcrumb-align.4 */
+}
+
+/* catalog-breadcrumb-separator: Show a conventional path separator without adding a destination. */
+.ui-path-separator {
+  color: var(--ui-muted); /* catalog-breadcrumb-separator.1 */
+  font-size: 0.875rem; /* catalog-breadcrumb-separator.2 */
+}
+
 /* catalog-pagination: Express the current position and available page destinations. */
 .ui-pagination [aria-current="page"] {
   font-weight: 600; /* catalog-pagination.1 */
@@ -1501,9 +1586,69 @@ textarea.ui-inline-control:focus {
 
 /* catalog-tab-links: Distinguish destination links without fake tab roles. */
 .ui-tab-links a {
-  padding: var(--ui-space-sm); /* catalog-tab-links.1 */
-  border-block-end: 2px solid var(--ui-divider); /* catalog-tab-links.2 */
-  min-block-size: var(--ui-control-min); /* catalog-tab-links.3 */
+  text-decoration: none; /* catalog-tab-links.1 */
+}
+
+/* catalog-folder-row: Arrange familiar folder tabs above their content. */
+.ui-folder-tabs, .ui-tab-links {
+  display: flex; /* catalog-folder-row.1 */
+  flex-wrap: wrap; /* catalog-folder-row.2 */
+  gap: var(--ui-space-xs); /* catalog-folder-row.3 */
+  border-block-end: 1px solid var(--ui-border); /* catalog-folder-row.4 */
+}
+
+/* catalog-folder-tab: Give native choices and real links a familiar folder-tab shape. */
+.ui-folder-tab, .ui-tab-links a {
+  position: relative; /* catalog-folder-tab.1 */
+  display: inline-flex; /* catalog-folder-tab.2 */
+  align-items: center; /* catalog-folder-tab.3 */
+  min-block-size: var(--ui-control-min); /* catalog-folder-tab.4 */
+  padding: var(--ui-control-pad-block) var(--ui-space-md); /* catalog-folder-tab.5 */
+  border: 1px solid var(--ui-border); /* catalog-folder-tab.6 */
+  border-block-start-width: 3px; /* catalog-folder-tab.7 */
+  border-radius: var(--ui-radius-panel) var(--ui-radius-panel) 0 0; /* catalog-folder-tab.8 */
+  background-color: var(--ui-subtle); /* catalog-folder-tab.9 */
+  color: var(--ui-ink); /* catalog-folder-tab.10 */
+  cursor: pointer; /* catalog-folder-tab.11 */
+}
+
+/* catalog-folder-radio: Hide only the native radio paint while preserving its focus and group behavior. */
+.ui-folder-tab > .ui-radio {
+  position: absolute; /* catalog-folder-radio.1 */
+  inline-size: 1px; /* catalog-folder-radio.2 */
+  block-size: 1px; /* catalog-folder-radio.3 */
+  clip-path: inset(50%); /* catalog-folder-radio.4 */
+  margin: 0; /* catalog-folder-radio.5 */
+}
+
+/* catalog-folder-selected: Identify the selected folder through shape and weight as well as color. */
+.ui-folder-tab:has(input:checked), .ui-tab-links a[aria-current="page"] {
+  background-color: var(--ui-surface); /* catalog-folder-selected.1 */
+  border-block-start-color: var(--ui-interactive); /* catalog-folder-selected.2 */
+  border-block-end-color: var(--ui-surface); /* catalog-folder-selected.3 */
+  font-weight: 700; /* catalog-folder-selected.4 */
+}
+
+/* catalog-folder-focus: Move the protected keyboard focus perimeter onto the full folder label. */
+.ui-folder-tab:has(input:focus-visible) {
+  outline: 3px solid var(--ui-focus); /* catalog-folder-focus.1 */
+  outline-offset: 3px; /* catalog-folder-focus.2 */
+}
+
+@media (forced-colors: active) {
+/* catalog-folder-forced: Honor system focus for the visually clipped radio. */
+.ui-folder-tab:has(input:focus-visible) {
+  outline-color: Highlight; /* catalog-folder-forced.1 */
+}
+}
+
+/* catalog-pagination-targets: Give numerical pages comparable square targets. */
+.ui-pagination a, .ui-pagination [aria-current="page"] {
+  display: inline-flex; /* catalog-pagination-targets.1 */
+  align-items: center; /* catalog-pagination-targets.2 */
+  justify-content: center; /* catalog-pagination-targets.3 */
+  min-inline-size: var(--ui-control-min); /* catalog-pagination-targets.4 */
+  min-block-size: var(--ui-control-min); /* catalog-pagination-targets.5 */
 }
 
 /* catalog-nav-targets: Keep component navigation usable. */
@@ -1566,6 +1711,29 @@ textarea.ui-inline-control:focus {
 .ui-message {
   margin: 0; /* catalog-message.1 */
   overflow-wrap: anywhere; /* catalog-message.2 */
+}
+
+/* catalog-chat-turn: Bound each conversation turn while preserving source order. */
+.ui-chat {
+  inline-size: fit-content; /* catalog-chat-turn.1 */
+  max-inline-size: min(65ch, calc(100% - var(--ui-space-xl))); /* catalog-chat-turn.2 */
+  overflow-wrap: anywhere; /* catalog-chat-turn.3 */
+}
+
+/* catalog-chat-outgoing: Place the authored user message on the outgoing side. */
+.ui-chat--outgoing {
+  margin-inline-start: auto; /* catalog-chat-outgoing.1 */
+}
+
+/* catalog-chat-incoming: Place the reply on the incoming side. */
+.ui-chat--incoming {
+  margin-inline-end: auto; /* catalog-chat-incoming.1 */
+}
+
+/* catalog-chat-outgoing-color: Give the outgoing bubble a checked blue identity cue. */
+.ui-chat--outgoing .ui-bubble {
+  background-color: var(--ui-interactive); /* catalog-chat-outgoing-color.1 */
+  color: var(--ui-on-interactive); /* catalog-chat-outgoing-color.2 */
 }
 
 /* catalog-item: Present comparable named rows. */
@@ -1795,9 +1963,9 @@ textarea.ui-inline-control:focus {
 /* catalog-spinner: Supplement a written loading state with an optional motion cue. */
 .ui-spinner {
   display: inline-block; /* catalog-spinner.1 */
-  inline-size: 1.25rem; /* catalog-spinner.2 */
+  inline-size: 1.5rem; /* catalog-spinner.2 */
   aspect-ratio: 1; /* catalog-spinner.3 */
-  border: var(--ui-switch-stroke) solid var(--ui-border); /* catalog-spinner.4 */
+  border: 3px solid var(--ui-border); /* catalog-spinner.4 */
   border-block-start-color: var(--ui-interactive); /* catalog-spinner.5 */
   border-radius: 50%; /* catalog-spinner.6 */
 }
@@ -1805,6 +1973,11 @@ textarea.ui-inline-control:focus {
 /* catalog-spin-enabled: Enable only the explicitly requested loading preview. */
 .ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner {
   animation: ui-catalog-spin 1s linear infinite; /* catalog-spin-enabled.1 */
+}
+
+/* catalog-skeleton-enabled: Enable only the requested supplementary loading border. */
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton {
+  animation: ui-catalog-loading-border 2s ease-in-out infinite alternate; /* catalog-skeleton-enabled.1 */
 }
 
 /* catalog-text-rotate: Demonstrate an optional sequence of supplementary labels. */
@@ -1843,7 +2016,7 @@ textarea.ui-inline-control:focus {
 
 @media (prefers-reduced-motion: reduce) {
 /* catalog-motion-reduced: Honor reduced motion even when the preview is selected. */
-.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span {
+.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span {
   animation: none; /* catalog-motion-reduced.1 */
   opacity: 1; /* catalog-motion-reduced.2 */
   grid-area: auto; /* catalog-motion-reduced.3 */
@@ -1865,6 +2038,17 @@ to {
 /* catalog-word-hidden: Define only the explicitly enabled supplementary animation. */
 33%, 100% {
   opacity: 0; /* catalog-word-hidden.1 */
+}
+}
+
+@keyframes ui-catalog-loading-border {
+/* catalog-loading-border-start: Define only the explicitly enabled supplementary animation. */
+from {
+  border-color: var(--ui-border); /* catalog-loading-border-start.1 */
+}
+/* catalog-loading-border-end: Define only the explicitly enabled supplementary animation. */
+to {
+  border-color: var(--ui-interactive); /* catalog-loading-border-end.1 */
 }
 }
 
@@ -2117,7 +2301,8 @@ to {
   inline-size: 0.75rem; /* catalog-status-dot.2 */
   aspect-ratio: 1; /* catalog-status-dot.3 */
   border-radius: 50%; /* catalog-status-dot.4 */
-  background-color: var(--ui-success); /* catalog-status-dot.5 */
+  background-color: var(--ui-accent); /* catalog-status-dot.5 */
+  flex-shrink: 0; /* catalog-status-dot.6 */
 }
 
 /* catalog-steps: Present a supplied process order and current step. */

@@ -10,7 +10,7 @@ test('reviewed core catalogs have complete, unique classification and runnable c
  for(const c of catalog.filter(c=>c.kind==='script'))assert(!examples[c.id],'Do not present a CSS shell as a runnable widget: '+c.id);
 });
 test('catalog motion frames are explicitly scoped, audited and have opt-in plus reduced-motion rules',()=>{
- const frames=rules.filter(r=>r.keyframes);assert.equal(frames.length,3);assert.deepEqual(new Set(frames.map(r=>r.keyframes)),new Set(['ui-catalog-spin','ui-catalog-word']));
+ const frames=rules.filter(r=>r.keyframes);assert.equal(frames.length,5);assert.deepEqual(new Set(frames.map(r=>r.keyframes)),new Set(['ui-catalog-spin','ui-catalog-word','ui-catalog-loading-border']));
  for(const frame of frames){assert.equal(frame.check,'catalog');assert(frame.declarations.every(d=>d.purpose&&d.intent));}
  for(const r of rules.filter(r=>r.declarations.some(d=>d.property==='animation'&&d.value!=='none')))assert(r.selector.includes(':has(.ui-motion-enable:checked)'),'Animation needs explicit opt-in: '+r.id);
  assert(rules.some(r=>r.media==='(prefers-reduced-motion: reduce)'&&r.declarations.some(d=>d.property==='animation'&&d.value==='none')));

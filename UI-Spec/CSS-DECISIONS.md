@@ -38,7 +38,7 @@ Selector: `:root`. Source: project. Verification family: `tokens`.
 | tokens.28 | --ui-font | system-ui, -apple-system, "Segoe UI", sans-serif | Publish semantic values for consistent reuse. Use installed fonts so text is immediately available without a font download. | Recognize the same meaning across screens. | proposed |
 | tokens.29 | --ui-on-primary | #ffffff | Publish semantic values for consistent reuse. Keep the written principal-action label readable against the selected azure fill in both brightness modes. | Recognize the same meaning across screens. | proposed |
 | tokens.30 | --ui-interactive | #005b90 | Publish semantic values for consistent reuse. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. | Recognize the same meaning across screens. | proposed |
-| tokens.31 | --ui-on-interactive | #ffffff | Publish semantic values for consistent reuse. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. | Recognize the same meaning across screens. | proposed |
+| tokens.31 | --ui-on-interactive | #ffffff | Publish semantic values for consistent reuse. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. | Recognize the same meaning across screens. | proposed |
 | tokens.32 | --ui-control-min | 2.75rem | Publish semantic values for consistent reuse. Set a minimum native target height, allowing content to grow rather than fixing height. Activate controls comfortably; compact fine-pointer targets stay at least 36px at the default root, with a separate 44px coarse/no-pointer floor. | Recognize the same meaning across screens. | proposed |
 | tokens.33 | --ui-control-pad-block | 0.5rem | Publish semantic values for consistent reuse. Give entered values and button labels vertical breathing room independently of minimum target height. Read text inside a control while compact mode recovers redundant interior space. | Recognize the same meaning across screens. | proposed |
 | tokens.34 | --ui-notes-min | 7rem | Publish semantic values for consistent reuse. Provide a usable initial multi-line notes viewport without fixing its eventual height. Read several note lines and enlarge the native textarea when needed. | Recognize the same meaning across screens. | proposed |
@@ -76,7 +76,7 @@ Selector: `:root[data-bs-theme="dark"]:not([data-vision="distinct"])`. Source: p
 | palette-dark-standard.18 | --ui-disabled-bg | #404040 | Apply the complete Dark · standard palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.19 | --ui-on-primary | #ffffff | Apply the complete Dark · standard palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-standard.20 | --ui-interactive | #40adf0 | Apply the complete Dark · standard palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-standard.21 | --ui-on-interactive | #242424 | Apply the complete Dark · standard palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-standard.21 | --ui-on-interactive | #242424 | Apply the complete Dark · standard palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## palette-light-distinct
 
@@ -104,7 +104,7 @@ Selector: `:root[data-vision="distinct"]:not([data-bs-theme="dark"])`. Source: p
 | palette-light-distinct.18 | --ui-disabled-bg | #d2d2d2 | Apply the complete Light · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Light · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-light-distinct.20 | --ui-interactive | #005b90 | Apply the complete Light · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-light-distinct.21 | --ui-on-interactive | #ffffff | Apply the complete Light · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-light-distinct.21 | --ui-on-interactive | #ffffff | Apply the complete Light · distinct status colors palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## palette-dark-distinct
 
@@ -132,7 +132,7 @@ Selector: `:root[data-bs-theme="dark"][data-vision="distinct"]`. Source: project
 | palette-dark-distinct.18 | --ui-disabled-bg | #404040 | Apply the complete Dark · distinct status colors palette. Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.19 | --ui-on-primary | #ffffff | Apply the complete Dark · distinct status colors palette. Keep the written principal-action label readable against the selected azure fill in both brightness modes. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 | palette-dark-distinct.20 | --ui-interactive | #40adf0 | Apply the complete Dark · distinct status colors palette. Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
-| palette-dark-distinct.21 | --ui-on-interactive | #242424 | Apply the complete Dark · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
+| palette-dark-distinct.21 | --ui-on-interactive | #242424 | Apply the complete Dark · distinct status colors palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette. | Read and operate the same components in the chosen appearance without losing semantic cues. | proposed |
 
 ## density-compact
 
@@ -1871,6 +1871,40 @@ Selector: `.ui-rating`. Source: project. Verification family: `catalog`.
 | catalog-rating.4 | border | 0 | Offer a bounded native single-choice scale. Retain native group semantics. | Choose a named rating with arrow keys and full-size labels. | proposed |
 | catalog-rating.5 | padding | 0 | Offer a bounded native single-choice scale. Use the containing inset. | Choose a named rating with arrow keys and full-size labels. | proposed |
 
+## catalog-rating-star
+
+Selector: `.ui-rating-star`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating-star.1 | font-size | 1.5rem | Use familiar star labels alongside real native rating choices. Make the star silhouette clearly distinguishable. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
+| catalog-rating-star.2 | line-height | 1 | Use familiar star labels alongside real native rating choices. Keep the star within the protected choice target. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
+| catalog-rating-star.3 | color | var(--ui-interactive) | Use familiar star labels alongside real native rating choices. Use a checked accent on the neutral label surface. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
+
+## catalog-rating-filled-rest
+
+Selector: `.ui-rating-star--filled`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating-filled-rest.1 | display | none | Keep unchosen stars outlined until a native rating is selected. Hide only the decorative filled copy before selection. | Distinguish the selected cumulative rating through filled star shapes. | proposed |
+
+## catalog-rating-filled
+
+Selector: `.ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating-filled.1 | display | inline | Map native rating state to cumulative filled star labels. Fill the selected star and all earlier stars. | Read the chosen number through star shape and the native checked mark. | proposed |
+
+## catalog-rating-outline
+
+Selector: `.ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating-outline.1 | display | none | Avoid showing both decorative star copies for a selected value. Hide only the redundant outlined decorative copy. | Inspect one clear star at each position in the scale. | proposed |
+
 ## catalog-disclosures
 
 Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Source: project. Verification family: `catalog`.
@@ -1955,8 +1989,65 @@ Selector: `.ui-alert`. Source: project. Verification family: `catalog`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | catalog-alert.1 | padding | var(--ui-space-lg) | Make a condition and its next step readable together. Keep condition and next step clear of the edge. | Recognize an important message from its wording and structure. | proposed |
-| catalog-alert.2 | border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | Make a condition and its next step readable together. Identify guidance with the neutral governed stroke. | Recognize an important message from its wording and structure. | proposed |
-| catalog-alert.3 | background-color | var(--ui-subtle) | Make a condition and its next step readable together. Keep routine guidance quiet. | Recognize an important message from its wording and structure. | proposed |
+| catalog-alert.2 | border-inline-start | var(--ui-notice-stroke) solid currentColor | Make a condition and its next step readable together. Retain an edge cue in addition to the labelled semantic fill. | Recognize an important message from its wording and structure. | proposed |
+| catalog-alert.3 | background-color | var(--ui-accent) | Make a condition and its next step readable together. Color only the bounded alert with its labelled semantic accent. | Recognize an important message from its wording and structure. | proposed |
+| catalog-alert.4 | color | var(--ui-on-interactive) | Make a condition and its next step readable together. Use contrasting mode-dependent ink checked against all five accent fills. | Recognize an important message from its wording and structure. | proposed |
+
+## catalog-accent-default
+
+Selector: `.ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-accent-default.1 | --ui-accent | var(--ui-interactive) | Share a small semantic accent vocabulary across component examples. Default the supplementary accent to the existing information blue. | Recognize the written condition while colors follow the selected appearance. | proposed |
+
+## catalog-tone-success
+
+Selector: `.ui-tone--success`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tone-success.1 | --ui-accent | var(--ui-success) | Map the success variant to the governed semantic palette. Reuse the checked success role rather than introduce another color. | Recognize the labelled variant consistently in every appearance. | proposed |
+
+## catalog-tone-error
+
+Selector: `.ui-tone--error`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tone-error.1 | --ui-accent | var(--ui-danger) | Map the error variant to the governed semantic palette. Reuse the checked danger role rather than introduce another color. | Recognize the labelled variant consistently in every appearance. | proposed |
+
+## catalog-tone-pending
+
+Selector: `.ui-tone--pending`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tone-pending.1 | --ui-accent | var(--ui-warning) | Map the pending variant to the governed semantic palette. Reuse the checked warning role rather than introduce another color. | Recognize the labelled variant consistently in every appearance. | proposed |
+
+## catalog-tone-info
+
+Selector: `.ui-tone--info`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tone-info.1 | --ui-accent | var(--ui-interactive) | Map the info variant to the governed semantic palette. Reuse the checked interactive role rather than introduce another color. | Recognize the labelled variant consistently in every appearance. | proposed |
+
+## catalog-tone-neutral
+
+Selector: `.ui-tone--neutral`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-tone-neutral.1 | --ui-accent | var(--ui-muted) | Map the neutral variant to the governed semantic palette. Reuse the checked muted role rather than introduce another color. | Recognize the labelled variant consistently in every appearance. | proposed |
+
+## catalog-dialog-accent
+
+Selector: `.ui-alert-dialog`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-dialog-accent.1 | border-inline-start-color | var(--ui-accent) | Carry the same labelled alert accent into the native dialog. Match the dialog edge to its colored message heading. | Identify the condition while operating controls on their checked neutral surface. | proposed |
 
 ## catalog-empty
 
@@ -1979,9 +2070,10 @@ Selector: `.ui-avatar`. Source: project. Verification family: `catalog`.
 | catalog-avatar.3 | inline-size | var(--ui-swatch-size) | Show an identity thumbnail or initials. Use the governed visual sample size. | Associate a written person name with a compact identity mark. | proposed |
 | catalog-avatar.4 | aspect-ratio | 1 | Show an identity thumbnail or initials. Reserve a square before cropping. | Associate a written person name with a compact identity mark. | proposed |
 | catalog-avatar.5 | border-radius | 50% | Show an identity thumbnail or initials. Distinguish identity from an action. | Associate a written person name with a compact identity mark. | proposed |
-| catalog-avatar.6 | border | 1px solid var(--ui-border) | Show an identity thumbnail or initials. Keep the silhouette visible. | Associate a written person name with a compact identity mark. | proposed |
-| catalog-avatar.7 | background-color | var(--ui-subtle) | Show an identity thumbnail or initials. Use a checked neutral plane. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.6 | border | 1px solid var(--ui-accent) | Show an identity thumbnail or initials. Keep the silhouette continuous with the filled identity disc. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.7 | background-color | var(--ui-accent) | Show an identity thumbnail or initials. Fill the whole disc so initials do not float in an empty circle. | Associate a written person name with a compact identity mark. | proposed |
 | catalog-avatar.8 | font-weight | 600 | Show an identity thumbnail or initials. Keep short initials identifiable. | Associate a written person name with a compact identity mark. | proposed |
+| catalog-avatar.9 | color | var(--ui-on-interactive) | Show an identity thumbnail or initials. Keep initials readable against every supplied accent fill. | Associate a written person name with a compact identity mark. | proposed |
 
 ## catalog-badge
 
@@ -1989,11 +2081,13 @@ Selector: `.ui-badge`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| catalog-badge.1 | display | inline-block | Keep short metadata visibly grouped. Keep short metadata together. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.1 | display | inline-flex | Keep short metadata visibly grouped. Keep the colored dot and written metadata in one inline group. | Read a state or category without depending on a colored dot. | proposed |
 | catalog-badge.2 | padding | var(--ui-space-xs) var(--ui-space-sm) | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read a state or category without depending on a colored dot. | proposed |
 | catalog-badge.3 | border | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read a state or category without depending on a colored dot. | proposed |
 | catalog-badge.4 | border-radius | var(--ui-radius-small) | Keep short metadata visibly grouped. Use the short-label shape. | Read a state or category without depending on a colored dot. | proposed |
 | catalog-badge.5 | font-size | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.6 | align-items | center | Keep short metadata visibly grouped. Center the dot on the label line. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.7 | gap | var(--ui-space-sm) | Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label. | Read a state or category without depending on a colored dot. | proposed |
 
 ## catalog-aura
 
@@ -2002,9 +2096,22 @@ Selector: `.ui-aura`. Source: project. Verification family: `catalog`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | catalog-aura.1 | padding | var(--ui-space-lg) | Demonstrate an optional accent frame without tinting a large work area. Separate the requested accent from text. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
-| catalog-aura.2 | border | var(--ui-switch-stroke) solid transparent | Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+| catalog-aura.2 | border | var(--ui-notice-stroke) solid transparent | Demonstrate an optional accent frame without tinting a large work area. Keep the colored frame visible with the governed 4px normal / 3px compact notice stroke. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
 | catalog-aura.3 | border-radius | var(--ui-radius-panel) | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
-| catalog-aura.4 | background | linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-interactive), var(--ui-divider), var(--ui-interactive)) border-box | Demonstrate an optional accent frame without tinting a large work area. Limit the static accent to the border while keeping the reading field neutral. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+| catalog-aura.4 | background | linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-accent), var(--ui-divider), var(--ui-accent)) border-box | Demonstrate an optional accent frame without tinting a large work area. Limit the static accent to the border while keeping the reading field neutral. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
+
+## catalog-badge-dot
+
+Selector: `.ui-badge::before`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-dot.1 | content | "" | Expose a visible colored dot without replacing badge wording. Create only a decorative mark; meaning stays in real text. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-dot.2 | inline-size | 0.625rem | Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-dot.3 | aspect-ratio | 1 | Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-dot.4 | flex-shrink | 0 | Expose a visible colored dot without replacing badge wording. Keep long labels from flattening the dot. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-dot.5 | border-radius | 50% | Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-dot.6 | background-color | var(--ui-accent) | Expose a visible colored dot without replacing badge wording. Apply the labelled semantic accent. | Recognize the supplementary accent and read the authoritative state label. | proposed |
 
 ## catalog-aspect-ratio
 
@@ -2069,6 +2176,26 @@ Selector: `.ui-breadcrumb [aria-current="page"]`. Source: project. Verification 
 | --- | --- | --- | --- | --- | --- |
 | catalog-breadcrumb.1 | font-weight | 600 | Express a real navigation hierarchy. Identify the current location beyond color. | Find the parent destination and identify the current page. | proposed |
 
+## catalog-breadcrumb-align
+
+Selector: `.ui-breadcrumb li`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-breadcrumb-align.1 | display | inline-flex | Align parent links, path separators and the current location. Group each separator with its following level. | Read the navigation path on a consistent vertical center line. | proposed |
+| catalog-breadcrumb-align.2 | align-items | center | Align parent links, path separators and the current location. Align plain current text with the padded link targets. | Read the navigation path on a consistent vertical center line. | proposed |
+| catalog-breadcrumb-align.3 | gap | var(--ui-space-sm) | Align parent links, path separators and the current location. Give the conventional slash separator breathing room. | Read the navigation path on a consistent vertical center line. | proposed |
+| catalog-breadcrumb-align.4 | min-block-size | var(--ui-control-min) | Align parent links, path separators and the current location. Match the current level to the height of parent links. | Read the navigation path on a consistent vertical center line. | proposed |
+
+## catalog-breadcrumb-separator
+
+Selector: `.ui-path-separator`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-breadcrumb-separator.1 | color | var(--ui-muted) | Show a conventional path separator without adding a destination. Keep the small separator readable but subordinate. | Distinguish adjacent navigation levels visually. | proposed |
+| catalog-breadcrumb-separator.2 | font-size | 0.875rem | Show a conventional path separator without adding a destination. Keep the slash smaller than destination labels. | Distinguish adjacent navigation levels visually. | proposed |
+
 ## catalog-pagination
 
 Selector: `.ui-pagination [aria-current="page"]`. Source: project. Verification family: `catalog`.
@@ -2096,9 +2223,88 @@ Selector: `.ui-tab-links a`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| catalog-tab-links.1 | padding | var(--ui-space-sm) | Distinguish destination links without fake tab roles. Inset the written label. | Follow a real destination using normal keyboard activation. | proposed |
-| catalog-tab-links.2 | border-block-end | 2px solid var(--ui-divider) | Distinguish destination links without fake tab roles. Identify the row of destinations. | Follow a real destination using normal keyboard activation. | proposed |
-| catalog-tab-links.3 | min-block-size | var(--ui-control-min) | Distinguish destination links without fake tab roles. Protect native link activation. | Follow a real destination using normal keyboard activation. | proposed |
+| catalog-tab-links.1 | text-decoration | none | Distinguish destination links without fake tab roles. Let the bordered folder silhouette identify the destination without an additional text underline. | Follow a real destination using normal keyboard activation. | proposed |
+
+## catalog-folder-row
+
+Selector: `.ui-folder-tabs, .ui-tab-links`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-row.1 | display | flex | Arrange familiar folder tabs above their content. Keep choices in their source order. | Find adjacent panel or page choices without visible radio circles. | proposed |
+| catalog-folder-row.2 | flex-wrap | wrap | Arrange familiar folder tabs above their content. Keep every tab reachable on narrow screens. | Find adjacent panel or page choices without visible radio circles. | proposed |
+| catalog-folder-row.3 | gap | var(--ui-space-xs) | Arrange familiar folder tabs above their content. Leave a compact gap between folder silhouettes. | Find adjacent panel or page choices without visible radio circles. | proposed |
+| catalog-folder-row.4 | border-block-end | 1px solid var(--ui-border) | Arrange familiar folder tabs above their content. Identify the common content edge. | Find adjacent panel or page choices without visible radio circles. | proposed |
+
+## catalog-folder-tab
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-tab.1 | position | relative | Give native choices and real links a familiar folder-tab shape. Contain the visually clipped native radio. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.2 | display | inline-flex | Give native choices and real links a familiar folder-tab shape. Center the label inside its target. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.3 | align-items | center | Give native choices and real links a familiar folder-tab shape. Keep all tab labels vertically aligned. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.4 | min-block-size | var(--ui-control-min) | Give native choices and real links a familiar folder-tab shape. Preserve the governed pointer target floor. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.5 | padding | var(--ui-control-pad-block) var(--ui-space-md) | Give native choices and real links a familiar folder-tab shape. Clear label text from the tab edges. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.6 | border | 1px solid var(--ui-border) | Give native choices and real links a familiar folder-tab shape. Expose each folder-tab boundary. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.7 | border-block-start-width | 3px | Give native choices and real links a familiar folder-tab shape. Reserve the selected top edge without shifting geometry. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.8 | border-radius | var(--ui-radius-panel) var(--ui-radius-panel) 0 0 | Give native choices and real links a familiar folder-tab shape. Round the folder shoulders while joining the lower content edge. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.9 | background-color | var(--ui-subtle) | Give native choices and real links a familiar folder-tab shape. Set unselected folders behind the active reading plane. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.10 | color | var(--ui-ink) | Give native choices and real links a familiar folder-tab shape. Use checked reading ink for all choices. | Recognize labelled tabs while retaining their native interaction. | proposed |
+| catalog-folder-tab.11 | cursor | pointer | Give native choices and real links a familiar folder-tab shape. Identify the complete label as the native radio target. | Recognize labelled tabs while retaining their native interaction. | proposed |
+
+## catalog-folder-radio
+
+Selector: `.ui-folder-tab > .ui-radio`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-radio.1 | position | absolute | Hide only the native radio paint while preserving its focus and group behavior. Remove the tiny visual control from folder-label layout. | Choose folders using native Tab, arrow keys, Space or the complete label. | proposed |
+| catalog-folder-radio.2 | inline-size | 1px | Hide only the native radio paint while preserving its focus and group behavior. Retain a real focusable control without visible radio chrome. | Choose folders using native Tab, arrow keys, Space or the complete label. | proposed |
+| catalog-folder-radio.3 | block-size | 1px | Hide only the native radio paint while preserving its focus and group behavior. Keep the clipped control out of the visual silhouette. | Choose folders using native Tab, arrow keys, Space or the complete label. | proposed |
+| catalog-folder-radio.4 | clip-path | inset(50%) | Hide only the native radio paint while preserving its focus and group behavior. Clip the radio paint without display:none or removing native semantics. | Choose folders using native Tab, arrow keys, Space or the complete label. | proposed |
+| catalog-folder-radio.5 | margin | 0 | Hide only the native radio paint while preserving its focus and group behavior. Prevent native radio margins from influencing the tab shape. | Choose folders using native Tab, arrow keys, Space or the complete label. | proposed |
+
+## catalog-folder-selected
+
+Selector: `.ui-folder-tab:has(input:checked), .ui-tab-links a[aria-current="page"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-selected.1 | background-color | var(--ui-surface) | Identify the selected folder through shape and weight as well as color. Bring the selected folder onto the content plane. | Locate the current panel or destination before reading its content. | proposed |
+| catalog-folder-selected.2 | border-block-start-color | var(--ui-interactive) | Identify the selected folder through shape and weight as well as color. Mark the active folder with a checked accent edge. | Locate the current panel or destination before reading its content. | proposed |
+| catalog-folder-selected.3 | border-block-end-color | var(--ui-surface) | Identify the selected folder through shape and weight as well as color. Join the active folder visually to the content plane. | Locate the current panel or destination before reading its content. | proposed |
+| catalog-folder-selected.4 | font-weight | 700 | Identify the selected folder through shape and weight as well as color. Identify selection through text emphasis beyond hue. | Locate the current panel or destination before reading its content. | proposed |
+
+## catalog-folder-focus
+
+Selector: `.ui-folder-tab:has(input:focus-visible)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-focus.1 | outline | 3px solid var(--ui-focus) | Move the protected keyboard focus perimeter onto the full folder label. Use the protected focus perimeter around the visible target. | Find the native radio receiving the next keystroke. | proposed |
+| catalog-folder-focus.2 | outline-offset | 3px | Move the protected keyboard focus perimeter onto the full folder label. Separate focus from the folder border. | Find the native radio receiving the next keystroke. | proposed |
+
+## catalog-folder-forced
+
+Selector: `.ui-folder-tab:has(input:focus-visible)`; condition: `(forced-colors: active)`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-folder-forced.1 | outline-color | Highlight | Honor system focus for the visually clipped radio. Use the platform focus role. | Locate the folder choice in the requested high-contrast palette. | proposed |
+
+## catalog-pagination-targets
+
+Selector: `.ui-pagination a, .ui-pagination [aria-current="page"]`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-pagination-targets.1 | display | inline-flex | Give numerical pages comparable square targets. Allow dimensions on the noninteractive current index too. | Select a numbered destination and identify the current position. | proposed |
+| catalog-pagination-targets.2 | align-items | center | Give numerical pages comparable square targets. Align current and linked page numbers. | Select a numbered destination and identify the current position. | proposed |
+| catalog-pagination-targets.3 | justify-content | center | Give numerical pages comparable square targets. Center each short page number. | Select a numbered destination and identify the current position. | proposed |
+| catalog-pagination-targets.4 | min-inline-size | var(--ui-control-min) | Give numerical pages comparable square targets. Give each number a reliable target width. | Select a numbered destination and identify the current position. | proposed |
+| catalog-pagination-targets.5 | min-block-size | var(--ui-control-min) | Give numerical pages comparable square targets. Match the governed link target height. | Select a numbered destination and identify the current position. | proposed |
 
 ## catalog-nav-targets
 
@@ -2185,6 +2391,41 @@ Selector: `.ui-message`. Source: project. Verification family: `catalog`.
 | --- | --- | --- | --- | --- | --- |
 | catalog-message.1 | margin | 0 | Separate message content from its metadata. Let the chat gap own separation. | Read exact wording without depending on alignment. | proposed |
 | catalog-message.2 | overflow-wrap | anywhere | Separate message content from its metadata. Keep long message tokens bounded. | Read exact wording without depending on alignment. | proposed |
+
+## catalog-chat-turn
+
+Selector: `.ui-chat`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-chat-turn.1 | inline-size | fit-content | Bound each conversation turn while preserving source order. Let short messages use only their needed width. | Associate author and time with a readable message at either edge. | proposed |
+| catalog-chat-turn.2 | max-inline-size | min(65ch, calc(100% - var(--ui-space-xl))) | Bound each conversation turn while preserving source order. Keep a visible reply gutter and a bounded reading measure. | Associate author and time with a readable message at either edge. | proposed |
+| catalog-chat-turn.3 | overflow-wrap | anywhere | Bound each conversation turn while preserving source order. Wrap long names and timestamps without widening the page. | Associate author and time with a readable message at either edge. | proposed |
+
+## catalog-chat-outgoing
+
+Selector: `.ui-chat--outgoing`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-chat-outgoing.1 | margin-inline-start | auto | Place the authored user message on the outgoing side. Align the outgoing turn to the logical end. | Distinguish the user turn through its written name and familiar alignment. | proposed |
+
+## catalog-chat-incoming
+
+Selector: `.ui-chat--incoming`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-chat-incoming.1 | margin-inline-end | auto | Place the reply on the incoming side. Align the incoming turn to the logical start. | Follow the response beneath the message it answers. | proposed |
+
+## catalog-chat-outgoing-color
+
+Selector: `.ui-chat--outgoing .ui-bubble`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-chat-outgoing-color.1 | background-color | var(--ui-interactive) | Give the outgoing bubble a checked blue identity cue. Use the existing mode-specific information blue. | Distinguish the two authors without relying on alignment alone. | proposed |
+| catalog-chat-outgoing-color.2 | color | var(--ui-on-interactive) | Give the outgoing bubble a checked blue identity cue. Use checked contrasting message ink. | Distinguish the two authors without relying on alignment alone. | proposed |
 
 ## catalog-item
 
@@ -2504,9 +2745,9 @@ Selector: `.ui-spinner`. Source: project. Verification family: `catalog`.
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | catalog-spinner.1 | display | inline-block | Supplement a written loading state with an optional motion cue. Keep a small decorative work cue beside written text. | Recognize ongoing work without motion being the only information. | proposed |
-| catalog-spinner.2 | inline-size | 1.25rem | Supplement a written loading state with an optional motion cue. Use the existing native-mark scale. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.2 | inline-size | 1.5rem | Supplement a written loading state with an optional motion cue. Make the loading ring large enough to resolve its moving segment. | Recognize ongoing work without motion being the only information. | proposed |
 | catalog-spinner.3 | aspect-ratio | 1 | Supplement a written loading state with an optional motion cue. Reserve a square before cropping. | Recognize ongoing work without motion being the only information. | proposed |
-| catalog-spinner.4 | border | var(--ui-switch-stroke) solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke. | Recognize ongoing work without motion being the only information. | proposed |
+| catalog-spinner.4 | border | 3px solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Protect a clearly visible three-pixel ring in normal and compact density. | Recognize ongoing work without motion being the only information. | proposed |
 | catalog-spinner.5 | border-block-start-color | var(--ui-interactive) | Supplement a written loading state with an optional motion cue. Distinguish a segment during optional rotation. | Recognize ongoing work without motion being the only information. | proposed |
 | catalog-spinner.6 | border-radius | 50% | Supplement a written loading state with an optional motion cue. Keep the work cue circular. | Recognize ongoing work without motion being the only information. | proposed |
 
@@ -2517,6 +2758,14 @@ Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner`. Sourc
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | catalog-spin-enabled.1 | animation | ui-catalog-spin 1s linear infinite | Enable only the explicitly requested loading preview. Rotate the supplementary cue only after native opt-in. | Inspect motion with written state and an immediate stop control. | proposed |
+
+## catalog-skeleton-enabled
+
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-skeleton-enabled.1 | animation | ui-catalog-loading-border 2s ease-in-out infinite alternate | Enable only the requested supplementary loading border. Slowly vary border emphasis without moving content or flashing the fill. | Recognize loading without depending on animation or losing its written label. | proposed |
 
 ## catalog-text-rotate
 
@@ -2572,7 +2821,7 @@ Selector: `.ui-motion-preview:hover .ui-text-rotate > span, .ui-motion-preview:f
 
 ## catalog-motion-reduced
 
-Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span`; condition: `(prefers-reduced-motion: reduce)`. Source: project. Verification family: `catalog`.
+Selector: `.ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span`; condition: `(prefers-reduced-motion: reduce)`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
@@ -2603,6 +2852,22 @@ Selector: `33%, 100%`. Source: project. Animation: ui-catalog-word. Verification
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
 | catalog-word-hidden.1 | opacity | 0 | Define only the explicitly enabled supplementary animation. Let the next decorative label occupy the cell while persistent text remains. | Inspect visual motion without changing essential content or data. | proposed |
+
+## catalog-loading-border-start
+
+Selector: `from`. Source: project. Animation: ui-catalog-loading-border. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-loading-border-start.1 | border-color | var(--ui-border) | Define only the explicitly enabled supplementary animation. Start with the checked static placeholder perimeter. | Inspect visual motion without changing essential content or data. | proposed |
+
+## catalog-loading-border-end
+
+Selector: `to`. Source: project. Animation: ui-catalog-loading-border. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-loading-border-end.1 | border-color | var(--ui-interactive) | Define only the explicitly enabled supplementary animation. End at the checked information-blue perimeter; shape and wording remain static. | Inspect visual motion without changing essential content or data. | proposed |
 
 ## catalog-table
 
@@ -2955,7 +3220,8 @@ Selector: `.ui-status-indicator::before`. Source: project. Verification family: 
 | catalog-status-dot.2 | inline-size | 0.75rem | Supplement written state with a nonessential mark. Keep the cue subordinate to text. | Recognize a compact state without relying on hue. | proposed |
 | catalog-status-dot.3 | aspect-ratio | 1 | Supplement written state with a nonessential mark. Keep a square before cropping. | Recognize a compact state without relying on hue. | proposed |
 | catalog-status-dot.4 | border-radius | 50% | Supplement written state with a nonessential mark. Distinguish the passive mark from a control. | Recognize a compact state without relying on hue. | proposed |
-| catalog-status-dot.5 | background-color | var(--ui-success) | Supplement written state with a nonessential mark. Use the checked state color as a supplementary cue. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.5 | background-color | var(--ui-accent) | Supplement written state with a nonessential mark. Use the labelled semantic state color as a supplementary cue. | Recognize a compact state without relying on hue. | proposed |
+| catalog-status-dot.6 | flex-shrink | 0 | Supplement written state with a nonessential mark. Keep long state labels from flattening the dot. | Recognize a compact state without relying on hue. | proposed |
 
 ## catalog-steps
 

@@ -17,15 +17,15 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | Family | shadcn/ui names | daisyUI names | Classification | Public classes / example |
 | --- | --- | --- | --- | --- |
 | Accordion | Accordion | Accordion | native | .ui-accordion · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-accordion) |
-| Alert | Alert | Alert | presentation | .ui-alert · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-alert) |
-| Alert dialog | Alert Dialog | — | native | .ui-alert-dialog · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-alert-dialog) |
+| Alert | Alert | Alert | presentation | .ui-alert, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-alert) |
+| Alert dialog | Alert Dialog | — | native | .ui-alert-dialog, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-alert-dialog) |
 | Aspect ratio | Aspect Ratio | — | presentation | .ui-aspect-ratio · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-aspect-ratio) |
 | Attachment | Attachment | — | native | .ui-attachment · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-attachment) |
-| Aura / emphasis border | — | Aura | presentation | .ui-aura · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-aura) |
-| Avatar | Avatar | Avatar | presentation | .ui-avatar · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-avatar) |
-| Badge | Badge | Badge | presentation | .ui-badge · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-badge) |
-| Breadcrumbs | Breadcrumb | Breadcrumbs | native | .ui-breadcrumb · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-breadcrumb) |
-| Chat messages | Bubble, Message | Chat bubble | presentation | .ui-chat, .ui-bubble, .ui-message · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-chat) |
+| Aura / emphasis border | — | Aura | presentation | .ui-aura, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-aura) |
+| Avatar | Avatar | Avatar | presentation | .ui-avatar, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-avatar) |
+| Badge | Badge | Badge | presentation | .ui-badge, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-badge) |
+| Breadcrumbs | Breadcrumb | Breadcrumbs | native | .ui-breadcrumb, .ui-path-separator · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-breadcrumb) |
+| Chat messages | Bubble, Message | Chat bubble | presentation | .ui-chat, .ui-bubble, .ui-message, .ui-chat--outgoing, .ui-chat--incoming · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-chat) |
 | Button | Button | Button | native | .ui-button · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-button) |
 | Button group / join | Button Group | Join (group items) | presentation | .ui-button-group, .ui-join · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-button-group) |
 | Calendar widget | Calendar | Calendar | script | Application logic required |
@@ -74,7 +74,7 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | Loading / spinner | Spinner | Loading | presentation | .ui-spinner · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-spinner) |
 | Switch | Switch | Toggle | native | .ui-toggle · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-switch) |
 | Table | Table | Table | presentation | .ui-data-table · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-table) |
-| Tabbed links / native panel chooser | Tabs | Tabs | alternative | .ui-tabs, .ui-tab-links · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-tabs) |
+| Tabbed links / native panel chooser | Tabs | Tabs | alternative | .ui-tabs, .ui-tab-links, .ui-folder-tabs, .ui-folder-tab · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-tabs) |
 | Textarea | Textarea | Textarea | native | .ui-textarea · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-textarea) |
 | Toast presentation | Toast | Toast | presentation | .ui-toast · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-toast) |
 | Checkbox button | Toggle | — | alternative | .ui-toggle-button · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-toggle) |
@@ -102,10 +102,10 @@ Reviewed 2026-10-29: [shadcn/ui core catalog](https://ui.shadcn.com/docs/compone
 | Window mockup | — | Window mockup | presentation | .ui-mockup-window · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-mockup-window) |
 | Navigation bar | — | Navbar | native | .ui-navbar · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-navbar) |
 | Radial progress | — | Radial progress | presentation | .ui-radial-progress · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-radial-progress) |
-| Rating | — | Rating | native | .ui-rating · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-rating) |
+| Rating | — | Rating | native | .ui-rating, .ui-rating-choice, .ui-rating-star · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-rating) |
 | Visual stack | — | Stack | presentation | .ui-visual-stack · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-stack) |
 | Statistic | — | Stat | presentation | .ui-stat · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-stat) |
-| Status | — | Status | presentation | .ui-status-indicator · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-status) |
+| Status | — | Status | presentation | .ui-status-indicator, .ui-tone--success, .ui-tone--error, .ui-tone--pending, .ui-tone--info, .ui-tone--neutral · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-status) |
 | Steps | — | Steps | presentation | .ui-steps · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-steps) |
 | Swap | — | Swap | native | .ui-swap · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-swap) |
 | Text rotation | — | Text Rotate | presentation | .ui-text-rotate · [live](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/catalog.html#catalog-text-rotate) |
@@ -133,12 +133,12 @@ Purpose: Make a condition and its next step readable together.
 
 User intent: Recognize an important message from its wording and structure.
 
-Classification: **presentation**. Static message; live role/announcement timing belongs to real application events.
+Classification: **presentation**. Five labelled semantic fills; mode-dependent contrasting ink. Static samples; live announcement timing belongs to actual application events.
 
-Public classes: `.ui-alert`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-alert`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<aside class="ui-alert"><strong>Example notice:</strong> Review the supplied settings before continuing. This static sample is not a live application alert.</aside>
+<p>Static color variants; these examples do not announce live application events.</p><div class="ui-stack"><aside class="ui-alert ui-tone--success"><strong>Success · example:</strong> The example review is complete.</aside><aside class="ui-alert ui-tone--error"><strong>Error · example:</strong> The example could not be saved. Review the supplied details.</aside><aside class="ui-alert ui-tone--pending"><strong>Pending · example:</strong> The example is waiting for review.</aside><aside class="ui-alert ui-tone--info"><strong>Information · example:</strong> Review the supplied settings before continuing.</aside><aside class="ui-alert ui-tone--neutral"><strong>Neutral · example:</strong> No example work is scheduled.</aside></div>
 ```
 
 ## Alert dialog
@@ -147,12 +147,12 @@ Purpose: Focus a blocking example decision in the native top layer.
 
 User intent: Read the decision and cancel safely with native focus return.
 
-Classification: **native**. dialog + role=alertdialog + commandfor; example buttons only close, never mutate data.
+Classification: **native**. Five matching colored headings/edges inside native dialogs; controls stay on neutral surfaces. role=alertdialog + commandfor; safe close only, no data mutation.
 
-Public classes: `.ui-alert-dialog`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-alert-dialog`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<button class="ui-button" type="button" commandfor="dialog-alert-dialog" command="show-modal">Open alert-dialog example</button><dialog class="ui-alert-dialog" id="dialog-alert-dialog" role="alertdialog" aria-labelledby="dialog-alert-dialog-title" aria-describedby="dialog-alert-dialog-help"><h3 id="dialog-alert-dialog-title">alert-dialog example</h3><p id="dialog-alert-dialog-help">This is a native presentation example. Closing it does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog" command="close">Close alert-dialog example</button></dialog>
+<div class="ui-cluster"><button class="ui-button" type="button" commandfor="dialog-alert-dialog-success" command="show-modal">Open alert-dialog-success example</button><dialog class="ui-alert-dialog ui-tone--success" id="dialog-alert-dialog-success" role="alertdialog" aria-labelledby="dialog-alert-dialog-success-title" aria-describedby="dialog-alert-dialog-success-help"><div class="ui-alert ui-tone--success"><h3 id="dialog-alert-dialog-success-title">Success · alert dialog example</h3><p>Review this example condition before continuing.</p></div><p id="dialog-alert-dialog-success-help">Native presentation only. Closing does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog-success" command="close">Close alert-dialog-success example</button></dialog><button class="ui-button" type="button" commandfor="dialog-alert-dialog-error" command="show-modal">Open alert-dialog-error example</button><dialog class="ui-alert-dialog ui-tone--error" id="dialog-alert-dialog-error" role="alertdialog" aria-labelledby="dialog-alert-dialog-error-title" aria-describedby="dialog-alert-dialog-error-help"><div class="ui-alert ui-tone--error"><h3 id="dialog-alert-dialog-error-title">Error · alert dialog example</h3><p>Review this example condition before continuing.</p></div><p id="dialog-alert-dialog-error-help">Native presentation only. Closing does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog-error" command="close">Close alert-dialog-error example</button></dialog><button class="ui-button" type="button" commandfor="dialog-alert-dialog-pending" command="show-modal">Open alert-dialog-pending example</button><dialog class="ui-alert-dialog ui-tone--pending" id="dialog-alert-dialog-pending" role="alertdialog" aria-labelledby="dialog-alert-dialog-pending-title" aria-describedby="dialog-alert-dialog-pending-help"><div class="ui-alert ui-tone--pending"><h3 id="dialog-alert-dialog-pending-title">Pending · alert dialog example</h3><p>Review this example condition before continuing.</p></div><p id="dialog-alert-dialog-pending-help">Native presentation only. Closing does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog-pending" command="close">Close alert-dialog-pending example</button></dialog><button class="ui-button" type="button" commandfor="dialog-alert-dialog" command="show-modal">Open alert-dialog example</button><dialog class="ui-alert-dialog ui-tone--info" id="dialog-alert-dialog" role="alertdialog" aria-labelledby="dialog-alert-dialog-title" aria-describedby="dialog-alert-dialog-help"><div class="ui-alert ui-tone--info"><h3 id="dialog-alert-dialog-title">Information · alert dialog example</h3><p>Review this example condition before continuing.</p></div><p id="dialog-alert-dialog-help">Native presentation only. Closing does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog" command="close">Close alert-dialog example</button></dialog><button class="ui-button" type="button" commandfor="dialog-alert-dialog-neutral" command="show-modal">Open alert-dialog-neutral example</button><dialog class="ui-alert-dialog ui-tone--neutral" id="dialog-alert-dialog-neutral" role="alertdialog" aria-labelledby="dialog-alert-dialog-neutral-title" aria-describedby="dialog-alert-dialog-neutral-help"><div class="ui-alert ui-tone--neutral"><h3 id="dialog-alert-dialog-neutral-title">Neutral · alert dialog example</h3><p>Review this example condition before continuing.</p></div><p id="dialog-alert-dialog-neutral-help">Native presentation only. Closing does not approve, save or delete anything.</p><button class="ui-button" type="button" autofocus commandfor="dialog-alert-dialog-neutral" command="close">Close alert-dialog-neutral example</button></dialog></div>
 ```
 
 ## Aspect ratio
@@ -189,12 +189,12 @@ Purpose: Demonstrate an optional accent frame without tinting a large work area.
 
 User intent: Locate the explicitly labelled example emphasis without confusing it with focus.
 
-Classification: **presentation**. Static layered border; no pulsing, no status meaning, no default application adoption.
+Classification: **presentation**. Five labelled semantic accent frames with neutral reading surfaces; static border, no pulsing or confusion with keyboard focus.
 
-Public classes: `.ui-aura`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-aura`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<div class="ui-aura"><strong>Optional emphasis frame</strong><p>The requested border treatment keeps its reading surface neutral and does not mean keyboard focus.</p></div>
+<div class="ui-stack"><div class="ui-aura ui-tone--success"><strong>Success · example emphasis</strong><p>Static condition-colored framing; the reading plane stays neutral. This is not keyboard focus.</p></div><div class="ui-aura ui-tone--error"><strong>Error · example emphasis</strong><p>Static condition-colored framing; the reading plane stays neutral. This is not keyboard focus.</p></div><div class="ui-aura ui-tone--pending"><strong>Pending · example emphasis</strong><p>Static condition-colored framing; the reading plane stays neutral. This is not keyboard focus.</p></div><div class="ui-aura ui-tone--info"><strong>Information · example emphasis</strong><p>Static condition-colored framing; the reading plane stays neutral. This is not keyboard focus.</p></div><div class="ui-aura ui-tone--neutral"><strong>Neutral · example emphasis</strong><p>Static condition-colored framing; the reading plane stays neutral. This is not keyboard focus.</p></div></div>
 ```
 
 ## Avatar
@@ -203,12 +203,12 @@ Purpose: Show an identity thumbnail or initials.
 
 User intent: Associate a written person name with a compact identity mark.
 
-Classification: **presentation**. Initials fallback is authored text; no failed-image detection logic is implied.
+Classification: **presentation**. Filled colored discs with checked initials contrast and adjacent names. Identity color implies no person status; no failed-image detection logic.
 
-Public classes: `.ui-avatar`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-avatar`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<div class="ui-cluster"><span class="ui-avatar" aria-hidden="true">JD</span><span>Jordan Doe · authored initials fallback</span></div>
+<p>Filled identity discs. Colors distinguish examples; they do not imply a person’s status.</p><div class="ui-stack"><div class="ui-cluster"><span class="ui-avatar ui-tone--success" aria-hidden="true">JD</span><span>Jordan Doe · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--error" aria-hidden="true">AL</span><span>Alex Lee · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--pending" aria-hidden="true">SC</span><span>Sam Chen · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--info" aria-hidden="true">ME</span><span>Morgan Ellis · example identity</span></div><div class="ui-cluster"><span class="ui-avatar ui-tone--neutral" aria-hidden="true">TR</span><span>Taylor Reed · example identity</span></div></div>
 ```
 
 ## Badge
@@ -217,12 +217,12 @@ Purpose: Keep short metadata visibly grouped.
 
 User intent: Read a state or category without depending on a colored dot.
 
-Classification: **presentation**. Written label is authoritative; no interactive semantics on passive badges.
+Classification: **presentation**. Five colored decorative dots plus authoritative written labels; no interactive semantics on passive badges.
 
-Public classes: `.ui-badge`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-badge`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<span class="ui-badge">Example · draft</span>
+<div class="ui-cluster"><span class="ui-badge ui-tone--success">Success · example</span><span class="ui-badge ui-tone--error">Error · example</span><span class="ui-badge ui-tone--pending">Pending · example</span><span class="ui-badge ui-tone--info">Information · example</span><span class="ui-badge ui-tone--neutral">Neutral · example</span></div>
 ```
 
 ## Breadcrumbs
@@ -231,12 +231,12 @@ Purpose: Express a real navigation hierarchy.
 
 User intent: Find the parent destination and identify the current page.
 
-Classification: **native**. Named nav and ordered links; current item uses aria-current=page.
+Classification: **native**. Aligned ordered levels with small aria-hidden slash separators; named nav and aria-current=page.
 
-Public classes: `.ui-breadcrumb`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-breadcrumb`, `.ui-path-separator`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<nav class="ui-breadcrumb" aria-label="Example breadcrumb"><ol role="list"><li><a href="./">UI reference</a></li><li aria-current="page">Component catalog</li></ol></nav>
+<nav class="ui-breadcrumb" aria-label="Example breadcrumb"><ol role="list"><li><a href="./">UI reference</a></li><li><span class="ui-path-separator" aria-hidden="true">/</span><a href="./catalog.html">Catalog</a></li><li aria-current="page"><span class="ui-path-separator" aria-hidden="true">/</span>Breadcrumbs</li></ol></nav>
 ```
 
 ## Chat messages
@@ -245,12 +245,12 @@ Purpose: Group author, timestamp and message content.
 
 User intent: Read who said what without relying on left/right alignment or hue alone.
 
-Classification: **presentation**. Static message layout; sending, streaming, receipts and persistence require application logic.
+Classification: **presentation**. Outgoing blue/end-aligned and neutral/start-aligned reply retain author, time and source order. Sending, streaming, receipts and persistence need application logic.
 
-Public classes: `.ui-chat`, `.ui-bubble`, `.ui-message`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-chat`, `.ui-bubble`, `.ui-message`, `.ui-chat--outgoing`, `.ui-chat--incoming`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<article class="ui-chat" aria-label="Example message"><strong>Jordan · example author</strong><div class="ui-bubble"><p class="ui-message">Please review the document before saving.</p></div><time datetime="2026-10-29T10:00:00-06:00">29 October, 10:00 · example timestamp</time></article>
+<div class="ui-stack" aria-label="Example conversation"><article class="ui-chat ui-chat--outgoing" aria-label="Jordan’s message"><strong>Jordan · you</strong><div class="ui-bubble"><p class="ui-message">Please review the document before saving.</p></div><time datetime="2026-10-30T10:00:00-06:00">10:00 · example</time></article><article class="ui-chat ui-chat--incoming" aria-label="Assistant’s response"><strong>Assistant · reply</strong><div class="ui-bubble"><p class="ui-message">I found two wording changes for you to review. The draft is ready for your inspection.</p></div><time datetime="2026-10-30T10:01:00-06:00">10:01 · example</time></article></div>
 ```
 
 ## Button
@@ -680,12 +680,12 @@ Purpose: Express the current position and available page destinations.
 
 User intent: Navigate a known page without confusing a visual index with loaded data.
 
-Classification: **native**. Real hrefs and aria-current=page; querying or calculating result pages is application logic.
+Classification: **native**. Visible numerical destinations 1–3 have descriptive names, real hrefs and aria-current=page; calculating result pages requires application logic.
 
 Public classes: `.ui-pagination`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<nav class="ui-pagination" aria-label="Example reference pagination"><ol role="list"><li><a href="./">Components</a></li><li><a href="./content.html">Document content</a></li><li><span aria-current="page">Catalog · current</span></li></ol></nav>
+<p>Numbered destinations across the three reference pages; page 3 is current.</p><nav class="ui-pagination" aria-label="Example reference pagination"><ol role="list"><li><a href="./" aria-label="Page 1 · component reference">1</a></li><li><a href="./content.html" aria-label="Page 2 · document content">2</a></li><li><span aria-current="page" aria-label="Page 3 · current catalog">3</span></li></ol></nav>
 ```
 
 ## Popover
@@ -826,12 +826,12 @@ Purpose: Reserve the shape of forthcoming content.
 
 User intent: Recognize placeholder structure alongside written loading text.
 
-Classification: **presentation**. Static nonessential blocks, aria-hidden; do not invent progress or replace error text.
+Classification: **presentation**. aria-hidden static placeholder with an optional slow border-color animation, explicit opt-in and reduced-motion fallback; written loading remains visible.
 
 Public classes: `.ui-skeleton`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<p>Example loading placeholder · no real request is running.</p><div class="ui-skeleton" aria-hidden="true"></div>
+<div class="ui-motion-preview"><label class="ui-choice"><input class="ui-checkbox ui-motion-enable" type="checkbox" id="catalog-skeleton-enable">Animate the supplementary loading border</label><p>Example loading placeholder · no real request is running.</p><div class="ui-skeleton" aria-hidden="true"></div></div>
 ```
 
 ## Native range slider
@@ -896,12 +896,12 @@ Purpose: Offer linked destinations or a native choice between preloaded panels.
 
 User intent: Choose a labelled preview without a fake ARIA tab state.
 
-Classification: **alternative**. Radio fieldset uses native selection and CSS panels; link variant is navigation. Full role=tab keyboard/ARIA synchronization requires logic.
+Classification: **alternative**. Folder-shaped radio labels retain native group, arrow-key and visible whole-label focus behavior; link folders remain navigation. Full ARIA tab synchronization requires logic.
 
-Public classes: `.ui-tabs`, `.ui-tab-links`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-tabs`, `.ui-tab-links`, `.ui-folder-tabs`, `.ui-folder-tab`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<nav aria-label="Example tabbed destinations"><ul class="ui-tab-links" role="list"><li><a href="./">Components</a></li><li><a href="./content.html">Documents</a></li></ul></nav><fieldset class="ui-tabs"><legend>Example native panel chooser</legend><div class="ui-cluster"><label class="ui-choice"><input class="ui-radio" type="radio" name="catalog-panel" value="one" checked>Summary preview</label><label class="ui-choice"><input class="ui-radio" type="radio" name="catalog-panel" value="two">Details preview</label></div><section class="ui-tab-panel" data-panel="one"><h3>Summary preview panel</h3><p>This is a native radio choice, not an ARIA tabs widget.</p></section><section class="ui-tab-panel" data-panel="two"><h3>Details preview panel</h3><p>The supplied detailed content appears through CSS state.</p></section></fieldset>
+<nav aria-label="Example tabbed destinations"><ul class="ui-tab-links" role="list"><li><a href="./">Components</a></li><li><a href="./content.html">Documents</a></li><li><a href="./catalog.html#catalog-tabs" aria-current="page">Catalog</a></li></ul></nav><fieldset class="ui-tabs"><legend>Example native folder-panel chooser</legend><div class="ui-folder-tabs"><label class="ui-folder-tab"><input class="ui-radio" type="radio" name="catalog-panel" value="one" checked>Summary preview</label><label class="ui-folder-tab"><input class="ui-radio" type="radio" name="catalog-panel" value="two">Details preview</label></div><section class="ui-tab-panel" data-panel="one"><h3>Summary preview panel</h3><p>This is a native radio choice presented as a folder tab. Use Tab and arrow keys to choose a panel.</p></section><section class="ui-tab-panel" data-panel="two"><h3>Details preview panel</h3><p>The supplied detailed content appears through CSS state. The browser owns radio selection and keyboard behavior.</p></section></fieldset>
 ```
 
 ## Textarea
@@ -1289,12 +1289,12 @@ Purpose: Offer a bounded native single-choice scale.
 
 User intent: Choose a named rating with arrow keys and full-size labels.
 
-Classification: **native**. Native radio group with explicit number labels; no star-only names or automatic write.
+Classification: **native**. Native radio group with star labels and explicit one-to-five accessible names; selected and preceding stars fill through CSS. No automatic write.
 
-Public classes: `.ui-rating`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-rating`, `.ui-rating-choice`, `.ui-rating-star`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<fieldset class="ui-rating"><legend>Example rating · select 1 to 5</legend><label class="ui-toggle-button"><input class="ui-radio" type="radio" name="catalog-rating" value="1">1 of 5</label><label class="ui-toggle-button"><input class="ui-radio" type="radio" name="catalog-rating" value="2">2 of 5</label><label class="ui-toggle-button"><input class="ui-radio" type="radio" name="catalog-rating" value="3">3 of 5</label><label class="ui-toggle-button"><input class="ui-radio" type="radio" name="catalog-rating" value="4">4 of 5</label><label class="ui-toggle-button"><input class="ui-radio" type="radio" name="catalog-rating" value="5">5 of 5</label></fieldset>
+<fieldset class="ui-rating"><legend>Example rating · select 1 to 5 stars</legend><label class="ui-toggle-button ui-rating-choice" title="1 of 5 stars"><input class="ui-radio" type="radio" name="catalog-rating" value="1" aria-label="1 of 5 stars"><span class="ui-rating-star ui-rating-star--outline" aria-hidden="true">☆</span><span class="ui-rating-star ui-rating-star--filled" aria-hidden="true">★</span></label><label class="ui-toggle-button ui-rating-choice" title="2 of 5 stars"><input class="ui-radio" type="radio" name="catalog-rating" value="2" aria-label="2 of 5 stars"><span class="ui-rating-star ui-rating-star--outline" aria-hidden="true">☆</span><span class="ui-rating-star ui-rating-star--filled" aria-hidden="true">★</span></label><label class="ui-toggle-button ui-rating-choice" title="3 of 5 stars"><input class="ui-radio" type="radio" name="catalog-rating" value="3" aria-label="3 of 5 stars"><span class="ui-rating-star ui-rating-star--outline" aria-hidden="true">☆</span><span class="ui-rating-star ui-rating-star--filled" aria-hidden="true">★</span></label><label class="ui-toggle-button ui-rating-choice" title="4 of 5 stars"><input class="ui-radio" type="radio" name="catalog-rating" value="4" aria-label="4 of 5 stars"><span class="ui-rating-star ui-rating-star--outline" aria-hidden="true">☆</span><span class="ui-rating-star ui-rating-star--filled" aria-hidden="true">★</span></label><label class="ui-toggle-button ui-rating-choice" title="5 of 5 stars"><input class="ui-radio" type="radio" name="catalog-rating" value="5" aria-label="5 of 5 stars"><span class="ui-rating-star ui-rating-star--outline" aria-hidden="true">☆</span><span class="ui-rating-star ui-rating-star--filled" aria-hidden="true">★</span></label></fieldset>
 ```
 
 ## Visual stack
@@ -1331,12 +1331,12 @@ Purpose: Keep a state label and supplementary mark together.
 
 User intent: Read the explicit state without relying on hue.
 
-Classification: **presentation**. Written state remains authoritative; status truth comes from the application.
+Classification: **presentation**. Success, error, pending, information and neutral dots accompany written labels; status truth comes from the application.
 
-Public classes: `.ui-status-indicator`. Supporting classes in the exact composition are covered by the CSS ledger.
+Public classes: `.ui-status-indicator`, `.ui-tone--success`, `.ui-tone--error`, `.ui-tone--pending`, `.ui-tone--info`, `.ui-tone--neutral`. Supporting classes in the exact composition are covered by the CSS ledger.
 
 ```html
-<span class="ui-status-indicator">Ready · example state</span>
+<div class="ui-cluster"><span class="ui-status-indicator ui-tone--success">Success · example state</span><span class="ui-status-indicator ui-tone--error">Error · example state</span><span class="ui-status-indicator ui-tone--pending">Pending · example state</span><span class="ui-status-indicator ui-tone--info">Information · example state</span><span class="ui-status-indicator ui-tone--neutral">Neutral · example state</span></div>
 ```
 
 ## Steps

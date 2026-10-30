@@ -2506,6 +2506,22 @@ Selector: `.ui-rating`. Policy: Protected geometry or structural reset.
 | --- | --- | --- | --- | --- | --- |
 | padding | 0 | 0 | 0 | Offer a bounded native single-choice scale. Use the containing inset. | Choose a named rating with arrow keys and full-size labels. |
 
+## catalog-rating-star.1
+
+Selector: `.ui-rating-star`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 1.5rem | 1.5rem | 1.5rem | Use familiar star labels alongside real native rating choices. Make the star silhouette clearly distinguishable. | Choose the named one-to-five rating without interpreting unlabeled symbols. |
+
+## catalog-rating-star.2
+
+Selector: `.ui-rating-star`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| line-height | 1 | 1 | 1 | Use familiar star labels alongside real native rating choices. Keep the star within the protected choice target. | Choose the named one-to-five rating without interpreting unlabeled symbols. |
+
 ## catalog-disclosures.1
 
 Selector: `.ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace`. Policy: Density governed.
@@ -2600,7 +2616,7 @@ Selector: `.ui-alert`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border-inline-start | var(--ui-notice-stroke) solid var(--ui-border) | 4px solid var(--ui-border) | 3px solid var(--ui-border) | Make a condition and its next step readable together. Identify guidance with the neutral governed stroke. | Recognize an important message from its wording and structure. |
+| border-inline-start | var(--ui-notice-stroke) solid currentColor | 4px solid currentColor | 3px solid currentColor | Make a condition and its next step readable together. Retain an edge cue in addition to the labelled semantic fill. | Recognize an important message from its wording and structure. |
 
 ## catalog-empty.1
 
@@ -2656,7 +2672,7 @@ Selector: `.ui-avatar`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Show an identity thumbnail or initials. Keep the silhouette visible. | Associate a written person name with a compact identity mark. |
+| border | 1px solid var(--ui-accent) | 1px solid var(--ui-accent) | 1px solid var(--ui-accent) | Show an identity thumbnail or initials. Keep the silhouette continuous with the filled identity disc. | Associate a written person name with a compact identity mark. |
 
 ## catalog-badge.2
 
@@ -2690,6 +2706,14 @@ Selector: `.ui-badge`. Policy: Protected geometry or structural reset.
 | --- | --- | --- | --- | --- | --- |
 | font-size | 0.875rem | 0.875rem | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. |
 
+## catalog-badge.7
+
+Selector: `.ui-badge`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label. | Read a state or category without depending on a colored dot. |
+
 ## catalog-aura.1
 
 Selector: `.ui-aura`. Policy: Density governed.
@@ -2704,7 +2728,7 @@ Selector: `.ui-aura`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border | var(--ui-switch-stroke) solid transparent | 2px solid transparent | 1px solid transparent | Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment. | Locate the explicitly labelled example emphasis without confusing it with focus. |
+| border | var(--ui-notice-stroke) solid transparent | 4px solid transparent | 3px solid transparent | Demonstrate an optional accent frame without tinting a large work area. Keep the colored frame visible with the governed 4px normal / 3px compact notice stroke. | Locate the explicitly labelled example emphasis without confusing it with focus. |
 
 ## catalog-aura.3
 
@@ -2713,6 +2737,30 @@ Selector: `.ui-aura`. Policy: Density governed.
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
 | border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. |
+
+## catalog-badge-dot.2
+
+Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 0.625rem | 0.625rem | 0.625rem | Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root. | Recognize the supplementary accent and read the authoritative state label. |
+
+## catalog-badge-dot.3
+
+Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| aspect-ratio | 1 | 1 | 1 | Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular. | Recognize the supplementary accent and read the authoritative state label. |
+
+## catalog-badge-dot.5
+
+Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 50% | 50% | 50% | Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls. | Recognize the supplementary accent and read the authoritative state label. |
 
 ## catalog-aspect-ratio.1
 
@@ -2810,6 +2858,30 @@ Selector: `.ui-breadcrumb ol, .ui-pagination ol, .ui-tab-links, .ui-dock, .ui-me
 | --- | --- | --- | --- | --- | --- |
 | margin | 0 | 0 | 0 | Keep ordinary destinations in predictable source order. Avoid duplicate list gaps. | Navigate real links without fake application-menu semantics. |
 
+## catalog-breadcrumb-align.3
+
+Selector: `.ui-breadcrumb li`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Align parent links, path separators and the current location. Give the conventional slash separator breathing room. | Read the navigation path on a consistent vertical center line. |
+
+## catalog-breadcrumb-align.4
+
+Selector: `.ui-breadcrumb li`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Align parent links, path separators and the current location. Match the current level to the height of parent links. | Read the navigation path on a consistent vertical center line. |
+
+## catalog-breadcrumb-separator.2
+
+Selector: `.ui-path-separator`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Show a conventional path separator without adding a destination. Keep the slash smaller than destination labels. | Distinguish adjacent navigation levels visually. |
+
 ## catalog-pagination.2
 
 Selector: `.ui-pagination [aria-current="page"]`. Policy: Protected geometry or structural reset.
@@ -2850,29 +2922,125 @@ Selector: `.ui-tabs`. Policy: Protected geometry or structural reset.
 | --- | --- | --- | --- | --- | --- |
 | margin | 0 | 0 | 0 | Offer linked destinations or a native choice between preloaded panels. Remove default fieldset outer gaps. | Choose a labelled preview without a fake ARIA tab state. |
 
-## catalog-tab-links.1
+## catalog-folder-row.3
 
-Selector: `.ui-tab-links a`. Policy: Density governed.
-
-| Property | Source value | Normal | Compact | Purpose | User intent |
-| --- | --- | --- | --- | --- | --- |
-| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Distinguish destination links without fake tab roles. Inset the written label. | Follow a real destination using normal keyboard activation. |
-
-## catalog-tab-links.2
-
-Selector: `.ui-tab-links a`. Policy: Protected geometry or structural reset.
+Selector: `.ui-folder-tabs, .ui-tab-links`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border-block-end | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | 2px solid var(--ui-divider) | Distinguish destination links without fake tab roles. Identify the row of destinations. | Follow a real destination using normal keyboard activation. |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Arrange familiar folder tabs above their content. Leave a compact gap between folder silhouettes. | Find adjacent panel or page choices without visible radio circles. |
 
-## catalog-tab-links.3
+## catalog-folder-row.4
 
-Selector: `.ui-tab-links a`. Policy: Density governed.
+Selector: `.ui-folder-tabs, .ui-tab-links`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Distinguish destination links without fake tab roles. Protect native link activation. | Follow a real destination using normal keyboard activation. |
+| border-block-end | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Arrange familiar folder tabs above their content. Identify the common content edge. | Find adjacent panel or page choices without visible radio circles. |
+
+## catalog-folder-tab.4
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Give native choices and real links a familiar folder-tab shape. Preserve the governed pointer target floor. | Recognize labelled tabs while retaining their native interaction. |
+
+## catalog-folder-tab.5
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-control-pad-block) var(--ui-space-md) | 0.5rem 0.75rem | 0.25rem 0.5rem | Give native choices and real links a familiar folder-tab shape. Clear label text from the tab edges. | Recognize labelled tabs while retaining their native interaction. |
+
+## catalog-folder-tab.6
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Give native choices and real links a familiar folder-tab shape. Expose each folder-tab boundary. | Recognize labelled tabs while retaining their native interaction. |
+
+## catalog-folder-tab.7
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-start-width | 3px | 3px | 3px | Give native choices and real links a familiar folder-tab shape. Reserve the selected top edge without shifting geometry. | Recognize labelled tabs while retaining their native interaction. |
+
+## catalog-folder-tab.8
+
+Selector: `.ui-folder-tab, .ui-tab-links a`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-panel) var(--ui-radius-panel) 0 0 | 0.75rem 0.75rem 0 0 | 0.5rem 0.5rem 0 0 | Give native choices and real links a familiar folder-tab shape. Round the folder shoulders while joining the lower content edge. | Recognize labelled tabs while retaining their native interaction. |
+
+## catalog-folder-radio.2
+
+Selector: `.ui-folder-tab > .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 1px | 1px | 1px | Hide only the native radio paint while preserving its focus and group behavior. Retain a real focusable control without visible radio chrome. | Choose folders using native Tab, arrow keys, Space or the complete label. |
+
+## catalog-folder-radio.3
+
+Selector: `.ui-folder-tab > .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1px | 1px | 1px | Hide only the native radio paint while preserving its focus and group behavior. Keep the clipped control out of the visual silhouette. | Choose folders using native Tab, arrow keys, Space or the complete label. |
+
+## catalog-folder-radio.4
+
+Selector: `.ui-folder-tab > .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| clip-path | inset(50%) | inset(50%) | inset(50%) | Hide only the native radio paint while preserving its focus and group behavior. Clip the radio paint without display:none or removing native semantics. | Choose folders using native Tab, arrow keys, Space or the complete label. |
+
+## catalog-folder-radio.5
+
+Selector: `.ui-folder-tab > .ui-radio`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Hide only the native radio paint while preserving its focus and group behavior. Prevent native radio margins from influencing the tab shape. | Choose folders using native Tab, arrow keys, Space or the complete label. |
+
+## catalog-folder-focus.1
+
+Selector: `.ui-folder-tab:has(input:focus-visible)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | 3px solid var(--ui-focus) | Move the protected keyboard focus perimeter onto the full folder label. Use the protected focus perimeter around the visible target. | Find the native radio receiving the next keystroke. |
+
+## catalog-folder-focus.2
+
+Selector: `.ui-folder-tab:has(input:focus-visible)`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| outline-offset | 3px | 3px | 3px | Move the protected keyboard focus perimeter onto the full folder label. Separate focus from the folder border. | Find the native radio receiving the next keystroke. |
+
+## catalog-pagination-targets.4
+
+Selector: `.ui-pagination a, .ui-pagination [aria-current="page"]`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | var(--ui-control-min) | 2.75rem | 2.25rem | Give numerical pages comparable square targets. Give each number a reliable target width. | Select a numbered destination and identify the current position. |
+
+## catalog-pagination-targets.5
+
+Selector: `.ui-pagination a, .ui-pagination [aria-current="page"]`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | var(--ui-control-min) | 2.75rem | 2.25rem | Give numerical pages comparable square targets. Match the governed link target height. | Select a numbered destination and identify the current position. |
 
 ## catalog-nav-targets.3
 
@@ -3001,6 +3169,38 @@ Selector: `.ui-message`. Policy: Protected geometry or structural reset.
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
 | margin | 0 | 0 | 0 | Separate message content from its metadata. Let the chat gap own separation. | Read exact wording without depending on alignment. |
+
+## catalog-chat-turn.1
+
+Selector: `.ui-chat`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | fit-content | fit-content | fit-content | Bound each conversation turn while preserving source order. Let short messages use only their needed width. | Associate author and time with a readable message at either edge. |
+
+## catalog-chat-turn.2
+
+Selector: `.ui-chat`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | min(65ch, calc(100% - var(--ui-space-xl))) | min(65ch, calc(100% - 1.5rem)) | min(65ch, calc(100% - 1rem)) | Bound each conversation turn while preserving source order. Keep a visible reply gutter and a bounded reading measure. | Associate author and time with a readable message at either edge. |
+
+## catalog-chat-outgoing.1
+
+Selector: `.ui-chat--outgoing`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-inline-start | auto | auto | auto | Place the authored user message on the outgoing side. Align the outgoing turn to the logical end. | Distinguish the user turn through its written name and familiar alignment. |
+
+## catalog-chat-incoming.1
+
+Selector: `.ui-chat--incoming`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-inline-end | auto | auto | auto | Place the reply on the incoming side. Align the incoming turn to the logical start. | Follow the response beneath the message it answers. |
 
 ## catalog-item.2
 
@@ -3600,7 +3800,7 @@ Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| inline-size | 1.25rem | 1.25rem | 1.25rem | Supplement a written loading state with an optional motion cue. Use the existing native-mark scale. | Recognize ongoing work without motion being the only information. |
+| inline-size | 1.5rem | 1.5rem | 1.5rem | Supplement a written loading state with an optional motion cue. Make the loading ring large enough to resolve its moving segment. | Recognize ongoing work without motion being the only information. |
 
 ## catalog-spinner.3
 
@@ -3612,11 +3812,11 @@ Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
 
 ## catalog-spinner.4
 
-Selector: `.ui-spinner`. Policy: Density governed.
+Selector: `.ui-spinner`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border | var(--ui-switch-stroke) solid var(--ui-border) | 2px solid var(--ui-border) | 1px solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke. | Recognize ongoing work without motion being the only information. |
+| border | 3px solid var(--ui-border) | 3px solid var(--ui-border) | 3px solid var(--ui-border) | Supplement a written loading state with an optional motion cue. Protect a clearly visible three-pixel ring in normal and compact density. | Recognize ongoing work without motion being the only information. |
 
 ## catalog-spinner.6
 

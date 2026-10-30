@@ -47,7 +47,7 @@ function rule(id, selector, purpose, intent, check, declarations, media = null, 
 export const colorUse = {
   'on-primary': 'Keep the written principal-action label readable against the selected azure fill in both brightness modes.',
   interactive: 'Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces.',
-  'on-interactive': 'Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state.',
+  'on-interactive': 'Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills.',
   primary: 'Identify the main available action with a restrained accent; never use this fill for large decorative panels.', 'primary-hover': 'Confirm pointer targeting with a distinct action fill.', ink: 'Keep task names and body copy readable with neutral text on the active surfaces.', muted: 'Distinguish supporting information with neutral text while keeping ordinary text contrast.', canvas: 'Provide an achromatic gray page background so large areas do not compete with content or meaningful state cues.', surface: 'Separate reading and editing panels using a nearby opaque gray rather than a bright white or colored field.', subtle: 'Group secondary content with a nearby achromatic gray without implying an alarm or disabled state.', border: 'Identify editable-control boundaries with neutral non-text contrast.', divider: 'Separate passive groups with a quiet neutral line without making every row a control.', focus: 'Identify the keyboard destination with a separately governed outline and a neutral offset gap around the control.', danger: 'Mark a problem alongside explanatory text.', success: 'Reinforce confirmed completion alongside a word label.', 'success-bg': 'Group confirmed results on a neutral gray without making routine completion a colored field.', warning: 'Highlight a condition that needs attention without declaring failure.', 'warning-bg': 'Keep pending decisions on a neutral gray; their words and compact foreground cues carry the state.', disabled: 'Keep the reason for an unavailable action readable with neutral text.', 'disabled-bg': 'Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color.',
 };
 rule('tokens', ':root', 'Publish semantic values for consistent reuse.', 'Recognize the same meaning across screens.', 'tokens', [
@@ -168,6 +168,7 @@ export const contrastPairs = [
   ...['canvas','surface','subtle'].flatMap(bg=>[['ink',bg,4.5],['muted',bg,4.5],['interactive',bg,4.5],['danger',bg,4.5],['border',bg,3],['focus',bg,3]]),
   ['on-primary','primary',4.5],['on-primary','primary-hover',4.5],['success','success-bg',4.5],['warning','warning-bg',4.5],['disabled','disabled-bg',4.5],['surface','muted',3],
   ['on-interactive','interactive',3],
+  ...['interactive','success','danger','warning','muted'].map(fill=>['on-interactive',fill,4.5]),
 ];
 export const contrastExceptions = [{
   id: 'labelled-primary-button', selector: '.btn-primary', fills: ['primary','primary-hover'], backgrounds: ['canvas','surface','subtle'],

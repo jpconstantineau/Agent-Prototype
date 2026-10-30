@@ -12,6 +12,23 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Component presentation corrections after 9b3a9bf
+
+Maintainer review requested visible semantic colors, clearer identity and loading marks, conventional navigation and a readable conversation. The changes apply to the isolated reference catalog and its published contracts.
+
+| Feedback | Result and review intent |
+| --- | --- |
+| Colored alert, alert dialog and aura variants | Success/error/pending/information/neutral consume existing palette roles. Alerts use checked fills; dialogs combine a colored heading and edge with a neutral control plane; aura frames use the governed notice stroke. Focus remains reserved for keyboard focus. |
+| Empty-looking avatar, missing badge dot, one status color | Avatars are filled discs with contrasting initials and written names. Badges have a visible 10px dot; status indicators have 12px dots in all five semantic variants with written labels. Avatar color asserts no personal status. |
+| Breadcrumb alignment and separator; numerical pagination | Slash separators are small real aria-hidden text, centered with the levels and native targets. Numerical 1–3 links have descriptive names and real reference destinations; the current page is noninteractive and marked. |
+| Chat alignment, hue and response | End-aligned blue outgoing message followed by a start-aligned neutral reply, each with author and time, bounded lines and a mobile gutter. Source order remains conversation order. |
+| Loading visibility | Optional slow skeleton border-color animation, off initially, with written loading text and reduced-motion fallback. Spinner diameter grows to 24px and its 3px stroke is protected in compact density. |
+| Folder tabs and star labels | Real link destinations and native radio labels use folder silhouettes. Clipped radio paint retains native semantics, arrow selection and full-label protected focus. Native rating choices use accessible one-to-five names and cumulative outlined/filled real star glyphs. |
+
+Changed declaration IDs include catalog-alert.2–3 (edge/fill), catalog-avatar.6–7 (disc edge/fill), catalog-badge.1 (inline dot/text group), catalog-aura.2/.4 (stroke/accent frame), catalog-tab-links.1 (folder-link decoration), catalog-spinner.2/.4 (diameter/stroke), and catalog-status-dot.5 (variant color). Former catalog-tab-links.2–3 are superseded by the shared folder rules. New properties append to the existing component records; additional tone, dot, layout, folder-focus, rating and skeleton frame rules have dedicated catalog IDs. The on-interactive role explanation now covers checked fill text as well as the existing switch thumb; palette values stay unchanged.
+
+The registry contains 342 style/frame records, 1,075 declarations and 564 geometry entries. Contrast coverage expands from 100 to 120 requirements, enforcing 4.5:1 ink on every semantic fill in all four palettes. Review CSS-DECISIONS.md and BOX-MODEL-AUDIT.md for every exact property, purpose and user intent. Native interaction, actual computed color, eight appearance/density combinations, mobile bounds, star selection, protected folder focus, loading phases and reduced motion are covered in the Chrome checks; automation does not substitute for maintainer approval or physical assistive-technology review.
+
 ## Native component catalog after b274445
 
 The maintainer requested CSS-only counterparts from the shadcn/ui and daisyUI catalogs. A dated core inventory maps 66 and 68 names into 96 families, with 87 live native/presentation/alternative examples and nine excluded script-dependent engines. The generated coverage contract records exact classes/HTML and explicit behavior limits. New catalog-* rules/frames append after existing prose rules without changing earlier component objects or palette values.

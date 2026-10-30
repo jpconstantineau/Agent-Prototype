@@ -286,7 +286,7 @@
           "id": "tokens.31",
           "property": "--ui-on-interactive",
           "value": "#ffffff",
-          "purpose": "Publish semantic values for consistent reuse. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state.",
+          "purpose": "Publish semantic values for consistent reuse. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills.",
           "intent": "Recognize the same meaning across screens.",
           "check": "tokens",
           "status": "proposed"
@@ -577,7 +577,7 @@
           "id": "palette-dark-standard.21",
           "property": "--ui-on-interactive",
           "value": "#242424",
-          "purpose": "Apply the complete Dark · standard palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Dark · standard palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -778,7 +778,7 @@
           "id": "palette-light-distinct.21",
           "property": "--ui-on-interactive",
           "value": "#ffffff",
-          "purpose": "Apply the complete Light · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Light · distinct status colors palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -979,7 +979,7 @@
           "id": "palette-dark-distinct.21",
           "property": "--ui-on-interactive",
           "value": "#242424",
-          "purpose": "Apply the complete Dark · distinct status colors palette. Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. This value is independently contrast checked in this palette.",
+          "purpose": "Apply the complete Dark · distinct status colors palette. Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. This value is independently contrast checked in this palette.",
           "intent": "Read and operate the same components in the chosen appearance without losing semantic cues.",
           "check": "colors",
           "status": "proposed"
@@ -7491,6 +7491,108 @@
       ]
     },
     {
+      "id": "catalog-rating-star",
+      "selector": ".ui-rating-star",
+      "purpose": "Use familiar star labels alongside real native rating choices.",
+      "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-rating-star.1",
+          "property": "font-size",
+          "value": "1.5rem",
+          "purpose": "Use familiar star labels alongside real native rating choices. Make the star silhouette clearly distinguishable.",
+          "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-rating-star.2",
+          "property": "line-height",
+          "value": "1",
+          "purpose": "Use familiar star labels alongside real native rating choices. Keep the star within the protected choice target.",
+          "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-rating-star.3",
+          "property": "color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Use familiar star labels alongside real native rating choices. Use a checked accent on the neutral label surface.",
+          "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-rating-filled-rest",
+      "selector": ".ui-rating-star--filled",
+      "purpose": "Keep unchosen stars outlined until a native rating is selected.",
+      "intent": "Distinguish the selected cumulative rating through filled star shapes.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-rating-filled-rest.1",
+          "property": "display",
+          "value": "none",
+          "purpose": "Keep unchosen stars outlined until a native rating is selected. Hide only the decorative filled copy before selection.",
+          "intent": "Distinguish the selected cumulative rating through filled star shapes.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-rating-filled",
+      "selector": ".ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled",
+      "purpose": "Map native rating state to cumulative filled star labels.",
+      "intent": "Read the chosen number through star shape and the native checked mark.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-rating-filled.1",
+          "property": "display",
+          "value": "inline",
+          "purpose": "Map native rating state to cumulative filled star labels. Fill the selected star and all earlier stars.",
+          "intent": "Read the chosen number through star shape and the native checked mark.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-rating-outline",
+      "selector": ".ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline",
+      "purpose": "Avoid showing both decorative star copies for a selected value.",
+      "intent": "Inspect one clear star at each position in the scale.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-rating-outline.1",
+          "property": "display",
+          "value": "none",
+          "purpose": "Avoid showing both decorative star copies for a selected value. Hide only the redundant outlined decorative copy.",
+          "intent": "Inspect one clear star at each position in the scale.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "catalog-disclosures",
       "selector": ".ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace",
       "purpose": "Frame optional native disclosures.",
@@ -7746,8 +7848,8 @@
         {
           "id": "catalog-alert.2",
           "property": "border-inline-start",
-          "value": "var(--ui-notice-stroke) solid var(--ui-border)",
-          "purpose": "Make a condition and its next step readable together. Identify guidance with the neutral governed stroke.",
+          "value": "var(--ui-notice-stroke) solid currentColor",
+          "purpose": "Make a condition and its next step readable together. Retain an edge cue in addition to the labelled semantic fill.",
           "intent": "Recognize an important message from its wording and structure.",
           "check": "catalog",
           "status": "proposed"
@@ -7755,9 +7857,165 @@
         {
           "id": "catalog-alert.3",
           "property": "background-color",
-          "value": "var(--ui-subtle)",
-          "purpose": "Make a condition and its next step readable together. Keep routine guidance quiet.",
+          "value": "var(--ui-accent)",
+          "purpose": "Make a condition and its next step readable together. Color only the bounded alert with its labelled semantic accent.",
           "intent": "Recognize an important message from its wording and structure.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-alert.4",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Make a condition and its next step readable together. Use contrasting mode-dependent ink checked against all five accent fills.",
+          "intent": "Recognize an important message from its wording and structure.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-accent-default",
+      "selector": ".ui-alert, .ui-alert-dialog, .ui-aura, .ui-avatar, .ui-badge, .ui-status-indicator",
+      "purpose": "Share a small semantic accent vocabulary across component examples.",
+      "intent": "Recognize the written condition while colors follow the selected appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-accent-default.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-interactive)",
+          "purpose": "Share a small semantic accent vocabulary across component examples. Default the supplementary accent to the existing information blue.",
+          "intent": "Recognize the written condition while colors follow the selected appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-tone-success",
+      "selector": ".ui-tone--success",
+      "purpose": "Map the success variant to the governed semantic palette.",
+      "intent": "Recognize the labelled variant consistently in every appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-tone-success.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-success)",
+          "purpose": "Map the success variant to the governed semantic palette. Reuse the checked success role rather than introduce another color.",
+          "intent": "Recognize the labelled variant consistently in every appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-tone-error",
+      "selector": ".ui-tone--error",
+      "purpose": "Map the error variant to the governed semantic palette.",
+      "intent": "Recognize the labelled variant consistently in every appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-tone-error.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-danger)",
+          "purpose": "Map the error variant to the governed semantic palette. Reuse the checked danger role rather than introduce another color.",
+          "intent": "Recognize the labelled variant consistently in every appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-tone-pending",
+      "selector": ".ui-tone--pending",
+      "purpose": "Map the pending variant to the governed semantic palette.",
+      "intent": "Recognize the labelled variant consistently in every appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-tone-pending.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-warning)",
+          "purpose": "Map the pending variant to the governed semantic palette. Reuse the checked warning role rather than introduce another color.",
+          "intent": "Recognize the labelled variant consistently in every appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-tone-info",
+      "selector": ".ui-tone--info",
+      "purpose": "Map the info variant to the governed semantic palette.",
+      "intent": "Recognize the labelled variant consistently in every appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-tone-info.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-interactive)",
+          "purpose": "Map the info variant to the governed semantic palette. Reuse the checked interactive role rather than introduce another color.",
+          "intent": "Recognize the labelled variant consistently in every appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-tone-neutral",
+      "selector": ".ui-tone--neutral",
+      "purpose": "Map the neutral variant to the governed semantic palette.",
+      "intent": "Recognize the labelled variant consistently in every appearance.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-tone-neutral.1",
+          "property": "--ui-accent",
+          "value": "var(--ui-muted)",
+          "purpose": "Map the neutral variant to the governed semantic palette. Reuse the checked muted role rather than introduce another color.",
+          "intent": "Recognize the labelled variant consistently in every appearance.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-dialog-accent",
+      "selector": ".ui-alert-dialog",
+      "purpose": "Carry the same labelled alert accent into the native dialog.",
+      "intent": "Identify the condition while operating controls on their checked neutral surface.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-dialog-accent.1",
+          "property": "border-inline-start-color",
+          "value": "var(--ui-accent)",
+          "purpose": "Carry the same labelled alert accent into the native dialog. Match the dialog edge to its colored message heading.",
+          "intent": "Identify the condition while operating controls on their checked neutral surface.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -7860,8 +8118,8 @@
         {
           "id": "catalog-avatar.6",
           "property": "border",
-          "value": "1px solid var(--ui-border)",
-          "purpose": "Show an identity thumbnail or initials. Keep the silhouette visible.",
+          "value": "1px solid var(--ui-accent)",
+          "purpose": "Show an identity thumbnail or initials. Keep the silhouette continuous with the filled identity disc.",
           "intent": "Associate a written person name with a compact identity mark.",
           "check": "catalog",
           "status": "proposed"
@@ -7869,8 +8127,8 @@
         {
           "id": "catalog-avatar.7",
           "property": "background-color",
-          "value": "var(--ui-subtle)",
-          "purpose": "Show an identity thumbnail or initials. Use a checked neutral plane.",
+          "value": "var(--ui-accent)",
+          "purpose": "Show an identity thumbnail or initials. Fill the whole disc so initials do not float in an empty circle.",
           "intent": "Associate a written person name with a compact identity mark.",
           "check": "catalog",
           "status": "proposed"
@@ -7880,6 +8138,15 @@
           "property": "font-weight",
           "value": "600",
           "purpose": "Show an identity thumbnail or initials. Keep short initials identifiable.",
+          "intent": "Associate a written person name with a compact identity mark.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-avatar.9",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Show an identity thumbnail or initials. Keep initials readable against every supplied accent fill.",
           "intent": "Associate a written person name with a compact identity mark.",
           "check": "catalog",
           "status": "proposed"
@@ -7899,8 +8166,8 @@
         {
           "id": "catalog-badge.1",
           "property": "display",
-          "value": "inline-block",
-          "purpose": "Keep short metadata visibly grouped. Keep short metadata together.",
+          "value": "inline-flex",
+          "purpose": "Keep short metadata visibly grouped. Keep the colored dot and written metadata in one inline group.",
           "intent": "Read a state or category without depending on a colored dot.",
           "check": "catalog",
           "status": "proposed"
@@ -7940,6 +8207,24 @@
           "intent": "Read a state or category without depending on a colored dot.",
           "check": "catalog",
           "status": "proposed"
+        },
+        {
+          "id": "catalog-badge.6",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Keep short metadata visibly grouped. Center the dot on the label line.",
+          "intent": "Read a state or category without depending on a colored dot.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge.7",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label.",
+          "intent": "Read a state or category without depending on a colored dot.",
+          "check": "catalog",
+          "status": "proposed"
         }
       ]
     },
@@ -7965,8 +8250,8 @@
         {
           "id": "catalog-aura.2",
           "property": "border",
-          "value": "var(--ui-switch-stroke) solid transparent",
-          "purpose": "Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment.",
+          "value": "var(--ui-notice-stroke) solid transparent",
+          "purpose": "Demonstrate an optional accent frame without tinting a large work area. Keep the colored frame visible with the governed 4px normal / 3px compact notice stroke.",
           "intent": "Locate the explicitly labelled example emphasis without confusing it with focus.",
           "check": "catalog",
           "status": "proposed"
@@ -7983,9 +8268,75 @@
         {
           "id": "catalog-aura.4",
           "property": "background",
-          "value": "linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-interactive), var(--ui-divider), var(--ui-interactive)) border-box",
+          "value": "linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-accent), var(--ui-divider), var(--ui-accent)) border-box",
           "purpose": "Demonstrate an optional accent frame without tinting a large work area. Limit the static accent to the border while keeping the reading field neutral.",
           "intent": "Locate the explicitly labelled example emphasis without confusing it with focus.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-badge-dot",
+      "selector": ".ui-badge::before",
+      "purpose": "Expose a visible colored dot without replacing badge wording.",
+      "intent": "Recognize the supplementary accent and read the authoritative state label.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-dot.1",
+          "property": "content",
+          "value": "\"\"",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Create only a decorative mark; meaning stays in real text.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot.2",
+          "property": "inline-size",
+          "value": "0.625rem",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot.3",
+          "property": "aspect-ratio",
+          "value": "1",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot.4",
+          "property": "flex-shrink",
+          "value": "0",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Keep long labels from flattening the dot.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot.5",
+          "property": "border-radius",
+          "value": "50%",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-dot.6",
+          "property": "background-color",
+          "value": "var(--ui-accent)",
+          "purpose": "Expose a visible colored dot without replacing badge wording. Apply the labelled semantic accent.",
+          "intent": "Recognize the supplementary accent and read the authoritative state label.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -8253,6 +8604,84 @@
       ]
     },
     {
+      "id": "catalog-breadcrumb-align",
+      "selector": ".ui-breadcrumb li",
+      "purpose": "Align parent links, path separators and the current location.",
+      "intent": "Read the navigation path on a consistent vertical center line.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-breadcrumb-align.1",
+          "property": "display",
+          "value": "inline-flex",
+          "purpose": "Align parent links, path separators and the current location. Group each separator with its following level.",
+          "intent": "Read the navigation path on a consistent vertical center line.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-breadcrumb-align.2",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Align parent links, path separators and the current location. Align plain current text with the padded link targets.",
+          "intent": "Read the navigation path on a consistent vertical center line.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-breadcrumb-align.3",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Align parent links, path separators and the current location. Give the conventional slash separator breathing room.",
+          "intent": "Read the navigation path on a consistent vertical center line.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-breadcrumb-align.4",
+          "property": "min-block-size",
+          "value": "var(--ui-control-min)",
+          "purpose": "Align parent links, path separators and the current location. Match the current level to the height of parent links.",
+          "intent": "Read the navigation path on a consistent vertical center line.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-breadcrumb-separator",
+      "selector": ".ui-path-separator",
+      "purpose": "Show a conventional path separator without adding a destination.",
+      "intent": "Distinguish adjacent navigation levels visually.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-breadcrumb-separator.1",
+          "property": "color",
+          "value": "var(--ui-muted)",
+          "purpose": "Show a conventional path separator without adding a destination. Keep the small separator readable but subordinate.",
+          "intent": "Distinguish adjacent navigation levels visually.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-breadcrumb-separator.2",
+          "property": "font-size",
+          "value": "0.875rem",
+          "purpose": "Show a conventional path separator without adding a destination. Keep the slash smaller than destination labels.",
+          "intent": "Distinguish adjacent navigation levels visually.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "catalog-pagination",
       "selector": ".ui-pagination [aria-current=\"page\"]",
       "purpose": "Express the current position and available page destinations.",
@@ -8351,28 +8780,382 @@
       "declarations": [
         {
           "id": "catalog-tab-links.1",
-          "property": "padding",
-          "value": "var(--ui-space-sm)",
-          "purpose": "Distinguish destination links without fake tab roles. Inset the written label.",
+          "property": "text-decoration",
+          "value": "none",
+          "purpose": "Distinguish destination links without fake tab roles. Let the bordered folder silhouette identify the destination without an additional text underline.",
           "intent": "Follow a real destination using normal keyboard activation.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-row",
+      "selector": ".ui-folder-tabs, .ui-tab-links",
+      "purpose": "Arrange familiar folder tabs above their content.",
+      "intent": "Find adjacent panel or page choices without visible radio circles.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-row.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Arrange familiar folder tabs above their content. Keep choices in their source order.",
+          "intent": "Find adjacent panel or page choices without visible radio circles.",
           "check": "catalog",
           "status": "proposed"
         },
         {
-          "id": "catalog-tab-links.2",
+          "id": "catalog-folder-row.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Arrange familiar folder tabs above their content. Keep every tab reachable on narrow screens.",
+          "intent": "Find adjacent panel or page choices without visible radio circles.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-row.3",
+          "property": "gap",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Arrange familiar folder tabs above their content. Leave a compact gap between folder silhouettes.",
+          "intent": "Find adjacent panel or page choices without visible radio circles.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-row.4",
           "property": "border-block-end",
-          "value": "2px solid var(--ui-divider)",
-          "purpose": "Distinguish destination links without fake tab roles. Identify the row of destinations.",
-          "intent": "Follow a real destination using normal keyboard activation.",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Arrange familiar folder tabs above their content. Identify the common content edge.",
+          "intent": "Find adjacent panel or page choices without visible radio circles.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-tab",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
+      "purpose": "Give native choices and real links a familiar folder-tab shape.",
+      "intent": "Recognize labelled tabs while retaining their native interaction.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-tab.1",
+          "property": "position",
+          "value": "relative",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Contain the visually clipped native radio.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
           "check": "catalog",
           "status": "proposed"
         },
         {
-          "id": "catalog-tab-links.3",
+          "id": "catalog-folder-tab.2",
+          "property": "display",
+          "value": "inline-flex",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Center the label inside its target.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.3",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Keep all tab labels vertically aligned.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.4",
           "property": "min-block-size",
           "value": "var(--ui-control-min)",
-          "purpose": "Distinguish destination links without fake tab roles. Protect native link activation.",
-          "intent": "Follow a real destination using normal keyboard activation.",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Preserve the governed pointer target floor.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.5",
+          "property": "padding",
+          "value": "var(--ui-control-pad-block) var(--ui-space-md)",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Clear label text from the tab edges.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.6",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Expose each folder-tab boundary.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.7",
+          "property": "border-block-start-width",
+          "value": "3px",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Reserve the selected top edge without shifting geometry.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.8",
+          "property": "border-radius",
+          "value": "var(--ui-radius-panel) var(--ui-radius-panel) 0 0",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Round the folder shoulders while joining the lower content edge.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.9",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Set unselected folders behind the active reading plane.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.10",
+          "property": "color",
+          "value": "var(--ui-ink)",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Use checked reading ink for all choices.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-tab.11",
+          "property": "cursor",
+          "value": "pointer",
+          "purpose": "Give native choices and real links a familiar folder-tab shape. Identify the complete label as the native radio target.",
+          "intent": "Recognize labelled tabs while retaining their native interaction.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-radio",
+      "selector": ".ui-folder-tab > .ui-radio",
+      "purpose": "Hide only the native radio paint while preserving its focus and group behavior.",
+      "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-radio.1",
+          "property": "position",
+          "value": "absolute",
+          "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Remove the tiny visual control from folder-label layout.",
+          "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-radio.2",
+          "property": "inline-size",
+          "value": "1px",
+          "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Retain a real focusable control without visible radio chrome.",
+          "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-radio.3",
+          "property": "block-size",
+          "value": "1px",
+          "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Keep the clipped control out of the visual silhouette.",
+          "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-radio.4",
+          "property": "clip-path",
+          "value": "inset(50%)",
+          "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Clip the radio paint without display:none or removing native semantics.",
+          "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-radio.5",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Prevent native radio margins from influencing the tab shape.",
+          "intent": "Choose folders using native Tab, arrow keys, Space or the complete label.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-selected",
+      "selector": ".ui-folder-tab:has(input:checked), .ui-tab-links a[aria-current=\"page\"]",
+      "purpose": "Identify the selected folder through shape and weight as well as color.",
+      "intent": "Locate the current panel or destination before reading its content.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-selected.1",
+          "property": "background-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Identify the selected folder through shape and weight as well as color. Bring the selected folder onto the content plane.",
+          "intent": "Locate the current panel or destination before reading its content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-selected.2",
+          "property": "border-block-start-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Identify the selected folder through shape and weight as well as color. Mark the active folder with a checked accent edge.",
+          "intent": "Locate the current panel or destination before reading its content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-selected.3",
+          "property": "border-block-end-color",
+          "value": "var(--ui-surface)",
+          "purpose": "Identify the selected folder through shape and weight as well as color. Join the active folder visually to the content plane.",
+          "intent": "Locate the current panel or destination before reading its content.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-selected.4",
+          "property": "font-weight",
+          "value": "700",
+          "purpose": "Identify the selected folder through shape and weight as well as color. Identify selection through text emphasis beyond hue.",
+          "intent": "Locate the current panel or destination before reading its content.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-focus",
+      "selector": ".ui-folder-tab:has(input:focus-visible)",
+      "purpose": "Move the protected keyboard focus perimeter onto the full folder label.",
+      "intent": "Find the native radio receiving the next keystroke.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-focus.1",
+          "property": "outline",
+          "value": "3px solid var(--ui-focus)",
+          "purpose": "Move the protected keyboard focus perimeter onto the full folder label. Use the protected focus perimeter around the visible target.",
+          "intent": "Find the native radio receiving the next keystroke.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-folder-focus.2",
+          "property": "outline-offset",
+          "value": "3px",
+          "purpose": "Move the protected keyboard focus perimeter onto the full folder label. Separate focus from the folder border.",
+          "intent": "Find the native radio receiving the next keystroke.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-folder-forced",
+      "selector": ".ui-folder-tab:has(input:focus-visible)",
+      "purpose": "Honor system focus for the visually clipped radio.",
+      "intent": "Locate the folder choice in the requested high-contrast palette.",
+      "check": "catalog",
+      "media": "(forced-colors: active)",
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-folder-forced.1",
+          "property": "outline-color",
+          "value": "Highlight",
+          "purpose": "Honor system focus for the visually clipped radio. Use the platform focus role.",
+          "intent": "Locate the folder choice in the requested high-contrast palette.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-pagination-targets",
+      "selector": ".ui-pagination a, .ui-pagination [aria-current=\"page\"]",
+      "purpose": "Give numerical pages comparable square targets.",
+      "intent": "Select a numbered destination and identify the current position.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-pagination-targets.1",
+          "property": "display",
+          "value": "inline-flex",
+          "purpose": "Give numerical pages comparable square targets. Allow dimensions on the noninteractive current index too.",
+          "intent": "Select a numbered destination and identify the current position.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-pagination-targets.2",
+          "property": "align-items",
+          "value": "center",
+          "purpose": "Give numerical pages comparable square targets. Align current and linked page numbers.",
+          "intent": "Select a numbered destination and identify the current position.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-pagination-targets.3",
+          "property": "justify-content",
+          "value": "center",
+          "purpose": "Give numerical pages comparable square targets. Center each short page number.",
+          "intent": "Select a numbered destination and identify the current position.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-pagination-targets.4",
+          "property": "min-inline-size",
+          "value": "var(--ui-control-min)",
+          "purpose": "Give numerical pages comparable square targets. Give each number a reliable target width.",
+          "intent": "Select a numbered destination and identify the current position.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-pagination-targets.5",
+          "property": "min-block-size",
+          "value": "var(--ui-control-min)",
+          "purpose": "Give numerical pages comparable square targets. Match the governed link target height.",
+          "intent": "Select a numbered destination and identify the current position.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -8739,6 +9522,117 @@
           "value": "anywhere",
           "purpose": "Separate message content from its metadata. Keep long message tokens bounded.",
           "intent": "Read exact wording without depending on alignment.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-chat-turn",
+      "selector": ".ui-chat",
+      "purpose": "Bound each conversation turn while preserving source order.",
+      "intent": "Associate author and time with a readable message at either edge.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-chat-turn.1",
+          "property": "inline-size",
+          "value": "fit-content",
+          "purpose": "Bound each conversation turn while preserving source order. Let short messages use only their needed width.",
+          "intent": "Associate author and time with a readable message at either edge.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-chat-turn.2",
+          "property": "max-inline-size",
+          "value": "min(65ch, calc(100% - var(--ui-space-xl)))",
+          "purpose": "Bound each conversation turn while preserving source order. Keep a visible reply gutter and a bounded reading measure.",
+          "intent": "Associate author and time with a readable message at either edge.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-chat-turn.3",
+          "property": "overflow-wrap",
+          "value": "anywhere",
+          "purpose": "Bound each conversation turn while preserving source order. Wrap long names and timestamps without widening the page.",
+          "intent": "Associate author and time with a readable message at either edge.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-chat-outgoing",
+      "selector": ".ui-chat--outgoing",
+      "purpose": "Place the authored user message on the outgoing side.",
+      "intent": "Distinguish the user turn through its written name and familiar alignment.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-chat-outgoing.1",
+          "property": "margin-inline-start",
+          "value": "auto",
+          "purpose": "Place the authored user message on the outgoing side. Align the outgoing turn to the logical end.",
+          "intent": "Distinguish the user turn through its written name and familiar alignment.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-chat-incoming",
+      "selector": ".ui-chat--incoming",
+      "purpose": "Place the reply on the incoming side.",
+      "intent": "Follow the response beneath the message it answers.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-chat-incoming.1",
+          "property": "margin-inline-end",
+          "value": "auto",
+          "purpose": "Place the reply on the incoming side. Align the incoming turn to the logical start.",
+          "intent": "Follow the response beneath the message it answers.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-chat-outgoing-color",
+      "selector": ".ui-chat--outgoing .ui-bubble",
+      "purpose": "Give the outgoing bubble a checked blue identity cue.",
+      "intent": "Distinguish the two authors without relying on alignment alone.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-chat-outgoing-color.1",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Give the outgoing bubble a checked blue identity cue. Use the existing mode-specific information blue.",
+          "intent": "Distinguish the two authors without relying on alignment alone.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-chat-outgoing-color.2",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Give the outgoing bubble a checked blue identity cue. Use checked contrasting message ink.",
+          "intent": "Distinguish the two authors without relying on alignment alone.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -10086,8 +10980,8 @@
         {
           "id": "catalog-spinner.2",
           "property": "inline-size",
-          "value": "1.25rem",
-          "purpose": "Supplement a written loading state with an optional motion cue. Use the existing native-mark scale.",
+          "value": "1.5rem",
+          "purpose": "Supplement a written loading state with an optional motion cue. Make the loading ring large enough to resolve its moving segment.",
           "intent": "Recognize ongoing work without motion being the only information.",
           "check": "catalog",
           "status": "proposed"
@@ -10104,8 +10998,8 @@
         {
           "id": "catalog-spinner.4",
           "property": "border",
-          "value": "var(--ui-switch-stroke) solid var(--ui-border)",
-          "purpose": "Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke.",
+          "value": "3px solid var(--ui-border)",
+          "purpose": "Supplement a written loading state with an optional motion cue. Protect a clearly visible three-pixel ring in normal and compact density.",
           "intent": "Recognize ongoing work without motion being the only information.",
           "check": "catalog",
           "status": "proposed"
@@ -10146,6 +11040,27 @@
           "value": "ui-catalog-spin 1s linear infinite",
           "purpose": "Enable only the explicitly requested loading preview. Rotate the supplementary cue only after native opt-in.",
           "intent": "Inspect motion with written state and an immediate stop control.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-skeleton-enabled",
+      "selector": ".ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton",
+      "purpose": "Enable only the requested supplementary loading border.",
+      "intent": "Recognize loading without depending on animation or losing its written label.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-skeleton-enabled.1",
+          "property": "animation",
+          "value": "ui-catalog-loading-border 2s ease-in-out infinite alternate",
+          "purpose": "Enable only the requested supplementary loading border. Slowly vary border emphasis without moving content or flashing the fill.",
+          "intent": "Recognize loading without depending on animation or losing its written label.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -10315,7 +11230,7 @@
     },
     {
       "id": "catalog-motion-reduced",
-      "selector": ".ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span",
+      "selector": ".ui-motion-preview:has(.ui-motion-enable:checked) .ui-spinner, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-skeleton, .ui-motion-preview:has(.ui-motion-enable:checked) .ui-text-rotate > span",
       "purpose": "Honor reduced motion even when the preview is selected.",
       "intent": "Read the same complete labels without authored animation.",
       "check": "catalog",
@@ -10417,6 +11332,50 @@
         }
       ],
       "keyframes": "ui-catalog-word"
+    },
+    {
+      "id": "catalog-loading-border-start",
+      "selector": "from",
+      "purpose": "Define only the explicitly enabled supplementary animation.",
+      "intent": "Inspect visual motion without changing essential content or data.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-loading-border-start.1",
+          "property": "border-color",
+          "value": "var(--ui-border)",
+          "purpose": "Define only the explicitly enabled supplementary animation. Start with the checked static placeholder perimeter.",
+          "intent": "Inspect visual motion without changing essential content or data.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ],
+      "keyframes": "ui-catalog-loading-border"
+    },
+    {
+      "id": "catalog-loading-border-end",
+      "selector": "to",
+      "purpose": "Define only the explicitly enabled supplementary animation.",
+      "intent": "Inspect visual motion without changing essential content or data.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-loading-border-end.1",
+          "property": "border-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Define only the explicitly enabled supplementary animation. End at the checked information-blue perimeter; shape and wording remain static.",
+          "intent": "Inspect visual motion without changing essential content or data.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ],
+      "keyframes": "ui-catalog-loading-border"
     },
     {
       "id": "catalog-table",
@@ -11700,8 +12659,17 @@
         {
           "id": "catalog-status-dot.5",
           "property": "background-color",
-          "value": "var(--ui-success)",
-          "purpose": "Supplement written state with a nonessential mark. Use the checked state color as a supplementary cue.",
+          "value": "var(--ui-accent)",
+          "purpose": "Supplement written state with a nonessential mark. Use the labelled semantic state color as a supplementary cue.",
+          "intent": "Recognize a compact state without relying on hue.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-status-dot.6",
+          "property": "flex-shrink",
+          "value": "0",
+          "purpose": "Supplement written state with a nonessential mark. Keep long state labels from flattening the dot.",
           "intent": "Recognize a compact state without relying on hue.",
           "check": "catalog",
           "status": "proposed"
@@ -12944,6 +13912,31 @@
       "on-interactive",
       "interactive",
       3
+    ],
+    [
+      "on-interactive",
+      "interactive",
+      4.5
+    ],
+    [
+      "on-interactive",
+      "success",
+      4.5
+    ],
+    [
+      "on-interactive",
+      "danger",
+      4.5
+    ],
+    [
+      "on-interactive",
+      "warning",
+      4.5
+    ],
+    [
+      "on-interactive",
+      "muted",
+      4.5
     ]
   ],
   "contrastExceptions": [
@@ -17015,6 +18008,30 @@
       "intent": "Choose a named rating with arrow keys and full-size labels."
     },
     {
+      "id": "catalog-rating-star.1",
+      "selector": ".ui-rating-star",
+      "condition": null,
+      "property": "font-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use familiar star labels alongside real native rating choices. Make the star silhouette clearly distinguishable.",
+      "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols."
+    },
+    {
+      "id": "catalog-rating-star.2",
+      "selector": ".ui-rating-star",
+      "condition": null,
+      "property": "line-height",
+      "value": "1",
+      "normal": "1",
+      "compact": "1",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use familiar star labels alongside real native rating choices. Keep the star within the protected choice target.",
+      "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols."
+    },
+    {
       "id": "catalog-disclosures.1",
       "selector": ".ui-accordion, .ui-collapse, .ui-sidebar, .ui-trace",
       "condition": null,
@@ -17151,11 +18168,11 @@
       "selector": ".ui-alert",
       "condition": null,
       "property": "border-inline-start",
-      "value": "var(--ui-notice-stroke) solid var(--ui-border)",
-      "normal": "4px solid var(--ui-border)",
-      "compact": "3px solid var(--ui-border)",
+      "value": "var(--ui-notice-stroke) solid currentColor",
+      "normal": "4px solid currentColor",
+      "compact": "3px solid currentColor",
       "behavior": "Density governed",
-      "purpose": "Make a condition and its next step readable together. Identify guidance with the neutral governed stroke.",
+      "purpose": "Make a condition and its next step readable together. Retain an edge cue in addition to the labelled semantic fill.",
       "intent": "Recognize an important message from its wording and structure."
     },
     {
@@ -17235,11 +18252,11 @@
       "selector": ".ui-avatar",
       "condition": null,
       "property": "border",
-      "value": "1px solid var(--ui-border)",
-      "normal": "1px solid var(--ui-border)",
-      "compact": "1px solid var(--ui-border)",
+      "value": "1px solid var(--ui-accent)",
+      "normal": "1px solid var(--ui-accent)",
+      "compact": "1px solid var(--ui-accent)",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Show an identity thumbnail or initials. Keep the silhouette visible.",
+      "purpose": "Show an identity thumbnail or initials. Keep the silhouette continuous with the filled identity disc.",
       "intent": "Associate a written person name with a compact identity mark."
     },
     {
@@ -17291,6 +18308,18 @@
       "intent": "Read a state or category without depending on a colored dot."
     },
     {
+      "id": "catalog-badge.7",
+      "selector": ".ui-badge",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label.",
+      "intent": "Read a state or category without depending on a colored dot."
+    },
+    {
       "id": "catalog-aura.1",
       "selector": ".ui-aura",
       "condition": null,
@@ -17307,11 +18336,11 @@
       "selector": ".ui-aura",
       "condition": null,
       "property": "border",
-      "value": "var(--ui-switch-stroke) solid transparent",
-      "normal": "2px solid transparent",
-      "compact": "1px solid transparent",
+      "value": "var(--ui-notice-stroke) solid transparent",
+      "normal": "4px solid transparent",
+      "compact": "3px solid transparent",
       "behavior": "Density governed",
-      "purpose": "Demonstrate an optional accent frame without tinting a large work area. Reserve a governed area for the optional border treatment.",
+      "purpose": "Demonstrate an optional accent frame without tinting a large work area. Keep the colored frame visible with the governed 4px normal / 3px compact notice stroke.",
       "intent": "Locate the explicitly labelled example emphasis without confusing it with focus."
     },
     {
@@ -17325,6 +18354,42 @@
       "behavior": "Density governed",
       "purpose": "Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group.",
       "intent": "Locate the explicitly labelled example emphasis without confusing it with focus."
+    },
+    {
+      "id": "catalog-badge-dot.2",
+      "selector": ".ui-badge::before",
+      "condition": null,
+      "property": "inline-size",
+      "value": "0.625rem",
+      "normal": "0.625rem",
+      "compact": "0.625rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root.",
+      "intent": "Recognize the supplementary accent and read the authoritative state label."
+    },
+    {
+      "id": "catalog-badge-dot.3",
+      "selector": ".ui-badge::before",
+      "condition": null,
+      "property": "aspect-ratio",
+      "value": "1",
+      "normal": "1",
+      "compact": "1",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular.",
+      "intent": "Recognize the supplementary accent and read the authoritative state label."
+    },
+    {
+      "id": "catalog-badge-dot.5",
+      "selector": ".ui-badge::before",
+      "condition": null,
+      "property": "border-radius",
+      "value": "50%",
+      "normal": "50%",
+      "compact": "50%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls.",
+      "intent": "Recognize the supplementary accent and read the authoritative state label."
     },
     {
       "id": "catalog-aspect-ratio.1",
@@ -17471,6 +18536,42 @@
       "intent": "Navigate real links without fake application-menu semantics."
     },
     {
+      "id": "catalog-breadcrumb-align.3",
+      "selector": ".ui-breadcrumb li",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Align parent links, path separators and the current location. Give the conventional slash separator breathing room.",
+      "intent": "Read the navigation path on a consistent vertical center line."
+    },
+    {
+      "id": "catalog-breadcrumb-align.4",
+      "selector": ".ui-breadcrumb li",
+      "condition": null,
+      "property": "min-block-size",
+      "value": "var(--ui-control-min)",
+      "normal": "2.75rem",
+      "compact": "2.25rem",
+      "behavior": "Density governed",
+      "purpose": "Align parent links, path separators and the current location. Match the current level to the height of parent links.",
+      "intent": "Read the navigation path on a consistent vertical center line."
+    },
+    {
+      "id": "catalog-breadcrumb-separator.2",
+      "selector": ".ui-path-separator",
+      "condition": null,
+      "property": "font-size",
+      "value": "0.875rem",
+      "normal": "0.875rem",
+      "compact": "0.875rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Show a conventional path separator without adding a destination. Keep the slash smaller than destination labels.",
+      "intent": "Distinguish adjacent navigation levels visually."
+    },
+    {
       "id": "catalog-pagination.2",
       "selector": ".ui-pagination [aria-current=\"page\"]",
       "condition": null,
@@ -17531,40 +18632,184 @@
       "intent": "Choose a labelled preview without a fake ARIA tab state."
     },
     {
-      "id": "catalog-tab-links.1",
-      "selector": ".ui-tab-links a",
+      "id": "catalog-folder-row.3",
+      "selector": ".ui-folder-tabs, .ui-tab-links",
       "condition": null,
-      "property": "padding",
-      "value": "var(--ui-space-sm)",
-      "normal": "0.5rem",
-      "compact": "0.375rem",
+      "property": "gap",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
       "behavior": "Density governed",
-      "purpose": "Distinguish destination links without fake tab roles. Inset the written label.",
-      "intent": "Follow a real destination using normal keyboard activation."
+      "purpose": "Arrange familiar folder tabs above their content. Leave a compact gap between folder silhouettes.",
+      "intent": "Find adjacent panel or page choices without visible radio circles."
     },
     {
-      "id": "catalog-tab-links.2",
-      "selector": ".ui-tab-links a",
+      "id": "catalog-folder-row.4",
+      "selector": ".ui-folder-tabs, .ui-tab-links",
       "condition": null,
       "property": "border-block-end",
-      "value": "2px solid var(--ui-divider)",
-      "normal": "2px solid var(--ui-divider)",
-      "compact": "2px solid var(--ui-divider)",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Distinguish destination links without fake tab roles. Identify the row of destinations.",
-      "intent": "Follow a real destination using normal keyboard activation."
+      "purpose": "Arrange familiar folder tabs above their content. Identify the common content edge.",
+      "intent": "Find adjacent panel or page choices without visible radio circles."
     },
     {
-      "id": "catalog-tab-links.3",
-      "selector": ".ui-tab-links a",
+      "id": "catalog-folder-tab.4",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
       "condition": null,
       "property": "min-block-size",
       "value": "var(--ui-control-min)",
       "normal": "2.75rem",
       "compact": "2.25rem",
       "behavior": "Density governed",
-      "purpose": "Distinguish destination links without fake tab roles. Protect native link activation.",
-      "intent": "Follow a real destination using normal keyboard activation."
+      "purpose": "Give native choices and real links a familiar folder-tab shape. Preserve the governed pointer target floor.",
+      "intent": "Recognize labelled tabs while retaining their native interaction."
+    },
+    {
+      "id": "catalog-folder-tab.5",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
+      "condition": null,
+      "property": "padding",
+      "value": "var(--ui-control-pad-block) var(--ui-space-md)",
+      "normal": "0.5rem 0.75rem",
+      "compact": "0.25rem 0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Give native choices and real links a familiar folder-tab shape. Clear label text from the tab edges.",
+      "intent": "Recognize labelled tabs while retaining their native interaction."
+    },
+    {
+      "id": "catalog-folder-tab.6",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
+      "condition": null,
+      "property": "border",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give native choices and real links a familiar folder-tab shape. Expose each folder-tab boundary.",
+      "intent": "Recognize labelled tabs while retaining their native interaction."
+    },
+    {
+      "id": "catalog-folder-tab.7",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
+      "condition": null,
+      "property": "border-block-start-width",
+      "value": "3px",
+      "normal": "3px",
+      "compact": "3px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give native choices and real links a familiar folder-tab shape. Reserve the selected top edge without shifting geometry.",
+      "intent": "Recognize labelled tabs while retaining their native interaction."
+    },
+    {
+      "id": "catalog-folder-tab.8",
+      "selector": ".ui-folder-tab, .ui-tab-links a",
+      "condition": null,
+      "property": "border-radius",
+      "value": "var(--ui-radius-panel) var(--ui-radius-panel) 0 0",
+      "normal": "0.75rem 0.75rem 0 0",
+      "compact": "0.5rem 0.5rem 0 0",
+      "behavior": "Density governed",
+      "purpose": "Give native choices and real links a familiar folder-tab shape. Round the folder shoulders while joining the lower content edge.",
+      "intent": "Recognize labelled tabs while retaining their native interaction."
+    },
+    {
+      "id": "catalog-folder-radio.2",
+      "selector": ".ui-folder-tab > .ui-radio",
+      "condition": null,
+      "property": "inline-size",
+      "value": "1px",
+      "normal": "1px",
+      "compact": "1px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Retain a real focusable control without visible radio chrome.",
+      "intent": "Choose folders using native Tab, arrow keys, Space or the complete label."
+    },
+    {
+      "id": "catalog-folder-radio.3",
+      "selector": ".ui-folder-tab > .ui-radio",
+      "condition": null,
+      "property": "block-size",
+      "value": "1px",
+      "normal": "1px",
+      "compact": "1px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Keep the clipped control out of the visual silhouette.",
+      "intent": "Choose folders using native Tab, arrow keys, Space or the complete label."
+    },
+    {
+      "id": "catalog-folder-radio.4",
+      "selector": ".ui-folder-tab > .ui-radio",
+      "condition": null,
+      "property": "clip-path",
+      "value": "inset(50%)",
+      "normal": "inset(50%)",
+      "compact": "inset(50%)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Clip the radio paint without display:none or removing native semantics.",
+      "intent": "Choose folders using native Tab, arrow keys, Space or the complete label."
+    },
+    {
+      "id": "catalog-folder-radio.5",
+      "selector": ".ui-folder-tab > .ui-radio",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Hide only the native radio paint while preserving its focus and group behavior. Prevent native radio margins from influencing the tab shape.",
+      "intent": "Choose folders using native Tab, arrow keys, Space or the complete label."
+    },
+    {
+      "id": "catalog-folder-focus.1",
+      "selector": ".ui-folder-tab:has(input:focus-visible)",
+      "condition": null,
+      "property": "outline",
+      "value": "3px solid var(--ui-focus)",
+      "normal": "3px solid var(--ui-focus)",
+      "compact": "3px solid var(--ui-focus)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Move the protected keyboard focus perimeter onto the full folder label. Use the protected focus perimeter around the visible target.",
+      "intent": "Find the native radio receiving the next keystroke."
+    },
+    {
+      "id": "catalog-folder-focus.2",
+      "selector": ".ui-folder-tab:has(input:focus-visible)",
+      "condition": null,
+      "property": "outline-offset",
+      "value": "3px",
+      "normal": "3px",
+      "compact": "3px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Move the protected keyboard focus perimeter onto the full folder label. Separate focus from the folder border.",
+      "intent": "Find the native radio receiving the next keystroke."
+    },
+    {
+      "id": "catalog-pagination-targets.4",
+      "selector": ".ui-pagination a, .ui-pagination [aria-current=\"page\"]",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "var(--ui-control-min)",
+      "normal": "2.75rem",
+      "compact": "2.25rem",
+      "behavior": "Density governed",
+      "purpose": "Give numerical pages comparable square targets. Give each number a reliable target width.",
+      "intent": "Select a numbered destination and identify the current position."
+    },
+    {
+      "id": "catalog-pagination-targets.5",
+      "selector": ".ui-pagination a, .ui-pagination [aria-current=\"page\"]",
+      "condition": null,
+      "property": "min-block-size",
+      "value": "var(--ui-control-min)",
+      "normal": "2.75rem",
+      "compact": "2.25rem",
+      "behavior": "Density governed",
+      "purpose": "Give numerical pages comparable square targets. Match the governed link target height.",
+      "intent": "Select a numbered destination and identify the current position."
     },
     {
       "id": "catalog-nav-targets.3",
@@ -17757,6 +19002,54 @@
       "behavior": "Protected geometry or structural reset",
       "purpose": "Separate message content from its metadata. Let the chat gap own separation.",
       "intent": "Read exact wording without depending on alignment."
+    },
+    {
+      "id": "catalog-chat-turn.1",
+      "selector": ".ui-chat",
+      "condition": null,
+      "property": "inline-size",
+      "value": "fit-content",
+      "normal": "fit-content",
+      "compact": "fit-content",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Bound each conversation turn while preserving source order. Let short messages use only their needed width.",
+      "intent": "Associate author and time with a readable message at either edge."
+    },
+    {
+      "id": "catalog-chat-turn.2",
+      "selector": ".ui-chat",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "min(65ch, calc(100% - var(--ui-space-xl)))",
+      "normal": "min(65ch, calc(100% - 1.5rem))",
+      "compact": "min(65ch, calc(100% - 1rem))",
+      "behavior": "Density governed",
+      "purpose": "Bound each conversation turn while preserving source order. Keep a visible reply gutter and a bounded reading measure.",
+      "intent": "Associate author and time with a readable message at either edge."
+    },
+    {
+      "id": "catalog-chat-outgoing.1",
+      "selector": ".ui-chat--outgoing",
+      "condition": null,
+      "property": "margin-inline-start",
+      "value": "auto",
+      "normal": "auto",
+      "compact": "auto",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place the authored user message on the outgoing side. Align the outgoing turn to the logical end.",
+      "intent": "Distinguish the user turn through its written name and familiar alignment."
+    },
+    {
+      "id": "catalog-chat-incoming.1",
+      "selector": ".ui-chat--incoming",
+      "condition": null,
+      "property": "margin-inline-end",
+      "value": "auto",
+      "normal": "auto",
+      "compact": "auto",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place the reply on the incoming side. Align the incoming turn to the logical start.",
+      "intent": "Follow the response beneath the message it answers."
     },
     {
       "id": "catalog-item.2",
@@ -18651,11 +19944,11 @@
       "selector": ".ui-spinner",
       "condition": null,
       "property": "inline-size",
-      "value": "1.25rem",
-      "normal": "1.25rem",
-      "compact": "1.25rem",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Supplement a written loading state with an optional motion cue. Use the existing native-mark scale.",
+      "purpose": "Supplement a written loading state with an optional motion cue. Make the loading ring large enough to resolve its moving segment.",
       "intent": "Recognize ongoing work without motion being the only information."
     },
     {
@@ -18675,11 +19968,11 @@
       "selector": ".ui-spinner",
       "condition": null,
       "property": "border",
-      "value": "var(--ui-switch-stroke) solid var(--ui-border)",
-      "normal": "2px solid var(--ui-border)",
-      "compact": "1px solid var(--ui-border)",
-      "behavior": "Density governed",
-      "purpose": "Supplement a written loading state with an optional motion cue. Keep the static perimeter crisp with the governed 2px normal / 1px compact stroke.",
+      "value": "3px solid var(--ui-border)",
+      "normal": "3px solid var(--ui-border)",
+      "compact": "3px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Supplement a written loading state with an optional motion cue. Protect a clearly visible three-pixel ring in normal and compact density.",
       "intent": "Recognize ongoing work without motion being the only information."
     },
     {

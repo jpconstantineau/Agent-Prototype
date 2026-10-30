@@ -47,11 +47,16 @@
         ]
       },
       "classes": [
-        "ui-alert"
+        "ui-alert",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Make a condition and its next step readable together.",
       "intent": "Recognize an important message from its wording and structure.",
-      "contract": "Static message; live role/announcement timing belongs to real application events."
+      "contract": "Five labelled semantic fills; mode-dependent contrasting ink. Static samples; live announcement timing belongs to actual application events."
     },
     {
       "id": "alert-dialog",
@@ -64,11 +69,16 @@
         "daisy": []
       },
       "classes": [
-        "ui-alert-dialog"
+        "ui-alert-dialog",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Focus a blocking example decision in the native top layer.",
       "intent": "Read the decision and cancel safely with native focus return.",
-      "contract": "dialog + role=alertdialog + commandfor; example buttons only close, never mutate data."
+      "contract": "Five matching colored headings/edges inside native dialogs; controls stay on neutral surfaces. role=alertdialog + commandfor; safe close only, no data mutation."
     },
     {
       "id": "aspect-ratio",
@@ -115,11 +125,16 @@
         ]
       },
       "classes": [
-        "ui-aura"
+        "ui-aura",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Demonstrate an optional accent frame without tinting a large work area.",
       "intent": "Locate the explicitly labelled example emphasis without confusing it with focus.",
-      "contract": "Static layered border; no pulsing, no status meaning, no default application adoption."
+      "contract": "Five labelled semantic accent frames with neutral reading surfaces; static border, no pulsing or confusion with keyboard focus."
     },
     {
       "id": "avatar",
@@ -134,11 +149,16 @@
         ]
       },
       "classes": [
-        "ui-avatar"
+        "ui-avatar",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Show an identity thumbnail or initials.",
       "intent": "Associate a written person name with a compact identity mark.",
-      "contract": "Initials fallback is authored text; no failed-image detection logic is implied."
+      "contract": "Filled colored discs with checked initials contrast and adjacent names. Identity color implies no person status; no failed-image detection logic."
     },
     {
       "id": "badge",
@@ -153,11 +173,16 @@
         ]
       },
       "classes": [
-        "ui-badge"
+        "ui-badge",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Keep short metadata visibly grouped.",
       "intent": "Read a state or category without depending on a colored dot.",
-      "contract": "Written label is authoritative; no interactive semantics on passive badges."
+      "contract": "Five colored decorative dots plus authoritative written labels; no interactive semantics on passive badges."
     },
     {
       "id": "breadcrumb",
@@ -172,11 +197,12 @@
         ]
       },
       "classes": [
-        "ui-breadcrumb"
+        "ui-breadcrumb",
+        "ui-path-separator"
       ],
       "purpose": "Express a real navigation hierarchy.",
       "intent": "Find the parent destination and identify the current page.",
-      "contract": "Named nav and ordered links; current item uses aria-current=page."
+      "contract": "Aligned ordered levels with small aria-hidden slash separators; named nav and aria-current=page."
     },
     {
       "id": "chat",
@@ -194,11 +220,13 @@
       "classes": [
         "ui-chat",
         "ui-bubble",
-        "ui-message"
+        "ui-message",
+        "ui-chat--outgoing",
+        "ui-chat--incoming"
       ],
       "purpose": "Group author, timestamp and message content.",
       "intent": "Read who said what without relying on left/right alignment or hue alone.",
-      "contract": "Static message layout; sending, streaming, receipts and persistence require application logic."
+      "contract": "Outgoing blue/end-aligned and neutral/start-aligned reply retain author, time and source order. Sending, streaming, receipts and persistence need application logic."
     },
     {
       "id": "button",
@@ -801,7 +829,7 @@
       ],
       "purpose": "Express the current position and available page destinations.",
       "intent": "Navigate a known page without confusing a visual index with loaded data.",
-      "contract": "Real hrefs and aria-current=page; querying or calculating result pages is application logic."
+      "contract": "Visible numerical destinations 1–3 have descriptive names, real hrefs and aria-current=page; calculating result pages requires application logic."
     },
     {
       "id": "popover",
@@ -996,7 +1024,7 @@
       ],
       "purpose": "Reserve the shape of forthcoming content.",
       "intent": "Recognize placeholder structure alongside written loading text.",
-      "contract": "Static nonessential blocks, aria-hidden; do not invent progress or replace error text."
+      "contract": "aria-hidden static placeholder with an optional slow border-color animation, explicit opt-in and reduced-motion fallback; written loading remains visible."
     },
     {
       "id": "slider",
@@ -1088,11 +1116,13 @@
       },
       "classes": [
         "ui-tabs",
-        "ui-tab-links"
+        "ui-tab-links",
+        "ui-folder-tabs",
+        "ui-folder-tab"
       ],
       "purpose": "Offer linked destinations or a native choice between preloaded panels.",
       "intent": "Choose a labelled preview without a fake ARIA tab state.",
-      "contract": "Radio fieldset uses native selection and CSS panels; link variant is navigation. Full role=tab keyboard/ARIA synchronization requires logic."
+      "contract": "Folder-shaped radio labels retain native group, arrow-key and visible whole-label focus behavior; link folders remain navigation. Full ARIA tab synchronization requires logic."
     },
     {
       "id": "textarea",
@@ -1571,11 +1601,13 @@
         ]
       },
       "classes": [
-        "ui-rating"
+        "ui-rating",
+        "ui-rating-choice",
+        "ui-rating-star"
       ],
       "purpose": "Offer a bounded native single-choice scale.",
       "intent": "Choose a named rating with arrow keys and full-size labels.",
-      "contract": "Native radio group with explicit number labels; no star-only names or automatic write."
+      "contract": "Native radio group with star labels and explicit one-to-five accessible names; selected and preceding stars fill through CSS. No automatic write."
     },
     {
       "id": "stack",
@@ -1622,11 +1654,16 @@
         ]
       },
       "classes": [
-        "ui-status-indicator"
+        "ui-status-indicator",
+        "ui-tone--success",
+        "ui-tone--error",
+        "ui-tone--pending",
+        "ui-tone--info",
+        "ui-tone--neutral"
       ],
       "purpose": "Keep a state label and supplementary mark together.",
       "intent": "Read the explicit state without relying on hue.",
-      "contract": "Written state remains authoritative; status truth comes from the application."
+      "contract": "Success, error, pending, information and neutral dots accompany written labels; status truth comes from the application."
     },
     {
       "id": "steps",

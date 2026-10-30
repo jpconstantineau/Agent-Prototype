@@ -23,7 +23,7 @@ Generated from [palettes.mjs](palettes.mjs) and [system.mjs](system.mjs). These 
 | disabled-bg | #d2d2d2 | #404040 | #d2d2d2 | #404040 | Distinguish unavailable controls with a neutral fill and native disabled semantics rather than a warning color. |
 | on-primary | #ffffff | #ffffff | #ffffff | #ffffff | Keep the written principal-action label readable against the selected azure fill in both brightness modes. |
 | interactive | #005b90 | #40adf0 | #005b90 | #40adf0 | Keep links, secondary-action labels and compact native selection marks readable using an azure-related blue tuned to adjacent neutral surfaces. |
-| on-interactive | #ffffff | #242424 | #ffffff | #242424 | Keep the selected switch thumb distinct from its interactive-blue track without changing the native checked state. |
+| on-interactive | #ffffff | #242424 | #ffffff | #242424 | Keep selected switch thumbs distinct from their blue track and provide mode-dependent contrasting text on checked information, status and identity accent fills. |
 
 Contrast is tested using unrounded WCAG relative luminance; the following display values are rounded for inspection only.
 ## Light · standard
@@ -55,6 +55,11 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | disabled / disabled-bg | 4.5:1 | 5.33:1 |
 | surface / muted | 3:1 | 6.46:1 |
 | on-interactive / interactive | 3:1 | 7.24:1 |
+| on-interactive / interactive | 4.5:1 | 7.24:1 |
+| on-interactive / success | 4.5:1 | 7.98:1 |
+| on-interactive / danger | 4.5:1 | 7.56:1 |
+| on-interactive / warning | 4.5:1 | 7.34:1 |
+| on-interactive / muted | 4.5:1 | 8.06:1 |
 
 ## Dark · standard
 
@@ -85,6 +90,11 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
 | on-interactive / interactive | 3:1 | 6.25:1 |
+| on-interactive / interactive | 4.5:1 | 6.25:1 |
+| on-interactive / success | 4.5:1 | 7.21:1 |
+| on-interactive / danger | 4.5:1 | 6.16:1 |
+| on-interactive / warning | 4.5:1 | 8.29:1 |
+| on-interactive / muted | 4.5:1 | 8.71:1 |
 
 ## Light · distinct status colors
 
@@ -115,6 +125,11 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | disabled / disabled-bg | 4.5:1 | 5.33:1 |
 | surface / muted | 3:1 | 6.46:1 |
 | on-interactive / interactive | 3:1 | 7.24:1 |
+| on-interactive / interactive | 4.5:1 | 7.24:1 |
+| on-interactive / success | 4.5:1 | 9.04:1 |
+| on-interactive / danger | 4.5:1 | 8.91:1 |
+| on-interactive / warning | 4.5:1 | 7.34:1 |
+| on-interactive / muted | 4.5:1 | 8.06:1 |
 
 ## Dark · distinct status colors
 
@@ -145,10 +160,15 @@ Contrast is tested using unrounded WCAG relative luminance; the following displa
 | disabled / disabled-bg | 4.5:1 | 5.82:1 |
 | surface / muted | 3:1 | 7.62:1 |
 | on-interactive / interactive | 3:1 | 6.25:1 |
+| on-interactive / interactive | 4.5:1 | 6.25:1 |
+| on-interactive / success | 4.5:1 | 6.39:1 |
+| on-interactive / danger | 4.5:1 | 6.40:1 |
+| on-interactive / warning | 4.5:1 | 8.29:1 |
+| on-interactive / muted | 4.5:1 | 8.71:1 |
 
 ## Labelled primary-button boundary observations
 
-These observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 25 required text/control/focus pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.
+These observations have a documented exception, not a waived label or focus check. The selected azure fill/background edge may be below 3:1 for a native button identified by its visible written action label. All 30 required text/control/focus and accent-fill pairs per palette remain enforced. Read [COLOR-SELECTION.md](COLOR-SELECTION.md) for scope, purpose and exclusions.
 
 Keep the selected azure button fill without a permanent outline in both brightness modes. The fill/background boundary is not required to identify this labelled button. It may be below 3:1; label contrast remains at least 4.5:1 and keyboard focus remains visible at 3:1 against its adjacent surface. Never apply this exception to icon-only controls, inputs, selection marks or focus indicators.
 
