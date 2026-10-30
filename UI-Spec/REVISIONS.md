@@ -12,6 +12,17 @@ Edit an existing value directly, and choose a readable appearance without relyin
 
 Implement the corrected interaction and appearance requirements across source, generated CSS, guidelines, examples and checks. Keep the reference separate from production tasks/settings; revised proposals still require final maintainer review.
 
+## Border-only dialogs, offset information badges and dashboard reference after ffd5b7d
+
+The maintainer clarified that alert dialogs should color only their border, badges should convey extra information rather than duplicate aligned state indicators, and each rating option needs its own visible star count. The latest contracts supersede the earlier colored-heading, badge-dot and cumulative-star proposals below.
+
+- Removed the nested alert from every alert dialog. catalog-dialog-accent.1 now colors all outer border sides; the heading, body and controls retain neutral reading colors. Native modal dismissal and focus return are unchanged.
+- Reworked catalog-badge to place metadata inside its fill, replacing the former gap slot with fill/text/centering decisions. catalog-badge-anchor, -offset and -counter reserve a superscript corner and display actual count text. catalog-badge-dot now styles a real empty notification node rather than generating a dot before every badge. The inline badge, numeric disc/pill, count-free offset dot and separate aligned status all have live examples. The indicator example composes the same owner/badge structure.
+- Removed catalog-rating-filled-rest, -filled and -outline. Each radio choice now contains one through five real filled star characters, preserving its explicit accessible name. catalog-rating-choice bounds and wraps long labels at enlarged text sizes; native checked state and emphasis identify the selected option.
+- Added DASHBOARDS.md research comparing Charts.css, Carbon, Tremor, Mantine and Adobe Spectrum. Eight original dashboard compositions have generated HTML/source inspection and dedicated dashboard- audited rules. They remain separately counted from the 96-family/87-example upstream component catalog. No production app dashboard, data fetch or chart runtime is introduced.
+
+The shared registry now has 370 style/frame records, 1,181 declarations and 624 geometry entries. Every added rule records its purpose and user intent. Existing colors, density profiles and 120 contrast requirements remain in force. Dashboard plot measures preserve readable geometry in both densities; native tables, written trend/period explanations and unknown-state wording remain available without JavaScript.
+
 ## Component presentation corrections after 9b3a9bf
 
 Maintainer review requested visible semantic colors, clearer identity and loading marks, conventional navigation and a readable conversation. The changes apply to the isolated reference catalog and its published contracts.

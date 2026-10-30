@@ -7526,67 +7526,13 @@
           "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
           "check": "catalog",
           "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "catalog-rating-filled-rest",
-      "selector": ".ui-rating-star--filled",
-      "purpose": "Keep unchosen stars outlined until a native rating is selected.",
-      "intent": "Distinguish the selected cumulative rating through filled star shapes.",
-      "check": "catalog",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
+        },
         {
-          "id": "catalog-rating-filled-rest.1",
-          "property": "display",
-          "value": "none",
-          "purpose": "Keep unchosen stars outlined until a native rating is selected. Hide only the decorative filled copy before selection.",
-          "intent": "Distinguish the selected cumulative rating through filled star shapes.",
-          "check": "catalog",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "catalog-rating-filled",
-      "selector": ".ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled",
-      "purpose": "Map native rating state to cumulative filled star labels.",
-      "intent": "Read the chosen number through star shape and the native checked mark.",
-      "check": "catalog",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "catalog-rating-filled.1",
-          "property": "display",
-          "value": "inline",
-          "purpose": "Map native rating state to cumulative filled star labels. Fill the selected star and all earlier stars.",
-          "intent": "Read the chosen number through star shape and the native checked mark.",
-          "check": "catalog",
-          "status": "proposed"
-        }
-      ]
-    },
-    {
-      "id": "catalog-rating-outline",
-      "selector": ".ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline",
-      "purpose": "Avoid showing both decorative star copies for a selected value.",
-      "intent": "Inspect one clear star at each position in the scale.",
-      "check": "catalog",
-      "media": null,
-      "source": "project",
-      "status": "proposed",
-      "declarations": [
-        {
-          "id": "catalog-rating-outline.1",
-          "property": "display",
-          "value": "none",
-          "purpose": "Avoid showing both decorative star copies for a selected value. Hide only the redundant outlined decorative copy.",
-          "intent": "Inspect one clear star at each position in the scale.",
+          "id": "catalog-rating-star.4",
+          "property": "overflow-wrap",
+          "value": "anywhere",
+          "purpose": "Use familiar star labels alongside real native rating choices. Allow long star counts to wrap under enlarged text rather than widen the page.",
+          "intent": "Choose the named one-to-five rating without interpreting unlabeled symbols.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -8012,9 +7958,9 @@
       "declarations": [
         {
           "id": "catalog-dialog-accent.1",
-          "property": "border-inline-start-color",
+          "property": "border-color",
           "value": "var(--ui-accent)",
-          "purpose": "Carry the same labelled alert accent into the native dialog. Match the dialog edge to its colored message heading.",
+          "purpose": "Carry the same labelled alert accent into the native dialog. Limit semantic color to the outer dialog boundary; heading and content keep neutral reading ink.",
           "intent": "Identify the condition while operating controls on their checked neutral surface.",
           "check": "catalog",
           "status": "proposed"
@@ -8157,7 +8103,7 @@
       "id": "catalog-badge",
       "selector": ".ui-badge",
       "purpose": "Keep short metadata visibly grouped.",
-      "intent": "Read a state or category without depending on a colored dot.",
+      "intent": "Read supplemental metadata or counts in their owner’s context.",
       "check": "catalog",
       "media": null,
       "source": "project",
@@ -8167,8 +8113,8 @@
           "id": "catalog-badge.1",
           "property": "display",
           "value": "inline-flex",
-          "purpose": "Keep short metadata visibly grouped. Keep the colored dot and written metadata in one inline group.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "purpose": "Keep short metadata visibly grouped. Keep authored badge content in one compact metadata group.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8177,7 +8123,7 @@
           "property": "padding",
           "value": "var(--ui-space-xs) var(--ui-space-sm)",
           "purpose": "Keep short metadata visibly grouped. Inset text by the governed compact steps.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8186,7 +8132,7 @@
           "property": "border",
           "value": "1px solid var(--ui-border)",
           "purpose": "Keep short metadata visibly grouped. Provide a visible non-color boundary.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8195,7 +8141,7 @@
           "property": "border-radius",
           "value": "var(--ui-radius-small)",
           "purpose": "Keep short metadata visibly grouped. Use the short-label shape.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8204,7 +8150,7 @@
           "property": "font-size",
           "value": "0.875rem",
           "purpose": "Keep short metadata visibly grouped. Use the readable secondary size.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8212,17 +8158,35 @@
           "id": "catalog-badge.6",
           "property": "align-items",
           "value": "center",
-          "purpose": "Keep short metadata visibly grouped. Center the dot on the label line.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "purpose": "Keep short metadata visibly grouped. Center the written metadata inside its container.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         },
         {
           "id": "catalog-badge.7",
-          "property": "gap",
-          "value": "var(--ui-space-sm)",
-          "purpose": "Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label.",
-          "intent": "Read a state or category without depending on a colored dot.",
+          "property": "background-color",
+          "value": "var(--ui-accent)",
+          "purpose": "Keep short metadata visibly grouped. Put additional information inside the badge’s bounded accent fill.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge.8",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Keep short metadata visibly grouped. Keep badge content readable on every checked accent fill.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge.9",
+          "property": "justify-content",
+          "value": "center",
+          "purpose": "Keep short metadata visibly grouped. Center short counts in the optional circular badge.",
+          "intent": "Read supplemental metadata or counts in their owner’s context.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -8277,10 +8241,163 @@
       ]
     },
     {
+      "id": "catalog-badge-anchor",
+      "selector": ".ui-badge-anchor",
+      "purpose": "Associate extra metadata with an owner while reserving its offset space.",
+      "intent": "Read the owner and its supplementary count without clipping either.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-anchor.1",
+          "property": "position",
+          "value": "relative",
+          "purpose": "Associate extra metadata with an owner while reserving its offset space. Contain only this owner’s offset badge.",
+          "intent": "Read the owner and its supplementary count without clipping either.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-anchor.2",
+          "property": "display",
+          "value": "inline-grid",
+          "purpose": "Associate extra metadata with an owner while reserving its offset space. Keep the owner at its intrinsic size.",
+          "intent": "Read the owner and its supplementary count without clipping either.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-anchor.3",
+          "property": "padding-block-start",
+          "value": "var(--ui-space-md)",
+          "purpose": "Associate extra metadata with an owner while reserving its offset space. Reserve space for the superscript badge above the owner.",
+          "intent": "Read the owner and its supplementary count without clipping either.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-anchor.4",
+          "property": "padding-inline-end",
+          "value": "var(--ui-space-md)",
+          "purpose": "Associate extra metadata with an owner while reserving its offset space. Reserve half a typical count disc so it straddles the owner’s trailing corner.",
+          "intent": "Read the owner and its supplementary count without clipping either.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-anchor.5",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Associate extra metadata with an owner while reserving its offset space. Keep the owner and reserved corner within the sample.",
+          "intent": "Read the owner and its supplementary count without clipping either.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-badge-offset",
+      "selector": ".ui-badge--offset",
+      "purpose": "Place metadata at its owner’s upper trailing corner.",
+      "intent": "Recognize counts as annotations rather than aligned operational status.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-offset.1",
+          "property": "position",
+          "value": "absolute",
+          "purpose": "Place metadata at its owner’s upper trailing corner. Offset the badge within the space reserved by its owner.",
+          "intent": "Recognize counts as annotations rather than aligned operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-offset.2",
+          "property": "inset-block-start",
+          "value": "0",
+          "purpose": "Place metadata at its owner’s upper trailing corner. Align the annotation with the reserved top edge.",
+          "intent": "Recognize counts as annotations rather than aligned operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-offset.3",
+          "property": "inset-inline-end",
+          "value": "0",
+          "purpose": "Place metadata at its owner’s upper trailing corner. Follow the logical trailing corner in both reading directions.",
+          "intent": "Recognize counts as annotations rather than aligned operational status.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-badge-counter",
+      "selector": ".ui-badge--counter",
+      "purpose": "Give short counts the familiar superscript disc or pill presentation.",
+      "intent": "Read the actual count inside its colored annotation.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-badge-counter.1",
+          "property": "min-inline-size",
+          "value": "1.5rem",
+          "purpose": "Give short counts the familiar superscript disc or pill presentation. Reserve a readable two-digit count at the default root.",
+          "intent": "Read the actual count inside its colored annotation.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-counter.2",
+          "property": "min-block-size",
+          "value": "1.5rem",
+          "purpose": "Give short counts the familiar superscript disc or pill presentation. Keep a single-digit count disc clearly visible.",
+          "intent": "Read the actual count inside its colored annotation.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-counter.3",
+          "property": "padding",
+          "value": "0 var(--ui-space-xs)",
+          "purpose": "Give short counts the familiar superscript disc or pill presentation. Allow longer counts such as 99+ to expand into a pill.",
+          "intent": "Read the actual count inside its colored annotation.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-counter.4",
+          "property": "border-radius",
+          "value": "999px",
+          "purpose": "Give short counts the familiar superscript disc or pill presentation. Keep the annotation round without clipping longer content.",
+          "intent": "Read the actual count inside its colored annotation.",
+          "check": "catalog",
+          "status": "proposed"
+        },
+        {
+          "id": "catalog-badge-counter.5",
+          "property": "font-variant-numeric",
+          "value": "tabular-nums",
+          "purpose": "Give short counts the familiar superscript disc or pill presentation. Keep changing count widths stable where the font supports it.",
+          "intent": "Read the actual count inside its colored annotation.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "id": "catalog-badge-dot",
-      "selector": ".ui-badge::before",
-      "purpose": "Expose a visible colored dot without replacing badge wording.",
-      "intent": "Recognize the supplementary accent and read the authoritative state label.",
+      "selector": ".ui-badge--dot",
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
       "check": "catalog",
       "media": null,
       "source": "project",
@@ -8288,37 +8405,37 @@
       "declarations": [
         {
           "id": "catalog-badge-dot.1",
-          "property": "content",
-          "value": "\"\"",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Create only a decorative mark; meaning stays in real text.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "property": "inline-size",
+          "value": "0.625rem",
+          "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Keep the count-free dot compact but visible.",
+          "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
           "check": "catalog",
           "status": "proposed"
         },
         {
           "id": "catalog-badge-dot.2",
-          "property": "inline-size",
+          "property": "block-size",
           "value": "0.625rem",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Keep a circular ten-pixel dot at the default root.",
+          "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
           "check": "catalog",
           "status": "proposed"
         },
         {
           "id": "catalog-badge-dot.3",
-          "property": "aspect-ratio",
-          "value": "1",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "property": "padding",
+          "value": "0",
+          "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Avoid making an empty dot look like a missing text label.",
+          "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
           "check": "catalog",
           "status": "proposed"
         },
         {
           "id": "catalog-badge-dot.4",
-          "property": "flex-shrink",
+          "property": "border",
           "value": "0",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Keep long labels from flattening the dot.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Let the checked fill define the decorative silhouette.",
+          "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
           "check": "catalog",
           "status": "proposed"
         },
@@ -8326,17 +8443,38 @@
           "id": "catalog-badge-dot.5",
           "property": "border-radius",
           "value": "50%",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill.",
+          "intent": "Recognize the supplementary cue through the owner’s name and written explanation.",
+          "check": "catalog",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "catalog-rating-choice",
+      "selector": ".ui-rating-choice",
+      "purpose": "Keep the visibly different one-to-five star labels inside their targets.",
+      "intent": "Compare complete star counts without a hidden numeric meaning.",
+      "check": "catalog",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "catalog-rating-choice.1",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Keep the visibly different one-to-five star labels inside their targets. Let the native radio and star count wrap at enlarged text sizes.",
+          "intent": "Compare complete star counts without a hidden numeric meaning.",
           "check": "catalog",
           "status": "proposed"
         },
         {
-          "id": "catalog-badge-dot.6",
-          "property": "background-color",
-          "value": "var(--ui-accent)",
-          "purpose": "Expose a visible colored dot without replacing badge wording. Apply the labelled semantic accent.",
-          "intent": "Recognize the supplementary accent and read the authoritative state label.",
+          "id": "catalog-rating-choice.2",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Keep the visibly different one-to-five star labels inside their targets. Bound long star labels by the available sample width.",
+          "intent": "Compare complete star counts without a hidden numeric meaning.",
           "check": "catalog",
           "status": "proposed"
         }
@@ -13785,6 +13923,1158 @@
           "status": "proposed"
         }
       ]
+    },
+    {
+      "id": "dashboard-grid",
+      "selector": ".ui-dashboard-grid",
+      "purpose": "Arrange independent dashboard summaries using the available width.",
+      "intent": "Compare quantities without losing content on a small display.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-grid.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Arrange independent dashboard summaries using the available width. Give related cards one layout owner.",
+          "intent": "Compare quantities without losing content on a small display.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-grid.2",
+          "property": "grid-template-columns",
+          "value": "repeat(auto-fit, minmax(min(100%, 20rem), 1fr))",
+          "purpose": "Arrange independent dashboard summaries using the available width. Add columns only when a readable card fits.",
+          "intent": "Compare quantities without losing content on a small display.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-grid.3",
+          "property": "gap",
+          "value": "var(--ui-space-lg)",
+          "purpose": "Arrange independent dashboard summaries using the available width. Separate independent metric contexts.",
+          "intent": "Compare quantities without losing content on a small display.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-grid.4",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Arrange independent dashboard summaries using the available width. Let long metric wording wrap within the viewport.",
+          "intent": "Compare quantities without losing content on a small display.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-trend",
+      "selector": ".ui-trend",
+      "purpose": "Keep the trend direction and comparison wording together.",
+      "intent": "Read direction independently of success or failure color coding.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-trend.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Keep the trend direction and comparison wording together. Group the real arrow with its written comparison.",
+          "intent": "Read direction independently of success or failure color coding.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-trend.2",
+          "property": "align-items",
+          "value": "baseline",
+          "purpose": "Keep the trend direction and comparison wording together. Align direction with the comparison text.",
+          "intent": "Read direction independently of success or failure color coding.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-trend.3",
+          "property": "gap",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Keep the trend direction and comparison wording together. Clear the supplementary arrow from the words.",
+          "intent": "Read direction independently of success or failure color coding.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-trend.4",
+          "property": "font-weight",
+          "value": "600",
+          "purpose": "Keep the trend direction and comparison wording together. Identify the comparison as part of the metric context.",
+          "intent": "Read direction independently of success or failure color coding.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-figure",
+      "selector": ".ui-dashboard-figure",
+      "purpose": "Keep a dashboard graphic and its explanation in one semantic group.",
+      "intent": "Find units, summary and data before interpreting its shape.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-figure.1",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Keep a dashboard graphic and its explanation in one semantic group. Use the containing card’s clearance instead of native figure offsets.",
+          "intent": "Find units, summary and data before interpreting its shape.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-figure.2",
+          "property": "min-inline-size",
+          "value": "0",
+          "purpose": "Keep a dashboard graphic and its explanation in one semantic group. Keep the chart group shrinkable.",
+          "intent": "Find units, summary and data before interpreting its shape.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-figure-parts",
+      "selector": ".ui-dashboard-figure > * + *",
+      "purpose": "Separate caption, narrative, graphic and data without duplicate outer gaps.",
+      "intent": "Follow the explanation and reach the source observations.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-figure-parts.1",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-md)",
+          "purpose": "Separate caption, narrative, graphic and data without duplicate outer gaps. Use a governed related-content gap.",
+          "intent": "Follow the explanation and reach the source observations.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-scroll",
+      "selector": ".ui-dashboard-scroll",
+      "purpose": "Keep wide source tables readable inside their chart card.",
+      "intent": "Inspect every value with native keyboard and pointer scrolling.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-scroll.1",
+          "property": "max-inline-size",
+          "value": "100%",
+          "purpose": "Keep wide source tables readable inside their chart card. Bound the data region by its card.",
+          "intent": "Inspect every value with native keyboard and pointer scrolling.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-scroll.2",
+          "property": "overflow",
+          "value": "auto",
+          "purpose": "Keep wide source tables readable inside their chart card. Keep long labels locally reachable.",
+          "intent": "Inspect every value with native keyboard and pointer scrolling.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-scroll.3",
+          "property": "padding",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Keep wide source tables readable inside their chart card. Clear source cells and the region’s native focus.",
+          "intent": "Inspect every value with native keyboard and pointer scrolling.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-table",
+      "selector": ".ui-dashboard-table",
+      "purpose": "Preserve native table relationships alongside compact charts.",
+      "intent": "Read exact observations with their headers and units.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-table.1",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Preserve native table relationships alongside compact charts. Share the chart card’s available width.",
+          "intent": "Read exact observations with their headers and units.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-table.2",
+          "property": "border-collapse",
+          "value": "collapse",
+          "purpose": "Preserve native table relationships alongside compact charts. Avoid doubled separators between observations.",
+          "intent": "Read exact observations with their headers and units.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-table.3",
+          "property": "font-variant-numeric",
+          "value": "tabular-nums",
+          "purpose": "Preserve native table relationships alongside compact charts. Keep comparable digits aligned where supported.",
+          "intent": "Read exact observations with their headers and units.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-cells",
+      "selector": ".ui-dashboard-table th, .ui-dashboard-table td",
+      "purpose": "Separate source labels and measurements clearly.",
+      "intent": "Compare individual values without a dense full-cell grid.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-cells.1",
+          "property": "padding",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Separate source labels and measurements clearly. Give each data cell a governed inset.",
+          "intent": "Compare individual values without a dense full-cell grid.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-cells.2",
+          "property": "text-align",
+          "value": "start",
+          "purpose": "Separate source labels and measurements clearly. Align values with the native reading direction.",
+          "intent": "Compare individual values without a dense full-cell grid.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-cells.3",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-divider)",
+          "purpose": "Separate source labels and measurements clearly. Separate records using a passive line.",
+          "intent": "Compare individual values without a dense full-cell grid.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-cells.4",
+          "property": "overflow-wrap",
+          "value": "anywhere",
+          "purpose": "Separate source labels and measurements clearly. Wrap long labels instead of widening the whole page.",
+          "intent": "Compare individual values without a dense full-cell grid.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-bar-value",
+      "selector": ".ui-bar-value",
+      "purpose": "Keep exact numeric content above its proportional horizontal bar.",
+      "intent": "Read the same value that determines the compact comparison graphic.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-bar-value.1",
+          "property": "display",
+          "value": "block",
+          "purpose": "Keep exact numeric content above its proportional horizontal bar. Give the data element a shared full-width comparison scale.",
+          "intent": "Read the same value that determines the compact comparison graphic.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bar-value.2",
+          "property": "min-inline-size",
+          "value": "6rem",
+          "purpose": "Keep exact numeric content above its proportional horizontal bar. Keep short comparison rows at a useful visible measure.",
+          "intent": "Read the same value that determines the compact comparison graphic.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-bar-graphic",
+      "selector": ".ui-bar-value::after",
+      "purpose": "Derive the supplementary bar from the supplied normalized page attribute.",
+      "intent": "Compare values on a common zero-to-one-hundred scale.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-bar-graphic.1",
+          "property": "content",
+          "value": "\"\"",
+          "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Keep essential values in actual HTML rather than generated text.",
+          "intent": "Compare values on a common zero-to-one-hundred scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bar-graphic.2",
+          "property": "display",
+          "value": "block",
+          "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Place the graphic beneath its exact written value.",
+          "intent": "Compare values on a common zero-to-one-hundred scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bar-graphic.3",
+          "property": "block-size",
+          "value": "0.75rem",
+          "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Keep the comparison bar visible without becoming a large colored field.",
+          "intent": "Compare values on a common zero-to-one-hundred scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bar-graphic.4",
+          "property": "margin-block-start",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Separate the number from the supplementary graphic.",
+          "intent": "Compare values on a common zero-to-one-hundred scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bar-graphic.5",
+          "property": "background",
+          "value": "linear-gradient(to right, var(--ui-interactive) 0% calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%), var(--ui-subtle) 0% 100%)",
+          "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Use a bounded blue fill on a quiet neutral track; values are validated before rendering.",
+          "intent": "Compare values on a common zero-to-one-hundred scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-sparkline",
+      "selector": ".ui-sparkline",
+      "purpose": "Reserve one compact plot for an equal-interval trend.",
+      "intent": "See the weekly shape beside a written summary and complete source values.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-sparkline.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Reserve one compact plot for an equal-interval trend. Give adjacent line segments equal chronological width.",
+          "intent": "See the weekly shape beside a written summary and complete source values.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-sparkline.2",
+          "property": "block-size",
+          "value": "4rem",
+          "purpose": "Reserve one compact plot for an equal-interval trend. Keep the sparkline compact while making its changes discernible.",
+          "intent": "See the weekly shape beside a written summary and complete source values.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-sparkline.3",
+          "property": "padding-block",
+          "value": "3px",
+          "purpose": "Reserve one compact plot for an equal-interval trend. Protect endpoint strokes at the zero and maximum edges.",
+          "intent": "See the weekly shape beside a written summary and complete source values.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-sparkline.4",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Reserve one compact plot for an equal-interval trend. Identify the bounded plot without grid clutter.",
+          "intent": "See the weekly shape beside a written summary and complete source values.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-sparkline.5",
+          "property": "max-inline-size",
+          "value": "24rem",
+          "purpose": "Reserve one compact plot for an equal-interval trend. Keep the sparkline a compact inline-context graphic rather than stretching it across a desktop page.",
+          "intent": "See the weekly shape beside a written summary and complete source values.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-spark-segment",
+      "selector": ".ui-spark-segment",
+      "purpose": "Draw one straight segment between adjacent supplied observations.",
+      "intent": "Inspect a truthful line shape without an interactive chart dependency.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-spark-segment.1",
+          "property": "flex",
+          "value": "1 1 0",
+          "purpose": "Draw one straight segment between adjacent supplied observations. Distribute equal time intervals equally.",
+          "intent": "Inspect a truthful line shape without an interactive chart dependency.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-segment.2",
+          "property": "block-size",
+          "value": "100%",
+          "purpose": "Draw one straight segment between adjacent supplied observations. Map each segment to the same vertical scale.",
+          "intent": "Inspect a truthful line shape without an interactive chart dependency.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-segment.3",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Draw one straight segment between adjacent supplied observations. Use the checked blue for a single data series.",
+          "intent": "Inspect a truthful line shape without an interactive chart dependency.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-segment.4",
+          "property": "clip-path",
+          "value": "polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px))",
+          "purpose": "Draw one straight segment between adjacent supplied observations. Make a visible three-pixel strip between two validated percentages; line endpoints come from the same observations as the data table.",
+          "intent": "Inspect a truthful line shape without an interactive chart dependency.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-spark-bars",
+      "selector": ".ui-spark-bars",
+      "purpose": "Compare equal-interval values on a shared zero baseline.",
+      "intent": "Read relative volume without a truncated bar scale.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-spark-bars.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Keep columns in supplied chronological order.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.2",
+          "property": "align-items",
+          "value": "end",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Anchor every column at the same zero baseline.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.3",
+          "property": "gap",
+          "value": "var(--ui-space-sm)",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Separate discrete observations.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.4",
+          "property": "block-size",
+          "value": "8rem",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Provide a compact readable common scale.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.5",
+          "property": "border-block-end",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Expose the common zero baseline.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.6",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Keep the unused plot area neutral.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-bars.7",
+          "property": "max-inline-size",
+          "value": "24rem",
+          "purpose": "Compare equal-interval values on a shared zero baseline. Keep a short series compact while its exact data table remains independently readable.",
+          "intent": "Read relative volume without a truncated bar scale.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-spark-column",
+      "selector": ".ui-spark-column",
+      "purpose": "Map a supplied normalized observation to column height.",
+      "intent": "Compare the same measurements that remain available in the native table.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-spark-column.1",
+          "property": "flex",
+          "value": "1 1 0",
+          "purpose": "Map a supplied normalized observation to column height. Give equal intervals equal widths.",
+          "intent": "Compare the same measurements that remain available in the native table.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-column.2",
+          "property": "block-size",
+          "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+          "purpose": "Map a supplied normalized observation to column height. Bound visual height to the declared zero-to-one-hundred scale.",
+          "intent": "Compare the same measurements that remain available in the native table.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-spark-column.3",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Map a supplied normalized observation to column height. Use one checked series color rather than status hues.",
+          "intent": "Compare the same measurements that remain available in the native table.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-bullet",
+      "selector": ".ui-bullet",
+      "purpose": "Place actual and target markers on one compact shared scale.",
+      "intent": "Recognize the shortfall using both the written amounts and the marker shapes.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-bullet.1",
+          "property": "position",
+          "value": "relative",
+          "purpose": "Place actual and target markers on one compact shared scale. Contain the actual bar and target tick in one bounded plot.",
+          "intent": "Recognize the shortfall using both the written amounts and the marker shapes.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet.2",
+          "property": "block-size",
+          "value": "1.5rem",
+          "purpose": "Place actual and target markers on one compact shared scale. Keep the target tick distinct from the inner measure.",
+          "intent": "Recognize the shortfall using both the written amounts and the marker shapes.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet.3",
+          "property": "background-color",
+          "value": "var(--ui-subtle)",
+          "purpose": "Place actual and target markers on one compact shared scale. Keep unused capacity quiet.",
+          "intent": "Recognize the shortfall using both the written amounts and the marker shapes.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet.4",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Place actual and target markers on one compact shared scale. Expose the full measurement range.",
+          "intent": "Recognize the shortfall using both the written amounts and the marker shapes.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-bullet-actual",
+      "selector": ".ui-bullet::before",
+      "purpose": "Draw the actual measure below its target marker.",
+      "intent": "Compare the actual extent with the written target amount.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-bullet-actual.1",
+          "property": "content",
+          "value": "\"\"",
+          "purpose": "Draw the actual measure below its target marker. Leave meaning in the real accompanying text.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-actual.2",
+          "property": "position",
+          "value": "absolute",
+          "purpose": "Draw the actual measure below its target marker. Place the measure within the shared plot.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-actual.3",
+          "property": "inset-inline-start",
+          "value": "0",
+          "purpose": "Draw the actual measure below its target marker. Start the measure at the common zero.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-actual.4",
+          "property": "inset-block",
+          "value": "25%",
+          "purpose": "Draw the actual measure below its target marker. Keep the measure slimmer than the target tick.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-actual.5",
+          "property": "inline-size",
+          "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+          "purpose": "Draw the actual measure below its target marker. Derive actual extent from the validated normalized value.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-actual.6",
+          "property": "background-color",
+          "value": "var(--ui-interactive)",
+          "purpose": "Draw the actual measure below its target marker. Use checked blue for the actual measure.",
+          "intent": "Compare the actual extent with the written target amount.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-bullet-target",
+      "selector": ".ui-bullet::after",
+      "purpose": "Draw a narrow target tick distinct from the actual bar.",
+      "intent": "Locate the target without relying on a second hue.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-bullet-target.1",
+          "property": "content",
+          "value": "\"\"",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Keep the target number in real text.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-target.2",
+          "property": "position",
+          "value": "absolute",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Place the target on the same scale as the actual bar.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-target.3",
+          "property": "inset-inline-start",
+          "value": "clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px))",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Center the three-pixel tick at its validated target while protecting both endpoints.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-target.4",
+          "property": "inset-block",
+          "value": "0",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Make the target taller than the actual measure.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-target.5",
+          "property": "inline-size",
+          "value": "3px",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Keep the target visible at either density.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-bullet-target.6",
+          "property": "background-color",
+          "value": "var(--ui-ink)",
+          "purpose": "Draw a narrow target tick distinct from the actual bar. Use neutral reading ink for a shape-distinct target.",
+          "intent": "Locate the target without relying on a second hue.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-meter",
+      "selector": ".ui-meter",
+      "purpose": "Use browser-owned bounded measurement semantics for capacity.",
+      "intent": "Read the amount and thresholds without mistaking it for loading progress.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-meter.1",
+          "property": "inline-size",
+          "value": "100%",
+          "purpose": "Use browser-owned bounded measurement semantics for capacity. Use the labelled measurement’s available width.",
+          "intent": "Read the amount and thresholds without mistaking it for loading progress.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-meter.2",
+          "property": "block-size",
+          "value": "1.5rem",
+          "purpose": "Use browser-owned bounded measurement semantics for capacity. Keep the native scalar indicator visible.",
+          "intent": "Read the amount and thresholds without mistaking it for loading progress.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-meter-track",
+      "selector": ".ui-meter::-webkit-meter-bar",
+      "purpose": "Give the native Chrome meter a governed neutral range.",
+      "intent": "See remaining capacity within a clearly bounded scalar measurement.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-meter-track.1",
+          "property": "background",
+          "value": "var(--ui-subtle)",
+          "purpose": "Give the native Chrome meter a governed neutral range. Replace the browser’s decorative track gradient with the quiet support plane.",
+          "intent": "See remaining capacity within a clearly bounded scalar measurement.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-meter-track.2",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Give the native Chrome meter a governed neutral range. Expose the full bounded range.",
+          "intent": "See remaining capacity within a clearly bounded scalar measurement.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-meter-track.3",
+          "property": "border-radius",
+          "value": "var(--ui-radius-small)",
+          "purpose": "Give the native Chrome meter a governed neutral range. Use the shared bounded-control corner role.",
+          "intent": "See remaining capacity within a clearly bounded scalar measurement.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-meter-optimum",
+      "selector": ".ui-meter::-webkit-meter-optimum-value",
+      "purpose": "Map the native meter’s optimum range to the governed palette.",
+      "intent": "Read actual capacity together with the written threshold explanation.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-meter-optimum.1",
+          "property": "background",
+          "value": "var(--ui-interactive)",
+          "purpose": "Map the native meter’s optimum range to the governed palette. Let the browser choose the range state while the existing interactive role paints its fill.",
+          "intent": "Read actual capacity together with the written threshold explanation.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-meter-suboptimum",
+      "selector": ".ui-meter::-webkit-meter-suboptimum-value",
+      "purpose": "Map the native meter’s suboptimum range to the governed palette.",
+      "intent": "Read actual capacity together with the written threshold explanation.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-meter-suboptimum.1",
+          "property": "background",
+          "value": "var(--ui-warning)",
+          "purpose": "Map the native meter’s suboptimum range to the governed palette. Let the browser choose the range state while the existing warning role paints its fill.",
+          "intent": "Read actual capacity together with the written threshold explanation.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-meter-even-less-good",
+      "selector": ".ui-meter::-webkit-meter-even-less-good-value",
+      "purpose": "Map the native meter’s even-less-good range to the governed palette.",
+      "intent": "Read actual capacity together with the written threshold explanation.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-meter-even-less-good.1",
+          "property": "background",
+          "value": "var(--ui-danger)",
+          "purpose": "Map the native meter’s even-less-good range to the governed palette. Let the browser choose the range state while the existing danger role paints its fill.",
+          "intent": "Read actual capacity together with the written threshold explanation.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-segment-bar",
+      "selector": ".ui-segment-bar",
+      "purpose": "Show bounded contributions to one explicitly stated total.",
+      "intent": "Compare contributions while exact counts and shares remain in the table.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-segment-bar.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Show bounded contributions to one explicitly stated total. Keep contributions in the same order as the direct labels.",
+          "intent": "Compare contributions while exact counts and shares remain in the table.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-segment-bar.2",
+          "property": "block-size",
+          "value": "1.5rem",
+          "purpose": "Show bounded contributions to one explicitly stated total. Give contributions a visible common strip.",
+          "intent": "Compare contributions while exact counts and shares remain in the table.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-segment-bar.3",
+          "property": "border",
+          "value": "1px solid var(--ui-border)",
+          "purpose": "Show bounded contributions to one explicitly stated total. Expose the total extent without implying progress.",
+          "intent": "Compare contributions while exact counts and shares remain in the table.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-segment",
+      "selector": ".ui-segment",
+      "purpose": "Derive each contribution’s width from the supplied normalized share.",
+      "intent": "Associate the ordered contribution with its written category.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-segment.1",
+          "property": "inline-size",
+          "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+          "purpose": "Derive each contribution’s width from the supplied normalized share. Map validated shares to their stated total.",
+          "intent": "Associate the ordered contribution with its written category.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-segment.2",
+          "property": "background-color",
+          "value": "var(--ui-accent, var(--ui-interactive))",
+          "purpose": "Derive each contribution’s width from the supplied normalized share. Reuse the supplied semantic modifier with checked information blue as the default.",
+          "intent": "Associate the ordered contribution with its written category.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-segment.3",
+          "property": "border-inline-end",
+          "value": "2px solid var(--ui-surface)",
+          "purpose": "Derive each contribution’s width from the supplied normalized share. Separate adjacent portions without relying only on hue.",
+          "intent": "Associate the ordered contribution with its written category.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-tracker",
+      "selector": ".ui-tracker",
+      "purpose": "Present discrete service observations in chronological order.",
+      "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-tracker.1",
+          "property": "display",
+          "value": "flex",
+          "purpose": "Present discrete service observations in chronological order. Keep intervals in observation order.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker.2",
+          "property": "flex-wrap",
+          "value": "wrap",
+          "purpose": "Present discrete service observations in chronological order. Preserve every interval on small screens.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker.3",
+          "property": "gap",
+          "value": "var(--ui-space-xs)",
+          "purpose": "Present discrete service observations in chronological order. Separate discrete intervals.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker.4",
+          "property": "list-style-type",
+          "value": "none",
+          "purpose": "Present discrete service observations in chronological order. Remove decorative numbering from the redundant graphic.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker.5",
+          "property": "padding",
+          "value": "0",
+          "purpose": "Present discrete service observations in chronological order. Use the figure’s existing clearance.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker.6",
+          "property": "margin",
+          "value": "0",
+          "purpose": "Present discrete service observations in chronological order. Avoid native list offsets around the graph.",
+          "intent": "Locate unavailable and unknown intervals with symbols and exact source data.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-tracker-cell",
+      "selector": ".ui-tracker-cell",
+      "purpose": "Use a compact symbol tile for one supplied observation.",
+      "intent": "Recognize an available interval using shape and the written legend.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-tracker-cell.1",
+          "property": "display",
+          "value": "grid",
+          "purpose": "Use a compact symbol tile for one supplied observation. Center the real supplementary symbol.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.2",
+          "property": "place-items",
+          "value": "center",
+          "purpose": "Use a compact symbol tile for one supplied observation. Keep the symbol visually centered.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.3",
+          "property": "inline-size",
+          "value": "1.5rem",
+          "purpose": "Use a compact symbol tile for one supplied observation. Make interval symbols discernible without implying an interactive target.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.4",
+          "property": "block-size",
+          "value": "1.5rem",
+          "purpose": "Use a compact symbol tile for one supplied observation. Keep each observation square.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.5",
+          "property": "background-color",
+          "value": "var(--ui-success)",
+          "purpose": "Use a compact symbol tile for one supplied observation. Use confirmed availability only for observed available intervals.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.6",
+          "property": "color",
+          "value": "var(--ui-on-interactive)",
+          "purpose": "Use a compact symbol tile for one supplied observation. Use checked ink on every state fill.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        },
+        {
+          "id": "dashboard-tracker-cell.7",
+          "property": "font-weight",
+          "value": "700",
+          "purpose": "Use a compact symbol tile for one supplied observation. Keep the supplementary symbols distinct.",
+          "intent": "Recognize an available interval using shape and the written legend.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-tracker-error",
+      "selector": ".ui-tracker-cell--error",
+      "purpose": "Separate an observed unavailable interval from available service.",
+      "intent": "Locate the explicit exclamation mark and its matching written interval.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-tracker-error.1",
+          "property": "background-color",
+          "value": "var(--ui-danger)",
+          "purpose": "Separate an observed unavailable interval from available service. Use the checked error fill for the observed outage.",
+          "intent": "Locate the explicit exclamation mark and its matching written interval.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "dashboard-tracker-unknown",
+      "selector": ".ui-tracker-cell--unknown",
+      "purpose": "Keep missing observations distinct from successful service.",
+      "intent": "Find unknown intervals through a question mark and the source state.",
+      "check": "dashboard",
+      "media": null,
+      "source": "project",
+      "status": "proposed",
+      "declarations": [
+        {
+          "id": "dashboard-tracker-unknown.1",
+          "property": "background-color",
+          "value": "var(--ui-muted)",
+          "purpose": "Keep missing observations distinct from successful service. Use a neutral unknown fill with checked text contrast.",
+          "intent": "Find unknown intervals through a question mark and the source state.",
+          "check": "dashboard",
+          "status": "proposed"
+        }
+      ]
     }
   ],
   "contrastPairs": [
@@ -18269,7 +19559,7 @@
       "compact": "0.25rem 0.375rem",
       "behavior": "Density governed",
       "purpose": "Keep short metadata visibly grouped. Inset text by the governed compact steps.",
-      "intent": "Read a state or category without depending on a colored dot."
+      "intent": "Read supplemental metadata or counts in their owner’s context."
     },
     {
       "id": "catalog-badge.3",
@@ -18281,7 +19571,7 @@
       "compact": "1px solid var(--ui-border)",
       "behavior": "Protected geometry or structural reset",
       "purpose": "Keep short metadata visibly grouped. Provide a visible non-color boundary.",
-      "intent": "Read a state or category without depending on a colored dot."
+      "intent": "Read supplemental metadata or counts in their owner’s context."
     },
     {
       "id": "catalog-badge.4",
@@ -18293,7 +19583,7 @@
       "compact": "0.25rem",
       "behavior": "Density governed",
       "purpose": "Keep short metadata visibly grouped. Use the short-label shape.",
-      "intent": "Read a state or category without depending on a colored dot."
+      "intent": "Read supplemental metadata or counts in their owner’s context."
     },
     {
       "id": "catalog-badge.5",
@@ -18305,19 +19595,7 @@
       "compact": "0.875rem",
       "behavior": "Protected geometry or structural reset",
       "purpose": "Keep short metadata visibly grouped. Use the readable secondary size.",
-      "intent": "Read a state or category without depending on a colored dot."
-    },
-    {
-      "id": "catalog-badge.7",
-      "selector": ".ui-badge",
-      "condition": null,
-      "property": "gap",
-      "value": "var(--ui-space-sm)",
-      "normal": "0.5rem",
-      "compact": "0.375rem",
-      "behavior": "Density governed",
-      "purpose": "Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label.",
-      "intent": "Read a state or category without depending on a colored dot."
+      "intent": "Read supplemental metadata or counts in their owner’s context."
     },
     {
       "id": "catalog-aura.1",
@@ -18356,40 +19634,184 @@
       "intent": "Locate the explicitly labelled example emphasis without confusing it with focus."
     },
     {
-      "id": "catalog-badge-dot.2",
-      "selector": ".ui-badge::before",
+      "id": "catalog-badge-anchor.3",
+      "selector": ".ui-badge-anchor",
+      "condition": null,
+      "property": "padding-block-start",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Associate extra metadata with an owner while reserving its offset space. Reserve space for the superscript badge above the owner.",
+      "intent": "Read the owner and its supplementary count without clipping either."
+    },
+    {
+      "id": "catalog-badge-anchor.4",
+      "selector": ".ui-badge-anchor",
+      "condition": null,
+      "property": "padding-inline-end",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Associate extra metadata with an owner while reserving its offset space. Reserve half a typical count disc so it straddles the owner’s trailing corner.",
+      "intent": "Read the owner and its supplementary count without clipping either."
+    },
+    {
+      "id": "catalog-badge-anchor.5",
+      "selector": ".ui-badge-anchor",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Associate extra metadata with an owner while reserving its offset space. Keep the owner and reserved corner within the sample.",
+      "intent": "Read the owner and its supplementary count without clipping either."
+    },
+    {
+      "id": "catalog-badge-offset.2",
+      "selector": ".ui-badge--offset",
+      "condition": null,
+      "property": "inset-block-start",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place metadata at its owner’s upper trailing corner. Align the annotation with the reserved top edge.",
+      "intent": "Recognize counts as annotations rather than aligned operational status."
+    },
+    {
+      "id": "catalog-badge-offset.3",
+      "selector": ".ui-badge--offset",
+      "condition": null,
+      "property": "inset-inline-end",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place metadata at its owner’s upper trailing corner. Follow the logical trailing corner in both reading directions.",
+      "intent": "Recognize counts as annotations rather than aligned operational status."
+    },
+    {
+      "id": "catalog-badge-counter.1",
+      "selector": ".ui-badge--counter",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give short counts the familiar superscript disc or pill presentation. Reserve a readable two-digit count at the default root.",
+      "intent": "Read the actual count inside its colored annotation."
+    },
+    {
+      "id": "catalog-badge-counter.2",
+      "selector": ".ui-badge--counter",
+      "condition": null,
+      "property": "min-block-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give short counts the familiar superscript disc or pill presentation. Keep a single-digit count disc clearly visible.",
+      "intent": "Read the actual count inside its colored annotation."
+    },
+    {
+      "id": "catalog-badge-counter.3",
+      "selector": ".ui-badge--counter",
+      "condition": null,
+      "property": "padding",
+      "value": "0 var(--ui-space-xs)",
+      "normal": "0 0.25rem",
+      "compact": "0 0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Give short counts the familiar superscript disc or pill presentation. Allow longer counts such as 99+ to expand into a pill.",
+      "intent": "Read the actual count inside its colored annotation."
+    },
+    {
+      "id": "catalog-badge-counter.4",
+      "selector": ".ui-badge--counter",
+      "condition": null,
+      "property": "border-radius",
+      "value": "999px",
+      "normal": "999px",
+      "compact": "999px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give short counts the familiar superscript disc or pill presentation. Keep the annotation round without clipping longer content.",
+      "intent": "Read the actual count inside its colored annotation."
+    },
+    {
+      "id": "catalog-badge-dot.1",
+      "selector": ".ui-badge--dot",
       "condition": null,
       "property": "inline-size",
       "value": "0.625rem",
       "normal": "0.625rem",
       "compact": "0.625rem",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root.",
-      "intent": "Recognize the supplementary accent and read the authoritative state label."
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Keep the count-free dot compact but visible.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
+    },
+    {
+      "id": "catalog-badge-dot.2",
+      "selector": ".ui-badge--dot",
+      "condition": null,
+      "property": "block-size",
+      "value": "0.625rem",
+      "normal": "0.625rem",
+      "compact": "0.625rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Keep a circular ten-pixel dot at the default root.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
     },
     {
       "id": "catalog-badge-dot.3",
-      "selector": ".ui-badge::before",
+      "selector": ".ui-badge--dot",
       "condition": null,
-      "property": "aspect-ratio",
-      "value": "1",
-      "normal": "1",
-      "compact": "1",
+      "property": "padding",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular.",
-      "intent": "Recognize the supplementary accent and read the authoritative state label."
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Avoid making an empty dot look like a missing text label.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
+    },
+    {
+      "id": "catalog-badge-dot.4",
+      "selector": ".ui-badge--dot",
+      "condition": null,
+      "property": "border",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Let the checked fill define the decorative silhouette.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
     },
     {
       "id": "catalog-badge-dot.5",
-      "selector": ".ui-badge::before",
+      "selector": ".ui-badge--dot",
       "condition": null,
       "property": "border-radius",
       "value": "50%",
       "normal": "50%",
       "compact": "50%",
       "behavior": "Protected geometry or structural reset",
-      "purpose": "Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls.",
-      "intent": "Recognize the supplementary accent and read the authoritative state label."
+      "purpose": "Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill.",
+      "intent": "Recognize the supplementary cue through the owner’s name and written explanation."
+    },
+    {
+      "id": "catalog-rating-choice.2",
+      "selector": ".ui-rating-choice",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep the visibly different one-to-five star labels inside their targets. Bound long star labels by the available sample width.",
+      "intent": "Compare complete star counts without a hidden numeric meaning."
     },
     {
       "id": "catalog-aspect-ratio.1",
@@ -21018,6 +22440,594 @@
       "behavior": "Protected geometry or structural reset",
       "purpose": "Keep both original comparison images fully available. Preserve the source image ratio.",
       "intent": "Inspect either full version without relying on the optional pointer-only reveal."
+    },
+    {
+      "id": "dashboard-grid.2",
+      "selector": ".ui-dashboard-grid",
+      "condition": null,
+      "property": "grid-template-columns",
+      "value": "repeat(auto-fit, minmax(min(100%, 20rem), 1fr))",
+      "normal": "repeat(auto-fit, minmax(min(100%, 20rem), 1fr))",
+      "compact": "repeat(auto-fit, minmax(min(100%, 20rem), 1fr))",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Arrange independent dashboard summaries using the available width. Add columns only when a readable card fits.",
+      "intent": "Compare quantities without losing content on a small display."
+    },
+    {
+      "id": "dashboard-grid.3",
+      "selector": ".ui-dashboard-grid",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-lg)",
+      "normal": "1rem",
+      "compact": "0.75rem",
+      "behavior": "Density governed",
+      "purpose": "Arrange independent dashboard summaries using the available width. Separate independent metric contexts.",
+      "intent": "Compare quantities without losing content on a small display."
+    },
+    {
+      "id": "dashboard-grid.4",
+      "selector": ".ui-dashboard-grid",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Arrange independent dashboard summaries using the available width. Let long metric wording wrap within the viewport.",
+      "intent": "Compare quantities without losing content on a small display."
+    },
+    {
+      "id": "dashboard-trend.3",
+      "selector": ".ui-trend",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Keep the trend direction and comparison wording together. Clear the supplementary arrow from the words.",
+      "intent": "Read direction independently of success or failure color coding."
+    },
+    {
+      "id": "dashboard-figure.1",
+      "selector": ".ui-dashboard-figure",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a dashboard graphic and its explanation in one semantic group. Use the containing card’s clearance instead of native figure offsets.",
+      "intent": "Find units, summary and data before interpreting its shape."
+    },
+    {
+      "id": "dashboard-figure.2",
+      "selector": ".ui-dashboard-figure",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep a dashboard graphic and its explanation in one semantic group. Keep the chart group shrinkable.",
+      "intent": "Find units, summary and data before interpreting its shape."
+    },
+    {
+      "id": "dashboard-figure-parts.1",
+      "selector": ".ui-dashboard-figure > * + *",
+      "condition": null,
+      "property": "margin-block-start",
+      "value": "var(--ui-space-md)",
+      "normal": "0.75rem",
+      "compact": "0.5rem",
+      "behavior": "Density governed",
+      "purpose": "Separate caption, narrative, graphic and data without duplicate outer gaps. Use a governed related-content gap.",
+      "intent": "Follow the explanation and reach the source observations."
+    },
+    {
+      "id": "dashboard-scroll.1",
+      "selector": ".ui-dashboard-scroll",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep wide source tables readable inside their chart card. Bound the data region by its card.",
+      "intent": "Inspect every value with native keyboard and pointer scrolling."
+    },
+    {
+      "id": "dashboard-scroll.3",
+      "selector": ".ui-dashboard-scroll",
+      "condition": null,
+      "property": "padding",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Keep wide source tables readable inside their chart card. Clear source cells and the region’s native focus.",
+      "intent": "Inspect every value with native keyboard and pointer scrolling."
+    },
+    {
+      "id": "dashboard-table.1",
+      "selector": ".ui-dashboard-table",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Preserve native table relationships alongside compact charts. Share the chart card’s available width.",
+      "intent": "Read exact observations with their headers and units."
+    },
+    {
+      "id": "dashboard-table.2",
+      "selector": ".ui-dashboard-table",
+      "condition": null,
+      "property": "border-collapse",
+      "value": "collapse",
+      "normal": "collapse",
+      "compact": "collapse",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Preserve native table relationships alongside compact charts. Avoid doubled separators between observations.",
+      "intent": "Read exact observations with their headers and units."
+    },
+    {
+      "id": "dashboard-cells.1",
+      "selector": ".ui-dashboard-table th, .ui-dashboard-table td",
+      "condition": null,
+      "property": "padding",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Separate source labels and measurements clearly. Give each data cell a governed inset.",
+      "intent": "Compare individual values without a dense full-cell grid."
+    },
+    {
+      "id": "dashboard-cells.3",
+      "selector": ".ui-dashboard-table th, .ui-dashboard-table td",
+      "condition": null,
+      "property": "border-block-end",
+      "value": "1px solid var(--ui-divider)",
+      "normal": "1px solid var(--ui-divider)",
+      "compact": "1px solid var(--ui-divider)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Separate source labels and measurements clearly. Separate records using a passive line.",
+      "intent": "Compare individual values without a dense full-cell grid."
+    },
+    {
+      "id": "dashboard-bar-value.2",
+      "selector": ".ui-bar-value",
+      "condition": null,
+      "property": "min-inline-size",
+      "value": "6rem",
+      "normal": "6rem",
+      "compact": "6rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Keep exact numeric content above its proportional horizontal bar. Keep short comparison rows at a useful visible measure.",
+      "intent": "Read the same value that determines the compact comparison graphic."
+    },
+    {
+      "id": "dashboard-bar-graphic.3",
+      "selector": ".ui-bar-value::after",
+      "condition": null,
+      "property": "block-size",
+      "value": "0.75rem",
+      "normal": "0.75rem",
+      "compact": "0.75rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Keep the comparison bar visible without becoming a large colored field.",
+      "intent": "Compare values on a common zero-to-one-hundred scale."
+    },
+    {
+      "id": "dashboard-bar-graphic.4",
+      "selector": ".ui-bar-value::after",
+      "condition": null,
+      "property": "margin-block-start",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Derive the supplementary bar from the supplied normalized page attribute. Separate the number from the supplementary graphic.",
+      "intent": "Compare values on a common zero-to-one-hundred scale."
+    },
+    {
+      "id": "dashboard-sparkline.2",
+      "selector": ".ui-sparkline",
+      "condition": null,
+      "property": "block-size",
+      "value": "4rem",
+      "normal": "4rem",
+      "compact": "4rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Reserve one compact plot for an equal-interval trend. Keep the sparkline compact while making its changes discernible.",
+      "intent": "See the weekly shape beside a written summary and complete source values."
+    },
+    {
+      "id": "dashboard-sparkline.3",
+      "selector": ".ui-sparkline",
+      "condition": null,
+      "property": "padding-block",
+      "value": "3px",
+      "normal": "3px",
+      "compact": "3px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Reserve one compact plot for an equal-interval trend. Protect endpoint strokes at the zero and maximum edges.",
+      "intent": "See the weekly shape beside a written summary and complete source values."
+    },
+    {
+      "id": "dashboard-sparkline.5",
+      "selector": ".ui-sparkline",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "24rem",
+      "normal": "24rem",
+      "compact": "24rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Reserve one compact plot for an equal-interval trend. Keep the sparkline a compact inline-context graphic rather than stretching it across a desktop page.",
+      "intent": "See the weekly shape beside a written summary and complete source values."
+    },
+    {
+      "id": "dashboard-spark-segment.1",
+      "selector": ".ui-spark-segment",
+      "condition": null,
+      "property": "flex",
+      "value": "1 1 0",
+      "normal": "1 1 0",
+      "compact": "1 1 0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw one straight segment between adjacent supplied observations. Distribute equal time intervals equally.",
+      "intent": "Inspect a truthful line shape without an interactive chart dependency."
+    },
+    {
+      "id": "dashboard-spark-segment.2",
+      "selector": ".ui-spark-segment",
+      "condition": null,
+      "property": "block-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw one straight segment between adjacent supplied observations. Map each segment to the same vertical scale.",
+      "intent": "Inspect a truthful line shape without an interactive chart dependency."
+    },
+    {
+      "id": "dashboard-spark-segment.4",
+      "selector": ".ui-spark-segment",
+      "condition": null,
+      "property": "clip-path",
+      "value": "polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px))",
+      "normal": "polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px))",
+      "compact": "polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px))",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw one straight segment between adjacent supplied observations. Make a visible three-pixel strip between two validated percentages; line endpoints come from the same observations as the data table.",
+      "intent": "Inspect a truthful line shape without an interactive chart dependency."
+    },
+    {
+      "id": "dashboard-spark-bars.3",
+      "selector": ".ui-spark-bars",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-sm)",
+      "normal": "0.5rem",
+      "compact": "0.375rem",
+      "behavior": "Density governed",
+      "purpose": "Compare equal-interval values on a shared zero baseline. Separate discrete observations.",
+      "intent": "Read relative volume without a truncated bar scale."
+    },
+    {
+      "id": "dashboard-spark-bars.4",
+      "selector": ".ui-spark-bars",
+      "condition": null,
+      "property": "block-size",
+      "value": "8rem",
+      "normal": "8rem",
+      "compact": "8rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Compare equal-interval values on a shared zero baseline. Provide a compact readable common scale.",
+      "intent": "Read relative volume without a truncated bar scale."
+    },
+    {
+      "id": "dashboard-spark-bars.5",
+      "selector": ".ui-spark-bars",
+      "condition": null,
+      "property": "border-block-end",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Compare equal-interval values on a shared zero baseline. Expose the common zero baseline.",
+      "intent": "Read relative volume without a truncated bar scale."
+    },
+    {
+      "id": "dashboard-spark-bars.7",
+      "selector": ".ui-spark-bars",
+      "condition": null,
+      "property": "max-inline-size",
+      "value": "24rem",
+      "normal": "24rem",
+      "compact": "24rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Compare equal-interval values on a shared zero baseline. Keep a short series compact while its exact data table remains independently readable.",
+      "intent": "Read relative volume without a truncated bar scale."
+    },
+    {
+      "id": "dashboard-spark-column.1",
+      "selector": ".ui-spark-column",
+      "condition": null,
+      "property": "flex",
+      "value": "1 1 0",
+      "normal": "1 1 0",
+      "compact": "1 1 0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Map a supplied normalized observation to column height. Give equal intervals equal widths.",
+      "intent": "Compare the same measurements that remain available in the native table."
+    },
+    {
+      "id": "dashboard-spark-column.2",
+      "selector": ".ui-spark-column",
+      "condition": null,
+      "property": "block-size",
+      "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "normal": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "compact": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Map a supplied normalized observation to column height. Bound visual height to the declared zero-to-one-hundred scale.",
+      "intent": "Compare the same measurements that remain available in the native table."
+    },
+    {
+      "id": "dashboard-bullet.2",
+      "selector": ".ui-bullet",
+      "condition": null,
+      "property": "block-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place actual and target markers on one compact shared scale. Keep the target tick distinct from the inner measure.",
+      "intent": "Recognize the shortfall using both the written amounts and the marker shapes."
+    },
+    {
+      "id": "dashboard-bullet.4",
+      "selector": ".ui-bullet",
+      "condition": null,
+      "property": "border",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Place actual and target markers on one compact shared scale. Expose the full measurement range.",
+      "intent": "Recognize the shortfall using both the written amounts and the marker shapes."
+    },
+    {
+      "id": "dashboard-bullet-actual.3",
+      "selector": ".ui-bullet::before",
+      "condition": null,
+      "property": "inset-inline-start",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw the actual measure below its target marker. Start the measure at the common zero.",
+      "intent": "Compare the actual extent with the written target amount."
+    },
+    {
+      "id": "dashboard-bullet-actual.4",
+      "selector": ".ui-bullet::before",
+      "condition": null,
+      "property": "inset-block",
+      "value": "25%",
+      "normal": "25%",
+      "compact": "25%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw the actual measure below its target marker. Keep the measure slimmer than the target tick.",
+      "intent": "Compare the actual extent with the written target amount."
+    },
+    {
+      "id": "dashboard-bullet-actual.5",
+      "selector": ".ui-bullet::before",
+      "condition": null,
+      "property": "inline-size",
+      "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "normal": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "compact": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw the actual measure below its target marker. Derive actual extent from the validated normalized value.",
+      "intent": "Compare the actual extent with the written target amount."
+    },
+    {
+      "id": "dashboard-bullet-target.3",
+      "selector": ".ui-bullet::after",
+      "condition": null,
+      "property": "inset-inline-start",
+      "value": "clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px))",
+      "normal": "clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px))",
+      "compact": "clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px))",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw a narrow target tick distinct from the actual bar. Center the three-pixel tick at its validated target while protecting both endpoints.",
+      "intent": "Locate the target without relying on a second hue."
+    },
+    {
+      "id": "dashboard-bullet-target.4",
+      "selector": ".ui-bullet::after",
+      "condition": null,
+      "property": "inset-block",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw a narrow target tick distinct from the actual bar. Make the target taller than the actual measure.",
+      "intent": "Locate the target without relying on a second hue."
+    },
+    {
+      "id": "dashboard-bullet-target.5",
+      "selector": ".ui-bullet::after",
+      "condition": null,
+      "property": "inline-size",
+      "value": "3px",
+      "normal": "3px",
+      "compact": "3px",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Draw a narrow target tick distinct from the actual bar. Keep the target visible at either density.",
+      "intent": "Locate the target without relying on a second hue."
+    },
+    {
+      "id": "dashboard-meter.1",
+      "selector": ".ui-meter",
+      "condition": null,
+      "property": "inline-size",
+      "value": "100%",
+      "normal": "100%",
+      "compact": "100%",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use browser-owned bounded measurement semantics for capacity. Use the labelled measurement’s available width.",
+      "intent": "Read the amount and thresholds without mistaking it for loading progress."
+    },
+    {
+      "id": "dashboard-meter.2",
+      "selector": ".ui-meter",
+      "condition": null,
+      "property": "block-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use browser-owned bounded measurement semantics for capacity. Keep the native scalar indicator visible.",
+      "intent": "Read the amount and thresholds without mistaking it for loading progress."
+    },
+    {
+      "id": "dashboard-meter-track.2",
+      "selector": ".ui-meter::-webkit-meter-bar",
+      "condition": null,
+      "property": "border",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Give the native Chrome meter a governed neutral range. Expose the full bounded range.",
+      "intent": "See remaining capacity within a clearly bounded scalar measurement."
+    },
+    {
+      "id": "dashboard-meter-track.3",
+      "selector": ".ui-meter::-webkit-meter-bar",
+      "condition": null,
+      "property": "border-radius",
+      "value": "var(--ui-radius-small)",
+      "normal": "0.375rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Give the native Chrome meter a governed neutral range. Use the shared bounded-control corner role.",
+      "intent": "See remaining capacity within a clearly bounded scalar measurement."
+    },
+    {
+      "id": "dashboard-segment-bar.2",
+      "selector": ".ui-segment-bar",
+      "condition": null,
+      "property": "block-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Show bounded contributions to one explicitly stated total. Give contributions a visible common strip.",
+      "intent": "Compare contributions while exact counts and shares remain in the table."
+    },
+    {
+      "id": "dashboard-segment-bar.3",
+      "selector": ".ui-segment-bar",
+      "condition": null,
+      "property": "border",
+      "value": "1px solid var(--ui-border)",
+      "normal": "1px solid var(--ui-border)",
+      "compact": "1px solid var(--ui-border)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Show bounded contributions to one explicitly stated total. Expose the total extent without implying progress.",
+      "intent": "Compare contributions while exact counts and shares remain in the table."
+    },
+    {
+      "id": "dashboard-segment.1",
+      "selector": ".ui-segment",
+      "condition": null,
+      "property": "inline-size",
+      "value": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "normal": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "compact": "calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Derive each contribution’s width from the supplied normalized share. Map validated shares to their stated total.",
+      "intent": "Associate the ordered contribution with its written category."
+    },
+    {
+      "id": "dashboard-segment.3",
+      "selector": ".ui-segment",
+      "condition": null,
+      "property": "border-inline-end",
+      "value": "2px solid var(--ui-surface)",
+      "normal": "2px solid var(--ui-surface)",
+      "compact": "2px solid var(--ui-surface)",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Derive each contribution’s width from the supplied normalized share. Separate adjacent portions without relying only on hue.",
+      "intent": "Associate the ordered contribution with its written category."
+    },
+    {
+      "id": "dashboard-tracker.3",
+      "selector": ".ui-tracker",
+      "condition": null,
+      "property": "gap",
+      "value": "var(--ui-space-xs)",
+      "normal": "0.25rem",
+      "compact": "0.25rem",
+      "behavior": "Density governed",
+      "purpose": "Present discrete service observations in chronological order. Separate discrete intervals.",
+      "intent": "Locate unavailable and unknown intervals with symbols and exact source data."
+    },
+    {
+      "id": "dashboard-tracker.5",
+      "selector": ".ui-tracker",
+      "condition": null,
+      "property": "padding",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present discrete service observations in chronological order. Use the figure’s existing clearance.",
+      "intent": "Locate unavailable and unknown intervals with symbols and exact source data."
+    },
+    {
+      "id": "dashboard-tracker.6",
+      "selector": ".ui-tracker",
+      "condition": null,
+      "property": "margin",
+      "value": "0",
+      "normal": "0",
+      "compact": "0",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Present discrete service observations in chronological order. Avoid native list offsets around the graph.",
+      "intent": "Locate unavailable and unknown intervals with symbols and exact source data."
+    },
+    {
+      "id": "dashboard-tracker-cell.3",
+      "selector": ".ui-tracker-cell",
+      "condition": null,
+      "property": "inline-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use a compact symbol tile for one supplied observation. Make interval symbols discernible without implying an interactive target.",
+      "intent": "Recognize an available interval using shape and the written legend."
+    },
+    {
+      "id": "dashboard-tracker-cell.4",
+      "selector": ".ui-tracker-cell",
+      "condition": null,
+      "property": "block-size",
+      "value": "1.5rem",
+      "normal": "1.5rem",
+      "compact": "1.5rem",
+      "behavior": "Protected geometry or structural reset",
+      "purpose": "Use a compact symbol tile for one supplied observation. Keep each observation square.",
+      "intent": "Recognize an available interval using shape and the written legend."
     }
   ]
 }

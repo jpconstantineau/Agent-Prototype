@@ -1,4 +1,5 @@
 import {installCatalog} from './catalog-styles.mjs';
+import {installDashboard} from './dashboard-styles.mjs';
 import {proseHeadings,installProse} from './prose.mjs';
 import {palettes} from './palettes.mjs';
 import {densityTokens,densityProfiles,coarseTargetMedia,compactCoarseMinimum} from './density.mjs';
@@ -162,6 +163,7 @@ rule('forced-switch-thumb', '.ui-switch input[type="checkbox"]::before', 'Remove
 rule('forced-primary', '.btn-primary, .btn-primary:hover:not(:disabled)', 'Honor the system palette for a labelled primary button.', 'Find the action boundary when explicitly using a forced-color appearance.', 'forced-colors', [['border-color','ButtonText','Override both normal and hover transparent borders with the requested system-contrast boundary without changing the reserved control size.']], '(forced-colors: active)');
 installProse(rule);
 installCatalog(rule,rules);
+installDashboard(rule);
 export { rules };
 
 export const contrastPairs = [

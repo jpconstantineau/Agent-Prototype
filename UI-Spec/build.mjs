@@ -1,5 +1,6 @@
 import {catalog,includedCatalog,catalogSources,validateCatalog} from './component-catalog.mjs';
 import {catalogPage,catalogDocument} from './catalog-output.mjs';
+import {dashboardPage} from './dashboard-output.mjs';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { tokens, rules, bootstrapVersion, contrastPairs, contrastExceptions, palettes, colorUse } from './system.mjs';
@@ -34,6 +35,7 @@ export async function outputs() {
     ['UI-Spec/CSS-DECISIONS.md',ledgerText()],
   ]);
   result.set('docs/ui-spec/catalog.html',catalogPage(await readFile(new URL('docs/ui-spec/index.html',root),'utf8')));
+  result.set('docs/ui-spec/dashboard.html',dashboardPage(await readFile(new URL('docs/ui-spec/index.html',root),'utf8')));
   result.set('docs/ui-spec/components.json',JSON.stringify({version:1,sources:catalogSources,counts:validateCatalog(),components:catalog},null,2)+'\n');
   result.set('UI-Spec/COMPONENT-CATALOG.md',catalogDocument());
   for (const [key,path] of Object.entries(designFiles)) {

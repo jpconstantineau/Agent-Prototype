@@ -30,3 +30,5 @@ The [foundation implementation guide](docs/README.md#foundation-implementation) 
 Using Lemonade for local inference? Follow the [Lemonade setup guide](docs/README.md#using-lemonade), including its allowed-origin setting and Chrome network permission for the hosted app.
 
 The proposed [UI guidelines and framework](UI-Spec/README.md) document design tokens, native click-to-edit forms, Bootstrap layouts and the user purpose of every CSS declaration. Inspect the [live UI reference](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/) after Pages publishes this revision.
+
+The [dashboard research and contracts](UI-Spec/DASHBOARDS.md) compare native/CSS options from other component libraries. Inspect [dashboard examples](https://jpconstantineau.github.io/Agent-Prototype/ui-spec/dashboard.html) for sparklines, comparison bars, targets, capacity and observation strips.

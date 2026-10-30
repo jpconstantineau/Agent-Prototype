@@ -1,0 +1,31 @@
+import {test,expect} from '@playwright/test';
+import {palettes} from '../../UI-Spec/system.mjs';
+import {dashboardExamples} from '../../UI-Spec/dashboard-examples.mjs';
+const family='dashboard';
+const rgb=hex=>'rgb('+hex.slice(1).match(/../g).map(v=>parseInt(v,16)).join(', ')+')';
+const noOverflow=async page=>expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+async function open(page,key='light-standard',density='normal'){
+ await page.goto('./ui-spec/dashboard.html');await page.getByRole('switch',{name:'Dark mode',exact:true}).setChecked(palettes[key].theme==='dark');await page.getByRole('switch',{name:'Distinct status colors',exact:true}).setChecked(palettes[key].vision==='distinct');await page.getByRole('switch',{name:'Compact mode',exact:true}).setChecked(density==='compact');
+}
+for(const key of Object.keys(palettes))for(const density of ['normal','compact'])test(family+' native dashboard colors, supplied data and reflow / '+key+' / '+density,async({page})=>{
+ await open(page,key,density);const colors=palettes[key].colors;await expect(page.locator('[data-dashboard]')).toHaveCount(8);
+ for(const example of dashboardExamples)for(const cls of example.classes)expect(await page.locator('#dashboard-'+example.id+' .ui-catalog-sample .'+cls).count(),example.id+' '+cls).toBeGreaterThan(0);
+ expect(await page.locator('.ui-bar-value').first().evaluate(n=>getComputedStyle(n,'::after').backgroundImage)).toContain('80%');await expect(page.locator('.ui-spark-column').first()).toHaveCSS('background-color',rgb(colors.interactive));
+ const columns=await page.locator('.ui-spark-column').evaluateAll(ns=>ns.map(n=>({height:n.getBoundingClientRect().height,scale:n.parentElement.clientHeight,value:Number(n.dataset.percent)})));for(const c of columns)expect(Math.abs(c.height-c.scale*c.value/100)).toBeLessThan(1);
+ const segments=await page.locator('.ui-spark-segment').evaluateAll(ns=>ns.map(n=>getComputedStyle(n).clipPath));expect(segments.every(v=>v!=='none'&&!v.includes('attr('))).toBe(true);expect(new Set(segments).size).toBeGreaterThan(1);
+ const bullet=await page.locator('.ui-bullet').evaluate(n=>({width:n.clientWidth,actual:parseFloat(getComputedStyle(n,'::before').width),target:parseFloat(getComputedStyle(n,'::after').insetInlineStart)}));expect(Math.abs(bullet.actual-bullet.width*.64)).toBeLessThan(1);expect(Math.abs(bullet.target-(bullet.width*.75-1.5))).toBeLessThan(1);
+ for(const [i,role] of ['success','warning','danger'].entries())await expect(page.locator('.ui-segment').nth(i)).toHaveCSS('background-color',rgb(colors[role]));
+ const portions=await page.locator('.ui-segment').evaluateAll(ns=>ns.map(n=>Number(n.dataset.percent)));expect(portions.reduce((n,v)=>n+v,0)).toBe(100);
+ await expect(page.locator('.ui-tracker-cell')).toHaveCount(12);await expect(page.locator('.ui-tracker-cell--error')).toHaveText('!');await expect(page.locator('.ui-tracker-cell--unknown')).toHaveText('?');await expect(page.locator('.ui-tracker-cell--unknown')).toHaveCSS('background-color',rgb(colors.muted));await expect(page.locator('.ui-tracker-cell--error')).toHaveCSS('color',rgb(colors['on-interactive']));
+ const meter=page.locator('.ui-meter');await expect(meter).toHaveAttribute('value','54');expect(await meter.evaluate(n=>({value:n.value,min:n.min,max:n.max,low:n.low,high:n.high,optimum:n.optimum}))).toEqual({value:54,min:0,max:80,low:56,high:72,optimum:0});
+ for(const width of [320,390,768,1440]){await page.setViewportSize({width,height:960});await noOverflow(page);}
+ const ids=await page.locator('[id]').evaluateAll(ns=>ns.map(n=>n.id));expect(new Set(ids).size).toBe(ids.length);expect(await page.locator('[aria-labelledby],[aria-describedby],label[for]').evaluateAll(ns=>ns.flatMap(n=>['aria-labelledby','aria-describedby','for'].flatMap(a=>(n.getAttribute(a)||'').split(' ').filter(v=>v&&!document.getElementById(v)))))).toEqual([]);await expect(page.locator('[style],style')).toHaveCount(0);expect(await page.locator('script').evaluateAll(ns=>ns.map(n=>new URL(n.src).pathname.split('/').at(-1)))).toEqual(['appearance.js']);
+ await page.locator('#dashboard-sparkline').screenshot({path:'.tmp/dashboard-'+key+'-'+density+'-sparkline.png'});
+});
+test('dashboard source values and native disclosures remain usable without JavaScript',async({browser,baseURL})=>{
+ const context=await browser.newContext({baseURL,javaScriptEnabled:false,viewport:{width:390,height:844}});try{const page=await context.newPage();await page.goto('./ui-spec/dashboard.html');await page.getByText('Inspect Weekly review series values',{exact:true}).click();await expect(page.locator('#dashboard-sparkline tbody tr')).toHaveCount(7);await expect(page.locator('#dashboard-sparkline tbody tr').last()).toContainText('72');await expect(page.locator('.ui-meter')).toHaveAttribute('value','54');await page.getByText('Inspect Service observation intervals values',{exact:true}).click();await expect(page.locator('#dashboard-tracker tbody')).toContainText('Unknown');await page.locator('#dashboard-sparkline summary').first().focus();await page.keyboard.press('Enter');await expect(page.locator('#dashboard-sparkline details').first()).not.toHaveAttribute('open');await noOverflow(page);}finally{await context.close();}
+});
+test('dashboard enlarged text, forced colors and attribute-driven geometry keep exact data reachable',async({page})=>{
+ await open(page);const column=page.locator('.ui-spark-column').first(),before=await column.boundingBox();await column.evaluate(n=>n.setAttribute('data-percent','60'));expect((await column.boundingBox()).height).toBeCloseTo(before.height*2,0);
+ await page.setViewportSize({width:390,height:844});await page.route('**/ui-spec/dashboard-user-spacing.css',r=>r.fulfill({contentType:'text/css',body:'html{font-size:200%}p,label,li{line-height:1.5;letter-spacing:.12em;word-spacing:.16em}p{margin-bottom:2em}'}));await page.addStyleTag({url:new URL('dashboard-user-spacing.css',page.url()).href});await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});await page.getByText('Inspect Weekly review series values',{exact:true}).click();await expect(page.locator('#dashboard-sparkline tbody')).toBeVisible();await expect(page.locator('#dashboard-sparkline .ui-catalog-sample')).toContainText('Rises from 30 to 72');await noOverflow(page);
+});

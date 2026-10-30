@@ -1880,30 +1880,7 @@ Selector: `.ui-rating-star`. Source: project. Verification family: `catalog`.
 | catalog-rating-star.1 | font-size | 1.5rem | Use familiar star labels alongside real native rating choices. Make the star silhouette clearly distinguishable. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
 | catalog-rating-star.2 | line-height | 1 | Use familiar star labels alongside real native rating choices. Keep the star within the protected choice target. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
 | catalog-rating-star.3 | color | var(--ui-interactive) | Use familiar star labels alongside real native rating choices. Use a checked accent on the neutral label surface. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
-
-## catalog-rating-filled-rest
-
-Selector: `.ui-rating-star--filled`. Source: project. Verification family: `catalog`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| catalog-rating-filled-rest.1 | display | none | Keep unchosen stars outlined until a native rating is selected. Hide only the decorative filled copy before selection. | Distinguish the selected cumulative rating through filled star shapes. | proposed |
-
-## catalog-rating-filled
-
-Selector: `.ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled`. Source: project. Verification family: `catalog`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| catalog-rating-filled.1 | display | inline | Map native rating state to cumulative filled star labels. Fill the selected star and all earlier stars. | Read the chosen number through star shape and the native checked mark. | proposed |
-
-## catalog-rating-outline
-
-Selector: `.ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline`. Source: project. Verification family: `catalog`.
-
-| ID | Property | Exact value | Purpose and reason | User intent | Review |
-| --- | --- | --- | --- | --- | --- |
-| catalog-rating-outline.1 | display | none | Avoid showing both decorative star copies for a selected value. Hide only the redundant outlined decorative copy. | Inspect one clear star at each position in the scale. | proposed |
+| catalog-rating-star.4 | overflow-wrap | anywhere | Use familiar star labels alongside real native rating choices. Allow long star counts to wrap under enlarged text rather than widen the page. | Choose the named one-to-five rating without interpreting unlabeled symbols. | proposed |
 
 ## catalog-disclosures
 
@@ -2047,7 +2024,7 @@ Selector: `.ui-alert-dialog`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| catalog-dialog-accent.1 | border-inline-start-color | var(--ui-accent) | Carry the same labelled alert accent into the native dialog. Match the dialog edge to its colored message heading. | Identify the condition while operating controls on their checked neutral surface. | proposed |
+| catalog-dialog-accent.1 | border-color | var(--ui-accent) | Carry the same labelled alert accent into the native dialog. Limit semantic color to the outer dialog boundary; heading and content keep neutral reading ink. | Identify the condition while operating controls on their checked neutral surface. | proposed |
 
 ## catalog-empty
 
@@ -2081,13 +2058,15 @@ Selector: `.ui-badge`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| catalog-badge.1 | display | inline-flex | Keep short metadata visibly grouped. Keep the colored dot and written metadata in one inline group. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.2 | padding | var(--ui-space-xs) var(--ui-space-sm) | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.3 | border | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.4 | border-radius | var(--ui-radius-small) | Keep short metadata visibly grouped. Use the short-label shape. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.5 | font-size | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.6 | align-items | center | Keep short metadata visibly grouped. Center the dot on the label line. | Read a state or category without depending on a colored dot. | proposed |
-| catalog-badge.7 | gap | var(--ui-space-sm) | Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label. | Read a state or category without depending on a colored dot. | proposed |
+| catalog-badge.1 | display | inline-flex | Keep short metadata visibly grouped. Keep authored badge content in one compact metadata group. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.2 | padding | var(--ui-space-xs) var(--ui-space-sm) | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.3 | border | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.4 | border-radius | var(--ui-radius-small) | Keep short metadata visibly grouped. Use the short-label shape. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.5 | font-size | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.6 | align-items | center | Keep short metadata visibly grouped. Center the written metadata inside its container. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.7 | background-color | var(--ui-accent) | Keep short metadata visibly grouped. Put additional information inside the badge’s bounded accent fill. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.8 | color | var(--ui-on-interactive) | Keep short metadata visibly grouped. Keep badge content readable on every checked accent fill. | Read supplemental metadata or counts in their owner’s context. | proposed |
+| catalog-badge.9 | justify-content | center | Keep short metadata visibly grouped. Center short counts in the optional circular badge. | Read supplemental metadata or counts in their owner’s context. | proposed |
 
 ## catalog-aura
 
@@ -2100,18 +2079,60 @@ Selector: `.ui-aura`. Source: project. Verification family: `catalog`.
 | catalog-aura.3 | border-radius | var(--ui-radius-panel) | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
 | catalog-aura.4 | background | linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-accent), var(--ui-divider), var(--ui-accent)) border-box | Demonstrate an optional accent frame without tinting a large work area. Limit the static accent to the border while keeping the reading field neutral. | Locate the explicitly labelled example emphasis without confusing it with focus. | proposed |
 
-## catalog-badge-dot
+## catalog-badge-anchor
 
-Selector: `.ui-badge::before`. Source: project. Verification family: `catalog`.
+Selector: `.ui-badge-anchor`. Source: project. Verification family: `catalog`.
 
 | ID | Property | Exact value | Purpose and reason | User intent | Review |
 | --- | --- | --- | --- | --- | --- |
-| catalog-badge-dot.1 | content | "" | Expose a visible colored dot without replacing badge wording. Create only a decorative mark; meaning stays in real text. | Recognize the supplementary accent and read the authoritative state label. | proposed |
-| catalog-badge-dot.2 | inline-size | 0.625rem | Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root. | Recognize the supplementary accent and read the authoritative state label. | proposed |
-| catalog-badge-dot.3 | aspect-ratio | 1 | Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular. | Recognize the supplementary accent and read the authoritative state label. | proposed |
-| catalog-badge-dot.4 | flex-shrink | 0 | Expose a visible colored dot without replacing badge wording. Keep long labels from flattening the dot. | Recognize the supplementary accent and read the authoritative state label. | proposed |
-| catalog-badge-dot.5 | border-radius | 50% | Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls. | Recognize the supplementary accent and read the authoritative state label. | proposed |
-| catalog-badge-dot.6 | background-color | var(--ui-accent) | Expose a visible colored dot without replacing badge wording. Apply the labelled semantic accent. | Recognize the supplementary accent and read the authoritative state label. | proposed |
+| catalog-badge-anchor.1 | position | relative | Associate extra metadata with an owner while reserving its offset space. Contain only this owner’s offset badge. | Read the owner and its supplementary count without clipping either. | proposed |
+| catalog-badge-anchor.2 | display | inline-grid | Associate extra metadata with an owner while reserving its offset space. Keep the owner at its intrinsic size. | Read the owner and its supplementary count without clipping either. | proposed |
+| catalog-badge-anchor.3 | padding-block-start | var(--ui-space-md) | Associate extra metadata with an owner while reserving its offset space. Reserve space for the superscript badge above the owner. | Read the owner and its supplementary count without clipping either. | proposed |
+| catalog-badge-anchor.4 | padding-inline-end | var(--ui-space-md) | Associate extra metadata with an owner while reserving its offset space. Reserve half a typical count disc so it straddles the owner’s trailing corner. | Read the owner and its supplementary count without clipping either. | proposed |
+| catalog-badge-anchor.5 | max-inline-size | 100% | Associate extra metadata with an owner while reserving its offset space. Keep the owner and reserved corner within the sample. | Read the owner and its supplementary count without clipping either. | proposed |
+
+## catalog-badge-offset
+
+Selector: `.ui-badge--offset`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-offset.1 | position | absolute | Place metadata at its owner’s upper trailing corner. Offset the badge within the space reserved by its owner. | Recognize counts as annotations rather than aligned operational status. | proposed |
+| catalog-badge-offset.2 | inset-block-start | 0 | Place metadata at its owner’s upper trailing corner. Align the annotation with the reserved top edge. | Recognize counts as annotations rather than aligned operational status. | proposed |
+| catalog-badge-offset.3 | inset-inline-end | 0 | Place metadata at its owner’s upper trailing corner. Follow the logical trailing corner in both reading directions. | Recognize counts as annotations rather than aligned operational status. | proposed |
+
+## catalog-badge-counter
+
+Selector: `.ui-badge--counter`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-counter.1 | min-inline-size | 1.5rem | Give short counts the familiar superscript disc or pill presentation. Reserve a readable two-digit count at the default root. | Read the actual count inside its colored annotation. | proposed |
+| catalog-badge-counter.2 | min-block-size | 1.5rem | Give short counts the familiar superscript disc or pill presentation. Keep a single-digit count disc clearly visible. | Read the actual count inside its colored annotation. | proposed |
+| catalog-badge-counter.3 | padding | 0 var(--ui-space-xs) | Give short counts the familiar superscript disc or pill presentation. Allow longer counts such as 99+ to expand into a pill. | Read the actual count inside its colored annotation. | proposed |
+| catalog-badge-counter.4 | border-radius | 999px | Give short counts the familiar superscript disc or pill presentation. Keep the annotation round without clipping longer content. | Read the actual count inside its colored annotation. | proposed |
+| catalog-badge-counter.5 | font-variant-numeric | tabular-nums | Give short counts the familiar superscript disc or pill presentation. Keep changing count widths stable where the font supports it. | Read the actual count inside its colored annotation. | proposed |
+
+## catalog-badge-dot
+
+Selector: `.ui-badge--dot`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-badge-dot.1 | inline-size | 0.625rem | Offer an empty offset notification dot when an exact count is unavailable. Keep the count-free dot compact but visible. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
+| catalog-badge-dot.2 | block-size | 0.625rem | Offer an empty offset notification dot when an exact count is unavailable. Keep a circular ten-pixel dot at the default root. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
+| catalog-badge-dot.3 | padding | 0 | Offer an empty offset notification dot when an exact count is unavailable. Avoid making an empty dot look like a missing text label. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
+| catalog-badge-dot.4 | border | 0 | Offer an empty offset notification dot when an exact count is unavailable. Let the checked fill define the decorative silhouette. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
+| catalog-badge-dot.5 | border-radius | 50% | Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill. | Recognize the supplementary cue through the owner’s name and written explanation. | proposed |
+
+## catalog-rating-choice
+
+Selector: `.ui-rating-choice`. Source: project. Verification family: `catalog`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| catalog-rating-choice.1 | flex-wrap | wrap | Keep the visibly different one-to-five star labels inside their targets. Let the native radio and star count wrap at enlarged text sizes. | Compare complete star counts without a hidden numeric meaning. | proposed |
+| catalog-rating-choice.2 | max-inline-size | 100% | Keep the visibly different one-to-five star labels inside their targets. Bound long star labels by the available sample width. | Compare complete star counts without a hidden numeric meaning. | proposed |
 
 ## catalog-aspect-ratio
 
@@ -3470,3 +3491,284 @@ Selector: `.ui-diff img`. Source: project. Verification family: `catalog`.
 | catalog-diff-full-images.1 | display | block | Keep both original comparison images fully available. Separate each supplied image from its caption. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
 | catalog-diff-full-images.2 | max-inline-size | 100% | Keep both original comparison images fully available. Keep the full image within its comparison card. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
 | catalog-diff-full-images.3 | block-size | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. | proposed |
+
+## dashboard-grid
+
+Selector: `.ui-dashboard-grid`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-grid.1 | display | grid | Arrange independent dashboard summaries using the available width. Give related cards one layout owner. | Compare quantities without losing content on a small display. | proposed |
+| dashboard-grid.2 | grid-template-columns | repeat(auto-fit, minmax(min(100%, 20rem), 1fr)) | Arrange independent dashboard summaries using the available width. Add columns only when a readable card fits. | Compare quantities without losing content on a small display. | proposed |
+| dashboard-grid.3 | gap | var(--ui-space-lg) | Arrange independent dashboard summaries using the available width. Separate independent metric contexts. | Compare quantities without losing content on a small display. | proposed |
+| dashboard-grid.4 | min-inline-size | 0 | Arrange independent dashboard summaries using the available width. Let long metric wording wrap within the viewport. | Compare quantities without losing content on a small display. | proposed |
+
+## dashboard-trend
+
+Selector: `.ui-trend`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-trend.1 | display | flex | Keep the trend direction and comparison wording together. Group the real arrow with its written comparison. | Read direction independently of success or failure color coding. | proposed |
+| dashboard-trend.2 | align-items | baseline | Keep the trend direction and comparison wording together. Align direction with the comparison text. | Read direction independently of success or failure color coding. | proposed |
+| dashboard-trend.3 | gap | var(--ui-space-xs) | Keep the trend direction and comparison wording together. Clear the supplementary arrow from the words. | Read direction independently of success or failure color coding. | proposed |
+| dashboard-trend.4 | font-weight | 600 | Keep the trend direction and comparison wording together. Identify the comparison as part of the metric context. | Read direction independently of success or failure color coding. | proposed |
+
+## dashboard-figure
+
+Selector: `.ui-dashboard-figure`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-figure.1 | margin | 0 | Keep a dashboard graphic and its explanation in one semantic group. Use the containing card’s clearance instead of native figure offsets. | Find units, summary and data before interpreting its shape. | proposed |
+| dashboard-figure.2 | min-inline-size | 0 | Keep a dashboard graphic and its explanation in one semantic group. Keep the chart group shrinkable. | Find units, summary and data before interpreting its shape. | proposed |
+
+## dashboard-figure-parts
+
+Selector: `.ui-dashboard-figure > * + *`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-figure-parts.1 | margin-block-start | var(--ui-space-md) | Separate caption, narrative, graphic and data without duplicate outer gaps. Use a governed related-content gap. | Follow the explanation and reach the source observations. | proposed |
+
+## dashboard-scroll
+
+Selector: `.ui-dashboard-scroll`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-scroll.1 | max-inline-size | 100% | Keep wide source tables readable inside their chart card. Bound the data region by its card. | Inspect every value with native keyboard and pointer scrolling. | proposed |
+| dashboard-scroll.2 | overflow | auto | Keep wide source tables readable inside their chart card. Keep long labels locally reachable. | Inspect every value with native keyboard and pointer scrolling. | proposed |
+| dashboard-scroll.3 | padding | var(--ui-space-xs) | Keep wide source tables readable inside their chart card. Clear source cells and the region’s native focus. | Inspect every value with native keyboard and pointer scrolling. | proposed |
+
+## dashboard-table
+
+Selector: `.ui-dashboard-table`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-table.1 | inline-size | 100% | Preserve native table relationships alongside compact charts. Share the chart card’s available width. | Read exact observations with their headers and units. | proposed |
+| dashboard-table.2 | border-collapse | collapse | Preserve native table relationships alongside compact charts. Avoid doubled separators between observations. | Read exact observations with their headers and units. | proposed |
+| dashboard-table.3 | font-variant-numeric | tabular-nums | Preserve native table relationships alongside compact charts. Keep comparable digits aligned where supported. | Read exact observations with their headers and units. | proposed |
+
+## dashboard-cells
+
+Selector: `.ui-dashboard-table th, .ui-dashboard-table td`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-cells.1 | padding | var(--ui-space-sm) | Separate source labels and measurements clearly. Give each data cell a governed inset. | Compare individual values without a dense full-cell grid. | proposed |
+| dashboard-cells.2 | text-align | start | Separate source labels and measurements clearly. Align values with the native reading direction. | Compare individual values without a dense full-cell grid. | proposed |
+| dashboard-cells.3 | border-block-end | 1px solid var(--ui-divider) | Separate source labels and measurements clearly. Separate records using a passive line. | Compare individual values without a dense full-cell grid. | proposed |
+| dashboard-cells.4 | overflow-wrap | anywhere | Separate source labels and measurements clearly. Wrap long labels instead of widening the whole page. | Compare individual values without a dense full-cell grid. | proposed |
+
+## dashboard-bar-value
+
+Selector: `.ui-bar-value`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-bar-value.1 | display | block | Keep exact numeric content above its proportional horizontal bar. Give the data element a shared full-width comparison scale. | Read the same value that determines the compact comparison graphic. | proposed |
+| dashboard-bar-value.2 | min-inline-size | 6rem | Keep exact numeric content above its proportional horizontal bar. Keep short comparison rows at a useful visible measure. | Read the same value that determines the compact comparison graphic. | proposed |
+
+## dashboard-bar-graphic
+
+Selector: `.ui-bar-value::after`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-bar-graphic.1 | content | "" | Derive the supplementary bar from the supplied normalized page attribute. Keep essential values in actual HTML rather than generated text. | Compare values on a common zero-to-one-hundred scale. | proposed |
+| dashboard-bar-graphic.2 | display | block | Derive the supplementary bar from the supplied normalized page attribute. Place the graphic beneath its exact written value. | Compare values on a common zero-to-one-hundred scale. | proposed |
+| dashboard-bar-graphic.3 | block-size | 0.75rem | Derive the supplementary bar from the supplied normalized page attribute. Keep the comparison bar visible without becoming a large colored field. | Compare values on a common zero-to-one-hundred scale. | proposed |
+| dashboard-bar-graphic.4 | margin-block-start | var(--ui-space-xs) | Derive the supplementary bar from the supplied normalized page attribute. Separate the number from the supplementary graphic. | Compare values on a common zero-to-one-hundred scale. | proposed |
+| dashboard-bar-graphic.5 | background | linear-gradient(to right, var(--ui-interactive) 0% calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%), var(--ui-subtle) 0% 100%) | Derive the supplementary bar from the supplied normalized page attribute. Use a bounded blue fill on a quiet neutral track; values are validated before rendering. | Compare values on a common zero-to-one-hundred scale. | proposed |
+
+## dashboard-sparkline
+
+Selector: `.ui-sparkline`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-sparkline.1 | display | flex | Reserve one compact plot for an equal-interval trend. Give adjacent line segments equal chronological width. | See the weekly shape beside a written summary and complete source values. | proposed |
+| dashboard-sparkline.2 | block-size | 4rem | Reserve one compact plot for an equal-interval trend. Keep the sparkline compact while making its changes discernible. | See the weekly shape beside a written summary and complete source values. | proposed |
+| dashboard-sparkline.3 | padding-block | 3px | Reserve one compact plot for an equal-interval trend. Protect endpoint strokes at the zero and maximum edges. | See the weekly shape beside a written summary and complete source values. | proposed |
+| dashboard-sparkline.4 | background-color | var(--ui-subtle) | Reserve one compact plot for an equal-interval trend. Identify the bounded plot without grid clutter. | See the weekly shape beside a written summary and complete source values. | proposed |
+| dashboard-sparkline.5 | max-inline-size | 24rem | Reserve one compact plot for an equal-interval trend. Keep the sparkline a compact inline-context graphic rather than stretching it across a desktop page. | See the weekly shape beside a written summary and complete source values. | proposed |
+
+## dashboard-spark-segment
+
+Selector: `.ui-spark-segment`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-spark-segment.1 | flex | 1 1 0 | Draw one straight segment between adjacent supplied observations. Distribute equal time intervals equally. | Inspect a truthful line shape without an interactive chart dependency. | proposed |
+| dashboard-spark-segment.2 | block-size | 100% | Draw one straight segment between adjacent supplied observations. Map each segment to the same vertical scale. | Inspect a truthful line shape without an interactive chart dependency. | proposed |
+| dashboard-spark-segment.3 | background-color | var(--ui-interactive) | Draw one straight segment between adjacent supplied observations. Use the checked blue for a single data series. | Inspect a truthful line shape without an interactive chart dependency. | proposed |
+| dashboard-spark-segment.4 | clip-path | polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px)) | Draw one straight segment between adjacent supplied observations. Make a visible three-pixel strip between two validated percentages; line endpoints come from the same observations as the data table. | Inspect a truthful line shape without an interactive chart dependency. | proposed |
+
+## dashboard-spark-bars
+
+Selector: `.ui-spark-bars`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-spark-bars.1 | display | flex | Compare equal-interval values on a shared zero baseline. Keep columns in supplied chronological order. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.2 | align-items | end | Compare equal-interval values on a shared zero baseline. Anchor every column at the same zero baseline. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.3 | gap | var(--ui-space-sm) | Compare equal-interval values on a shared zero baseline. Separate discrete observations. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.4 | block-size | 8rem | Compare equal-interval values on a shared zero baseline. Provide a compact readable common scale. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.5 | border-block-end | 1px solid var(--ui-border) | Compare equal-interval values on a shared zero baseline. Expose the common zero baseline. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.6 | background-color | var(--ui-subtle) | Compare equal-interval values on a shared zero baseline. Keep the unused plot area neutral. | Read relative volume without a truncated bar scale. | proposed |
+| dashboard-spark-bars.7 | max-inline-size | 24rem | Compare equal-interval values on a shared zero baseline. Keep a short series compact while its exact data table remains independently readable. | Read relative volume without a truncated bar scale. | proposed |
+
+## dashboard-spark-column
+
+Selector: `.ui-spark-column`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-spark-column.1 | flex | 1 1 0 | Map a supplied normalized observation to column height. Give equal intervals equal widths. | Compare the same measurements that remain available in the native table. | proposed |
+| dashboard-spark-column.2 | block-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Map a supplied normalized observation to column height. Bound visual height to the declared zero-to-one-hundred scale. | Compare the same measurements that remain available in the native table. | proposed |
+| dashboard-spark-column.3 | background-color | var(--ui-interactive) | Map a supplied normalized observation to column height. Use one checked series color rather than status hues. | Compare the same measurements that remain available in the native table. | proposed |
+
+## dashboard-bullet
+
+Selector: `.ui-bullet`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-bullet.1 | position | relative | Place actual and target markers on one compact shared scale. Contain the actual bar and target tick in one bounded plot. | Recognize the shortfall using both the written amounts and the marker shapes. | proposed |
+| dashboard-bullet.2 | block-size | 1.5rem | Place actual and target markers on one compact shared scale. Keep the target tick distinct from the inner measure. | Recognize the shortfall using both the written amounts and the marker shapes. | proposed |
+| dashboard-bullet.3 | background-color | var(--ui-subtle) | Place actual and target markers on one compact shared scale. Keep unused capacity quiet. | Recognize the shortfall using both the written amounts and the marker shapes. | proposed |
+| dashboard-bullet.4 | border | 1px solid var(--ui-border) | Place actual and target markers on one compact shared scale. Expose the full measurement range. | Recognize the shortfall using both the written amounts and the marker shapes. | proposed |
+
+## dashboard-bullet-actual
+
+Selector: `.ui-bullet::before`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-bullet-actual.1 | content | "" | Draw the actual measure below its target marker. Leave meaning in the real accompanying text. | Compare the actual extent with the written target amount. | proposed |
+| dashboard-bullet-actual.2 | position | absolute | Draw the actual measure below its target marker. Place the measure within the shared plot. | Compare the actual extent with the written target amount. | proposed |
+| dashboard-bullet-actual.3 | inset-inline-start | 0 | Draw the actual measure below its target marker. Start the measure at the common zero. | Compare the actual extent with the written target amount. | proposed |
+| dashboard-bullet-actual.4 | inset-block | 25% | Draw the actual measure below its target marker. Keep the measure slimmer than the target tick. | Compare the actual extent with the written target amount. | proposed |
+| dashboard-bullet-actual.5 | inline-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Draw the actual measure below its target marker. Derive actual extent from the validated normalized value. | Compare the actual extent with the written target amount. | proposed |
+| dashboard-bullet-actual.6 | background-color | var(--ui-interactive) | Draw the actual measure below its target marker. Use checked blue for the actual measure. | Compare the actual extent with the written target amount. | proposed |
+
+## dashboard-bullet-target
+
+Selector: `.ui-bullet::after`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-bullet-target.1 | content | "" | Draw a narrow target tick distinct from the actual bar. Keep the target number in real text. | Locate the target without relying on a second hue. | proposed |
+| dashboard-bullet-target.2 | position | absolute | Draw a narrow target tick distinct from the actual bar. Place the target on the same scale as the actual bar. | Locate the target without relying on a second hue. | proposed |
+| dashboard-bullet-target.3 | inset-inline-start | clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px)) | Draw a narrow target tick distinct from the actual bar. Center the three-pixel tick at its validated target while protecting both endpoints. | Locate the target without relying on a second hue. | proposed |
+| dashboard-bullet-target.4 | inset-block | 0 | Draw a narrow target tick distinct from the actual bar. Make the target taller than the actual measure. | Locate the target without relying on a second hue. | proposed |
+| dashboard-bullet-target.5 | inline-size | 3px | Draw a narrow target tick distinct from the actual bar. Keep the target visible at either density. | Locate the target without relying on a second hue. | proposed |
+| dashboard-bullet-target.6 | background-color | var(--ui-ink) | Draw a narrow target tick distinct from the actual bar. Use neutral reading ink for a shape-distinct target. | Locate the target without relying on a second hue. | proposed |
+
+## dashboard-meter
+
+Selector: `.ui-meter`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-meter.1 | inline-size | 100% | Use browser-owned bounded measurement semantics for capacity. Use the labelled measurement’s available width. | Read the amount and thresholds without mistaking it for loading progress. | proposed |
+| dashboard-meter.2 | block-size | 1.5rem | Use browser-owned bounded measurement semantics for capacity. Keep the native scalar indicator visible. | Read the amount and thresholds without mistaking it for loading progress. | proposed |
+
+## dashboard-meter-track
+
+Selector: `.ui-meter::-webkit-meter-bar`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-meter-track.1 | background | var(--ui-subtle) | Give the native Chrome meter a governed neutral range. Replace the browser’s decorative track gradient with the quiet support plane. | See remaining capacity within a clearly bounded scalar measurement. | proposed |
+| dashboard-meter-track.2 | border | 1px solid var(--ui-border) | Give the native Chrome meter a governed neutral range. Expose the full bounded range. | See remaining capacity within a clearly bounded scalar measurement. | proposed |
+| dashboard-meter-track.3 | border-radius | var(--ui-radius-small) | Give the native Chrome meter a governed neutral range. Use the shared bounded-control corner role. | See remaining capacity within a clearly bounded scalar measurement. | proposed |
+
+## dashboard-meter-optimum
+
+Selector: `.ui-meter::-webkit-meter-optimum-value`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-meter-optimum.1 | background | var(--ui-interactive) | Map the native meter’s optimum range to the governed palette. Let the browser choose the range state while the existing interactive role paints its fill. | Read actual capacity together with the written threshold explanation. | proposed |
+
+## dashboard-meter-suboptimum
+
+Selector: `.ui-meter::-webkit-meter-suboptimum-value`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-meter-suboptimum.1 | background | var(--ui-warning) | Map the native meter’s suboptimum range to the governed palette. Let the browser choose the range state while the existing warning role paints its fill. | Read actual capacity together with the written threshold explanation. | proposed |
+
+## dashboard-meter-even-less-good
+
+Selector: `.ui-meter::-webkit-meter-even-less-good-value`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-meter-even-less-good.1 | background | var(--ui-danger) | Map the native meter’s even-less-good range to the governed palette. Let the browser choose the range state while the existing danger role paints its fill. | Read actual capacity together with the written threshold explanation. | proposed |
+
+## dashboard-segment-bar
+
+Selector: `.ui-segment-bar`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-segment-bar.1 | display | flex | Show bounded contributions to one explicitly stated total. Keep contributions in the same order as the direct labels. | Compare contributions while exact counts and shares remain in the table. | proposed |
+| dashboard-segment-bar.2 | block-size | 1.5rem | Show bounded contributions to one explicitly stated total. Give contributions a visible common strip. | Compare contributions while exact counts and shares remain in the table. | proposed |
+| dashboard-segment-bar.3 | border | 1px solid var(--ui-border) | Show bounded contributions to one explicitly stated total. Expose the total extent without implying progress. | Compare contributions while exact counts and shares remain in the table. | proposed |
+
+## dashboard-segment
+
+Selector: `.ui-segment`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-segment.1 | inline-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Derive each contribution’s width from the supplied normalized share. Map validated shares to their stated total. | Associate the ordered contribution with its written category. | proposed |
+| dashboard-segment.2 | background-color | var(--ui-accent, var(--ui-interactive)) | Derive each contribution’s width from the supplied normalized share. Reuse the supplied semantic modifier with checked information blue as the default. | Associate the ordered contribution with its written category. | proposed |
+| dashboard-segment.3 | border-inline-end | 2px solid var(--ui-surface) | Derive each contribution’s width from the supplied normalized share. Separate adjacent portions without relying only on hue. | Associate the ordered contribution with its written category. | proposed |
+
+## dashboard-tracker
+
+Selector: `.ui-tracker`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-tracker.1 | display | flex | Present discrete service observations in chronological order. Keep intervals in observation order. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+| dashboard-tracker.2 | flex-wrap | wrap | Present discrete service observations in chronological order. Preserve every interval on small screens. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+| dashboard-tracker.3 | gap | var(--ui-space-xs) | Present discrete service observations in chronological order. Separate discrete intervals. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+| dashboard-tracker.4 | list-style-type | none | Present discrete service observations in chronological order. Remove decorative numbering from the redundant graphic. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+| dashboard-tracker.5 | padding | 0 | Present discrete service observations in chronological order. Use the figure’s existing clearance. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+| dashboard-tracker.6 | margin | 0 | Present discrete service observations in chronological order. Avoid native list offsets around the graph. | Locate unavailable and unknown intervals with symbols and exact source data. | proposed |
+
+## dashboard-tracker-cell
+
+Selector: `.ui-tracker-cell`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-tracker-cell.1 | display | grid | Use a compact symbol tile for one supplied observation. Center the real supplementary symbol. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.2 | place-items | center | Use a compact symbol tile for one supplied observation. Keep the symbol visually centered. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.3 | inline-size | 1.5rem | Use a compact symbol tile for one supplied observation. Make interval symbols discernible without implying an interactive target. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.4 | block-size | 1.5rem | Use a compact symbol tile for one supplied observation. Keep each observation square. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.5 | background-color | var(--ui-success) | Use a compact symbol tile for one supplied observation. Use confirmed availability only for observed available intervals. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.6 | color | var(--ui-on-interactive) | Use a compact symbol tile for one supplied observation. Use checked ink on every state fill. | Recognize an available interval using shape and the written legend. | proposed |
+| dashboard-tracker-cell.7 | font-weight | 700 | Use a compact symbol tile for one supplied observation. Keep the supplementary symbols distinct. | Recognize an available interval using shape and the written legend. | proposed |
+
+## dashboard-tracker-error
+
+Selector: `.ui-tracker-cell--error`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-tracker-error.1 | background-color | var(--ui-danger) | Separate an observed unavailable interval from available service. Use the checked error fill for the observed outage. | Locate the explicit exclamation mark and its matching written interval. | proposed |
+
+## dashboard-tracker-unknown
+
+Selector: `.ui-tracker-cell--unknown`. Source: project. Verification family: `dashboard`.
+
+| ID | Property | Exact value | Purpose and reason | User intent | Review |
+| --- | --- | --- | --- | --- | --- |
+| dashboard-tracker-unknown.1 | background-color | var(--ui-muted) | Keep missing observations distinct from successful service. Use a neutral unknown fill with checked text contrast. | Find unknown intervals through a question mark and the source state. | proposed |

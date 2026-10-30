@@ -26,7 +26,7 @@ createServer(async (req, res) => {
     const path = resolve(root, relativePath);
     // The UI reference has an explicit asset allowlist; specifications stay private
     // to the checkout, as do package metadata, tests and arbitrary repository files.
-    const uiAssets = ['ui-spec/index.html','ui-spec/content.html','ui-spec/catalog.html','ui-spec/components.json','ui-spec/catalog-art-one.svg','ui-spec/catalog-art-two.svg','ui-spec/catalog-art-three.svg','ui-spec/content-sample.svg','ui-spec/design-system.css','ui-spec/reference.js','ui-spec/appearance.js','ui-spec/decisions.json','ui-spec/BOOTSTRAP-LICENSE.txt'];
+    const uiAssets = ['ui-spec/index.html','ui-spec/content.html','ui-spec/catalog.html','ui-spec/dashboard.html','ui-spec/components.json','ui-spec/catalog-art-one.svg','ui-spec/catalog-art-two.svg','ui-spec/catalog-art-three.svg','ui-spec/content-sample.svg','ui-spec/design-system.css','ui-spec/reference.js','ui-spec/appearance.js','ui-spec/decisions.json','ui-spec/BOOTSTRAP-LICENSE.txt'];
     const uiAsset = uiAssets.includes(relativePath);
     const allowed = path === resolve(root, 'index.html') || path.startsWith(resolve(root, 'src') + sep) || uiAsset;
     const type = types[extname(path)] || (uiAsset && extname(path) === '.json' ? 'application/json' : uiAsset && extname(path) === '.txt' ? 'text/plain' : null);

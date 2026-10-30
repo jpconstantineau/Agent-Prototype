@@ -1,4 +1,4 @@
-export const checkFamilies = new Set(['tokens','reflow','type','focus','editing','controls','grid','navigation','targets','panels','contrast','validation','table','states','colors','dialog','forced-colors','density','prose','catalog']);
+export const checkFamilies = new Set(['tokens','reflow','type','focus','editing','controls','grid','navigation','targets','panels','contrast','validation','table','states','colors','dialog','forced-colors','density','prose','catalog','dashboard']);
 export function validateGenerated(actual, expected, path) {
   if (actual !== expected) throw new Error(`Generated file differs: ${path}. Run node UI-Spec/build.mjs.`);
 }

@@ -1349,21 +1349,7 @@ textarea.ui-inline-control:focus {
   font-size: 1.5rem; /* catalog-rating-star.1 */
   line-height: 1; /* catalog-rating-star.2 */
   color: var(--ui-interactive); /* catalog-rating-star.3 */
-}
-
-/* catalog-rating-filled-rest: Keep unchosen stars outlined until a native rating is selected. */
-.ui-rating-star--filled {
-  display: none; /* catalog-rating-filled-rest.1 */
-}
-
-/* catalog-rating-filled: Map native rating state to cumulative filled star labels. */
-.ui-rating-choice:has(input:checked) .ui-rating-star--filled, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--filled {
-  display: inline; /* catalog-rating-filled.1 */
-}
-
-/* catalog-rating-outline: Avoid showing both decorative star copies for a selected value. */
-.ui-rating-choice:has(input:checked) .ui-rating-star--outline, .ui-rating-choice:has(~ .ui-rating-choice input:checked) .ui-rating-star--outline {
-  display: none; /* catalog-rating-outline.1 */
+  overflow-wrap: anywhere; /* catalog-rating-star.4 */
 }
 
 /* catalog-disclosures: Frame optional native disclosures. */
@@ -1458,7 +1444,7 @@ textarea.ui-inline-control:focus {
 
 /* catalog-dialog-accent: Carry the same labelled alert accent into the native dialog. */
 .ui-alert-dialog {
-  border-inline-start-color: var(--ui-accent); /* catalog-dialog-accent.1 */
+  border-color: var(--ui-accent); /* catalog-dialog-accent.1 */
 }
 
 /* catalog-empty: Explain missing data and one recovery destination. */
@@ -1489,7 +1475,9 @@ textarea.ui-inline-control:focus {
   border-radius: var(--ui-radius-small); /* catalog-badge.4 */
   font-size: 0.875rem; /* catalog-badge.5 */
   align-items: center; /* catalog-badge.6 */
-  gap: var(--ui-space-sm); /* catalog-badge.7 */
+  background-color: var(--ui-accent); /* catalog-badge.7 */
+  color: var(--ui-on-interactive); /* catalog-badge.8 */
+  justify-content: center; /* catalog-badge.9 */
 }
 
 /* catalog-aura: Demonstrate an optional accent frame without tinting a large work area. */
@@ -1500,14 +1488,44 @@ textarea.ui-inline-control:focus {
   background: linear-gradient(var(--ui-surface), var(--ui-surface)) padding-box, conic-gradient(var(--ui-accent), var(--ui-divider), var(--ui-accent)) border-box; /* catalog-aura.4 */
 }
 
-/* catalog-badge-dot: Expose a visible colored dot without replacing badge wording. */
-.ui-badge::before {
-  content: ""; /* catalog-badge-dot.1 */
-  inline-size: 0.625rem; /* catalog-badge-dot.2 */
-  aspect-ratio: 1; /* catalog-badge-dot.3 */
-  flex-shrink: 0; /* catalog-badge-dot.4 */
+/* catalog-badge-anchor: Associate extra metadata with an owner while reserving its offset space. */
+.ui-badge-anchor {
+  position: relative; /* catalog-badge-anchor.1 */
+  display: inline-grid; /* catalog-badge-anchor.2 */
+  padding-block-start: var(--ui-space-md); /* catalog-badge-anchor.3 */
+  padding-inline-end: var(--ui-space-md); /* catalog-badge-anchor.4 */
+  max-inline-size: 100%; /* catalog-badge-anchor.5 */
+}
+
+/* catalog-badge-offset: Place metadata at its owner’s upper trailing corner. */
+.ui-badge--offset {
+  position: absolute; /* catalog-badge-offset.1 */
+  inset-block-start: 0; /* catalog-badge-offset.2 */
+  inset-inline-end: 0; /* catalog-badge-offset.3 */
+}
+
+/* catalog-badge-counter: Give short counts the familiar superscript disc or pill presentation. */
+.ui-badge--counter {
+  min-inline-size: 1.5rem; /* catalog-badge-counter.1 */
+  min-block-size: 1.5rem; /* catalog-badge-counter.2 */
+  padding: 0 var(--ui-space-xs); /* catalog-badge-counter.3 */
+  border-radius: 999px; /* catalog-badge-counter.4 */
+  font-variant-numeric: tabular-nums; /* catalog-badge-counter.5 */
+}
+
+/* catalog-badge-dot: Offer an empty offset notification dot when an exact count is unavailable. */
+.ui-badge--dot {
+  inline-size: 0.625rem; /* catalog-badge-dot.1 */
+  block-size: 0.625rem; /* catalog-badge-dot.2 */
+  padding: 0; /* catalog-badge-dot.3 */
+  border: 0; /* catalog-badge-dot.4 */
   border-radius: 50%; /* catalog-badge-dot.5 */
-  background-color: var(--ui-accent); /* catalog-badge-dot.6 */
+}
+
+/* catalog-rating-choice: Keep the visibly different one-to-five star labels inside their targets. */
+.ui-rating-choice {
+  flex-wrap: wrap; /* catalog-rating-choice.1 */
+  max-inline-size: 100%; /* catalog-rating-choice.2 */
 }
 
 /* catalog-aspect-ratio: Reserve a predictable media frame. */
@@ -2485,4 +2503,204 @@ to {
   display: block; /* catalog-diff-full-images.1 */
   max-inline-size: 100%; /* catalog-diff-full-images.2 */
   block-size: auto; /* catalog-diff-full-images.3 */
+}
+
+/* dashboard-grid: Arrange independent dashboard summaries using the available width. */
+.ui-dashboard-grid {
+  display: grid; /* dashboard-grid.1 */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); /* dashboard-grid.2 */
+  gap: var(--ui-space-lg); /* dashboard-grid.3 */
+  min-inline-size: 0; /* dashboard-grid.4 */
+}
+
+/* dashboard-trend: Keep the trend direction and comparison wording together. */
+.ui-trend {
+  display: flex; /* dashboard-trend.1 */
+  align-items: baseline; /* dashboard-trend.2 */
+  gap: var(--ui-space-xs); /* dashboard-trend.3 */
+  font-weight: 600; /* dashboard-trend.4 */
+}
+
+/* dashboard-figure: Keep a dashboard graphic and its explanation in one semantic group. */
+.ui-dashboard-figure {
+  margin: 0; /* dashboard-figure.1 */
+  min-inline-size: 0; /* dashboard-figure.2 */
+}
+
+/* dashboard-figure-parts: Separate caption, narrative, graphic and data without duplicate outer gaps. */
+.ui-dashboard-figure > * + * {
+  margin-block-start: var(--ui-space-md); /* dashboard-figure-parts.1 */
+}
+
+/* dashboard-scroll: Keep wide source tables readable inside their chart card. */
+.ui-dashboard-scroll {
+  max-inline-size: 100%; /* dashboard-scroll.1 */
+  overflow: auto; /* dashboard-scroll.2 */
+  padding: var(--ui-space-xs); /* dashboard-scroll.3 */
+}
+
+/* dashboard-table: Preserve native table relationships alongside compact charts. */
+.ui-dashboard-table {
+  inline-size: 100%; /* dashboard-table.1 */
+  border-collapse: collapse; /* dashboard-table.2 */
+  font-variant-numeric: tabular-nums; /* dashboard-table.3 */
+}
+
+/* dashboard-cells: Separate source labels and measurements clearly. */
+.ui-dashboard-table th, .ui-dashboard-table td {
+  padding: var(--ui-space-sm); /* dashboard-cells.1 */
+  text-align: start; /* dashboard-cells.2 */
+  border-block-end: 1px solid var(--ui-divider); /* dashboard-cells.3 */
+  overflow-wrap: anywhere; /* dashboard-cells.4 */
+}
+
+/* dashboard-bar-value: Keep exact numeric content above its proportional horizontal bar. */
+.ui-bar-value {
+  display: block; /* dashboard-bar-value.1 */
+  min-inline-size: 6rem; /* dashboard-bar-value.2 */
+}
+
+/* dashboard-bar-graphic: Derive the supplementary bar from the supplied normalized page attribute. */
+.ui-bar-value::after {
+  content: ""; /* dashboard-bar-graphic.1 */
+  display: block; /* dashboard-bar-graphic.2 */
+  block-size: 0.75rem; /* dashboard-bar-graphic.3 */
+  margin-block-start: var(--ui-space-xs); /* dashboard-bar-graphic.4 */
+  background: linear-gradient(to right, var(--ui-interactive) 0% calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%), var(--ui-subtle) 0% 100%); /* dashboard-bar-graphic.5 */
+}
+
+/* dashboard-sparkline: Reserve one compact plot for an equal-interval trend. */
+.ui-sparkline {
+  display: flex; /* dashboard-sparkline.1 */
+  block-size: 4rem; /* dashboard-sparkline.2 */
+  padding-block: 3px; /* dashboard-sparkline.3 */
+  background-color: var(--ui-subtle); /* dashboard-sparkline.4 */
+  max-inline-size: 24rem; /* dashboard-sparkline.5 */
+}
+
+/* dashboard-spark-segment: Draw one straight segment between adjacent supplied observations. */
+.ui-spark-segment {
+  flex: 1 1 0; /* dashboard-spark-segment.1 */
+  block-size: 100%; /* dashboard-spark-segment.2 */
+  background-color: var(--ui-interactive); /* dashboard-spark-segment.3 */
+  clip-path: polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px)); /* dashboard-spark-segment.4 */
+}
+
+/* dashboard-spark-bars: Compare equal-interval values on a shared zero baseline. */
+.ui-spark-bars {
+  display: flex; /* dashboard-spark-bars.1 */
+  align-items: end; /* dashboard-spark-bars.2 */
+  gap: var(--ui-space-sm); /* dashboard-spark-bars.3 */
+  block-size: 8rem; /* dashboard-spark-bars.4 */
+  border-block-end: 1px solid var(--ui-border); /* dashboard-spark-bars.5 */
+  background-color: var(--ui-subtle); /* dashboard-spark-bars.6 */
+  max-inline-size: 24rem; /* dashboard-spark-bars.7 */
+}
+
+/* dashboard-spark-column: Map a supplied normalized observation to column height. */
+.ui-spark-column {
+  flex: 1 1 0; /* dashboard-spark-column.1 */
+  block-size: calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%); /* dashboard-spark-column.2 */
+  background-color: var(--ui-interactive); /* dashboard-spark-column.3 */
+}
+
+/* dashboard-bullet: Place actual and target markers on one compact shared scale. */
+.ui-bullet {
+  position: relative; /* dashboard-bullet.1 */
+  block-size: 1.5rem; /* dashboard-bullet.2 */
+  background-color: var(--ui-subtle); /* dashboard-bullet.3 */
+  border: 1px solid var(--ui-border); /* dashboard-bullet.4 */
+}
+
+/* dashboard-bullet-actual: Draw the actual measure below its target marker. */
+.ui-bullet::before {
+  content: ""; /* dashboard-bullet-actual.1 */
+  position: absolute; /* dashboard-bullet-actual.2 */
+  inset-inline-start: 0; /* dashboard-bullet-actual.3 */
+  inset-block: 25%; /* dashboard-bullet-actual.4 */
+  inline-size: calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%); /* dashboard-bullet-actual.5 */
+  background-color: var(--ui-interactive); /* dashboard-bullet-actual.6 */
+}
+
+/* dashboard-bullet-target: Draw a narrow target tick distinct from the actual bar. */
+.ui-bullet::after {
+  content: ""; /* dashboard-bullet-target.1 */
+  position: absolute; /* dashboard-bullet-target.2 */
+  inset-inline-start: clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px)); /* dashboard-bullet-target.3 */
+  inset-block: 0; /* dashboard-bullet-target.4 */
+  inline-size: 3px; /* dashboard-bullet-target.5 */
+  background-color: var(--ui-ink); /* dashboard-bullet-target.6 */
+}
+
+/* dashboard-meter: Use browser-owned bounded measurement semantics for capacity. */
+.ui-meter {
+  inline-size: 100%; /* dashboard-meter.1 */
+  block-size: 1.5rem; /* dashboard-meter.2 */
+}
+
+/* dashboard-meter-track: Give the native Chrome meter a governed neutral range. */
+.ui-meter::-webkit-meter-bar {
+  background: var(--ui-subtle); /* dashboard-meter-track.1 */
+  border: 1px solid var(--ui-border); /* dashboard-meter-track.2 */
+  border-radius: var(--ui-radius-small); /* dashboard-meter-track.3 */
+}
+
+/* dashboard-meter-optimum: Map the native meter’s optimum range to the governed palette. */
+.ui-meter::-webkit-meter-optimum-value {
+  background: var(--ui-interactive); /* dashboard-meter-optimum.1 */
+}
+
+/* dashboard-meter-suboptimum: Map the native meter’s suboptimum range to the governed palette. */
+.ui-meter::-webkit-meter-suboptimum-value {
+  background: var(--ui-warning); /* dashboard-meter-suboptimum.1 */
+}
+
+/* dashboard-meter-even-less-good: Map the native meter’s even-less-good range to the governed palette. */
+.ui-meter::-webkit-meter-even-less-good-value {
+  background: var(--ui-danger); /* dashboard-meter-even-less-good.1 */
+}
+
+/* dashboard-segment-bar: Show bounded contributions to one explicitly stated total. */
+.ui-segment-bar {
+  display: flex; /* dashboard-segment-bar.1 */
+  block-size: 1.5rem; /* dashboard-segment-bar.2 */
+  border: 1px solid var(--ui-border); /* dashboard-segment-bar.3 */
+}
+
+/* dashboard-segment: Derive each contribution’s width from the supplied normalized share. */
+.ui-segment {
+  inline-size: calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%); /* dashboard-segment.1 */
+  background-color: var(--ui-accent, var(--ui-interactive)); /* dashboard-segment.2 */
+  border-inline-end: 2px solid var(--ui-surface); /* dashboard-segment.3 */
+}
+
+/* dashboard-tracker: Present discrete service observations in chronological order. */
+.ui-tracker {
+  display: flex; /* dashboard-tracker.1 */
+  flex-wrap: wrap; /* dashboard-tracker.2 */
+  gap: var(--ui-space-xs); /* dashboard-tracker.3 */
+  list-style-type: none; /* dashboard-tracker.4 */
+  padding: 0; /* dashboard-tracker.5 */
+  margin: 0; /* dashboard-tracker.6 */
+}
+
+/* dashboard-tracker-cell: Use a compact symbol tile for one supplied observation. */
+.ui-tracker-cell {
+  display: grid; /* dashboard-tracker-cell.1 */
+  place-items: center; /* dashboard-tracker-cell.2 */
+  inline-size: 1.5rem; /* dashboard-tracker-cell.3 */
+  block-size: 1.5rem; /* dashboard-tracker-cell.4 */
+  background-color: var(--ui-success); /* dashboard-tracker-cell.5 */
+  color: var(--ui-on-interactive); /* dashboard-tracker-cell.6 */
+  font-weight: 700; /* dashboard-tracker-cell.7 */
+}
+
+/* dashboard-tracker-error: Separate an observed unavailable interval from available service. */
+.ui-tracker-cell--error {
+  background-color: var(--ui-danger); /* dashboard-tracker-error.1 */
+}
+
+/* dashboard-tracker-unknown: Keep missing observations distinct from successful service. */
+.ui-tracker-cell--unknown {
+  background-color: var(--ui-muted); /* dashboard-tracker-unknown.1 */
 }

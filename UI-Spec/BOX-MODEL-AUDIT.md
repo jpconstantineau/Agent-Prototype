@@ -2680,7 +2680,7 @@ Selector: `.ui-badge`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| padding | var(--ui-space-xs) var(--ui-space-sm) | 0.25rem 0.5rem | 0.25rem 0.375rem | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read a state or category without depending on a colored dot. |
+| padding | var(--ui-space-xs) var(--ui-space-sm) | 0.25rem 0.5rem | 0.25rem 0.375rem | Keep short metadata visibly grouped. Inset text by the governed compact steps. | Read supplemental metadata or counts in their owner’s context. |
 
 ## catalog-badge.3
 
@@ -2688,7 +2688,7 @@ Selector: `.ui-badge`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read a state or category without depending on a colored dot. |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Keep short metadata visibly grouped. Provide a visible non-color boundary. | Read supplemental metadata or counts in their owner’s context. |
 
 ## catalog-badge.4
 
@@ -2696,7 +2696,7 @@ Selector: `.ui-badge`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Keep short metadata visibly grouped. Use the short-label shape. | Read a state or category without depending on a colored dot. |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Keep short metadata visibly grouped. Use the short-label shape. | Read supplemental metadata or counts in their owner’s context. |
 
 ## catalog-badge.5
 
@@ -2704,15 +2704,7 @@ Selector: `.ui-badge`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| font-size | 0.875rem | 0.875rem | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read a state or category without depending on a colored dot. |
-
-## catalog-badge.7
-
-Selector: `.ui-badge`. Policy: Density governed.
-
-| Property | Source value | Normal | Compact | Purpose | User intent |
-| --- | --- | --- | --- | --- | --- |
-| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Keep short metadata visibly grouped. Separate the visible dot from its authoritative written label. | Read a state or category without depending on a colored dot. |
+| font-size | 0.875rem | 0.875rem | 0.875rem | Keep short metadata visibly grouped. Use the readable secondary size. | Read supplemental metadata or counts in their owner’s context. |
 
 ## catalog-aura.1
 
@@ -2738,29 +2730,125 @@ Selector: `.ui-aura`. Policy: Density governed.
 | --- | --- | --- | --- | --- | --- |
 | border-radius | var(--ui-radius-panel) | 0.75rem | 0.5rem | Demonstrate an optional accent frame without tinting a large work area. Keep the outer shape a containing group. | Locate the explicitly labelled example emphasis without confusing it with focus. |
 
-## catalog-badge-dot.2
+## catalog-badge-anchor.3
 
-Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+Selector: `.ui-badge-anchor`. Policy: Density governed.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| inline-size | 0.625rem | 0.625rem | 0.625rem | Expose a visible colored dot without replacing badge wording. Give the dot a visible ten-pixel diameter at the default root. | Recognize the supplementary accent and read the authoritative state label. |
+| padding-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Associate extra metadata with an owner while reserving its offset space. Reserve space for the superscript badge above the owner. | Read the owner and its supplementary count without clipping either. |
+
+## catalog-badge-anchor.4
+
+Selector: `.ui-badge-anchor`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-inline-end | var(--ui-space-md) | 0.75rem | 0.5rem | Associate extra metadata with an owner while reserving its offset space. Reserve half a typical count disc so it straddles the owner’s trailing corner. | Read the owner and its supplementary count without clipping either. |
+
+## catalog-badge-anchor.5
+
+Selector: `.ui-badge-anchor`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Associate extra metadata with an owner while reserving its offset space. Keep the owner and reserved corner within the sample. | Read the owner and its supplementary count without clipping either. |
+
+## catalog-badge-offset.2
+
+Selector: `.ui-badge--offset`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block-start | 0 | 0 | 0 | Place metadata at its owner’s upper trailing corner. Align the annotation with the reserved top edge. | Recognize counts as annotations rather than aligned operational status. |
+
+## catalog-badge-offset.3
+
+Selector: `.ui-badge--offset`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-end | 0 | 0 | 0 | Place metadata at its owner’s upper trailing corner. Follow the logical trailing corner in both reading directions. | Recognize counts as annotations rather than aligned operational status. |
+
+## catalog-badge-counter.1
+
+Selector: `.ui-badge--counter`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 1.5rem | 1.5rem | 1.5rem | Give short counts the familiar superscript disc or pill presentation. Reserve a readable two-digit count at the default root. | Read the actual count inside its colored annotation. |
+
+## catalog-badge-counter.2
+
+Selector: `.ui-badge--counter`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-block-size | 1.5rem | 1.5rem | 1.5rem | Give short counts the familiar superscript disc or pill presentation. Keep a single-digit count disc clearly visible. | Read the actual count inside its colored annotation. |
+
+## catalog-badge-counter.3
+
+Selector: `.ui-badge--counter`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 var(--ui-space-xs) | 0 0.25rem | 0 0.25rem | Give short counts the familiar superscript disc or pill presentation. Allow longer counts such as 99+ to expand into a pill. | Read the actual count inside its colored annotation. |
+
+## catalog-badge-counter.4
+
+Selector: `.ui-badge--counter`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | 999px | 999px | 999px | Give short counts the familiar superscript disc or pill presentation. Keep the annotation round without clipping longer content. | Read the actual count inside its colored annotation. |
+
+## catalog-badge-dot.1
+
+Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 0.625rem | 0.625rem | 0.625rem | Offer an empty offset notification dot when an exact count is unavailable. Keep the count-free dot compact but visible. | Recognize the supplementary cue through the owner’s name and written explanation. |
+
+## catalog-badge-dot.2
+
+Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 0.625rem | 0.625rem | 0.625rem | Offer an empty offset notification dot when an exact count is unavailable. Keep a circular ten-pixel dot at the default root. | Recognize the supplementary cue through the owner’s name and written explanation. |
 
 ## catalog-badge-dot.3
 
-Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| aspect-ratio | 1 | 1 | 1 | Expose a visible colored dot without replacing badge wording. Keep the supplementary dot circular. | Recognize the supplementary accent and read the authoritative state label. |
+| padding | 0 | 0 | 0 | Offer an empty offset notification dot when an exact count is unavailable. Avoid making an empty dot look like a missing text label. | Recognize the supplementary cue through the owner’s name and written explanation. |
+
+## catalog-badge-dot.4
+
+Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 0 | 0 | 0 | Offer an empty offset notification dot when an exact count is unavailable. Let the checked fill define the decorative silhouette. | Recognize the supplementary cue through the owner’s name and written explanation. |
 
 ## catalog-badge-dot.5
 
-Selector: `.ui-badge::before`. Policy: Protected geometry or structural reset.
+Selector: `.ui-badge--dot`. Policy: Protected geometry or structural reset.
 
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
-| border-radius | 50% | 50% | 50% | Expose a visible colored dot without replacing badge wording. Distinguish the metadata dot from square controls. | Recognize the supplementary accent and read the authoritative state label. |
+| border-radius | 50% | 50% | 50% | Offer an empty offset notification dot when an exact count is unavailable. Distinguish the count-free notification from a numeric pill. | Recognize the supplementary cue through the owner’s name and written explanation. |
+
+## catalog-rating-choice.2
+
+Selector: `.ui-rating-choice`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep the visibly different one-to-five star labels inside their targets. Bound long star labels by the available sample width. | Compare complete star counts without a hidden numeric meaning. |
 
 ## catalog-aspect-ratio.1
 
@@ -4513,3 +4601,395 @@ Selector: `.ui-diff img`. Policy: Protected geometry or structural reset.
 | Property | Source value | Normal | Compact | Purpose | User intent |
 | --- | --- | --- | --- | --- | --- |
 | block-size | auto | auto | auto | Keep both original comparison images fully available. Preserve the source image ratio. | Inspect either full version without relying on the optional pointer-only reveal. |
+
+## dashboard-grid.2
+
+Selector: `.ui-dashboard-grid`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| grid-template-columns | repeat(auto-fit, minmax(min(100%, 20rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 20rem), 1fr)) | repeat(auto-fit, minmax(min(100%, 20rem), 1fr)) | Arrange independent dashboard summaries using the available width. Add columns only when a readable card fits. | Compare quantities without losing content on a small display. |
+
+## dashboard-grid.3
+
+Selector: `.ui-dashboard-grid`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-lg) | 1rem | 0.75rem | Arrange independent dashboard summaries using the available width. Separate independent metric contexts. | Compare quantities without losing content on a small display. |
+
+## dashboard-grid.4
+
+Selector: `.ui-dashboard-grid`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Arrange independent dashboard summaries using the available width. Let long metric wording wrap within the viewport. | Compare quantities without losing content on a small display. |
+
+## dashboard-trend.3
+
+Selector: `.ui-trend`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Keep the trend direction and comparison wording together. Clear the supplementary arrow from the words. | Read direction independently of success or failure color coding. |
+
+## dashboard-figure.1
+
+Selector: `.ui-dashboard-figure`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Keep a dashboard graphic and its explanation in one semantic group. Use the containing card’s clearance instead of native figure offsets. | Find units, summary and data before interpreting its shape. |
+
+## dashboard-figure.2
+
+Selector: `.ui-dashboard-figure`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 0 | 0 | 0 | Keep a dashboard graphic and its explanation in one semantic group. Keep the chart group shrinkable. | Find units, summary and data before interpreting its shape. |
+
+## dashboard-figure-parts.1
+
+Selector: `.ui-dashboard-figure > * + *`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-md) | 0.75rem | 0.5rem | Separate caption, narrative, graphic and data without duplicate outer gaps. Use a governed related-content gap. | Follow the explanation and reach the source observations. |
+
+## dashboard-scroll.1
+
+Selector: `.ui-dashboard-scroll`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 100% | 100% | 100% | Keep wide source tables readable inside their chart card. Bound the data region by its card. | Inspect every value with native keyboard and pointer scrolling. |
+
+## dashboard-scroll.3
+
+Selector: `.ui-dashboard-scroll`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-xs) | 0.25rem | 0.25rem | Keep wide source tables readable inside their chart card. Clear source cells and the region’s native focus. | Inspect every value with native keyboard and pointer scrolling. |
+
+## dashboard-table.1
+
+Selector: `.ui-dashboard-table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Preserve native table relationships alongside compact charts. Share the chart card’s available width. | Read exact observations with their headers and units. |
+
+## dashboard-table.2
+
+Selector: `.ui-dashboard-table`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-collapse | collapse | collapse | collapse | Preserve native table relationships alongside compact charts. Avoid doubled separators between observations. | Read exact observations with their headers and units. |
+
+## dashboard-cells.1
+
+Selector: `.ui-dashboard-table th, .ui-dashboard-table td`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | var(--ui-space-sm) | 0.5rem | 0.375rem | Separate source labels and measurements clearly. Give each data cell a governed inset. | Compare individual values without a dense full-cell grid. |
+
+## dashboard-cells.3
+
+Selector: `.ui-dashboard-table th, .ui-dashboard-table td`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | 1px solid var(--ui-divider) | Separate source labels and measurements clearly. Separate records using a passive line. | Compare individual values without a dense full-cell grid. |
+
+## dashboard-bar-value.2
+
+Selector: `.ui-bar-value`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| min-inline-size | 6rem | 6rem | 6rem | Keep exact numeric content above its proportional horizontal bar. Keep short comparison rows at a useful visible measure. | Read the same value that determines the compact comparison graphic. |
+
+## dashboard-bar-graphic.3
+
+Selector: `.ui-bar-value::after`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 0.75rem | 0.75rem | 0.75rem | Derive the supplementary bar from the supplied normalized page attribute. Keep the comparison bar visible without becoming a large colored field. | Compare values on a common zero-to-one-hundred scale. |
+
+## dashboard-bar-graphic.4
+
+Selector: `.ui-bar-value::after`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin-block-start | var(--ui-space-xs) | 0.25rem | 0.25rem | Derive the supplementary bar from the supplied normalized page attribute. Separate the number from the supplementary graphic. | Compare values on a common zero-to-one-hundred scale. |
+
+## dashboard-sparkline.2
+
+Selector: `.ui-sparkline`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 4rem | 4rem | 4rem | Reserve one compact plot for an equal-interval trend. Keep the sparkline compact while making its changes discernible. | See the weekly shape beside a written summary and complete source values. |
+
+## dashboard-sparkline.3
+
+Selector: `.ui-sparkline`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding-block | 3px | 3px | 3px | Reserve one compact plot for an equal-interval trend. Protect endpoint strokes at the zero and maximum edges. | See the weekly shape beside a written summary and complete source values. |
+
+## dashboard-sparkline.5
+
+Selector: `.ui-sparkline`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 24rem | 24rem | 24rem | Reserve one compact plot for an equal-interval trend. Keep the sparkline a compact inline-context graphic rather than stretching it across a desktop page. | See the weekly shape beside a written summary and complete source values. |
+
+## dashboard-spark-segment.1
+
+Selector: `.ui-spark-segment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| flex | 1 1 0 | 1 1 0 | 1 1 0 | Draw one straight segment between adjacent supplied observations. Distribute equal time intervals equally. | Inspect a truthful line shape without an interactive chart dependency. |
+
+## dashboard-spark-segment.2
+
+Selector: `.ui-spark-segment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 100% | 100% | 100% | Draw one straight segment between adjacent supplied observations. Map each segment to the same vertical scale. | Inspect a truthful line shape without an interactive chart dependency. |
+
+## dashboard-spark-segment.4
+
+Selector: `.ui-spark-segment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| clip-path | polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px)) | polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px)) | polygon(0 calc(100% - attr(data-from type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% - 1.5px), 100% calc(100% - attr(data-to type(<number>), 0) * 1% + 1.5px), 0 calc(100% - attr(data-from type(<number>), 0) * 1% + 1.5px)) | Draw one straight segment between adjacent supplied observations. Make a visible three-pixel strip between two validated percentages; line endpoints come from the same observations as the data table. | Inspect a truthful line shape without an interactive chart dependency. |
+
+## dashboard-spark-bars.3
+
+Selector: `.ui-spark-bars`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-sm) | 0.5rem | 0.375rem | Compare equal-interval values on a shared zero baseline. Separate discrete observations. | Read relative volume without a truncated bar scale. |
+
+## dashboard-spark-bars.4
+
+Selector: `.ui-spark-bars`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 8rem | 8rem | 8rem | Compare equal-interval values on a shared zero baseline. Provide a compact readable common scale. | Read relative volume without a truncated bar scale. |
+
+## dashboard-spark-bars.5
+
+Selector: `.ui-spark-bars`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-block-end | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Compare equal-interval values on a shared zero baseline. Expose the common zero baseline. | Read relative volume without a truncated bar scale. |
+
+## dashboard-spark-bars.7
+
+Selector: `.ui-spark-bars`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| max-inline-size | 24rem | 24rem | 24rem | Compare equal-interval values on a shared zero baseline. Keep a short series compact while its exact data table remains independently readable. | Read relative volume without a truncated bar scale. |
+
+## dashboard-spark-column.1
+
+Selector: `.ui-spark-column`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| flex | 1 1 0 | 1 1 0 | 1 1 0 | Map a supplied normalized observation to column height. Give equal intervals equal widths. | Compare the same measurements that remain available in the native table. |
+
+## dashboard-spark-column.2
+
+Selector: `.ui-spark-column`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Map a supplied normalized observation to column height. Bound visual height to the declared zero-to-one-hundred scale. | Compare the same measurements that remain available in the native table. |
+
+## dashboard-bullet.2
+
+Selector: `.ui-bullet`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1.5rem | 1.5rem | 1.5rem | Place actual and target markers on one compact shared scale. Keep the target tick distinct from the inner measure. | Recognize the shortfall using both the written amounts and the marker shapes. |
+
+## dashboard-bullet.4
+
+Selector: `.ui-bullet`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Place actual and target markers on one compact shared scale. Expose the full measurement range. | Recognize the shortfall using both the written amounts and the marker shapes. |
+
+## dashboard-bullet-actual.3
+
+Selector: `.ui-bullet::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-start | 0 | 0 | 0 | Draw the actual measure below its target marker. Start the measure at the common zero. | Compare the actual extent with the written target amount. |
+
+## dashboard-bullet-actual.4
+
+Selector: `.ui-bullet::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block | 25% | 25% | 25% | Draw the actual measure below its target marker. Keep the measure slimmer than the target tick. | Compare the actual extent with the written target amount. |
+
+## dashboard-bullet-actual.5
+
+Selector: `.ui-bullet::before`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Draw the actual measure below its target marker. Derive actual extent from the validated normalized value. | Compare the actual extent with the written target amount. |
+
+## dashboard-bullet-target.3
+
+Selector: `.ui-bullet::after`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-inline-start | clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px)) | clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px)) | clamp(0px, calc(attr(data-target type(<number>), 0) * 1% - 1.5px), calc(100% - 3px)) | Draw a narrow target tick distinct from the actual bar. Center the three-pixel tick at its validated target while protecting both endpoints. | Locate the target without relying on a second hue. |
+
+## dashboard-bullet-target.4
+
+Selector: `.ui-bullet::after`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inset-block | 0 | 0 | 0 | Draw a narrow target tick distinct from the actual bar. Make the target taller than the actual measure. | Locate the target without relying on a second hue. |
+
+## dashboard-bullet-target.5
+
+Selector: `.ui-bullet::after`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 3px | 3px | 3px | Draw a narrow target tick distinct from the actual bar. Keep the target visible at either density. | Locate the target without relying on a second hue. |
+
+## dashboard-meter.1
+
+Selector: `.ui-meter`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 100% | 100% | 100% | Use browser-owned bounded measurement semantics for capacity. Use the labelled measurement’s available width. | Read the amount and thresholds without mistaking it for loading progress. |
+
+## dashboard-meter.2
+
+Selector: `.ui-meter`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1.5rem | 1.5rem | 1.5rem | Use browser-owned bounded measurement semantics for capacity. Keep the native scalar indicator visible. | Read the amount and thresholds without mistaking it for loading progress. |
+
+## dashboard-meter-track.2
+
+Selector: `.ui-meter::-webkit-meter-bar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Give the native Chrome meter a governed neutral range. Expose the full bounded range. | See remaining capacity within a clearly bounded scalar measurement. |
+
+## dashboard-meter-track.3
+
+Selector: `.ui-meter::-webkit-meter-bar`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-radius | var(--ui-radius-small) | 0.375rem | 0.25rem | Give the native Chrome meter a governed neutral range. Use the shared bounded-control corner role. | See remaining capacity within a clearly bounded scalar measurement. |
+
+## dashboard-segment-bar.2
+
+Selector: `.ui-segment-bar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1.5rem | 1.5rem | 1.5rem | Show bounded contributions to one explicitly stated total. Give contributions a visible common strip. | Compare contributions while exact counts and shares remain in the table. |
+
+## dashboard-segment-bar.3
+
+Selector: `.ui-segment-bar`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border | 1px solid var(--ui-border) | 1px solid var(--ui-border) | 1px solid var(--ui-border) | Show bounded contributions to one explicitly stated total. Expose the total extent without implying progress. | Compare contributions while exact counts and shares remain in the table. |
+
+## dashboard-segment.1
+
+Selector: `.ui-segment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | calc(clamp(0, attr(data-percent type(<number>), 0), 100) * 1%) | Derive each contribution’s width from the supplied normalized share. Map validated shares to their stated total. | Associate the ordered contribution with its written category. |
+
+## dashboard-segment.3
+
+Selector: `.ui-segment`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| border-inline-end | 2px solid var(--ui-surface) | 2px solid var(--ui-surface) | 2px solid var(--ui-surface) | Derive each contribution’s width from the supplied normalized share. Separate adjacent portions without relying only on hue. | Associate the ordered contribution with its written category. |
+
+## dashboard-tracker.3
+
+Selector: `.ui-tracker`. Policy: Density governed.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| gap | var(--ui-space-xs) | 0.25rem | 0.25rem | Present discrete service observations in chronological order. Separate discrete intervals. | Locate unavailable and unknown intervals with symbols and exact source data. |
+
+## dashboard-tracker.5
+
+Selector: `.ui-tracker`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| padding | 0 | 0 | 0 | Present discrete service observations in chronological order. Use the figure’s existing clearance. | Locate unavailable and unknown intervals with symbols and exact source data. |
+
+## dashboard-tracker.6
+
+Selector: `.ui-tracker`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| margin | 0 | 0 | 0 | Present discrete service observations in chronological order. Avoid native list offsets around the graph. | Locate unavailable and unknown intervals with symbols and exact source data. |
+
+## dashboard-tracker-cell.3
+
+Selector: `.ui-tracker-cell`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| inline-size | 1.5rem | 1.5rem | 1.5rem | Use a compact symbol tile for one supplied observation. Make interval symbols discernible without implying an interactive target. | Recognize an available interval using shape and the written legend. |
+
+## dashboard-tracker-cell.4
+
+Selector: `.ui-tracker-cell`. Policy: Protected geometry or structural reset.
+
+| Property | Source value | Normal | Compact | Purpose | User intent |
+| --- | --- | --- | --- | --- | --- |
+| block-size | 1.5rem | 1.5rem | 1.5rem | Use a compact symbol tile for one supplied observation. Keep each observation square. | Recognize an available interval using shape and the written legend. |
